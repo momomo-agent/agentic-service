@@ -1,21 +1,24 @@
 # Test Result: Ollama自动安装
 
 ## Summary
-- Tests passed: 8
-- Tests failed: 0
+- **Status**: PASSED
+- **Tests**: 10 passed, 0 failed
 
-## Results (m24-ollama-setup.test.js)
-- ✓ exports isOllamaInstalled helper
-- ✓ exports isModelPulled helper
-- ✓ getInstallCommand handles darwin
-- ✓ getInstallCommand handles linux
-- ✓ throws on unsupported platform
-- ✓ runSetup calls installOllama when not installed
-- ✓ runSetup calls pullModel when model missing
-- ✓ skips pull when model already present
+## Results
+- ✅ isOllamaInstalled uses `which ollama`
+- ✅ darwin uses `brew install ollama`
+- ✅ linux uses curl install script
+- ✅ unsupported platform throws error
+- ✅ checks isOllamaInstalled before installing
+- ✅ checks isModelPulled before pulling
+- ✅ shows "already present" when model exists
+- ✅ only runs ollama block when provider is ollama
+- ✅ uses ora spinner for pull progress
+- ✅ spinner.succeed on completion
 
 ## DBB Verification
-- [x] isOllamaInstalled() checks PATH
-- [x] isModelPulled() parses ollama list output
-- [x] getInstallCommand() platform-specific (darwin/linux)
-- [x] runSetup() auto-installs and pulls model
+- [x] runSetup() detects Ollama via `which ollama`
+- [x] Auto-installs on darwin (brew) and linux (curl)
+- [x] Pulls model with ora spinner progress
+- [x] Skips install if already installed, skips pull if model present
+- [x] Unsupported platform throws with clear message
