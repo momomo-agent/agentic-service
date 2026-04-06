@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 let passed = 0, failed = 0
 const results = []
 
