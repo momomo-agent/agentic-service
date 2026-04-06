@@ -1,11 +1,11 @@
 {
-  "totalTests": 9,
-  "passed": 8,
+  "totalTests": 11,
+  "passed": 10,
   "failed": 1,
   "edgeCases": [
     "null gpu object (no gpu key at all)",
     "memory exactly at minMemory boundary",
     "gpu type mismatch should eliminate profile in matcher.js (currently not enforced)"
   ],
-  "coverage": "89%"
+  "coverage": "91%"
 }
