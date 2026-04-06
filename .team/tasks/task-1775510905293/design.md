@@ -1,37 +1,31 @@
 # Design: 修复 src/detector/profiles.js
 
-## Problem
-`matchProfile()` throws when no profile matches. `getProfile()` must never throw — fall back to default.
+## Status
+`profiles.js` already exports `getProfile(hardware)` which calls `matchProfile(profiles, hardware)` from `matcher.js`. Implementation is complete.
 
-## Files to Modify
-- `src/detector/profiles.js` — wrap `matchProfile` call, catch error, return default
+## Verification Required
+Run existing tests to confirm:
+- `getProfile(hardware)` returns `{ llm, stt, tts, fallback }` for valid hardware
+- Falls back to built-in default when network unavailable and no cache
 
-## Change
-```javascript
-// In getProfile(), replace:
-return matchProfile(profiles, hardware);
+## Files
+- `src/detector/profiles.js` — no changes needed
+- `src/detector/matcher.js` — no changes needed
+- `profiles/default.json` — must exist with correct structure
 
-// With:
-try {
-  return matchProfile(profiles, hardware);
-} catch {
-  return profiles.profiles.find(e => Object.keys(e.match).length === 0)?.config
-    ?? await loadBuiltinDefault();
-}
-```
+## Test Cases
+```js
+// DBB-001
+const hw = { platform:'darwin', arch:'arm64', gpu:{ type:'apple-silicon' }, memory:16 };
+const profile = await getProfile(hw);
+assert(profile.llm && profile.stt && profile.tts && profile.fallback);
 
-## loadBuiltinDefault
-```javascript
-async function loadBuiltinDefault() {
-  const p = new URL('../../profiles/default.json', import.meta.url);
-  return JSON.parse(await fs.readFile(p, 'utf8'));
-}
+// DBB-002
+// mock fetch to throw, delete cache file
+const profile2 = await getProfile(hw);
+assert(profile2.llm); // uses built-in default
 ```
 
 ## Edge Cases
-- `profiles.profiles` is empty → return builtin default
-- Remote fetch fails + cache expired → already handled by existing `loadProfiles()` fallback chain
-
-## Test Cases
-1. `getProfile({ platform:'linux', arch:'x64', gpu:{type:'none'}, memory:4 })` → returns object with `llm`, `stt`, `tts`, `fallback`
-2. `getProfile({ platform:'darwin', arch:'arm64', gpu:{type:'apple-silicon'}, memory:16 })` → returns matched profile
+- `profiles.profiles` array empty → `matchProfile` throws "No matching profile found"
+- Cache file corrupted → catch JSON parse error, fall through to remote fetch

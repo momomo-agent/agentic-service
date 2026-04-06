@@ -1,40 +1,35 @@
 # Design: 完善 src/ui/client/ Admin路由
 
-## Files to Modify
-- `src/ui/client/src/main.js` — add vue-router with /admin route
-
 ## Approach
-Admin UI is a separate Vite app at `src/ui/admin/`. The client app at `src/ui/client/` needs a router entry that redirects `/admin` to the admin app (served by the server at `/admin`).
+The admin SPA lives at `src/ui/admin/` (separate Vite app, served by server at `/admin`).
+The client app (`src/ui/client/`) needs a link/nav to `/admin`.
+No vue-router needed — `/admin` is a separate origin served by Express.
 
-Since admin is a separate app served by the backend, the client only needs to add a navigation link or redirect. The simplest approach: add vue-router to client with two routes.
+## Changes
 
-## Router Config
-```javascript
-// src/ui/client/src/router.js (new file)
-import { createRouter, createWebHistory } from 'vue-router';
-import App from './App.vue';
-
-export default createRouter({
-  history: createWebHistory(),
-  routes: [
-    { path: '/', component: App },
-    { path: '/admin', beforeEnter() { window.location.href = '/admin'; } }
-  ]
-});
+### src/ui/client/src/App.vue
+Add a nav link to `/admin` in the template:
+```html
+<a href="/admin" class="admin-link">Admin</a>
 ```
 
-## main.js Change
-```javascript
-import router from './router.js';
-app.use(router);
+### src/server/api.js (if not already done in M20)
+Ensure Express serves admin SPA static files at `/admin`:
+```js
+app.use('/admin', express.static(path.join(__dirname, '../ui/admin/dist')));
 ```
 
-## Alternative (if admin is same-origin iframe/redirect)
-Server already serves `/admin` from `src/ui/admin/dist`. Client just needs a link — no router needed. In that case, add `<a href="/admin">` to App.vue nav.
+## Files to Modify
+- `src/ui/client/src/App.vue` — add `<a href="/admin">` nav link
 
-## Preferred: Server-side routing
-Check `src/server/api.js` — if it already serves `/admin` statically, client only needs a nav link. No router required.
+## Files to Verify (no change needed if M20 complete)
+- `src/server/api.js` — confirm `/admin` static mount exists
 
 ## Test Cases
-1. `GET /admin` → returns admin HTML (server-side, already handled by api.js)
-2. Client App.vue has link to `/admin`
+- `GET /admin` returns 200 with HTML (DBB-004)
+- Client UI shows link to `/admin`
+- Clicking link navigates to admin panel without 404
+
+## Edge Cases
+- Admin dist not built → serve 404 with helpful message
+- `/admin` path conflict with API routes → mount static before catch-all

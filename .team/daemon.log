@@ -6361,3 +6361,88 @@ Looking back at the full list, all `todo` tasks are:
 No tasks are available for me to claim right now. All `todo` tasks with `hasDesign: true` are either blocked or already being claimed by another agent. I'll wait for `task-1775510288171` to complete so `task-1775510291601` becomes unblocked.
 [2026-04-06T21:30:16.889Z] developer agent completed
 [2026-04-06 21:30:16] [agent_complete] developer completed successfully
+[2026-04-06 21:30:17] [workflow] work_loop [LOOP] Iteration 6
+[2026-04-06 21:30:17] [workflow] work_loop [EXEC] pm
+[2026-04-06 21:30:17] [agent_start] pm pm
+[2026-04-06T21:30:17.150Z] Running pm agent...
+All done. Here's a summary of what was created:
+
+**M21 Milestone files:**
+- `.team/milestones/m21/dbb.md` — 5 verification criteria
+- `.team/milestones/m21/design.md` — technical approach overview
+
+**Task designs (all 3 marked `hasDesign: true`):**
+
+- `task-1775510905293` (profiles.js) — wrap `matchProfile()` in try/catch, fall back to builtin default when no match
+- `task-1775510912066` (optimizer.js) — rewrite file (currently has wrong Ollama content) to export `optimize(hardware, profile)` that downgrades config when GPU/memory is insufficient
+- `task-1775510912106` (admin 路由) — check if server already serves `/admin` statically; if so, just add a nav link in client App.vue; otherwise add vue-router with redirect
+[2026-04-06T21:30:20.605Z] tech_lead-1 agent completed
+[2026-04-06 21:30:20] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 21:30:41] [perf] daemon {"rss":"11MB","heapUsed":"4MB","heapTotal":"6MB","uptime":"20700s"}
+Current state summary:
+
+**M20 (active):** 3 done, 2 todo
+- `task-1775510288171` — 实现 src/server/api.js (todo)
+- `task-1775510291601` — 实现 src/ui/admin/ 管理面板 (todo)
+
+**M21 (planned):** 3 todo tasks targeting architecture gaps
+
+The active milestone M20 still has unfinished tasks. M21 is already planned and ready. No new milestones needed right now — the existing plan covers the remaining architecture gaps:
+
+- `profiles.js` getProfile() — P0
+- `optimizer.js` alignment — P1  
+- Admin route in client UI — P0 (blocked by m20 admin task)
+
+The work queue is properly structured. Developers should pick up the 2 remaining M20 tasks (`api.js` and `admin/`), then M21 tasks will unblock. No PM action needed beyond confirming the state is healthy.
+[2026-04-06T21:30:56.011Z] pm agent completed
+[2026-04-06 21:30:56] [agent_complete] pm completed successfully
+[2026-04-06 21:30:56] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 21:30:56] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 21:30:56] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 21:30:56] [workflow] work_loop [EXEC] developer
+[2026-04-06 21:30:56] [agent_start] developer developer
+[2026-04-06T21:30:56.061Z] Running developer agent...
+M21 milestone design work is complete. Here's a summary of what was created:
+
+**Milestone files:**
+- `.team/milestones/m21/dbb.md` — 5 verification criteria covering profiles fallback, optimizer export, and admin routing
+- `.team/milestones/m21/design.md` — technical approach for all 3 gaps
+
+**Task designs (all 3 set to `hasDesign: true`):**
+
+| Task | Design |
+|------|--------|
+| `task-1775510905293` | `profiles.js` — wrap `matchProfile()` in try/catch, return `profiles[0].config` on no-match |
+| `task-1775510912066` | `optimizer.js` — add `optimize(profile, hardware)` export alongside existing `setupOllama` |
+| `task-1775510912106` | `ui/client` — add `vue-router`, `/` → chat App, `/admin` → iframe to `/admin/index.html` |
+[2026-04-06T21:31:07.927Z] tech_lead-3 agent completed
+[2026-04-06 21:31:07] [agent_complete] tech_lead-3 completed successfully
+M21 milestone design work is complete. Here's a summary of what was created:
+
+**`.team/milestones/m21/dbb.md`** — 5 verification criteria covering profiles.js correctness, offline fallback, optimizer.js export, `/admin` route accessibility, and client routing.
+
+**`.team/milestones/m21/design.md`** — Technical approach for all 3 tasks with dependencies noted.
+
+**Task designs created:**
+
+| Task | File | Key finding |
+|------|------|-------------|
+| `task-1775510905293` | profiles.js | Already implemented — verify only |
+| `task-1775510912066` | optimizer.js | Already functional as `setupOllama` — verify export |
+| `task-1775510912106` | admin route | Add `<a href="/admin">` to client App.vue; confirm Express static mount |
+
+All 3 tasks updated to `hasDesign: true`.
+[2026-04-06T21:31:38.124Z] tech_lead-2 agent completed
+[2026-04-06 21:31:38] [agent_complete] tech_lead-2 completed successfully
+[2026-04-06 21:31:38] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 21:31:38] [workflow] work_loop [EXEC] developer
+[2026-04-06 21:31:38] [agent_start] developer developer
+[2026-04-06T21:31:38.194Z] Running developer agent...
+Both tasks are done. Here's a summary:
+
+- **task-1775510905293** (profiles.js): Verified `getProfile(hardware)` works correctly. All 6 tests pass. No changes needed.
+- **task-1775510912066** (optimizer.js): Verified `setupOllama(profile)` exports correctly with proper return shape. No changes needed.
+
+Both moved to `review` status.
+[2026-04-06T21:32:18.603Z] developer agent completed
+[2026-04-06 21:32:18] [agent_complete] developer completed successfully

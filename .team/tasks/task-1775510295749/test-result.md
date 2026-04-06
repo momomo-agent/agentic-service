@@ -1,19 +1,17 @@
-# Test Result: 创建 profiles/default.json
+# Test Result: task-1775510295749 — 创建 profiles/default.json
 
-## Status: PASSED
+## Summary
+- Total: 6 | Passed: 6 | Failed: 0
 
-## Tests Run: 4 passed, 0 failed
-
-### Results
-- ✅ DBB-007: profiles/default.json is valid JSON
-- ✅ has profiles array
-- ✅ DBB-007: at least one profile has llm, stt, tts, fallback fields
-- ✅ has a default/fallback profile (id=default, gpu=none, or empty match)
+## Test Results (test/m20-profiles.test.js)
+- ✅ is valid JSON with profiles array
+- ✅ has default profile entry
+- ✅ default profile has llm field
+- ✅ default profile has stt field
+- ✅ default profile has tts field
+- ✅ default profile has fallback field
 
 ## DBB Coverage
-- DBB-007: ✅ profiles/default.json exists and has correct structure
+- DBB-007: profiles/default.json exists and structure correct — PASS
 
-## Edge Cases
-- File contains no comments (valid JSON only) ✅
-- Has both `id=default` entry and empty-match fallback entry ✅
-- All required fields (llm, stt, tts, fallback) present ✅
+## Verdict: PASS
