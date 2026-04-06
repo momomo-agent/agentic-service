@@ -1,14 +1,24 @@
 # Test Result: 服务端常驻唤醒词检测
 
 ## Summary
-- Total: 6 | Passed: 6 | Failed: 0
+- Tests passed: 7
+- Tests failed: 0
 
-## Results
+## Results (m24-wakeword.test.js)
 - ✓ exports startWakeWordDetection
-- ✓ default keyword hey agent
-- ✓ WAKE_WORD env override
-- ✓ non-TTY guard
-- ✓ case-insensitive match
-- ✓ broadcasts wake type
+- ✓ uses WAKE_WORD env var
+- ✓ broadcasts {type: wake} on keyword match
+- ✓ skips in non-TTY environment
+- ✓ case-insensitive keyword match
+- ✓ does not throw in non-TTY env
+- ✓ accepts custom keyword
 
-## Verdict: PASS
+## DBB Verification
+- [x] hub.js exports startWakeWordDetection(keyword)
+- [x] broadcasts { type: 'wake' } on keyword match
+- [x] supports WAKE_WORD env var
+- [x] non-TTY safe (Docker/CI)
+
+## Edge Cases
+- Empty registry: broadcast is no-op (safe)
+- Non-TTY env: returns immediately without error

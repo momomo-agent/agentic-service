@@ -1,6 +1,6 @@
 {
-  "totalTests": 37,
-  "passed": 37,
+  "totalTests": 46,
+  "passed": 46,
   "failed": 0,
   "edgeCases": [
     "No test for matchProfile() logic against this file",

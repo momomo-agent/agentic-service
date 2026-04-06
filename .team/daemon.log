@@ -7513,3 +7513,24 @@ Summary of work completed:
 All remaining review tasks (task-1775513213884, task-1775513780215, task-1775513784884) are assigned to other agents. No further work available for tester-1.
 [2026-04-06T22:25:37.795Z] tester-1 agent completed
 [2026-04-06 22:25:37] [agent_complete] tester-1 completed successfully
+[2026-04-06 22:25:45] [error] daemon Watchdog: busy for 400min, force reset
+[2026-04-06 22:25:45] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T22:25:45.310Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 400min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 22:25:47] [perf] daemon {"rss":"33MB","heapUsed":"13MB","heapTotal":"14MB","uptime":"24006s"}
+All 4 review tasks are now complete:
+
+- `task-1775513213884` — HTTPS/LAN安全访问接入 → **done** (13 tests passed)
+- `task-1775513221598` — 服务端常驻唤醒词检测 → **done** (7 tests passed)
+- `task-1775513780215` — Ollama自动安装 → **done** (8 tests passed)
+- `task-1775513784884` — sense.js服务端无头模式 → **done** (6 tests passed)
+
+Total: 34 new tests, all passing. Test files written: `m24-https.test.js`, `m24-wakeword.test.js`, `m24-ollama-setup.test.js`, `m24-sense-headless.test.js`.
+[2026-04-06T22:27:34.632Z] tester-2 agent completed
+[2026-04-06 22:27:34] [agent_complete] tester-2 completed successfully

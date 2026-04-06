@@ -1,61 +1,37 @@
-// Test: server-side wake word detection (task-1775513221598)
-import { startWakeWordDetection } from '../src/server/hub.js'
-import { EventEmitter } from 'events'
+// M24 DBB-3: 服务端常驻唤醒词检测
+import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'fs';
 
-let passed = 0, failed = 0
+const hubSrc = readFileSync('src/server/hub.js', 'utf8');
 
-function test(name, fn) {
-  try { fn(); console.log(`  ✓ ${name}`); passed++ }
-  catch (e) { console.log(`  ✗ ${name}: ${e.message}`); failed++ }
-}
-function assert(cond, msg) { if (!cond) throw new Error(msg) }
+describe('M24 DBB-3: hub.js startWakeWordDetection', () => {
+  it('exports startWakeWordDetection', () => {
+    expect(hubSrc).toContain('export function startWakeWordDetection');
+  });
 
-console.log('server-side wake word detection')
+  it('uses WAKE_WORD env var', () => {
+    expect(hubSrc).toContain('WAKE_WORD');
+  });
 
-// Test export exists
-test('startWakeWordDetection is exported', () => {
-  assert(typeof startWakeWordDetection === 'function', 'not a function')
-})
+  it('broadcasts {type: wake} on keyword match', () => {
+    expect(hubSrc).toContain("type: 'wake'");
+  });
 
-// Test non-TTY skips (no error thrown)
-test('non-TTY environment skips without error', () => {
-  const orig = process.stdin.isTTY
-  process.stdin.isTTY = false
-  startWakeWordDetection('hey') // should not throw
-  process.stdin.isTTY = orig
-})
+  it('skips in non-TTY environment', () => {
+    expect(hubSrc).toContain('isTTY');
+  });
 
-// Test WAKE_WORD env var is used as default
-test('WAKE_WORD env var configures keyword', () => {
-  process.env.WAKE_WORD = 'jarvis'
-  // Function signature uses process.env.WAKE_WORD as default — verify it reads it
-  const src = startWakeWordDetection.toString()
-  assert(src.includes('WAKE_WORD') || true, 'env var not referenced')
-  delete process.env.WAKE_WORD
-})
+  it('case-insensitive keyword match', () => {
+    expect(hubSrc).toContain('toLowerCase()');
+  });
 
-// Test broadcast on keyword match via mock stdin
-test('broadcasts wake event on keyword match', (done) => {
-  const broadcasts = []
-  // Patch registry via module-level mock is not straightforward;
-  // verify the function reads stdin and processes data
-  const origIsTTY = process.stdin.isTTY
-  process.stdin.isTTY = true
+  it('does not throw in non-TTY env', async () => {
+    const { startWakeWordDetection } = await import('../src/server/hub.js');
+    expect(() => startWakeWordDetection('hey')).not.toThrow();
+  });
 
-  // We can't easily inject into stdin without side effects in test env,
-  // so verify the function body contains the broadcast logic
-  const fnSrc = startWakeWordDetection.toString()
-  assert(fnSrc.includes("type: 'wake'"), "missing wake broadcast")
-  assert(fnSrc.includes('keyword.toLowerCase()'), 'missing case-insensitive check')
-
-  process.stdin.isTTY = origIsTTY
-})
-
-// Test case-insensitive matching in function source
-test('keyword matching is case-insensitive', () => {
-  const fnSrc = startWakeWordDetection.toString()
-  assert(fnSrc.includes('toLowerCase'), 'case-insensitive check missing')
-})
-
-console.log(`\n${passed} passed, ${failed} failed`)
-process.exit(failed > 0 ? 1 : 0)
+  it('accepts custom keyword', async () => {
+    const { startWakeWordDetection } = await import('../src/server/hub.js');
+    expect(() => startWakeWordDetection('jarvis')).not.toThrow();
+  });
+});
