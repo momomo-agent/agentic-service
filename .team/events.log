@@ -2492,3 +2492,12 @@
 {"ts":"2026-04-06T16:25:56.120Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:4, done:8)\"}"}}
 {"ts":"2026-04-06T16:26:27.143Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775446002815","from":"testing","to":"done","title":"CLI 入口 + 一键安装"}}
 {"ts":"2026-04-06T16:26:34.209Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":13,"cpuUser":0.169394,"cpuSystem":0.169465}}}
+{"ts":"2026-04-06T16:26:34.301Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T16:26:34.302Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":11,"memoryTotalMB":12,"cpuUser":0.170752,"cpuSystem":0.172156}}}
+{"ts":"2026-04-06T16:26:57.147Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775492459233","from":"todo","to":"inProgress","title":"STT 运行时"}}
+{"ts":"2026-04-06T16:28:26.027Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (30min), skipping safety check","performance":{"memoryMB":11,"memoryTotalMB":12,"cpuUser":0.176773,"cpuSystem":0.178201}}}
+{"ts":"2026-04-06T16:28:26.030Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"55MB\",\"heapUsed\":\"12MB\",\"heapTotal\":\"12MB\",\"uptime\":\"1800s\"}"}}
+{"ts":"2026-04-06T16:28:47.124Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775492459233","from":"inProgress","to":"review","title":"STT 运行时"}}
+{"ts":"2026-04-06T16:28:47.158Z","type":"task_status","agent":null,"data":{"taskId":"task-1775492469000","from":"todo","to":"review","title":"TTS 运行时"}}
+{"ts":"2026-04-06T16:28:47.188Z","type":"task_status","agent":null,"data":{"taskId":"task-1775492469046","from":"todo","to":"review","title":"Admin 管理面板"}}
+{"ts":"2026-04-06T16:28:57.750Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":12,"cpuUser":0.180862,"cpuSystem":0.182759}}}

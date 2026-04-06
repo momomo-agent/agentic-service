@@ -1,10 +1,23 @@
 import express from 'express';
 import cors from 'cors';
+import multer from 'multer';
 import { promises as fs } from 'fs';
 import path from 'path';
 import os from 'os';
 import { chat } from '../runtime/llm.js';
+import * as stt from '../runtime/stt.js';
+import * as tts from '../runtime/tts.js';
 import { errorHandler } from './middleware.js';
+
+const upload = multer({ storage: multer.memoryStorage() });
+
+const logBuffer = [];
+const _log = console.log;
+console.log = (...args) => {
+  logBuffer.push({ ts: Date.now(), msg: args.join(' ') });
+  if (logBuffer.length > 200) logBuffer.shift();
+  _log(...args);
+};
 
 const CONFIG_PATH = path.join(os.homedir(), '.agentic-service', 'config.json');
 
@@ -82,6 +95,33 @@ export function createApp() {
       res.status(500).json({ error: e.message });
     }
   });
+
+  app.post('/api/transcribe', upload.single('audio'), async (req, res) => {
+    if (!req.file) return res.status(400).json({ error: 'audio required' });
+    try {
+      const text = await stt.transcribe(req.file.buffer);
+      res.json({ text });
+    } catch (e) {
+      res.status(e.code === 'EMPTY_AUDIO' ? 400 : 500).json({ error: e.message });
+    }
+  });
+
+  app.post('/api/synthesize', async (req, res) => {
+    const { text } = req.body;
+    if (!text) return res.status(400).json({ error: 'text required' });
+    try {
+      const audio = await tts.synthesize(text);
+      res.set('Content-Type', 'audio/wav').send(audio);
+    } catch (e) {
+      res.status(e.code === 'EMPTY_TEXT' ? 400 : 500).json({ error: e.message });
+    }
+  });
+
+  app.get('/api/logs', (req, res) => res.json(logBuffer.slice(-50)));
+
+  const adminDist = new URL('../../dist/admin', import.meta.url).pathname;
+  app.use('/admin', express.static(adminDist));
+  app.get('/admin', (req, res) => res.sendFile(path.join(adminDist, 'index.html')));
 
   app.use(errorHandler);
   return app;
