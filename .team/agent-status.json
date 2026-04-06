@@ -24,9 +24,9 @@
     "retryCount": 0
   },
   "developer": {
-    "status": "running",
-    "lastRun": "2026-04-06T22:58:18.533Z",
-    "currentTask": "developer",
+    "status": "idle",
+    "lastRun": "2026-04-06T22:59:21.649Z",
+    "currentTask": null,
     "retryCount": 1
   },
   "tester": {

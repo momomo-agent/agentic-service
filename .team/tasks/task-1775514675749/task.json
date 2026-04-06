@@ -2,13 +2,13 @@
   "id": "task-1775514675749",
   "title": "src/runtime/sense+memory.js实现",
   "description": "实现MediaPipe sense runtime和memory runtime",
-  "status": "in-progress",
+  "status": "review",
   "priority": "P0",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m27",
   "hasDesign": true,
   "created": "2026-04-06T22:31:15.749Z",
-  "updated": "2026-04-06T22:52:54.934Z",
+  "updated": "2026-04-06T22:59:20.288Z",
   "milestoneId": "m27"
 }
