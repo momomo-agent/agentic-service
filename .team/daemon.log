@@ -290,3 +290,25 @@ Perfect! I've completed testing for task-1775446002661 (硬件检测器). Here's
 **Status:** Task marked as DONE. The implementation meets all acceptance criteria and is production-ready for M1 milestone.
 [2026-04-06T05:33:41.468Z] tester agent completed
 [2026-04-06 05:33:41] [agent_complete] tester completed successfully
+[2026-04-06 05:33:41] [workflow] work_loop [EXEC] developer
+[2026-04-06 05:33:41] [agent_start] developer developer
+[2026-04-06T05:33:41.566Z] Running developer agent...
+[2026-04-06 05:36:24] [perf] daemon {"rss":"56MB","heapUsed":"5MB","heapTotal":"6MB","uptime":"1500s"}
+Task completed! I've successfully implemented the remote profiles feature:
+
+**What was built:**
+- `profiles/default.json` - Configuration profiles for different hardware setups
+- `src/detector/profiles.js` - Main module with remote fetch, caching, and fallback logic
+- `src/detector/matcher.js` - Scoring algorithm to match hardware to optimal config
+- `test/detector/profiles.test.js` - Unit tests (all passing)
+
+**Key features:**
+- Fetches profiles from CDN with 5s timeout
+- Local cache at `~/.agentic-service/profiles.json` (7-day expiry)
+- Fallback chain: cache → remote → expired cache → builtin
+- Smart matching with weighted criteria (platform, GPU, arch, memory)
+- Empty match criteria acts as catch-all default
+
+The task is now in review status.
+[2026-04-06T05:38:53.772Z] developer agent completed
+[2026-04-06 05:38:53] [agent_complete] developer completed successfully
