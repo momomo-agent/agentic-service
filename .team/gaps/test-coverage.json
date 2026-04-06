@@ -1,6 +1,6 @@
 {
-  "totalTests": 116,
-  "passed": 116,
+  "totalTests": 109,
+  "passed": 109,
   "failed": 0,
   "edgeCases": [
     "Ollama installed but service not running (ollama serve not started)",
@@ -9,7 +9,10 @@
     "Concurrent pull attempts",
     "Concurrent PUT /api/config writes not tested",
     "Malformed JSON body to PUT /api/config (400 from express.json middleware) not tested",
-    "Non-EADDRINUSE listen errors (e.g. EACCES) pass through — not explicitly tested"
+    "Non-EADDRINUSE listen errors (e.g. EACCES) pass through — not explicitly tested",
+    "CLI --port flag with non-numeric value not tested",
+    "SIGINT graceful shutdown not unit tested (integration only)",
+    "npx invocation end-to-end not tested"
   ],
   "coverage": "95%"
 }

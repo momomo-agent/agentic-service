@@ -1414,3 +1414,100 @@ Summary of what was implemented:
 - `package.json` — Added `start`/`dev` scripts, `commander` and `open` dependencies
 [2026-04-06T16:19:49.776Z] developer agent completed
 [2026-04-06 16:19:49] [agent_complete] developer completed successfully
+[2026-04-06 16:19:51] [workflow] work_loop [LOOP] Iteration 5
+[2026-04-06 16:19:51] [workflow] work_loop [EXEC] pm
+[2026-04-06 16:19:51] [agent_start] pm pm
+[2026-04-06T16:19:52.032Z] Running pm agent...
+[2026-04-06 16:20:41] [perf] daemon {"rss":"47MB","heapUsed":"11MB","heapTotal":"12MB","uptime":"2100s"}
+[2026-04-06 16:21:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:8)
+[2026-04-06 16:21:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:8)
+[2026-04-06 16:21:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:8)
+Summary of PM actions taken:
+
+**M2** → marked `completed` (all 3 tasks were `done`)
+
+**M3** → created as `planned` with 3 tasks:
+- STT 运行时 (P0) — `src/runtime/stt.js` + `/api/transcribe`
+- TTS 运行时 (P0) — `src/runtime/tts.js` + `/api/synthesize`
+- Admin 管理面板 (P1) — `src/ui/admin/`
+
+**M1** → still `active`, blocked on tester approving `CLI 入口 + 一键安装` (in `review`)
+
+No further action needed until tester completes the M1 review.
+[2026-04-06T16:21:50.372Z] pm agent completed
+[2026-04-06 16:21:50] [agent_complete] pm completed successfully
+[2026-04-06 16:21:50] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 16:21:50] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 16:21:50] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 16:21:50] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 16:21:50] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T16:21:50.418Z] Running tech_lead-2 agent...
+[2026-04-06T16:21:50.418Z] Running tech_lead-3 agent...
+[2026-04-06T16:21:50.419Z] Running tech_lead-1 agent...
+[2026-04-06 16:21:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:8)
+[2026-04-06 16:22:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:8)
+[2026-04-06 16:22:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:8)
+Done. Here's a summary of what was created:
+
+**M3 milestone files:**
+- `.team/milestones/m3/dbb.md` — verification criteria for STT, TTS, and Admin panel
+- `.team/milestones/m3/design.md` — technical architecture overview
+
+**Task designs (all 3 marked `hasDesign=true`):**
+- `task-1775492459233` (STT 运行时) — `src/runtime/stt.js` + `/api/transcribe` endpoint design
+- `task-1775492469000` (TTS 运行时) — `src/runtime/tts.js` + `/api/synthesize` endpoint design
+- `task-1775492469046` (Admin 管理面板) — `src/ui/admin/` Vue 3 SPA + `/api/logs` endpoint + Vite multi-page config
+
+All M3 tasks are ready for developer assignment.
+[2026-04-06T16:23:14.179Z] tech_lead-2 agent completed
+[2026-04-06 16:23:14] [agent_complete] tech_lead-2 completed successfully
+[2026-04-06 16:23:26] [perf] daemon {"rss":"54MB","heapUsed":"11MB","heapTotal":"12MB","uptime":"1500s"}
+[2026-04-06 16:23:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:8)
+M3 milestone design work is complete. Here's a summary of what was created:
+
+**Milestone files:**
+- `.team/milestones/m3/dbb.md` — verification criteria for STT, TTS, admin panel, and tests
+- `.team/milestones/m3/design.md` — technical approach covering runtime modules, API endpoints, and admin UI
+
+**Task designs (all marked `hasDesign: true`):**
+- `task-1775492459233` (STT 运行时) — `src/runtime/stt.js` with lazy-loaded agentic-voice, `/api/transcribe` multer endpoint
+- `task-1775492469000` (TTS 运行时) — `src/runtime/tts.js` with lazy-loaded agentic-voice, `/api/synthesize` endpoint returning wav
+- `task-1775492469046` (Admin 管理面板) — Vue 3 SPA at `src/ui/admin/` with HardwareInfo, ProfileConfig, LogViewer components
+
+All three tasks are ready for developer assignment.
+[2026-04-06T16:23:52.836Z] tech_lead-3 agent completed
+[2026-04-06 16:23:52] [agent_complete] tech_lead-3 completed successfully
+Done. Here's a summary of what was completed:
+
+**M3 milestone** — `dbb.md` and `design.md` already existed and were complete.
+
+**task-1775492469046 (Admin 管理面板)** — was the only task missing a design. Created `design.md` covering:
+- `GET /api/logs` endpoint (in-memory log buffer, last 50 entries)
+- `/admin` static file serving in `src/server/api.js`
+- `src/ui/admin/` Vite + Vue 3 app structure with 3 tabs (hardware, config, logs)
+- Edge cases and test cases
+
+Updated `hasDesign: true` on the task.
+
+The other two tasks (STT and TTS runtimes) already had design files.
+[2026-04-06T16:23:55.094Z] tech_lead-1 agent completed
+[2026-04-06 16:23:55] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 16:23:55] [workflow] work_loop [EXEC] tester
+[2026-04-06 16:23:55] [agent_start] tester tester
+[2026-04-06T16:23:55.134Z] Running tester agent...
+[2026-04-06 16:23:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:8)
+[2026-04-06 16:24:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:8)
+[2026-04-06 16:24:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:8)
+[2026-04-06 16:25:41] [perf] daemon {"rss":"52MB","heapUsed":"12MB","heapTotal":"13MB","uptime":"2400s"}
+[2026-04-06 16:25:41] [agent_start] daemon Still busy (40min), skipping safety check
+[2026-04-06 16:25:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:4, done:8)
+[2026-04-06 16:25:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:4, done:8)
+Task `task-1775446002815` (CLI 入口 + 一键安装) is complete.
+
+**Summary:**
+- 9 new CLI tests written in `test/cli/cli.test.js`
+- 109/109 total tests passing
+- Task marked `done`
+- `test-coverage.json` updated with CLI edge cases
+[2026-04-06T16:26:34.206Z] tester agent completed
+[2026-04-06 16:26:34] [agent_complete] tester completed successfully

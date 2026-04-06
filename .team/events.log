@@ -2444,3 +2444,51 @@
 {"ts":"2026-04-06T16:18:26.026Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"58MB\",\"heapUsed\":\"10MB\",\"heapTotal\":\"11MB\",\"uptime\":\"1200s\"}"}}
 {"ts":"2026-04-06T16:19:37.036Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775446002815","from":"inProgress","to":"review","title":"CLI 入口 + 一键安装"}}
 {"ts":"2026-04-06T16:19:50.014Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":10,"cpuUser":0.127734,"cpuSystem":0.115557}}}
+{"ts":"2026-04-06T16:19:51.960Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 5"}}
+{"ts":"2026-04-06T16:19:51.962Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T16:19:51.962Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":10,"cpuUser":0.132172,"cpuSystem":0.12448}}}
+{"ts":"2026-04-06T16:20:41.474Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"47MB\",\"heapUsed\":\"11MB\",\"heapTotal\":\"12MB\",\"uptime\":\"2100s\"}"}}
+{"ts":"2026-04-06T16:20:59.234Z","type":"task_created","agent":null,"data":{"taskId":"task-1775492459233","title":"STT 运行时","priority":"P1","group":"m3"}}
+{"ts":"2026-04-06T16:21:09.001Z","type":"task_created","agent":null,"data":{"taskId":"task-1775492469000","title":"TTS 运行时","priority":"P1","group":"m3"}}
+{"ts":"2026-04-06T16:21:09.047Z","type":"task_created","agent":null,"data":{"taskId":"task-1775492469046","title":"Admin 管理面板","priority":"P1","group":"m3"}}
+{"ts":"2026-04-06T16:21:11.627Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:21:11.627Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:21:26.099Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:21:26.100Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:21:41.630Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:21:41.631Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:21:50.377Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":12,"cpuUser":0.13866,"cpuSystem":0.13355}}}
+{"ts":"2026-04-06T16:21:50.381Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T16:21:50.381Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-06T16:21:50.382Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":10,"memoryTotalMB":11,"cpuUser":0.140051,"cpuSystem":0.136356}}}
+{"ts":"2026-04-06T16:21:50.382Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":0.140229,"cpuSystem":0.136826}}}
+{"ts":"2026-04-06T16:21:50.383Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"tech_lead","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":0.140368,"cpuSystem":0.13719}}}
+{"ts":"2026-04-06T16:21:56.100Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:21:56.101Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:22:41.632Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:22:41.634Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:22:56.108Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:22:56.109Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:23:14.184Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":12,"cpuUser":0.148587,"cpuSystem":0.14613}}}
+{"ts":"2026-04-06T16:23:26.028Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"54MB\",\"heapUsed\":\"11MB\",\"heapTotal\":\"12MB\",\"uptime\":\"1500s\"}"}}
+{"ts":"2026-04-06T16:23:41.637Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:23:41.638Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:23:52.840Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":11,"cpuUser":0.152532,"cpuSystem":0.150036}}}
+{"ts":"2026-04-06T16:23:55.098Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":11,"cpuUser":0.1531,"cpuSystem":0.150689}}}
+{"ts":"2026-04-06T16:23:55.102Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-06T16:23:55.102Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":11,"memoryTotalMB":11,"cpuUser":0.154612,"cpuSystem":0.153201}}}
+{"ts":"2026-04-06T16:23:56.110Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:23:56.110Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:24:13.966Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775446002815","from":"review","to":"testing","title":"CLI 入口 + 一键安装"}}
+{"ts":"2026-04-06T16:24:41.641Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:24:41.641Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:24:56.115Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:24:56.117Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:25:41.477Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"52MB\",\"heapUsed\":\"12MB\",\"heapTotal\":\"13MB\",\"uptime\":\"2400s\"}"}}
+{"ts":"2026-04-06T16:25:41.479Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (40min), skipping safety check","performance":{"memoryMB":12,"memoryTotalMB":14,"cpuUser":0.153043,"cpuSystem":0.132368}}}
+{"ts":"2026-04-06T16:25:41.646Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:25:41.647Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:25:56.119Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:4, done:8)"}}
+{"ts":"2026-04-06T16:25:56.120Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:4, done:8)\"}"}}
+{"ts":"2026-04-06T16:26:27.143Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775446002815","from":"testing","to":"done","title":"CLI 入口 + 一键安装"}}
+{"ts":"2026-04-06T16:26:34.209Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":13,"cpuUser":0.169394,"cpuSystem":0.169465}}}
