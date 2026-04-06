@@ -33,6 +33,39 @@ async function* chatWithOllama(messages) {
   }
 }
 
+async function* chatWithAnthropic(messages, model) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) throw new Error('ANTHROPIC_API_KEY not set');
+
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01'
+    },
+    body: JSON.stringify({ model, messages, stream: true, max_tokens: 4096 })
+  });
+
+  if (!response.ok) throw new Error(`Anthropic API error: ${response.status}`);
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    for (const line of decoder.decode(value).split('\n').filter(l => l.startsWith('data: '))) {
+      try {
+        const data = JSON.parse(line.slice(6));
+        if (data.type === 'content_block_delta' && data.delta?.text) {
+          yield { type: 'content', content: data.delta.text, done: false };
+        }
+      } catch { /* ignore */ }
+    }
+  }
+}
+
 async function* chatWithOpenAI(messages, model) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error('OPENAI_API_KEY not set');
@@ -74,9 +107,9 @@ export async function* chat(message, options = {}) {
   }
 
   const config = await loadConfig();
-  if (config.fallback.provider === 'openai') {
-    yield* chatWithOpenAI(messages, config.fallback.model);
-  } else {
-    throw new Error(`Unsupported fallback provider: ${config.fallback.provider}`);
-  }
+  const { provider, model } = config.fallback;
+  yield { type: 'meta', provider: 'cloud' };
+  if (provider === 'openai') yield* chatWithOpenAI(messages, model);
+  else if (provider === 'anthropic') yield* chatWithAnthropic(messages, model);
+  else throw new Error(`Unsupported fallback provider: ${provider}`);
 }

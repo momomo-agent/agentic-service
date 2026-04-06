@@ -1,5 +1,5 @@
 import { embed } from './embed.js'
-import { get, set } from '../store/index.js'
+import { get, set, del } from '../store/index.js'
 
 const INDEX_KEY = 'mem:__index__'
 
@@ -15,6 +15,15 @@ export async function add(text) {
   index.push(id)
   await set(INDEX_KEY, index)
 }
+
+export async function remove(key) {
+  await del(key)
+  const index = await getIndex()
+  const updated = index.filter(id => id !== key)
+  await set(INDEX_KEY, updated)
+}
+
+export { remove as delete }
 
 export async function search(query, topK = 5) {
   if (!query) return []

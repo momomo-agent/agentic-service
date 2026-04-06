@@ -1,10 +1,20 @@
 import { chat as llmChat } from '../runtime/llm.js';
 
+function normalizeMessages(messages) {
+  return messages.map(msg => {
+    if (msg.role === 'tool' && msg.tool_use_id) {
+      return { role: 'user', content: [{ type: 'tool_result', tool_use_id: msg.tool_use_id, content: String(msg.content) }] };
+    }
+    return msg;
+  });
+}
+
 async function* chatWithTools(messages, tools) {
+  const normalized = normalizeMessages(messages);
   // Try Ollama with tools via native API
   const config = { llm: { provider: 'ollama', model: 'gemma4:26b' } };
   try {
-    const body = { model: config.llm.model, messages, stream: true };
+    const body = { model: config.llm.model, messages: normalized, stream: true };
     if (tools?.length) body.tools = tools;
 
     const response = await fetch('http://localhost:11434/api/chat', {
@@ -27,7 +37,7 @@ async function* chatWithTools(messages, tools) {
           const data = JSON.parse(line);
           if (data.message?.tool_calls?.length) {
             for (const tc of data.message.tool_calls) {
-              yield { type: 'tool_use', id: tc.id || `call_${Date.now()}`, name: tc.function.name, input: tc.function.arguments };
+              yield { type: 'tool_use', id: tc.id || `call_${Date.now()}`, name: tc.function.name, input: typeof tc.function.arguments === 'string' ? JSON.parse(tc.function.arguments) : tc.function.arguments };
             }
           } else if (data.message?.content) {
             yield { type: 'content', content: data.message.content, done: data.done || false };
@@ -49,7 +59,7 @@ async function* chatWithTools(messages, tools) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error('OPENAI_API_KEY not set');
 
-  const body = { model: 'gpt-4o-mini', messages, stream: true };
+  const body = { model: 'gpt-4o-mini', messages: normalized, stream: true };
   if (tools?.length) body.tools = tools.map(t => ({ type: 'function', function: t }));
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {

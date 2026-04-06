@@ -2333,3 +2333,17 @@ Task `task-1775494979818` (语音UI控件) is complete.
 **Edge cases noted:** VAD AudioContext (browser-only), singleton wake word state, missing HTTP error handling in PushToTalk.
 [2026-04-06T17:21:30.334Z] tester agent completed
 [2026-04-06 17:21:30] [agent_complete] tester completed successfully
+[2026-04-06 17:21:30] [workflow] work_loop [EXEC] developer
+[2026-04-06 17:21:30] [agent_start] developer developer
+[2026-04-06T17:21:30.454Z] Running developer agent...
+[2026-04-06 17:23:26] [perf] daemon {"rss":"55MB","heapUsed":"5MB","heapTotal":"8MB","uptime":"5100s"}
+Both tasks are complete and moved to review:
+
+1. **task-1775495670314** (云端 LLM 回退 - P0): Added `chatWithAnthropic()` streaming generator to `src/runtime/llm.js`, updated fallback routing to support both `openai` and `anthropic` providers, and added `{ type: 'meta', provider: 'cloud' }` yield before cloud delegation.
+
+2. **task-1775495680417** (DBB 规范修复 - P1): 
+   - `src/runtime/memory.js`: Added `delete` export (via `remove` alias) using store's `del()`
+   - `src/server/brain.js`: Added `normalizeMessages()` to convert legacy `role:'tool'` format to Anthropic spec `tool_result` format; fixed Ollama tool_use input JSON.parse guard
+   - Other items (SIGINT, CDN URL, progress display) were already correctly implemented
+[2026-04-06T17:24:38.749Z] developer agent completed
+[2026-04-06 17:24:38] [agent_complete] developer completed successfully
