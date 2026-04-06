@@ -2,13 +2,13 @@
   "id": "task-1775514571886",
   "title": "profiles.js getProfile(hardware)实现验证 + cpu-only profile",
   "description": "验证src/detector/profiles.js中getProfile(hardware)已实现，补充cpu-only profile，关闭architecture gap",
-  "status": "inProgress",
+  "status": "review",
   "priority": "P0",
-  "assignee": "developer",
+  "assignee": null,
   "blockedBy": [],
   "groupId": "m26",
   "hasDesign": true,
   "created": "2026-04-06T22:29:31.886Z",
-  "updated": "2026-04-06T22:50:23.108Z",
+  "updated": "2026-04-06T22:51:26.078Z",
   "milestoneId": "m26"
 }
