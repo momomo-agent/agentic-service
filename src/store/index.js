@@ -25,3 +25,5 @@ export async function del(key) {
   const store = await getStore()
   await store.delete(key)
 }
+
+export { del as delete };

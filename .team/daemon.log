@@ -4520,3 +4520,136 @@ No tasks remain in "review" status.
 All tasks are in "done" status — there's nothing in "review" status to claim and test. The pipeline is fully complete.
 [2026-04-06T20:35:41.075Z] tester agent completed
 [2026-04-06 20:35:41] [agent_complete] tester completed successfully
+[2026-04-06 20:35:41] [workflow] milestone_qg [EXEC] pm
+[2026-04-06 20:35:41] [agent_start] pm pm
+[2026-04-06T20:35:41.190Z] Running pm agent...
+[2026-04-06 20:35:41] [error] daemon Watchdog: busy for 290min, force reset
+[2026-04-06 20:35:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T20:35:41.599Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 290min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 20:35:41] [perf] daemon {"rss":"36MB","heapUsed":"9MB","heapTotal":"11MB","uptime":"17400s"}
+M15 is now active. Summary:
+
+**M14** → marked `completed` (all 4 tasks done)
+
+**M15: DBB修复 + sense.js兼容 + 唤醒词广播** — 5 tasks created:
+
+| Task | Priority | Description |
+|------|----------|-------------|
+| task-1775507803330 | — | sense.js移除requestAnimationFrame，Node.js兼容 |
+| task-1775507813507 | — | store.js导出delete()别名 |
+| task-1775507813540 | — | hub.js唤醒词事件广播 |
+| task-1775507818493 | — | hub.js心跳超时60s修复 |
+| task-1775507818526 | — | brain.js tool_use响应补text字段 |
+
+All tasks target remaining DBB partial gaps. Ready for developer assignment.
+[2026-04-06T20:37:11.359Z] pm agent completed
+[2026-04-06 20:37:11] [agent_complete] pm completed successfully
+[2026-04-06 20:37:11] [workflow] milestone_qg [BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop
+[2026-04-06 20:37:11] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 20:37:11] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 20:37:11] [workflow] work_loop [EXEC] pm
+[2026-04-06 20:37:11] [agent_start] pm pm
+[2026-04-06T20:37:11.425Z] Running pm agent...
+M15 is active with 5 `todo` tasks. All previous milestones (m1-m14) are completed. The tasks are ready to be picked up by developers.
+
+Current M15 status:
+- `task-1775507803330` — sense.js: Node.js兼容性修复 (P0, todo)
+- `task-1775507813507` — store.js: delete()别名 (P1, todo)
+- `task-1775507813540` — hub.js: 唤醒词事件广播 (P1, todo)
+- `task-1775507818493` — hub.js: 心跳超时修复为60s (P1, todo)
+- `task-1775507818526` — brain.js: tool_use响应补充text字段 (P1, todo)
+
+All tasks are unblocked and ready for assignment. No new milestone needed — M15 is the active milestone with work queued for developers.
+[2026-04-06T20:37:41.024Z] pm agent completed
+[2026-04-06 20:37:41] [agent_complete] pm completed successfully
+[2026-04-06 20:37:41] [workflow] work_loop [EXEC] qa_lead
+[2026-04-06 20:37:41] [agent_start] qa_lead qa_lead
+[2026-04-06T20:37:41.069Z] Running qa_lead agent...
+Done. M15 DBB written with 7 verification criteria covering all 5 scope items, and milestone status updated to `ready-for-work`.
+[2026-04-06T20:38:24.239Z] qa_lead agent completed
+[2026-04-06 20:38:24] [agent_complete] qa_lead completed successfully
+[2026-04-06 20:38:24] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 20:38:24] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 20:38:24] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 20:38:24] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T20:38:24.289Z] Running tech_lead-3 agent...
+[2026-04-06T20:38:24.289Z] Running tech_lead-2 agent...
+[2026-04-06T20:38:24.291Z] Running tech_lead-1 agent...
+[2026-04-06 20:38:26] [agent_start] daemon Still busy (20min), skipping safety check
+[2026-04-06 20:38:26] [perf] daemon {"rss":"38MB","heapUsed":"8MB","heapTotal":"11MB","uptime":"16800s"}
+M15 tech lead work is complete:
+
+**Milestone m15 — DBB修复 + sense.js兼容 + 唤醒词广播**
+
+- `design.md` created at `.team/milestones/m15/design.md`
+- All 5 tasks marked `hasDesign: true`
+
+**Task designs summary:**
+
+| Task | Action |
+|------|--------|
+| task-1775507803330 | sense.js: replace `requestAnimationFrame` → `setInterval(100ms)` |
+| task-1775507813507 | store/index.js: add `export { del as delete }` |
+| task-1775507813540 | hub.js wakeword broadcast — already correct, verify only |
+| task-1775507818493 | hub.js 60s timeout — already correct, verify only |
+| task-1775507818526 | brain.js tool_use text field — already correct, verify only |
+
+Only 2 files need actual code changes. The other 3 tasks are verification tasks confirming existing implementations match DBB criteria.
+[2026-04-06T20:40:05.895Z] tech_lead-3 agent completed
+[2026-04-06 20:40:05] [agent_complete] tech_lead-3 completed successfully
+All M15 task designs are complete. Here's a summary:
+
+**M15 tasks designed (5/5):**
+
+- `task-1775507803330` — sense.js: replace `requestAnimationFrame` with `setInterval(loop, 100)`
+- `task-1775507813507` — store.js: add `export { del as delete }` alias
+- `task-1775507813540` — hub.js wakeword broadcast: already implemented, verify and close
+- `task-1775507818493` — hub.js heartbeat timeout: already 60000ms, verify and close
+- `task-1775507818526` — brain.js tool_use text field: already present in both paths, verify and close
+
+All tasks marked `hasDesign: true`. The milestone dbb.md was already present and correct.
+[2026-04-06T20:40:08.855Z] tech_lead-1 agent completed
+[2026-04-06 20:40:08] [agent_complete] tech_lead-1 completed successfully
+All done. Here's a summary of what was completed for M15:
+
+**Milestone design** (`m15/design.md`) — already existed and accurate. No changes needed.
+
+**Task designs** — all 5 already existed and were accurate:
+
+| Task | File | Action |
+|------|------|--------|
+| task-1775507803330 | `src/runtime/sense.js` | Replace `requestAnimationFrame` → `setInterval(100ms)` |
+| task-1775507813507 | `src/store/index.js` | Add `export { del as delete }` |
+| task-1775507813540 | `src/server/hub.js` | Verify only — `broadcastWakeword()` already wired |
+| task-1775507818493 | `src/server/hub.js` | Verify only — timeout already 60000ms |
+| task-1775507818526 | `src/server/brain.js` | Verify only — `text: ''` already present in both paths |
+
+All 5 tasks marked `hasDesign: true`. Developers can now pick up tasks from `todo` status.
+[2026-04-06T20:40:27.345Z] tech_lead-2 agent completed
+[2026-04-06 20:40:27] [agent_complete] tech_lead-2 completed successfully
+[2026-04-06 20:40:27] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 20:40:27] [workflow] work_loop [EXEC] developer
+[2026-04-06 20:40:27] [agent_start] developer developer
+[2026-04-06 20:40:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:55)
+[2026-04-06T20:40:27.390Z] Running developer agent...
+[2026-04-06 20:40:41] [perf] daemon {"rss":"36MB","heapUsed":"8MB","heapTotal":"10MB","uptime":"17700s"}
+[2026-04-06 20:40:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:55)
+[2026-04-06 20:40:57] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:55)
+[2026-04-06 20:41:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:55)
+[2026-04-06 20:41:57] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:55)
+All 5 tasks are complete and moved to review:
+
+- **task-1775507803330** (sense.js): Replaced `requestAnimationFrame` with `setInterval(100ms)` for Node.js compatibility
+- **task-1775507813507** (store.js): Added `export { del as delete }` alias
+- **task-1775507813540** (hub.js wakeword): Already correct, no changes needed
+- **task-1775507818493** (hub.js heartbeat): Already 60000ms, no changes needed
+- **task-1775507818526** (brain.js tool_use): Already has `text: ''`, no changes needed
+[2026-04-06T20:42:10.926Z] developer agent completed
+[2026-04-06 20:42:10] [agent_complete] developer completed successfully

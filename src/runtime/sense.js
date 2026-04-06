@@ -1,7 +1,7 @@
 import { createPipeline } from 'agentic-sense';
 
 let pipeline = null;
-let rafId = null;
+let intervalId = null;
 const handlers = {};
 
 export async function init(videoElement) {
@@ -20,7 +20,8 @@ function emit(type, data) {
 }
 
 export function start() {
-  function loop() {
+  if (intervalId != null) { clearInterval(intervalId); intervalId = null; }
+  intervalId = setInterval(() => {
     const video = pipeline?._video;
     if (video && video.readyState >= 2) {
       const result = pipeline.detect(video);
@@ -36,9 +37,7 @@ export function start() {
           .forEach(o => emit('object_detected', { label: o.label, confidence: o.confidence }));
       }
     }
-    rafId = requestAnimationFrame(loop);
-  }
-  rafId = requestAnimationFrame(loop);
+  }, 100);
 }
 
 export function detect(frame) {
@@ -53,6 +52,6 @@ export function detect(frame) {
 }
 
 export function stop() {
-  if (rafId != null) { cancelAnimationFrame(rafId); rafId = null; }
+  if (intervalId != null) { clearInterval(intervalId); intervalId = null; }
   pipeline = null;
 }
