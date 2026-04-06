@@ -4,7 +4,7 @@
     <MessageList :messages="messages" />
     <div class="input-row">
       <InputBox ref="inputBox" @send="handleSend" :disabled="loading" />
-      <PushToTalk @transcribed="onTranscribed" />
+      <PushToTalk ref="ptt" @transcribed="onTranscribed" />
     </div>
   </div>
 </template>
@@ -18,6 +18,9 @@ import { useWakeWord } from '../composables/useWakeWord.js';
 
 const { setWakeWord, check } = useWakeWord();
 const inputBox = ref(null);
+const ptt = ref(null);
+
+defineExpose({ startRecording: () => ptt.value?.start() });
 
 onMounted(async () => {
   try {

@@ -1,17 +1,26 @@
-let _provider = null
+import { getProfile } from '../detector/profiles.js';
 
-async function getProvider() {
-  if (!_provider) {
-    const { createSTT } = await import('agentic-voice')
-    _provider = await createSTT()
-  }
-  return _provider
+const ADAPTERS = {
+  sensevoice: () => import('agentic-voice/sensevoice'),
+  whisper:    () => import('agentic-voice/whisper'),
+  default:    () => import('agentic-voice/openai-whisper'),
+};
+
+let adapter = null;
+
+export async function init() {
+  let provider = 'default';
+  try {
+    const profile = await getProfile();
+    provider = profile?.stt?.provider ?? 'default';
+  } catch {}
+  const load = ADAPTERS[provider] ?? ADAPTERS.default;
+  adapter = await load();
 }
 
 export async function transcribe(audioBuffer) {
-  if (!audioBuffer || audioBuffer.length === 0) {
-    throw Object.assign(new Error('empty audio'), { code: 'EMPTY_AUDIO' })
-  }
-  const provider = await getProvider()
-  return provider.transcribe(audioBuffer)
+  if (!adapter) throw new Error('not initialized');
+  if (!audioBuffer || audioBuffer.length === 0)
+    throw Object.assign(new Error('empty audio'), { code: 'EMPTY_AUDIO' });
+  return adapter.transcribe(audioBuffer);
 }

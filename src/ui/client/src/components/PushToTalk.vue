@@ -11,6 +11,8 @@ import { ref } from 'vue';
 
 const emit = defineEmits(['transcribed']);
 const recording = ref(false);
+
+defineExpose({ start, stop });
 let recorder, chunks;
 
 async function start() {
