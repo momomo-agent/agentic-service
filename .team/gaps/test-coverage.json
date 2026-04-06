@@ -1,7 +1,7 @@
 {
-  "totalTests": 82,
-  "passed": 82,
-  "failed": 0,
+  "totalTests": 104,
+  "passed": 103,
+  "failed": 1,
   "edgeCases": [
     "HardwarePanel.vue missing — build will fail at runtime",
     "LogViewer.vue missing — build will fail at runtime",
@@ -9,7 +9,10 @@
     "capture timeout (10s) not tested — requires fake timers",
     "device disconnects mid-capture rejects pending promise — not directly tested",
     "/api/transcribe accepts multipart only, design says base64 JSON",
-    "PUT /api/config replaces config (no merge), design says merge"
+    "PUT /api/config replaces config (no merge), design says merge",
+    "tts.js missing init() and profile-based adapter selection (DBB-007/008 blocked)",
+    "sense.js: agentic-sense load failure not tested",
+    "WakeWord: wakeWord prop change mid-session not tested end-to-end"
   ],
-  "coverage": "98%"
+  "coverage": "97%"
 }
