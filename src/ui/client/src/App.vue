@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <a href="/admin" class="admin-link">Admin</a>
     <WakeWord v-if="wakeWord" :wakeWord="wakeWord" @activated="onWakeWord" />
     <ChatBox ref="chatBox" />
   </div>
