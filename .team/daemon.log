@@ -8100,3 +8100,124 @@ All three review tasks (`task-1775514571886`, `task-1775514586151`, `task-177551
 I'll wait for new tasks to enter review status or for the current ones to be released.
 [2026-04-06T22:41:07.366Z] tester-2 agent completed
 [2026-04-06 22:41:07] [agent_complete] tester-2 completed successfully
+[2026-04-06 22:41:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:13, done:101)
+All designs are complete. Here's a summary:
+
+**M27** (Runtime续 + Server层核心):
+- `.team/milestones/m27/dbb.md` — verification criteria
+- `.team/milestones/m27/design.md` — technical approach
+- 4 task designs created, `hasDesign=true` set:
+  - `task-1775514675715` — stt+tts.js (adapter pattern, error codes)
+  - `task-1775514675749` — sense+memory.js (MediaPipe + cosine search)
+  - `task-1775514675779` — hub+brain+api.js (WebSocket + SSE + REST)
+  - `task-1775514675809` — profiles/default.json (offline fallback)
+
+**M28** (VAD + HTTPS + CDN缓存 + Docker):
+- `.team/milestones/m28/dbb.md` — verification criteria
+- `.team/milestones/m28/design.md` — technical approach
+- 4 task designs created, `hasDesign=true` set:
+  - `task-1775515078705` — VAD (`@ricky0123/vad-web`, useVAD composable)
+  - `task-1775515085075` — HTTPS (cert.js + httpsServer.js, already implemented)
+  - `task-1775515085107` — CDN 7-day cache refresh (cachedAt timestamp check)
+  - `task-1775515085136` — Docker + setup.sh idempotency verification
+[2026-04-06T22:41:22.673Z] tech_lead-3 agent completed
+[2026-04-06 22:41:22] [agent_complete] tech_lead-3 completed successfully
+All tasks are complete. The tech lead work for the active milestone (m26) and planned milestones (m27, m28) is done:
+
+- **m26**: dbb.md, design.md, and all 5 task designs already existed
+- **m27**: dbb.md, design.md, and all 4 task designs already existed  
+- **m28**: dbb.md and design.md already existed; created 4 task designs and marked `hasDesign: true` for all tasks
+[2026-04-06T22:41:25.053Z] tech_lead-2 agent completed
+[2026-04-06 22:41:25] [agent_complete] tech_lead-2 completed successfully
+All done. Here's a summary of what was completed:
+
+**m27 tasks** (4 tasks, `hasDesign=true`):
+- `task-1775514675715` — stt+tts.js: adapter pattern, empty input validation, fallback to default
+- `task-1775514675749` — sense+memory.js: MediaPipe events, cosine similarity search
+- `task-1775514675779` — hub+brain+api.js: all REST endpoints, SSE streaming, error handling
+- `task-1775514675809` — profiles/default.json: 3 hardware profiles, offline fallback path
+
+**m28 tasks** (4 tasks, `hasDesign=true`):
+- `task-1775515078705` — VAD: `@ricky0123/vad-web`, push-to-talk/auto toggle, graceful fallback
+- `task-1775515085075` — HTTPS: cert.js + httpsServer.js, HTTP→HTTPS redirect on port 3001
+- `task-1775515085107` — CDN cache: 7-day mtime check, stale fallback, bundled default.json fallback
+- `task-1775515085136` — Docker+setup.sh: idempotent Node.js check, docker-compose verification steps
+
+**m28 milestone files** created: `dbb.md` + `design.md` (m27 already had both).
+[2026-04-06T22:41:47.779Z] tech_lead-1 agent completed
+[2026-04-06 22:41:47] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 22:41:47] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 22:41:47] [agent_start] tester-1 tester
+[2026-04-06 22:41:47] [agent_start] tester-2 tester
+[2026-04-06T22:41:47.844Z] Running tester-1 agent...
+[2026-04-06T22:41:47.844Z] Running tester-2 agent...
+All work is complete. Here's a summary of what was done:
+
+**M28 milestone files created:**
+- `.team/milestones/m28/dbb.md` — 10 verification criteria covering VAD, HTTPS, CDN cache, Docker, setup.sh
+- `.team/milestones/m28/design.md` — technical approach for all 4 m28 tasks
+
+**M27 task designs** — already existed, no changes needed
+
+**M28 task designs created (4 tasks):**
+- `task-1775515078705/design.md` — VAD integration via `@ricky0123/vad-web`, PTT fallback
+- `task-1775515085075/design.md` — HTTPS via `selfsigned` + HTTP→HTTPS redirect on port 3001
+- `task-1775515085107/design.md` — 7-day cache check via `fs.statSync().mtimeMs`, fallback chain
+- `task-1775515085136/design.md` — Docker healthcheck + setup.sh idempotency guards
+
+**All 8 tasks** (4 m27 + 4 m28) updated with `hasDesign: true`.
+[2026-04-06T22:41:53.988Z] tech_lead-1 agent completed
+[2026-04-06 22:41:53] [agent_complete] tech_lead-1 completed successfully
+All done. Here's a summary of what was completed:
+
+**M27 milestone files created:**
+- `.team/milestones/m27/dbb.md` — verification criteria for all 4 tasks
+- `.team/milestones/m27/design.md` — technical approach for runtime + server layer
+
+**M28 milestone files created:**
+- `.team/milestones/m28/dbb.md` — verification criteria for all 4 tasks
+- `.team/milestones/m28/design.md` — technical approach for VAD, HTTPS, CDN cache, Docker
+
+**Task designs written (8 tasks):**
+- `task-1775514675715` — stt+tts.js (adapter pattern, error codes)
+- `task-1775514675749` — sense+memory.js (browser/headless paths, cosine similarity)
+- `task-1775514675779` — hub+brain+api.js (WS device registry, LLM streaming, REST endpoints)
+- `task-1775514675809` — profiles/default.json (match hierarchy, offline fallback)
+- `task-1775515078705` — VAD integration (auto + push-to-talk modes)
+- `task-1775515085075` — HTTPS/LAN (cert generation, redirect)
+- `task-1775515085107` — CDN 7-day cache refresh (stale fallback logic)
+- `task-1775515085136` — Docker + setup.sh idempotency
+
+All 8 tasks updated with `hasDesign: true`.
+[2026-04-06T22:42:00.352Z] tech_lead-2 agent completed
+[2026-04-06 22:42:00] [agent_complete] tech_lead-2 completed successfully
+[2026-04-06 22:42:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 15min (active:13, done:101)
+[2026-04-06 22:42:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 15min (active:13, done:101)
+All designs are complete. Here's a summary of what was done:
+
+**M27** (Runtime续 + Server层核心):
+- `.team/milestones/m27/dbb.md` — 12 DBB criteria covering stt/tts/sense/memory/hub/brain/api
+- `.team/milestones/m27/design.md` — technical approach and task order
+- 4 task designs written, `hasDesign=true` set on all
+
+**M28** (VAD + HTTPS + CDN + Docker + setup.sh):
+- `.team/milestones/m28/dbb.md` — 9 DBB criteria
+- `.team/milestones/m28/design.md` — technical approach
+- 4 task designs written, `hasDesign=true` set on all
+
+All 8 tasks across m27 and m28 now have `hasDesign: true` and detailed designs covering exact file paths, function signatures, edge cases, and test cases.
+[2026-04-06T22:42:23.342Z] tech_lead-3 agent completed
+[2026-04-06 22:42:23] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 22:42:23] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 22:42:23] [agent_start] tester-1 tester
+[2026-04-06 22:42:23] [agent_start] tester-2 tester
+[2026-04-06T22:42:23.391Z] Running tester-2 agent...
+[2026-04-06T22:42:23.391Z] Running tester-1 agent...
+There are no tasks in "review" status available for me to claim right now. All current tasks are either:
+- `done` - already completed
+- `testing` - assigned to tester-2
+- `todo` - waiting for developers to implement and move to review
+
+I'll wait for tasks to transition to "review" status before proceeding.
+[2026-04-06T22:42:30.272Z] tester-1 agent completed
+[2026-04-06 22:42:30] [agent_complete] tester-1 completed successfully

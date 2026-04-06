@@ -1,27 +1,43 @@
-# Design: CDN profiles.json 7天缓存刷新
+# Task Design: CDN profiles.json 7天缓存刷新
 
-## Files
-- `src/detector/profiles.js` — modify cache logic
+## File
+- `src/detector/profiles.js` — cache expiry logic (already exists)
 
-## Interface
+## Existing Logic (verify correct)
 ```js
-// profiles.js (existing)
-getProfile(hardware?): Promise<Profile>
+const CACHE_MAX_AGE = 7 * 24 * 60 * 60 * 1000  // 7 days
+
+function isCacheExpired(timestamp) {
+  return Date.now() - timestamp > CACHE_MAX_AGE
+}
+
+async function loadProfiles() {
+  const cached = await loadCache()
+  if (cached && !isCacheExpired(cached.timestamp)) return cached.data
+  try {
+    const remote = await fetchRemoteProfiles()
+    await saveCache(remote)  // saveCache must write { data, timestamp: Date.now() }
+    return remote
+  } catch { /* fall through */ }
+  if (cached) return cached.data   // expired cache as fallback
+  return await loadBuiltinProfiles()
+}
 ```
 
-## Logic
-- Cache file: `~/.agentic-service/profiles-cache.json`
-- On read: check `cache.cachedAt` — if `Date.now() - cachedAt > 7 * 86400 * 1000` → re-fetch CDN
-- On fetch success: write `{ ...data, cachedAt: Date.now() }` to cache
-- On fetch failure: use existing cache regardless of age; if no cache → use `profiles/default.json`
+## saveCache must store timestamp
+```js
+async function saveCache(data) {
+  await fs.mkdir(CACHE_DIR, { recursive: true })
+  await fs.writeFile(CACHE_FILE, JSON.stringify({ data, timestamp: Date.now() }))
+}
+```
 
 ## Edge Cases
-- cachedAt missing in old cache → treat as expired, re-fetch
-- CDN returns non-200 → keep old cache
-- No cache + no network → fallback to default.json
+- Cache file missing → fetch remote, save
+- Remote fetch fails + no cache → use builtin default.json
+- Remote fetch fails + expired cache → use expired cache (warn)
 
 ## Test Cases
-- Cache age < 7d → no CDN fetch
-- Cache age > 7d → CDN fetch attempted
-- CDN fetch fails → old cache returned
-- No cache, no network → default.json content returned
+1. timestamp = Date.now() - 8 days → fetch called
+2. timestamp = Date.now() - 1 day → fetch NOT called
+3. fetch fails + no cache → loadBuiltinProfiles() called

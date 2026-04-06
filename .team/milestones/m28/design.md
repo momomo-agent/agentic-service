@@ -1,30 +1,18 @@
 # M28 Technical Design
 
-## Files
-- `src/ui/client/App.vue` — VAD integration
-- `src/server/cert.js` — self-signed cert generation
-- `src/server/httpsServer.js` — HTTPS server
-- `src/detector/profiles.js` — 7-day cache refresh
-- `install/setup.sh` — idempotent Node.js install
-- `install/Dockerfile` + `install/docker-compose.yml` — container build
+## Goal
+VAD integration in Web UI, HTTPS/LAN access, CDN 7-day cache refresh, Docker e2e validation, setup.sh idempotency.
 
-## VAD (task-1775515078705)
-Use `@ricky0123/vad-web` or Web Audio API `AudioWorklet`.
-- `vadMode: 'auto' | 'push-to-talk'` toggle in UI state
-- Auto mode: `onSpeechStart` → start recording, `onSpeechEnd(audio)` → POST /api/transcribe
-- Push-to-talk: mousedown/touchstart → record, mouseup/touchend → send
+## Task Order
+1. task-1775515078705 — VAD in Web UI (independent)
+2. task-1775515085075 — HTTPS + HTTP redirect (uses existing httpsServer.js)
+3. task-1775515085107 — CDN 7-day cache refresh in profiles.js (independent)
+4. task-1775515085136 — Docker e2e + setup.sh idempotency (validation only)
 
-## HTTPS (task-1775515085075)
-`cert.js`: use `selfsigned` npm package → `{ cert, key }` PEM strings, cache to `~/.agentic-service/cert/`.
-`httpsServer.js`: `createServer(app)` → `https.createServer({ cert, key }, app)`.
-`api.js startServer`: if `useHttps`, also bind HTTPS on port+443, redirect HTTP→HTTPS.
-
-## CDN Cache Refresh (task-1775515085107)
-In `profiles.js`, cache file stores `{ fetchedAt, profiles }`.
-On `getProfile()`: if `Date.now() - fetchedAt > 7 * 86400 * 1000`, re-fetch CDN.
-On fetch failure: log warning, return cached data.
-
-## Docker + setup.sh (task-1775515085136)
-`setup.sh`: check `node --version` before installing; skip if already present.
-`Dockerfile`: multi-stage — builder installs deps, runner copies dist.
-`docker-compose.yml`: port 3000:3000, volume for `~/.agentic-service`.
+## Key Files
+- `src/ui/client/` — VAD integration
+- `src/server/httpsServer.js` — HTTPS server (exists)
+- `src/server/cert.js` — self-signed cert (exists)
+- `src/detector/profiles.js` — cache logic (exists, add expiry check)
+- `install/Dockerfile` — Docker build
+- `install/setup.sh` — install script

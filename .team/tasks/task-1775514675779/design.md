@@ -1,52 +1,54 @@
-# Design: src/server/hub+brain+api.js实现
+# Design: src/server/hub+brain+api.js
 
-## Files (all exist — verify/complete)
-- `src/server/hub.js` — device registry + WebSocket
-- `src/server/brain.js` — LLM + tool calling
-- `src/server/api.js` — REST endpoints
+## Files
+- `src/server/hub.js` (exists)
+- `src/server/brain.js` (exists)
+- `src/server/api.js` (exists)
 
-## hub.js — verify exports
+## hub.js
 ```js
-export function init(app, wss)           // attach WS handlers
-export function getDevices()             // → Array<{id, meta, status}>
-export function initWebSocket(server)    // create WebSocketServer
-export function startWakeWordDetection() // broadcast wake word events
+registerDevice(id, meta) → { id, registeredAt }
+unregisterDevice(id) → void
+heartbeat(id) → void
+getDevices() → Device[]
+sendCommand(deviceId, command) → Promise<any>  // capture returns promise
+broadcastWakeword(deviceId) → void
+initWebSocket(httpServer) → WebSocketServer
+joinSession(sessionId, deviceId) → void
+setSessionData(sessionId, key, value) → void
+getSessionData(sessionId, key) → any
 ```
+Offline: 60s threshold, 10s check interval. Capture timeout: 10s.
 
-## brain.js — verify exports
+## brain.js
 ```js
-export function registerTool(name, fn)
-export async function* chat(messages, toolDefs) // → AsyncGenerator<chunk>
-// Ollama fails → fallback to OpenAI via runtime/llm.js
+registerTool(name, fn) → void
+chat(messages, options?) → AsyncGenerator<chunk>
+// chunk: { type:'content', text } | { type:'tool_use', id, name, input } | { type:'error', error }
 ```
+Ollama first (streaming). Falls back to OpenAI if tool_use unsupported.
 
-## api.js — required endpoints
+## api.js
 ```
-POST /api/chat        body:{message,history} → SSE stream, ends with "data: [DONE]\n\n"
-POST /api/transcribe  multipart:audio        → {text}
-POST /api/synthesize  body:{text}            → audio/wav buffer
-GET  /api/status      → {hardware, profile, devices, ollama}
+POST /api/chat        { message, history?, tools? } → SSE stream
+POST /api/transcribe  multipart audio → { text }
+POST /api/synthesize  { text } → audio/wav
+GET  /api/status      → { hardware, profile, ollama, devices }
+GET  /api/devices     → Device[]
 GET  /api/config      → config object
-PUT  /api/config      body:partial           → updated config
-GET  /api/devices     → devices array
-GET  /api/logs        → last 200 log entries
+PUT  /api/config      body → { ok: true }
+GET  /api/logs        → last 50 log entries
 ```
 
-## Edge cases
-- `/api/chat` client disconnect → stop streaming
-- `/api/transcribe` missing audio → 400
+## Edge Cases
+- `/api/chat` missing message → 400
+- `/api/transcribe` no file → 400
 - `/api/synthesize` empty text → 400
-- All routes: uncaught errors → errorHandler middleware → 500
+- sendCommand unknown device → throws 'Device not found'
+- sendCommand unsupported type → throws 'Unsupported command type'
 
-## Dependencies
-- `src/server/brain.js` → `chat`
-- `src/runtime/stt.js` → `transcribe`
-- `src/runtime/tts.js` → `synthesize`
-- `src/server/hub.js` → `getDevices`, `initWebSocket`
-- `src/server/middleware.js` → `errorHandler`
-
-## Test cases
-- POST /api/chat → response has content-type text/event-stream
-- POST /api/transcribe with audio buffer → {text} string
-- GET /api/status → has hardware, profile, devices keys
-- PUT /api/config {key:val} → GET /api/config returns updated value
+## Tests
+- POST /api/chat streams [DONE]
+- POST /api/transcribe returns { text }
+- GET /api/status returns hardware+devices
+- WS register → device in getDevices()

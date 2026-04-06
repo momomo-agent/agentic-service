@@ -1,39 +1,37 @@
-# Task Design: src/runtime/sense+memory.js 实现
+# Design: src/runtime/sense+memory.js
 
 ## Files
-- `src/runtime/sense.js` — MediaPipe sense runtime (already exists, verify)
-- `src/runtime/memory.js` — vector memory runtime (already exists, verify)
+- `src/runtime/sense.js` (exists)
+- `src/runtime/memory.js` (exists)
 
-## sense.js Interfaces
+## sense.js
 ```js
-init(videoElement): Promise<void>       // browser: init with video element
-initHeadless(options?): Promise<void>   // server: init without video
-detectFrame(buffer): { faces, gestures, objects }
-  // if !pipeline → return { faces: [], gestures: [], objects: [] }
-start(): void   // begin interval detection (browser)
-stop(): void    // clear interval, null pipeline
-on(type, handler): void  // register event handler
+init(videoElement) → Promise<void>     // browser: pipeline + video
+initHeadless(options?) → Promise<void> // server: pipeline only
+start() → void                         // begin 100ms polling
+stop() → void                          // clear interval + pipeline
+detect(frame) → { faces, gestures, objects }
+detectFrame(buffer) → { faces, gestures, objects }  // null-safe
+on(type, handler) → void               // event subscription
 ```
+Object confidence threshold: 0.5. `detectFrame(null)` returns empty result.
 
-## memory.js Interfaces
+## memory.js
 ```js
-add(text: string): Promise<void>
-  // embeds text, stores { text, vector } in KV store
-  // updates index at 'mem:__index__'
-search(query: string, topK?: number): Promise<[{ text, score }]>
-  // embeds query, cosine similarity against all stored vectors
-  // returns top-k sorted by score desc
-remove(key: string): Promise<void>
+add(text: string) → Promise<void>      // embed + store + update index
+search(query: string, topK=5) → Promise<{text, score}[]>
+remove(key: string) → Promise<void>    // del + update index
 ```
+Sequential lock via `_lock` promise chain. Cosine similarity scoring.
 
 ## Edge Cases
-- sense: pipeline null → detectFrame returns empty, no throw
-- memory: empty query → return []
-- memory: empty index → return []
-- memory: concurrent add() → serialized via _lock chain
+- `detect()` before `init()` → returns empty result
+- `search('')` → returns []
+- `search()` with empty index → returns []
+- Concurrent `add()` calls → serialized via lock
 
-## Test Cases
-1. initHeadless() → pipeline set
-2. detectFrame(null) → { faces:[], gestures:[], objects:[] }
-3. add('hello') → search('hello') returns [{ text:'hello', score≈1 }]
-4. search('') → []
+## Tests
+- detect(mockFrame) → { faces:[...], gestures:[...], objects:[...] }
+- detectFrame(null) → { faces:[], gestures:[], objects:[] }
+- add('hello') then search('hello') → score > 0
+- remove(key) → not in search results
