@@ -1,16 +1,16 @@
 {
-  "totalTests": 49,
-  "passed": 48,
-  "failed": 1,
+  "totalTests": 60,
+  "passed": 58,
+  "failed": 2,
   "edgeCases": [
     "null gpu object (no gpu key at all)",
     "memory exactly at minMemory boundary",
-    "gpu type mismatch should eliminate profile in matcher.js (currently not enforced)",
+    "gpu type mismatch should eliminate profile in matcher.js (BUG: currently not enforced — task-1775514571886 blocked)",
     "DBB-008 runtime docker run not verified (no Docker daemon in test env)",
     "Runtime HTTPS connection test (curl -k) not performed — no live server started in tests",
     "LAN IP detection with multiple network interfaces not tested",
     "AudioContext suspended state resume not tested",
     "Empty blob on speechend before MediaRecorder has data (handled at ChatBox level)"
   ],
-  "coverage": "98%"
+  "coverage": "97%"
 }
