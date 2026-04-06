@@ -1,9 +1,21 @@
+import { detect as detectHardware } from '../detector/hardware.js'
+import { getProfile, watchProfiles } from '../detector/profiles.js'
+
+let _config = null
 async function loadConfig() {
-  return {
-    llm: { provider: 'ollama', model: 'gemma4:26b' },
-    fallback: { provider: 'openai', model: 'gpt-4o-mini' }
-  };
+  if (_config) return _config
+  const hardware = await detectHardware()
+  const profile = await getProfile(hardware)
+  _config = { ...profile, _hardware: hardware }
+  return _config
 }
+
+loadConfig().then(cfg => {
+  watchProfiles(cfg._hardware, (newProfile) => {
+    _config = { ...newProfile, _hardware: cfg._hardware }
+    console.log('[llm] config reloaded:', newProfile.llm.model)
+  })
+}).catch(() => {})
 
 async function* chatWithOllama(messages) {
   const config = await loadConfig();

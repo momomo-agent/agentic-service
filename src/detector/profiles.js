@@ -139,6 +139,25 @@ async function loadBuiltinProfiles() {
  * @property {FallbackConfig} fallback
  */
 
+export function watchProfiles(hardware, onReload, interval = 30_000) {
+  let lastEtag = null
+  const timer = setInterval(async () => {
+    try {
+      const res = await fetch(PROFILES_URL, {
+        signal: AbortSignal.timeout(5000),
+        headers: { ...(lastEtag && { 'If-None-Match': lastEtag }) }
+      })
+      if (res.status === 304) return
+      if (!res.ok) return
+      lastEtag = res.headers.get('etag')
+      const data = await res.json()
+      await saveCache(data)
+      onReload(matchProfile(data, hardware))
+    } catch { /* network error, skip */ }
+  }, interval)
+  return () => clearInterval(timer)
+}
+
 /**
  * @typedef {Object} HardwareInfo
  * @property {string} platform

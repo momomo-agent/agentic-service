@@ -4,13 +4,44 @@ import { randomUUID } from 'node:crypto';
 const registry = new Map(); // id → { ws, name, capabilities, lastPong }
 const pendingCaptures = new Map(); // requestId → { resolve, reject, timer }
 
-export function registerDevice(device) {
-  registry.set(device.id, device);
+// Device management: id → { id, meta, registeredAt, lastSeen, status }
+const devices = new Map()
+
+setInterval(() => {
+  const now = Date.now()
+  for (const d of devices.values()) {
+    d.status = (now - d.lastSeen > 30000) ? 'offline' : 'online'
+  }
+}, 10000)
+
+export function registerDevice(idOrDevice, meta) {
+  if (typeof idOrDevice === 'object') {
+    const device = idOrDevice
+    registry.set(device.id, device)
+    if (!devices.has(device.id)) {
+      devices.set(device.id, { id: device.id, meta: { name: device.name, capabilities: device.capabilities }, registeredAt: new Date().toISOString(), lastSeen: Date.now(), status: 'online' })
+    }
+    return
+  }
+  const id = idOrDevice
+  const now = new Date().toISOString()
+  devices.set(id, { id, meta, registeredAt: now, lastSeen: Date.now(), status: 'online' })
+  return { id, registeredAt: now }
+}
+
+export function heartbeat(id) {
+  if (!devices.has(id)) registerDevice(id, {})
+  const d = devices.get(id)
+  d.lastSeen = Date.now()
+  d.status = 'online'
+}
+
+export function getDevices() {
+  return Array.from(devices.values()).map(d => ({ ...d }))
 }
 
 export function unregisterDevice(id) {
   registry.delete(id);
-  // reject any pending captures for this device
   for (const [reqId, pending] of pendingCaptures) {
     if (pending.deviceId === id) {
       clearTimeout(pending.timer);
@@ -18,10 +49,6 @@ export function unregisterDevice(id) {
       pendingCaptures.delete(reqId);
     }
   }
-}
-
-export function getDevices() {
-  return Array.from(registry.values()).map(({ ws, lastPong, ...info }) => info);
 }
 
 export function sendCommand(deviceId, command) {
@@ -73,7 +100,6 @@ export function initWebSocket(httpServer) {
     ws.on('error', () => { if (deviceId) unregisterDevice(deviceId); });
   });
 
-  // Heartbeat: ping every 30s, remove if no pong within 10s
   setInterval(() => {
     const now = Date.now();
     for (const [id, device] of registry) {

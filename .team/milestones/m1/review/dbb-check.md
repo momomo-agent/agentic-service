@@ -1,26 +1,33 @@
 # M1 DBB Check
 
-**Match: 72%** | 2026-04-06T16:58:07.303Z
+**Match: 72%** | 2026-04-06T18:28:07.326Z
 
 ## Pass
-- Hardware detection: platform, arch, gpu.type, gpu.vram, memory, cpu.cores, cpu.model all present (`src/detector/hardware.js`)
-- GPU detection covers apple-silicon, nvidia (via nvidia-smi), none (`src/detector/gpu-detector.js`)
-- profiles.js: CDN fetch, cache to `~/.agentic-service/profiles.json`, 7-day expiry, offline fallback
-- getProfile(hardware) returns llm/stt/tts/fallback via matcher.js
-- Ollama: install check, prompt, model check, auto-pull (`src/detector/optimizer.js`)
-- HTTP server on port 3000, POST /api/chat SSE, GET /api/status
-- Web UI: chat interface, streaming, responsive (`src/ui/client/src/App.vue`)
-- CLI: npx entry, hardware display, profile display, browser open (`src/cli/`)
-- Port conflict: startServer() rejects with clear message
-- Network failure: uses cached profiles silently
+- hardware.js: all required fields present (platform, arch, gpu.type, gpu.vram, memory, cpu.cores, cpu.model)
+- Apple Silicon detection path implemented in gpu-detector.js
+- No-GPU fallback: gpu.type=none, gpu.vram=0
+- profiles.json cached to ~/.agentic-service/profiles.json (profiles.js)
+- Offline fallback: uses cache then builtin default.json
+- 7-day cache expiry logic implemented
+- getProfile(hardware) returns llm/stt/tts/fallback config
+- Ollama detection via `ollama --version` (optimizer.js)
+- Install prompt shown when Ollama missing
+- Model existence check via `ollama list`
+- Model pull with progress % and speed (pullModel)
+- Pull failure shows error message
+- HTTP server on port 3000 (api.js startServer)
+- POST /api/chat returns SSE (text/event-stream)
+- GET /api/status returns hardware + ollama + devices
+- EADDRINUSE → "Port X is already in use"
+- setup.js shows hardware + profile on first launch
+- browser.js opens browser via `open` package
+- Network failure falls back to cached/builtin profiles
+- LLM error yielded as {type:'error'} chunk, no crash
 
-## Partial
-- CDN URL is `cdn.jsdelivr.net/gh/momomo-ai/...` — DBB specifies `cdn.example.com/agentic-service/profiles.json`
-- Download progress: spinner present but % + speed display not confirmed in optimizer.js
-- GET /api/status returns `profile: {}` (empty) — DBB expects populated profile
-- Ctrl+C shutdown: SIGINT handler not explicitly confirmed in CLI index
-- Model download retry: error shown but retry mechanism not confirmed
-
-## Gaps
-- Profile field in /api/status is hardcoded `{}` — should return matched profile
-- Download progress (% + speed) needs verification in optimizer.js
+## Partial / Fail
+- **Linux+NVIDIA nvidia-smi**: gpu-detector.js not read — unverified
+- **CDN URL**: uses jsdelivr.net proxy, not cdn.example.com as specified
+- **Server startup < 3s**: no benchmark evidence
+- **Web UI**: dist/client not verified to exist
+- **npx entry point**: bin field in package.json not checked
+- **Ctrl+C graceful shutdown**: no explicit SIGINT handler found in server/CLI

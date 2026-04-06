@@ -3307,3 +3307,450 @@ No new milestone is needed right now. The remaining work is in m5 — once the 2
 No tasks are currently in 'review' status and neither in-progress task can be claimed. There's nothing for me to act on right now — I'll wait for tasks to move into 'review' status.
 [2026-04-06T18:25:19.055Z] tester agent completed
 [2026-04-06 18:25:19] [agent_complete] tester completed successfully
+[2026-04-06 18:25:19] [workflow] milestone_qg [EXEC] pm
+[2026-04-06 18:25:19] [agent_start] pm pm
+[2026-04-06T18:25:19.161Z] Running pm agent...
+[2026-04-06 18:25:41] [error] daemon Watchdog: busy for 160min, force reset
+[2026-04-06 18:25:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T18:25:41.536Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 160min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 18:25:41] [perf] daemon {"rss":"33MB","heapUsed":"13MB","heapTotal":"14MB","uptime":"9600s"}
+M5 has 2 tasks still `in-progress` (Docker 打包, 边缘用例测试覆盖). M5 cannot be completed yet — those tasks are assigned to developers/testers, not me.
+
+Current status summary:
+
+- **m1–m4, m6–m9**: completed
+- **m5**: active, 2/4 tasks done, 2 in-progress
+- **Architecture match**: 28% (major gaps: src/runtime/, src/server/ missing per architecture.json)
+- **Vision match**: 62%, **PRD match**: 42%, **DBB match**: 68%
+
+Key remaining gaps (from gaps files):
+- `sense.js`, `memory.js` — DBB says missing (but vision.json says implemented — conflict, likely stale gap data)
+- Docker/Dockerfile — missing
+- Test coverage < 98%
+- `/api/chat` tool_use format, `store.js del()→delete()`, CDN URL — DBB partials (m9 tasks show these as done)
+- Admin panel live data, SIGINT — m9 done
+
+Since m5 is still active with in-progress tasks, my role is to **wait** — I must not approve or advance those tasks. The developers and testers own them.
+
+**No new milestone should be created until m5 is fully done** (all tasks in `done` status and quality gate passed).
+
+**Current recommendation**: Wait for the developer to complete `task-1775494470572` (Docker 打包) and the tester to complete `task-1775494475568` (边缘用例测试覆盖). Once both are `done`, I can mark m5 completed and plan m10 if any gaps remain.
+[2026-04-06T18:25:59.027Z] pm agent completed
+[2026-04-06 18:25:59] [agent_complete] pm completed successfully
+[2026-04-06 18:25:59] [workflow] milestone_qg [BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → true → monitor
+[2026-04-06 18:25:59] [agent_start] monitor [NODE] monitor - 全局 Monitor 四维检查
+[2026-04-06 18:25:59] [workflow] monitor [PARALLEL] vision_monitor, prd_monitor, dbb_monitor, arch_monitor
+[2026-04-06 18:25:59] [agent_start] vision_monitor vision_monitor
+[2026-04-06 18:25:59] [agent_start] prd_monitor prd_monitor
+[2026-04-06 18:25:59] [agent_start] dbb_monitor dbb_monitor
+[2026-04-06 18:25:59] [agent_start] arch_monitor arch_monitor
+[2026-04-06T18:25:59.085Z] Running prd_monitor agent...
+[2026-04-06T18:25:59.085Z] Running arch_monitor agent...
+[2026-04-06T18:25:59.085Z] Running vision_monitor agent...
+[2026-04-06T18:25:59.086Z] Running dbb_monitor agent...
+Architecture analysis complete. Updated `.team/gaps/architecture.json` with match score **72%** (up from 28%).
+
+Key findings:
+- **Implemented**: runtime/, server/, ui/admin/, ui/client/ — all core modules now present
+- **Partial gaps**: `src/cli/`, `src/store/` (should be external deps), `runtime/embed.js` (should be external), extra detector files
+- **Missing**: `profiles/default.json`, `install/` directory
+[2026-04-06T18:26:12.299Z] arch_monitor agent completed
+[2026-04-06 18:26:12] [agent_complete] arch_monitor completed successfully
+Done. Updated `.team/gaps/prd.json` with:
+
+- **match: 55%**
+- M1: all 6 features implemented
+- M2: STT/TTS partial (external dep), VAD implemented, wake word partial
+- M3: WebSocket hub implemented, admin UI/sense/device tools partial
+- M4: all 4 features missing
+[2026-04-06T18:27:08.940Z] prd_monitor agent completed
+[2026-04-06 18:27:08] [agent_complete] prd_monitor completed successfully
+Done. Wrote `.team/gaps/architecture.json` with:
+
+- **match: 22%** — only the detector module (hardware.js, gpu-detector.js, matcher.js) and the UI client scaffold are partially implemented
+- **13 gaps** identified: entire `runtime/`, `server/`, and `ui/admin/` directories are missing, along with `profiles/default.json` and `install/` assets
+[2026-04-06T18:27:15.659Z] arch_monitor agent completed
+[2026-04-06 18:27:15] [agent_complete] arch_monitor completed successfully
+DBB check complete. Here's the summary:
+
+**Global DBB Match: 72%** | Active milestone M5 match: **62%**
+
+### Key gaps found:
+
+1. **Docker missing** (M5 DBB-009/010/011) — No `Dockerfile` or `docker-compose.yml` in project
+2. **sense.js API mismatch** (M5 DBB-001–004) — DBB expects `detect(frame)` returning `{faces, gestures, objects}`; actual implementation is event-based (`on()`/`start()`)
+3. **store.js exports `del()` not `delete()`** (M9 DBB-002) — naming mismatch
+4. **hub.js heartbeat timeout 40s vs DBB-005 spec of 60s** (M7 DBB-005)
+5. **CDN URL is placeholder** (M7/M9 DBB-009/003) — `cdn.example.com` not a real endpoint
+6. **llm.js config hardcoded** (M7 DBB-002) — Anthropic fallback not wired to persisted config
+7. **Wakeword is text-match only** (M8 DBB-001) — no audio-level detection
+
+### Files written:
+- `.team/gaps/dbb.json` — global summary
+- `.team/gaps/milestones/m5.json` — M5 detail
+- `.team/milestones/m5/review/dbb-check.md` — review report
+[2026-04-06T18:27:29.834Z] dbb_monitor agent completed
+[2026-04-06 18:27:29] [agent_complete] dbb_monitor completed successfully
+Vision analysis complete. Wrote:
+
+- `.team/gaps/vision.json` — updated match from 62% → **78%**, reflecting that sense.js and memory.js are now implemented (M5 delivered those), but install scripts and Docker packaging remain missing.
+- `.team/milestones/m5/review/vision-check.md` — M5-specific review noting the Docker gap and sense.js browser-only limitation.
+
+Key remaining gaps for next milestones:
+1. `install/` — Dockerfile, docker-compose.yml, setup.sh still missing
+2. `sense.js` — browser-only (`requestAnimationFrame`), needs server-compatible path
+3. STT/TTS cloud fallback — unverified whether profile config drives provider selection
+4. Voice latency < 2s — no benchmark or test enforcement
+[2026-04-06T18:27:30.305Z] vision_monitor agent completed
+[2026-04-06 18:27:30] [agent_complete] vision_monitor completed successfully
+[2026-04-06 18:27:30] [workflow] monitor [BRANCH] goalMet → 0 → pm_decide
+[2026-04-06 18:27:30] [agent_start] pm_decide [NODE] pm_decide - PM 决策下一步
+[2026-04-06 18:27:30] [workflow] pm_decide [EXEC] architect
+[2026-04-06 18:27:30] [agent_start] architect architect
+[2026-04-06T18:27:30.356Z] Running architect agent...
+`.team/gaps/prd.json` updated with match score **68%** based on actual code review:
+
+- M1: mostly implemented; Ollama auto-install is partial (prints command, doesn't execute), one-click install script is missing
+- M2: STT/TTS exist as files but runtime completeness unverified; VAD and wake word are implemented
+- M3: WebSocket hub and admin panel are solid; sense.js and device tools partially verified
+- M4: Cloud fallback (llm.js) is fully implemented; hot-update, Docker, and docs are missing
+[2026-04-06T18:27:43.354Z] prd_monitor agent completed
+[2026-04-06 18:27:43] [agent_complete] prd_monitor completed successfully
+Done. Vision analysis complete:
+
+- **`.team/gaps/vision.json`** written — match: **78%**
+- **`.team/milestones/m5/review/vision-check.md`** written
+
+Key findings:
+- 7 items implemented (LLM+fallback, STT/TTS, memory/vector search, REST API, admin UI, client UI with voice, hardware detection)
+- 1 missing: Docker/install files (Dockerfile, setup.sh, docker-compose.yml) — critical M5 gap
+- 5 partial: remote profiles fetch, optimizer→llm wiring, multi-device coordination, Ollama auto-download, sense.js browser-only limitation
+[2026-04-06T18:27:51.981Z] vision_monitor agent completed
+[2026-04-06 18:27:51] [agent_complete] vision_monitor completed successfully
+Done. ARCHITECTURE.md already had substantial content (134 lines), so I submitted a change request instead:
+
+`.team/change-requests/cr-1775500050357.json` — targets PRD.md (L1) with 9 specific issues:
+
+1. `sense.js` API contract — event-based vs synchronous `detect(frame)`
+2. `store.js` — `del()` vs `delete()` naming mismatch
+3. `hub.js` heartbeat — 40s implementation vs 60s DBB spec
+4. CDN URL — placeholder `cdn.example.com` needs real URL
+5. Wake word — audio-level vs text-match clarification needed
+6. HTTPS/tunneling — multi-device cross-network spec missing
+7. Voice latency — `<2s` SLA needs benchmark test requirement
+8. STT/TTS cloud fallback — adaptive provider selection not specified
+9. `install/` directory — Dockerfile/docker-compose/setup.sh as M4 deliverables
+[2026-04-06T18:28:00.266Z] architect agent completed
+[2026-04-06 18:28:00] [agent_complete] architect completed successfully
+[2026-04-06 18:28:00] [workflow] pm_decide [EXEC] pm
+[2026-04-06 18:28:00] [agent_start] pm pm
+[2026-04-06T18:28:00.307Z] Running pm agent...
+[2026-04-06 18:28:26] [agent_start] daemon Still busy (20min), skipping safety check
+[2026-04-06 18:28:26] [perf] daemon {"rss":"32MB","heapUsed":"5MB","heapTotal":"8MB","uptime":"9000s"}
+[2026-04-06 18:29:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:1, done:32)
+[2026-04-06 18:29:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:32)
+M10 is planned and ready. Here's the summary:
+
+**M5 status** (active, waiting on developers):
+- `in-progress`: Docker 打包 (developer-2), 边缘用例测试覆盖 (developer-3)
+- Cannot mark complete until both finish and tester approves
+
+**M10 planned** (5 tasks, activates after M5 completes):
+
+| Task | Priority | Gap addressed |
+|------|----------|---------------|
+| sense.js detect(frame) API 修复 | P0 | DBB-001~004 |
+| memory.js 并发写 mutex 修复 | P0 | DBB-008 |
+| optimizer → llm.js 硬件自适应接线 | P1 | Vision gap |
+| install/setup.sh 一键安装脚本 | P1 | PRD M1 gap |
+| config 热更新 | P1 | PRD M4 gap |
+
+**Pending CR** `cr-1775500050357` from architect (L2→L1) awaits PRD owner review — covers sense.js API contract, store.delete vs del, hub heartbeat timeout, and other spec clarifications. No action needed from PM until reviewed.
+[2026-04-06T18:29:56.634Z] pm agent completed
+[2026-04-06 18:29:56] [agent_complete] pm completed successfully
+[2026-04-06 18:29:56] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 18:29:56] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 18:29:56] [workflow] work_loop [EXEC] pm
+[2026-04-06 18:29:56] [agent_start] pm pm
+[2026-04-06T18:29:56.686Z] Running pm agent...
+[2026-04-06 18:29:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:32)
+[2026-04-06 18:30:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:32)
+[2026-04-06 18:30:41] [perf] daemon {"rss":"29MB","heapUsed":"8MB","heapTotal":"10MB","uptime":"9900s"}
+All DBB verification outputs have been written. Here's a summary:
+
+**Global DBB match: 74%**
+
+Key gaps identified:
+- `Dockerfile` and `docker-compose.yml` missing entirely (M5 fail)
+- `README.md` missing at project root (M7 fail)
+- No `process.on('SIGINT')` handler found — graceful shutdown unverified across M5/M7/M9
+- `sense.js` uses browser `requestAnimationFrame` — incompatible with Node.js server context
+- `sense.detect(frame)` not exported directly — only event-based API
+- Hub heartbeat removes devices at 40s, not 60s as M7 specifies
+- `tool_use` response format mismatch — M9 expects `text` field, brain.js yields `type/name/input`
+- CDN URL uses `jsdelivr.net` proxy, not the `cdn.example.com` specified in M1
+
+**Per-milestone scores:**
+| Milestone | Match |
+|-----------|-------|
+| M1 | 72% |
+| M2 | 90% |
+| M3 | 75% |
+| M4 | 85% |
+| M5 | 55% |
+| M6 | 80% |
+| M7 | 78% |
+| M8 | 60% |
+| M9 | 82% |
+
+Files written:
+- `.team/gaps/dbb.json`
+- `.team/gaps/milestones/m1-m9.json`
+- `.team/milestones/m1-m9/review/dbb-check.md`
+[2026-04-06T18:30:47.163Z] dbb_monitor agent completed
+[2026-04-06 18:30:47] [agent_complete] dbb_monitor completed successfully
+[2026-04-06 18:30:47] [workflow] monitor [BRANCH] goalMet → 0 → pm_decide
+[2026-04-06 18:30:47] [agent_start] pm_decide [NODE] pm_decide - PM 决策下一步
+[2026-04-06 18:30:47] [workflow] pm_decide [EXEC] architect
+[2026-04-06 18:30:47] [agent_start] architect architect
+[2026-04-06T18:30:47.216Z] Running architect agent...
+[2026-04-06 18:30:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:32)
+[2026-04-06 18:31:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:32)
+The change request has been filed at `.team/change-requests/cr-1775500247217.json`. It documents 10 architectural gaps that need to be addressed, including:
+
+- `optimizer.js` → `llm.js` wiring (hardcoded model)
+- `sense.js` `detect(frame)` export missing
+- `store.js` missing `delete()` alias
+- `brain.js` tool_use response missing `text` field
+- Hub heartbeat timeout 40s vs required 60s
+- Hub not broadcasting wakeword events
+- CDN URL mismatch (jsdelivr vs cdn.example.com)
+- SIGINT handler not confirmed
+[2026-04-06T18:31:12.521Z] architect agent completed
+[2026-04-06 18:31:12] [agent_complete] architect completed successfully
+[2026-04-06 18:31:12] [workflow] pm_decide [EXEC] pm
+[2026-04-06 18:31:12] [agent_start] pm pm
+[2026-04-06T18:31:12.564Z] Running pm agent...
+[2026-04-06 18:31:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:10, done:32)
+[2026-04-06 18:31:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:10, done:32)
+PM status summary:
+
+**M5 (active)** — 2 tasks in-progress (Docker packaging, edge case tests). Blocking criteria: Docker build/run failing, sense.detect partial.
+
+**M10 (planned)** — 5 tasks ready: sense API fix (P0), memory mutex (P0), optimizer wiring (P1), setup.sh (P1), config hot-reload (P1).
+
+**M11 (planned, new)** — 5 tasks created for remaining architecture gaps:
+- `task-1775500291531` server/hub.js 设备管理 (P0)
+- `task-1775500298984` server/brain.js LLM推理 (P0, blocked by hub)
+- `task-1775500299016` server/api.js REST端点 (P0, blocked by brain)
+- `task-1775500299045` ui/admin 管理面板 (P1)
+- `task-1775500299074` profiles/default.json (P1)
+
+Architecture match is at 22% — M10+M11 together target the bulk of missing files. No blockers to report. Waiting for M5 in-progress tasks to complete before M5 can close.
+[2026-04-06T18:32:08.824Z] pm agent completed
+[2026-04-06 18:32:08] [agent_complete] pm completed successfully
+[2026-04-06 18:32:08] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 18:32:08] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 18:32:08] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 18:32:08] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 18:32:08] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T18:32:08.874Z] Running tech_lead-2 agent...
+[2026-04-06T18:32:08.874Z] Running tech_lead-1 agent...
+[2026-04-06T18:32:08.874Z] Running tech_lead-3 agent...
+[2026-04-06 18:32:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:10, done:32)
+The m11 overview already exists with good content. The setup is complete:
+
+**Summary of actions taken:**
+- m10 status: `planned` → `active` (5 tasks ready to assign)
+- m11: already registered in milestones.json + overview.md exists
+- m5: 2 tasks still `in-progress` (Docker packaging + edge case tests) — waiting on tester
+
+**Current active work:**
+- m5: Docker 打包 + 边缘用例测试 (in-progress, blocked on tester)
+- m10: 5 todo tasks targeting sense.js fix, memory.js mutex, optimizer wiring, setup.sh, config hot-reload
+- m11: 5 todo tasks targeting server layer + admin UI + default profiles (planned, unblocks after m10)
+
+**Architecture gap priority (P0 = missing):**
+- `src/runtime/llm.js`, `stt.js`, `tts.js`, `sense.js`, `memory.js` — flagged missing in arch scan but likely exist from prior milestones; m10 tasks address the API/wiring gaps
+- `src/server/hub.js`, `brain.js`, `api.js` — m11 covers these
+- `install/` directory — m10 task-1775500180912 covers setup.sh
+
+No new tasks needed — existing m10/m11 tasks cover all remaining architecture gaps. Waiting on developers to pick up m10 tasks.
+[2026-04-06T18:32:46.790Z] pm agent completed
+[2026-04-06 18:32:46] [agent_complete] pm completed successfully
+[2026-04-06 18:32:46] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 18:32:46] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 18:32:46] [workflow] work_loop [EXEC] pm
+[2026-04-06 18:32:46] [agent_start] pm pm
+[2026-04-06T18:32:46.844Z] Running pm agent...
+[2026-04-06 18:32:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:10, done:32)
+[2026-04-06 18:33:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:10, done:32)
+[2026-04-06 18:33:26] [perf] daemon {"rss":"37MB","heapUsed":"11MB","heapTotal":"14MB","uptime":"9300s"}
+[2026-04-06 18:33:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:12, done:32)
+[2026-04-06 18:34:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:13, done:32)
+[2026-04-06 18:34:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:13, done:32)
+M10 milestone designs complete:
+
+- `.team/milestones/m10/dbb.md` — already existed, covers DBB-001 through DBB-005
+- `.team/milestones/m10/design.md` — already existed, covers all 5 fix areas
+
+Task designs created and `hasDesign=true` set for all 5 tasks:
+
+| Task | Title | Design |
+|------|-------|--------|
+| task-1775500155143 | sense.js detect(frame) API | Export `detect(frame)` returning `{faces,gestures,objects}`, safe before `init()` |
+| task-1775500168029 | memory.js 并发写 mutex | Promise-chain mutex on `add()`, no external deps |
+| task-1775500173626 | optimizer → llm.js 接线 | `loadConfig()` calls `detectHardware()` + `getProfile()`, cached per process |
+| task-1775500180912 | install/setup.sh | POSIX sh, checks Node ≥18, runs `npm install`, starts service |
+| task-1775500180946 | config 热更新 | `watchProfiles()` polls every 30s with ETag, invalidates `_config` on change |
+[2026-04-06T18:34:29.088Z] tech_lead-2 agent completed
+[2026-04-06 18:34:29] [agent_complete] tech_lead-2 completed successfully
+PM assessment complete. Here's the current state:
+
+**Active milestones:**
+- M5 (active): 2 tasks in-progress (Docker 打包, 边缘用例测试) — waiting on testers
+- M10 (active): 5 tasks all `todo` — ready for dev assignment
+
+**Planned milestones:**
+- M11: 5 tasks `todo` — server/hub/brain/api/admin/profiles (blocked until M10 done)
+- M12 (new): 3 tasks `todo` — Ollama auto-install, STT/TTS completeness, README docs
+
+**Architecture gap coverage:**
+- M10 covers: optimizer.js, sense.js API fix, memory.js mutex, setup.sh install
+- M11 covers: hub.js, brain.js, api.js, ui/admin/, profiles/default.json
+- M12 covers: remaining PRD gaps (Ollama auto-exec, STT/TTS partial, docs missing)
+
+**No action needed on M5** — testers are working. M10 tasks are ready to be picked up by tech leads.
+[2026-04-06T18:34:32.003Z] pm agent completed
+[2026-04-06 18:34:32] [agent_complete] pm completed successfully
+[2026-04-06 18:34:32] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 18:34:32] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 18:34:32] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 18:34:32] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 18:34:32] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T18:34:32.051Z] Running tech_lead-2 agent...
+[2026-04-06T18:34:32.052Z] Running tech_lead-1 agent...
+[2026-04-06T18:34:32.053Z] Running tech_lead-3 agent...
+All done. Here's a summary of what was created:
+
+**M10 milestone** (`active`):
+- `.team/milestones/m10/dbb.md` — 5 verification criteria
+- `.team/milestones/m10/design.md` — technical approach
+
+**M10 task designs** (all 5 marked `hasDesign=true`):
+- `task-1775500155143` — `sense.js detect(frame)` export
+- `task-1775500168029` — `memory.js` promise-chain mutex
+- `task-1775500173626` — `llm.js loadConfig()` → optimizer wiring
+- `task-1775500180912` — `install/setup.sh` POSIX script
+- `task-1775500180946` — profiles hot-reload via etag polling
+
+**M11 milestone** (`planned`):
+- `.team/milestones/m11/dbb.md` — 5 verification criteria
+- `.team/milestones/m11/design.md` — technical approach
+
+**M11 task designs** (all 5 marked `hasDesign=true`):
+- `task-1775500291531` — `server/hub.js` device registry with heartbeat
+- `task-1775500298984` — `server/brain.js` LLM + tool call wrapper
+- `task-1775500299016` — `server/api.js` REST + SSE endpoints
+- `task-1775500299045` — `ui/admin` DeviceList + ConfigPanel
+- `task-1775500299074` — `profiles/default.json` 3 hardware profiles
+[2026-04-06T18:34:35.075Z] tech_lead-3 agent completed
+[2026-04-06 18:34:35] [agent_complete] tech_lead-3 completed successfully
+All work is complete. Here's a summary:
+
+**M10 (active) — 5 tasks marked `hasDesign=true`:**
+- `task-1775500155143` — sense.js `detect(frame)` sync API
+- `task-1775500168029` — memory.js mutex for concurrent writes
+- `task-1775500173626` — llm.js wired to optimizer output
+- `task-1775500180912` — install/setup.sh one-liner script
+- `task-1775500180946` — config hot-reload via ETag polling
+
+**M11 (planned) — 5 tasks marked `hasDesign=true`:**
+- `task-1775500291531` — server/hub.js device registry
+- `task-1775500298984` — server/brain.js LLM inference + tool calls
+- `task-1775500299016` — server/api.js REST endpoints
+- `task-1775500299045` — ui/admin Vue panel (DeviceList + ConfigPanel)
+- `task-1775500299074` — profiles/default.json (already contains full JSON)
+
+Milestone dbb.md and design.md for both M10 and M11 were already present and complete — no changes needed there.
+[2026-04-06T18:34:45.853Z] tech_lead-1 agent completed
+[2026-04-06 18:34:45] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 18:34:45] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 18:34:45] [workflow] work_loop [EXEC] developer
+[2026-04-06 18:34:45] [agent_start] developer developer
+[2026-04-06T18:34:45.895Z] Running developer agent...
+[2026-04-06 18:34:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:13, done:32)
+[2026-04-06 18:35:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:13, done:32)
+[2026-04-06 18:35:41] [error] daemon Watchdog: busy for 170min, force reset
+[2026-04-06 18:35:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T18:35:41.542Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 170min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 18:35:41] [perf] daemon {"rss":"33MB","heapUsed":"12MB","heapTotal":"14MB","uptime":"10200s"}
+[2026-04-06 18:35:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:13, done:32)
+All done. Here's a summary of what was created:
+
+**M12 milestone files:**
+- `.team/milestones/m12/dbb.md` — 4 DBB criteria (Ollama auto-install, STT fallback, TTS fallback, README)
+- `.team/milestones/m12/design.md` — technical overview
+
+**Task designs (all marked `hasDesign=true`):**
+- `task-1775500429396` — `autoInstall(platform)` replaces `promptInstallation()` in `src/cli/setup.js`
+- `task-1775500434960` — fallback adapter pattern in `src/runtime/stt.js` + `tts.js`
+- `task-1775500439158` — README structure with 4 sections
+[2026-04-06T18:35:59.628Z] tech_lead-3 agent completed
+[2026-04-06 18:35:59] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 18:36:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:13, done:32)
+All done. Here's a summary of what was created:
+
+**M12 milestone files:**
+- `.team/milestones/m12/dbb.md` — 4 verification criteria (Ollama install, STT, TTS, README)
+- `.team/milestones/m12/design.md` — milestone technical overview
+
+**Task designs (all 3 m12 tasks):**
+- `task-1775500429396/design.md` — `ensureOllama()` with auto-install + model pull, edge cases for Windows/network failure
+- `task-1775500434960/design.md` — `transcribe(Buffer)→string` and `synthesize(string)→Buffer` with local→cloud fallback logic
+- `task-1775500439158/design.md` — README sections spec (docs only, no source changes)
+
+All 3 tasks updated to `hasDesign: true`. M10 and M11 were already fully designed.
+[2026-04-06T18:36:19.724Z] tech_lead-1 agent completed
+[2026-04-06 18:36:19] [agent_complete] tech_lead-1 completed successfully
+Done. Here's a summary of what was completed:
+
+**M12 tasks — designs created:**
+
+- `task-1775500429396` (Ollama 自动安装): Design covers modifying `src/cli/setup.js` to add `installOllama()` and `pullModel()` functions, replacing the current print-and-exit behavior with actual execution via `child_process.spawn`
+
+- `task-1775500434960` (STT/TTS 完整性修复): Design covers adding fallback logic to `src/runtime/stt.js` and `src/runtime/tts.js` — if local adapter import fails, silently fall back to cloud default adapter
+
+- `task-1775500439158` (用户文档 README): Design covers `README.md` structure with quick start (3 install methods), API reference (all 6 endpoints), and Docker deployment section
+
+All 3 tasks updated to `hasDesign: true`. M12 milestone already had `dbb.md` and `design.md`. M10 milestone and all its tasks were already fully designed.
+[2026-04-06T18:36:54.331Z] tech_lead-2 agent completed
+[2026-04-06 18:36:54] [agent_complete] tech_lead-2 completed successfully
+[2026-04-06 18:36:54] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 18:36:54] [agent_start] tester-1 tester
+[2026-04-06 18:36:54] [agent_start] tester-2 tester
+[2026-04-06T18:36:54.429Z] Running tester-1 agent...
+[2026-04-06T18:36:54.429Z] Running tester-2 agent...
+[2026-04-06 18:36:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:13, done:32)
+[2026-04-06 18:37:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:13, done:32)
+[2026-04-06 18:37:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:13, done:32)
+[2026-04-06 18:38:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:13, done:32)
+[2026-04-06 18:38:26] [agent_start] daemon Still busy (30min), skipping safety check
+[2026-04-06 18:38:26] [perf] daemon {"rss":"39MB","heapUsed":"12MB","heapTotal":"14MB","uptime":"9600s"}
+[no content]
+[2026-04-06T18:38:48.176Z] developer agent completed
+[2026-04-06 18:38:48] [agent_complete] developer completed successfully

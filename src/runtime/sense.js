@@ -41,6 +41,17 @@ export function start() {
   rafId = requestAnimationFrame(loop);
 }
 
+export function detect(frame) {
+  if (!pipeline) return { faces: [], gestures: [], objects: [] }
+  const result = pipeline.detect(frame)
+  return {
+    faces: (result.faces || []).map(f => ({ boundingBox: f.boundingBox })),
+    gestures: (result.gestures || []).map(g => ({ gesture: g.gesture })),
+    objects: (result.objects || []).filter(o => o.confidence > 0.5)
+                                   .map(o => ({ label: o.label, confidence: o.confidence }))
+  }
+}
+
 export function stop() {
   if (rafId != null) { cancelAnimationFrame(rafId); rafId = null; }
   pipeline = null;

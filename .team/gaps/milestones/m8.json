@@ -1,0 +1,15 @@
+{
+  "milestoneId": "m8",
+  "match": 60,
+  "timestamp": "2026-04-06T18:28:07.326Z",
+  "criteria": [
+    { "criterion": "Wake word triggers voice activation, UI shows listening state", "status": "partial" },
+    { "criterion": "Wake word configurable via PUT /api/config {wakeWord}", "status": "partial" },
+    { "criterion": "Face detection: sense.js emits face_detected, hub.js broadcasts via WS", "status": "partial" },
+    { "criterion": "Gesture detection: sense.js emits gesture event via WS", "status": "partial" },
+    { "criterion": "STT local-first: sensevoice used when available", "status": "pass" },
+    { "criterion": "STT cloud fallback: switches to openai whisper when local unavailable", "status": "pass" },
+    { "criterion": "TTS local-first: kokoro used when available", "status": "pass" },
+    { "criterion": "TTS cloud fallback: switches to openai tts when local unavailable", "status": "pass" }
+  ]
+}

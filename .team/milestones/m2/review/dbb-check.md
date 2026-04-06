@@ -1,19 +1,17 @@
 # M2 DBB Check
 
-**Match: 90%** | 2026-04-06T16:58:07.303Z
+**Match: 90%** | 2026-04-06T18:28:07.326Z
 
 ## Pass
-- `getOllamaStatus()` in api.js: fetches `http://localhost:11434/api/tags` with 2s timeout, returns `{running, models}` — real detection, not hardcoded
-- Timeout via `AbortSignal.timeout(2000)` — >2s treated as not running, catch returns `{running: false, models: []}`
-- `readConfig()` reads from `~/.agentic-service/config.json`, returns `{}` on missing file
-- `writeConfig()` uses atomic write (tmp file + rename), mkdir recursive
-- PUT /api/config: 500 on write failure (`res.status(500).json({error: e.message})`)
-- `startServer()` rejects with `Port ${port} is already in use` on EADDRINUSE
-- `stopServer()` exported — tests can close instances independently
-- Test file `test/server/eaddrinuse.test.js` exists
+- getOllamaStatus() pings http://localhost:11434/api/tags with 2s AbortSignal timeout
+- Returns {running:false, models:[]} on timeout/error — no exception thrown
+- Returns {running:true, models:[...]} with real model list when Ollama up
+- readConfig() returns {} when file missing (catch returns {})
+- writeConfig() uses atomic tmp→rename write to disk
+- GET /api/config returns persisted config
+- PUT /api/config writes to disk, returns 500 on failure
+- startServer() rejects with "Port X is already in use" on EADDRINUSE
 
 ## Partial
-- Multiple `startServer()` calls: no module-level singleton server variable, each call creates new instance — safe, but test isolation depends on proper stopServer() usage
-
-## Gaps
-- None critical
+- **Multiple startServer() calls**: createApp() creates new express instance each time — no module-level singleton, but httpServer reference management in tests needs verification
+- **Test state isolation**: stopServer() exported and used in tests — partial evidence only

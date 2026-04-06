@@ -1,0 +1,18 @@
+{
+  "milestoneId": "m7",
+  "match": 78,
+  "timestamp": "2026-04-06T18:28:07.326Z",
+  "criteria": [
+    { "criterion": "Ollama unavailable: auto-switch to OpenAI/Anthropic with valid stream", "status": "pass" },
+    { "criterion": "ANTHROPIC_API_KEY set + config.fallback.provider=anthropic: uses Anthropic API", "status": "pass" },
+    { "criterion": "No API key: throws 'OPENAI_API_KEY not set' with provider name", "status": "pass" },
+    { "criterion": "WS register: device joins registry, server replies {type:'registered'}", "status": "pass" },
+    { "criterion": "WS heartbeat: ping/pong works, device removed after 60s no heartbeat", "status": "partial" },
+    { "criterion": "speak/display/capture commands delivered to device, capture returns result", "status": "pass" },
+    { "criterion": "tool_use response format: {role:'tool', tool_use_id, content}", "status": "partial" },
+    { "criterion": "SIGINT: HTTP+WS server closes within 5s, exit code 0", "status": "partial" },
+    { "criterion": "CDN URL accessible, profiles.json cached to ~/.agentic-service/", "status": "partial" },
+    { "criterion": "Model download progress visible in terminal", "status": "pass" },
+    { "criterion": "README has 3 install methods + all REST endpoints with examples", "status": "fail" }
+  ]
+}

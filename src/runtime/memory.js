@@ -2,18 +2,22 @@ import { embed } from './embed.js'
 import { get, set, del } from '../store/index.js'
 
 const INDEX_KEY = 'mem:__index__'
+let _lock = Promise.resolve()
 
 async function getIndex() {
   return (await get(INDEX_KEY)) || []
 }
 
 export async function add(text) {
-  const vector = Array.from(await embed(text))
-  const id = 'mem:' + Date.now() + ':' + Math.random().toString(36).slice(2)
-  await set(id, { text, vector })
-  const index = await getIndex()
-  index.push(id)
-  await set(INDEX_KEY, index)
+  _lock = _lock.then(async () => {
+    const vector = Array.from(await embed(text))
+    const id = 'mem:' + Date.now() + ':' + Math.random().toString(36).slice(2)
+    await set(id, { text, vector })
+    const index = await getIndex()
+    index.push(id)
+    await set(INDEX_KEY, index)
+  })
+  return _lock
 }
 
 export async function remove(key) {

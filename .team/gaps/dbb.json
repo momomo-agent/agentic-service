@@ -1,16 +1,18 @@
 {
-  "match": 68,
-  "timestamp": "2026-04-06T16:58:07.303Z",
+  "match": 74,
+  "timestamp": "2026-04-06T18:28:07.326Z",
   "gaps": [
-    { "description": "sense.js not implemented — no face/gesture/object detection (M5 DBB-001~004)", "status": "missing" },
-    { "description": "memory.js not implemented — no vector memory search (M5 DBB-005~008)", "status": "missing" },
-    { "description": "Dockerfile and docker-compose.yml missing (M5 DBB-009~011)", "status": "missing" },
-    { "description": "Test coverage < 98% — M5 DBB-013 not met", "status": "missing" },
-    { "description": "/api/chat tool_use response format uses 'content' type instead of 'text' type (M4 DBB-008/009)", "status": "partial" },
-    { "description": "/admin panel data sourced from static files, not live /api/status and /api/config (M3)", "status": "partial" },
-    { "description": "store.js exports del() but DBB expects delete() — naming mismatch (M4 DBB-004)", "status": "partial" },
-    { "description": "SIGINT graceful shutdown not explicitly handled in CLI entry point (M5 DBB-012)", "status": "partial" },
-    { "description": "CDN URL in profiles.js differs from DBB spec (cdn.jsdelivr.net vs cdn.example.com)", "status": "partial" },
-    { "description": "Model download progress display (% + speed) not fully implemented in optimizer.js (M1)", "status": "partial" }
+    { "description": "Docker/docker-compose files missing — Dockerfile and docker-compose.yml not found in project root or install/", "status": "missing" },
+    { "description": "README.md missing at project root — no install instructions or REST API documentation", "status": "missing" },
+    { "description": "CDN URL uses jsdelivr.net proxy, not the specified cdn.example.com — M1 DBB specifies exact URL", "status": "partial" },
+    { "description": "SIGINT graceful shutdown not fully verified — no explicit process.on('SIGINT') handler found in server or CLI entry", "status": "partial" },
+    { "description": "sense.js uses requestAnimationFrame (browser API) — not compatible with Node.js server-side execution", "status": "partial" },
+    { "description": "sense.detect() direct call not exported — only event-based API (on/start/stop), M4/M5 DBB expects detect(frame) export", "status": "partial" },
+    { "description": "store.js exports del() but not delete() — memory.js imports del correctly, but M4 DBB tests store.delete()", "status": "partial" },
+    { "description": "tool_use response format inconsistency — brain.js yields {type:'tool_use'} but M9 DBB expects text field in response", "status": "partial" },
+    { "description": "Admin panel (/admin) served as static dist — dist/admin directory may not exist if not built", "status": "partial" },
+    { "description": "Wake word detection (useWakeWord.js) exists in UI client but hub.js does not broadcast wakeword events", "status": "partial" },
+    { "description": "Test coverage >= 98% not verified — no coverage report found", "status": "partial" },
+    { "description": "heartbeat removes device after 40s (not 60s as specified in M7 DBB-005)", "status": "partial" }
   ]
 }

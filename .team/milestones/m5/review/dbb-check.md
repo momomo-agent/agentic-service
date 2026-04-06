@@ -1,23 +1,20 @@
 # M5 DBB Check
 
-**Match: 15%** | 2026-04-06T16:58:07.303Z
+**Match: 55%** | 2026-04-06T18:28:07.326Z
 
 ## Pass
-- None fully passing
+- memory.search(query) returns semantically relevant fragments via cosine similarity
+- memory.search returns [] when index empty or embed returns empty
+- memory.search('') returns [] (early return on falsy query)
 
 ## Partial
-- DBB-012: SIGINT — api.js has `stopServer()` but no explicit `process.on('SIGINT')` handler confirmed in CLI entry point
+- **sense.detect(frame)**: sense.js uses event-based API (on/start/stop), not direct detect(frame) call — M5 DBB expects detect(frame) → {faces, gestures, objects}
+- **sense.detect(null)**: no null guard in sense.js start() loop — pipeline.detect(null) behavior depends on agentic-sense
+- **Concurrent memory writes**: memory.add() is async but no mutex — concurrent writes may race on index update
+- **SIGINT graceful exit**: no explicit SIGINT handler found in server entry point
 
-## Fail / Missing
-- `sense.js` does not exist — DBB-001~004 (face/gesture/object detection) entirely missing
-- `memory.js` does not exist — DBB-005~008 (vector memory search/write) entirely missing
-- `Dockerfile` not found — DBB-009 (docker build) missing
-- `docker-compose.yml` not found — DBB-010, DBB-011 missing
-- DBB-013: test coverage ≥ 98% — no coverage report found; M5 modules absent so coverage cannot pass
-
-## Required Work
-1. Implement `src/runtime/sense.js` wrapping `agentic-sense`
-2. Implement `src/runtime/memory.js` using `agentic-store` + `agentic-embed`
-3. Add `install/Dockerfile` and `install/docker-compose.yml`
-4. Add SIGINT handler in CLI entry point
-5. Achieve ≥ 98% test coverage across all modules
+## Fail
+- **Docker image build**: no Dockerfile found in project root or install/
+- **Docker container start**: no docker-compose.yml found
+- **docker-compose up**: no docker-compose.yml found
+- **Test coverage >= 98%**: no coverage report available

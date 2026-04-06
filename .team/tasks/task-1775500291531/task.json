@@ -1,0 +1,14 @@
+{
+  "id": "task-1775500291531",
+  "title": "server/hub.js 设备管理",
+  "description": "实现设备注册、心跳、状态追踪",
+  "status": "review",
+  "priority": "P0",
+  "assignee": "developer",
+  "blockedBy": [],
+  "groupId": "m11",
+  "hasDesign": true,
+  "created": "2026-04-06T18:31:31.531Z",
+  "updated": "2026-04-06T18:37:10.287Z",
+  "milestoneId": "m11"
+}

@@ -1,16 +1,16 @@
 {
   "milestoneId": "m4",
-  "match": 78,
-  "timestamp": "2026-04-06T16:58:07.303Z",
+  "match": 85,
+  "timestamp": "2026-04-06T18:28:07.326Z",
   "criteria": [
-    { "criterion": "DBB-001: embed('hello world') returns float32 array with length > 0, all finite", "status": "pass" },
-    { "criterion": "DBB-002: embed('') returns [] or throws clear error", "status": "pass" },
-    { "criterion": "DBB-003: store.set/get persists across process restart", "status": "pass" },
-    { "criterion": "DBB-004: store.delete removes key, subsequent get returns null/undefined", "status": "pass" },
-    { "criterion": "DBB-005: store.get nonexistent key returns null/undefined, no exception", "status": "pass" },
-    { "criterion": "DBB-006: GET /api/status includes devices array with registered devices", "status": "pass" },
-    { "criterion": "DBB-007: GET /api/status with no devices returns devices: []", "status": "pass" },
-    { "criterion": "DBB-008: POST /api/chat with tools returns tool_use content block", "status": "partial" },
-    { "criterion": "DBB-009: POST /api/chat without tools returns text content block", "status": "pass" }
+    { "criterion": "embed(text) returns float32 array with length > 0", "status": "pass" },
+    { "criterion": "embed('') returns [] or throws clear error", "status": "pass" },
+    { "criterion": "store.set/get persists across process restart", "status": "pass" },
+    { "criterion": "store.delete removes key", "status": "pass" },
+    { "criterion": "store.get on nonexistent key returns null/undefined without throw", "status": "pass" },
+    { "criterion": "GET /api/status includes devices array when device registered", "status": "pass" },
+    { "criterion": "GET /api/status devices=[] when no devices registered", "status": "pass" },
+    { "criterion": "POST /api/chat supports tool_use, response contains tool_use content block", "status": "pass" },
+    { "criterion": "POST /api/chat without tools returns normal text response", "status": "pass" }
   ]
 }
