@@ -5538,3 +5538,97 @@ All 4 tasks are complete and moved to review:
 - **task-1775509406861** (store.delete() alias): No change needed — `del as delete` already exported.
 [2026-04-06T21:09:20.410Z] developer agent completed
 [2026-04-06 21:09:20] [agent_complete] developer completed successfully
+[2026-04-06 21:09:20] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-06 21:09:20] [workflow] work_loop [EXEC] pm
+[2026-04-06 21:09:20] [agent_start] pm pm
+[2026-04-06T21:09:20.614Z] Running pm agent...
+The change request has been submitted at `.team/change-requests/cr-1775509724002.json`.
+
+Since ARCHITECTURE.md already has 133 lines of substantial content, I did not overwrite it. The CR documents 9 architectural gaps identified by the monitors:
+
+1. `sense.js` needs a server-side headless camera path (not just browser)
+2. Wake word pipeline needs server-side always-on integration
+3. Voice latency <2s budget needs enforcement (STT+LLM+TTS)
+4. HTTPS/LAN tunneling for secure multi-device access
+5. CDN profiles 7-day cache staleness check
+6. VAD auto-detection (beyond push-to-talk)
+7. `profiles/default.json` missing cpu-only profile
+8. SIGINT graceful drain specification
+9. Multi-device brain state sharing via `broadcastSession`
+[2026-04-06T21:09:20.711Z] architect agent completed
+[2026-04-06 21:09:20] [agent_complete] architect completed successfully
+[2026-04-06 21:09:20] [workflow] pm_decide [EXEC] pm
+[2026-04-06 21:09:20] [agent_start] pm pm
+[2026-04-06T21:09:20.746Z] Running pm agent...
+M17 status:
+- 4 tasks in `review` (waiting for tester approval)
+- 2 tasks `inProgress`
+
+Per my rules: I must NOT move tasks from "review" to "done" — that's the tester's job. I must NOT mark M17 completed while tasks are in "review" or "inProgress".
+
+Current state: M17 is active with work in progress. The 2 `inProgress` tasks are being worked on by the developer. The 4 `review` tasks are awaiting tester sign-off.
+
+No PM action needed right now — I'll wait for the tester to process the review tasks and the developer to complete the inProgress tasks before planning the next milestone.
+[2026-04-06T21:09:52.899Z] pm agent completed
+[2026-04-06 21:09:52] [agent_complete] pm completed successfully
+[2026-04-06 21:09:52] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 21:09:52] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 21:09:52] [workflow] work_loop [EXEC] pm
+[2026-04-06 21:09:52] [agent_start] pm pm
+[2026-04-06T21:09:52.964Z] Running pm agent...
+[2026-04-06 21:09:57] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:6, done:64)
+M17 has 4 tasks in "review" and 2 in "inProgress". I cannot approve review tasks — that's the tester's job. 
+
+Current status:
+- M17 is active with tasks still in progress/review
+- Architecture gap: 18% (but files exist — gap checker may be stale)
+- DBB gaps remain: README, cpu-only profile, Docker verification, test coverage, SIGINT, CDN cache, wakeword UI
+
+I'll wait for M17 tasks to complete before creating M18. The inProgress tasks (README and sense.js detect()) are being worked on by the developer. The review tasks need tester approval.
+
+**Current state: M17 active, waiting for developer + tester to finish. No action needed from PM right now.**
+[2026-04-06T21:10:12.679Z] pm agent completed
+[2026-04-06 21:10:12] [agent_complete] pm completed successfully
+[2026-04-06 21:10:12] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 21:10:12] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 21:10:12] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 21:10:12] [agent_start] tester-1 tester
+[2026-04-06 21:10:12] [agent_start] tester-2 tester
+[2026-04-06T21:10:12.732Z] Running tester-2 agent...
+[2026-04-06T21:10:12.732Z] Running tester-1 agent...
+[2026-04-06 21:10:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:6, done:64)
+M17 status summary:
+
+- 4 tasks in **review** (waiting for tester approval)
+- 2 tasks **inProgress** (developer still working)
+
+Per my role constraints: I cannot approve review tasks or mark M17 complete. The tester must handle those.
+
+**Current state:**
+- M17 is `ready-for-work` with tasks in `review` and `inProgress`
+- No new gaps require immediate new milestone creation yet — the remaining architecture gaps (18% match) are being addressed by M17 tasks
+
+**Remaining open gaps from architecture.json (still missing/partial):**
+- `src/detector/optimizer.js` — partial (P1)
+- `src/detector/gpu-detector.js` — should merge into hardware.js (partial)
+- `src/ui/client/` — admin route missing (partial)
+
+Once M17 tasks complete and tester approves, I'll need to create **M18** targeting the remaining architecture gaps. I'll wait for M17 to finish before creating it.
+[2026-04-06T21:10:27.576Z] pm agent completed
+[2026-04-06 21:10:27] [agent_complete] pm completed successfully
+[2026-04-06 21:10:27] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 21:10:27] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 21:10:27] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 21:10:27] [agent_start] tester-1 tester
+[2026-04-06 21:10:27] [agent_start] tester-2 tester
+[2026-04-06T21:10:27.624Z] Running tester-1 agent...
+[2026-04-06T21:10:27.624Z] Running tester-2 agent...
+[2026-04-06 21:10:41] [perf] daemon {"rss":"32MB","heapUsed":"8MB","heapTotal":"10MB","uptime":"19500s"}
+Both tasks are complete:
+
+- **task-1775509585035** (README.md): Already satisfied — README existed with all 3 install methods and all 6 API endpoints. No changes needed.
+- **task-1775509592226** (sense.js detect()): Already satisfied — `export function detect(frame)` was present at lines 43-51. No changes needed.
+
+Both moved to `review` status.
+[2026-04-06T21:10:48.297Z] developer agent completed
+[2026-04-06 21:10:48] [agent_complete] developer completed successfully

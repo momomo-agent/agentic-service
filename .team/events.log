@@ -4213,3 +4213,36 @@
 {"ts":"2026-04-06T21:09:14.686Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775509421092","from":"inProgress","to":"review","title":"brain.js tool_use响应补充text字段"}}
 {"ts":"2026-04-06T21:09:14.719Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775509406861","from":"inProgress","to":"review","title":"store.delete()别名修复"}}
 {"ts":"2026-04-06T21:09:20.413Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":2.865481,"cpuSystem":4.346508}}}
+{"ts":"2026-04-06T21:09:20.584Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 2"}}
+{"ts":"2026-04-06T21:09:20.585Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T21:09:20.585Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":2.87049,"cpuSystem":4.360001}}}
+{"ts":"2026-04-06T21:09:20.713Z","type":"agent_complete","agent":"architect","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.87076,"cpuSystem":4.36054}}}
+{"ts":"2026-04-06T21:09:20.721Z","type":"workflow","agent":"pm_decide","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T21:09:20.722Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.872829,"cpuSystem":4.366569}}}
+{"ts":"2026-04-06T21:09:29.751Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775509592226","from":"todo","to":"inProgress","title":"sense.js补充detect()导出"}}
+{"ts":"2026-04-06T21:09:29.795Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775509585035","from":"todo","to":"inProgress","title":"README.md补充安装与API文档"}}
+{"ts":"2026-04-06T21:09:52.902Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":14,"cpuUser":2.877638,"cpuSystem":4.373724}}}
+{"ts":"2026-04-06T21:09:52.917Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度循环","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":2.883441,"cpuSystem":4.384682}}}
+{"ts":"2026-04-06T21:09:52.935Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-06T21:09:52.936Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T21:09:52.936Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":2.888808,"cpuSystem":4.399431}}}
+{"ts":"2026-04-06T21:09:57.491Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:6, done:64)"}}
+{"ts":"2026-04-06T21:09:57.492Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:6, done:64)\"}"}}
+{"ts":"2026-04-06T21:10:12.682Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":2.893627,"cpuSystem":4.406646}}}
+{"ts":"2026-04-06T21:10:12.696Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T21:10:12.696Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T21:10:12.696Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-06T21:10:12.697Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":2.897387,"cpuSystem":4.417594}}}
+{"ts":"2026-04-06T21:10:12.697Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":2.897562,"cpuSystem":4.418042}}}
+{"ts":"2026-04-06T21:10:12.948Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:6, done:64)"}}
+{"ts":"2026-04-06T21:10:12.948Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:6, done:64)\"}"}}
+{"ts":"2026-04-06T21:10:27.578Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":2.902484,"cpuSystem":4.42487}}}
+{"ts":"2026-04-06T21:10:27.590Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T21:10:27.591Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T21:10:27.591Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-06T21:10:27.591Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":2.905686,"cpuSystem":4.434245}}}
+{"ts":"2026-04-06T21:10:27.592Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":2.905862,"cpuSystem":4.434729}}}
+{"ts":"2026-04-06T21:10:41.848Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"32MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"10MB\",\"uptime\":\"19500s\"}"}}
+{"ts":"2026-04-06T21:10:43.337Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775509585035","from":"inProgress","to":"review","title":"README.md补充安装与API文档"}}
+{"ts":"2026-04-06T21:10:43.377Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775509592226","from":"inProgress","to":"review","title":"sense.js补充detect()导出"}}
+{"ts":"2026-04-06T21:10:48.300Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":2.906202,"cpuSystem":4.435356}}}
