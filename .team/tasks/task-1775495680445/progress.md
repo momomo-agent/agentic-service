@@ -2,3 +2,4 @@
 
 ## Progress
 
+- Created README.md with all required sections
