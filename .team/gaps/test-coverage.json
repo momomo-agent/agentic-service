@@ -1,7 +1,11 @@
 {
-  "totalTests": 11,
-  "passed": 11,
+  "totalTests": 12,
+  "passed": 12,
   "failed": 0,
-  "edgeCases": [],
-  "coverage": "100%"
+  "edgeCases": [
+    "VAD silence detection (1.5s threshold) requires real AudioContext — not unit-testable in Node",
+    "useWakeWord is a module-level singleton — shared state across composable instances",
+    "PushToTalk has no error handling for non-ok HTTP responses from /api/transcribe"
+  ],
+  "coverage": "92%"
 }

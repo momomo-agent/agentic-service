@@ -993,3 +993,15 @@
 {"time":"2026-04-06T17:08:26.357Z","type":"no_progress","message":"No progress for 16min (active:6, done:16)"}
 {"time":"2026-04-06T17:09:11.782Z","type":"no_progress","message":"No progress for 17min (active:6, done:16)"}
 {"time":"2026-04-06T17:09:26.360Z","type":"no_progress","message":"No progress for 17min (active:6, done:16)"}
+{"time":"2026-04-06T17:15:56.384Z","type":"no_progress","message":"No progress for 5min (active:8, done:18)"}
+{"time":"2026-04-06T17:16:11.814Z","type":"no_progress","message":"No progress for 5min (active:8, done:18)"}
+{"time":"2026-04-06T17:16:26.382Z","type":"no_progress","message":"No progress for 6min (active:8, done:18)"}
+{"time":"2026-04-06T17:16:41.816Z","type":"no_progress","message":"No progress for 6min (active:8, done:18)"}
+{"time":"2026-04-06T17:17:26.388Z","type":"no_progress","message":"No progress for 7min (active:8, done:18)"}
+{"time":"2026-04-06T17:17:41.824Z","type":"no_progress","message":"No progress for 7min (active:8, done:18)"}
+{"time":"2026-04-06T17:18:26.393Z","type":"no_progress","message":"No progress for 8min (active:8, done:18)"}
+{"time":"2026-04-06T17:18:41.829Z","type":"no_progress","message":"No progress for 8min (active:8, done:18)"}
+{"time":"2026-04-06T17:19:26.397Z","type":"no_progress","message":"No progress for 9min (active:8, done:18)"}
+{"time":"2026-04-06T17:19:41.831Z","type":"no_progress","message":"No progress for 9min (active:8, done:18)"}
+{"time":"2026-04-06T17:20:26.401Z","type":"no_progress","message":"No progress for 10min (active:8, done:18)"}
+{"time":"2026-04-06T17:20:41.836Z","type":"no_progress","message":"No progress for 10min (active:8, done:18)"}
