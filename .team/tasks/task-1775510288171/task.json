@@ -2,9 +2,9 @@
   "id": "task-1775510288171",
   "title": "实现 src/server/api.js",
   "description": "REST API端点：/api/devices, /api/chat, /api/status，连接 hub.js 和 brain.js",
-  "status": "review",
+  "status": "testing",
   "priority": "P0",
-  "assignee": "developer",
+  "assignee": "tester-2",
   "blockedBy": [
     "task-1775510277966",
     "task-1775510284163"
@@ -12,5 +12,5 @@
   "groupId": "m20",
   "hasDesign": true,
   "created": "2026-04-06T21:18:08.171Z",
-  "updated": "2026-04-06T21:46:59.199Z"
+  "updated": "2026-04-06T21:48:58.633Z"
 }
