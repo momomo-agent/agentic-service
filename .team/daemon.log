@@ -6213,3 +6213,10 @@ All three tasks are now in review. Here's a summary of what was done:
 - **task-1775510295749** (profiles/default.json): Added required `id:"default"` / `match:{gpu:"none"}` fallback profile entry
 [2026-04-06T21:24:13.329Z] developer agent completed
 [2026-04-06 21:24:13] [agent_complete] developer completed successfully
+[2026-04-06 21:24:13] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-06 21:24:13] [workflow] work_loop [EXEC] pm
+[2026-04-06 21:24:13] [agent_start] pm pm
+[2026-04-06T21:24:13.478Z] Running pm agent...
+The task can't be claimed yet — blockers need to be fully `done`, not just `review`. No claimable tasks are available right now. All current work is complete and in review queue.
+[2026-04-06T21:24:21.785Z] developer agent completed
+[2026-04-06 21:24:21] [agent_complete] developer completed successfully
