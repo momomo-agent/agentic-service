@@ -73,4 +73,90 @@ describe('setupOllama', () => {
     expect(result.installed).toBe(true);
     expect(result.modelReady).toBe(false);
   });
+
+  it('pulls model and returns modelReady=true on success', async () => {
+    mockExec.mockImplementation(makeExec({
+      'ollama --version': 'ollama version is 0.1.26',
+      'ollama list': ''
+    }));
+    mockSpawn.mockReturnValue({
+      stdout: { on: vi.fn() },
+      stderr: { on: vi.fn() },
+      on: vi.fn((event, cb) => { if (event === 'close') cb(0); })
+    });
+    const { setupOllama } = await import('../../src/detector/optimizer.js');
+    const result = await setupOllama(mockProfile);
+    expect(result.installed).toBe(true);
+    expect(result.modelReady).toBe(true);
+    expect(result.modelName).toBe('gemma4:26b');
+  });
+
+  it('reports progress during pull', async () => {
+    mockExec.mockImplementation(makeExec({
+      'ollama --version': 'ollama version is 0.1.26',
+      'ollama list': ''
+    }));
+    let capturedText = '';
+    const spinner = { start: vi.fn().mockReturnThis(), succeed: vi.fn().mockReturnThis(),
+      fail: vi.fn().mockReturnThis(), info: vi.fn().mockReturnThis(),
+      set text(v) { capturedText = v; } };
+    vi.doMock('ora', () => ({ default: () => spinner }));
+    mockSpawn.mockReturnValue({
+      stdout: { on: vi.fn((e, cb) => { if (e === 'data') cb(Buffer.from('pulling abc 45% ▕████▏ 500MB  52 MB/s')); }) },
+      stderr: { on: vi.fn() },
+      on: vi.fn((event, cb) => { if (event === 'close') cb(0); })
+    });
+    const { setupOllama } = await import('../../src/detector/optimizer.js');
+    const result = await setupOllama(mockProfile);
+    expect(result.modelReady).toBe(true);
+  });
+
+  it('handles spawn error and returns modelReady=false', async () => {
+    mockExec.mockImplementation(makeExec({
+      'ollama --version': 'ollama version is 0.1.26',
+      'ollama list': ''
+    }));
+    mockSpawn.mockReturnValue({
+      stdout: { on: vi.fn() },
+      stderr: { on: vi.fn() },
+      on: vi.fn((event, cb) => { if (event === 'error') cb(new Error('spawn failed')); })
+    });
+    const { setupOllama } = await import('../../src/detector/optimizer.js');
+    const result = await setupOllama(mockProfile);
+    expect(result.installed).toBe(true);
+    expect(result.modelReady).toBe(false);
+  });
+
+  it('handles ollama list failure by treating model as absent', async () => {
+    mockExec.mockImplementation(makeExec({
+      'ollama --version': 'ollama version is 0.1.26',
+      'ollama list': new Error('list failed')
+    }));
+    mockSpawn.mockReturnValue({
+      stdout: { on: vi.fn() },
+      stderr: { on: vi.fn() },
+      on: vi.fn((event, cb) => { if (event === 'close') cb(0); })
+    });
+    const { setupOllama } = await import('../../src/detector/optimizer.js');
+    const result = await setupOllama(mockProfile);
+    expect(result.installed).toBe(true);
+    expect(result.modelReady).toBe(true); // pull succeeded
+  });
+
+  it('parses version from non-standard format', async () => {
+    mockExec.mockImplementation(makeExec({
+      'ollama --version': '0.2.0\n',
+      'ollama list': 'gemma4:26b    abc    1 GB\n'
+    }));
+    const { setupOllama } = await import('../../src/detector/optimizer.js');
+    const result = await setupOllama(mockProfile);
+    expect(result.version).toBe('0.2.0');
+  });
+
+  it('returns correct modelName from profile', async () => {
+    mockExec.mockImplementation((cmd, cb) => cb(new Error('not found')));
+    const { setupOllama } = await import('../../src/detector/optimizer.js');
+    const result = await setupOllama({ llm: { model: 'llama3:8b' } });
+    expect(result.modelName).toBe('llama3:8b');
+  });
 });
