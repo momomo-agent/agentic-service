@@ -8587,3 +8587,21 @@ All tasks are complete. Here's a summary:
 **Bug found:** `src/detector/matcher.js` — when `gpu` criterion is specified but doesn't match, the profile should be eliminated (score=0), but currently only `platform` and `minMemory` mismatches eliminate candidates. This causes cpu-only hardware to incorrectly receive the nvidia profile.
 [2026-04-06T22:58:08.245Z] tester-2 agent completed
 [2026-04-06 22:58:08] [agent_complete] tester-2 completed successfully
+All tasks are complete. Here's a summary:
+
+**task-1775514571886** (profiles.js getProfile) → **blocked**
+- 4/5 tests passed. Bug in `matcher.js`: gpu mismatch doesn't eliminate profiles, causing cpu-only hardware to incorrectly match the nvidia profile (returns `gemma4:13b` instead of `gemma3:1b`). Fix needed: add `return 0` on gpu mismatch, same as platform/minMemory.
+
+**task-1775514675809** (profiles/default.json) → **done**
+- 6/6 tests passed. cpu-only fallback (`match: {}`, `gemma3:1b`) confirmed present.
+
+**task-1775514675715** (stt+tts.js) → **done**
+- 7/7 tests passed. All DBB-001–004 verified via existing m27-stt-tts.test.js.
+
+**task-1775514589838** (Admin UI + Docker + setup.sh) → **done**
+- 8/8 tests passed. Built `dist/admin` via `npm run build`. Docker and setup.sh structure verified statically.
+
+**task-1775514594768** (README.md) → **done**
+- 4/4 tests passed. npx, docker, and /api/chat docs all present.
+[2026-04-06T22:58:18.425Z] tester-1 agent completed
+[2026-04-06 22:58:18] [agent_complete] tester-1 completed successfully
