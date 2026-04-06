@@ -1,10 +1,10 @@
 {
-  "totalTests": 6,
-  "passed": 6,
+  "totalTests": 15,
+  "passed": 15,
   "failed": 0,
   "edgeCases": [
-    "≤60s reload timing in real network conditions",
-    "In-flight request safety during config reload"
+    "win32 Ollama install: cannot auto-install, prints URL and exits (not testable in CI)",
+    "EOF/Ctrl+D on install prompt: treated as decline (readline behavior)"
   ],
   "coverage": "100%"
 }

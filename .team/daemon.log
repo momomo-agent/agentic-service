@@ -4445,3 +4445,27 @@ The only todo task is a README documentation task assigned to the developer — 
 All 3 review tasks are currently being handled by tester-1. There's no work available for me to claim right now. I'll wait for new tasks to enter review status.
 [2026-04-06T20:28:58.823Z] tester-2 agent completed
 [2026-04-06 20:28:58] [agent_complete] tester-2 completed successfully
+[2026-04-06 20:29:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 82min (active:4, done:51)
+[2026-04-06 20:29:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 82min (active:4, done:51)
+[2026-04-06 20:30:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 83min (active:4, done:51)
+[2026-04-06 20:30:41] [perf] daemon {"rss":"39MB","heapUsed":"12MB","heapTotal":"13MB","uptime":"17100s"}
+[2026-04-06 20:30:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 83min (active:4, done:51)
+[2026-04-06 20:31:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 84min (active:4, done:51)
+[2026-04-06 20:31:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 84min (active:4, done:51)
+All done. Here's a summary:
+
+**M14 Testing Complete — 15/15 tests passed**
+
+Tasks completed:
+- `task-1775506784289` (Ollama auto-install) → **done** — 3 tests: confirm installs, decline exits, already-installed skips prompt
+- `task-1775506792151` (hub.js speak/display) → **done** — 4 tests: speak/display routed, capture no regression, unknown type throws
+- `task-1775506792183` (llm.js hardware-adaptive) → **done** — 3 tests: no hardcoded model, uses `config.llm.model`, wires through `detectHardware`/`getProfile`
+- `test/readme-m14.test.js` — 5 tests: README has npx, global install, docker, API section, HTTP methods
+
+Test files written:
+- `test/detector/optimizer-m14.test.js`
+- `test/server/hub-m14.test.js`
+- `test/runtime/llm-m14.test.js`
+- `test/readme-m14.test.js`
+[2026-04-06T20:32:30.667Z] tester-1 agent completed
+[2026-04-06 20:32:30] [agent_complete] tester-1 completed successfully
