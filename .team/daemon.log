@@ -9975,3 +9975,349 @@ Both remaining design tasks can't be claimed (likely blocked). All available wor
 No more claimable tasks with `hasDesign: true` available right now.
 [2026-04-06T23:31:38.532Z] developer agent completed
 [2026-04-06 23:31:38] [agent_complete] developer completed successfully
+[2026-04-06 23:31:38] [workflow] work_loop [LOOP] Iteration 4
+[2026-04-06 23:31:38] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:31:38] [agent_start] pm pm
+[2026-04-06T23:31:38.760Z] Running pm agent...
+[2026-04-06 23:32:05] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:27, done:123)
+M30 has 2 tasks in "review" status and 2 in "in-progress". Per my rules, I cannot approve reviewed tasks or mark the milestone complete — that's the tester's job.
+
+Current status of M30:
+- `task-1775517321148` — **review**: VAD自动检测实现
+- `task-1775517325421` — **review**: CDN profiles真实端点配置
+- `task-1775517330333` — **in-progress**: HTTPS/LAN隧道安全访问
+- `task-1775517334300` — **in-progress**: 多设备脑状态深度共享
+
+The 2 in-progress tasks still need to be completed and reviewed before M30 can close. No action needed from me — waiting for developer to complete in-progress tasks and tester to approve the review tasks.
+[2026-04-06T23:32:07.674Z] pm agent completed
+[2026-04-06 23:32:07] [agent_complete] pm completed successfully
+[2026-04-06 23:32:07] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:32:07] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 23:32:07] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 23:32:07] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 23:32:07] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T23:32:07.740Z] Running tech_lead-3 agent...
+[2026-04-06T23:32:07.740Z] Running tech_lead-2 agent...
+[2026-04-06T23:32:07.740Z] Running tech_lead-1 agent...
+[2026-04-06 23:32:35] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:15, done:123)
+[2026-04-06 23:33:05] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:15, done:123)
+[2026-04-06 23:33:28] [perf] daemon {"rss":"39MB","heapUsed":"6MB","heapTotal":"9MB","uptime":"27302s"}
+PM Agent work complete. Here's the current state:
+
+**M30 (active)** — waiting on tester:
+- VAD: in-progress
+- CDN profiles: in **review** (blocked — cannot close milestone)
+- HTTPS/LAN: in-progress
+- 多设备脑状态: in-progress
+
+**Planned milestones consolidated:**
+
+| Milestone | Scope | Key gaps covered |
+|-----------|-------|-----------------|
+| m31 | Detector补全 + Runtime (llm/stt/tts/sense/memory) | 5 architecture missing gaps |
+| m32 | Server (hub/brain/api) + README | 3 architecture missing gaps |
+| m33 | Admin UI + 唤醒词管道 + 服务端感知 + 语音延迟基准 | admin missing + vision gaps |
+
+**New tasks created:**
+- `task-1775518297707` — src/runtime/sense.js → m31 (P0)
+- `task-1775518301754` — src/runtime/memory.js → m31 (P0)
+- `task-1775518305478` — src/ui/admin/ → m33 (P0)
+
+Architecture match is at 18% — m31+m32+m33 directly target all 14 remaining architecture gaps. No action needed until m30 tasks clear review.
+[2026-04-06T23:33:30.556Z] pm agent completed
+[2026-04-06 23:33:30] [agent_complete] pm completed successfully
+[2026-04-06 23:33:30] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:33:30] [workflow] work_loop [LOOP] Iteration 7
+[2026-04-06 23:33:30] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:33:30] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:33:30] [agent_start] pm pm
+[2026-04-06T23:33:30.646Z] Running pm agent...
+[2026-04-06 23:33:35] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:12, done:123)
+The files exist with real content but stt.js and tts.js are only 30 lines — likely stubs. These tasks are legitimately still todo (need proper implementation). The task system is correct.
+
+**Current state summary:**
+- M30: active (2 review, 2 in-progress) — waiting for tester
+- M31: planned, 3 todo tasks — runtime llm/stt/tts need full implementation
+- M32: planned, 4 todo tasks — server hub/brain/api + README
+- M33: planned, 6 todo tasks — admin UI, sense, wake word, latency, README
+
+The milestones are correctly structured. No action needed on milestones.json — the structure is sound.
+
+**PM status report:**
+
+- M30 is active. Two tasks (VAD, CDN profiles) are in **review** — awaiting tester approval. Two tasks (HTTPS, multi-device brain sync) are **in-progress**.
+- M31-M33 are queued with unassigned tasks ready for developers once m30 completes.
+- Architecture match is 18% (stale gap data) — actual files exist for runtime/server layers but stt.js/tts.js need fuller implementation.
+- No new milestones needed — existing pipeline covers remaining gaps.
+[2026-04-06T23:33:36.649Z] pm agent completed
+[2026-04-06 23:33:36] [agent_complete] pm completed successfully
+[2026-04-06 23:33:36] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:33:36] [workflow] work_loop [LOOP] Iteration 9
+[2026-04-06 23:33:36] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:33:36] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:33:36] [agent_start] pm pm
+[2026-04-06T23:33:36.744Z] Running pm agent...
+The milestone cleanup is complete. Current state:
+
+- **m30** (active): 2 tasks in review awaiting tester approval, 2 in-progress
+- **m31** (planned): runtime llm/stt/tts — ready to start once m30 completes
+- **m32** (planned): server hub/brain/api + README
+- **m33** (planned): admin UI, headless sense, wakeword pipeline, voice latency
+
+12 duplicate tasks cancelled. Milestones m34/m35 removed from the plan.
+[2026-04-06T23:33:47.084Z] pm agent completed
+[2026-04-06 23:33:47] [agent_complete] pm completed successfully
+[2026-04-06 23:33:47] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:33:47] [workflow] work_loop [LOOP] Iteration 10
+[2026-04-06 23:33:47] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:33:47] [agent_start] pm pm
+[2026-04-06T23:33:47.188Z] Running pm agent...
+[2026-04-06 23:34:05] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:12, done:123)
+[no content]
+[2026-04-06T23:34:20.633Z] tech_lead-1 agent completed
+[2026-04-06 23:34:20] [agent_complete] tech_lead-1 completed successfully
+Good. The state is now clear. Here's the current PM status summary:
+
+**M30 (active)** — waiting on testers:
+- 2 tasks in `review` (VAD, CDN profiles) — cannot approve, tester's job
+- 2 tasks `in-progress` (HTTPS, multi-device brain sharing)
+
+**M31 (planned)** — ready for developers:
+- 4 tasks `done` (detector layer complete)
+- 5 tasks `todo`: llm.js, stt.js, tts.js, sense.js (new), memory.js (new)
+
+**M32 (planned)** — ready for developers:
+- 4 tasks `todo`: hub.js, brain.js, api.js, README
+
+**M33 (planned)** — ready for developers:
+- 4 tasks `todo`: admin UI, headless sense, wakeword pipeline, voice latency benchmark
+
+**Architecture match is 18%** — the critical gaps are the runtime and server layer files. M31 and M32 directly target these missing files.
+
+No action needed on milestones.json — the task-manager already updated it with the new sense.js and memory.js tasks. M30 must remain active until testers approve the review tasks. Planning is complete.
+[2026-04-06T23:34:30.525Z] pm agent completed
+[2026-04-06 23:34:30] [agent_complete] pm completed successfully
+[2026-04-06 23:34:30] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:34:30] [workflow] work_loop [LOOP] Iteration 8
+[2026-04-06 23:34:30] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:34:30] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:34:30] [agent_start] pm pm
+[2026-04-06T23:34:30.618Z] Running pm agent...
+[2026-04-06 23:34:35] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:20, done:123)
+The m31 overview already covers sense.js and memory.js. Everything is in order.
+
+**Current state summary:**
+
+- **M30 (active):** 2 tasks in `review` (VAD, CDN), 2 `in-progress` (HTTPS, multi-device brain) — waiting on testers/developers
+- **M31 (planned):** 4 tasks `done` (detector layer), 5 tasks `todo` (llm/stt/tts/sense/memory) — ready for developers
+- **M32 (planned):** 4 tasks `todo` (hub/brain/api/README) — blocked on M31 runtime
+- **M33 (planned):** 4 tasks `todo` (admin UI, headless sense, wake-word pipeline, voice latency) — blocked on M32
+
+**Actions taken:**
+- Re-created `sense.js` (task-1775518448489, P0) and `memory.js` (task-1775518452000, P0) tasks in M31 — these were previously cancelled but are architecture gaps marked "missing"
+- Created `admin/` UI task (task-1775518455627, P0) in M33 — also a "missing" architecture gap
+- All new tasks added to their respective milestones in milestones.json
+
+Architecture match is at 18% — the critical path is M31 runtime implementation → M32 server layer → M33 UI/polish.
+[2026-04-06T23:34:42.303Z] pm agent completed
+[2026-04-06 23:34:42] [agent_complete] pm completed successfully
+[2026-04-06 23:34:42] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:34:42] [workflow] work_loop [LOOP] Iteration 10
+[2026-04-06 23:34:42] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:34:42] [agent_start] pm pm
+[2026-04-06T23:34:42.415Z] Running pm agent...
+The PM planning is complete. Here's the current state:
+
+**M30 (active):** 2 tasks in `review`, 2 `in-progress` — waiting on testers to approve before closing.
+
+**M31 (planned) — fully scoped:**
+- Detector tasks: all `done` ✅
+- Runtime: llm/stt/tts/sense/memory — all `todo`, ready for developers
+
+**M32 (planned) — fully scoped:**
+- hub/brain/api + Admin UI + README — all `todo`
+
+**M33 (planned):**
+- 服务端感知路径, 语音延迟基准, 唤醒词管道 — `todo`
+
+**Architecture gaps addressed:**
+All 11 `missing` items from architecture.json now have active tasks in m31/m32/m33. No CRs needed — architecture constraints are clear and actionable.
+[2026-04-06T23:34:58.883Z] pm agent completed
+[2026-04-06 23:34:58] [agent_complete] pm completed successfully
+[2026-04-06 23:34:58] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:34:58] [workflow] work_loop [LOOP] Iteration 11
+[2026-04-06 23:34:58] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:34:58] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:34:58] [agent_start] pm pm
+[2026-04-06T23:34:58.976Z] Running pm agent...
+[2026-04-06 23:35:05] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:20, done:123)
+Good. I have a clear picture. Here's the current state:
+
+**M30 (active):** 2 tasks in `review`, 2 `in-progress` — waiting on tester/developer, cannot touch.
+
+**M31 (planned):** Has active `todo` tasks for runtime layer (llm/stt/tts/sense/memory) — these are the right tasks, no action needed.
+
+**M32 (planned):** Has active `todo` tasks for server layer (hub/brain/api/admin) + README/docs — good.
+
+**M33 (planned):** Has `todo` for wake-word pipeline + headless sense path — good.
+
+**Architecture gaps still missing:** All 11 missing items are already covered by tasks in m31/m32/m33. No new tasks needed.
+
+**Status summary:**
+- M30: Waiting for tester to approve 2 review tasks + developer to finish 2 in-progress tasks
+- M31/M32/M33: Properly planned with correct task coverage
+- Architecture match at 18% — will improve as m31/m32/m33 tasks complete
+- No duplicate or conflicting tasks to clean up (cancelled tasks are already cancelled)
+
+No action required from PM at this time. The pipeline is healthy — tasks are queued and waiting for the development team to execute m30 completion before m31 activates.
+[2026-04-06T23:35:19.584Z] pm agent completed
+[2026-04-06 23:35:19] [agent_complete] pm completed successfully
+[2026-04-06 23:35:19] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:35:19] [workflow] work_loop [LOOP] Iteration 11
+[2026-04-06 23:35:19] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:35:19] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:35:19] [agent_start] pm pm
+[2026-04-06T23:35:19.674Z] Running pm agent...
+[2026-04-06 23:35:35] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:15, done:123)
+All work is complete. Here's what was done:
+
+**M31** (`Detector补全 + Runtime层全实现`):
+- Created `.team/milestones/m31/dbb.md` — verification criteria for llm/stt/tts runtime
+- Created `.team/milestones/m31/design.md` — technical approach
+- Created designs for 3 todo tasks (all files already existed, designs document the interface/logic/tests):
+  - `task-1775517757326` — `runtime/llm.js` (Ollama streaming + cloud fallback)
+  - `task-1775517761920` — `runtime/stt.js` (sensevoice/whisper adapter pattern)
+  - `task-1775517761954` — `runtime/tts.js` (kokoro/piper adapter pattern)
+- Marked all 3 tasks `hasDesign: true`
+
+**M32** (`Server层补全 + Admin UI + 唤醒词管道 + README + 语音延迟基准`):
+- Created `.team/milestones/m32/dbb.md` — verification criteria
+- Created `.team/milestones/m32/design.md` — technical approach
+- Created designs for 7 todo tasks:
+  - `task-1775517765913` — `server/hub.js`
+  - `task-1775517770681` — `server/brain.js`
+  - `task-1775517770713` — `server/api.js`
+  - `task-1775517732946` — `README.md`
+  - `task-1775517741153` — voice latency benchmark (`test/bench-voice-latency.js`)
+  - `task-1775517741186` — `sense.js` headless camera path
+  - `task-1775518019834` — wakeword server-side pipeline
+- Marked all 7 tasks `hasDesign: true`
+[2026-04-06T23:35:37.275Z] tech_lead-2 agent completed
+[2026-04-06 23:35:37] [agent_complete] tech_lead-2 completed successfully
+All work is complete. Summary:
+
+**M31 milestone** (`dbb.md`, `design.md` created)
+- `task-1775517757326` — `src/runtime/llm.js` design ✓
+- `task-1775517761920` — `src/runtime/stt.js` design ✓
+- `task-1775517761954` — `src/runtime/tts.js` design ✓
+
+**M32 milestone** (`dbb.md`, `design.md` created)
+- `task-1775517765913` — `src/server/hub.js` design ✓
+- `task-1775517770681` — `src/server/brain.js` design ✓
+- `task-1775517770713` — `src/server/api.js` design ✓
+- `task-1775517732946` — `README.md` design ✓
+- `task-1775517741153` — `test/bench-voice.js` design ✓
+- `task-1775517741186` — `src/runtime/sense.js` headless design ✓
+- `task-1775518019834` — wakeword pipeline design ✓
+
+All 10 tasks marked `hasDesign: true`.
+[2026-04-06T23:35:49.546Z] tech_lead-3 agent completed
+[2026-04-06 23:35:49] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 23:35:49] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 23:35:49] [agent_start] tester-1 tester
+[2026-04-06 23:35:49] [agent_start] tester-2 tester
+[2026-04-06T23:35:49.605Z] Running tester-1 agent...
+[2026-04-06T23:35:49.605Z] Running tester-2 agent...
+M30 has 2 tasks in `review` and 2 `in-progress`. Per my rules, I cannot approve review tasks — only testers can. I'll report the current status and wait.
+
+**M30 Status:**
+- `task-1775517321148` — VAD自动检测实现 → **review** (waiting for tester)
+- `task-1775517325421` — CDN profiles真实端点配置 → **review** (waiting for tester)
+- `task-1775517330333` — HTTPS/LAN隧道安全访问 → **in-progress**
+- `task-1775517334300` — 多设备脑状态深度共享 → **in-progress**
+
+M30 cannot be completed yet. Two tasks are still in-progress, and two are awaiting tester review. I will not advance the milestone until all tasks reach `done`.
+
+**Next planned milestones (m31, m32, m33) are ready to activate once m30 completes.**
+
+No action needed from PM at this time — waiting on tester approvals and developer completions for m30.
+[2026-04-06T23:35:52.371Z] pm agent completed
+[2026-04-06 23:35:52] [agent_complete] pm completed successfully
+[2026-04-06 23:35:52] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:35:52] [workflow] work_loop [LOOP] Iteration 12
+[2026-04-06 23:35:52] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:35:52] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:35:52] [agent_start] pm pm
+[2026-04-06T23:35:52.464Z] Running pm agent...
+The milestone cleanup is complete. Here's the current state:
+
+**M30 (active)** — waiting for tester review:
+- `task-1775517321148` — VAD自动检测 (review)
+- `task-1775517325421` — CDN profiles真实端点 (review)
+- `task-1775517330333` — HTTPS/LAN隧道 (in-progress)
+- `task-1775517334300` — 多设备脑状态共享 (in-progress)
+
+**M31 (planned)** — 9 tasks, clean:
+- 4 done (detector layer)
+- 3 todo: llm.js, stt.js, tts.js
+- 2 todo: sense.js, memory.js
+
+**M32 (planned)** — 5 tasks:
+- hub.js, brain.js, api.js, admin UI, README
+
+**M33 (planned)** — 3 tasks:
+- 服务端感知路径, 语音延迟基准, 唤醒词管道
+
+**Actions taken:**
+- Cancelled 5 duplicate tasks (sense.js ×2, memory.js ×2, admin UI ×1)
+- Cleaned milestones.json task lists
+- Renamed M33 to reflect actual scope
+
+**Waiting on:** M30 in-progress tasks to complete, then testers to approve the 2 review tasks before M30 can be marked complete and M31 activated.
+[2026-04-06T23:35:53.518Z] pm agent completed
+[2026-04-06 23:35:53] [agent_complete] pm completed successfully
+[2026-04-06 23:35:53] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:35:53] [workflow] work_loop [LOOP] Iteration 9
+[2026-04-06 23:35:53] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:35:53] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:35:53] [agent_start] pm pm
+[2026-04-06T23:35:53.618Z] Running pm agent...
+The milestones.json already has the correct task IDs for m31, m32, and m33. The structure is consistent. 
+
+**Current status summary:**
+
+- **M30 (active):** 2 tasks in `review` (VAD, CDN), 2 `in-progress` (HTTPS, 多设备). Cannot mark complete — waiting for tester to approve review tasks and developers to finish in-progress tasks.
+
+- **M31 (planned):** 9 tasks — 4 `done` (detector layer), 3 `todo` (llm/stt/tts), 2 `todo` (sense/memory). All tasks properly listed in milestones.json. Ready to activate once M30 completes.
+
+- **M32 (planned):** 5 tasks — hub/brain/api/admin-ui/README. All `todo`. Properly listed.
+
+- **M33 (planned):** 3 tasks — 服务端感知/语音延迟/唤醒词管道. All `todo`. Properly listed.
+
+**Architecture gaps coverage:**
+- `src/runtime/llm.js` → m31 ✓
+- `src/runtime/stt.js` → m31 ✓
+- `src/runtime/tts.js` → m31 ✓
+- `src/runtime/sense.js` → m31 ✓
+- `src/runtime/memory.js` → m31 ✓
+- `src/server/hub.js` → m32 ✓
+- `src/server/brain.js` → m32 ✓
+- `src/server/api.js` → m32 ✓
+- `src/ui/admin/` → m32 ✓
+- README → m32 ✓
+
+All architecture gaps are covered by planned milestones. No new tasks need to be created. The PM state is consistent — waiting on M30 completion (tester must approve the 2 review tasks, developers must finish the 2 in-progress tasks).
+[2026-04-06T23:36:00.974Z] pm agent completed
+[2026-04-06 23:36:00] [agent_complete] pm completed successfully
+[2026-04-06 23:36:01] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:36:01] [workflow] work_loop [LOOP] Iteration 12
+[2026-04-06 23:36:01] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:36:01] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:36:01] [agent_start] pm pm
+[2026-04-06T23:36:01.067Z] Running pm agent...
+[2026-04-06 23:36:05] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:15, done:123)
+The two tasks in 'review' status cannot be claimed right now (likely already claimed by another agent). There are no other tasks in a testable state — the remaining tasks are either `todo`, `in-progress`, or `cancelled`.
+
+Nothing to test at this time. I'll wait for tasks to move into `review` status.
+[2026-04-06T23:36:12.585Z] tester-1 agent completed
+[2026-04-06 23:36:12] [agent_complete] tester-1 completed successfully
