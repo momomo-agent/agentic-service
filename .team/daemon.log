@@ -4750,3 +4750,32 @@ Once M15 is done, I'll plan M16 targeting these remaining gaps.
 All 5 review tasks in m15 are already claimed by another agent (canClaim: false). There are no available tasks for me to pick up right now. I'll wait for new tasks to enter review status.
 [2026-04-06T20:44:11.468Z] tester-1 agent completed
 [2026-04-06 20:44:11] [agent_complete] tester-1 completed successfully
+[2026-04-06 20:44:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:5, done:55)
+[2026-04-06 20:44:57] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:5, done:55)
+[2026-04-06 20:45:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:5, done:55)
+[2026-04-06 20:45:41] [error] daemon Watchdog: busy for 300min, force reset
+[2026-04-06 20:45:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T20:45:41.604Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 300min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 20:45:41] [perf] daemon {"rss":"33MB","heapUsed":"6MB","heapTotal":"8MB","uptime":"18000s"}
+[2026-04-06 20:45:57] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:5, done:55)
+[2026-04-06 20:46:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:5, done:55)
+All 5 m15 tasks are complete:
+
+| Task | Description | Result |
+|------|-------------|--------|
+| task-1775507803330 | sense.js Node.js compat (no rAF) | ✓ PASS |
+| task-1775507813507 | store.js delete() alias | ✓ PASS |
+| task-1775507813540 | hub.js wakeword broadcast | ✓ PASS |
+| task-1775507818493 | hub.js heartbeat 60s | ✓ PASS |
+| task-1775507818526 | brain.js tool_use text field | ✓ PASS |
+
+7/7 tests passed. All tasks marked `done`. Coverage updated to 30 total tests, 100%.
+[2026-04-06T20:47:06.411Z] tester-2 agent completed
+[2026-04-06 20:47:06] [agent_complete] tester-2 completed successfully

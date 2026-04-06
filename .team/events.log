@@ -3905,3 +3905,26 @@
 {"ts":"2026-04-06T20:44:03.917Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.445665,"cpuSystem":3.542924}}}
 {"ts":"2026-04-06T20:44:03.918Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.445851,"cpuSystem":3.54343}}}
 {"ts":"2026-04-06T20:44:11.471Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.446177,"cpuSystem":3.544025}}}
+{"ts":"2026-04-06T20:44:12.829Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:5, done:55)"}}
+{"ts":"2026-04-06T20:44:12.830Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:5, done:55)\"}"}}
+{"ts":"2026-04-06T20:44:20.742Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775507803330","from":"review","to":"testing","title":"sense.js Node.js兼容: 移除requestAnimationFrame"}}
+{"ts":"2026-04-06T20:44:25.162Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775507813507","from":"review","to":"testing","title":"store.js: 导出delete()方法别名"}}
+{"ts":"2026-04-06T20:44:25.197Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775507813540","from":"review","to":"testing","title":"hub.js: 唤醒词事件广播"}}
+{"ts":"2026-04-06T20:44:25.230Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775507818493","from":"review","to":"testing","title":"hub.js: 心跳超时修复为60s"}}
+{"ts":"2026-04-06T20:44:25.265Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775507818526","from":"review","to":"testing","title":"brain.js: tool_use响应补充text字段"}}
+{"ts":"2026-04-06T20:44:57.401Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:5, done:55)"}}
+{"ts":"2026-04-06T20:44:57.402Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:5, done:55)\"}"}}
+{"ts":"2026-04-06T20:45:12.831Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:5, done:55)"}}
+{"ts":"2026-04-06T20:45:12.832Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:5, done:55)\"}"}}
+{"ts":"2026-04-06T20:45:41.604Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 300min, force reset"}}
+{"ts":"2026-04-06T20:45:41.826Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"33MB\",\"heapUsed\":\"6MB\",\"heapTotal\":\"8MB\",\"uptime\":\"18000s\"}"}}
+{"ts":"2026-04-06T20:45:57.404Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:5, done:55)"}}
+{"ts":"2026-04-06T20:45:57.405Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:5, done:55)\"}"}}
+{"ts":"2026-04-06T20:46:12.836Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:5, done:55)"}}
+{"ts":"2026-04-06T20:46:12.837Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:5, done:55)\"}"}}
+{"ts":"2026-04-06T20:46:33.560Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775507803330","from":"testing","to":"done","title":"sense.js Node.js兼容: 移除requestAnimationFrame"}}
+{"ts":"2026-04-06T20:46:33.594Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775507813507","from":"testing","to":"done","title":"store.js: 导出delete()方法别名"}}
+{"ts":"2026-04-06T20:46:33.627Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775507813540","from":"testing","to":"done","title":"hub.js: 唤醒词事件广播"}}
+{"ts":"2026-04-06T20:46:33.659Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775507818493","from":"testing","to":"done","title":"hub.js: 心跳超时修复为60s"}}
+{"ts":"2026-04-06T20:46:33.691Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775507818526","from":"testing","to":"done","title":"brain.js: tool_use响应补充text字段"}}
+{"ts":"2026-04-06T20:47:06.415Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":7,"cpuUser":2.479346,"cpuSystem":3.584499}}}

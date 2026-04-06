@@ -1,10 +1,13 @@
 {
-  "totalTests": 23,
-  "passed": 23,
+  "totalTests": 30,
+  "passed": 30,
   "failed": 0,
   "edgeCases": [
     "win32 Ollama install: cannot auto-install, prints URL and exits (not testable in CI)",
-    "EOF/Ctrl+D on install prompt: treated as decline (readline behavior)"
+    "EOF/Ctrl+D on install prompt: treated as decline (readline behavior)",
+    "store.delete() with non-existent key (no-op behavior)",
+    "broadcastWakeword() with zero connected devices",
+    "sense.js start() called multiple times without stop()"
   ],
   "coverage": "100%"
 }
