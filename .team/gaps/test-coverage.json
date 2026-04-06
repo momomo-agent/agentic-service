@@ -1,10 +1,12 @@
 {
-  "totalTests": 20,
-  "passed": 20,
+  "totalTests": 16,
+  "passed": 16,
   "failed": 0,
   "edgeCases": [
-    "Wake word onWake callback not verified to fire (stub has no audio source)",
-    "Benchmark uses fixed delays, not real STT/LLM/TTS adapters"
+    "Network timeout behavior under slow connections (5s AbortSignal)",
+    "Concurrent fetch requests during cache refresh",
+    "Cache file corruption handling",
+    "watchProfiles ETag-based conditional fetch"
   ],
-  "coverage": "100%"
+  "coverage": "80%"
 }
