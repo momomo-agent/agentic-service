@@ -8226,3 +8226,17 @@ All tasks in 'testing' are owned by tester-2, and there are no tasks in 'review'
 There's nothing for me to claim right now. I'll wait for developer tasks to move to 'review' status before I can proceed with testing.
 [2026-04-06T22:43:01.669Z] tester-1 agent completed
 [2026-04-06 22:43:01] [agent_complete] tester-1 completed successfully
+[2026-04-06 22:43:27] [perf] daemon {"rss":"37MB","heapUsed":"7MB","heapTotal":"10MB","uptime":"24301s"}
+All three tasks are complete. Here's the summary:
+
+**Task 1 (task-1775514571886) — profiles.js getProfile + cpu-only profile → BLOCKED**
+- Bug found in `matcher.js`: gpu type mismatch doesn't eliminate a profile (unlike platform mismatch). CPU-only hardware (`gpu.type: 'none'`) incorrectly matches the nvidia profile and returns `gemma4:13b` instead of `gemma3:1b`.
+- Fix needed: add `return 0` when `criteria.gpu !== hardware.gpu?.type` in `calculateMatchScore`.
+
+**Task 2 (task-1775514586151) — gpu-detector.js merge → DONE**
+- `gpu-detector.js` does not exist; GPU detection is fully inlined in `hardware.js`. ✅
+
+**Task 3 (task-1775514647990) — llm.js chat() → DONE**
+- `chat(messages, options)` correctly accepts a messages array and returns an AsyncGenerator. ✅
+[2026-04-06T22:44:06.826Z] tester-1 agent completed
+[2026-04-06 22:44:06] [agent_complete] tester-1 completed successfully
