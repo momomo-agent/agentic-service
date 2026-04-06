@@ -3133,3 +3133,53 @@
 {"ts":"2026-04-06T18:11:18.839Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775498249905","from":"blocked","to":"todo","title":"STT/TTS 硬件自适应选择"}}
 {"ts":"2026-04-06T18:11:32.955Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775494979786","from":"inProgress","to":"review","title":"管理面板 src/ui/admin/"}}
 {"ts":"2026-04-06T18:11:37.866Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":0.947851,"cpuSystem":1.385604}}}
+{"ts":"2026-04-06T18:11:37.957Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 2"}}
+{"ts":"2026-04-06T18:11:37.957Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T18:11:37.957Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":0.950323,"cpuSystem":1.391626}}}
+{"ts":"2026-04-06T18:11:54.485Z","type":"task_created","agent":null,"data":{"taskId":"task-1775499114484","title":"DBB 规范修复","priority":"P1","group":"m9"}}
+{"ts":"2026-04-06T18:12:18.580Z","type":"task_created","agent":null,"data":{"taskId":"task-1775499138579","title":"SIGINT 优雅关闭","priority":"P1","group":"m9"}}
+{"ts":"2026-04-06T18:12:18.613Z","type":"task_created","agent":null,"data":{"taskId":"task-1775499138612","title":"npx 一键安装流程完善","priority":"P1","group":"m9"}}
+{"ts":"2026-04-06T18:12:32.513Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":0.957452,"cpuSystem":1.39803}}}
+{"ts":"2026-04-06T18:12:32.520Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T18:12:32.521Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-06T18:12:32.521Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":0.95981,"cpuSystem":1.404079}}}
+{"ts":"2026-04-06T18:12:32.522Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":0.959985,"cpuSystem":1.404539}}}
+{"ts":"2026-04-06T18:12:32.522Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"tech_lead","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":0.960129,"cpuSystem":1.40491}}}
+{"ts":"2026-04-06T18:12:42.965Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":0.96042,"cpuSystem":1.405443}}}
+{"ts":"2026-04-06T18:12:42.972Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T18:12:42.972Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-06T18:12:42.972Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":0.962371,"cpuSystem":1.410705}}}
+{"ts":"2026-04-06T18:12:42.973Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":12,"memoryTotalMB":13,"cpuUser":0.962535,"cpuSystem":1.411122}}}
+{"ts":"2026-04-06T18:12:42.973Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"tech_lead","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":0.962757,"cpuSystem":1.411469}}}
+{"ts":"2026-04-06T18:13:26.323Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"38MB\",\"heapUsed\":\"12MB\",\"heapTotal\":\"15MB\",\"uptime\":\"8100s\"}"}}
+{"ts":"2026-04-06T18:14:42.236Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:27)"}}
+{"ts":"2026-04-06T18:14:42.237Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:5, done:27)\"}"}}
+{"ts":"2026-04-06T18:14:45.679Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":0.974483,"cpuSystem":1.426277}}}
+{"ts":"2026-04-06T18:14:56.736Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:27)"}}
+{"ts":"2026-04-06T18:14:56.737Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:5, done:27)\"}"}}
+{"ts":"2026-04-06T18:14:57.479Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":0.979667,"cpuSystem":1.431845}}}
+{"ts":"2026-04-06T18:15:00.196Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":0.980299,"cpuSystem":1.432548}}}
+{"ts":"2026-04-06T18:15:00.203Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-06T18:15:00.204Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":13,"memoryTotalMB":14,"cpuUser":0.982323,"cpuSystem":1.437654}}}
+{"ts":"2026-04-06T18:15:05.550Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":0.982696,"cpuSystem":1.438324}}}
+{"ts":"2026-04-06T18:15:12.241Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:27)"}}
+{"ts":"2026-04-06T18:15:12.241Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:5, done:27)\"}"}}
+{"ts":"2026-04-06T18:15:15.360Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":0.983225,"cpuSystem":1.438934}}}
+{"ts":"2026-04-06T18:15:20.358Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":0.983847,"cpuSystem":1.439523}}}
+{"ts":"2026-04-06T18:15:20.364Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-06T18:15:20.364Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":0.985869,"cpuSystem":1.444403}}}
+{"ts":"2026-04-06T18:15:23.319Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775494979786","from":"review","to":"testing","title":"管理面板 src/ui/admin/"}}
+{"ts":"2026-04-06T18:15:26.738Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:27)"}}
+{"ts":"2026-04-06T18:15:26.739Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:5, done:27)\"}"}}
+{"ts":"2026-04-06T18:15:41.531Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 150min, force reset"}}
+{"ts":"2026-04-06T18:15:41.722Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"28MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"9MB\",\"uptime\":\"9000s\"}"}}
+{"ts":"2026-04-06T18:16:12.241Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:27)"}}
+{"ts":"2026-04-06T18:16:12.243Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:5, done:27)\"}"}}
+{"ts":"2026-04-06T18:16:26.744Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:27)"}}
+{"ts":"2026-04-06T18:16:26.745Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:5, done:27)\"}"}}
+{"ts":"2026-04-06T18:17:12.245Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:27)"}}
+{"ts":"2026-04-06T18:17:12.246Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:5, done:27)\"}"}}
+{"ts":"2026-04-06T18:17:26.747Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:27)"}}
+{"ts":"2026-04-06T18:17:26.748Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:5, done:27)\"}"}}
+{"ts":"2026-04-06T18:17:54.059Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775494979786","from":"testing","to":"done","title":"管理面板 src/ui/admin/"}}
+{"ts":"2026-04-06T18:18:02.223Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":1.005853,"cpuSystem":1.471791}}}

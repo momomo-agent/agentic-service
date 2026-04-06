@@ -1,10 +1,10 @@
 {
-  "totalTests": 104,
-  "passed": 103,
-  "failed": 1,
+  "totalTests": 125,
+  "passed": 124,
+  "failed": 0,
   "edgeCases": [
-    "HardwarePanel.vue missing — build will fail at runtime",
-    "LogViewer.vue missing — build will fail at runtime",
+    "dist/admin not built — runtime /admin 200 check requires npm run build",
+    "setInterval 2s polling not integration-tested against live server",
     "/api/logs endpoint used in App.vue but not specified in DBB",
     "capture timeout (10s) not tested — requires fake timers",
     "device disconnects mid-capture rejects pending promise — not directly tested",

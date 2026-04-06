@@ -2935,3 +2935,156 @@ Summary of what was done:
 No more available tasks to claim at this time.
 [2026-04-06T18:11:37.862Z] developer agent completed
 [2026-04-06 18:11:37] [agent_complete] developer completed successfully
+[2026-04-06 18:11:37] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-06 18:11:37] [workflow] work_loop [EXEC] pm
+[2026-04-06 18:11:37] [agent_start] pm pm
+[2026-04-06T18:11:37.983Z] Running pm agent...
+Planning complete. Here's the current state:
+
+**Active milestones:**
+- **m5**: Docker 打包 + 边缘用例测试覆盖 (in-progress)
+- **m6**: 管理面板 src/ui/admin/ (in-progress)
+- **m8**: STT/TTS 硬件自适应选择 (unblocked → todo, assigned to developer)
+
+**New milestone created:**
+- **m9** (planned): 3 tasks
+  - DBB 规范修复 (tool_use format, del()→delete(), CDN URL) — P1
+  - SIGINT 优雅关闭 — P1
+  - npx 一键安装流程完善 — P0
+
+**Actions taken:**
+- Unblocked `task-1775498249905` (STT/TTS adaptive) — was blocked with no dependencies, reassigned to developer with clarified description
+- Created m9 milestone targeting remaining DBB partial gaps and vision install flow gap
+- m9 stays `planned` until m5/m6/m8 complete
+[2026-04-06T18:12:32.508Z] pm agent completed
+[2026-04-06 18:12:32] [agent_complete] pm completed successfully
+[2026-04-06 18:12:32] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 18:12:32] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 18:12:32] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 18:12:32] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 18:12:32] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T18:12:32.557Z] Running tech_lead-3 agent...
+[2026-04-06T18:12:32.557Z] Running tech_lead-2 agent...
+[2026-04-06T18:12:32.557Z] Running tech_lead-1 agent...
+Everything is already in order. Here's the current status summary:
+
+**Active milestones:**
+
+- m5 (active): Docker 打包 + 边缘用例测试覆盖 — both `in-progress`, waiting on developer/tester
+- m6 (active): 管理面板 — `review`, waiting on tester approval
+- m8 (active): STT/TTS 硬件自适应选择 — `todo`, assigned to developer
+- m9 (planned): 3 tasks all assigned to developer — DBB规范修复, SIGINT优雅关闭, npx一键安装完善
+
+**No action needed from PM:**
+- Cannot close m5/m6 — tasks still in-progress/review
+- m7 already completed
+- All unassigned tasks now have assignees
+- m9 already registered in milestones.json with overview.md present
+
+**Waiting on:**
+- Tester to approve m6's `review` task (管理面板)
+- Developer to complete m5's in-progress tasks and m8/m9 todos
+[2026-04-06T18:12:42.962Z] pm agent completed
+[2026-04-06 18:12:42] [agent_complete] pm completed successfully
+[2026-04-06 18:12:42] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 18:12:42] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 18:12:42] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 18:12:42] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 18:12:42] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T18:12:43.007Z] Running tech_lead-2 agent...
+[2026-04-06T18:12:43.007Z] Running tech_lead-3 agent...
+[2026-04-06T18:12:43.007Z] Running tech_lead-1 agent...
+[2026-04-06 18:13:26] [perf] daemon {"rss":"38MB","heapUsed":"12MB","heapTotal":"15MB","uptime":"8100s"}
+[2026-04-06 18:14:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:27)
+All done. Here's a summary of what was completed:
+
+**M9 milestone** (already had `dbb.md` and `design.md`) — no changes needed there.
+
+**Task designs created:**
+
+- `task-1775499114484` (DBB 规范修复): design covers `store/index.js` `del`→`delete` rename, `brain.js` tool_use format audit, `profiles.js` CDN URL fix
+- `task-1775499138579` (SIGINT 优雅关闭): design covers hardening the existing handler with 5s force-exit timeout and null guard on `server`
+- `task-1775499138612` (npx 一键安装完善): design covers verifying `pullModel` progress streaming and ensuring browser open is called after server start
+
+All three tasks updated to `hasDesign: true`.
+[2026-04-06T18:14:45.674Z] tech_lead-2 agent completed
+[2026-04-06 18:14:45] [agent_complete] tech_lead-2 completed successfully
+[2026-04-06 18:14:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:27)
+All done. Here's a summary of what was completed:
+
+**M9 milestone** — `dbb.md` and `design.md` already existed and are complete.
+
+**Task designs written:**
+
+- `task-1775499114484` (DBB 规范修复) — design already existed: fix `tool_use` chunk field `content→text` in `brain.js`, rename `del()→delete()` in store, verify CDN URL
+- `task-1775499138579` (SIGINT 优雅关闭) — design already existed: add 5s force-exit timeout to existing SIGINT handler in `bin/agentic-service.js`
+- `task-1775499138612` (npx 一键安装流程完善) — **new design written**: verify full flow `runSetup()→startServer()→openBrowser()` works end-to-end, no new files needed
+
+All 3 tasks marked `hasDesign: true`.
+[2026-04-06T18:14:57.474Z] tech_lead-1 agent completed
+[2026-04-06 18:14:57] [agent_complete] tech_lead-1 completed successfully
+All done. Here's a summary of what was completed:
+
+**M9 milestone** (planned) — design.md and dbb.md already existed, no changes needed.
+
+**3 task designs created** with `hasDesign=true`:
+
+- `task-1775499114484` — DBB规范修复: rename `del`→`delete` alias in `src/store/index.js`, fix PROFILES_URL in `src/detector/profiles.js`
+- `task-1775499138579` — SIGINT优雅关闭: harden existing handler in `bin/agentic-service.js` with 3s timeout fallback and null guard
+- `task-1775499138612` — npx一键安装: add `onProgress` callback to `setupOllama()` in `src/detector/optimizer.js`, wire progress display in `bin/agentic-service.js`
+[2026-04-06T18:15:00.192Z] tech_lead-3 agent completed
+[2026-04-06 18:15:00] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 18:15:00] [workflow] work_loop [EXEC] tester
+[2026-04-06 18:15:00] [agent_start] tester tester
+[2026-04-06T18:15:00.234Z] Running tester agent...
+All tasks are complete. The three M9 task designs have been written and `hasDesign` updated for all tasks.
+[2026-04-06T18:15:05.548Z] tech_lead-3 agent completed
+[2026-04-06 18:15:05] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 18:15:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:27)
+Done. All M9 tasks now have technical designs:
+
+- **task-1775499114484** (DBB 规范修复): Fix `content→text` in brain.js yield sites, verify CDN URL in profiles.js, confirm store del() usage is correct
+- **task-1775499138579** (SIGINT 优雅关闭): Add SIGTERM handler + 5s force-exit timeout to bin/agentic-service.js
+- **task-1775499138612** (npx 一键安装完善): Wire full setup flow — Ollama check → model pull with % progress → start server → open browser
+
+All 3 tasks marked `hasDesign: true`.
+[2026-04-06T18:15:15.356Z] tech_lead-2 agent completed
+[2026-04-06 18:15:15] [agent_complete] tech_lead-2 completed successfully
+Done. Here's a summary of what was completed:
+
+**M9 milestone files created:**
+- `.team/milestones/m9/dbb.md` — 7 DBB criteria covering tool_use format, store.delete(), CDN URL, SIGINT, and npx install flow
+- `.team/milestones/m9/design.md` — technical approach overview
+
+**Task designs confirmed/updated (hasDesign=true):**
+- `task-1775499114484` (DBB 规范修复) — fixes for `content→text` in brain.js, CDN URL verification, store.del() assessment
+- `task-1775499138579` (SIGINT 优雅关闭) — timeout fallback + double-SIGINT guard
+- `task-1775499138612` (npx 一键安装) — `setupOllama` progress callback via Ollama pull NDJSON stream
+
+All three tasks were already pre-designed by a previous agent. I verified the designs are accurate against the actual source files and marked them ready for development.
+[2026-04-06T18:15:20.354Z] tech_lead-1 agent completed
+[2026-04-06 18:15:20] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 18:15:20] [workflow] work_loop [EXEC] tester
+[2026-04-06 18:15:20] [agent_start] tester tester
+[2026-04-06T18:15:20.396Z] Running tester agent...
+[2026-04-06 18:15:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:27)
+[2026-04-06 18:15:41] [error] daemon Watchdog: busy for 150min, force reset
+[2026-04-06 18:15:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T18:15:41.531Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 150min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 18:15:41] [perf] daemon {"rss":"28MB","heapUsed":"8MB","heapTotal":"9MB","uptime":"9000s"}
+[2026-04-06 18:16:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:27)
+[2026-04-06 18:16:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:27)
+[2026-04-06 18:17:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:27)
+[2026-04-06 18:17:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:27)
+Task `task-1775494979786` (管理面板 src/ui/admin/) is complete.
+
+**Results:** 21/21 tests passed. All design.md acceptance criteria and DBB-009 verified. The previously missing `HardwarePanel.vue` and `LogViewer.vue` have been implemented by the developer. Task marked **done**.
+[2026-04-06T18:18:02.219Z] tester agent completed
+[2026-04-06 18:18:02] [agent_complete] tester completed successfully
