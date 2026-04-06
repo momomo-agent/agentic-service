@@ -1,32 +1,27 @@
-// Standalone benchmark: STT→LLM→TTS end-to-end latency
 import { writeFileSync, mkdirSync } from 'fs';
+import { fileURLToPath } from 'url';
+import path from 'path';
 
-function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const delay = ms => new Promise(r => setTimeout(r, ms));
 
-// Mock adapters
-const stt = async () => { await delay(300); return 'hello'; };
-const llm = async () => { await delay(1000); return 'hi'; };
-const tts = async () => { await delay(500); };
-
-const runs = [];
+const samples = [];
 for (let i = 0; i < 5; i++) {
-  const t = Date.now();
-  const text = await stt();
-  const reply = await llm(text);
-  await tts(reply);
-  runs.push(Date.now() - t);
+  const start = Date.now();
+  await delay(300); // mock STT
+  await delay(1000); // mock LLM
+  await delay(500);  // mock TTS
+  samples.push(Date.now() - start);
 }
 
-runs.sort((a, b) => a - b);
-const p50 = runs[Math.floor(runs.length * 0.5)];
-const p95 = runs[Math.floor(runs.length * 0.95)] ?? runs[runs.length - 1];
-const max = runs[runs.length - 1];
+samples.sort((a, b) => a - b);
+const p50 = samples[Math.floor(samples.length * 0.5)];
+const p95 = samples[Math.ceil(samples.length * 0.95) - 1] ?? samples[samples.length - 1];
+const max = samples[samples.length - 1];
 const pass = p95 <= 2000;
 
-const result = { p50, p95, max, target: 2000, pass };
-console.log(JSON.stringify(result, null, 2));
-
-mkdirSync(new URL('.', import.meta.url).pathname, { recursive: true });
-writeFileSync(new URL('results.json', import.meta.url).pathname, JSON.stringify(result));
-
+const report = { p50, p95, max, target: 2000, pass };
+console.log(JSON.stringify(report, null, 2));
+mkdirSync(__dirname, { recursive: true });
+writeFileSync(path.join(__dirname, 'results.json'), JSON.stringify(report));
 if (!pass) process.exit(1);

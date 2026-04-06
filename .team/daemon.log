@@ -9154,3 +9154,13 @@ All 3 tasks completed:
 All tasks marked `done`. Coverage summary updated to 42 tests, 100% pass.
 [2026-04-06T23:12:59.463Z] tester-2 agent completed
 [2026-04-06 23:12:59] [agent_complete] tester-2 completed successfully
+No remaining review tasks. All work is complete.
+
+**Summary:**
+- Claimed task-1775516748230 (服务端唤醒词常驻pipeline)
+- Ran existing tests: `m29-wakeword-pipeline.test.js` (3 tests, all pass)
+- Added `test/m29-wakeword.test.js` (4 tests) verifying api.js integration
+- Total: 7 tests, 7 passed, 0 failed
+- Task marked **done**
+[2026-04-06T23:13:22.440Z] tester-1 agent completed
+[2026-04-06 23:13:22] [agent_complete] tester-1 completed successfully
