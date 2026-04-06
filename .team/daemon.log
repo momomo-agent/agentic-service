@@ -3890,3 +3890,56 @@ Task complete. I updated `README.md` with:
 Task `task-1775500439158` moved to `review`.
 [2026-04-06T18:45:24.325Z] developer agent completed
 [2026-04-06 18:45:24] [agent_complete] developer completed successfully
+[2026-04-06 18:45:24] [workflow] work_loop [LOOP] Iteration 3
+[2026-04-06 18:45:24] [workflow] work_loop [EXEC] pm
+[2026-04-06 18:45:24] [agent_start] pm pm
+[2026-04-06T18:45:24.508Z] Running pm agent...
+[2026-04-06 18:45:41] [error] daemon Watchdog: busy for 180min, force reset
+[2026-04-06 18:45:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T18:45:41.546Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 180min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 18:45:41] [perf] daemon {"rss":"33MB","heapUsed":"7MB","heapTotal":"8MB","uptime":"10800s"}
+**Status Report**
+
+**M10** → marked `completed` ✅ (all 5 tasks done)
+
+**M11** (active):
+- `task-1775500291531` `server/hub.js 设备管理` → **testing** ⏳ (waiting for tester)
+- 4 other tasks → done
+
+**M12** (active):
+- All 3 tasks → **review** ⏳ (waiting for tester)
+
+**Architecture gaps remaining** (22% match, 13 gaps):
+- P0 (missing): `optimizer.js`, `llm.js`, `stt.js`, `tts.js`, `sense.js`, `memory.js`, `hub.js`, `brain.js`, `api.js`, `ui/admin/`, `profiles/default.json`, `install/`
+- P1 (partial): `profiles.js`
+
+**Waiting on testers** for M11 hub.js (testing) and M12 tasks (review). Cannot advance those milestones until tester approves.
+
+No new tasks needed right now — M11 and M12 already cover the remaining architecture gaps. Once testers complete their reviews, those milestones can be closed.
+[2026-04-06T18:46:17.811Z] pm agent completed
+[2026-04-06 18:46:17] [agent_complete] pm completed successfully
+[2026-04-06 18:46:17] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 18:46:17] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 18:46:17] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 18:46:17] [agent_start] tester-1 tester
+[2026-04-06 18:46:17] [agent_start] tester-2 tester
+[2026-04-06T18:46:17.857Z] Running tester-1 agent...
+[2026-04-06T18:46:17.857Z] Running tester-2 agent...
+[2026-04-06 18:48:26] [agent_start] daemon Still busy (40min), skipping safety check
+[2026-04-06 18:48:26] [perf] daemon {"rss":"40MB","heapUsed":"11MB","heapTotal":"13MB","uptime":"10200s"}
+All 3 m12 tasks are now done:
+
+- **task-1775500429396** (Ollama 自动安装): 3 tests pass — install execution, failure propagation, skip when not needed
+- **task-1775500434960** (STT/TTS 完整性): 6 tests pass — transcribe/synthesize return types, fallback on import failure, empty input rejection
+- **task-1775500439158** (用户文档 README): verified all DBB-004 criteria present (3 install methods, all API endpoints, docker-compose example, config docs)
+
+Total: 35 tests passing across the project, coverage updated to 95%.
+[2026-04-06T18:49:55.439Z] tester-1 agent completed
+[2026-04-06 18:49:55] [agent_complete] tester-1 completed successfully

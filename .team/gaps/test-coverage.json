@@ -1,6 +1,6 @@
 {
-  "totalTests": 26,
-  "passed": 26,
+  "totalTests": 35,
+  "passed": 35,
   "failed": 0,
   "edgeCases": [
     "Node.js version < 18 rejection (requires mock node binary)",
@@ -10,7 +10,9 @@
     "≤60s reload timing in real network conditions",
     "In-flight request safety during config reload",
     "detectHardware() throws — propagates to caller, not caught in loadConfig",
-    "watchProfiles callback race with in-flight chat() request"
+    "watchProfiles callback race with in-flight chat() request",
+    "pullModel failure after successful Ollama install not tested",
+    "OPENAI_API_KEY unset cloud adapter error not tested"
   ],
-  "coverage": "100%"
+  "coverage": "95%"
 }

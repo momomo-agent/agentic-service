@@ -109,7 +109,7 @@
     {
       "id": "m10",
       "name": "M10: API 修复 + 硬件自适应 + 安装完善",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775500155143",
         "task-1775500168029",

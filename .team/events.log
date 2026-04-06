@@ -3486,3 +3486,24 @@
 {"ts":"2026-04-06T18:45:20.117Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775500439158","from":"inProgress","to":"review","title":"用户文档 README"}}
 {"ts":"2026-04-06T18:45:20.926Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775500291531","from":"review","to":"testing","title":"server/hub.js 设备管理"}}
 {"ts":"2026-04-06T18:45:24.329Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":1.321466,"cpuSystem":1.979798}}}
+{"ts":"2026-04-06T18:45:24.484Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 3"}}
+{"ts":"2026-04-06T18:45:24.484Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T18:45:24.484Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":7,"memoryTotalMB":11,"cpuUser":1.325162,"cpuSystem":1.989493}}}
+{"ts":"2026-04-06T18:45:41.546Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 180min, force reset"}}
+{"ts":"2026-04-06T18:45:41.742Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"33MB\",\"heapUsed\":\"7MB\",\"heapTotal\":\"8MB\",\"uptime\":\"10800s\"}"}}
+{"ts":"2026-04-06T18:46:17.814Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":1.332224,"cpuSystem":1.999539}}}
+{"ts":"2026-04-06T18:46:17.824Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T18:46:17.824Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T18:46:17.825Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-06T18:46:17.825Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":1.335731,"cpuSystem":2.007253}}}
+{"ts":"2026-04-06T18:46:17.825Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":1.335892,"cpuSystem":2.00768}}}
+{"ts":"2026-04-06T18:47:04.607Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775500429396","from":"review","to":"testing","title":"Ollama 自动安装执行"}}
+{"ts":"2026-04-06T18:47:04.640Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775500434960","from":"review","to":"testing","title":"STT/TTS 完整性修复"}}
+{"ts":"2026-04-06T18:47:04.669Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775500439158","from":"review","to":"testing","title":"用户文档 README"}}
+{"ts":"2026-04-06T18:48:26.152Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (40min), skipping safety check","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":1.351284,"cpuSystem":2.028704}}}
+{"ts":"2026-04-06T18:48:26.346Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"40MB\",\"heapUsed\":\"11MB\",\"heapTotal\":\"13MB\",\"uptime\":\"10200s\"}"}}
+{"ts":"2026-04-06T18:48:32.039Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775500291531","from":"testing","to":"done","title":"server/hub.js 设备管理"}}
+{"ts":"2026-04-06T18:49:44.082Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775500429396","from":"testing","to":"done","title":"Ollama 自动安装执行"}}
+{"ts":"2026-04-06T18:49:44.114Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775500434960","from":"testing","to":"done","title":"STT/TTS 完整性修复"}}
+{"ts":"2026-04-06T18:49:44.143Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775500439158","from":"testing","to":"done","title":"用户文档 README"}}
+{"ts":"2026-04-06T18:49:55.443Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":1.363208,"cpuSystem":2.044947}}}
