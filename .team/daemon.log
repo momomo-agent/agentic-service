@@ -5672,3 +5672,13 @@ Both tasks in 'review' status cannot be claimed (likely already assigned to test
 I'll wait for new tasks to become available.
 [2026-04-06T21:11:41.217Z] tester-2 agent completed
 [2026-04-06 21:11:41] [agent_complete] tester-2 completed successfully
+All 4 tasks are complete:
+
+- **task-1775509406861** (store.delete() alias) → done — `export { del as delete }` already present
+- **task-1775509421092** (brain.js tool_use text field) → done — both yield paths already include `text: ''`
+- **task-1775509421126** (heartbeat 60s) → done — hub.js already uses 60000ms
+- **task-1775509421158** (wakeword broadcast) → done — broadcastWakeword() already implemented correctly
+
+5/5 tests passed. Coverage updated to 24/24 (100%).
+[2026-04-06T21:12:12.913Z] tester-1 agent completed
+[2026-04-06 21:12:12] [agent_complete] tester-1 completed successfully

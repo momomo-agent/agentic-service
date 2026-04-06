@@ -36,9 +36,9 @@
     "retryCount": 0
   },
   "tester-1": {
-    "status": "running",
-    "lastRun": "2026-04-06T21:11:19.982Z",
-    "currentTask": "tester",
+    "status": "idle",
+    "lastRun": "2026-04-06T21:12:12.916Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "tester-2": {

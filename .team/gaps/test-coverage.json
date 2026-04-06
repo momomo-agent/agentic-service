@@ -1,6 +1,6 @@
 {
-  "totalTests": 19,
-  "passed": 19,
+  "totalTests": 24,
+  "passed": 24,
   "failed": 0,
   "edgeCases": [
     "≤60s reload timing in real network conditions",
