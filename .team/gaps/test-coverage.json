@@ -1,6 +1,6 @@
 {
-  "totalTests": 69,
-  "passed": 69,
+  "totalTests": 90,
+  "passed": 90,
   "failed": 0,
   "edgeCases": [
     "No test for matchProfile() logic against this file",
@@ -9,7 +9,9 @@
     "vitest coverage thresholds set to 98% in package.json (no vitest.config.js)",
     "real Ollama/STT/TTS service latency not tested (mocks only)",
     "HTTPS port collision (port+443 already in use) not tested",
-    "Ollama install failure on unsupported platform not integration-tested"
+    "Ollama install failure on unsupported platform not integration-tested",
+    "initHeadless with custom options subset not tested",
+    "detectFrame with non-Buffer input not tested"
   ],
   "coverage": "98%"
 }

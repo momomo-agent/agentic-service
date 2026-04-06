@@ -5005,3 +5005,6 @@
 {"ts":"2026-04-06T22:28:27.101Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"41MB\",\"heapUsed\":\"12MB\",\"heapTotal\":\"15MB\",\"uptime\":\"23401s\"}"}}
 {"ts":"2026-04-06T22:28:31.938Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":4.442154,"cpuSystem":8.354207}}}
 {"ts":"2026-04-06T22:28:40.153Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":4.448152,"cpuSystem":8.364262}}}
+{"ts":"2026-04-06T22:28:40.248Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T22:28:40.249Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":4.451496,"cpuSystem":8.373793}}}
+{"ts":"2026-04-06T22:29:04.867Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":4.457973,"cpuSystem":8.38338}}}
