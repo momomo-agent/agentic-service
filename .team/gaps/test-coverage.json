@@ -1,12 +1,13 @@
 {
-  "totalTests": 18,
-  "passed": 18,
+  "totalTests": 20,
+  "passed": 20,
   "failed": 0,
   "edgeCases": [
     "No test for matchProfile() logic against this file",
     "stop() called before start() — safe via optional chaining but not explicitly tested",
     "rapid speech/silence oscillation within silenceMs window",
-    "vitest coverage thresholds set to 98% in package.json (no vitest.config.js)"
+    "vitest coverage thresholds set to 98% in package.json (no vitest.config.js)",
+    "real Ollama/STT/TTS service latency not tested (mocks only)"
   ],
   "coverage": "98%"
 }
