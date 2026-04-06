@@ -5275,3 +5275,5 @@
 {"ts":"2026-04-06T22:49:07.932Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":4.930992,"cpuSystem":9.338624}}}
 {"ts":"2026-04-06T22:49:08.447Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775515085136","from":"testing","to":"done","title":"Docker端到端验收 + setup.sh幂等性"}}
 {"ts":"2026-04-06T22:49:14.129Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":4.931933,"cpuSystem":9.339987}}}
+{"ts":"2026-04-06T22:49:14.370Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775515085075","from":"testing","to":"done","title":"HTTPS/LAN隧道安全访问"}}
+{"ts":"2026-04-06T22:49:22.381Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":4.933042,"cpuSystem":9.341114}}}

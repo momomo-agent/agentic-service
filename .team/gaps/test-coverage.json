@@ -1,12 +1,14 @@
 {
-  "totalTests": 28,
-  "passed": 27,
+  "totalTests": 42,
+  "passed": 41,
   "failed": 1,
   "edgeCases": [
     "null gpu object (no gpu key at all)",
     "memory exactly at minMemory boundary",
     "gpu type mismatch should eliminate profile in matcher.js (currently not enforced)",
-    "DBB-008 runtime docker run not verified (no Docker daemon in test env)"
+    "DBB-008 runtime docker run not verified (no Docker daemon in test env)",
+    "Runtime HTTPS connection test (curl -k) not performed — no live server started in tests",
+    "LAN IP detection with multiple network interfaces not tested"
   ],
-  "coverage": "96%"
+  "coverage": "98%"
 }
