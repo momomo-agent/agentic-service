@@ -6177,3 +6177,36 @@
 {"ts":"2026-04-06T23:42:29.178Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775518464754","from":"todo","to":"cancelled","title":"实现src/runtime/memory.js"}}
 {"ts":"2026-04-06T23:42:29.210Z","type":"task_status","agent":null,"data":{"taskId":"task-1775518468358","from":"todo","to":"cancelled","title":"实现src/ui/admin/ 管理面板"}}
 {"ts":"2026-04-06T23:42:30.092Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":9,"cpuUser":7.128245,"cpuSystem":15.109613}}}
+{"ts":"2026-04-06T23:42:35.213Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775518019834","from":"review","to":"testing","title":"唤醒词服务端管道集成"}}
+{"ts":"2026-04-06T23:42:35.281Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 16min (active:6, done:123)"}}
+{"ts":"2026-04-06T23:42:35.281Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 16min (active:6, done:123)\"}"}}
+{"ts":"2026-04-06T23:42:46.527Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":7.134452,"cpuSystem":15.119905}}}
+{"ts":"2026-04-06T23:42:46.555Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:42:46.591Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 18"}}
+{"ts":"2026-04-06T23:42:46.592Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] monitors: iteration == 1 || iteration % 5 == 0"}}
+{"ts":"2026-04-06T23:42:46.592Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:42:46.592Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":7.148794,"cpuSystem":15.169692}}}
+{"ts":"2026-04-06T23:43:03.869Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":7.149096,"cpuSystem":15.170852}}}
+{"ts":"2026-04-06T23:43:03.896Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:43:03.933Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 21"}}
+{"ts":"2026-04-06T23:43:03.933Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] monitors: iteration == 1 || iteration % 5 == 0"}}
+{"ts":"2026-04-06T23:43:03.933Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:43:03.933Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":7.162839,"cpuSystem":15.220841}}}
+{"ts":"2026-04-06T23:43:05.292Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 17min (active:6, done:123)"}}
+{"ts":"2026-04-06T23:43:05.293Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 17min (active:6, done:123)\"}"}}
+{"ts":"2026-04-06T23:43:28.315Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"11MB\",\"heapUsed\":\"7MB\",\"heapTotal\":\"9MB\",\"uptime\":\"27902s\"}"}}
+{"ts":"2026-04-06T23:43:49.246Z","type":"task_created","agent":null,"data":{"taskId":"task-1775519029244","title":"实现src/server/hub.js — 设备管理中心","priority":"P1","group":"m32"}}
+{"ts":"2026-04-06T23:43:53.027Z","type":"task_created","agent":null,"data":{"taskId":"task-1775519033024","title":"实现src/server/brain.js — LLM推理+工具调用","priority":"P1","group":"m32"}}
+{"ts":"2026-04-06T23:43:53.214Z","type":"task_created","agent":null,"data":{"taskId":"task-1775519033213","title":"实现src/runtime/llm.js","priority":"P1","group":"m32"}}
+{"ts":"2026-04-06T23:43:56.810Z","type":"task_created","agent":null,"data":{"taskId":"task-1775519036809","title":"实现src/ui/admin/ 管理面板","priority":"P1","group":"m32"}}
+{"ts":"2026-04-06T23:43:57.270Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":7.182748,"cpuSystem":15.273347}}}
+{"ts":"2026-04-06T23:43:57.338Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:43:57.383Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 19"}}
+{"ts":"2026-04-06T23:43:57.383Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] monitors: iteration == 1 || iteration % 5 == 0"}}
+{"ts":"2026-04-06T23:43:57.383Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:43:57.383Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":14,"cpuUser":7.198771,"cpuSystem":15.332389}}}
+{"ts":"2026-04-06T23:43:57.447Z","type":"task_created","agent":null,"data":{"taskId":"task-1775519037446","title":"实现src/runtime/stt.js","priority":"P1","group":"m32"}}
+{"ts":"2026-04-06T23:43:57.479Z","type":"task_created","agent":null,"data":{"taskId":"task-1775519037478","title":"实现src/runtime/tts.js","priority":"P1","group":"m32"}}
+{"ts":"2026-04-06T23:44:04.065Z","type":"task_created","agent":null,"data":{"taskId":"task-1775519044064","title":"实现src/runtime/sense.js","priority":"P1","group":"m32"}}
+{"ts":"2026-04-06T23:44:04.105Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775518019834","from":"testing","to":"done","title":"唤醒词服务端管道集成"}}
+{"ts":"2026-04-06T23:44:08.572Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":14,"cpuUser":7.208612,"cpuSystem":15.353781}}}

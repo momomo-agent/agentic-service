@@ -1,6 +1,6 @@
 {
-  "totalTests": 15,
-  "passed": 15,
+  "totalTests": 20,
+  "passed": 20,
   "failed": 0,
   "edgeCases": [
     "Wake word onWake callback not verified to fire (stub has no audio source)",
