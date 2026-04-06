@@ -11558,3 +11558,33 @@ Both tasks are complete:
 No more tasks in `review` status. Work complete.
 [2026-04-06T23:52:08.943Z] tester-2 agent completed
 [2026-04-06 23:52:08] [agent_complete] tester-2 completed successfully
+[2026-04-06 23:52:09] [workflow] work_loop [EXEC] developer
+[2026-04-06 23:52:09] [agent_start] developer developer
+[2026-04-06T23:52:09.106Z] Running developer agent...
+M36 is set up. Here's the summary:
+
+**M30 (active) — waiting on team:**
+- CDN profiles: testing (tester-2)
+- HTTPS/LAN: in-progress (tech_lead-3)
+- 多设备脑状态共享: in-progress (tech_lead-1)
+
+**M36 (planned) — 4 tasks ready for developer:**
+- `task-1775519455473` — profiles/default.json (P0)
+- `task-1775517732946` — README.md (P1)
+- `task-1775517741153` — 语音延迟基准测试 <2s (P1)
+- `task-1775517741186` — sense.js headless camera (P1)
+
+**Remaining architecture gaps (not yet tasked):** src/detector/profiles.js, src/runtime/llm|stt|tts|sense|memory, src/server/hub|brain|api, src/ui/admin/ — these will need M37+ once M36 is underway, as many of these were reportedly completed in m26-m31 but the gap scanner still flags them at 18% match. That discrepancy may warrant a Change Request to re-run the architecture gap analysis against actual source files.
+[2026-04-06T23:52:24.417Z] pm agent completed
+[2026-04-06 23:52:24] [agent_complete] pm completed successfully
+[2026-04-06 23:52:24] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:52:24] [workflow] work_loop [LOOP] Iteration 26
+[2026-04-06 23:52:24] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:52:24] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:52:24] [agent_start] pm pm
+[2026-04-06T23:52:24.515Z] Running pm agent...
+No tasks are currently available with `hasDesign=true` and `status=todo`. All eligible tasks are either done, cancelled, or already assigned.
+
+Nothing to implement right now.
+[2026-04-06T23:52:31.281Z] developer agent completed
+[2026-04-06 23:52:31] [agent_complete] developer completed successfully
