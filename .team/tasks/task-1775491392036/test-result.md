@@ -1,8 +1,8 @@
 # Test Result: 实现 /api/config 持久化
 
 ## Summary
-- Tests passed: 4/4
-- Tests failed: 0/4
+- Tests passed: 6/6
+- Tests failed: 0/6
 
 ## Results
 

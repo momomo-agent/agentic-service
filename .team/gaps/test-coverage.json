@@ -1,7 +1,7 @@
 {
-  "totalTests": 93,
-  "passed": 93,
-  "failed": 0,
+  "totalTests": 105,
+  "passed": 104,
+  "failed": 1,
   "edgeCases": [
     "Ollama installed but service not running (ollama serve not started)",
     "Disk full during model pull",

@@ -1,8 +1,8 @@
 # Test Result: 修复 /api/status Ollama 真实检测
 
 ## Summary
-- Tests passed: 3/3
-- Tests failed: 0/3
+- Tests passed: 6/6
+- Tests failed: 0/6
 
 ## Results
 
