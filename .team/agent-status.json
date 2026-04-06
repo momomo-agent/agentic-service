@@ -1,8 +1,8 @@
 {
   "pm": {
-    "status": "idle",
-    "lastRun": "2026-04-06T22:25:19.097Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-06T22:28:23.208Z",
+    "currentTask": "pm",
     "retryCount": 0
   },
   "tech_lead-1": {
@@ -30,9 +30,9 @@
     "retryCount": 1
   },
   "tester": {
-    "status": "idle",
-    "lastRun": "2026-04-06T22:28:23.108Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-06T22:28:26.700Z",
+    "currentTask": "tester",
     "retryCount": 0
   },
   "tester-1": {
@@ -43,7 +43,7 @@
   },
   "tester-2": {
     "status": "idle",
-    "lastRun": "2026-04-06T22:27:34.635Z",
+    "lastRun": "2026-04-06T22:28:31.938Z",
     "currentTask": null,
     "retryCount": 0
   },
