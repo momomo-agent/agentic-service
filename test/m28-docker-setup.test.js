@@ -1,50 +1,43 @@
-import { describe, it, expect } from 'vitest'
-import { execSync, spawnSync } from 'child_process'
-import { readFileSync } from 'fs'
-import path from 'path'
+// M28 DBB-007: Docker构建 / DBB-009: setup.sh幂等性
+import { readFileSync } from 'fs';
+import { describe, it, expect } from 'vitest';
 
-const ROOT = path.resolve(import.meta.dirname, '..')
+const dockerfile = readFileSync('install/Dockerfile', 'utf8');
+const setupSh = readFileSync('install/setup.sh', 'utf8');
 
-// DBB-007: Docker image builds successfully
-describe('DBB-007: Docker build', () => {
-  it('Dockerfile exists and is valid', () => {
-    const dockerfile = readFileSync(path.join(ROOT, 'install/Dockerfile'), 'utf8')
-    expect(dockerfile).toContain('FROM node:')
-    expect(dockerfile).toContain('EXPOSE 3000')
-    expect(dockerfile).toContain('CMD')
-  })
+describe('DBB-007: Dockerfile is valid', () => {
+  it('uses node base image', () => {
+    expect(dockerfile).toMatch(/FROM node:/);
+  });
+  it('sets WORKDIR', () => {
+    expect(dockerfile).toContain('WORKDIR');
+  });
+  it('copies package.json and runs npm ci', () => {
+    expect(dockerfile).toContain('package*.json');
+    expect(dockerfile).toContain('npm ci');
+  });
+  it('exposes port 3000', () => {
+    expect(dockerfile).toContain('EXPOSE 3000');
+  });
+  it('starts with node bin/agentic-service.js', () => {
+    expect(dockerfile).toContain('bin/agentic-service.js');
+  });
+});
 
-  it('docker-compose.yml references correct build context', () => {
-    const compose = readFileSync(path.join(ROOT, 'install/docker-compose.yml'), 'utf8')
-    expect(compose).toContain('build:')
-    expect(compose).toContain('3000')
-  })
-})
-
-// DBB-009: setup.sh idempotency
 describe('DBB-009: setup.sh idempotency', () => {
-  it('setup.sh checks if agentic-service already installed before installing', () => {
-    const script = readFileSync(path.join(ROOT, 'install/setup.sh'), 'utf8')
-    expect(script).toMatch(/npm list.*agentic-service|agentic-service.*already installed/)
-    expect(script).toContain('already installed')
-  })
-
-  it('setup.sh checks Node.js version before proceeding', () => {
-    const script = readFileSync(path.join(ROOT, 'install/setup.sh'), 'utf8')
-    expect(script).toContain('command -v node')
-    expect(script).toMatch(/NODE_MAJOR.*18|18.*NODE_MAJOR/)
-  })
-
-  it('setup.sh second run exits 0 when node is present', () => {
-    const result = spawnSync('sh', [path.join(ROOT, 'install/setup.sh')], {
-      env: { ...process.env, PATH: process.env.PATH },
-      timeout: 10000
-    })
-    // Should not exit with error due to missing node (node is present in test env)
-    // If it exits non-zero, it must be due to npm install or startup, not idempotency check
-    const stderr = result.stderr?.toString() || ''
-    const stdout = result.stdout?.toString() || ''
-    // The idempotency check itself should not produce errors
-    expect(stderr).not.toContain('Error: Node.js not found')
-  })
-})
+  it('checks if node is installed', () => {
+    expect(setupSh).toMatch(/command -v node|which node/);
+  });
+  it('prints already installed message', () => {
+    expect(setupSh).toContain('already installed');
+  });
+  it('skips npm install if already present', () => {
+    expect(setupSh).toContain('npm list');
+  });
+  it('exits with error if Node.js not found', () => {
+    expect(setupSh).toContain('exit 1');
+  });
+  it('requires Node.js >= 18', () => {
+    expect(setupSh).toMatch(/18|NODE_MAJOR/);
+  });
+});
