@@ -1,11 +1,13 @@
 {
-  "totalTests": 25,
-  "passed": 25,
+  "totalTests": 35,
+  "passed": 35,
   "failed": 0,
   "edgeCases": [
     "SIGINT during active WebSocket connections (timeout path not exercised live)",
     "CDN URL actual HTTP reachability (mocked, not live-tested)",
-    "pullModel with total=0 in early stream lines (logic verified, not spawned)"
+    "pullModel with total=0 in early stream lines (logic verified, not spawned)",
+    "memory.js: error in one add() call may break the promise chain for subsequent calls",
+    "sense.js: start() loop behavior not tested (requires requestAnimationFrame environment)"
   ],
   "coverage": "100%"
 }

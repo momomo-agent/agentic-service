@@ -3764,3 +3764,11 @@ All 3 tasks updated to `hasDesign: true`. M12 milestone already had `dbb.md` and
 [no content]
 [2026-04-06T18:38:48.910Z] tester-1 agent completed
 [2026-04-06 18:38:48] [agent_complete] tester-1 completed successfully
+Both tasks are complete:
+
+- **task-1775500155143** (sense.js detect API): 7/7 tests passed → marked `done`
+- **task-1775500168029** (memory.js mutex): 3/3 tests passed → marked `done`
+
+Test coverage updated: 35 total tests, 35 passed, 100% coverage.
+[2026-04-06T18:39:42.843Z] tester-2 agent completed
+[2026-04-06 18:39:42] [agent_complete] tester-2 completed successfully
