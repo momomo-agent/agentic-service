@@ -52,8 +52,10 @@ function calculateMatchScore(criteria, hardware) {
   // gpu 匹配（权重 30）
   if (criteria.gpu !== undefined) {
     maxScore += 30;
-    if (criteria.gpu === hardware.gpu.type) {
+    if (criteria.gpu === hardware.gpu?.type) {
       score += 30;
+    } else {
+      return 0; // gpu 类型不匹配直接淘汰
     }
   }
 
