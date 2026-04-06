@@ -2403,3 +2403,17 @@ Test files written:
 Notable gap documented: `loadConfig()` hardcodes `fallback.provider='openai'`, making the Anthropic routing path in `chat()` unreachable without dynamic config.
 [2026-04-06T17:29:23.230Z] tester-1 agent completed
 [2026-04-06 17:29:23] [agent_complete] tester-1 completed successfully
+[2026-04-06 17:30:41] [perf] daemon {"rss":"8MB","heapUsed":"8MB","heapTotal":"9MB","uptime":"6300s"}
+Both review tasks are now complete:
+
+- **task-1775495670314** (云端 LLM 回退): 5/5 tests passed → marked **done**
+- **task-1775495680417** (DBB 规范修复): 5/5 tests passed → marked **done**
+
+Key findings:
+- Cloud LLM fallback correctly emits `meta` chunk first, then streams content via OpenAI/Anthropic
+- `memory.js` exports `delete` alias correctly
+- `brain.js` normalizes tool messages to Anthropic format and guards `JSON.parse` with `typeof`
+- SIGINT handler present in bin entry point
+- `api.test.js` `/api/chat` timeouts are a pre-existing issue (mock targets `llm.js` but api.js uses `brain.js`) — not related to this task
+[2026-04-06T17:31:30.350Z] tester-2 agent completed
+[2026-04-06 17:31:30] [agent_complete] tester-2 completed successfully
