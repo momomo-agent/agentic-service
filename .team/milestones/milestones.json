@@ -386,7 +386,7 @@
     {
       "id": "m32",
       "name": "M32: Server层实现 (hub/brain/api) + Admin UI + README",
-      "status": "active",
+      "status": "cancelled",
       "tasks": [
         "task-1775519282587",
         "task-1775519286378",
@@ -397,14 +397,15 @@
         "task-1775519417265",
         "task-1775519421037",
         "task-1775519425549",
-        "task-1775519425581"
+        "task-1775519425581",
+        "task-1775519455473"
       ],
       "created": "2026-04-06T23:20:40.782Z"
     },
     {
       "id": "m33",
       "name": "M33: 服务端感知 + 唤醒词管道 + 语音延迟基准",
-      "status": "planned",
+      "status": "completed",
       "tasks": [
         "task-1775517741186",
         "task-1775517741153",
@@ -415,7 +416,7 @@
     {
       "id": "m34",
       "name": "M34: Runtime层全实现 (llm/stt/tts/sense/memory)",
-      "status": "planned",
+      "status": "cancelled",
       "tasks": [
         "task-1775519033213",
         "task-1775519037446",
@@ -428,7 +429,7 @@
     {
       "id": "m35",
       "name": "M35: README + 一键安装 + 语音延迟基准 + CDN端点",
-      "status": "planned",
+      "status": "cancelled",
       "tasks": [
         "task-1775519386021",
         "task-1775519393263",
@@ -436,6 +437,18 @@
         "task-1775519397626"
       ],
       "created": "2026-04-06T23:50:01.748Z"
+    },
+    {
+      "id": "m36",
+      "name": "M36: profiles/default.json + README + 语音延迟 + headless camera",
+      "status": "planned",
+      "tasks": [
+        "task-1775519455473",
+        "task-1775517732946",
+        "task-1775517741153",
+        "task-1775517741186"
+      ],
+      "created": "2026-04-06T23:52:00.000Z"
     }
   ]
 }

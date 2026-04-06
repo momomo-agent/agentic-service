@@ -113,12 +113,12 @@ await test('Silence after speech calls onStop after silenceMs', async () => {
   // Start recording
   const loud = new Float32Array(4096).fill(0.1);
   env.mockProcessor._process(loud);
-  // Ensure MIN_DURATION passes (mock startTime to be 400ms ago)
-  // We need to wait for the silence timer
+  // Wait for MIN_DURATION (300ms) to pass before going silent
+  await new Promise(r => setTimeout(r, 350));
   const quiet = new Float32Array(4096).fill(0.001);
   env.mockProcessor._process(quiet);
-
-  await new Promise(r => setTimeout(r, 500)); // wait > silenceMs(50) + MIN_DURATION(300)
+  // Wait for silenceMs (50ms) timer to fire
+  await new Promise(r => setTimeout(r, 100));
   assert.strictEqual(stopped, true, 'Expected onStop to be called after silence');
   vad.stop();
 });

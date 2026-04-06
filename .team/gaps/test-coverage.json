@@ -1,12 +1,7 @@
 {
-  "totalTests": 16,
-  "passed": 16,
+  "totalTests": 6,
+  "passed": 6,
   "failed": 0,
-  "edgeCases": [
-    "Network timeout behavior under slow connections (5s AbortSignal)",
-    "Concurrent fetch requests during cache refresh",
-    "Cache file corruption handling",
-    "watchProfiles ETag-based conditional fetch"
-  ],
-  "coverage": "80%"
+  "edgeCases": ["Multiple rapid start/stop debounce not explicitly timed", "WSS/WebSocket VAD integration not tested (browser-only)"],
+  "coverage": "100%"
 }
