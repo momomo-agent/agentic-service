@@ -2,12 +2,12 @@
   "id": "task-1775510295749",
   "title": "创建 profiles/default.json",
   "description": "默认硬件Profile：标准CPU/GPU配置，供 getProfile() 回退使用",
-  "status": "inProgress",
+  "status": "review",
   "priority": "P0",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m20",
   "hasDesign": true,
   "created": "2026-04-06T21:18:15.749Z",
-  "updated": "2026-04-06T21:22:37.278Z"
+  "updated": "2026-04-06T21:24:07.935Z"
 }

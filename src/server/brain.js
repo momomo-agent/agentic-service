@@ -1,5 +1,11 @@
 import { chat as llmChat } from '../runtime/llm.js';
 
+const tools = new Map();
+
+export function registerTool(name, fn) {
+  tools.set(name, fn);
+}
+
 function normalizeMessages(messages) {
   return messages.map(msg => {
     if (msg.role === 'tool' && msg.tool_use_id) {
@@ -102,9 +108,10 @@ async function* chatWithTools(messages, tools) {
 }
 
 export async function* chat(messages, options = {}) {
-  const { tools } = options;
+  const registeredTools = [...tools.entries()].map(([name, fn]) => ({ name, fn }));
+  const mergedTools = [...(options.tools || []), ...registeredTools];
   try {
-    yield* chatWithTools(messages, tools);
+    yield* chatWithTools(messages, mergedTools);
   } catch (err) {
     yield { type: 'error', error: err.message };
   }

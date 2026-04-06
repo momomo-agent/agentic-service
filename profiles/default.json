@@ -71,6 +71,14 @@
         },
         "fallback": null
       }
+    },
+    {
+      "id": "default",
+      "match": { "gpu": "none" },
+      "llm": { "provider": "ollama", "model": "gemma2:2b", "quantization": "q4" },
+      "stt": { "provider": "sensevoice", "model": "small" },
+      "tts": { "provider": "kokoro", "voice": "default" },
+      "fallback": { "provider": "openai", "model": "gpt-4o-mini" }
     }
   ]
 }

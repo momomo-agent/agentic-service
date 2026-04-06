@@ -2,12 +2,12 @@
   "id": "task-1775510277966",
   "title": "实现 src/server/hub.js",
   "description": "设备管理模块：设备注册、发现、状态跟踪，暴露 registerDevice/getDevices/updateStatus 接口",
-  "status": "inProgress",
+  "status": "review",
   "priority": "P0",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m20",
   "hasDesign": true,
   "created": "2026-04-06T21:17:57.966Z",
-  "updated": "2026-04-06T21:22:37.190Z"
+  "updated": "2026-04-06T21:24:07.819Z"
 }
