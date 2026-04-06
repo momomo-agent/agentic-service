@@ -8531,3 +8531,10 @@ There are no tasks in `review` status available for me to claim. The current sta
 There's nothing for me to act on right now. I'll wait for tasks to move into `review` status.
 [2026-04-06T22:57:01.064Z] tester-1 agent completed
 [2026-04-06 22:57:01] [agent_complete] tester-1 completed successfully
+The `canClaimTask` logic blocks any task with `blockedBy` entries regardless of blocker status. The task `task-1775514675779` has `blockedBy: ['task-1775514675715']` which is in "review" — not "done". 
+
+Since the blocker isn't done yet and I can't claim the only remaining task assigned to me, there's nothing actionable right now. All other tasks are either assigned to other developers or blocked.
+
+No tasks available to claim at this time. The only claimable task (`task-1775514675779`) is blocked by `task-1775514675715` which is still in "review" status.
+[2026-04-06T22:57:08.722Z] developer agent completed
+[2026-04-06 22:57:08] [agent_complete] developer completed successfully
