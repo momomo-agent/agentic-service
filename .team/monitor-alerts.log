@@ -1032,3 +1032,6 @@
 {"time":"2026-04-06T17:47:12.008Z","type":"no_progress","message":"No progress for 8min (active:4, done:22)"}
 {"time":"2026-04-06T17:47:56.539Z","type":"no_progress","message":"No progress for 9min (active:4, done:22)"}
 {"time":"2026-04-06T17:48:12.009Z","type":"no_progress","message":"No progress for 9min (active:4, done:22)"}
+{"time":"2026-04-06T17:48:26.540Z","type":"no_progress","message":"No progress for 9min (active:3, done:22)"}
+{"time":"2026-04-06T17:48:42.012Z","type":"no_progress","message":"No progress for 9min (active:3, done:22)"}
+{"time":"2026-04-06T17:48:56.543Z","type":"no_progress","message":"No progress for 10min (active:3, done:22)"}
