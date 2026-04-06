@@ -5642,3 +5642,6 @@ Both tester-1 and tester-2 are running and likely working on those review tasks.
 There's nothing for me to claim right now. I'll wait for new tasks to become available in review status.
 [2026-04-06T21:10:59.735Z] tester-2 agent completed
 [2026-04-06 21:10:59] [agent_complete] tester-2 completed successfully
+All tasks are currently claimed by other agents. No work is available for me right now — I'll wait for new tasks to enter 'review' status.
+[2026-04-06T21:11:09.387Z] tester-2 agent completed
+[2026-04-06 21:11:09] [agent_complete] tester-2 completed successfully
