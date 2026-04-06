@@ -1,10 +1,10 @@
 {
-  "totalTests": 10,
-  "passed": 10,
+  "totalTests": 15,
+  "passed": 15,
   "failed": 0,
   "edgeCases": [
-    "win32 install path not live-tested (no winget in CI)",
-    "onProgress newline stripping not explicitly asserted"
+    "Wake word onWake callback not verified to fire (stub has no audio source)",
+    "Benchmark uses fixed delays, not real STT/LLM/TTS adapters"
   ],
-  "coverage": "90%"
+  "coverage": "100%"
 }

@@ -9209,3 +9209,28 @@ Both tasks marked `done`. The other testing tasks (`task-1775516748230`, `task-1
 All tasks are in 'done' or 'cancelled' status — there are no tasks in 'review' status to claim. Nothing to test right now.
 [2026-04-06T23:14:02.803Z] tester agent completed
 [2026-04-06 23:14:02] [agent_complete] tester completed successfully
+[2026-04-06 23:14:02] [workflow] work_loop [SKIP] implement: designedTasks > 0
+[2026-04-06 23:14:02] [workflow] work_loop [BRANCH] doneCount > 0 → true → milestone_qg
+[2026-04-06 23:14:02] [workflow] work_loop [EXIT] todoCount == 0 && designedTasks == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 && blockedCount == 0 → milestone_qg
+[2026-04-06 23:14:02] [agent_start] milestone_qg [NODE] milestone_qg - 里程碑 QG - 对照 DBB 验收
+[2026-04-06 23:14:02] [workflow] milestone_qg [EXEC] tester
+[2026-04-06 23:14:02] [agent_start] tester tester
+[2026-04-06T23:14:02.952Z] Running tester agent...
+All three tasks are complete. Here's a summary:
+
+**task-1775516748230** (服务端唤醒词常驻pipeline) — done
+- 3/3 tests passed in `m29-wakeword-pipeline.test.js`
+- `startWakeWordPipeline` correctly exports stop function, guards against multiple calls
+
+**task-1775516748265** (语音延迟<2s端到端基准) — done
+- 2/2 vitest tests passed in `latency.test.js`
+- Created `test/benchmark/voice-latency.js` (standalone, per DBB)
+- `test/benchmark/results.json`: p50=1805ms, p95=1806ms, max=1806ms ≤ 2000ms ✅
+
+**task-1775516748300** (README用户文档补全) — done
+- 10/10 checks passed in `m29-readme.test.js`
+- All required sections present: install, quick start, API endpoints, Docker, config, troubleshooting
+
+Total: 15 tests, 15 passed, 0 failed.
+[2026-04-06T23:14:13.075Z] tester-2 agent completed
+[2026-04-06 23:14:13] [agent_complete] tester-2 completed successfully
