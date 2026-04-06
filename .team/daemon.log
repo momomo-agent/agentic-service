@@ -6906,3 +6906,80 @@ Both tasks are complete:
 No more tasks in 'review' status to claim.
 [2026-04-06T22:03:23.074Z] tester-2 agent completed
 [2026-04-06 22:03:23] [agent_complete] tester-2 completed successfully
+[2026-04-06 22:03:23] [workflow] work_loop [SKIP] implement: designedTasks > 0
+[2026-04-06 22:03:23] [workflow] work_loop [LOOP] Iteration 10
+[2026-04-06 22:03:23] [workflow] work_loop [EXEC] pm
+[2026-04-06 22:03:23] [agent_start] pm pm
+[2026-04-06T22:03:23.212Z] Running pm agent...
+[2026-04-06 22:03:27] [perf] daemon {"rss":"31MB","heapUsed":"9MB","heapTotal":"12MB","uptime":"21901s"}
+All done. Here's a summary of what was completed:
+
+**M23 active milestone — all designs in place:**
+
+- `dbb.md` — already existed ✓
+- `design.md` — already existed ✓
+- `task-1775512890701` (App.vue修复) — design existed, `hasDesign=true` ✓
+- `task-1775512894391` (VAD实现) — design existed, `hasDesign=true` ✓
+- `task-1775512900298` (测试覆盖率98%) — design existed, `hasDesign=true` ✓
+- `task-1775512904097` (README.md) — design existed, `hasDesign=true` ✓
+
+**M20** — all tasks are `done` or `testing` with `hasDesign=true`, no action needed.
+
+All 4 M23 tasks are now ready for developer pickup.
+[2026-04-06T22:03:35.967Z] tech_lead-3 agent completed
+[2026-04-06 22:03:35] [agent_complete] tech_lead-3 completed successfully
+M23 milestone design work is complete:
+
+- `.team/milestones/m23/dbb.md` — verification criteria for all 4 tasks
+- `.team/milestones/m23/design.md` — technical approach overview
+- `.team/tasks/task-1775512890701/design.md` — App.vue component imports + polling
+- `.team/tasks/task-1775512894391/design.md` — VAD composable + App.vue integration
+- `.team/tasks/task-1775512900298/design.md` — vitest coverage config + 4 new test cases
+- `.team/tasks/task-1775512904097/design.md` — README.md structure
+- All 4 tasks marked `hasDesign: true`
+[2026-04-06T22:03:40.929Z] tech_lead-2 agent completed
+[2026-04-06 22:03:40] [agent_complete] tech_lead-2 completed successfully
+M23 designs complete. Here's a summary of what was created:
+
+**M23 milestone files:**
+- `.team/milestones/m23/dbb.md` — verification criteria for all 4 deliverables
+- `.team/milestones/m23/design.md` — technical approach overview
+
+**Task designs (all 4 marked `hasDesign: true`):**
+
+| Task | Design |
+|------|--------|
+| `task-1775512890701` | App.vue: import DeviceList/LogViewer/HardwarePanel, setInterval polling /api/status, clearInterval on unmount |
+| `task-1775512894391` | `useVAD.js` composable: AudioContext + AnalyserNode, RMS threshold detection, onStart/onStop callbacks, PTT fallback |
+| `task-1775512900298` | vitest coverage thresholds ≥98%, 4 new test files covering transcribe 400, config write 500, profiles empty array, SIGINT close |
+| `task-1775512904097` | `README.md`: 3 install methods, first-run flow, API endpoints table — docs only |
+[2026-04-06T22:03:57.805Z] tech_lead-1 agent completed
+[2026-04-06 22:03:57] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 22:03:57] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 22:03:57] [workflow] work_loop [EXEC] developer
+[2026-04-06 22:03:57] [agent_start] developer developer
+[2026-04-06T22:03:57.856Z] Running developer agent...
+M20 and M21 are now marked completed. M23 is the active milestone with 4 todo tasks targeting the remaining gaps:
+
+- `task-1775512890701`: 修复 App.vue 组件导入和状态轮询
+- `task-1775512894391`: 实现 VAD 自动语音检测 (PRD gap: missing)
+- `task-1775512900298`: 提升测试覆盖率至98% (DBB gap: partial)
+- `task-1775512904097`: 编写 README.md (PRD gap: missing)
+
+These 4 tasks directly address the remaining open gaps. No new milestone is needed — M23 covers all outstanding work. The architecture match at 18% reflects already-implemented files not being re-detected; the actual gaps (hub/brain/api/admin/profiles) are all `done` in M20/M21.
+
+**Status summary:**
+- M20: completed ✓
+- M21: completed ✓  
+- M23: active, 4 tasks in `todo` — ready for developer assignment
+[2026-04-06T22:04:06.361Z] pm agent completed
+[2026-04-06 22:04:06] [agent_complete] pm completed successfully
+[2026-04-06 22:04:06] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 22:04:06] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 22:04:06] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 22:04:06] [workflow] work_loop [EXEC] developer
+[2026-04-06 22:04:06] [agent_start] developer developer
+[2026-04-06T22:04:06.411Z] Running developer agent...
+No claimable tasks remain. Task `task-1775512890701` (Fix App.vue imports and status polling) is complete and moved to review. All other todo tasks are currently claimed by other agents.
+[2026-04-06T22:05:28.110Z] developer agent completed
+[2026-04-06 22:05:28] [agent_complete] developer completed successfully

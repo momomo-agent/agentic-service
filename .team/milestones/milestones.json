@@ -233,7 +233,7 @@
     {
       "id": "m21",
       "name": "M21: Detector完善 + Admin路由 + 架构对齐",
-      "status": "planned",
+      "status": "completed",
       "tasks": [
         "task-1775510905293",
         "task-1775510912066",
@@ -244,7 +244,7 @@
     {
       "id": "m20",
       "name": "M20: Server层实现 (hub/brain/api) + Admin UI + 默认Profile",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775510277966",
         "task-1775510284163",

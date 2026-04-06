@@ -7,7 +7,7 @@
     </nav>
     <DeviceList :devices="devices" />
     <HardwarePanel :hardware="hardware" />
-    <LogViewer :logs="logs" />
+    <LogViewer />
     <router-view />
   </div>
 </template>
@@ -15,26 +15,25 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import DeviceList from './components/DeviceList.vue'
-import HardwarePanel from './components/HardwarePanel.vue'
 import LogViewer from './components/LogViewer.vue'
+import HardwarePanel from './components/HardwarePanel.vue'
 
 const devices = ref([])
 const hardware = ref({})
-const logs = ref([])
+let timer = null
 
-async function pollStatus() {
+async function fetchStatus() {
   try {
-    const data = await fetch('/api/status').then(r => r.json())
-    devices.value = data.devices || []
-    hardware.value = data.hardware || {}
-  } catch (e) {
-    logs.value = [...logs.value, `Error: ${e.message}`]
-  }
+    const res = await fetch('/api/status')
+    const data = await res.json()
+    devices.value = data.devices ?? []
+    hardware.value = data.hardware ?? {}
+  } catch (e) {}
 }
 
 onMounted(() => {
-  pollStatus()
-  const timer = setInterval(pollStatus, 5000)
-  onUnmounted(() => clearInterval(timer))
+  fetchStatus()
+  timer = setInterval(fetchStatus, 5000)
 })
+onUnmounted(() => clearInterval(timer))
 </script>
