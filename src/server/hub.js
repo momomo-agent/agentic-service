@@ -50,6 +50,11 @@ export function registerDevice(idOrDevice, meta) {
   return { id, registeredAt: now }
 }
 
+export function updateStatus(id, status) {
+  if (!devices.has(id)) throw new Error('Device not found: ' + id);
+  devices.get(id).status = status;
+}
+
 export function heartbeat(id) {
   if (!devices.has(id)) registerDevice(id, {})
   const d = devices.get(id)
