@@ -1,7 +1,7 @@
 {
   "pm": {
     "status": "idle",
-    "lastRun": "2026-04-06T05:28:18.299Z",
+    "lastRun": "2026-04-06T13:46:06.404Z",
     "currentTask": null,
     "retryCount": 0
   },
@@ -25,14 +25,14 @@
   },
   "developer": {
     "status": "idle",
-    "lastRun": "2026-04-06T05:38:53.777Z",
+    "lastRun": "2026-04-06T13:48:03.445Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tester": {
-    "status": "idle",
-    "lastRun": "2026-04-06T05:33:41.472Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-06T13:46:06.410Z",
+    "currentTask": "tester",
     "retryCount": 0
   }
 }

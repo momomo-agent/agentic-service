@@ -1,14 +1,18 @@
 {
-  "totalTests": 20,
-  "passed": 20,
+  "totalTests": 37,
+  "passed": 37,
   "failed": 0,
   "edgeCases": [
-    "Linux + NVIDIA GPU detection (requires NVIDIA hardware)",
-    "Linux + AMD GPU detection (requires AMD hardware)",
-    "Windows platform GPU detection (requires Windows OS)",
-    "Intel Mac with discrete GPU (requires Intel Mac)",
-    "Virtual machine GPU detection behavior",
-    "Multi-GPU systems (only first GPU detected in M1)"
+    "Hardware: Linux + NVIDIA GPU detection (requires NVIDIA hardware)",
+    "Hardware: Linux + AMD GPU detection (requires AMD hardware)",
+    "Hardware: Windows platform GPU detection (requires Windows OS)",
+    "Hardware: Intel Mac with discrete GPU (requires Intel Mac)",
+    "Hardware: Virtual machine GPU detection behavior",
+    "Hardware: Multi-GPU systems (only first GPU detected in M1)",
+    "Profiles: Scoring algorithm doesn't prioritize specificity - when multiple profiles match with same normalized score, first one wins instead of most specific",
+    "Profiles: Concurrent test execution causes timing issues due to shared cache file",
+    "Profiles: No test for actual successful CDN fetch - all tests rely on 404 fallback",
+    "Profiles: No test for cache update when cache is fresh (< 7 days old)"
   ],
-  "coverage": "100%"
+  "coverage": "90%"
 }
