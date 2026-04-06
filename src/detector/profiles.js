@@ -3,7 +3,7 @@ import path from 'path';
 import os from 'os';
 import { matchProfile } from './matcher.js';
 
-const PROFILES_URL = 'https://cdn.jsdelivr.net/gh/momo-ai/agentic-service@main/profiles/default.json';
+const PROFILES_URL = 'https://cdn.example.com/momo-ai/agentic-service/profiles/default.json';
 const CACHE_DIR = path.join(os.homedir(), '.agentic-service');
 const CACHE_FILE = path.join(CACHE_DIR, 'profiles.json');
 const CACHE_MAX_AGE = 7 * 24 * 60 * 60 * 1000; // 7 天

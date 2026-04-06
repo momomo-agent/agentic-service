@@ -3,6 +3,27 @@ import { randomUUID } from 'node:crypto';
 
 const registry = new Map(); // id → { ws, name, capabilities, lastPong }
 const pendingCaptures = new Map(); // requestId → { resolve, reject, timer }
+const sessions = new Map(); // sessionId → { data: {}, deviceIds: Set }
+
+export function joinSession(sessionId, deviceId) {
+  if (!sessions.has(sessionId)) sessions.set(sessionId, { data: {}, deviceIds: new Set() });
+  sessions.get(sessionId).deviceIds.add(deviceId);
+}
+
+export function setSessionData(sessionId, key, value) {
+  if (!sessions.has(sessionId)) sessions.set(sessionId, { data: {}, deviceIds: new Set() });
+  sessions.get(sessionId).data[key] = value;
+}
+
+export function getSessionData(sessionId, key) {
+  return sessions.get(sessionId)?.data[key] ?? null;
+}
+
+export function broadcastSession(sessionId) {
+  for (const device of registry.values()) {
+    try { device.ws.send(JSON.stringify({ type: 'session', sessionId })); } catch { /* ignore */ }
+  }
+}
 
 // Device management: id → { id, meta, registeredAt, lastSeen, status }
 const devices = new Map()
@@ -96,6 +117,9 @@ export function initWebSocket(httpServer) {
         if (d) d.lastPong = Date.now();
       } else if (msg.type === 'wakeword') {
         broadcastWakeword();
+      } else if (msg.type === 'join-session') {
+        joinSession(msg.sessionId, deviceId);
+        broadcastSession(msg.sessionId);
       } else if (msg.type === 'capture_result') {
         const pending = pendingCaptures.get(msg.requestId);
         if (pending) {
