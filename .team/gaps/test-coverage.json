@@ -1,26 +1,12 @@
 {
-  "totalTests": 66,
-  "passed": 66,
+  "totalTests": 75,
+  "passed": 75,
   "failed": 0,
   "edgeCases": [
-    "Hardware: Linux + NVIDIA GPU detection (requires NVIDIA hardware)",
-    "Hardware: Linux + AMD GPU detection (requires AMD hardware)",
-    "Hardware: Windows platform GPU detection (requires Windows OS)",
-    "Hardware: Intel Mac with discrete GPU (requires Intel Mac)",
-    "Hardware: Virtual machine GPU detection behavior",
-    "Hardware: Multi-GPU systems (only first GPU detected in M1)",
-    "Profiles: Scoring algorithm doesn't prioritize specificity - when multiple profiles match with same normalized score, first one wins instead of most specific",
-    "Profiles: Concurrent test execution causes timing issues due to shared cache file",
-    "Profiles: No test for actual successful CDN fetch - all tests rely on 404 fallback",
-    "Profiles: No test for cache update when cache is fresh (< 7 days old)",
-    "Web UI: SSE connection interruption during streaming",
-    "Web UI: Very long AI responses (1000+ lines) with auto-scroll",
-    "Web UI: Rapid consecutive message sends (race conditions)",
-    "Web UI: Browser compatibility for ReadableStream API",
-    "Web UI: Mobile keyboard Enter key behavior",
-    "Web UI: Offline mode when /api/chat is unreachable",
-    "Web UI: Special characters rendering (Unicode, emojis, code blocks)",
-    "Web UI: Session persistence across page refresh"
+    "Ollama installed but service not running (ollama serve not started)",
+    "Disk full during model pull",
+    "Model name tag mismatch (e.g. gemma4 vs gemma4:26b)",
+    "Concurrent pull attempts"
   ],
-  "coverage": "92%"
+  "coverage": "87%"
 }
