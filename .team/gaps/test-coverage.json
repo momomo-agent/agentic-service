@@ -1,12 +1,16 @@
 {
-  "totalTests": 17,
-  "passed": 17,
+  "totalTests": 24,
+  "passed": 24,
   "failed": 0,
   "edgeCases": [
     "≤60s reload timing in real network conditions",
     "In-flight request safety during config reload",
     "profiles.js: empty profiles array → matchProfile throws (not tested)",
-    "optimizer.js: Ollama not installed / model pull fails → requires process spawning (not unit-tested)"
+    "optimizer.js: Ollama not installed / model pull fails → requires process spawning (not unit-tested)",
+    "POST /api/transcribe with invalid audio format",
+    "POST /api/synthesize with very long text",
+    "GET /api/status when hardware detection fails",
+    "PUT /api/config with disk write failure"
   ],
-  "coverage": "100%"
+  "coverage": "90%"
 }

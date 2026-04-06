@@ -1,0 +1,13 @@
+{
+  "id": "task-1775512332859",
+  "title": "实现 src/runtime/memory.js",
+  "description": "向量记忆运行时，导出store()/retrieve()，基于agentic-store + agentic-embed",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m22",
+  "hasDesign": false,
+  "created": "2026-04-06T21:52:12.859Z",
+  "updated": "2026-04-06T21:52:12.860Z"
+}

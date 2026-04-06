@@ -1,0 +1,13 @@
+{
+  "id": "task-1775512332812",
+  "title": "实现 src/runtime/sense.js",
+  "description": "MediaPipe感知运行时，导出start()/stop()，支持人脸/手势检测",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m22",
+  "hasDesign": false,
+  "created": "2026-04-06T21:52:12.812Z",
+  "updated": "2026-04-06T21:52:12.814Z"
+}
