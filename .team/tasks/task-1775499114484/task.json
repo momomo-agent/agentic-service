@@ -2,13 +2,13 @@
   "id": "task-1775499114484",
   "title": "DBB 规范修复",
   "description": "修复 tool_use 响应格式(content→text)、store.js del()→delete()、CDN URL修正，DBB partial gaps",
-  "status": "todo",
+  "status": "inProgress",
   "priority": "P1",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m9",
   "hasDesign": true,
   "created": "2026-04-06T18:11:54.485Z",
-  "updated": "2026-04-06T18:15:10.706Z",
+  "updated": "2026-04-06T18:18:26.827Z",
   "milestoneId": "m9"
 }

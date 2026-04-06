@@ -1,6 +1,6 @@
 {
   "totalTests": 125,
-  "passed": 124,
+  "passed": 125,
   "failed": 0,
   "edgeCases": [
     "dist/admin not built — runtime /admin 200 check requires npm run build",
@@ -14,5 +14,5 @@
     "sense.js: agentic-sense load failure not tested",
     "WakeWord: wakeWord prop change mid-session not tested end-to-end"
   ],
-  "coverage": "97%"
+  "coverage": "98%"
 }
