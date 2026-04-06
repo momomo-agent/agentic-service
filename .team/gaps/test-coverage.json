@@ -1,18 +1,11 @@
 {
-  "totalTests": 21,
-  "passed": 21,
+  "totalTests": 14,
+  "passed": 14,
   "failed": 0,
   "edgeCases": [
-    "DeviceList/HardwarePanel prop binding from App.vue not tested at runtime",
-    "setInterval cleanup on unmount not verified",
-    "≤60s reload timing in real network conditions",
-    "In-flight request safety during config reload",
-    "profiles.js: empty profiles array → matchProfile throws (not tested)",
-    "optimizer.js: Ollama not installed / model pull fails → requires process spawning (not unit-tested)",
-    "POST /api/transcribe with invalid audio format",
-    "POST /api/synthesize with very long text",
-    "GET /api/status when hardware detection fails",
-    "PUT /api/config with disk write failure"
+    "No test for matchProfile() logic against this file",
+    "stop() called before start() — safe via optional chaining but not explicitly tested",
+    "rapid speech/silence oscillation within silenceMs window"
   ],
   "coverage": "100%"
 }
