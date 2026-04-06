@@ -1,13 +1,11 @@
 {
-  "totalTests": 35,
-  "passed": 35,
+  "totalTests": 8,
+  "passed": 8,
   "failed": 0,
   "edgeCases": [
-    "SIGINT during active WebSocket connections (timeout path not exercised live)",
-    "CDN URL actual HTTP reachability (mocked, not live-tested)",
-    "pullModel with total=0 in early stream lines (logic verified, not spawned)",
-    "memory.js: error in one add() call may break the promise chain for subsequent calls",
-    "sense.js: start() loop behavior not tested (requires requestAnimationFrame environment)"
+    "Node.js version < 18 rejection (requires mock node binary)",
+    "npm install failure handling",
+    "Full e2e install in isolated environment"
   ],
   "coverage": "100%"
 }

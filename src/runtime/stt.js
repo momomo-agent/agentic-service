@@ -15,7 +15,11 @@ export async function init() {
     provider = profile?.stt?.provider ?? 'default';
   } catch {}
   const load = ADAPTERS[provider] ?? ADAPTERS.default;
-  adapter = await load();
+  try {
+    adapter = await load();
+  } catch {
+    adapter = await ADAPTERS.default();
+  }
 }
 
 export async function transcribe(audioBuffer) {

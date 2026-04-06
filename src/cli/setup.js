@@ -3,9 +3,28 @@ import chalk from 'chalk';
 import { promises as fs } from 'fs';
 import path from 'path';
 import os from 'os';
+import { spawn } from 'child_process';
 import { detect } from '../detector/hardware.js';
 import { getProfile } from '../detector/profiles.js';
 import { setupOllama } from '../detector/optimizer.js';
+
+async function installOllama(cmd) {
+  await new Promise((resolve, reject) => {
+    const child = spawn('sh', ['-c', cmd], { stdio: 'inherit' });
+    child.on('close', code => code === 0 ? resolve() : reject(new Error(`install failed: ${code}`)));
+  });
+}
+
+async function pullModel(model) {
+  const spinner = ora(`Pulling model ${model}...`).start();
+  await new Promise((resolve, reject) => {
+    const child = spawn('ollama', ['pull', model], { stdio: 'inherit' });
+    child.on('close', code => {
+      code === 0 ? spinner.succeed(`Model ${model} ready`) : reject(new Error(`pull failed: ${code}`));
+      if (code === 0) resolve();
+    });
+  });
+}
 
 const CONFIG_PATH = path.join(os.homedir(), '.agentic-service', 'config.json');
 
@@ -36,12 +55,10 @@ export async function runSetup() {
     const ollamaStatus = await setupOllama(profile);
 
     if (ollamaStatus.needsInstall) {
-      console.log(chalk.yellow('⚠ Ollama not found\n'));
-      console.log(chalk.white('To install Ollama, run:'));
-      console.log(chalk.cyan(`  ${ollamaStatus.installCommand}\n`));
-      console.log(chalk.white('Or visit: https://ollama.com/download\n'));
-      console.log(chalk.yellow('After installation, run this command again.\n'));
-      process.exit(0);
+      const installSpinner = ora('Installing Ollama...').start();
+      await installOllama(ollamaStatus.installCommand);
+      installSpinner.succeed('Ollama installed');
+      await pullModel(profile.llm.model);
     }
 
     if (ollamaStatus.ready) {

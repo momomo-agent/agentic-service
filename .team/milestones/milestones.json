@@ -122,7 +122,7 @@
     {
       "id": "m11",
       "name": "M11: 服务器层 + Admin UI + 默认配置",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775500291531",
         "task-1775500298984",
