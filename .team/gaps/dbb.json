@@ -1,0 +1,16 @@
+{
+  "match": 68,
+  "timestamp": "2026-04-06T16:58:07.303Z",
+  "gaps": [
+    { "description": "sense.js not implemented — no face/gesture/object detection (M5 DBB-001~004)", "status": "missing" },
+    { "description": "memory.js not implemented — no vector memory search (M5 DBB-005~008)", "status": "missing" },
+    { "description": "Dockerfile and docker-compose.yml missing (M5 DBB-009~011)", "status": "missing" },
+    { "description": "Test coverage < 98% — M5 DBB-013 not met", "status": "missing" },
+    { "description": "/api/chat tool_use response format uses 'content' type instead of 'text' type (M4 DBB-008/009)", "status": "partial" },
+    { "description": "/admin panel data sourced from static files, not live /api/status and /api/config (M3)", "status": "partial" },
+    { "description": "store.js exports del() but DBB expects delete() — naming mismatch (M4 DBB-004)", "status": "partial" },
+    { "description": "SIGINT graceful shutdown not explicitly handled in CLI entry point (M5 DBB-012)", "status": "partial" },
+    { "description": "CDN URL in profiles.js differs from DBB spec (cdn.jsdelivr.net vs cdn.example.com)", "status": "partial" },
+    { "description": "Model download progress display (% + speed) not fully implemented in optimizer.js (M1)", "status": "partial" }
+  ]
+}

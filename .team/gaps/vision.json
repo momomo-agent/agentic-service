@@ -1,0 +1,20 @@
+{
+  "match": 62,
+  "timestamp": "2026-04-06T16:57:31.698Z",
+  "gaps": [
+    { "description": "runtime/sense.js missing — agentic-sense MediaPipe perception module not implemented", "status": "missing" },
+    { "description": "runtime/memory.js missing — agentic-store memory module not implemented", "status": "missing" },
+    { "description": "install/ directory missing — no setup.sh, Dockerfile, or docker-compose.yml for one-click deployment", "status": "missing" },
+    { "description": "Cloud fallback in LLM runtime not implemented — vision requires auto-fallback to cloud when local hardware insufficient", "status": "missing" },
+    { "description": "Multi-device coordination via hub.js is skeleton only — no WebSocket messaging or message routing between devices", "status": "partial" },
+    { "description": "STT/TTS have no hardware-adaptive provider selection — always delegates to agentic-voice without profile-based config", "status": "partial" },
+    { "description": "Admin UI (src/ui/admin) exists but lacks device management, log viewer, and hardware info panels", "status": "partial" },
+    { "description": "npx agentic-service one-click install flow not wired — bin/ entry exists but full setup sequence (Ollama check, model pull, browser open) incomplete", "status": "partial" },
+    { "description": "Hardware detector and optimizer implemented — GPU/memory/arch detection and profile matching present", "status": "implemented" },
+    { "description": "LLM runtime implemented — local Ollama chat with streaming via agentic-core", "status": "implemented" },
+    { "description": "STT and TTS runtime wrappers implemented — transcribe and synthesize via agentic-voice", "status": "implemented" },
+    { "description": "REST API server implemented — /api/chat, /api/transcribe, /api/synthesize, /api/status, /api/config endpoints present", "status": "implemented" },
+    { "description": "Vector embedding runtime (embed.js) implemented — agentic-embed integration present", "status": "implemented" },
+    { "description": "Client UI implemented — Vue 3 chat interface with ChatBox, MessageList, InputBox components", "status": "implemented" }
+  ]
+}

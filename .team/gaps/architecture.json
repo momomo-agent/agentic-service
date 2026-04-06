@@ -1,0 +1,18 @@
+{
+  "match": 28,
+  "timestamp": "2026-04-06T16:57:15.794Z",
+  "gaps": [
+    { "description": "src/runtime/ directory is entirely missing — llm.js, stt.js, tts.js, sense.js, memory.js not implemented", "status": "missing" },
+    { "description": "src/server/ directory is entirely missing — hub.js, brain.js, api.js not implemented; no HTTP/WebSocket server exists", "status": "missing" },
+    { "description": "REST API endpoints (POST /api/chat, POST /api/transcribe, POST /api/synthesize, GET /api/status, GET /api/config, PUT /api/config) not implemented", "status": "missing" },
+    { "description": "src/ui/admin/ directory missing — admin panel page (/admin) not implemented", "status": "missing" },
+    { "description": "detector/optimizer.js implements Ollama setup/model-pull logic but architecture specifies it should be a hardware optimizer; function is misnamed relative to design intent", "status": "partial" },
+    { "description": "detector/matcher.js is an extra file not listed in architecture directory structure (architecture only lists hardware.js, profiles.js, optimizer.js)", "status": "partial" },
+    { "description": "detector/gpu-detector.js is an extra file not listed in architecture directory structure", "status": "partial" },
+    { "description": "profiles/default.json built-in default config file presence is unverified", "status": "partial" },
+    { "description": "install/ directory (setup.sh, Dockerfile, docker-compose.yml) not verified as present", "status": "partial" },
+    { "description": "detector/hardware.js detect() matches architecture interface exactly", "status": "implemented" },
+    { "description": "detector/profiles.js getProfile(hardware) with remote fetch + local cache matches architecture design", "status": "implemented" },
+    { "description": "src/ui/client/ Vue 3 + Vite chat UI present", "status": "implemented" }
+  ]
+}

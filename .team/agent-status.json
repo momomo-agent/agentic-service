@@ -1,31 +1,31 @@
 {
   "pm": {
     "status": "idle",
-    "lastRun": "2026-04-06T16:55:15.355Z",
+    "lastRun": "2026-04-06T17:03:22.224Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-1": {
     "status": "idle",
-    "lastRun": "2026-04-06T16:40:47.812Z",
+    "lastRun": "2026-04-06T17:06:51.224Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-2": {
     "status": "idle",
-    "lastRun": "2026-04-06T16:40:48.751Z",
+    "lastRun": "2026-04-06T17:06:34.569Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-3": {
     "status": "idle",
-    "lastRun": "2026-04-06T16:40:57.237Z",
+    "lastRun": "2026-04-06T17:06:41.081Z",
     "currentTask": null,
     "retryCount": 0
   },
   "developer": {
     "status": "idle",
-    "lastRun": "2026-04-06T16:50:37.835Z",
+    "lastRun": "2026-04-06T17:08:07.929Z",
     "currentTask": null,
     "retryCount": 1
   },
@@ -50,6 +50,36 @@
   "qa_lead": {
     "status": "idle",
     "lastRun": "2026-04-06T16:56:11.224Z",
+    "currentTask": null,
+    "retryCount": 0
+  },
+  "vision_monitor": {
+    "status": "idle",
+    "lastRun": "2026-04-06T16:57:50.907Z",
+    "currentTask": null,
+    "retryCount": 0
+  },
+  "prd_monitor": {
+    "status": "idle",
+    "lastRun": "2026-04-06T16:58:13.386Z",
+    "currentTask": null,
+    "retryCount": 0
+  },
+  "dbb_monitor": {
+    "status": "idle",
+    "lastRun": "2026-04-06T17:00:37.306Z",
+    "currentTask": null,
+    "retryCount": 0
+  },
+  "arch_monitor": {
+    "status": "idle",
+    "lastRun": "2026-04-06T16:57:33.085Z",
+    "currentTask": null,
+    "retryCount": 0
+  },
+  "architect": {
+    "status": "idle",
+    "lastRun": "2026-04-06T17:01:22.915Z",
     "currentTask": null,
     "retryCount": 0
   }
