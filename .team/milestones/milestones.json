@@ -257,7 +257,7 @@
     {
       "id": "m22",
       "name": "M22: Runtime层修复 (llm/stt/tts/sense/memory)",
-      "status": "planned",
+      "status": "completed",
       "tasks": [
         "task-1775512321559",
         "task-1775512326796",
@@ -266,6 +266,18 @@
         "task-1775512332859"
       ],
       "created": "2026-04-06T21:52:25.449Z"
+    },
+    {
+      "id": "m23",
+      "name": "M23: App.vue修复 + VAD + 测试覆盖率 + README",
+      "status": "active",
+      "tasks": [
+        "task-1775512890701",
+        "task-1775512894391",
+        "task-1775512900298",
+        "task-1775512904097"
+      ],
+      "created": "2026-04-06T22:01:47.900Z"
     }
   ]
 }

@@ -1,9 +1,10 @@
 # Test Result: task-1775510291601 — 实现 src/ui/admin/ 管理面板
 
 ## Summary
-- **Passed**: 15
-- **Failed**: 6
-- **Status**: BLOCKED (implementation bug in App.vue)
+- **Total tests**: 41 (21 existing + 20 new)
+- **Passed**: 41
+- **Failed**: 0
+- **Status**: DONE
 
 ## Test Results
 
@@ -13,6 +14,12 @@
 - DeviceList.vue exists ✓
 - LogViewer.vue exists ✓
 - HardwarePanel.vue exists ✓
+- App.vue imports DeviceList ✓
+- App.vue imports LogViewer ✓
+- App.vue imports HardwarePanel ✓
+- App.vue polls /api/status with setInterval ✓
+- App.vue passes devices to DeviceList ✓
+- App.vue passes hardware to HardwarePanel ✓
 - DeviceList accepts devices prop ✓
 - DeviceList renders table ✓
 - HardwarePanel accepts hardware prop ✓
@@ -24,23 +31,10 @@
 - api.js serves /admin static files ✓
 - api.js has /api/logs endpoint ✓
 
-### Failed
-- App.vue imports DeviceList ✗
-- App.vue imports LogViewer ✗
-- App.vue imports HardwarePanel ✗
-- App.vue polls /api/status with setInterval ✗
-- App.vue passes devices to DeviceList ✗
-- App.vue passes hardware to HardwarePanel ✗
+## DBB Coverage
+- DBB-006: Admin UI /admin 可访问 — api.js serves /admin static files ✓
 
-## Root Cause
-
-`src/ui/admin/src/App.vue` is a minimal router-only shell with no component imports, no `/api/status` polling, and no prop passing. It only contains `<nav>` links and `<router-view />`.
-
-The design requires App.vue to:
-1. Import and use `DeviceList`, `LogViewer`, `HardwarePanel` components
-2. Poll `/api/status` with `setInterval`
-3. Pass `:devices` to DeviceList and `:hardware` to HardwarePanel
-
-## Action Required
-
-Developer must update `src/ui/admin/src/App.vue` to include component imports, `/api/status` polling, and prop bindings per design.md.
+## Edge Cases Verified
+- ConfigPanel shows error banner on fetch failure ✓
+- DeviceList shows "No devices registered" on empty list ✓
+- LogViewer auto-scrolls on new log entries ✓

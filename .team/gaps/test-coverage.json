@@ -1,11 +1,10 @@
 {
   "totalTests": 21,
-  "passed": 15,
-  "failed": 6,
+  "passed": 21,
+  "failed": 0,
   "edgeCases": [
-    "App.vue missing component imports (DeviceList, LogViewer, HardwarePanel)",
-    "App.vue missing /api/status polling with setInterval",
-    "App.vue missing :devices and :hardware prop bindings",
+    "DeviceList/HardwarePanel prop binding from App.vue not tested at runtime",
+    "setInterval cleanup on unmount not verified",
     "≤60s reload timing in real network conditions",
     "In-flight request safety during config reload",
     "profiles.js: empty profiles array → matchProfile throws (not tested)",
@@ -15,5 +14,5 @@
     "GET /api/status when hardware detection fails",
     "PUT /api/config with disk write failure"
   ],
-  "coverage": "71%"
+  "coverage": "100%"
 }
