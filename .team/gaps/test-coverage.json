@@ -1,11 +1,14 @@
 {
-  "totalTests": 8,
-  "passed": 8,
+  "totalTests": 22,
+  "passed": 22,
   "failed": 0,
   "edgeCases": [
     "Node.js version < 18 rejection (requires mock node binary)",
     "npm install failure handling",
-    "Full e2e install in isolated environment"
+    "Full e2e install in isolated environment",
+    "hot-reload test leaves stale cache polluting profiles.test.js (cache not cleaned up)",
+    "≤60s reload timing in real network conditions",
+    "In-flight request safety during config reload"
   ],
   "coverage": "100%"
 }
