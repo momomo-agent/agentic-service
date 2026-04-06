@@ -42,9 +42,9 @@
     "retryCount": 0
   },
   "tester-2": {
-    "status": "running",
-    "lastRun": "2026-04-06T23:35:49.576Z",
-    "currentTask": "tester",
+    "status": "idle",
+    "lastRun": "2026-04-06T23:36:16.140Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "qa_lead": {

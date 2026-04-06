@@ -10321,3 +10321,8 @@ The two tasks in 'review' status cannot be claimed right now (likely already cla
 Nothing to test at this time. I'll wait for tasks to move into `review` status.
 [2026-04-06T23:36:12.585Z] tester-1 agent completed
 [2026-04-06 23:36:12] [agent_complete] tester-1 completed successfully
+The two review tasks cannot be claimed right now (likely already claimed by another tester). All other tasks are either `todo` or `in-progress` — nothing ready for testing yet.
+
+I'll check back periodically for tasks moving into `review` status. No action needed at this time.
+[2026-04-06T23:36:16.138Z] tester-2 agent completed
+[2026-04-06 23:36:16] [agent_complete] tester-2 completed successfully

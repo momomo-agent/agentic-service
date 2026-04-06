@@ -5972,3 +5972,4 @@
 {"ts":"2026-04-06T23:36:05.218Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:15, done:123)"}}
 {"ts":"2026-04-06T23:36:05.218Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:15, done:123)\"}"}}
 {"ts":"2026-04-06T23:36:12.590Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":6.552786,"cpuSystem":13.163134}}}
+{"ts":"2026-04-06T23:36:16.140Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":6.553486,"cpuSystem":13.164092}}}
