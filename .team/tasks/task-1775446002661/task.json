@@ -2,12 +2,12 @@
   "id": "task-1775446002661",
   "title": "硬件检测器",
   "description": "检测 GPU 类型、显存/内存、CPU 架构、OS，输出 JSON",
-  "status": "todo",
-  "priority": "P1",
-  "assignee": null,
+  "status": "review",
+  "priority": "P0",
+  "assignee": "developer",
   "blockedBy": [],
   "milestoneId": "m1",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-06T03:26:42.661Z",
-  "updated": "2026-04-06T03:26:42.661Z"
+  "updated": "2026-04-06T05:26:45.009Z"
 }

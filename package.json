@@ -1,0 +1,24 @@
+{
+  "name": "agentic-service",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Local-first AI service with hardware detection and model optimization",
+  "main": "src/index.js",
+  "bin": {
+    "agentic-service": "bin/agentic-service.js"
+  },
+  "scripts": {
+    "test": "vitest",
+    "test:run": "vitest run",
+    "dev": "node src/index.js"
+  },
+  "keywords": ["ai", "llm", "ollama", "local-first"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
