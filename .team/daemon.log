@@ -5645,3 +5645,30 @@ There's nothing for me to claim right now. I'll wait for new tasks to become ava
 All tasks are currently claimed by other agents. No work is available for me right now — I'll wait for new tasks to enter 'review' status.
 [2026-04-06T21:11:09.387Z] tester-2 agent completed
 [2026-04-06 21:11:09] [agent_complete] tester-2 completed successfully
+[2026-04-06 21:11:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:6, done:64)
+M17 status:
+
+- 4 tasks in **testing** (tester-1 working on them)
+- 2 tasks in **review** (developer completed, awaiting tester review)
+
+Per my role constraints: I cannot move tasks from "review" or "testing" to "done" — that's the tester's job. M17 cannot be marked completed yet.
+
+**Current state is correct.** Waiting for tester to:
+1. Complete testing on the 4 "testing" tasks
+2. Review the 2 "review" tasks
+
+No new milestone needed until M17 is fully done. No action required from PM at this time.
+[2026-04-06T21:11:19.964Z] pm agent completed
+[2026-04-06 21:11:19] [agent_complete] pm completed successfully
+[2026-04-06 21:11:19] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 21:11:19] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 21:11:19] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 21:11:19] [agent_start] tester-1 tester
+[2026-04-06 21:11:19] [agent_start] tester-2 tester
+[2026-04-06T21:11:20.015Z] Running tester-2 agent...
+[2026-04-06T21:11:20.018Z] Running tester-1 agent...
+Both tasks in 'review' status cannot be claimed (likely already assigned to tester-1). There are also tasks in 'testing' status assigned to tester-1. No tasks are available for me to claim right now.
+
+I'll wait for new tasks to become available.
+[2026-04-06T21:11:41.217Z] tester-2 agent completed
+[2026-04-06 21:11:41] [agent_complete] tester-2 completed successfully
