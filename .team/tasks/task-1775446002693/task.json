@@ -1,0 +1,13 @@
+{
+  "id": "task-1775446002693",
+  "title": "远程 profiles",
+  "description": "从 CDN 拉取硬件配置推荐表，本地缓存，支持离线",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "milestoneId": "m1",
+  "hasDesign": false,
+  "created": "2026-04-06T03:26:42.693Z",
+  "updated": "2026-04-06T03:26:42.694Z"
+}

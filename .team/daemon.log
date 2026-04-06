@@ -1,0 +1,166 @@
+[2026-04-06 03:26:54] [agent_start] daemon DevTeam daemon started (safety=600s, timeout=3600s)
+[2026-04-06 03:26:54] [workflow] monitor [HEALTH] Monitor started
+[2026-04-06 03:26:54] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 03:26:54] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 03:26:54] [workflow] work_loop [EXEC] pm
+[2026-04-06 03:26:54] [agent_start] pm pm
+node:fs:435
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '/Users/kenefe/LOCAL/momo-agent/tools/team/configs/default.json'
+    at Object.readFileSync (node:fs:435:20)
+    at loadConfig (/Users/kenefe/LOCAL/momo-agent/tools/team/agents/runner.js:24:39)
+    at buildPrompt (/Users/kenefe/LOCAL/momo-agent/tools/team/agents/runner.js:124:18)
+    at runAgent (/Users/kenefe/LOCAL/momo-agent/tools/team/agents/runner.js:170:16)
+    at Object.<anonymous> (/Users/kenefe/LOCAL/momo-agent/tools/team/agents/runner.js:223:1)
+    at Module._compile (node:internal/modules/cjs/loader:1803:14)
+    at Object..js (node:internal/modules/cjs/loader:1934:10)
+    at Module.load (node:internal/modules/cjs/loader:1524:32)
+    at Module._load (node:internal/modules/cjs/loader:1326:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/kenefe/LOCAL/momo-agent/tools/team/configs/default.json'
+}
+
+Node.js v25.4.0
+[2026-04-06 03:26:54] [error] pm failed (code=1), retrying (attempt 1)
+[2026-04-06 03:26:54] Uncaught exception: Unhandled error. ({
+  ts: '2026-04-06T03:26:54.306Z',
+  type: 'error',
+  agent: 'pm',
+  data: {
+    details: 'failed (code=1), retrying (attempt 1)',
+    performance: undefined
+  }
+})
+[2026-04-06 03:31:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"300s"}
+[2026-04-06 03:31:54] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:6, done:0)
+[2026-04-06 03:32:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:6, done:0)
+[2026-04-06 03:33:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:6, done:0)
+[2026-04-06 03:34:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:6, done:0)
+[2026-04-06 03:35:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:6, done:0)
+[2026-04-06 03:36:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:6, done:0)
+[2026-04-06 03:36:54] [perf] daemon {"rss":"54MB","heapUsed":"6MB","heapTotal":"7MB","uptime":"600s"}
+[2026-04-06 03:36:54] [agent_start] daemon Still busy, skipping safety check
+[2026-04-06 03:37:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:6, done:0)
+[2026-04-06 03:38:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:6, done:0)
+[2026-04-06 03:39:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:6, done:0)
+[2026-04-06 03:40:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:6, done:0)
+[2026-04-06 03:41:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 15min (active:6, done:0)
+[2026-04-06 03:41:54] [perf] daemon {"rss":"55MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"900s"}
+[2026-04-06 03:42:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 16min (active:6, done:0)
+[2026-04-06 03:43:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 17min (active:6, done:0)
+[2026-04-06 03:44:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 18min (active:6, done:0)
+[2026-04-06 03:45:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 19min (active:6, done:0)
+[2026-04-06 03:46:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 20min (active:6, done:0)
+[2026-04-06 03:46:54] [agent_start] daemon Still busy, skipping safety check
+[2026-04-06 03:46:54] [perf] daemon {"rss":"54MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"1200s"}
+[2026-04-06 03:47:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 21min (active:6, done:0)
+[2026-04-06 03:48:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 22min (active:6, done:0)
+[2026-04-06 03:49:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 23min (active:6, done:0)
+[2026-04-06 03:50:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 24min (active:6, done:0)
+[2026-04-06 03:51:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 25min (active:6, done:0)
+[2026-04-06 03:51:54] [perf] daemon {"rss":"54MB","heapUsed":"6MB","heapTotal":"7MB","uptime":"1500s"}
+[2026-04-06 03:52:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 26min (active:6, done:0)
+[2026-04-06 03:53:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 27min (active:6, done:0)
+[2026-04-06 03:54:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 28min (active:6, done:0)
+[2026-04-06 03:55:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 29min (active:6, done:0)
+[2026-04-06 03:56:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 30min (active:6, done:0)
+[2026-04-06 03:56:54] [agent_start] daemon Still busy, skipping safety check
+[2026-04-06 03:56:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"1800s"}
+[2026-04-06 03:57:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 31min (active:6, done:0)
+[2026-04-06 03:58:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 32min (active:6, done:0)
+[2026-04-06 03:59:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 33min (active:6, done:0)
+[2026-04-06 04:00:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 34min (active:6, done:0)
+[2026-04-06 04:01:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 35min (active:6, done:0)
+[2026-04-06 04:01:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"2100s"}
+[2026-04-06 04:02:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 36min (active:6, done:0)
+[2026-04-06 04:03:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 37min (active:6, done:0)
+[2026-04-06 04:04:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 38min (active:6, done:0)
+[2026-04-06 04:05:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 39min (active:6, done:0)
+[2026-04-06 04:06:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 40min (active:6, done:0)
+[2026-04-06 04:06:54] [agent_start] daemon Still busy, skipping safety check
+[2026-04-06 04:06:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"2400s"}
+[2026-04-06 04:07:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 41min (active:6, done:0)
+[2026-04-06 04:08:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 42min (active:6, done:0)
+[2026-04-06 04:09:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 43min (active:6, done:0)
+[2026-04-06 04:10:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 44min (active:6, done:0)
+[2026-04-06 04:11:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 45min (active:6, done:0)
+[2026-04-06 04:11:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"2700s"}
+[2026-04-06 04:12:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 46min (active:6, done:0)
+[2026-04-06 04:13:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 47min (active:6, done:0)
+[2026-04-06 04:14:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 48min (active:6, done:0)
+[2026-04-06 04:15:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 49min (active:6, done:0)
+[2026-04-06 04:16:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 50min (active:6, done:0)
+[2026-04-06 04:16:54] [agent_start] daemon Still busy, skipping safety check
+[2026-04-06 04:16:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"3000s"}
+[2026-04-06 04:17:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 51min (active:6, done:0)
+[2026-04-06 04:18:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 52min (active:6, done:0)
+[2026-04-06 04:19:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 53min (active:6, done:0)
+[2026-04-06 04:20:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 54min (active:6, done:0)
+[2026-04-06 04:21:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 55min (active:6, done:0)
+[2026-04-06 04:21:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"3300s"}
+[2026-04-06 04:22:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 56min (active:6, done:0)
+[2026-04-06 04:23:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 57min (active:6, done:0)
+[2026-04-06 04:24:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 58min (active:6, done:0)
+[2026-04-06 04:25:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 59min (active:6, done:0)
+[2026-04-06 04:26:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 60min (active:6, done:0)
+[2026-04-06 04:26:54] [agent_start] daemon Still busy, skipping safety check
+[2026-04-06 04:26:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"3600s"}
+[2026-04-06 04:27:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 61min (active:6, done:0)
+[2026-04-06 04:28:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 62min (active:6, done:0)
+[2026-04-06 04:29:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 63min (active:6, done:0)
+[2026-04-06 04:30:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 64min (active:6, done:0)
+[2026-04-06 04:31:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 65min (active:6, done:0)
+[2026-04-06 04:31:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"3900s"}
+[2026-04-06 04:32:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 66min (active:6, done:0)
+[2026-04-06 04:33:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 67min (active:6, done:0)
+[2026-04-06 04:34:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 68min (active:6, done:0)
+[2026-04-06 04:35:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 69min (active:6, done:0)
+[2026-04-06 04:36:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 70min (active:6, done:0)
+[2026-04-06 04:36:54] [agent_start] daemon Still busy, skipping safety check
+[2026-04-06 04:36:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"4200s"}
+[2026-04-06 04:37:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 71min (active:6, done:0)
+[2026-04-06 04:38:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 72min (active:6, done:0)
+[2026-04-06 04:39:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 73min (active:6, done:0)
+[2026-04-06 04:40:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 74min (active:6, done:0)
+[2026-04-06 04:41:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 75min (active:6, done:0)
+[2026-04-06 04:41:54] [perf] daemon {"rss":"51MB","heapUsed":"6MB","heapTotal":"7MB","uptime":"4500s"}
+[2026-04-06 04:42:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 76min (active:6, done:0)
+[2026-04-06 04:43:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 77min (active:6, done:0)
+[2026-04-06 04:44:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 78min (active:6, done:0)
+[2026-04-06 04:45:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 79min (active:6, done:0)
+[2026-04-06 04:46:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 80min (active:6, done:0)
+[2026-04-06 04:46:54] [agent_start] daemon Still busy, skipping safety check
+[2026-04-06 04:46:54] [perf] daemon {"rss":"52MB","heapUsed":"6MB","heapTotal":"8MB","uptime":"4800s"}
+[2026-04-06 04:47:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 81min (active:6, done:0)
+[2026-04-06 04:48:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 82min (active:6, done:0)
+[2026-04-06 04:49:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 83min (active:6, done:0)
+[2026-04-06 04:50:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 84min (active:6, done:0)
+[2026-04-06 04:51:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 85min (active:6, done:0)
+[2026-04-06 04:51:54] [perf] daemon {"rss":"53MB","heapUsed":"5MB","heapTotal":"8MB","uptime":"5100s"}
+[2026-04-06 04:52:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 86min (active:6, done:0)
+[2026-04-06 04:53:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 87min (active:6, done:0)
+[2026-04-06 04:54:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 88min (active:6, done:0)
+[2026-04-06 04:55:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 89min (active:6, done:0)
+[2026-04-06 04:56:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 90min (active:6, done:0)
+[2026-04-06 04:56:54] [agent_start] daemon Still busy, skipping safety check
+[2026-04-06 04:56:54] [perf] daemon {"rss":"53MB","heapUsed":"6MB","heapTotal":"7MB","uptime":"5400s"}
+[2026-04-06 04:57:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 91min (active:6, done:0)
+[2026-04-06 04:58:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 92min (active:6, done:0)
+[2026-04-06 04:59:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 93min (active:6, done:0)
+[2026-04-06 05:00:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 94min (active:6, done:0)
+[2026-04-06 05:01:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 95min (active:6, done:0)
+[2026-04-06 05:01:54] [perf] daemon {"rss":"52MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"5700s"}
+[2026-04-06 05:02:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 96min (active:6, done:0)
+[2026-04-06 05:03:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 97min (active:6, done:0)
+[2026-04-06 05:04:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 98min (active:6, done:0)
+[2026-04-06 05:05:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 99min (active:6, done:0)
+[2026-04-06 05:06:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 100min (active:6, done:0)
+[2026-04-06 05:06:54] [agent_start] daemon Still busy, skipping safety check
+[2026-04-06 05:06:54] [perf] daemon {"rss":"52MB","heapUsed":"6MB","heapTotal":"7MB","uptime":"6000s"}
+[2026-04-06 05:07:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 101min (active:6, done:0)
+[2026-04-06 05:07:47] [agent_complete] daemon DevTeam daemon stopped

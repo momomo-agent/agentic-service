@@ -1,0 +1,13 @@
+{
+  "id": "task-1775446002815",
+  "title": "CLI 入口 + 一键安装",
+  "description": "npx agentic-service 或全局安装，首次启动自动配置",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "milestoneId": "m1",
+  "hasDesign": false,
+  "created": "2026-04-06T03:26:42.815Z",
+  "updated": "2026-04-06T03:26:42.816Z"
+}

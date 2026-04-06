@@ -1,0 +1,13 @@
+{
+  "id": "task-1775446002754",
+  "title": "基础 HTTP 服务",
+  "description": "REST API 接受文本输入返回 LLM 回复，基于 agentic-core",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "milestoneId": "m1",
+  "hasDesign": false,
+  "created": "2026-04-06T03:26:42.754Z",
+  "updated": "2026-04-06T03:26:42.755Z"
+}
