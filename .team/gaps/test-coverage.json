@@ -1,8 +1,10 @@
 {
-  "totalTests": 145,
-  "passed": 145,
+  "totalTests": 149,
+  "passed": 149,
   "failed": 0,
   "edgeCases": [
+    "tool_use with empty arguments not tested",
+    "Multiple tool calls in single Ollama response not tested",
     "Ollama installed but service not running (ollama serve not started)",
     "Disk full during model pull",
     "Model name tag mismatch (e.g. gemma4 vs gemma4:26b)",
