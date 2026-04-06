@@ -1,16 +1,8 @@
-const registry = new Map(); // id → { ws, ...deviceInfo }
+import { WebSocketServer } from 'ws';
+import { randomUUID } from 'node:crypto';
 
-export function register(ws, deviceInfo) {
-  registry.set(deviceInfo.id, { ws, ...deviceInfo });
-  ws.on('close', () => registry.delete(deviceInfo.id));
-}
-
-export function broadcast(event, data) {
-  const msg = JSON.stringify({ event, data });
-  for (const { ws } of registry.values()) {
-    try { ws.send(msg); } catch { /* ignore closed ws */ }
-  }
-}
+const registry = new Map(); // id → { ws, name, capabilities, lastPong }
+const pendingCaptures = new Map(); // requestId → { resolve, reject, timer }
 
 export function registerDevice(device) {
   registry.set(device.id, device);
@@ -18,8 +10,80 @@ export function registerDevice(device) {
 
 export function unregisterDevice(id) {
   registry.delete(id);
+  // reject any pending captures for this device
+  for (const [reqId, pending] of pendingCaptures) {
+    if (pending.deviceId === id) {
+      clearTimeout(pending.timer);
+      pending.reject(new Error('Device disconnected'));
+      pendingCaptures.delete(reqId);
+    }
+  }
 }
 
 export function getDevices() {
-  return Array.from(registry.values()).map(({ ws, ...info }) => info);
+  return Array.from(registry.values()).map(({ ws, lastPong, ...info }) => info);
+}
+
+export function sendCommand(deviceId, command) {
+  const device = registry.get(deviceId);
+  if (!device) throw new Error(`Device not found: ${deviceId}`);
+  const requestId = randomUUID();
+  const { type, ...rest } = command;
+  device.ws.send(JSON.stringify({ type: 'command', requestId, action: type, ...rest }));
+  if (type !== 'capture') return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      pendingCaptures.delete(requestId);
+      reject(new Error('Capture timeout'));
+    }, 10000);
+    pendingCaptures.set(requestId, { resolve, reject, timer, deviceId });
+  });
+}
+
+export function initWebSocket(httpServer) {
+  const wss = new WebSocketServer({ server: httpServer });
+
+  wss.on('connection', (ws) => {
+    let deviceId = null;
+
+    ws.on('message', (raw) => {
+      let msg;
+      try { msg = JSON.parse(raw); } catch { return; }
+
+      if (msg.type === 'register') {
+        deviceId = msg.id;
+        registerDevice({ id: msg.id, name: msg.name, capabilities: msg.capabilities || [], ws, lastPong: Date.now() });
+        ws.send(JSON.stringify({ type: 'registered', id: msg.id }));
+      } else if (msg.type === 'ping') {
+        ws.send(JSON.stringify({ type: 'pong' }));
+      } else if (msg.type === 'pong' && deviceId) {
+        const d = registry.get(deviceId);
+        if (d) d.lastPong = Date.now();
+      } else if (msg.type === 'capture_result') {
+        const pending = pendingCaptures.get(msg.requestId);
+        if (pending) {
+          clearTimeout(pending.timer);
+          pending.resolve(msg.data);
+          pendingCaptures.delete(msg.requestId);
+        }
+      }
+    });
+
+    ws.on('close', () => { if (deviceId) unregisterDevice(deviceId); });
+    ws.on('error', () => { if (deviceId) unregisterDevice(deviceId); });
+  });
+
+  // Heartbeat: ping every 30s, remove if no pong within 10s
+  setInterval(() => {
+    const now = Date.now();
+    for (const [id, device] of registry) {
+      if (now - device.lastPong > 40000) {
+        unregisterDevice(id);
+      } else {
+        try { device.ws.send(JSON.stringify({ type: 'ping' })); } catch { unregisterDevice(id); }
+      }
+    }
+  }, 30000);
+
+  return wss;
 }

@@ -2,14 +2,12 @@
   "id": "task-1775494979749",
   "title": "REST API 端点实现",
   "description": "实现 POST /api/chat (SSE流), POST /api/transcribe, POST /api/synthesize, GET /api/status, GET /api/config, PUT /api/config 六个端点",
-  "status": "todo",
+  "status": "review",
   "priority": "P0",
-  "assignee": null,
-  "blockedBy": [
-    "task-1775494973876"
-  ],
+  "assignee": "developer",
+  "blockedBy": [],
   "groupId": "m6",
   "hasDesign": true,
   "created": "2026-04-06T17:02:59.750Z",
-  "updated": "2026-04-06T17:25:35.572Z"
+  "updated": "2026-04-06T17:42:24.027Z"
 }

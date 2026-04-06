@@ -2,15 +2,13 @@
   "id": "task-1775495680384",
   "title": "WebSocket 设备协调",
   "description": "设备注册、心跳、speak/display/capture 工具指令，PRD M3 gap",
-  "status": "todo",
+  "status": "review",
   "priority": "P0",
-  "assignee": null,
-  "blockedBy": [
-    "task-1775494973876"
-  ],
+  "assignee": "developer",
+  "blockedBy": [],
   "groupId": "m7",
   "hasDesign": true,
   "created": "2026-04-06T17:14:40.384Z",
-  "updated": "2026-04-06T17:17:39.485Z",
+  "updated": "2026-04-06T17:44:07.864Z",
   "milestoneId": "m7"
 }

@@ -2928,3 +2928,24 @@
 {"ts":"2026-04-06T17:39:31.412Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
 {"ts":"2026-04-06T17:39:31.412Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":5,"memoryTotalMB":7,"cpuUser":0.682145,"cpuSystem":0.955215}}}
 {"ts":"2026-04-06T17:39:58.685Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.685412,"cpuSystem":0.960761}}}
+{"ts":"2026-04-06T17:39:58.775Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 6"}}
+{"ts":"2026-04-06T17:39:58.776Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T17:39:58.776Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":0.687735,"cpuSystem":0.966847}}}
+{"ts":"2026-04-06T17:40:41.700Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"16MB\",\"heapUsed\":\"12MB\",\"heapTotal\":\"13MB\",\"uptime\":\"6900s\"}"}}
+{"ts":"2026-04-06T17:41:12.813Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.693575,"cpuSystem":0.974099}}}
+{"ts":"2026-04-06T17:41:12.820Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T17:41:12.820Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T17:41:12.820Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T17:41:12.820Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T17:41:12.821Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":0.695618,"cpuSystem":0.979231}}}
+{"ts":"2026-04-06T17:41:38.402Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775494979749","from":"todo","to":"inProgress","title":"REST API 端点实现"}}
+{"ts":"2026-04-06T17:42:24.027Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775494979749","from":"inProgress","to":"review","title":"REST API 端点实现"}}
+{"ts":"2026-04-06T17:42:31.671Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775495680384","from":"todo","to":"inProgress","title":"WebSocket 设备协调"}}
+{"ts":"2026-04-06T17:43:26.274Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"28MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"11MB\",\"uptime\":\"6300s\"}"}}
+{"ts":"2026-04-06T17:44:07.865Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775495680384","from":"inProgress","to":"review","title":"WebSocket 设备协调"}}
+{"ts":"2026-04-06T17:44:19.008Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775494979786","from":"todo","to":"inProgress","title":"管理面板 src/ui/admin/"}}
+{"ts":"2026-04-06T17:44:26.532Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:22)"}}
+{"ts":"2026-04-06T17:44:26.533Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:22)\"}"}}
+{"ts":"2026-04-06T17:44:42.002Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:22)"}}
+{"ts":"2026-04-06T17:44:42.003Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:22)\"}"}}
+{"ts":"2026-04-06T17:44:53.010Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":0.715563,"cpuSystem":1.004505}}}

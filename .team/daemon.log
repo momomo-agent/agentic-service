@@ -2510,3 +2510,41 @@ All `todo` tasks with `hasDesign=true` are currently not claimable (likely being
 I'll wait for tasks to become available or for currently in-progress tasks to complete and unblock new work.
 [2026-04-06T17:39:58.680Z] developer agent completed
 [2026-04-06 17:39:58] [agent_complete] developer completed successfully
+[2026-04-06 17:39:58] [workflow] work_loop [LOOP] Iteration 6
+[2026-04-06 17:39:58] [workflow] work_loop [EXEC] pm
+[2026-04-06 17:39:58] [agent_start] pm pm
+[2026-04-06T17:39:58.801Z] Running pm agent...
+[2026-04-06 17:40:41] [perf] daemon {"rss":"16MB","heapUsed":"12MB","heapTotal":"13MB","uptime":"6900s"}
+Good. All agents are idle. The current situation is clear:
+
+**M6 (active):** 2 unblocked `todo` tasks ready for work:
+- `task-1775494979749` — REST API 端点实现 (P0)
+- `task-1775494979786` — 管理面板 src/ui/admin/ (P1)
+
+**M5 (in-progress):** 2 tasks still running (Docker, test coverage)
+
+**M7 (planned):** `WebSocket 设备协调` now unblocked, `用户文档 README` still blocked on WebSocket task.
+
+The PM's job here is done — tasks are unblocked and ready for developers to pick up. The milestone structure is sound:
+
+- m6 tasks are P0/P1 and unblocked ✓
+- m7 tasks have correct blocking relationships ✓  
+- No milestone can be marked complete yet (tasks still in todo/in-progress)
+
+**Summary of actions taken:**
+- Cleared `blockedBy` on 3 tasks whose blocker (`task-1775494973876`) is now `done`
+- `task-1775494979749` (REST API), `task-1775494979786` (Admin panel), `task-1775495680384` (WebSocket) are all unblocked and ready for assignment
+[2026-04-06T17:41:12.808Z] pm agent completed
+[2026-04-06 17:41:12] [agent_complete] pm completed successfully
+[2026-04-06 17:41:12] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 17:41:12] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 17:41:12] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 17:41:12] [workflow] work_loop [EXEC] developer
+[2026-04-06 17:41:12] [agent_start] developer developer
+[2026-04-06T17:41:12.850Z] Running developer agent...
+[2026-04-06 17:43:26] [perf] daemon {"rss":"28MB","heapUsed":"8MB","heapTotal":"11MB","uptime":"6300s"}
+[2026-04-06 17:44:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:22)
+[2026-04-06 17:44:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:22)
+[no content]
+[2026-04-06T17:44:53.007Z] developer agent completed
+[2026-04-06 17:44:53] [agent_complete] developer completed successfully

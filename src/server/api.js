@@ -8,7 +8,7 @@ import { chat } from './brain.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
 import { errorHandler } from './middleware.js';
-import { getDevices } from './hub.js';
+import { getDevices, initWebSocket } from './hub.js';
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -133,6 +133,7 @@ export function startServer(port = 3000) {
   return new Promise((resolve, reject) => {
     const server = createApp().listen(port);
     server.once('listening', () => {
+      initWebSocket(server);
       console.log(`Server running at http://localhost:${port}`);
       resolve(server);
     });
