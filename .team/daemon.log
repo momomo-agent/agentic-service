@@ -5048,3 +5048,19 @@ No action needed from PM until those tasks reach "done" status.
 The task `task-1775508540565` cannot be claimed (already assigned to tester-2 and in "testing" status). All other tasks are in "done" status. There's nothing for me to act on right now — the pipeline is clear except for that one task being handled by another agent.
 [2026-04-06T21:00:07.318Z] tester agent completed
 [2026-04-06 21:00:07] [agent_complete] tester completed successfully
+[2026-04-06 21:00:07] [workflow] post [POST] task-1775508540565: testing → blocked
+[2026-04-06 21:00:07] [workflow] work_loop [SKIP] implement: designedTasks > 0
+[2026-04-06 21:00:07] [workflow] work_loop [LOOP] Iteration 6
+[2026-04-06 21:00:07] [workflow] work_loop [EXEC] pm
+[2026-04-06 21:00:07] [agent_start] pm pm
+[2026-04-06T21:00:07.444Z] Running pm agent...
+All 4 review tasks are now complete:
+
+- **task-1775508549624** (SIGINT优雅关闭处理) → done ✅
+- **task-1775508549660** (CDN URL修正为cdn.example.com) → done ✅  
+- **task-1775508549694** (多设备跨会话共享) → done ✅
+- **task-1775508540565** (测试覆盖率补全 ≥98%) → done ✅
+
+All tests passed. Added `test/m16-cdn-url.test.js` to verify the CDN URL change, and updated `test-coverage.json` to reflect 19 total tests.
+[2026-04-06T21:00:26.998Z] tester-2 agent completed
+[2026-04-06 21:00:27] [agent_complete] tester-2 completed successfully
