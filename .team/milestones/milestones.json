@@ -282,7 +282,7 @@
     {
       "id": "m24",
       "name": "M24: HTTPS安全访问 + 语音延迟基准 + 服务端唤醒词 + npx入口",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775513213884",
         "task-1775513217925",
@@ -294,7 +294,7 @@
     {
       "id": "m25",
       "name": "M25: Ollama自动安装 + 服务端感知路径",
-      "status": "planned",
+      "status": "completed",
       "tasks": [
         "task-1775513780215",
         "task-1775513784884"
