@@ -23,32 +23,6 @@ async function writeConfig(data) {
   await fs.rename(tmp, CONFIG_PATH);
 }
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-app.post('/api/chat', async (req, res) => {
-  const { message, history = [] } = req.body;
-  if (!message || typeof message !== 'string') {
-    return res.status(400).json({ error: 'Invalid message' });
-  }
-
-  res.setHeader('Content-Type', 'text/event-stream');
-  res.setHeader('Cache-Control', 'no-cache');
-  res.setHeader('Connection', 'keep-alive');
-
-  try {
-    for await (const chunk of chat(message, { history })) {
-      res.write(`data: ${JSON.stringify(chunk)}\n\n`);
-    }
-    res.write('data: [DONE]\n\n');
-  } catch (error) {
-    console.error('Chat error:', error);
-    res.write(`data: ${JSON.stringify({ error: error.message })}\n\n`);
-  }
-  res.end();
-});
-
 async function getOllamaStatus() {
   try {
     const res = await fetch('http://localhost:11434/api/tags', {
@@ -62,38 +36,74 @@ async function getOllamaStatus() {
   }
 }
 
-app.get('/api/status', async (req, res) => {
-  const { detect } = await import('../detector/hardware.js');
-  const hardware = await detect();
-  const ollama = await getOllamaStatus();
-  res.json({ hardware, profile: {}, ollama });
-});
+export function createApp() {
+  const app = express();
+  app.use(cors());
+  app.use(express.json());
 
-app.get('/api/config', async (req, res) => {
-  res.json(await readConfig());
-});
+  app.post('/api/chat', async (req, res) => {
+    const { message, history = [] } = req.body;
+    if (!message || typeof message !== 'string') {
+      return res.status(400).json({ error: 'Invalid message' });
+    }
 
-app.put('/api/config', async (req, res) => {
-  try {
-    await writeConfig(req.body);
-    res.json({ ok: true });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  }
-});
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
 
-app.use(errorHandler);
+    try {
+      for await (const chunk of chat(message, { history })) {
+        res.write(`data: ${JSON.stringify(chunk)}\n\n`);
+      }
+      res.write('data: [DONE]\n\n');
+    } catch (error) {
+      console.error('Chat error:', error);
+      res.write(`data: ${JSON.stringify({ error: error.message })}\n\n`);
+    }
+    res.end();
+  });
 
-export async function startServer(port = 3000) {
+  app.get('/api/status', async (req, res) => {
+    const { detect } = await import('../detector/hardware.js');
+    const hardware = await detect();
+    const ollama = await getOllamaStatus();
+    res.json({ hardware, profile: {}, ollama });
+  });
+
+  app.get('/api/config', async (req, res) => {
+    res.json(await readConfig());
+  });
+
+  app.put('/api/config', async (req, res) => {
+    try {
+      await writeConfig(req.body);
+      res.json({ ok: true });
+    } catch (e) {
+      res.status(500).json({ error: e.message });
+    }
+  });
+
+  app.use(errorHandler);
+  return app;
+}
+
+export function startServer(port = 3000) {
   return new Promise((resolve, reject) => {
-    const server = app.listen(port, () => {
+    const server = createApp().listen(port);
+    server.once('listening', () => {
       console.log(`Server running at http://localhost:${port}`);
       resolve(server);
     });
-    server.on('error', (error) => {
-      reject(error.code === 'EADDRINUSE'
+    server.once('error', (err) => {
+      reject(err.code === 'EADDRINUSE'
         ? new Error(`Port ${port} is already in use`)
-        : error);
+        : err);
     });
   });
+}
+
+export function stopServer(server) {
+  return new Promise((resolve, reject) =>
+    server.close(err => err ? reject(err) : resolve())
+  );
 }

@@ -2418,3 +2418,9 @@
 {"ts":"2026-04-06T16:11:02.344Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775491392036","from":"testing","to":"done","title":"实现 /api/config 持久化"}}
 {"ts":"2026-04-06T16:11:10.014Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":9,"cpuUser":0.086294,"cpuSystem":0.069543}}}
 {"ts":"2026-04-06T16:11:48.465Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":10,"cpuUser":0.088831,"cpuSystem":0.072441}}}
+{"ts":"2026-04-06T16:11:48.540Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T16:11:48.540Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":8,"memoryTotalMB":9,"cpuUser":0.090363,"cpuSystem":0.074617}}}
+{"ts":"2026-04-06T16:12:10.385Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775491396691","from":"todo","to":"inProgress","title":"修复 EADDRINUSE 检测"}}
+{"ts":"2026-04-06T16:13:22.205Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775491396691","from":"inProgress","to":"review","title":"修复 EADDRINUSE 检测"}}
+{"ts":"2026-04-06T16:13:26.021Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"55MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"10MB\",\"uptime\":\"900s\"}"}}
+{"ts":"2026-04-06T16:13:26.685Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":10,"cpuUser":0.097048,"cpuSystem":0.081817}}}
