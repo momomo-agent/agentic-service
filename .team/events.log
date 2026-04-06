@@ -2347,3 +2347,6 @@
 {"ts":"2026-04-06T16:01:51.212Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 131min (active:2, done:4)\"}"}}
 {"ts":"2026-04-06T16:01:54.406Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775446002754","from":"testing","to":"done","title":"基础 HTTP 服务"}}
 {"ts":"2026-04-06T16:02:00.043Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.037604,"cpuSystem":0.016632}}}
+{"ts":"2026-04-06T16:02:00.132Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T16:02:00.132Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.038789,"cpuSystem":0.018094}}}
+{"ts":"2026-04-06T16:02:19.251Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":7,"cpuUser":0.03922,"cpuSystem":0.018614}}}
