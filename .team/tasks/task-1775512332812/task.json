@@ -5,9 +5,11 @@
   "status": "todo",
   "priority": "P1",
   "assignee": null,
-  "blockedBy": [],
+  "blockedBy": [
+    "task-1775510912106"
+  ],
   "groupId": "m22",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-06T21:52:12.812Z",
-  "updated": "2026-04-06T21:52:12.814Z"
+  "updated": "2026-04-06T21:54:37.094Z"
 }
