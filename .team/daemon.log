@@ -6446,3 +6446,65 @@ Both tasks are done. Here's a summary:
 Both moved to `review` status.
 [2026-04-06T21:32:18.603Z] developer agent completed
 [2026-04-06 21:32:18] [agent_complete] developer completed successfully
+[2026-04-06 21:32:18] [workflow] work_loop [LOOP] Iteration 7
+[2026-04-06 21:32:18] [workflow] work_loop [EXEC] pm
+[2026-04-06 21:32:18] [agent_start] pm pm
+[2026-04-06T21:32:18.885Z] Running pm agent...
+**Current state summary:**
+
+**M20 (active)** — 2 tasks now assigned to developer:
+- `task-1775510288171` [todo] → developer: 实现 src/server/api.js (P0)
+- `task-1775510291601` [todo] → developer: 实现 src/ui/admin/ 管理面板 (P0)
+
+**M21 (planned)** — waiting on tester to review:
+- `task-1775510905293` [review] — 修复 src/detector/profiles.js
+- `task-1775510912066` [review] — 修复 src/detector/optimizer.js
+- `task-1775510912106` [todo] — blocked by task-1775510291601
+
+**Action taken:** Assigned the 2 unassigned M20 tasks to developer. M21 tasks in `review` must be approved by tester — PM cannot move them to `done`.
+
+No new milestone needed yet — M20 is still active with open work.
+[2026-04-06T21:33:04.416Z] pm agent completed
+[2026-04-06 21:33:04] [agent_complete] pm completed successfully
+[2026-04-06 21:33:04] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 21:33:04] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 21:33:04] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 21:33:04] [agent_start] tester-1 tester
+[2026-04-06 21:33:04] [agent_start] tester-2 tester
+[2026-04-06T21:33:04.602Z] Running tester-2 agent...
+[2026-04-06T21:33:04.602Z] Running tester-1 agent...
+[2026-04-06 21:33:26] [perf] daemon {"rss":"12MB","heapUsed":"8MB","heapTotal":"12MB","uptime":"20101s"}
+[2026-04-06 21:34:58] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:81)
+[2026-04-06 21:35:21] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:81)
+[2026-04-06 21:35:37] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:81)
+[2026-04-06 21:35:45] [error] daemon Watchdog: busy for 350min, force reset
+[2026-04-06 21:35:46] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T21:35:45.682Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 350min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 21:35:46] [perf] daemon {"rss":"11MB","heapUsed":"8MB","heapTotal":"10MB","uptime":"21005s"}
+[2026-04-06 21:36:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:81)
+[2026-04-06 21:36:31] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:81)
+[2026-04-06 21:37:05] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:81)
+[2026-04-06 21:37:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:81)
+[2026-04-06 21:38:04] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:81)
+[2026-04-06 21:38:25] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:5, done:81)
+[2026-04-06 21:38:26] [agent_start] daemon Still busy (80min), skipping safety check
+[2026-04-06 21:38:27] [perf] daemon {"rss":"11MB","heapUsed":"6MB","heapTotal":"8MB","uptime":"20401s"}
+[2026-04-06 21:39:05] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:5, done:81)
+[2026-04-06 21:39:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:5, done:81)
+[2026-04-06 21:40:48] [perf] daemon {"rss":"7MB","heapUsed":"10MB","heapTotal":"12MB","uptime":"21307s"}
+[2026-04-06 21:43:27] [perf] daemon {"rss":"6MB","heapUsed":"9MB","heapTotal":"11MB","uptime":"20701s"}
+Both tasks are complete:
+
+- **task-1775510905293** (profiles.js): 2/2 tests passed → `done`
+- **task-1775510912066** (optimizer.js): 1/1 tests passed → `done`
+
+Tests written: `test/m21-profiles.test.js`, `test/m21-optimizer.test.js` covering DBB-001, DBB-002, DBB-003. No review tasks remain.
+[2026-04-06T21:43:58.103Z] tester-2 agent completed
+[2026-04-06 21:44:02] [agent_complete] tester-2 completed successfully

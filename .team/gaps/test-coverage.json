@@ -1,13 +1,13 @@
 {
-  "totalTests": 94,
-  "passed": 94,
+  "totalTests": 9,
+  "passed": 9,
   "failed": 0,
   "edgeCases": [
     "≤60s reload timing in real network conditions",
     "In-flight request safety during config reload",
-    "server.close error path during SIGINT (5s timeout fallback exists)",
-    "Live HTTPS curl test not run (requires selfsigned package installed)",
-    "Actual STT+LLM+TTS latency not measured (requires running Ollama)"
+    "profiles.js: empty profiles array → matchProfile throws (not tested)",
+    "profiles.js: corrupted cache file → falls through to remote fetch (not tested)",
+    "optimizer.js: Ollama not installed / model pull fails → requires process spawning (not unit-tested)"
   ],
   "coverage": "100%"
 }

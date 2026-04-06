@@ -75,10 +75,12 @@
     {
       "id": "default",
       "match": { "gpu": "none" },
-      "llm": { "provider": "ollama", "model": "gemma2:2b", "quantization": "q4" },
-      "stt": { "provider": "sensevoice", "model": "small" },
-      "tts": { "provider": "kokoro", "voice": "default" },
-      "fallback": { "provider": "openai", "model": "gpt-4o-mini" }
+      "config": {
+        "llm": { "provider": "openai", "model": "gpt-4o-mini" },
+        "stt": { "provider": "openai", "model": "whisper-1" },
+        "tts": { "provider": "openai", "voice": "alloy" },
+        "fallback": null
+      }
     }
   ]
 }

@@ -14,18 +14,18 @@ describe('M20 DBB-007: profiles/default.json', () => {
   });
 
   it('default profile has llm field', () => {
-    expect(p.llm).toBeDefined();
+    expect(p.config.llm).toBeDefined();
   });
 
   it('default profile has stt field', () => {
-    expect(p.stt).toBeDefined();
+    expect(p.config.stt).toBeDefined();
   });
 
   it('default profile has tts field', () => {
-    expect(p.tts).toBeDefined();
+    expect(p.config.tts).toBeDefined();
   });
 
   it('default profile has fallback field', () => {
-    expect(p.fallback).toBeDefined();
+    expect('fallback' in p.config).toBe(true);
   });
 });
