@@ -3786,3 +3786,9 @@
 {"ts":"2026-04-06T20:32:00.640Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775506792151","from":"testing","to":"done","title":"hub.js设备命令: speak/display支持"}}
 {"ts":"2026-04-06T20:32:00.671Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775506792183","from":"testing","to":"done","title":"llm.js硬件自适应: 接入optimizer输出"}}
 {"ts":"2026-04-06T20:32:30.669Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":2.272043,"cpuSystem":3.234758}}}
+{"ts":"2026-04-06T20:32:30.767Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T20:32:30.768Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":2.274323,"cpuSystem":3.24025}}}
+{"ts":"2026-04-06T20:32:49.559Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775506792214","from":"todo","to":"inProgress","title":"README.md: 安装说明 + REST API文档"}}
+{"ts":"2026-04-06T20:33:26.414Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"38MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"11MB\",\"uptime\":\"16500s\"}"}}
+{"ts":"2026-04-06T20:33:36.419Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775506792214","from":"inProgress","to":"review","title":"README.md: 安装说明 + REST API文档"}}
+{"ts":"2026-04-06T20:33:41.730Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":2.2838,"cpuSystem":3.253512}}}
