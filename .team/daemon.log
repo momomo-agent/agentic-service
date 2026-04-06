@@ -4156,3 +4156,114 @@ All 4 M13 tasks are now done. Here's a summary:
 **Total: 18 new tests, all passing.** Coverage updated to 98%.
 [2026-04-06T19:14:20.613Z] tester-2 agent completed
 [2026-04-06 19:14:20] [agent_complete] tester-2 completed successfully
+[2026-04-06 19:15:41] [error] daemon Watchdog: busy for 210min, force reset
+[2026-04-06 19:15:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T19:15:41.562Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 210min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 19:15:41] [perf] daemon {"rss":"38MB","heapUsed":"12MB","heapTotal":"14MB","uptime":"12600s"}
+[2026-04-06 19:18:26] [agent_start] daemon Still busy (70min), skipping safety check
+[2026-04-06 19:18:26] [perf] daemon {"rss":"36MB","heapUsed":"6MB","heapTotal":"8MB","uptime":"12000s"}
+[2026-04-06 19:20:41] [perf] daemon {"rss":"34MB","heapUsed":"9MB","heapTotal":"10MB","uptime":"12900s"}
+[2026-04-06 19:23:26] [perf] daemon {"rss":"40MB","heapUsed":"11MB","heapTotal":"13MB","uptime":"12300s"}
+[2026-04-06 19:25:41] [error] daemon Watchdog: busy for 220min, force reset
+[2026-04-06 19:25:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T19:25:41.567Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 220min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 19:25:41] [perf] daemon {"rss":"37MB","heapUsed":"11MB","heapTotal":"12MB","uptime":"13200s"}
+[2026-04-06 19:28:26] [agent_start] daemon Still busy (80min), skipping safety check
+[2026-04-06 19:28:26] [perf] daemon {"rss":"35MB","heapUsed":"6MB","heapTotal":"8MB","uptime":"12600s"}
+[2026-04-06 19:30:41] [perf] daemon {"rss":"33MB","heapUsed":"7MB","heapTotal":"9MB","uptime":"13500s"}
+[2026-04-06 19:33:26] [perf] daemon {"rss":"39MB","heapUsed":"10MB","heapTotal":"11MB","uptime":"12900s"}
+[2026-04-06 19:35:41] [error] daemon Watchdog: busy for 230min, force reset
+[2026-04-06 19:35:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T19:35:41.572Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 230min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 19:35:41] [perf] daemon {"rss":"39MB","heapUsed":"12MB","heapTotal":"14MB","uptime":"13800s"}
+[2026-04-06 19:38:26] [agent_start] daemon Still busy (90min), skipping safety check
+[2026-04-06 19:38:26] [perf] daemon {"rss":"36MB","heapUsed":"6MB","heapTotal":"8MB","uptime":"13200s"}
+[2026-04-06 19:40:41] [perf] daemon {"rss":"35MB","heapUsed":"6MB","heapTotal":"8MB","uptime":"14100s"}
+[2026-04-06 19:43:26] [perf] daemon {"rss":"38MB","heapUsed":"9MB","heapTotal":"11MB","uptime":"13500s"}
+[2026-04-06 19:45:41] [error] daemon Watchdog: busy for 240min, force reset
+[2026-04-06 19:45:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T19:45:41.577Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 240min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 19:45:41] [perf] daemon {"rss":"35MB","heapUsed":"10MB","heapTotal":"12MB","uptime":"14400s"}
+[2026-04-06 19:48:26] [agent_start] daemon Still busy (100min), skipping safety check
+[2026-04-06 19:48:26] [perf] daemon {"rss":"33MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"13800s"}
+[2026-04-06 19:50:41] [perf] daemon {"rss":"34MB","heapUsed":"8MB","heapTotal":"9MB","uptime":"14700s"}
+[2026-04-06 19:53:26] [perf] daemon {"rss":"38MB","heapUsed":"10MB","heapTotal":"12MB","uptime":"14100s"}
+[2026-04-06 19:55:41] [error] daemon Watchdog: busy for 250min, force reset
+[2026-04-06 19:55:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T19:55:41.581Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 250min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 19:55:41] [perf] daemon {"rss":"37MB","heapUsed":"10MB","heapTotal":"11MB","uptime":"15000s"}
+[2026-04-06 19:58:26] [agent_start] daemon Still busy (110min), skipping safety check
+[2026-04-06 19:58:26] [perf] daemon {"rss":"41MB","heapUsed":"12MB","heapTotal":"14MB","uptime":"14400s"}
+[2026-04-06 20:00:41] [perf] daemon {"rss":"33MB","heapUsed":"6MB","heapTotal":"8MB","uptime":"15300s"}
+[2026-04-06 20:03:26] [perf] daemon {"rss":"37MB","heapUsed":"8MB","heapTotal":"10MB","uptime":"14700s"}
+[2026-04-06 20:05:41] [error] daemon Watchdog: busy for 260min, force reset
+[2026-04-06 20:05:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T20:05:41.585Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 260min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 20:05:41] [perf] daemon {"rss":"38MB","heapUsed":"11MB","heapTotal":"13MB","uptime":"15600s"}
+[2026-04-06 20:08:26] [agent_start] daemon Still busy (120min), skipping safety check
+[2026-04-06 20:08:26] [perf] daemon {"rss":"42MB","heapUsed":"14MB","heapTotal":"16MB","uptime":"15000s"}
+[2026-04-06 20:10:41] [perf] daemon {"rss":"33MB","heapUsed":"5MB","heapTotal":"7MB","uptime":"15900s"}
+[2026-04-06 20:13:26] [perf] daemon {"rss":"37MB","heapUsed":"8MB","heapTotal":"10MB","uptime":"15300s"}
+[2026-04-06 20:15:41] [error] daemon Watchdog: busy for 270min, force reset
+[2026-04-06 20:15:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T20:15:41.591Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 270min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 20:15:41] [perf] daemon {"rss":"37MB","heapUsed":"9MB","heapTotal":"11MB","uptime":"16200s"}
+[2026-04-06 20:18:26] [error] daemon Watchdog: busy for 130min, force reset
+[2026-04-06 20:18:26] [group_complete] m13 === MILESTONES m13 COMPLETE: M13: DBB修复 + Docker + 配置热更新 ===
+[2026-04-06 20:18:26] [agent_start] milestone_qg [NODE] milestone_qg - 里程碑 QG - 对照 DBB 验收
+[2026-04-06 20:18:26] [workflow] milestone_qg [EXEC] tester
+[2026-04-06 20:18:26] [agent_start] tester tester
+[2026-04-06 20:18:26] [perf] daemon {"rss":"40MB","heapUsed":"11MB","heapTotal":"13MB","uptime":"15600s"}
+[2026-04-06T20:18:26.430Z] Running tester agent...
+All tasks are in "done" status — there's nothing in "review" status to claim and test. The pipeline is fully complete with no pending work for the tester.
+[2026-04-06T20:18:36.266Z] tester agent completed
+[2026-04-06 20:18:36] [agent_complete] tester completed successfully

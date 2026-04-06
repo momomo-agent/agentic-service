@@ -3632,3 +3632,48 @@
 {"ts":"2026-04-06T19:10:41.761Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"38MB\",\"heapUsed\":\"12MB\",\"heapTotal\":\"14MB\",\"uptime\":\"12300s\"}"}}
 {"ts":"2026-04-06T19:13:26.364Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"38MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"11MB\",\"uptime\":\"11700s\"}"}}
 {"ts":"2026-04-06T19:14:20.617Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":1.586449,"cpuSystem":2.345846}}}
+{"ts":"2026-04-06T19:15:41.562Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 210min, force reset"}}
+{"ts":"2026-04-06T19:15:41.765Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"38MB\",\"heapUsed\":\"12MB\",\"heapTotal\":\"14MB\",\"uptime\":\"12600s\"}"}}
+{"ts":"2026-04-06T19:18:26.164Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (70min), skipping safety check","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":1.625826,"cpuSystem":2.388171}}}
+{"ts":"2026-04-06T19:18:26.367Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"36MB\",\"heapUsed\":\"6MB\",\"heapTotal\":\"8MB\",\"uptime\":\"12000s\"}"}}
+{"ts":"2026-04-06T19:20:41.768Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"34MB\",\"heapUsed\":\"9MB\",\"heapTotal\":\"10MB\",\"uptime\":\"12900s\"}"}}
+{"ts":"2026-04-06T19:23:26.369Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"40MB\",\"heapUsed\":\"11MB\",\"heapTotal\":\"13MB\",\"uptime\":\"12300s\"}"}}
+{"ts":"2026-04-06T19:25:41.567Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 220min, force reset"}}
+{"ts":"2026-04-06T19:25:41.772Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"37MB\",\"heapUsed\":\"11MB\",\"heapTotal\":\"12MB\",\"uptime\":\"13200s\"}"}}
+{"ts":"2026-04-06T19:28:26.170Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (80min), skipping safety check","performance":{"memoryMB":6,"memoryTotalMB":7,"cpuUser":1.707746,"cpuSystem":2.489621}}}
+{"ts":"2026-04-06T19:28:26.373Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"35MB\",\"heapUsed\":\"6MB\",\"heapTotal\":\"8MB\",\"uptime\":\"12600s\"}"}}
+{"ts":"2026-04-06T19:30:41.775Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"33MB\",\"heapUsed\":\"7MB\",\"heapTotal\":\"9MB\",\"uptime\":\"13500s\"}"}}
+{"ts":"2026-04-06T19:33:26.377Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"39MB\",\"heapUsed\":\"10MB\",\"heapTotal\":\"11MB\",\"uptime\":\"12900s\"}"}}
+{"ts":"2026-04-06T19:35:41.572Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 230min, force reset"}}
+{"ts":"2026-04-06T19:35:41.779Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"39MB\",\"heapUsed\":\"12MB\",\"heapTotal\":\"14MB\",\"uptime\":\"13800s\"}"}}
+{"ts":"2026-04-06T19:38:26.174Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (90min), skipping safety check","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":1.802193,"cpuSystem":2.594133}}}
+{"ts":"2026-04-06T19:38:26.381Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"36MB\",\"heapUsed\":\"6MB\",\"heapTotal\":\"8MB\",\"uptime\":\"13200s\"}"}}
+{"ts":"2026-04-06T19:40:41.783Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"35MB\",\"heapUsed\":\"6MB\",\"heapTotal\":\"8MB\",\"uptime\":\"14100s\"}"}}
+{"ts":"2026-04-06T19:43:26.384Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"38MB\",\"heapUsed\":\"9MB\",\"heapTotal\":\"11MB\",\"uptime\":\"13500s\"}"}}
+{"ts":"2026-04-06T19:45:41.577Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 240min, force reset"}}
+{"ts":"2026-04-06T19:45:41.786Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"35MB\",\"heapUsed\":\"10MB\",\"heapTotal\":\"12MB\",\"uptime\":\"14400s\"}"}}
+{"ts":"2026-04-06T19:48:26.179Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (100min), skipping safety check","performance":{"memoryMB":5,"memoryTotalMB":7,"cpuUser":1.8566,"cpuSystem":2.663387}}}
+{"ts":"2026-04-06T19:48:26.387Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"33MB\",\"heapUsed\":\"5MB\",\"heapTotal\":\"7MB\",\"uptime\":\"13800s\"}"}}
+{"ts":"2026-04-06T19:50:41.788Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"34MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"9MB\",\"uptime\":\"14700s\"}"}}
+{"ts":"2026-04-06T19:53:26.391Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"38MB\",\"heapUsed\":\"10MB\",\"heapTotal\":\"12MB\",\"uptime\":\"14100s\"}"}}
+{"ts":"2026-04-06T19:55:41.581Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 250min, force reset"}}
+{"ts":"2026-04-06T19:55:41.790Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"37MB\",\"heapUsed\":\"10MB\",\"heapTotal\":\"11MB\",\"uptime\":\"15000s\"}"}}
+{"ts":"2026-04-06T19:58:26.185Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (110min), skipping safety check","performance":{"memoryMB":12,"memoryTotalMB":14,"cpuUser":1.930702,"cpuSystem":2.766877}}}
+{"ts":"2026-04-06T19:58:26.394Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"41MB\",\"heapUsed\":\"12MB\",\"heapTotal\":\"14MB\",\"uptime\":\"14400s\"}"}}
+{"ts":"2026-04-06T20:00:41.794Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"33MB\",\"heapUsed\":\"6MB\",\"heapTotal\":\"8MB\",\"uptime\":\"15300s\"}"}}
+{"ts":"2026-04-06T20:03:26.398Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"37MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"10MB\",\"uptime\":\"14700s\"}"}}
+{"ts":"2026-04-06T20:05:41.585Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 260min, force reset"}}
+{"ts":"2026-04-06T20:05:41.798Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"38MB\",\"heapUsed\":\"11MB\",\"heapTotal\":\"13MB\",\"uptime\":\"15600s\"}"}}
+{"ts":"2026-04-06T20:08:26.190Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (120min), skipping safety check","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":2.010536,"cpuSystem":2.870214}}}
+{"ts":"2026-04-06T20:08:26.399Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"42MB\",\"heapUsed\":\"14MB\",\"heapTotal\":\"16MB\",\"uptime\":\"15000s\"}"}}
+{"ts":"2026-04-06T20:10:41.801Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"33MB\",\"heapUsed\":\"5MB\",\"heapTotal\":\"7MB\",\"uptime\":\"15900s\"}"}}
+{"ts":"2026-04-06T20:13:26.401Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"37MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"10MB\",\"uptime\":\"15300s\"}"}}
+{"ts":"2026-04-06T20:15:41.591Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 270min, force reset"}}
+{"ts":"2026-04-06T20:15:41.804Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"37MB\",\"heapUsed\":\"9MB\",\"heapTotal\":\"11MB\",\"uptime\":\"16200s\"}"}}
+{"ts":"2026-04-06T20:18:26.196Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 130min, force reset"}}
+{"ts":"2026-04-06T20:18:26.246Z","type":"group_complete","agent":"m13","data":{"details":"=== MILESTONES m13 COMPLETE: M13: DBB修复 + Docker + 配置热更新 ===","performance":{"memoryMB":12,"memoryTotalMB":14,"cpuUser":2.097687,"cpuSystem":2.979587}}}
+{"ts":"2026-04-06T20:18:26.394Z","type":"agent_start","agent":"milestone_qg","data":{"details":"[NODE] milestone_qg - 里程碑 QG - 对照 DBB 验收","performance":{"memoryMB":12,"memoryTotalMB":14,"cpuUser":2.098705,"cpuSystem":2.980512}}}
+{"ts":"2026-04-06T20:18:26.402Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-06T20:18:26.403Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":2.100644,"cpuSystem":2.986204}}}
+{"ts":"2026-04-06T20:18:26.403Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"40MB\",\"heapUsed\":\"11MB\",\"heapTotal\":\"13MB\",\"uptime\":\"15600s\"}"}}
+{"ts":"2026-04-06T20:18:36.270Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":14,"cpuUser":2.105036,"cpuSystem":2.992625}}}
