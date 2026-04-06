@@ -1843,3 +1843,68 @@ Task `task-1775493442904` (LLM 工具调用 brain.js) is complete.
 All 16 tasks are in "done" status. There's nothing in "review" for me to claim and test right now. I'll wait for new tasks to enter the review queue.
 [2026-04-06T16:52:58.902Z] tester agent completed
 [2026-04-06 16:52:58] [agent_complete] tester completed successfully
+[2026-04-06 16:52:58] [workflow] milestone_qg [EXEC] pm
+[2026-04-06 16:52:58] [agent_start] pm pm
+[2026-04-06T16:52:59.007Z] Running pm agent...
+[2026-04-06 16:53:26] [perf] daemon {"rss":"56MB","heapUsed":"10MB","heapTotal":"11MB","uptime":"3300s"}
+M5 is planned and active. Here's the summary:
+
+**M4 → completed** (all 4 tasks were done)
+
+**M5: 感知运行时 + 记忆模块 + Docker 打包** (active, 4 tasks):
+
+| Task | Priority | Notes |
+|------|----------|-------|
+| 感知运行时 sense.js | P1 | MediaPipe 封装 |
+| 记忆模块 memory.js | P1 | blocked by embed+store (both done) |
+| Docker 打包 | P1 | Dockerfile + docker-compose.yml |
+| 边缘用例测试覆盖 | P0 | 14 uncovered edge cases → ≥98% coverage |
+[2026-04-06T16:54:51.514Z] pm agent completed
+[2026-04-06 16:54:51] [agent_complete] pm completed successfully
+[2026-04-06 16:54:51] [workflow] milestone_qg [BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop
+[2026-04-06 16:54:51] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 16:54:51] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 16:54:51] [workflow] work_loop [EXEC] pm
+[2026-04-06 16:54:51] [agent_start] pm pm
+[2026-04-06T16:54:51.565Z] Running pm agent...
+All M5 tasks are now assigned and in progress:
+
+| Task | Title | Assignee | Priority |
+|------|-------|----------|----------|
+| task-1775494462710 | 感知运行时 sense.js | developer | P1 |
+| task-1775494466328 | 记忆模块 memory.js | developer | P1 |
+| task-1775494470572 | Docker 打包 | developer-2 | P1 |
+| task-1775494475568 | 边缘用例测试覆盖 | developer-3 | P0 |
+
+Waiting for developers to complete and submit for review.
+[2026-04-06T16:55:15.353Z] pm agent completed
+[2026-04-06 16:55:15] [agent_complete] pm completed successfully
+[2026-04-06 16:55:15] [workflow] work_loop [EXEC] qa_lead
+[2026-04-06 16:55:15] [agent_start] qa_lead qa_lead
+[2026-04-06T16:55:15.391Z] Running qa_lead agent...
+[2026-04-06 16:55:41] [agent_start] daemon Still busy (70min), skipping safety check
+[2026-04-06 16:55:41] [perf] daemon {"rss":"54MB","heapUsed":"11MB","heapTotal":"11MB","uptime":"4200s"}
+Done. Here's a summary of what was completed:
+
+- Wrote `.team/milestones/m5/dbb.md` with 13 verification criteria covering:
+  - `sense.detect` — faces, gestures, objects, null input
+  - `memory.search` — happy path, no match, empty string, concurrent writes
+  - Docker — build success, container accessibility, docker-compose startup
+  - Edge cases — SIGINT graceful exit, test coverage ≥ 98%
+- Updated m5 status: `active` → `ready-for-work`
+[2026-04-06T16:56:11.220Z] qa_lead agent completed
+[2026-04-06 16:56:11] [agent_complete] qa_lead completed successfully
+[2026-04-06 16:56:11] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 16:56:11] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 16:56:11] [workflow] work_loop [SKIP] implement: designedTasks > 0
+[2026-04-06 16:56:11] [workflow] work_loop [BRANCH] doneCount > 0 → true → milestone_qg
+[2026-04-06 16:56:11] [workflow] work_loop [EXIT] todoCount == 0 && designedTasks == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 && blockedCount == 0 → milestone_qg
+[2026-04-06 16:56:11] [agent_start] milestone_qg [NODE] milestone_qg - 里程碑 QG - 对照 DBB 验收
+[2026-04-06 16:56:11] [workflow] milestone_qg [EXEC] tester
+[2026-04-06 16:56:11] [agent_start] tester tester
+[2026-04-06T16:56:11.262Z] Running tester agent...
+No tasks are currently in `review` status — all tasks are either `done` or `in-progress`. Nothing to claim or test right now.
+
+I'll wait for tasks to move to `review` status before proceeding.
+[2026-04-06T16:56:19.503Z] tester agent completed
+[2026-04-06 16:56:19] [agent_complete] tester completed successfully
