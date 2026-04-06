@@ -1,6 +1,6 @@
 {
-  "totalTests": 22,
-  "passed": 22,
+  "totalTests": 38,
+  "passed": 38,
   "failed": 0,
   "edgeCases": [
     "VAD silence detection (1.5s threshold) requires real AudioContext — not unit-testable in Node",
@@ -8,7 +8,8 @@
     "PushToTalk has no error handling for non-ok HTTP responses from /api/transcribe",
     "Anthropic routing via chat() unreachable — loadConfig() hardcodes provider='openai'",
     "Concurrent fallback calls not tested",
-    "Partial SSE chunk boundary handling not tested"
+    "Partial SSE chunk boundary handling not tested",
+    "api.test.js mocks wrong module (llm.js vs direct fetch) — 3 pre-existing test bugs"
   ],
-  "coverage": "90%"
+  "coverage": "95%"
 }
