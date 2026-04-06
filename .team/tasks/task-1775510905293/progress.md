@@ -2,4 +2,4 @@
 
 ## Progress
 
-Verified: `getProfile(hardware)` works correctly via `matchProfile`. `profiles/default.json` has correct structure. All 6 tests pass. No code changes needed.
+Verified: `getProfile(hardware)` works correctly via `matchProfile`. Fixed `profiles/default.json` profile[3]: moved llm/stt/tts/fallback under `config` key, set provider to `openai`. All profiles tests pass (3/3 + 14/14 + 6/6).

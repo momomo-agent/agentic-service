@@ -1,12 +1,11 @@
 {
-  "totalTests": 9,
-  "passed": 9,
+  "totalTests": 17,
+  "passed": 17,
   "failed": 0,
   "edgeCases": [
     "≤60s reload timing in real network conditions",
     "In-flight request safety during config reload",
     "profiles.js: empty profiles array → matchProfile throws (not tested)",
-    "profiles.js: corrupted cache file → falls through to remote fetch (not tested)",
     "optimizer.js: Ollama not installed / model pull fails → requires process spawning (not unit-tested)"
   ],
   "coverage": "100%"
