@@ -7468,3 +7468,48 @@ No new gaps require new tasks at this time. Architecture match is 18% but the re
 [no content]
 [2026-04-06T22:24:36.033Z] tester-1 agent completed
 [2026-04-06 22:24:36] [agent_complete] tester-1 completed successfully
+[2026-04-06 22:24:36] [workflow] post [POST] task-1775513213884: testing → review
+[2026-04-06 22:24:36] [workflow] post [POST] task-1775513221598: testing → blocked
+[2026-04-06 22:24:36] [workflow] work_loop [SKIP] implement: designedTasks > 0
+[2026-04-06 22:24:36] [workflow] work_loop [LOOP] Iteration 14
+[2026-04-06 22:24:36] [workflow] work_loop [EXEC] pm
+[2026-04-06 22:24:36] [agent_start] pm pm
+[2026-04-06T22:24:36.177Z] Running pm agent...
+**Current state summary:**
+
+**M24 (active):**
+- `task-1775513213884` — review (HTTPS/LAN安全访问) — waiting for tester
+- `task-1775513217925` — done ✓
+- `task-1775513221598` — **todo** (reassigned to developer, was incorrectly blocked)
+- `task-1775513226685` — done ✓
+
+**M25 (planned):**
+- `task-1775513780215` — review — waiting for tester
+- `task-1775513784884` — review — waiting for tester
+
+**Actions taken:**
+- Unblocked and reassigned `task-1775513221598` (服务端常驻唤醒词检测) back to `developer` — it had no actual blockers
+
+**Waiting on testers** to approve the 3 tasks in `review` (m24 HTTPS task + both m25 tasks) before milestones can be marked complete or new ones created.
+[2026-04-06T22:25:19.094Z] pm agent completed
+[2026-04-06 22:25:19] [agent_complete] pm completed successfully
+[2026-04-06 22:25:19] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 22:25:19] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 22:25:19] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 22:25:19] [agent_start] tester-1 tester
+[2026-04-06 22:25:19] [agent_start] tester-2 tester
+[2026-04-06T22:25:19.146Z] Running tester-2 agent...
+[2026-04-06T22:25:19.146Z] Running tester-1 agent...
+Task task-1775513221598 is now done. 
+
+Summary of work completed:
+- Verified `startWakeWordDetection()` is exported from `src/server/hub.js`
+- Confirmed it broadcasts `{ type: 'wake' }` on keyword match
+- Confirmed `WAKE_WORD` env var support and non-TTY guard
+- Wrote `test/m24-wakeword.test.js` with 5 passing tests
+- Updated `test-coverage.json` (32→37 tests)
+- Marked task done
+
+All remaining review tasks (task-1775513213884, task-1775513780215, task-1775513784884) are assigned to other agents. No further work available for tester-1.
+[2026-04-06T22:25:37.795Z] tester-1 agent completed
+[2026-04-06 22:25:37] [agent_complete] tester-1 completed successfully
