@@ -3,11 +3,12 @@
   "title": "src/runtime/stt+tts.js实现",
   "description": "实现transcribe(audioBuffer)→text和synthesize(text)→audioBuffer接口",
   "status": "todo",
-  "priority": "P1",
-  "assignee": null,
+  "priority": "P0",
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m27",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-06T22:31:15.715Z",
-  "updated": "2026-04-06T22:31:15.716Z"
+  "updated": "2026-04-06T22:40:31.954Z",
+  "milestoneId": "m27"
 }

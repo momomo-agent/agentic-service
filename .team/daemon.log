@@ -7949,3 +7949,154 @@ No more claimable tasks available. Work complete for this session:
 Both remaining todo tasks with designs are assigned to `developer-1`, not me. There are no unassigned tasks with `hasDesign=true` available to claim. All my assigned tasks are now in review. My work is complete for this session.
 [2026-04-06T22:37:06.937Z] developer agent completed
 [2026-04-06 22:37:06] [agent_complete] developer completed successfully
+[2026-04-06 22:37:07] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-06 22:37:07] [workflow] work_loop [EXEC] pm
+[2026-04-06 22:37:07] [agent_start] pm pm
+[2026-04-06T22:37:07.073Z] Running pm agent...
+[2026-04-06 22:37:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:13, done:101)
+The milestones.json looks correct. M26 has 3 tasks in `review` — I must wait for the tester. M27 is `planned` with 4 `todo` P0 tasks ready for developers.
+
+**Current status summary:**
+
+**M26** (`ready-for-work`) — blocked on tester review:
+- `task-1775514571886` [review] profiles.js getProfile实现
+- `task-1775514586151` [review] gpu-detector.js合并到hardware.js
+- `task-1775514647990` [review] src/runtime/llm.js实现
+- `task-1775514589838` [todo] Admin UI + Docker + setup.sh验收
+- `task-1775514594768` [todo] README.md补全
+
+**M27** (`planned`) — ready for developer assignment:
+- `task-1775514675715` [todo P0] src/runtime/stt+tts.js
+- `task-1775514675749` [todo P0] src/runtime/sense+memory.js
+- `task-1775514675779` [todo P0] src/server/hub+brain+api.js
+- `task-1775514675809` [todo P0] profiles/default.json
+
+**Actions taken:**
+- Cancelled 4 duplicate tasks in m26 (no milestoneId orphans)
+- Linked `task-1775514647990` (llm.js) to m26
+- Set all m27 tasks to P0 (architecture `missing` gaps)
+
+**Waiting on:** Tester to approve the 3 `review` tasks in m26 before m26 can complete and m27 becomes active.
+[2026-04-06T22:38:02.355Z] pm agent completed
+[2026-04-06 22:38:02] [agent_complete] pm completed successfully
+[2026-04-06 22:38:02] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 22:38:02] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 22:38:02] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 22:38:02] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 22:38:02] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T22:38:02.413Z] Running tech_lead-3 agent...
+[2026-04-06T22:38:02.413Z] Running tech_lead-2 agent...
+[2026-04-06T22:38:02.413Z] Running tech_lead-1 agent...
+[2026-04-06 22:38:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:10, done:101)
+[2026-04-06 22:38:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:13, done:101)
+Current state summary:
+
+**M26 (active)** — 3 tasks in `review`, 2 tasks in `todo`:
+- `task-1775514571886` [review] profiles.js getProfile + cpu-only profile
+- `task-1775514586151` [review] gpu-detector.js → hardware.js merge
+- `task-1775514647990` [review] src/runtime/llm.js
+- `task-1775514589838` [todo] Admin UI + Docker + setup.sh (assigned: developer-1)
+- `task-1775514594768` [todo] README.md (assigned: developer-1)
+
+**M27 (active)** — 4 tasks in `todo`:
+- `task-1775514675715` [todo] stt+tts.js (assigned: developer, P0)
+- `task-1775514675749` [todo] sense+memory.js (assigned: developer-1, P0)
+- `task-1775514675779` [todo] hub+brain+api.js (assigned: developer, P0, blocked by stt+tts)
+- `task-1775514675809` [todo] profiles/default.json (assigned: developer-1, P1)
+
+**Waiting on tester** to review the 3 m26 tasks in `review`. M26 cannot complete until those pass. M27 work can proceed in parallel on the `todo` tasks.
+[2026-04-06T22:38:14.217Z] pm agent completed
+[2026-04-06 22:38:14] [agent_complete] pm completed successfully
+[2026-04-06 22:38:14] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 22:38:14] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 22:38:14] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 22:38:14] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 22:38:14] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T22:38:14.276Z] Running tech_lead-3 agent...
+[2026-04-06T22:38:14.276Z] Running tech_lead-1 agent...
+[2026-04-06T22:38:14.281Z] Running tech_lead-2 agent...
+[2026-04-06 22:38:26] [agent_start] daemon Still busy (10min), skipping safety check
+**PM Status Report**
+
+**M26** (active) — tasks in review, waiting for tester:
+- `task-1775514571886` — profiles.js getProfile验证 → **review**
+- `task-1775514586151` — gpu-detector.js合并 → **review**
+- `task-1775514647990` — src/runtime/llm.js实现 → **review**
+- Remaining todos: profiles补全, Admin UI验收, README补全
+
+**M27** (planned) — 4 tasks todo: stt+tts, sense+memory, hub+brain+api, profiles/default.json
+
+**M28** (planned, just created) — 4 tasks targeting remaining PRD/vision gaps:
+- VAD自动语音检测集成 (`task-1775515078705`) — P0 (missing)
+- HTTPS/LAN隧道安全访问 (`task-1775515085075`) — P1
+- CDN profiles.json 7天缓存刷新 (`task-1775515085107`) — P1
+- Docker端到端验收 + setup.sh幂等性 (`task-1775515085136`) — P1
+
+**Blocked:** Cannot advance M26 to completed — 3 tasks still in review. Waiting for tester to approve.
+[2026-04-06T22:38:26.906Z] pm agent completed
+[2026-04-06 22:38:26] [agent_complete] pm completed successfully
+[2026-04-06 22:38:26] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 22:38:26] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 22:38:26] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 22:38:26] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 22:38:26] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T22:38:26.960Z] Running tech_lead-2 agent...
+[2026-04-06T22:38:26.961Z] Running tech_lead-3 agent...
+[2026-04-06T22:38:26.961Z] Running tech_lead-1 agent...
+[2026-04-06 22:38:27] [perf] daemon {"rss":"35MB","heapUsed":"6MB","heapTotal":"9MB","uptime":"24001s"}
+[2026-04-06 22:38:33] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:13, done:101)
+[2026-04-06 22:39:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:13, done:101)
+[2026-04-06 22:39:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:13, done:101)
+Done. Here's a summary of what was created:
+
+**M27 milestone files:**
+- `.team/milestones/m27/dbb.md` — verification criteria for all 4 tasks
+- `.team/milestones/m27/design.md` — module relationships and conventions
+
+**Task designs (hasDesign=true):**
+- `task-1775514675715` — `stt.js` / `tts.js`: singleton wrappers around agentic-voice
+- `task-1775514675749` — `sense.js` / `memory.js`: EventEmitter sense runtime + agentic-store KV
+- `task-1775514675779` — `hub.js` / `brain.js` / `api.js`: device registry, LLM chat, all REST endpoints
+- `task-1775514675809` — `profiles/default.json`: apple-silicon / nvidia / cpu-only profiles
+[2026-04-06T22:39:26.781Z] tech_lead-2 agent completed
+[2026-04-06 22:39:26] [agent_complete] tech_lead-2 completed successfully
+[2026-04-06 22:40:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:13, done:101)
+[2026-04-06 22:40:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:13, done:101)
+All tasks are complete. The Tech Lead workflow for M27 is done:
+
+- **M27 dbb.md** — already existed with verification criteria
+- **M27 design.md** — already existed with module relationship map
+- **4 task designs** — all had design.md files; marked `hasDesign: true` for all
+
+Developers can now pick up the 4 `todo` tasks in M27.
+[2026-04-06T22:40:35.932Z] tech_lead-3 agent completed
+[2026-04-06 22:40:35] [agent_complete] tech_lead-3 completed successfully
+All M27 work is complete. Here's a summary of what was created:
+
+**`.team/milestones/m27/dbb.md`** — 12 verification criteria covering:
+- stt/tts error codes and return types (DBB-001..004)
+- sense.detect() structure and memory search (DBB-005..006)
+- hub device registration and all API endpoints (DBB-007..010)
+- default.json cpu-only profile and offline fallback (DBB-011..012)
+
+**`.team/milestones/m27/design.md`** — milestone-level technical overview
+
+**4 task designs** (all marked `hasDesign: true`):
+- `task-1775514675715` — stt+tts: adapter selection, error codes, edge cases
+- `task-1775514675749` — sense+memory: interfaces, dependencies, empty-input guards
+- `task-1775514675779` — hub+brain+api: all endpoints, tool calling flow, 400 error cases
+- `task-1775514675809` — profiles/default.json: add explicit `{ "match": { "gpu": "none" } }` cpu-only entry before the catch-all
+[2026-04-06T22:40:45.087Z] tech_lead-1 agent completed
+[2026-04-06 22:40:45] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 22:40:45] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 22:40:45] [agent_start] tester-1 tester
+[2026-04-06 22:40:45] [agent_start] tester-2 tester
+[2026-04-06T22:40:45.131Z] Running tester-1 agent...
+[2026-04-06T22:40:45.131Z] Running tester-2 agent...
+[2026-04-06 22:40:47] [perf] daemon {"rss":"35MB","heapUsed":"13MB","heapTotal":"15MB","uptime":"24906s"}
+[2026-04-06 22:41:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:13, done:101)
+All three review tasks (`task-1775514571886`, `task-1775514586151`, `task-1775514647990`) cannot be claimed — they're likely already assigned to another tester. There are no claimable tasks in 'review' status for me right now.
+
+I'll wait for new tasks to enter review status or for the current ones to be released.
+[2026-04-06T22:41:07.366Z] tester-2 agent completed
+[2026-04-06 22:41:07] [agent_complete] tester-2 completed successfully
