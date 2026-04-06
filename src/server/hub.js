@@ -10,7 +10,7 @@ const devices = new Map()
 setInterval(() => {
   const now = Date.now()
   for (const d of devices.values()) {
-    d.status = (now - d.lastSeen > 30000) ? 'offline' : 'online'
+    d.status = (now - d.lastSeen > 60000) ? 'offline' : 'online'
   }
 }, 10000)
 
@@ -67,6 +67,12 @@ export function sendCommand(deviceId, command) {
   });
 }
 
+export function broadcastWakeword() {
+  for (const device of registry.values()) {
+    try { device.ws.send(JSON.stringify({ type: 'wakeword' })); } catch { /* ignore */ }
+  }
+}
+
 export function initWebSocket(httpServer) {
   const wss = new WebSocketServer({ server: httpServer });
 
@@ -86,6 +92,8 @@ export function initWebSocket(httpServer) {
       } else if (msg.type === 'pong' && deviceId) {
         const d = registry.get(deviceId);
         if (d) d.lastPong = Date.now();
+      } else if (msg.type === 'wakeword') {
+        broadcastWakeword();
       } else if (msg.type === 'capture_result') {
         const pending = pendingCaptures.get(msg.requestId);
         if (pending) {
@@ -103,13 +111,17 @@ export function initWebSocket(httpServer) {
   setInterval(() => {
     const now = Date.now();
     for (const [id, device] of registry) {
-      if (now - device.lastPong > 40000) {
+      if (now - device.lastPong > 60000) {
         unregisterDevice(id);
       } else {
         try { device.ws.send(JSON.stringify({ type: 'ping' })); } catch { unregisterDevice(id); }
       }
     }
   }, 30000);
+
+  process.once('SIGINT', () => {
+    wss.close(() => process.exit(0));
+  });
 
   return wss;
 }

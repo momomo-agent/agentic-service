@@ -3966,3 +3966,127 @@ The review tasks (m12) cannot be claimed yet — they're likely locked pending o
 All tasks are in "done" status — no tasks in "review" status to claim. The pipeline is fully complete with no pending work for the tester.
 [2026-04-06T18:53:43.625Z] tester agent completed
 [2026-04-06 18:53:43] [agent_complete] tester completed successfully
+[2026-04-06 18:53:43] [workflow] milestone_qg [EXEC] pm
+[2026-04-06 18:53:43] [agent_start] pm pm
+[2026-04-06T18:53:43.737Z] Running pm agent...
+[2026-04-06 18:55:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:1, done:47)
+[2026-04-06 18:55:41] [error] daemon Watchdog: busy for 190min, force reset
+[2026-04-06 18:55:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T18:55:41.552Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 190min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 18:55:41] [perf] daemon {"rss":"34MB","heapUsed":"8MB","heapTotal":"11MB","uptime":"11400s"}
+[2026-04-06 18:55:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:3, done:47)
+[2026-04-06 18:55:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:47)
+M13 is set up. Here's the summary:
+
+**M11 + M12** → marked completed (all tasks done)
+
+**M13: DBB修复 + Docker + 配置热更新** (active, 4 tasks):
+
+| Task | Priority | Status |
+|------|----------|--------|
+| DBB修复: heartbeat 60s + wakeword广播 + SIGINT关闭 | P0 | todo |
+| brain.js tool_use响应格式修复 | P0 | todo |
+| Docker部署: Dockerfile + docker-compose.yml | P1 | todo |
+| 配置热更新: watchProfiles → loadConfig自动重载 | P1 | todo |
+
+P0 tasks address the highest-impact DBB spec deviations. P1 tasks complete the missing deployment and hot-reload features from the PRD/vision gaps.
+[2026-04-06T18:56:03.522Z] pm agent completed
+[2026-04-06 18:56:03] [agent_complete] pm completed successfully
+[2026-04-06 18:56:03] [workflow] milestone_qg [BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop
+[2026-04-06 18:56:03] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 18:56:03] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 18:56:03] [workflow] work_loop [EXEC] pm
+[2026-04-06 18:56:03] [agent_start] pm pm
+[2026-04-06T18:56:03.583Z] Running pm agent...
+[2026-04-06 18:56:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:47)
+[2026-04-06 18:56:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:47)
+[2026-04-06 18:56:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:3, done:47)
+M13 is now fully set up:
+
+- Fixed milestones.json to include all 4 tasks
+- task-1775501713057 (DBB: heartbeat 60s + wakeword广播 + SIGINT) → developer, in-progress (P0)
+- task-1775501732245 (brain.js tool_use响应格式) → developer, in-progress (P0)
+- task-1775501737286 (Docker: Dockerfile + docker-compose.yml) → developer (P1)
+- task-1775501747301 (配置热更新: watchProfiles) → developer (P1)
+
+P0 tasks address the highest-priority DBB gaps. Waiting for developer to complete and move to review/testing.
+[2026-04-06T18:56:49.778Z] pm agent completed
+[2026-04-06 18:56:49] [agent_complete] pm completed successfully
+[2026-04-06 18:56:49] [workflow] work_loop [EXEC] qa_lead
+[2026-04-06 18:56:49] [agent_start] qa_lead qa_lead
+[2026-04-06T18:56:49.821Z] Running qa_lead agent...
+[2026-04-06 18:56:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:2, done:47)
+[2026-04-06 18:57:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:2, done:47)
+[2026-04-06 18:57:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:2, done:47)
+[2026-04-06 18:57:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:2, done:47)
+Done. Here's what was completed:
+
+- Created `.team/milestones/m13/dbb.md` with 9 verification criteria covering:
+  - DBB-001/002: Heartbeat 60s timeout (both timeout and keep-alive cases)
+  - DBB-003: brain.js tool_use response includes `text` field
+  - DBB-004: hub.js broadcasts `wakeword` event to all clients
+  - DBB-005: SIGINT triggers graceful shutdown with exit code 0
+  - DBB-006/007: Docker Compose starts service and persists config across restarts
+  - DBB-008/009: Config hot-reload on profiles change, and resilience to invalid profiles
+
+- Updated m13 status: `active` → `ready-for-work`
+[2026-04-06T18:58:14.788Z] qa_lead agent completed
+[2026-04-06 18:58:14] [agent_complete] qa_lead completed successfully
+[2026-04-06 18:58:14] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2
+[2026-04-06 18:58:14] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 18:58:14] [agent_start] tech_lead-2 tech_lead
+[2026-04-06T18:58:14.834Z] Running tech_lead-1 agent...
+[2026-04-06T18:58:14.834Z] Running tech_lead-2 agent...
+[2026-04-06 18:58:26] [agent_start] daemon Still busy (50min), skipping safety check
+[2026-04-06 18:58:26] [perf] daemon {"rss":"38MB","heapUsed":"8MB","heapTotal":"12MB","uptime":"10800s"}
+[2026-04-06 18:58:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:2, done:47)
+[2026-04-06 18:58:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:2, done:47)
+[2026-04-06 18:59:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:2, done:47)
+[2026-04-06 18:59:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:2, done:47)
+M13 designs complete. All 4 tasks now have `hasDesign: true`.
+
+Summary of what was written:
+
+- **task-1775501713057** — hub.js: timeout 40s→60s, `broadcastWakeword()`, SIGINT handler
+- **task-1775501732245** — brain.js: add `text: ''` to all `tool_use` yields
+- **task-1775501737286** — `install/Dockerfile` + `install/docker-compose.yml` with config volume
+- **task-1775501747301** — wire `watchProfiles` to `loadConfig()` at startup, with error guard
+[2026-04-06T18:59:45.804Z] tech_lead-2 agent completed
+[2026-04-06 18:59:45] [agent_complete] tech_lead-2 completed successfully
+M13 tech lead work is complete. Here's a summary of what was done:
+
+**Milestone m13 design.md** — created at `.team/milestones/m13/design.md` covering all 4 tasks.
+
+**Task designs** (all 4 tasks now have `hasDesign: true`):
+
+- `task-1775501713057` — already had design: hub.js heartbeat 60s, wakeword broadcast, SIGINT handler
+- `task-1775501732245` — already had design: brain.js tool_use yield adds `text: ''`
+- `task-1775501737286` — already had design: Dockerfile + docker-compose.yml in `install/`
+- `task-1775501747301` — wrote new design: wire `watchProfiles` into startup with atomic `currentProfile` swap; existing implementation in profiles.js is already correct, just needs to be called
+[2026-04-06T18:59:59.553Z] tech_lead-1 agent completed
+[2026-04-06 18:59:59] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 18:59:59] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 18:59:59] [workflow] work_loop [EXEC] developer
+[2026-04-06 18:59:59] [agent_start] developer developer
+[2026-04-06T18:59:59.594Z] Running developer agent...
+[2026-04-06 19:00:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:2, done:47)
+[2026-04-06 19:00:41] [perf] daemon {"rss":"33MB","heapUsed":"7MB","heapTotal":"9MB","uptime":"11700s"}
+[2026-04-06 19:00:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:2, done:47)
+[2026-04-06 19:01:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:4, done:47)
+[2026-04-06 19:01:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:4, done:47)
+[2026-04-06 19:01:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:4, done:47)
+All 4 tasks are complete and moved to review:
+
+- **task-1775501713057** — `hub.js`: heartbeat timeout 40s→60s, offline threshold 30s→60s, `broadcastWakeword()` export, wakeword message handler, SIGINT graceful shutdown
+- **task-1775501732245** — `brain.js`: added `text: ''` to all `tool_use` yields (both Ollama and OpenAI paths)
+- **task-1775501737286** — Created `install/Dockerfile` and `install/docker-compose.yml`
+- **task-1775501747301** — `watchProfiles` already wired in `llm.js`; no changes needed, task confirmed complete
+[2026-04-06T19:01:47.504Z] developer agent completed
+[2026-04-06 19:01:47] [agent_complete] developer completed successfully

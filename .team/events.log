@@ -3517,3 +3517,79 @@
 {"ts":"2026-04-06T18:53:34.332Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
 {"ts":"2026-04-06T18:53:34.332Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":1.403555,"cpuSystem":2.0906}}}
 {"ts":"2026-04-06T18:53:43.629Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":1.404188,"cpuSystem":2.091203}}}
+{"ts":"2026-04-06T18:53:43.712Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T18:53:43.713Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":8,"memoryTotalMB":9,"cpuUser":1.406248,"cpuSystem":2.096337}}}
+{"ts":"2026-04-06T18:55:13.058Z","type":"task_created","agent":null,"data":{"taskId":"task-1775501713057","title":"DBB修复: heartbeat 60s + wakeword广播 + SIGINT关闭","priority":"P1","group":"m13"}}
+{"ts":"2026-04-06T18:55:26.977Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:1, done:47)"}}
+{"ts":"2026-04-06T18:55:26.978Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:1, done:47)\"}"}}
+{"ts":"2026-04-06T18:55:32.246Z","type":"task_created","agent":null,"data":{"taskId":"task-1775501732245","title":"brain.js tool_use响应格式修复","priority":"P1","group":"m13"}}
+{"ts":"2026-04-06T18:55:37.287Z","type":"task_created","agent":null,"data":{"taskId":"task-1775501737286","title":"Docker部署: Dockerfile + docker-compose.yml","priority":"P1","group":"m13"}}
+{"ts":"2026-04-06T18:55:41.552Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 190min, force reset"}}
+{"ts":"2026-04-06T18:55:41.749Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"34MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"11MB\",\"uptime\":\"11400s\"}"}}
+{"ts":"2026-04-06T18:55:42.402Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:3, done:47)"}}
+{"ts":"2026-04-06T18:55:42.403Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:3, done:47)\"}"}}
+{"ts":"2026-04-06T18:55:47.302Z","type":"task_created","agent":null,"data":{"taskId":"task-1775501747301","title":"配置热更新: watchProfiles → loadConfig自动重载","priority":"P1","group":"m13"}}
+{"ts":"2026-04-06T18:55:56.978Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:47)"}}
+{"ts":"2026-04-06T18:55:56.979Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:4, done:47)\"}"}}
+{"ts":"2026-04-06T18:56:03.526Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":1.42556,"cpuSystem":2.120398}}}
+{"ts":"2026-04-06T18:56:03.542Z","type":"workflow","agent":"milestone_qg","data":{"details":"[BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop"}}
+{"ts":"2026-04-06T18:56:03.543Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度循环","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":1.429654,"cpuSystem":2.132643}}}
+{"ts":"2026-04-06T18:56:03.555Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-06T18:56:03.556Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T18:56:03.556Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":1.432912,"cpuSystem":2.142739}}}
+{"ts":"2026-04-06T18:56:12.405Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:47)"}}
+{"ts":"2026-04-06T18:56:12.406Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:4, done:47)\"}"}}
+{"ts":"2026-04-06T18:56:26.982Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:47)"}}
+{"ts":"2026-04-06T18:56:26.982Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:4, done:47)\"}"}}
+{"ts":"2026-04-06T18:56:39.766Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775501713057","from":"todo","to":"in-progress","title":"DBB修复: heartbeat 60s + wakeword广播 + SIGINT关闭"}}
+{"ts":"2026-04-06T18:56:42.407Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:3, done:47)"}}
+{"ts":"2026-04-06T18:56:42.408Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:3, done:47)\"}"}}
+{"ts":"2026-04-06T18:56:44.534Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775501732245","from":"todo","to":"in-progress","title":"brain.js tool_use响应格式修复"}}
+{"ts":"2026-04-06T18:56:49.782Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":1.43727,"cpuSystem":2.149225}}}
+{"ts":"2026-04-06T18:56:49.791Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] qa_lead"}}
+{"ts":"2026-04-06T18:56:49.792Z","type":"agent_start","agent":"qa_lead","data":{"details":"qa_lead","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":1.439923,"cpuSystem":2.156646}}}
+{"ts":"2026-04-06T18:56:56.983Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:2, done:47)"}}
+{"ts":"2026-04-06T18:56:56.984Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:2, done:47)\"}"}}
+{"ts":"2026-04-06T18:57:12.406Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:2, done:47)"}}
+{"ts":"2026-04-06T18:57:12.407Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:2, done:47)\"}"}}
+{"ts":"2026-04-06T18:57:26.986Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:2, done:47)"}}
+{"ts":"2026-04-06T18:57:26.986Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:2, done:47)\"}"}}
+{"ts":"2026-04-06T18:57:42.412Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:2, done:47)"}}
+{"ts":"2026-04-06T18:57:42.413Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:2, done:47)\"}"}}
+{"ts":"2026-04-06T18:58:14.792Z","type":"agent_complete","agent":"qa_lead","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":1.456222,"cpuSystem":2.174375}}}
+{"ts":"2026-04-06T18:58:14.801Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2"}}
+{"ts":"2026-04-06T18:58:14.802Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":1.458884,"cpuSystem":2.181587}}}
+{"ts":"2026-04-06T18:58:14.802Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":1.459087,"cpuSystem":2.182044}}}
+{"ts":"2026-04-06T18:58:26.157Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (50min), skipping safety check","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":1.459549,"cpuSystem":2.182461}}}
+{"ts":"2026-04-06T18:58:26.353Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"38MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"12MB\",\"uptime\":\"10800s\"}"}}
+{"ts":"2026-04-06T18:58:26.988Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:2, done:47)"}}
+{"ts":"2026-04-06T18:58:26.989Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:2, done:47)\"}"}}
+{"ts":"2026-04-06T18:58:42.415Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:2, done:47)"}}
+{"ts":"2026-04-06T18:58:42.416Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:2, done:47)\"}"}}
+{"ts":"2026-04-06T18:59:26.993Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:2, done:47)"}}
+{"ts":"2026-04-06T18:59:26.994Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:2, done:47)\"}"}}
+{"ts":"2026-04-06T18:59:42.418Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:2, done:47)"}}
+{"ts":"2026-04-06T18:59:42.421Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:2, done:47)\"}"}}
+{"ts":"2026-04-06T18:59:45.807Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":1.473395,"cpuSystem":2.20161}}}
+{"ts":"2026-04-06T18:59:59.556Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":1.478306,"cpuSystem":2.208175}}}
+{"ts":"2026-04-06T18:59:59.565Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T18:59:59.565Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T18:59:59.566Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":12,"memoryTotalMB":14,"cpuUser":1.480914,"cpuSystem":2.215489}}}
+{"ts":"2026-04-06T19:00:26.997Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:2, done:47)"}}
+{"ts":"2026-04-06T19:00:26.997Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:2, done:47)\"}"}}
+{"ts":"2026-04-06T19:00:41.753Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"33MB\",\"heapUsed\":\"7MB\",\"heapTotal\":\"9MB\",\"uptime\":\"11700s\"}"}}
+{"ts":"2026-04-06T19:00:42.423Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:2, done:47)"}}
+{"ts":"2026-04-06T19:00:42.424Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:2, done:47)\"}"}}
+{"ts":"2026-04-06T19:00:58.965Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775501713057","from":"in-progress","to":"review","title":"DBB修复: heartbeat 60s + wakeword广播 + SIGINT关闭"}}
+{"ts":"2026-04-06T19:00:59.006Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775501732245","from":"in-progress","to":"review","title":"brain.js tool_use响应格式修复"}}
+{"ts":"2026-04-06T19:01:10.895Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775501737286","from":"todo","to":"inProgress","title":"Docker部署: Dockerfile + docker-compose.yml"}}
+{"ts":"2026-04-06T19:01:10.928Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775501747301","from":"todo","to":"inProgress","title":"配置热更新: watchProfiles → loadConfig自动重载"}}
+{"ts":"2026-04-06T19:01:12.419Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:4, done:47)"}}
+{"ts":"2026-04-06T19:01:12.419Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:4, done:47)\"}"}}
+{"ts":"2026-04-06T19:01:26.996Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 12min (active:4, done:47)"}}
+{"ts":"2026-04-06T19:01:26.996Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 12min (active:4, done:47)\"}"}}
+{"ts":"2026-04-06T19:01:41.197Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775501737286","from":"inProgress","to":"review","title":"Docker部署: Dockerfile + docker-compose.yml"}}
+{"ts":"2026-04-06T19:01:41.229Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775501747301","from":"inProgress","to":"review","title":"配置热更新: watchProfiles → loadConfig自动重载"}}
+{"ts":"2026-04-06T19:01:42.426Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 12min (active:4, done:47)"}}
+{"ts":"2026-04-06T19:01:42.427Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 12min (active:4, done:47)\"}"}}
+{"ts":"2026-04-06T19:01:47.508Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":7,"cpuUser":1.495319,"cpuSystem":2.229866}}}

@@ -37,7 +37,7 @@ async function* chatWithTools(messages, tools) {
           const data = JSON.parse(line);
           if (data.message?.tool_calls?.length) {
             for (const tc of data.message.tool_calls) {
-              yield { type: 'tool_use', id: tc.id || `call_${Date.now()}`, name: tc.function.name, input: typeof tc.function.arguments === 'string' ? JSON.parse(tc.function.arguments) : tc.function.arguments };
+              yield { type: 'tool_use', id: tc.id || `call_${Date.now()}`, name: tc.function.name, input: typeof tc.function.arguments === 'string' ? JSON.parse(tc.function.arguments) : tc.function.arguments, text: '' };
             }
           } else if (data.message?.content) {
             yield { type: 'content', text: data.message.content, done: data.done || false };
@@ -81,7 +81,7 @@ async function* chatWithTools(messages, tools) {
       const data = line.slice(6);
       if (data === '[DONE]') {
         for (const tc of Object.values(toolCalls)) {
-          yield { type: 'tool_use', id: tc.id, name: tc.name, input: JSON.parse(tc.args || '{}') };
+          yield { type: 'tool_use', id: tc.id, name: tc.name, input: JSON.parse(tc.args || '{}'), text: '' };
         }
         return;
       }
