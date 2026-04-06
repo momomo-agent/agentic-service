@@ -8640,3 +8640,72 @@ No todo tasks remain. All tasks are either done or in review. My work is complet
 [no content]
 [2026-04-06T22:59:43.184Z] developer agent completed
 [2026-04-06 22:59:43] [agent_complete] developer completed successfully
+[2026-04-06 22:59:43] [workflow] work_loop [LOOP] Iteration 5
+[2026-04-06 22:59:43] [workflow] work_loop [EXEC] pm
+[2026-04-06 22:59:43] [agent_start] pm pm
+[2026-04-06T22:59:43.330Z] Running pm agent...
+The `src/ui/admin/` gap appears to have been addressed in m20/m21 (both `done`). The architecture gap file timestamp is from `2026-04-06T21:02:56` — before m20/m21 completed, so it's likely stale.
+
+**Current situation:**
+
+| Milestone | Status | Blocker |
+|-----------|--------|---------|
+| M26 | active | 1 task in `review` |
+| M27 | planned | 2 tasks in `review` |
+| M28 | planned | all `done` ✓ |
+
+**Action:** No new milestones needed. All remaining architecture gaps are covered by tasks currently in review. I need to wait for testers to approve:
+
+1. `task-1775514571886` (m26) — profiles.js getProfile验证
+2. `task-1775514675749` (m27) — runtime/sense+memory.js
+3. `task-1775514675779` (m27) — server/hub+brain+api.js
+
+Once testers approve these, m26 → m27 → m28 can close in sequence. No new tasks or milestones required at this time.
+[2026-04-06T23:00:16.648Z] pm agent completed
+[2026-04-06 23:00:16] [agent_complete] pm completed successfully
+[2026-04-06 23:00:16] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:00:16] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 23:00:16] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 23:00:16] [agent_start] tester-1 tester
+[2026-04-06 23:00:16] [agent_start] tester-2 tester
+[2026-04-06T23:00:16.703Z] Running tester-1 agent...
+[2026-04-06T23:00:16.705Z] Running tester-2 agent...
+Current state summary:
+
+**Blocked on testers (review):**
+- m26: `task-1775514571886` — profiles.js getProfile + cpu-only profile
+- m27: `task-1775514675749` — src/runtime/sense+memory.js
+- m27: `task-1775514675779` — src/server/hub+brain+api.js
+
+**M28:** All 4 tasks done — but m27 must complete first.
+
+**Architecture gaps remaining (from architecture.json):**
+- `src/detector/optimizer.js` — partial (not fully covered by matcher.js)
+- `src/detector/gpu-detector.js` — should be merged into hardware.js (partial, m26 task done)
+
+All critical `missing` gaps have been addressed in m26/m27/m28. The 3 tasks in `review` are blocking milestone completion. Per my role constraints:
+
+- I must NOT move tasks from `review` to `done`
+- I must NOT mark m26/m27 as completed while tasks are in `review`
+- M28 is planned and all its tasks are done — but it can only activate after m27 completes
+
+**Action:** No new tasks needed. Waiting for testers to approve the 3 review tasks. Once approved:
+1. m26 → completed
+2. m27 → completed  
+3. m28 → completed (all tasks already done)
+
+The project will then be at ~100% architecture match with all gaps resolved.
+[2026-04-06T23:00:16.902Z] pm agent completed
+[2026-04-06 23:00:16] [agent_complete] pm completed successfully
+[2026-04-06 23:00:16] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:00:16] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 23:00:16] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 23:00:16] [agent_start] tester-1 tester
+[2026-04-06 23:00:16] [agent_start] tester-2 tester
+[2026-04-06T23:00:16.953Z] Running tester-1 agent...
+[2026-04-06T23:00:16.953Z] Running tester-2 agent...
+All 3 review tasks are currently claimed by another tester (can-claim: false). There's no available work for me to pick up right now.
+
+I'll wait for tasks to become available or for the other tester to release them.
+[2026-04-06T23:00:39.584Z] tester-2 agent completed
+[2026-04-06 23:00:39] [agent_complete] tester-2 completed successfully
