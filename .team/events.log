@@ -3261,3 +3261,24 @@
 {"ts":"2026-04-06T18:24:25.522Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
 {"ts":"2026-04-06T18:24:25.522Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":10,"memoryTotalMB":14,"cpuUser":1.075258,"cpuSystem":1.573803}}}
 {"ts":"2026-04-06T18:24:38.759Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":1.079032,"cpuSystem":1.578793}}}
+{"ts":"2026-04-06T18:24:38.839Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T18:24:38.839Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":1.080751,"cpuSystem":1.582839}}}
+{"ts":"2026-04-06T18:24:57.663Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":1.083991,"cpuSystem":1.586952}}}
+{"ts":"2026-04-06T18:24:57.670Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T18:24:57.671Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T18:24:57.671Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T18:24:57.671Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] implement: designedTasks > 0"}}
+{"ts":"2026-04-06T18:24:57.671Z","type":"workflow","agent":"work_loop","data":{"details":"[BRANCH] doneCount > 0 → true → milestone_qg"}}
+{"ts":"2026-04-06T18:24:57.671Z","type":"workflow","agent":"work_loop","data":{"details":"[EXIT] todoCount == 0 && designedTasks == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 && blockedCount == 0 → milestone_qg"}}
+{"ts":"2026-04-06T18:24:57.672Z","type":"agent_start","agent":"milestone_qg","data":{"details":"[NODE] milestone_qg - 里程碑 QG - 对照 DBB 验收","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":1.086626,"cpuSystem":1.593591}}}
+{"ts":"2026-04-06T18:24:57.677Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-06T18:24:57.677Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":1.087979,"cpuSystem":1.597823}}}
+{"ts":"2026-04-06T18:25:09.741Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":14,"cpuUser":1.088499,"cpuSystem":1.598583}}}
+{"ts":"2026-04-06T18:25:09.753Z","type":"workflow","agent":"milestone_qg","data":{"details":"[BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → true → monitor"}}
+{"ts":"2026-04-06T18:25:09.754Z","type":"agent_start","agent":"monitor","data":{"details":"[NODE] monitor - 全局 Monitor 四维检查","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":1.091863,"cpuSystem":1.607829}}}
+{"ts":"2026-04-06T18:25:09.759Z","type":"workflow","agent":"monitor","data":{"details":"[PARALLEL] vision_monitor, prd_monitor, dbb_monitor, arch_monitor"}}
+{"ts":"2026-04-06T18:25:09.759Z","type":"agent_start","agent":"vision_monitor","data":{"details":"vision_monitor","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":1.093212,"cpuSystem":1.611898}}}
+{"ts":"2026-04-06T18:25:09.760Z","type":"agent_start","agent":"prd_monitor","data":{"details":"prd_monitor","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":1.093382,"cpuSystem":1.612327}}}
+{"ts":"2026-04-06T18:25:09.760Z","type":"agent_start","agent":"dbb_monitor","data":{"details":"dbb_monitor","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":1.093507,"cpuSystem":1.612654}}}
+{"ts":"2026-04-06T18:25:09.761Z","type":"agent_start","agent":"arch_monitor","data":{"details":"arch_monitor","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":1.093614,"cpuSystem":1.612963}}}
+{"ts":"2026-04-06T18:25:19.057Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":1.09388,"cpuSystem":1.613415}}}

@@ -87,7 +87,7 @@
     {
       "id": "m8",
       "name": "M8: 唤醒词 + 视觉感知 + STT/TTS 自适应",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775498242331",
         "task-1775498246089",
@@ -98,7 +98,7 @@
     {
       "id": "m9",
       "name": "M9: DBB 规范修复 + 一键安装完善",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775499114484",
         "task-1775499138579",
