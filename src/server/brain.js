@@ -40,7 +40,7 @@ async function* chatWithTools(messages, tools) {
               yield { type: 'tool_use', id: tc.id || `call_${Date.now()}`, name: tc.function.name, input: typeof tc.function.arguments === 'string' ? JSON.parse(tc.function.arguments) : tc.function.arguments };
             }
           } else if (data.message?.content) {
-            yield { type: 'content', content: data.message.content, done: data.done || false };
+            yield { type: 'content', text: data.message.content, done: data.done || false };
           }
         } catch { /* ignore */ }
       }
@@ -87,7 +87,7 @@ async function* chatWithTools(messages, tools) {
       }
       try {
         const delta = JSON.parse(data).choices[0]?.delta;
-        if (delta?.content) yield { type: 'content', content: delta.content, done: false };
+        if (delta?.content) yield { type: 'content', text: delta.content, done: false };
         if (delta?.tool_calls) {
           for (const tc of delta.tool_calls) {
             const idx = tc.index;

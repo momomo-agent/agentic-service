@@ -35,9 +35,10 @@ program
     try {
       console.log(chalk.bold.blue('🚀 Agentic Service\n'));
 
+      let isFirstRun = false;
       if (!options.skipSetup) {
-        const setupNeeded = await checkFirstRun();
-        if (setupNeeded) {
+        isFirstRun = await checkFirstRun();
+        if (isFirstRun) {
           console.log(chalk.yellow('First run detected. Running setup...\n'));
           await runSetup();
         }
@@ -50,19 +51,23 @@ program
 
       console.log(chalk.green(`✓ Server running at http://localhost:${port}\n`));
 
-      if (options.browser) {
+      if (isFirstRun || options.browser) {
         await openBrowser(`http://localhost:${port}`);
       }
 
       console.log(chalk.gray('Press Ctrl+C to stop'));
 
-      process.on('SIGINT', async () => {
+      function shutdown() {
         console.log(chalk.yellow('\n\nShutting down...'));
         server.close(() => {
           console.log(chalk.green('✓ Server closed'));
           process.exit(0);
         });
-      });
+        setTimeout(() => process.exit(0), 5000).unref();
+      }
+
+      process.on('SIGINT', shutdown);
+      process.on('SIGTERM', shutdown);
 
     } catch (error) {
       console.error(chalk.red(`\n✗ Error: ${error.message}`));

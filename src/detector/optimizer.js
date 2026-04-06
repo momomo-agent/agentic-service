@@ -69,15 +69,24 @@ async function pullModel(modelName, onProgress) {
   return new Promise((resolve, reject) => {
     const proc = spawn('ollama', ['pull', modelName]);
     let lastPercent = 0;
+    let buf = '';
 
     proc.stdout.on('data', (data) => {
-      const match = data.toString().match(/(\d+)%.*?([\d.]+\s*[KMG]B\/s)/);
-      if (match) {
-        const percent = parseInt(match[1]);
-        if (percent !== lastPercent) {
-          lastPercent = percent;
-          onProgress(percent, match[2]);
-        }
+      buf += data.toString();
+      const lines = buf.split('\n');
+      buf = lines.pop();
+      for (const line of lines) {
+        if (!line.trim()) continue;
+        try {
+          const obj = JSON.parse(line);
+          const { completed = 0, total = 0 } = obj;
+          const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+          if (percent !== lastPercent) {
+            lastPercent = percent;
+            const speed = obj.speed ? `${(obj.speed / 1e6).toFixed(1)}MB/s` : '';
+            onProgress(percent, speed);
+          }
+        } catch { /* non-JSON line, ignore */ }
       }
     });
 
