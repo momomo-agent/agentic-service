@@ -6135,3 +6135,62 @@ Task complete. Here's a summary:
 - Task marked **done**
 [2026-04-06T21:22:19.268Z] tester agent completed
 [2026-04-06 21:22:19] [agent_complete] tester completed successfully
+[2026-04-06 21:22:19] [workflow] work_loop [EXEC] developer
+[2026-04-06 21:22:19] [agent_start] developer developer
+[2026-04-06T21:22:19.407Z] Running developer agent...
+M20 is now active. Current status:
+
+**m19** — waiting on tester:
+- `task-1775510172768`: testing (CDN URL + fallback)
+- `task-1775510177953`: review (voice latency benchmark)
+- `task-1775510177987`: review (HTTPS/LAN security)
+
+**m20** — active, ready for developers:
+- `task-1775510277966`: todo — `src/server/hub.js` (P0, unblocked)
+- `task-1775510284163`: todo — `src/server/brain.js` (P0, unblocked)
+- `task-1775510288171`: todo — `src/server/api.js` (P0, blocked by hub+brain)
+- `task-1775510291601`: todo — `src/ui/admin/` (P0, blocked by api.js)
+- `task-1775510295749`: todo — `profiles/default.json` (P0, unblocked)
+
+Remaining architecture gaps being addressed by m20:
+- `src/server/hub.js`, `brain.js`, `api.js` — all missing
+- `src/ui/admin/` — missing
+- `profiles/default.json` — missing
+
+M20 covers the last 5 architecture gaps. Once m19 clears testing/review and m20 tasks are done, architecture match should reach ~100%.
+[2026-04-06T21:22:25.042Z] pm agent completed
+[2026-04-06 21:22:25] [agent_complete] pm completed successfully
+[2026-04-06 21:22:25] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 21:22:25] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 21:22:25] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 21:22:25] [agent_start] tester-1 tester
+[2026-04-06 21:22:25] [agent_start] tester-2 tester
+[2026-04-06T21:22:25.096Z] Running tester-2 agent...
+[2026-04-06T21:22:25.097Z] Running tester-1 agent...
+M20 is already `active`. Current state is correct — no changes needed to milestones.json.
+
+**Status report:**
+
+- **M19** (`ready-for-work`): 1 task in `testing`, 2 in `review` — blocked, waiting on tester
+- **M20** (`active`): 5 tasks all `todo`, ready for developer pickup
+  - `task-1775510277966` — hub.js (unblocked, P0)
+  - `task-1775510284163` — brain.js (unblocked, P0)
+  - `task-1775510295749` — profiles/default.json (unblocked, P0)
+  - `task-1775510288171` — api.js (blocked by hub + brain)
+  - `task-1775510291601` — admin UI (blocked by api.js)
+
+No new milestones needed. The remaining architecture gaps (architecture match: 18%) are fully covered by M20 tasks. Waiting on tester to clear M19 review tasks before that milestone can close.
+[2026-04-06T21:22:27.469Z] pm agent completed
+[2026-04-06 21:22:27] [agent_complete] pm completed successfully
+[2026-04-06 21:22:27] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 21:22:27] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 21:22:27] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 21:22:27] [agent_start] tester-1 tester
+[2026-04-06 21:22:27] [agent_start] tester-2 tester
+[2026-04-06T21:22:27.520Z] Running tester-2 agent...
+[2026-04-06T21:22:27.520Z] Running tester-1 agent...
+Both tasks in 'review' status cannot be claimed (likely already assigned to other testers). There are no available tasks for me to work on right now.
+
+All tasks are either `done`, `todo` (blocked or waiting for developers), or `review` (already claimed). Nothing to do at this time.
+[2026-04-06T21:22:47.418Z] tester-1 agent completed
+[2026-04-06 21:22:47] [agent_complete] tester-1 completed successfully
