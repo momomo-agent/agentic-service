@@ -2717,3 +2717,94 @@ Task `task-1775495680445` (用户文档 README) is complete and moved to `review
 No other claimable tasks are available right now — the remaining `todo` tasks are either assigned or blocked.
 [2026-04-06T17:56:23.240Z] developer agent completed
 [2026-04-06 17:56:23] [agent_complete] developer completed successfully
+[2026-04-06 17:56:23] [workflow] work_loop [LOOP] Iteration 9
+[2026-04-06 17:56:23] [workflow] work_loop [EXEC] pm
+[2026-04-06 17:56:23] [agent_start] pm pm
+[2026-04-06T17:56:23.424Z] Running pm agent...
+PM work complete. Here's the current state:
+
+**M6 (active)**
+- 3 tasks done, 1 `todo` (管理面板) — assigned to developer, P0
+
+**M7 (planned)**
+- 3 tasks done, 1 `review` (用户文档) — waiting for tester approval
+
+**M8 (planned) — newly created**
+- `task-1775498242331` 唤醒词检测 (P1)
+- `task-1775498246089` agentic-sense 视觉感知 (P1)
+- `task-1775498249905` STT/TTS 硬件自适应选择 (P1)
+
+**Blockers noted:**
+- M7 cannot be marked completed until tester approves the `review` task (用户文档)
+- M5 has 2 `in-progress` tasks (Docker打包, 边缘用例测试) — no action needed from PM
+[2026-04-06T17:57:54.291Z] pm agent completed
+[2026-04-06 17:57:54] [agent_complete] pm completed successfully
+[2026-04-06 17:57:54] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 17:57:54] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 17:57:54] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 17:57:54] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 17:57:54] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T17:57:54.342Z] Running tech_lead-3 agent...
+[2026-04-06T17:57:54.343Z] Running tech_lead-2 agent...
+[2026-04-06T17:57:54.342Z] Running tech_lead-1 agent...
+[2026-04-06 17:58:26] [agent_start] daemon Still busy (120min), skipping safety check
+[2026-04-06 17:58:26] [perf] daemon {"rss":"24MB","heapUsed":"10MB","heapTotal":"12MB","uptime":"7200s"}
+[2026-04-06 17:59:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:24)
+[2026-04-06 17:59:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:24)
+Done. Here's a summary of what was completed:
+
+**M8 milestone files created:**
+- `.team/milestones/m8/dbb.md` — 8 verification criteria covering wakeword, vision sensing, and STT/TTS adaptive selection
+- `.team/milestones/m8/design.md` — technical approach for all 3 features
+
+**Task designs created + marked `hasDesign=true`:**
+
+| Task | Design |
+|------|--------|
+| `task-1775498242331` 唤醒词检测 | `WakeWord.vue` using Web Speech API SpeechRecognition, continuous listening, emits `activated` on keyword match |
+| `task-1775498246089` agentic-sense 视觉感知 | `sense.js` wrapping `agentic-sense`, `SenseOverlay.vue` for camera + detection overlay, events broadcast via `hub.js` |
+| `task-1775498249905` STT/TTS 自适应 | `stt.js`/`tts.js` read `profile.stt.provider`/`profile.tts.provider` at init, local-first with cloud fallback on error |
+[2026-04-06T18:00:01.266Z] tech_lead-3 agent completed
+[2026-04-06 18:00:01] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 18:00:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:24)
+[2026-04-06 18:00:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:24)
+[2026-04-06 18:00:41] [perf] daemon {"rss":"26MB","heapUsed":"8MB","heapTotal":"10MB","uptime":"8100s"}
+M8 design work is done. Summary:
+
+**Created/verified:**
+- `.team/milestones/m8/dbb.md` — 8 DBB criteria covering wake word, vision sensing, STT/TTS adaptive selection
+- `.team/milestones/m8/design.md` — already existed, covers all 3 areas
+- All 3 task designs already existed and are complete:
+  - `task-1775498242331` — WakeWord.vue using SpeechRecognition
+  - `task-1775498246089` — sense.js MediaPipe face/gesture/object detection
+  - `task-1775498249905` — stt.js/tts.js dynamic adapter selection by profile
+- `hasDesign=true` set on all 3 tasks
+
+The active milestone is m6 (all tasks done or in-progress). M8 tasks are now ready for developers to pick up.
+[2026-04-06T18:00:48.296Z] tech_lead-2 agent completed
+[2026-04-06 18:00:48] [agent_complete] tech_lead-2 completed successfully
+M8 milestone design work is complete:
+
+- `.team/milestones/m8/dbb.md` — 8 verification criteria covering wake word, MediaPipe detection (face/gesture/object), and STT/TTS adaptive selection
+- `.team/milestones/m8/design.md` — technical approach for all 3 features
+- `task-1775498242331/design.md` — WakeWord.vue using Web Speech API SpeechRecognition
+- `task-1775498246089/design.md` — sense.js wrapping agentic-sense MediaPipe pipeline
+- `task-1775498249905/design.md` — stt.js + tts.js dynamic adapter selection based on hardware profile
+- All 3 tasks updated: `hasDesign: true`
+
+M6 active milestone already had complete designs for all tasks. No architecture changes needed — all work fits within existing ARCHITECTURE.md contracts.
+[2026-04-06T18:00:53.340Z] tech_lead-1 agent completed
+[2026-04-06 18:00:53] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 18:00:53] [workflow] work_loop [EXEC] tester
+[2026-04-06 18:00:53] [agent_start] tester tester
+[2026-04-06T18:00:53.380Z] Running tester agent...
+[2026-04-06 18:01:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:24)
+[2026-04-06 18:01:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:24)
+Task `task-1775495680445` (用户文档 README) is complete.
+
+- 18/18 checks passed
+- README.md has all 3 install methods, all 6 API endpoints with examples, env vars, and config schema
+- DBB-011 fully satisfied
+- Task marked **done**
+[2026-04-06T18:02:18.025Z] tester agent completed
+[2026-04-06 18:02:18] [agent_complete] tester completed successfully

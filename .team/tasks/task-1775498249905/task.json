@@ -1,0 +1,13 @@
+{
+  "id": "task-1775498249905",
+  "title": "STT/TTS 硬件自适应选择",
+  "description": "根据硬件 profile 自动选择本地或云端 STT/TTS 提供商，Vision gap",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m8",
+  "hasDesign": true,
+  "created": "2026-04-06T17:57:29.905Z",
+  "updated": "2026-04-06T18:00:31.605Z"
+}

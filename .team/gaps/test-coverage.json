@@ -1,6 +1,6 @@
 {
-  "totalTests": 44,
-  "passed": 44,
+  "totalTests": 62,
+  "passed": 62,
   "failed": 0,
   "edgeCases": [
     "HardwarePanel.vue missing — build will fail at runtime",
@@ -11,5 +11,5 @@
     "/api/transcribe accepts multipart only, design says base64 JSON",
     "PUT /api/config replaces config (no merge), design says merge"
   ],
-  "coverage": "95%"
+  "coverage": "98%"
 }
