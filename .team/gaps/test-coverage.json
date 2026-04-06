@@ -1,10 +1,11 @@
 {
-  "totalTests": 20,
-  "passed": 20,
+  "totalTests": 27,
+  "passed": 27,
   "failed": 0,
   "edgeCases": [
     "Concurrent add() calls serialized via _lock chain (not directly testable without timing)",
-    "sendCommand with unknown device throws Device not found (covered by existing hub tests)"
+    "sendCommand with unknown device throws Device not found (covered by existing hub tests)",
+    "search() with undefined argument (not tested)"
   ],
   "coverage": "100%"
 }

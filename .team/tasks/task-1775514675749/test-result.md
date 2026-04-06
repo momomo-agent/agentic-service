@@ -26,3 +26,5 @@
 ## Edge Cases Identified
 - Concurrent `add()` calls serialized via `_lock` chain (design-specified, not directly testable without timing)
 - Object confidence threshold 0.5 filter applied in `detect()` (covered by existing tests)
+
+## Verdict: PASS — all 7 tests passed
