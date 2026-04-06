@@ -205,6 +205,19 @@
         "task-1775509592226"
       ],
       "created": "2026-04-06T21:03:41.491Z"
+    },
+    {
+      "id": "m18",
+      "name": "M18: Runtime层实现 (llm/stt/tts/sense/memory)",
+      "status": "ready-for-work",
+      "tasks": [
+        "task-1775509987337",
+        "task-1775509992341",
+        "task-1775509992376",
+        "task-1775509995439",
+        "task-1775509998581"
+      ],
+      "created": "2026-04-06T21:13:26.103Z"
     }
   ]
 }

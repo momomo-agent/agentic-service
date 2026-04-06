@@ -5697,3 +5697,66 @@ All 4 m17 tasks are done:
 5 tests run, 5 passed. Coverage updated to 29/29 (100%).
 [2026-04-06T21:13:09.005Z] tester-1 agent completed
 [2026-04-06 21:13:09] [agent_complete] tester-1 completed successfully
+[2026-04-06 21:13:09] [workflow] post [POST] task-1775509585035: testing → review
+[2026-04-06 21:13:09] [workflow] post [POST] task-1775509592226: testing → review
+[2026-04-06 21:13:09] [workflow] work_loop [SKIP] implement: designedTasks > 0
+[2026-04-06 21:13:09] [workflow] work_loop [LOOP] Iteration 3
+[2026-04-06 21:13:09] [workflow] work_loop [EXEC] pm
+[2026-04-06 21:13:09] [agent_start] pm pm
+[2026-04-06T21:13:09.153Z] Running pm agent...
+[2026-04-06 21:13:26] [perf] daemon {"rss":"36MB","heapUsed":"9MB","heapTotal":"12MB","uptime":"18900s"}
+**M18 已创建完成。**
+
+**状态摘要：**
+
+- M17: `ready-for-work` — 等待 tester 完成 2 个 `testing` 任务（README.md、sense.js detect导出）
+- M18: `planned` — 5 个 P0 任务就绪，等待 M17 完成后启动
+
+**M18 任务列表：**
+
+| 任务 | 描述 | 优先级 |
+|------|------|--------|
+| task-1775509987337 | 实现 src/runtime/llm.js | P0 |
+| task-1775509992341 | 实现 src/runtime/stt.js | P0 |
+| task-1775509992376 | 实现 src/runtime/tts.js | P0 |
+| task-1775509995439 | 实现 src/runtime/sense.js | P0 |
+| task-1775509998581 | 实现 src/runtime/memory.js | P0 |
+
+架构对齐率当前 18%，M18 完成后预计提升至 ~50%。剩余主要缺口（server层、admin UI、profiles）将在 M19 中处理。
+[2026-04-06T21:13:40.730Z] pm agent completed
+[2026-04-06 21:13:40] [agent_complete] pm completed successfully
+[2026-04-06 21:13:40] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 21:13:40] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 21:13:40] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 21:13:40] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 21:13:40] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T21:13:40.787Z] Running tech_lead-3 agent...
+[2026-04-06T21:13:40.787Z] Running tech_lead-2 agent...
+[2026-04-06T21:13:40.788Z] Running tech_lead-1 agent...
+**Status report:**
+
+- **M17** (`ready-for-work`): 2 tasks in `review` — waiting for tester approval. Cannot mark complete.
+- **M18** (`ready-for-work`): 5 tasks in `todo` — activated, ready for developers to pick up.
+
+**No new tasks needed** — all remaining architecture gaps are covered by M18 tasks. The architecture gap report is stale (files exist on disk); M18 tasks will verify/complete the interface contracts.
+
+**Waiting on:** Tester to approve M17 review tasks (`task-1775509585035`, `task-1775509592226`).
+[2026-04-06T21:14:14.184Z] pm agent completed
+[2026-04-06 21:14:14] [agent_complete] pm completed successfully
+[2026-04-06 21:14:14] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 21:14:14] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 21:14:14] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 21:14:14] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 21:14:14] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T21:14:14.241Z] Running tech_lead-2 agent...
+[2026-04-06T21:14:14.241Z] Running tech_lead-1 agent...
+[2026-04-06T21:14:14.242Z] Running tech_lead-3 agent...
+All tasks are complete. Here's a summary of what was done:
+
+- Resolved 4 stuck "testing" tasks (store.delete, brain.js tool_use, heartbeat 60s, wakeword broadcast) — all had passing test results but were never marked done. Updated all to "done".
+- Claimed and tested 2 "review" tasks:
+  - `task-1775509585035` (README.md) — 9/9 tests passed
+  - `task-1775509592226` (sense.js detect export) — 3/3 tests passed
+- Updated `.team/gaps/test-coverage.json` to reflect 41 total tests, all passing.
+[2026-04-06T21:14:21.738Z] tester-1 agent completed
+[2026-04-06 21:14:21] [agent_complete] tester-1 completed successfully
