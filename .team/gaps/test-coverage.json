@@ -1,10 +1,11 @@
 {
-  "totalTests": 11,
-  "passed": 11,
+  "totalTests": 19,
+  "passed": 19,
   "failed": 0,
   "edgeCases": [
     "≤60s reload timing in real network conditions",
-    "In-flight request safety during config reload"
+    "In-flight request safety during config reload",
+    "server.close error path during SIGINT (5s timeout fallback exists)"
   ],
   "coverage": "100%"
 }
