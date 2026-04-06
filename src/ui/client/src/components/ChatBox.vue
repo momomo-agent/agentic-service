@@ -20,7 +20,10 @@ const { setWakeWord, check } = useWakeWord();
 const inputBox = ref(null);
 const ptt = ref(null);
 
-defineExpose({ startRecording: () => ptt.value?.start() });
+defineExpose({
+  startRecording: () => ptt.value?.start(),
+  stopRecording: () => ptt.value?.stop(),
+});
 
 onMounted(async () => {
   try {

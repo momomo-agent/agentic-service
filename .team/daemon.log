@@ -8269,3 +8269,19 @@ All done. Here's the summary:
 - Root cause: `matcher.js` doesn't eliminate profiles on gpu mismatch (only platform and minMemory cause elimination). The nvidia profile scores 62 while the cpu-only fallback scores 1, so nvidia wins incorrectly. Fix needed in `src/detector/matcher.js` to return 0 on gpu mismatch.
 [2026-04-06T22:44:48.665Z] tester-2 agent completed
 [2026-04-06 22:44:48] [agent_complete] tester-2 completed successfully
+[2026-04-06 22:44:48] [workflow] work_loop [EXEC] developer
+[2026-04-06 22:44:48] [agent_start] developer developer
+[2026-04-06T22:44:48.800Z] Running developer agent...
+Task complete. Here's what was done for the VAD integration:
+
+**`useVAD.js`** — rewritten to match the design spec:
+- `fftSize=512`, `SPEECH_THRESHOLD=0.01`, `SILENCE_THRESHOLD=0.005`, `SILENCE_DURATION=500ms`
+- 3 consecutive frames above threshold → `onStart()`
+- 500ms of silence below threshold → `onStop()`
+- AudioContext suspended state handled via `resume()`
+
+**`ChatBox.vue`** — added `stopRecording` to `defineExpose` so VAD can stop PTT recording via the existing ref.
+
+The existing `App.vue` already wired everything correctly — `onStart` → `startRecording`, `onStop` → `stopRecording`, with mic permission errors caught and displayed.
+[2026-04-06T22:45:39.992Z] developer agent completed
+[2026-04-06 22:45:39] [agent_complete] developer completed successfully

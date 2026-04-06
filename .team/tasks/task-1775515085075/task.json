@@ -2,12 +2,12 @@
   "id": "task-1775515085075",
   "title": "HTTPS/LAN隧道安全访问",
   "description": "实现HTTPS访问和LAN隧道，支持多设备局域网安全访问agentic-service",
-  "status": "todo",
+  "status": "inProgress",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m28",
   "hasDesign": true,
   "created": "2026-04-06T22:38:05.075Z",
-  "updated": "2026-04-06T22:42:10.050Z"
+  "updated": "2026-04-06T22:45:03.865Z"
 }

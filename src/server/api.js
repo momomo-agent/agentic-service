@@ -4,11 +4,21 @@ import multer from 'multer';
 import { promises as fs } from 'fs';
 import path from 'path';
 import os from 'os';
+import http from 'http';
 import { chat } from './brain.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
 import { errorHandler } from './middleware.js';
 import { getDevices, initWebSocket, startWakeWordDetection } from './hub.js';
+
+function getLanIp() {
+  for (const ifaces of Object.values(os.networkInterfaces())) {
+    for (const iface of ifaces) {
+      if (iface.family === 'IPv4' && !iface.internal) return iface.address;
+    }
+  }
+  return null;
+}
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -143,24 +153,57 @@ function listenAsync(server, port) {
 
 export async function startServer(port = 3000, { https: useHttps = false } = {}) {
   const app = createApp();
-  const httpServer = (await import('http')).default.createServer(app);
+
+  if (useHttps) {
+    let httpsServer;
+    try {
+      const { createServer } = await import('./httpsServer.js');
+      httpsServer = createServer(app);
+      await listenAsync(httpsServer, port);
+    } catch (err) {
+      console.error(`HTTPS setup failed: ${err.message}, falling back to HTTP`);
+      const httpFallback = http.createServer(app);
+      await listenAsync(httpFallback, port);
+      initWebSocket(httpFallback);
+      startWakeWordDetection();
+      await Promise.all([stt.init(), tts.init()]).catch(e => console.warn('Runtime init warning:', e.message));
+      console.log(`Server running at http://localhost:${port}`);
+      return httpFallback;
+    }
+
+    initWebSocket(httpsServer);
+    startWakeWordDetection();
+    await Promise.all([stt.init(), tts.init()]).catch(e => console.warn('Runtime init warning:', e.message));
+
+    const lanIp = getLanIp();
+    console.log(`Server running at https://localhost:${port}`);
+    if (lanIp) console.log(`LAN access: https://${lanIp}:${port}`);
+
+    const HTTP_PORT = 3001;
+    const redirectServer = http.createServer((req, res) => {
+      const host = (req.headers.host || 'localhost').split(':')[0];
+      res.writeHead(301, { Location: `https://${host}:${port}${req.url}` });
+      res.end();
+    });
+    try {
+      await listenAsync(redirectServer, HTTP_PORT);
+    } catch {
+      console.warn(`HTTP redirect port ${HTTP_PORT} in use, skipping redirect`);
+    }
+
+    return { http: redirectServer, https: httpsServer };
+  }
+
+  const httpServer = http.createServer(app);
   await listenAsync(httpServer, port);
   initWebSocket(httpServer);
   startWakeWordDetection();
   await Promise.all([stt.init(), tts.init()]).catch(err =>
     console.warn('Runtime init warning:', err.message)
   );
+  const lanIp = getLanIp();
   console.log(`Server running at http://localhost:${port}`);
-
-  if (useHttps) {
-    const { createServer } = await import('./httpsServer.js');
-    const httpsServer = createServer(app);
-    const httpsPort = port + 443;
-    await listenAsync(httpsServer, httpsPort);
-    console.log(`Server running at https://localhost:${httpsPort}`);
-    return { http: httpServer, https: httpsServer };
-  }
-
+  if (lanIp) console.log(`LAN access: http://${lanIp}:${port}`);
   return httpServer;
 }
 
