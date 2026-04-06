@@ -2,14 +2,38 @@
   <div class="chat-box">
     <div class="header"><h1>Agentic Service</h1></div>
     <MessageList :messages="messages" />
-    <InputBox @send="handleSend" :disabled="loading" />
+    <div class="input-row">
+      <InputBox ref="inputBox" @send="handleSend" :disabled="loading" />
+      <PushToTalk @transcribed="onTranscribed" />
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import MessageList from './MessageList.vue';
 import InputBox from './InputBox.vue';
+import PushToTalk from './PushToTalk.vue';
+import { useWakeWord } from '../composables/useWakeWord.js';
+
+const { setWakeWord, check } = useWakeWord();
+const inputBox = ref(null);
+
+onMounted(async () => {
+  try {
+    const res = await fetch('/api/config');
+    const cfg = await res.json();
+    if (cfg.wakeWord) setWakeWord(cfg.wakeWord);
+  } catch {}
+});
+
+function onTranscribed(text) {
+  if (check(text)) {
+    handleSend(text);
+  } else if (inputBox.value?.setText) {
+    inputBox.value.setText(text);
+  }
+}
 
 const messages = ref([]);
 const loading = ref(false);
@@ -63,4 +87,6 @@ async function handleSend(text) {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;
 }
 .header h1 { font-size: 20px; font-weight: 600; }
+.input-row { display: flex; align-items: flex-end; }
+.input-row > :first-child { flex: 1; }
 </style>

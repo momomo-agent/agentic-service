@@ -33,6 +33,8 @@ function handleSend() {
   }
 }
 
+defineExpose({ setText: (v) => { text.value = v; } });
+
 watch(text, () => {
   if (textareaRef.value) {
     textareaRef.value.style.height = 'auto';

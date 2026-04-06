@@ -2,12 +2,12 @@
   "id": "task-1775494979818",
   "title": "语音UI控件",
   "description": "在聊天UI中添加 push-to-talk 按钮、VAD自动检测、唤醒词配置支持",
-  "status": "todo",
+  "status": "review",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m6",
   "hasDesign": true,
   "created": "2026-04-06T17:02:59.818Z",
-  "updated": "2026-04-06T17:06:38.032Z"
+  "updated": "2026-04-06T17:13:00.717Z"
 }

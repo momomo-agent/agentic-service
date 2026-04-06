@@ -2213,3 +2213,16 @@ Both tasks are complete:
 No tasks remain in review status.
 [2026-04-06T17:11:16.932Z] tester-1 agent completed
 [2026-04-06 17:11:16] [agent_complete] tester-1 completed successfully
+[2026-04-06 17:11:17] [workflow] work_loop [EXEC] developer
+[2026-04-06 17:11:17] [agent_start] developer developer
+[2026-04-06T17:11:17.034Z] Running developer agent...
+Task `task-1775494979818` (语音UI控件) is complete and moved to review.
+
+**What was implemented:**
+- `PushToTalk.vue` — push-to-talk button using MediaRecorder, POSTs audio to `/api/transcribe`, emits `transcribed(text)`
+- `useVAD.js` — Web Audio API VAD with RMS silence detection (threshold 0.01, 1.5s timeout)
+- `useWakeWord.js` — configurable wake word matching via case-insensitive substring check
+- `ChatBox.vue` — integrated PushToTalk + wake word logic, loads config from `/api/config` on mount
+- `InputBox.vue` — added `defineExpose({ setText })` so parent can fill the input field
+[2026-04-06T17:13:07.028Z] developer agent completed
+[2026-04-06 17:13:07] [agent_complete] developer completed successfully
