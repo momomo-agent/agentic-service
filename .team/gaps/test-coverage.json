@@ -1,12 +1,15 @@
 {
-  "totalTests": 75,
-  "passed": 75,
+  "totalTests": 86,
+  "passed": 86,
   "failed": 0,
   "edgeCases": [
     "Ollama installed but service not running (ollama serve not started)",
     "Disk full during model pull",
     "Model name tag mismatch (e.g. gemma4 vs gemma4:26b)",
-    "Concurrent pull attempts"
+    "Concurrent pull attempts",
+    "EADDRINUSE detection broken: module-level Express app singleton prevents port conflict rejection",
+    "/api/status ollama fields are hardcoded stubs, not real Ollama detection",
+    "/api/config GET/PUT have no persistence — stubs only"
   ],
   "coverage": "87%"
 }
