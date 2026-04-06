@@ -1,6 +1,6 @@
 {
-  "totalTests": 22,
-  "passed": 22,
+  "totalTests": 26,
+  "passed": 26,
   "failed": 0,
   "edgeCases": [
     "Node.js version < 18 rejection (requires mock node binary)",
@@ -8,7 +8,9 @@
     "Full e2e install in isolated environment",
     "hot-reload test leaves stale cache polluting profiles.test.js (cache not cleaned up)",
     "≤60s reload timing in real network conditions",
-    "In-flight request safety during config reload"
+    "In-flight request safety during config reload",
+    "detectHardware() throws — propagates to caller, not caught in loadConfig",
+    "watchProfiles callback race with in-flight chat() request"
   ],
   "coverage": "100%"
 }

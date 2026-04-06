@@ -123,6 +123,43 @@ Response: updated config JSON.
 
 ---
 
+## Docker Deployment
+
+```bash
+# Single container
+docker run -p 3000:3000 \
+  -e OPENAI_API_KEY=sk-... \
+  -v ~/.agentic-service:/root/.agentic-service \
+  momomo/agentic-service
+```
+
+```yaml
+# docker-compose.yml
+services:
+  agentic-service:
+    image: momomo/agentic-service
+    ports:
+      - "3000:3000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - ~/.agentic-service:/root/.agentic-service
+```
+
+## Profiles
+
+Hardware profiles are loaded from `profiles/default.json` (or fetched from CDN). Each profile matches hardware and sets providers:
+
+| Field | Description |
+|---|---|
+| `match.platform` | `"darwin"`, `"linux"`, `"win32"` |
+| `match.gpu` | `"apple-silicon"`, `"nvidia"`, `"cpu"` |
+| `match.minMemory` | Minimum RAM in GB |
+| `config.llm` | LLM provider + model + quantization |
+| `config.stt` | Speech-to-text provider + model |
+| `config.tts` | Text-to-speech provider + voice |
+| `config.fallback` | Cloud fallback provider + model |
+
 ## Configuration
 
 Config file: `~/.agentic-service/config.json`

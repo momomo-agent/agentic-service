@@ -3878,3 +3878,15 @@ All done. Here's a summary of what was completed:
 **Notable edge case found:** The hot-reload test writes a stale cache (`"new-model"`) that pollutes `profiles.test.js` when run in sequence — those tests need cache cleanup in `beforeEach`. Documented in `test-coverage.json`.
 [2026-04-06T18:44:06.522Z] tester-1 agent completed
 [2026-04-06 18:44:06] [agent_complete] tester-1 completed successfully
+[2026-04-06 18:44:06] [workflow] post [POST] task-1775500173626: testing → review
+[2026-04-06 18:44:06] [workflow] work_loop [EXEC] developer
+[2026-04-06 18:44:06] [agent_start] developer developer
+[2026-04-06T18:44:06.635Z] Running developer agent...
+Task complete. I updated `README.md` with:
+
+- Docker Deployment section (`docker run` + `docker-compose.yml` example)
+- Profiles section explaining `profiles/default.json` fields
+
+Task `task-1775500439158` moved to `review`.
+[2026-04-06T18:45:24.325Z] developer agent completed
+[2026-04-06 18:45:24] [agent_complete] developer completed successfully
