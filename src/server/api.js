@@ -131,31 +131,36 @@ export function createApp() {
   return app;
 }
 
+function listenAsync(server, port) {
+  return new Promise((resolve, reject) => {
+    server.once('listening', resolve);
+    server.once('error', (err) => reject(
+      err.code === 'EADDRINUSE' ? new Error(`Port ${port} is already in use`) : err
+    ));
+    server.listen(port);
+  });
+}
+
 export async function startServer(port = 3000, { https: useHttps = false } = {}) {
   const app = createApp();
-  let server;
+  const httpServer = (await import('http')).default.createServer(app);
+  await listenAsync(httpServer, port);
+  initWebSocket(httpServer);
+  await Promise.all([stt.init(), tts.init()]).catch(err =>
+    console.warn('Runtime init warning:', err.message)
+  );
+  console.log(`Server running at http://localhost:${port}`);
+
   if (useHttps) {
     const { createServer } = await import('./httpsServer.js');
-    server = createServer(app);
-    server.listen(port);
-  } else {
-    server = app.listen(port);
+    const httpsServer = createServer(app);
+    const httpsPort = port + 443;
+    await listenAsync(httpsServer, httpsPort);
+    console.log(`Server running at https://localhost:${httpsPort}`);
+    return { http: httpServer, https: httpsServer };
   }
-  return new Promise((resolve, reject) => {
-    server.once('listening', async () => {
-      initWebSocket(server);
-      await Promise.all([stt.init(), tts.init()]).catch(err =>
-        console.warn('Runtime init warning:', err.message)
-      );
-      console.log(`Server running at http://localhost:${port}`);
-      resolve(server);
-    });
-    server.once('error', (err) => {
-      reject(err.code === 'EADDRINUSE'
-        ? new Error(`Port ${port} is already in use`)
-        : err);
-    });
-  });
+
+  return httpServer;
 }
 
 export function stopServer(server) {

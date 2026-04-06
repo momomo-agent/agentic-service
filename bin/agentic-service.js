@@ -62,10 +62,16 @@ program
 
       function shutdown() {
         console.log(chalk.yellow('\n\nShutting down...'));
-        server.close(() => {
-          console.log(chalk.green('✓ Server closed'));
-          process.exit(0);
-        });
+        const closing = server.http
+          ? [server.http, server.https]
+          : [server];
+        let closed = 0;
+        closing.forEach(s => s.close(() => {
+          if (++closed === closing.length) {
+            console.log(chalk.green('✓ Server closed'));
+            process.exit(0);
+          }
+        }));
         setTimeout(() => process.exit(0), 5000).unref();
       }
 

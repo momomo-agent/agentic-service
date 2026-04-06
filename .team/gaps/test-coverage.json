@@ -1,11 +1,12 @@
 {
-  "totalTests": 14,
-  "passed": 14,
+  "totalTests": 18,
+  "passed": 18,
   "failed": 0,
   "edgeCases": [
     "No test for matchProfile() logic against this file",
     "stop() called before start() — safe via optional chaining but not explicitly tested",
-    "rapid speech/silence oscillation within silenceMs window"
+    "rapid speech/silence oscillation within silenceMs window",
+    "vitest coverage thresholds set to 98% in package.json (no vitest.config.js)"
   ],
-  "coverage": "100%"
+  "coverage": "98%"
 }
