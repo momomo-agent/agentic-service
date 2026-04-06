@@ -10,7 +10,8 @@
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
-    "dev": "node src/index.js"
+    "start": "node bin/agentic-service.js",
+    "dev": "node bin/agentic-service.js --skip-setup"
   },
   "keywords": [
     "ai",
@@ -28,8 +29,10 @@
   },
   "dependencies": {
     "chalk": "^5.6.2",
+    "commander": "^12.1.0",
     "cors": "^2.8.6",
     "express": "^5.2.1",
+    "open": "^10.2.0",
     "ora": "^9.3.0"
   }
 }

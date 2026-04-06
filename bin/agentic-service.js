@@ -1,0 +1,76 @@
+#!/usr/bin/env node
+
+import { program } from 'commander';
+import { createRequire } from 'module';
+import { promises as fs } from 'fs';
+import path from 'path';
+import os from 'os';
+import chalk from 'chalk';
+import { runSetup } from '../src/cli/setup.js';
+import { startServer } from '../src/server/api.js';
+import { openBrowser } from '../src/cli/browser.js';
+
+const require = createRequire(import.meta.url);
+const { version } = require('../package.json');
+
+const CONFIG_PATH = path.join(os.homedir(), '.agentic-service', 'config.json');
+
+async function checkFirstRun() {
+  try {
+    await fs.access(CONFIG_PATH);
+    return false;
+  } catch {
+    return true;
+  }
+}
+
+program
+  .name('agentic-service')
+  .description('AI agent service with hardware detection and auto-setup')
+  .version(version)
+  .option('-p, --port <port>', 'server port', '3000')
+  .option('--no-browser', 'do not open browser automatically')
+  .option('--skip-setup', 'skip first-time setup')
+  .action(async (options) => {
+    try {
+      console.log(chalk.bold.blue('🚀 Agentic Service\n'));
+
+      if (!options.skipSetup) {
+        const setupNeeded = await checkFirstRun();
+        if (setupNeeded) {
+          console.log(chalk.yellow('First run detected. Running setup...\n'));
+          await runSetup();
+        }
+      }
+
+      const port = parseInt(options.port);
+      console.log(chalk.cyan(`Starting server on port ${port}...`));
+
+      const server = await startServer(port);
+
+      console.log(chalk.green(`✓ Server running at http://localhost:${port}\n`));
+
+      if (options.browser) {
+        await openBrowser(`http://localhost:${port}`);
+      }
+
+      console.log(chalk.gray('Press Ctrl+C to stop'));
+
+      process.on('SIGINT', async () => {
+        console.log(chalk.yellow('\n\nShutting down...'));
+        server.close(() => {
+          console.log(chalk.green('✓ Server closed'));
+          process.exit(0);
+        });
+      });
+
+    } catch (error) {
+      console.error(chalk.red(`\n✗ Error: ${error.message}`));
+      if (error.message.includes('already in use')) {
+        console.error(chalk.white(`\nTry:\n  agentic-service --port ${parseInt(options.port) + 1}`));
+      }
+      process.exit(1);
+    }
+  });
+
+program.parse();

@@ -1400,3 +1400,17 @@ Task `task-1775491396691` (修复 EADDRINUSE 检测) is complete.
 - Task marked **done**
 [2026-04-06T16:16:07.158Z] tester agent completed
 [2026-04-06 16:16:07] [agent_complete] tester completed successfully
+[2026-04-06 16:16:07] [workflow] work_loop [EXEC] developer
+[2026-04-06 16:16:07] [agent_start] developer developer
+[2026-04-06T16:16:07.267Z] Running developer agent...
+[2026-04-06 16:18:26] [agent_start] daemon Still busy (20min), skipping safety check
+[2026-04-06 16:18:26] [perf] daemon {"rss":"58MB","heapUsed":"10MB","heapTotal":"11MB","uptime":"1200s"}
+Task `task-1775446002815` (CLI 入口 + 一键安装) is complete and moved to `review`.
+
+Summary of what was implemented:
+- `bin/agentic-service.js` — CLI entry point with `commander`, first-run detection, server start, browser open, graceful SIGINT shutdown
+- `src/cli/setup.js` — Setup wizard: hardware detection, profile fetch, Ollama setup, config persistence to `~/.agentic-service/config.json`
+- `src/cli/browser.js` — Browser opener with fallback message
+- `package.json` — Added `start`/`dev` scripts, `commander` and `open` dependencies
+[2026-04-06T16:19:49.776Z] developer agent completed
+[2026-04-06 16:19:49] [agent_complete] developer completed successfully
