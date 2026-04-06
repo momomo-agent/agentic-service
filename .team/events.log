@@ -4073,3 +4073,17 @@
 {"ts":"2026-04-06T21:00:27.107Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
 {"ts":"2026-04-06T21:00:27.108Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":2.671953,"cpuSystem":3.942264}}}
 {"ts":"2026-04-06T21:00:38.302Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":2.67904,"cpuSystem":3.947178}}}
+{"ts":"2026-04-06T21:00:38.395Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T21:00:38.395Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":5,"memoryTotalMB":7,"cpuUser":2.681774,"cpuSystem":3.953666}}}
+{"ts":"2026-04-06T21:00:41.837Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"26MB\",\"heapUsed\":\"10MB\",\"heapTotal\":\"12MB\",\"uptime\":\"18900s\"}"}}
+{"ts":"2026-04-06T21:01:16.322Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":2.685425,"cpuSystem":3.958697}}}
+{"ts":"2026-04-06T21:01:16.333Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T21:01:16.333Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T21:01:16.334Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T21:01:16.334Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] implement: designedTasks > 0"}}
+{"ts":"2026-04-06T21:01:16.334Z","type":"workflow","agent":"work_loop","data":{"details":"[BRANCH] doneCount > 0 → true → milestone_qg"}}
+{"ts":"2026-04-06T21:01:16.334Z","type":"workflow","agent":"work_loop","data":{"details":"[EXIT] todoCount == 0 && designedTasks == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 && blockedCount == 0 → milestone_qg"}}
+{"ts":"2026-04-06T21:01:16.334Z","type":"agent_start","agent":"milestone_qg","data":{"details":"[NODE] milestone_qg - 里程碑 QG - 对照 DBB 验收","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":2.688894,"cpuSystem":3.968192}}}
+{"ts":"2026-04-06T21:01:16.343Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-06T21:01:16.343Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":2.691015,"cpuSystem":3.974826}}}
+{"ts":"2026-04-06T21:01:32.886Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":2.695152,"cpuSystem":3.980558}}}

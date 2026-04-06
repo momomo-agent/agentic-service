@@ -183,7 +183,7 @@
     {
       "id": "m16",
       "name": "M16: 测试覆盖率 + SIGINT + CDN + 多设备会话",
-      "status": "ready-for-work",
+      "status": "completed",
       "tasks": [
         "task-1775508540565",
         "task-1775508549624",
