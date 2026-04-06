@@ -54,6 +54,7 @@ async function loadProfiles() {
  * @returns {Promise<ProfilesData>}
  */
 async function fetchRemoteProfiles() {
+  console.log('Profiles URL:', PROFILES_URL);
   const response = await fetch(PROFILES_URL, {
     signal: AbortSignal.timeout(5000),
     headers: { 'User-Agent': 'agentic-service' }

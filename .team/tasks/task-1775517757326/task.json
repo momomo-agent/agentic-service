@@ -1,0 +1,13 @@
+{
+  "id": "task-1775517757326",
+  "title": "实现src/runtime/llm.js",
+  "description": "实现LLM运行时：chat(messages, options) → stream，支持流式输出，对接本地LLM推理引擎",
+  "status": "todo",
+  "priority": "P0",
+  "assignee": "developer",
+  "blockedBy": [],
+  "groupId": "m31",
+  "hasDesign": false,
+  "created": "2026-04-06T23:22:37.326Z",
+  "updated": "2026-04-06T23:29:05.008Z"
+}

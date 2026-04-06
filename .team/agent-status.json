@@ -1,31 +1,31 @@
 {
   "pm": {
     "status": "running",
-    "lastRun": "2026-04-06T23:14:33.629Z",
+    "lastRun": "2026-04-06T23:31:29.568Z",
     "currentTask": "pm",
     "retryCount": 0
   },
   "tech_lead-1": {
     "status": "idle",
-    "lastRun": "2026-04-06T23:08:43.653Z",
+    "lastRun": "2026-04-06T23:29:19.215Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-2": {
     "status": "idle",
-    "lastRun": "2026-04-06T23:09:25.872Z",
+    "lastRun": "2026-04-06T23:29:02.183Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-3": {
     "status": "idle",
-    "lastRun": "2026-04-06T23:08:45.249Z",
+    "lastRun": "2026-04-06T23:29:26.997Z",
     "currentTask": null,
     "retryCount": 0
   },
   "developer": {
     "status": "idle",
-    "lastRun": "2026-04-06T23:11:13.960Z",
+    "lastRun": "2026-04-06T23:31:38.536Z",
     "currentTask": null,
     "retryCount": 1
   },
@@ -36,20 +36,20 @@
     "retryCount": 0
   },
   "tester-1": {
-    "status": "idle",
-    "lastRun": "2026-04-06T23:13:56.750Z",
+    "status": "timeout",
+    "lastRun": "2026-04-06T23:24:51.244Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tester-2": {
-    "status": "idle",
-    "lastRun": "2026-04-06T23:14:30.446Z",
+    "status": "timeout",
+    "lastRun": "2026-04-06T23:24:51.242Z",
     "currentTask": null,
     "retryCount": 0
   },
   "qa_lead": {
     "status": "idle",
-    "lastRun": "2026-04-06T22:32:23.480Z",
+    "lastRun": "2026-04-06T23:18:41.933Z",
     "currentTask": null,
     "retryCount": 0
   },

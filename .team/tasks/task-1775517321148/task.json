@@ -1,0 +1,14 @@
+{
+  "id": "task-1775517321148",
+  "title": "VAD自动检测实现",
+  "description": "在Web UI中实现Voice Activity Detection，支持自动开始/停止录音，无需手动push-to-talk",
+  "status": "review",
+  "priority": "P0",
+  "assignee": "tech_lead-1",
+  "blockedBy": [],
+  "groupId": "m30",
+  "hasDesign": true,
+  "created": "2026-04-06T23:15:21.149Z",
+  "updated": "2026-04-06T23:31:22.548Z",
+  "milestoneId": "m30"
+}

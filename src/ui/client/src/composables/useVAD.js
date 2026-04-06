@@ -1,59 +1,64 @@
-const SPEECH_THRESHOLD = 0.01
-const SILENCE_THRESHOLD = 0.005
-const SILENCE_DURATION = 500 // ms
-
-export function useVAD({ onStart, onStop }) {
-  let ctx, analyser, source, stream, rafId
-  let silenceStart = null
-  let isRecording = false
-  let consecutiveFrames = 0
+export function useVAD(onStart, onStop, options = {}) {
+  const { threshold = 0.01, silenceMs = 1500 } = options;
+  let ctx, processor, stream;
+  let recording = false;
+  let silenceTimer = null;
+  let startTime = 0;
+  const MIN_DURATION = 300;
 
   async function start() {
-    stream = await navigator.mediaDevices.getUserMedia({ audio: true })
-    ctx = new AudioContext()
-    if (ctx.state === 'suspended') await ctx.resume()
-    analyser = ctx.createAnalyser()
-    analyser.fftSize = 512
-    source = ctx.createMediaStreamSource(stream)
-    source.connect(analyser)
-    const buf = new Float32Array(analyser.fftSize)
+    stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    ctx = new AudioContext();
+    const source = ctx.createMediaStreamSource(stream);
+    processor = ctx.createScriptProcessor(4096, 1, 1);
 
-    function tick() {
-      analyser.getFloatTimeDomainData(buf)
-      const rms = Math.sqrt(buf.reduce((s, v) => s + v * v, 0) / buf.length)
+    processor.onaudioprocess = (e) => {
+      const samples = e.inputBuffer.getChannelData(0);
+      let sum = 0;
+      for (let i = 0; i < samples.length; i++) sum += samples[i] * samples[i];
+      const rms = Math.sqrt(sum / samples.length);
 
-      if (rms > SPEECH_THRESHOLD) {
-        silenceStart = null
-        consecutiveFrames++
-        if (!isRecording && consecutiveFrames >= 3) {
-          isRecording = true
-          onStart?.()
+      if (rms > threshold) {
+        clearTimeout(silenceTimer);
+        silenceTimer = null;
+        if (!recording) {
+          recording = true;
+          startTime = Date.now();
+          onStart();
         }
-      } else if (rms < SILENCE_THRESHOLD && isRecording) {
-        consecutiveFrames = 0
-        if (!silenceStart) silenceStart = Date.now()
-        else if (Date.now() - silenceStart >= SILENCE_DURATION) {
-          isRecording = false
-          silenceStart = null
-          onStop?.()
-        }
-      } else {
-        consecutiveFrames = 0
+      } else if (recording && !silenceTimer) {
+        silenceTimer = setTimeout(() => {
+          if (Date.now() - startTime >= MIN_DURATION) {
+            recording = false;
+            onStop();
+          }
+          silenceTimer = null;
+        }, silenceMs);
       }
+    };
 
-      rafId = requestAnimationFrame(tick)
+    source.connect(processor);
+    processor.connect(ctx.destination);
+    document.addEventListener('visibilitychange', onVisibility);
+  }
+
+  function onVisibility() {
+    if (document.hidden && recording) {
+      clearTimeout(silenceTimer);
+      silenceTimer = null;
+      recording = false;
+      onStop();
     }
-    tick()
   }
 
   function stop() {
-    cancelAnimationFrame(rafId)
-    stream?.getTracks().forEach(t => t.stop())
-    ctx?.close()
-    isRecording = false
-    silenceStart = null
-    consecutiveFrames = 0
+    document.removeEventListener('visibilitychange', onVisibility);
+    clearTimeout(silenceTimer);
+    processor?.disconnect();
+    stream?.getTracks().forEach(t => t.stop());
+    ctx?.close();
+    recording = false;
   }
 
-  return { start, stop }
+  return { start, stop, get isActive() { return recording; } };
 }
