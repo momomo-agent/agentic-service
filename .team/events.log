@@ -2541,3 +2541,45 @@
 {"ts":"2026-04-06T16:36:11.785Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
 {"ts":"2026-04-06T16:36:11.785Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":13,"memoryTotalMB":14,"cpuUser":0.213286,"cpuSystem":0.224278}}}
 {"ts":"2026-04-06T16:36:20.670Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":14,"cpuUser":0.213815,"cpuSystem":0.224993}}}
+{"ts":"2026-04-06T16:36:20.744Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T16:36:20.744Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":13,"memoryTotalMB":14,"cpuUser":0.215165,"cpuSystem":0.227201}}}
+{"ts":"2026-04-06T16:37:17.269Z","type":"task_created","agent":null,"data":{"taskId":"task-1775493437268","title":"向量嵌入运行时","priority":"P1","group":"m4"}}
+{"ts":"2026-04-06T16:37:22.809Z","type":"task_created","agent":null,"data":{"taskId":"task-1775493442807","title":"KV 存储抽象","priority":"P1","group":"m4"}}
+{"ts":"2026-04-06T16:37:22.858Z","type":"task_created","agent":null,"data":{"taskId":"task-1775493442855","title":"设备管理 hub.js","priority":"P1","group":"m4"}}
+{"ts":"2026-04-06T16:37:22.906Z","type":"task_created","agent":null,"data":{"taskId":"task-1775493442904","title":"LLM 工具调用 brain.js","priority":"P1","group":"m4"}}
+{"ts":"2026-04-06T16:37:33.875Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.226236,"cpuSystem":0.235291}}}
+{"ts":"2026-04-06T16:37:33.885Z","type":"workflow","agent":"milestone_qg","data":{"details":"[BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop"}}
+{"ts":"2026-04-06T16:37:33.886Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度循环","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.229002,"cpuSystem":0.241009}}}
+{"ts":"2026-04-06T16:37:33.893Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-06T16:37:33.894Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T16:37:33.895Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":0.231548,"cpuSystem":0.246391}}}
+{"ts":"2026-04-06T16:38:15.473Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":0.233083,"cpuSystem":0.248491}}}
+{"ts":"2026-04-06T16:38:15.477Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] qa_lead"}}
+{"ts":"2026-04-06T16:38:15.477Z","type":"agent_start","agent":"qa_lead","data":{"details":"qa_lead","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.234433,"cpuSystem":0.25115}}}
+{"ts":"2026-04-06T16:38:26.087Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (40min), skipping safety check","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.23485,"cpuSystem":0.252557}}}
+{"ts":"2026-04-06T16:38:26.234Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"48MB\",\"heapUsed\":\"6MB\",\"heapTotal\":\"8MB\",\"uptime\":\"2400s\"}"}}
+{"ts":"2026-04-06T16:39:08.856Z","type":"agent_complete","agent":"qa_lead","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":7,"cpuUser":0.24495,"cpuSystem":0.261468}}}
+{"ts":"2026-04-06T16:39:08.863Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-06T16:39:08.864Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":5,"memoryTotalMB":7,"cpuUser":0.24798,"cpuSystem":0.265578}}}
+{"ts":"2026-04-06T16:39:08.865Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":6,"memoryTotalMB":7,"cpuUser":0.248676,"cpuSystem":0.266357}}}
+{"ts":"2026-04-06T16:39:08.867Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"tech_lead","performance":{"memoryMB":6,"memoryTotalMB":7,"cpuUser":0.250371,"cpuSystem":0.267227}}}
+{"ts":"2026-04-06T16:40:41.484Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"50MB\",\"heapUsed\":\"6MB\",\"heapTotal\":\"7MB\",\"uptime\":\"3300s\"}"}}
+{"ts":"2026-04-06T16:40:47.813Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":6,"cpuUser":0.265519,"cpuSystem":0.274234}}}
+{"ts":"2026-04-06T16:40:48.751Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":6,"cpuUser":0.266165,"cpuSystem":0.274863}}}
+{"ts":"2026-04-06T16:40:57.237Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":7,"cpuUser":0.268416,"cpuSystem":0.277725}}}
+{"ts":"2026-04-06T16:40:57.242Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T16:40:57.242Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T16:40:57.242Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":5,"memoryTotalMB":6,"cpuUser":0.270014,"cpuSystem":0.280986}}}
+{"ts":"2026-04-06T16:41:11.698Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:12)"}}
+{"ts":"2026-04-06T16:41:11.699Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:12)\"}"}}
+{"ts":"2026-04-06T16:41:19.787Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775493437268","from":"todo","to":"inProgress","title":"向量嵌入运行时"}}
+{"ts":"2026-04-06T16:41:26.276Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:12)"}}
+{"ts":"2026-04-06T16:41:26.277Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:12)\"}"}}
+{"ts":"2026-04-06T16:41:41.700Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:12)"}}
+{"ts":"2026-04-06T16:41:41.701Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:4, done:12)\"}"}}
+{"ts":"2026-04-06T16:41:41.991Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775493442807","from":"todo","to":"inProgress","title":"KV 存储抽象"}}
+{"ts":"2026-04-06T16:41:56.277Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:12)"}}
+{"ts":"2026-04-06T16:41:56.278Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:4, done:12)\"}"}}
+{"ts":"2026-04-06T16:42:09.840Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775493437268","from":"inProgress","to":"review","title":"向量嵌入运行时"}}
+{"ts":"2026-04-06T16:42:09.873Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775493442807","from":"inProgress","to":"review","title":"KV 存储抽象"}}
+{"ts":"2026-04-06T16:42:16.421Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":6,"cpuUser":0.278506,"cpuSystem":0.289938}}}

@@ -3,7 +3,7 @@
     {
       "id": "m1",
       "name": "M1: 硬件检测 + 一键启动",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775446002661",
         "task-1775446002693",
@@ -28,13 +28,25 @@
     {
       "id": "m3",
       "name": "M3: 语音能力 + 管理面板",
-      "status": "planned",
+      "status": "completed",
       "tasks": [
         "task-1775492459233",
         "task-1775492469000",
         "task-1775492469046"
       ],
       "created": "2026-04-06T16:21:09.355Z"
+    },
+    {
+      "id": "m4",
+      "name": "M4: 向量嵌入 + 设备管理",
+      "status": "ready-for-work",
+      "tasks": [
+        "task-1775493437268",
+        "task-1775493442807",
+        "task-1775493442855",
+        "task-1775493442904"
+      ],
+      "created": "2026-04-06T16:36:47.045Z"
     }
   ]
 }

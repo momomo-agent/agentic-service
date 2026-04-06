@@ -1577,3 +1577,117 @@ Total: 20 new tests added, all passing. Coverage updated to 129 total tests.
 All tasks are in "done" status — there's nothing in "review" status to claim and test. The pipeline is clear with no pending work for the tester role.
 [2026-04-06T16:36:20.666Z] tester agent completed
 [2026-04-06 16:36:20] [agent_complete] tester completed successfully
+[2026-04-06 16:36:20] [workflow] milestone_qg [EXEC] pm
+[2026-04-06 16:36:20] [agent_start] pm pm
+[2026-04-06T16:36:20.769Z] Running pm agent...
+M4 milestone is now planned and ready. Here's the summary:
+
+**Completed:**
+- M1, M2, M3 → all marked `completed`
+
+**M4: 向量嵌入 + 设备管理** (planned, 4 tasks):
+
+| Task | Priority | Blocked By |
+|------|----------|------------|
+| 向量嵌入运行时 (`embed.js`) | P0 | — |
+| KV 存储抽象 (`store/index.js`) | P0 | — |
+| 设备管理 (`hub.js`) | P1 | — |
+| LLM 工具调用 (`brain.js`) | P1 | embed + store |
+[2026-04-06T16:37:33.868Z] pm agent completed
+[2026-04-06 16:37:33] [agent_complete] pm completed successfully
+[2026-04-06 16:37:33] [workflow] milestone_qg [BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop
+[2026-04-06 16:37:33] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 16:37:33] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 16:37:33] [workflow] work_loop [EXEC] pm
+[2026-04-06 16:37:33] [agent_start] pm pm
+[2026-04-06T16:37:33.940Z] Running pm agent...
+M4 is now **active**. Current state:
+
+**M4: 向量嵌入 + 设备管理** — `active`
+
+Tasks ready for assignment:
+- `task-1775493437268` — 向量嵌入运行时 (P0, unblocked)
+- `task-1775493442807` — KV 存储抽象 (P0, unblocked)
+- `task-1775493442855` — 设备管理 hub.js (P1, unblocked)
+- `task-1775493442904` — LLM 工具调用 brain.js (P1, blocked by embed + store)
+
+The two P0 tasks can be worked in parallel. `brain.js` is blocked until embed and store are done.
+[2026-04-06T16:38:15.470Z] pm agent completed
+[2026-04-06 16:38:15] [agent_complete] pm completed successfully
+[2026-04-06 16:38:15] [workflow] work_loop [EXEC] qa_lead
+[2026-04-06 16:38:15] [agent_start] qa_lead qa_lead
+[2026-04-06T16:38:15.507Z] Running qa_lead agent...
+[2026-04-06 16:38:26] [agent_start] daemon Still busy (40min), skipping safety check
+[2026-04-06 16:38:26] [perf] daemon {"rss":"48MB","heapUsed":"6MB","heapTotal":"8MB","uptime":"2400s"}
+Done. Here's a summary of what was completed:
+
+- Wrote `.team/milestones/m4/dbb.md` with 9 verification criteria covering:
+  - `embed(text)` vector output and edge cases (DBB-001, 002)
+  - `store` get/set/delete persistence and missing-key behavior (DBB-003, 004, 005)
+  - `GET /api/status` devices field with and without registered devices (DBB-006, 007)
+  - `/api/chat` tool_use support and normal text fallback (DBB-008, 009)
+- Updated M4 status to `ready-for-work` in `milestones.json`
+[2026-04-06T16:39:08.851Z] qa_lead agent completed
+[2026-04-06 16:39:08] [agent_complete] qa_lead completed successfully
+[2026-04-06 16:39:08] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 16:39:08] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 16:39:08] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 16:39:08] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T16:39:08.907Z] Running tech_lead-2 agent...
+[2026-04-06T16:39:08.910Z] Running tech_lead-1 agent...
+[2026-04-06T16:39:08.930Z] Running tech_lead-3 agent...
+[2026-04-06 16:40:41] [perf] daemon {"rss":"50MB","heapUsed":"6MB","heapTotal":"7MB","uptime":"3300s"}
+M4 tech lead work is complete:
+
+- **M4 design.md** — already existed with full milestone technical design
+- **M4 dbb.md** — already existed with 9 verification criteria (DBB-001 through DBB-009)
+- **4 task designs** — all had complete design.md files, marked `hasDesign: true`:
+  - `task-1775493437268` — embed.js: `embed(text) → Promise<number[]>`
+  - `task-1775493442807` — store/index.js: `get/set/del` SQLite KV
+  - `task-1775493442855` — hub.js: device registry + `/api/status` integration
+  - `task-1775493442904` — brain.js: tool_use support in `/api/chat` (blocked by embed + store)
+
+All M4 tasks are now ready for developer assignment.
+[2026-04-06T16:40:47.807Z] tech_lead-1 agent completed
+[2026-04-06 16:40:47] [agent_complete] tech_lead-1 completed successfully
+All M4 task designs are complete. Here's a summary of what was done:
+
+**M4 milestone already had:** `dbb.md` and `overview.md` ✓
+
+**Task designs written and marked `hasDesign: true`:**
+
+- `task-1775493437268` — `src/runtime/embed.js`: `embed(text) → Promise<number[]>` wrapping `agentic-embed`
+- `task-1775493442807` — `src/store/index.js`: `get/set/del` KV abstraction over `agentic-store` SQLite, lazy singleton init
+- `task-1775493442855` — `src/server/hub.js`: in-memory device registry + `GET /api/status` devices field integration
+- `task-1775493442904` — `src/server/brain.js`: tool_use support for `/api/chat`, passes `tools` array to `agentic-core`
+
+All 4 tasks are unblocked except `task-1775493442904` (brain.js), which is blocked by the embed and store tasks.
+[2026-04-06T16:40:48.747Z] tech_lead-2 agent completed
+[2026-04-06 16:40:48] [agent_complete] tech_lead-2 completed successfully
+M4 tech lead work is complete:
+
+- `.team/milestones/m4/design.md` — created (technical approach, dependency order)
+- `.team/milestones/m4/dbb.md` — already existed (9 verification criteria)
+- All 4 task designs confirmed present and `hasDesign=true` set:
+  - `task-1775493437268` — `src/runtime/embed.js` (agentic-embed wrapper)
+  - `task-1775493442807` — `src/store/index.js` (SQLite KV via agentic-store)
+  - `task-1775493442855` — `src/server/hub.js` (in-memory device registry + api.js integration)
+  - `task-1775493442904` — `src/server/brain.js` (tool_use support, blocked by embed+store)
+[2026-04-06T16:40:57.232Z] tech_lead-3 agent completed
+[2026-04-06 16:40:57] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 16:40:57] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 16:40:57] [workflow] work_loop [EXEC] developer
+[2026-04-06 16:40:57] [agent_start] developer developer
+[2026-04-06T16:40:57.273Z] Running developer agent...
+[2026-04-06 16:41:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:12)
+[2026-04-06 16:41:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:12)
+[2026-04-06 16:41:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:12)
+[2026-04-06 16:41:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:12)
+Both tasks are complete:
+
+- `task-1775493437268` — `src/runtime/embed.js`: wraps `agentic-embed`, handles empty string and type validation
+- `task-1775493442807` — `src/store/index.js`: KV abstraction over `agentic-store` SQLite with lazy init
+
+Both moved to `review`. The remaining unblocked task is `task-1775493442855` (hub.js). The `task-1775493442904` (brain.js) is still blocked by the two tasks I just completed — once they're marked done by a reviewer, it'll be unblocked.
+[2026-04-06T16:42:16.418Z] developer agent completed
+[2026-04-06 16:42:16] [agent_complete] developer completed successfully
