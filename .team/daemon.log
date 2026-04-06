@@ -3238,3 +3238,13 @@ Summary:
 No other tasks are in `review` status and the remaining `testing` tasks are assigned to `tester-2`. Nothing left to claim.
 [2026-04-06T18:24:22.369Z] tester-1 agent completed
 [2026-04-06 18:24:22] [agent_complete] tester-1 completed successfully
+The test coverage file already accurately reflects the state (25 tests, 100% passed). All three tasks are now marked as done.
+
+Summary:
+- `task-1775499114484` (DBB 规范修复) → **done**
+- `task-1775499138579` (SIGINT 优雅关闭) → **done**  
+- `task-1775499138612` (npx 一键安装流程完善) → **done**
+
+All 12 tests passed across both test files (`m9-dbb.test.js`, `brain-m9.test.js`). No failures. No tasks left in testing status.
+[2026-04-06T18:24:25.436Z] tester-2 agent completed
+[2026-04-06 18:24:25] [agent_complete] tester-2 completed successfully
