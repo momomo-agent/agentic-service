@@ -1433,3 +1433,22 @@
 {"ts":"2026-04-06T13:50:42.415Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":27,"memoryTotalMB":136,"cpuUser":42.200916,"cpuSystem":0.640392}}}
 {"ts":"2026-04-06T13:51:12.712Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775446002723","from":"testing","to":"done","title":"Ollama 集成"}}
 {"ts":"2026-04-06T13:51:17.807Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.074967,"cpuSystem":0.052727}}}
+{"ts":"2026-04-06T13:51:17.867Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T13:51:17.868Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.075966,"cpuSystem":0.054159}}}
+{"ts":"2026-04-06T13:51:43.340Z","type":"agent_start","agent":"daemon","data":{"details":"DevTeam daemon started (safety=600s, timeout=3600s)","performance":{"memoryMB":5,"memoryTotalMB":6,"cpuUser":0.021995,"cpuSystem":0.005348}}}
+{"ts":"2026-04-06T13:51:43.341Z","type":"workflow","agent":"monitor","data":{"details":"[HEALTH] Monitor started"}}
+{"ts":"2026-04-06T13:51:43.342Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度循环","performance":{"memoryMB":5,"memoryTotalMB":7,"cpuUser":0.023676,"cpuSystem":0.006097}}}
+{"ts":"2026-04-06T13:51:43.345Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-06T13:51:43.346Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T13:51:43.346Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":0.026788,"cpuSystem":0.008309}}}
+{"ts":"2026-04-06T13:52:12.288Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775446002754","from":"todo","to":"inProgress","title":"基础 HTTP 服务"}}
+{"ts":"2026-04-06T13:52:13.466Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":0.030631,"cpuSystem":0.009859}}}
+{"ts":"2026-04-06T13:52:13.468Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T13:52:13.468Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T13:52:13.468Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T13:52:13.468Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T13:52:13.469Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":0.032223,"cpuSystem":0.011551}}}
+{"ts":"2026-04-06T13:53:16.756Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775446002754","from":"inProgress","to":"review","title":"基础 HTTP 服务"}}
+{"ts":"2026-04-06T13:53:20.640Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"56MB\",\"heapUsed\":\"7MB\",\"heapTotal\":\"8MB\",\"uptime\":\"600s\"}"}}
+{"ts":"2026-04-06T13:53:20.653Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy, skipping safety check","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.078561,"cpuSystem":0.056522}}}
+{"ts":"2026-04-06T13:53:21.610Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.034396,"cpuSystem":0.013023}}}
