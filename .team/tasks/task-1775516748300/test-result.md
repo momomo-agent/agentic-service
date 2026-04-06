@@ -1,26 +1,23 @@
 # Test Result: README用户文档补全
 
-## Status: PASS
-
-## Tests Run
-- test/m29-readme.test.js (10 assertions, node)
+## Summary
+- Tests: 10 passed, 0 failed
 
 ## Results
-- PASS: Installation section exists
-- PASS: Quick Start section exists
-- PASS: API Reference: /api/chat
-- PASS: API Reference: /api/transcribe
-- PASS: API Reference: /api/synthesize
-- PASS: API Reference: /api/status
-- PASS: API Reference: /api/config
-- PASS: Docker section exists
-- PASS: Configuration section exists
-- PASS: Troubleshooting section exists
+- ✅ Installation section exists (npx/global/Docker)
+- ✅ Quick Start section exists
+- ✅ API Reference: /api/chat
+- ✅ API Reference: /api/transcribe
+- ✅ API Reference: /api/synthesize
+- ✅ API Reference: /api/status
+- ✅ API Reference: /api/config
+- ✅ Docker section exists
+- ✅ Configuration section exists
+- ✅ Troubleshooting section exists
 
 ## DBB Verification
-- [x] Installation: npx / global npm / Docker all present
-- [x] API endpoints with request/response examples
-- [x] Docker `docker run -p 3000:3000 momomo/agentic-service` present
-- [x] Configuration section with env vars
-- [x] Troubleshooting section (Ollama, port in use, mic)
-- [x] GET /api/config and PUT /api/config both documented
+- ✅ Installation (npx/global/Docker) documented
+- ✅ All 5 API endpoints with request/response examples
+- ✅ Docker run command present
+- ✅ Configuration (PROFILES_URL, PORT, env vars) documented
+- ✅ Troubleshooting (Ollama, port in use, no mic) documented

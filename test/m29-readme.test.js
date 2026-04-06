@@ -1,26 +1,26 @@
+import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const readme = readFileSync(path.join(__dirname, '../README.md'), 'utf-8');
 
-let passed = 0, failed = 0;
-function assert(cond, msg) {
-  if (cond) { console.log('PASS:', msg); passed++; }
-  else { console.error('FAIL:', msg); failed++; }
-}
-
-assert(readme.includes('npx') || readme.includes('npm i -g'), 'Installation section exists');
-assert(readme.includes('Quick Start'), 'Quick Start section exists');
-assert(readme.includes('/api/chat'), 'API Reference: /api/chat');
-assert(readme.includes('/api/transcribe'), 'API Reference: /api/transcribe');
-assert(readme.includes('/api/synthesize'), 'API Reference: /api/synthesize');
-assert(readme.includes('/api/status'), 'API Reference: /api/status');
-assert(readme.includes('/api/config'), 'API Reference: /api/config');
-assert(readme.includes('docker'), 'Docker section exists');
-assert(readme.includes('PROFILES_URL') || readme.includes('profile'), 'Configuration section exists');
-assert(readme.includes('Ollama') || readme.includes('port in use') || readme.includes('Troubleshoot'), 'Troubleshooting section exists');
-
-console.log(`\nResults: ${passed} passed, ${failed} failed`);
-process.exit(failed > 0 ? 1 : 0);
+describe('M29 DBB: README completeness', () => {
+  it('has installation section', () => {
+    expect(readme.includes('npx') || readme.includes('npm i -g')).toBe(true);
+  });
+  it('has Quick Start section', () => { expect(readme).toContain('Quick Start'); });
+  it('documents /api/chat', () => { expect(readme).toContain('/api/chat'); });
+  it('documents /api/transcribe', () => { expect(readme).toContain('/api/transcribe'); });
+  it('documents /api/synthesize', () => { expect(readme).toContain('/api/synthesize'); });
+  it('documents /api/status', () => { expect(readme).toContain('/api/status'); });
+  it('documents /api/config', () => { expect(readme).toContain('/api/config'); });
+  it('has Docker section', () => { expect(readme.toLowerCase()).toContain('docker'); });
+  it('has configuration section', () => {
+    expect(readme.includes('PROFILES_URL') || readme.includes('profile')).toBe(true);
+  });
+  it('has troubleshooting section', () => {
+    expect(readme.includes('Ollama') || readme.includes('port in use') || readme.includes('Troubleshoot')).toBe(true);
+  });
+});

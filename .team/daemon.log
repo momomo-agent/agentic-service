@@ -9178,3 +9178,31 @@ Task `task-1775516741858` is complete.
 - Task marked as `done`
 [2026-04-06T23:13:27.153Z] tester-1 agent completed
 [2026-04-06 23:13:27] [agent_complete] tester-1 completed successfully
+[2026-04-06 23:13:28] [perf] daemon {"rss":"33MB","heapUsed":"10MB","heapTotal":"13MB","uptime":"26102s"}
+M29 has one task still in "review" status (`task-1775516748193: setup.sh完善 + npx入口验证`). Per my rules, I cannot mark the milestone complete or approve it — that's the tester's job.
+
+Current M29 status:
+- 4/5 tasks: `done`
+- 1/5 tasks: `review` — waiting for tester approval
+
+No action needed from me. I'll wait for the tester to move `task-1775516748193` to `done` before proceeding to plan M30.
+[2026-04-06T23:13:43.980Z] pm agent completed
+[2026-04-06 23:13:43] [agent_complete] pm completed successfully
+[2026-04-06 23:13:44] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:13:44] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 23:13:44] [workflow] work_loop [EXEC] tester
+[2026-04-06 23:13:44] [agent_start] tester tester
+[2026-04-06T23:13:44.030Z] Running tester agent...
+Both review tasks are now done. Here's a summary of what was completed:
+
+**task-1775516741858** — Ollama自动安装 + 模型拉取
+- 10/10 tests passed
+- Verified: `ensureOllama()` export, `which ollama` detection, curl/winget install paths, error throwing, `ollama pull` with progress streaming
+
+**task-1775516748193** — setup.sh完善 + npx入口验证
+- 5/5 tests passed
+- Verified: `AGENTIC_GLOBAL=1` curl-pipe install, Node ≥18 check, `package.json` bin field, shebang in `bin/agentic-service.js`
+
+Both tasks marked `done`. The other testing tasks (`task-1775516748230`, `task-1775516748265`, `task-1775516748300`) are already claimed by tester-2.
+[2026-04-06T23:13:56.746Z] tester-1 agent completed
+[2026-04-06 23:13:56] [agent_complete] tester-1 completed successfully
