@@ -107,10 +107,7 @@ async function* chatWithOpenAI(messages, model) {
   }
 }
 
-export async function* chat(message, options = {}) {
-  const { history = [] } = options;
-  const messages = [...history, { role: 'user', content: message }];
-
+export async function* chat(messages, options = {}) {
   try {
     yield* chatWithOllama(messages);
     return;

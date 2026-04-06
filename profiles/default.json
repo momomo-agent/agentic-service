@@ -57,29 +57,10 @@
     {
       "match": {},
       "config": {
-        "llm": {
-          "provider": "openai",
-          "model": "gpt-4o-mini"
-        },
-        "stt": {
-          "provider": "openai",
-          "model": "whisper-1"
-        },
-        "tts": {
-          "provider": "openai",
-          "voice": "alloy"
-        },
-        "fallback": null
-      }
-    },
-    {
-      "id": "default",
-      "match": { "gpu": "none" },
-      "config": {
-        "llm": { "provider": "openai", "model": "gpt-4o-mini" },
-        "stt": { "provider": "openai", "model": "whisper-1" },
-        "tts": { "provider": "openai", "voice": "alloy" },
-        "fallback": null
+        "llm": { "provider": "ollama", "model": "gemma3:1b", "quantization": "q4" },
+        "stt": { "provider": "sensevoice", "model": "small" },
+        "tts": { "provider": "kokoro", "voice": "default" },
+        "fallback": { "provider": "openai", "model": "gpt-4o-mini" }
       }
     }
   ]

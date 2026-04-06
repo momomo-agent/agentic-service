@@ -1,0 +1,13 @@
+{
+  "id": "task-1775514675779",
+  "title": "src/server/hub+brain+api.js实现",
+  "description": "实现device management(hub)、LLM推理+tool calling(brain)、REST API endpoints(api)",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m27",
+  "hasDesign": false,
+  "created": "2026-04-06T22:31:15.779Z",
+  "updated": "2026-04-06T22:31:15.780Z"
+}

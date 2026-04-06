@@ -7590,3 +7590,341 @@ Total: 30 new tests written and passing. Coverage updated to 90 total tests at 9
 All tasks are in 'done' status — there's nothing in 'review' status to claim and test. The pipeline is fully caught up.
 [2026-04-06T22:29:17.603Z] tester agent completed
 [2026-04-06 22:29:17] [agent_complete] tester completed successfully
+[2026-04-06 22:29:17] [workflow] milestone_qg [EXEC] pm
+[2026-04-06 22:29:17] [agent_start] pm pm
+[2026-04-06T22:29:17.728Z] Running pm agent...
+m26 already exists and is active with 8 tasks (created by another agent). The 4 tasks I created (task-1775514581356, task-1775514589169, task-1775514589201, task-1775514589231) are already included in m26.
+
+**Current state:**
+- m24: completed ✓
+- m25: completed ✓
+- m26: active — 8 tasks targeting runtime completion + architecture alignment
+
+No further action needed. The milestone plan is up to date.
+[2026-04-06T22:30:02.998Z] pm agent completed
+[2026-04-06 22:30:03] [agent_complete] pm completed successfully
+[2026-04-06 22:30:03] [workflow] milestone_qg [BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop
+[2026-04-06 22:30:03] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 22:30:03] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 22:30:03] [workflow] work_loop [EXEC] pm
+[2026-04-06 22:30:03] [agent_start] pm pm
+[2026-04-06T22:30:03.082Z] Running pm agent...
+Done. Here's the summary:
+
+**Completed:**
+- m24 and m25 marked as `completed` (all tasks were `done`)
+
+**Created M26: 架构对齐最终修复 + 验收** (active)
+- `task-1775514571886` [P0] — profiles.js getProfile(hardware)实现验证 + cpu-only profile
+- `task-1775514586151` [P0] — gpu-detector.js合并到hardware.js（架构规范对齐）
+- `task-1775514589838` [P1] — Admin UI + Docker + setup.sh端到端验收
+- `task-1775514594768` [P1] — README.md补全（npx/global/Docker安装 + API文档）
+
+**Target:** architecture match ≥ 60%, dbb match ≥ 90%, prd match ≥ 90%
+[2026-04-06T22:30:11.385Z] pm agent completed
+[2026-04-06 22:30:11] [agent_complete] pm completed successfully
+[2026-04-06 22:30:11] [workflow] milestone_qg [BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop
+[2026-04-06 22:30:11] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 22:30:11] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 22:30:11] [workflow] work_loop [EXEC] pm
+[2026-04-06 22:30:11] [agent_start] pm pm
+[2026-04-06T22:30:11.458Z] Running pm agent...
+M26 is already properly set up in milestones.json with 4 well-scoped tasks covering all remaining gaps:
+
+| Task | Gap | Priority |
+|------|-----|----------|
+| `task-1775514571886` | `profiles.js getProfile(hardware)` + cpu-only profile | P0 |
+| `task-1775514586151` | `gpu-detector.js` → merge into `hardware.js` | P1 |
+| `task-1775514589838` | Admin UI + Docker + setup.sh end-to-end verification | P1 |
+| `task-1775514594768` | README.md (npx/global/Docker + API docs) | P1 |
+
+The duplicate tasks (`task-1775514581356`, `task-1775514589169`, `task-1775514589201`, `task-1775514589231`) are orphaned — not referenced in milestones.json and redundant. They don't need action from PM side.
+
+**Current status: M26 is active, all 4 tasks are `todo`, ready for developer assignment.**
+
+No new milestones needed — the remaining gaps map cleanly to these 4 tasks. Once they complete testing, M26 can be marked completed and the project will be at full architecture alignment.
+[2026-04-06T22:30:20.476Z] pm agent completed
+[2026-04-06 22:30:20] [agent_complete] pm completed successfully
+[2026-04-06 22:30:20] [workflow] milestone_qg [BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop
+[2026-04-06 22:30:20] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 22:30:20] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 22:30:20] [workflow] work_loop [EXEC] pm
+[2026-04-06 22:30:20] [agent_start] pm pm
+[2026-04-06T22:30:20.560Z] Running pm agent...
+[2026-04-06 22:30:47] [perf] daemon {"rss":"26MB","heapUsed":"5MB","heapTotal":"8MB","uptime":"24306s"}
+M26 tasks are now assigned:
+
+- `task-1775514571886` → developer, P0 — profiles.js getProfile implementation
+- `task-1775514586151` → developer, P1 — gpu-detector.js merge into hardware.js
+- `task-1775514589838` → developer, P1 — Admin UI + Docker + setup.sh E2E
+- `task-1775514594768` → developer, P2 — README.md completion
+
+Remaining architecture gaps (missing) after m26: `runtime/llm.js`, `runtime/stt.js`, `runtime/tts.js`, `runtime/sense.js`, `runtime/memory.js`, `server/hub.js`, `server/brain.js`, `server/api.js` — these will be addressed in m27+.
+[2026-04-06T22:30:50.009Z] pm agent completed
+[2026-04-06 22:30:50] [agent_complete] pm completed successfully
+[2026-04-06 22:30:50] [workflow] work_loop [EXEC] qa_lead
+[2026-04-06 22:30:50] [agent_start] qa_lead qa_lead
+[2026-04-06T22:30:50.061Z] Running qa_lead agent...
+M26 tasks are now assigned. Here's the current state:
+
+**M26: Runtime层补全 (llm/stt/tts/sense/memory)**
+
+| Task | Title | Assignee | Priority |
+|------|-------|----------|----------|
+| task-1775514571886 | profiles.js getProfile(hardware)实现验证 + cpu-only profile | developer | P1 |
+| task-1775514586151 | gpu-detector.js合并到hardware.js（架构规范对齐） | developer | P0 |
+| task-1775514589838 | Admin UI + Docker + setup.sh端到端验收 | developer-1 | P1 |
+| task-1775514594768 | README.md补全（npx/global/Docker安装 + API文档） | developer-1 | P1 |
+
+**Key gaps being addressed:**
+- Architecture match is only 18% — the P0 task (gpu-detector merge) directly targets this
+- dbb/prd matches at 78-79% need the verification and README tasks
+
+**Acceptance criteria for m26 completion:**
+- architecture match ≥ 60%
+- dbb match ≥ 90%
+- prd match ≥ 90%
+- All P0/P1 architecture gaps closed
+
+Waiting for developers to pick up and complete tasks before tester review.
+[2026-04-06T22:31:01.659Z] pm agent completed
+[2026-04-06 22:31:01] [agent_complete] pm completed successfully
+[2026-04-06 22:31:01] [workflow] work_loop [EXEC] qa_lead
+[2026-04-06 22:31:01] [agent_start] qa_lead qa_lead
+[2026-04-06T22:31:01.710Z] Running qa_lead agent...
+Done. Here's the current state:
+
+**M26 (active)** — 5 tasks assigned to developer:
+- `task-1775514571886` P0: profiles.js getProfile实现
+- `task-1775514586151` P1: gpu-detector.js合并到hardware.js
+- `task-1775514589838` P1: Admin UI + Docker + setup.sh验收
+- `task-1775514594768` P2: README.md补全
+- `task-1775514647990`: src/runtime/llm.js实现
+
+**M27 (planned)** — 4 tasks for remaining architecture gaps:
+- `task-1775514675715`: stt+tts.js实现
+- `task-1775514675749`: sense+memory.js实现
+- `task-1775514675779`: hub+brain+api.js实现
+- `task-1775514675809`: profiles/default.json
+
+Architecture match is currently 18% — M26+M27 together target the 14 missing/partial gaps to push it toward 60%+.
+[2026-04-06T22:31:45.615Z] pm agent completed
+[2026-04-06 22:31:45] [agent_complete] pm completed successfully
+[2026-04-06 22:31:45] [workflow] work_loop [EXEC] qa_lead
+[2026-04-06 22:31:45] [agent_start] qa_lead qa_lead
+[2026-04-06T22:31:45.667Z] Running qa_lead agent...
+The DBB file already exists for m26. My work is done — I won't overwrite it.
+[2026-04-06T22:31:57.873Z] qa_lead agent completed
+[2026-04-06 22:31:57] [agent_complete] qa_lead completed successfully
+[2026-04-06 22:31:57] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 22:31:57] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 22:31:57] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 22:31:57] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T22:31:57.930Z] Running tech_lead-2 agent...
+[2026-04-06T22:31:57.930Z] Running tech_lead-1 agent...
+[2026-04-06T22:31:57.930Z] Running tech_lead-3 agent...
+Done. M26 DBB written with 15 verification criteria covering:
+
+- **hardware.js merge** (DBB-001/002): GPU detection consolidated, no orphan gpu-detector.js
+- **profiles.js getProfile** (DBB-003–006): Apple Silicon, NVIDIA, cpu-only, and unknown hardware cases
+- **runtime/llm.js** (DBB-007/008): streaming chat interface + error on Ollama unavailable
+- **Admin UI + Docker + setup.sh** (DBB-009–012): end-to-end accessibility and build/run checks
+- **README** (DBB-013–015): npx, Docker, and REST API documentation present
+
+Milestone m26 status updated to `ready-for-work`.
+[2026-04-06T22:32:07.792Z] qa_lead agent completed
+[2026-04-06 22:32:07] [agent_complete] qa_lead completed successfully
+[2026-04-06 22:32:07] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 22:32:07] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 22:32:07] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 22:32:07] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T22:32:07.850Z] Running tech_lead-3 agent...
+[2026-04-06T22:32:07.850Z] Running tech_lead-2 agent...
+[2026-04-06T22:32:07.850Z] Running tech_lead-1 agent...
+Both the DBB and milestone status are already in the correct state:
+
+- `.team/milestones/m26/dbb.md` — exists with 15 verification criteria covering all 5 tasks
+- `milestones.json` m26 status — already `ready-for-work`
+
+No action needed. Work is complete.
+[2026-04-06T22:32:23.477Z] qa_lead agent completed
+[2026-04-06 22:32:23] [agent_complete] qa_lead completed successfully
+[2026-04-06 22:32:23] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 22:32:23] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 22:32:23] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 22:32:23] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T22:32:23.538Z] Running tech_lead-3 agent...
+[2026-04-06T22:32:23.538Z] Running tech_lead-2 agent...
+[2026-04-06T22:32:23.538Z] Running tech_lead-1 agent...
+[2026-04-06 22:32:33] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:13, done:101)
+[2026-04-06 22:32:38] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:13, done:101)
+[2026-04-06 22:33:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:13, done:101)
+[2026-04-06 22:33:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:13, done:101)
+[2026-04-06 22:33:27] [perf] daemon {"rss":"39MB","heapUsed":"10MB","heapTotal":"12MB","uptime":"23701s"}
+[2026-04-06 22:34:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:13, done:101)
+[2026-04-06 22:34:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:13, done:101)
+All tasks are complete. M26 milestone designs are ready for developers to implement.
+[2026-04-06T22:34:08.659Z] tech_lead-1 agent completed
+[2026-04-06 22:34:08] [agent_complete] tech_lead-1 completed successfully
+M26 tech lead work is complete. All 5 tasks now have designs and `hasDesign=true`:
+
+- **task-1775514586151** — merge `gpu-detector.js` into `hardware.js`, delete the standalone file
+- **task-1775514571886** — add cpu-only profile to `profiles/default.json`, fix `matchProfile` fallback
+- **task-1775514647990** — verify/export `chat()` stream from `llm.js`, ensure error on Ollama unavailable
+- **task-1775514589838** — validate Admin UI `/admin` route, Docker build, `/health` endpoint, `setup.sh`
+- **task-1775514594768** — complete `README.md` with npx/global/Docker install + REST API docs
+
+Milestone files (`dbb.md`, `design.md`) were already present and complete.
+[2026-04-06T22:34:09.454Z] tech_lead-2 agent completed
+[2026-04-06 22:34:09] [agent_complete] tech_lead-2 completed successfully
+M26 technical design is complete. All 5 tasks now have designs and `hasDesign: true`:
+
+| Task | Title | Status |
+|------|-------|--------|
+| task-1775514571886 | profiles.js cpu-only profile | ✓ designed |
+| task-1775514586151 | gpu-detector.js → hardware.js merge | ✓ designed |
+| task-1775514589838 | Admin UI + Docker + setup.sh | ✓ designed |
+| task-1775514594768 | README.md补全 | ✓ designed |
+| task-1775514647990 | runtime/llm.js chat() signature fix | ✓ designed |
+[2026-04-06T22:34:09.626Z] tech_lead-2 agent completed
+[2026-04-06 22:34:09] [agent_complete] tech_lead-2 completed successfully
+All done. Here's a summary of what was completed for M26:
+
+**M26 status: all 5 tasks now have `hasDesign=true`**
+
+| Task | Title | Design status |
+|------|-------|---------------|
+| task-1775514586151 | gpu-detector.js → hardware.js merge | ✓ |
+| task-1775514571886 | profiles.js getProfile + cpu-only profile | ✓ |
+| task-1775514647990 | runtime/llm.js chat() implementation | ✓ |
+| task-1775514589838 | Admin UI + Docker + setup.sh e2e | ✓ |
+| task-1775514594768 | README.md completion | ✓ |
+
+**Key design decisions:**
+- `gpu-detector.js` functions get inlined into `hardware.js` — no external callers, clean delete
+- cpu-only profile uses empty `match: {}` (scores 1 in matcher.js) with `gemma3:1b q4` — no matcher.js changes needed
+- `llm.js` `chat()` signature needs alignment: ARCHITECTURE.md specifies `chat(messages, options)` but current impl takes `chat(message, options)` — developer must fix
+- M26 milestone already had `dbb.md` and `design.md` — no new milestone files needed
+M26 designs complete. Summary:
+
+**`.team/milestones/m26/design.md`** — milestone overview with task order
+
+**Task designs written:**
+
+| Task | Design |
+|------|--------|
+| task-1775514586151 | Inline gpu-detector.js into hardware.js, delete the file |
+| task-1775514571886 | Add cpu-only fallback entry to profiles/default.json |
+| task-1775514647990 | Fix chat() signature to accept messages array directly |
+| task-1775514589838 | Verify Admin UI /admin route, Docker build, setup.sh exit 0 |
+| task-1775514594768 | Append npx/Docker install + REST API docs to README.md |
+
+All 5 tasks updated with `hasDesign: true`.
+[2026-04-06T22:34:12.533Z] tech_lead-3 agent completed
+[2026-04-06 22:34:12] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06T22:34:12.537Z] tech_lead-3 agent completed
+[2026-04-06 22:34:12] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 22:34:12] [workflow] work_loop [EXEC] developer
+[2026-04-06 22:34:12] [agent_start] developer developer
+[2026-04-06 22:34:12] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06T22:34:12.581Z] Running developer agent...
+M26 designs are complete. Summary:
+
+**M26 milestone** — 5 tasks, all now have `hasDesign=true`:
+
+| Task | Title | Design status |
+|------|-------|---------------|
+| task-1775514586151 | gpu-detector.js → hardware.js | already existed |
+| task-1775514571886 | profiles.js cpu-only profile | already existed |
+| task-1775514647990 | runtime/llm.js chat() | already existed |
+| task-1775514589838 | Admin UI + Docker + setup.sh | **written now** |
+| task-1775514594768 | README.md 补全 | **written now** |
+
+**m26/design.md** was already present and adequate — no changes needed.
+
+Key design decisions:
+- `gpu-detector.js` functions get inlined into `hardware.js` as non-exported locals; the file is then deleted
+- cpu-only profile uses `{ "match": { "gpu": "none" } }` — matcher's score=1 fallback handles unknown/null gpu
+- `llm.js` `chat()` signature needs to accept `messages` array (not singular `message`) to match ARCHITECTURE.md
+- Admin UI: verify `/admin` static route exists in `api.js`; Docker needs Vite build step if UI isn't pre-built
+[2026-04-06T22:34:19.567Z] tech_lead-3 agent completed
+[2026-04-06 22:34:19] [agent_complete] tech_lead-3 completed successfully
+All 5 m26 tasks now have technical designs and `hasDesign: true`.
+
+Summary of designs written:
+
+- **task-1775514586151** — Inline `gpu-detector.js` functions into `hardware.js`, delete the standalone file
+- **task-1775514571886** — Add cpu-only fallback entry (`match: {}`) to `profiles/default.json`
+- **task-1775514647990** — Fix `chat()` export to accept `messages` array directly per ARCHITECTURE.md
+- **task-1775514589838** — Verify `/admin` route, Docker build, and `setup.sh` exit codes
+- **task-1775514594768** — Add npx/Docker install sections and REST API reference to `README.md`
+
+The m26 milestone DBB and overview were already present. All tasks are ready for developer assignment.
+[2026-04-06T22:34:21.098Z] tech_lead-1 agent completed
+[2026-04-06 22:34:21] [agent_complete] tech_lead-1 completed successfully
+M26 technical design complete. Summary of work done:
+
+**Milestone design** (`m26/design.md`) — already existed, confirmed complete.
+
+**Task designs written/verified:**
+
+| Task | Title | Status |
+|------|-------|--------|
+| task-1775514586151 | gpu-detector.js → hardware.js merge | design existed, verified |
+| task-1775514571886 | profiles.js + cpu-only profile | design existed, verified |
+| task-1775514647990 | runtime/llm.js chat() | design existed, verified |
+| task-1775514589838 | Admin UI + Docker + setup.sh | **written** |
+| task-1775514594768 | README.md补全 | **written** |
+
+All 5 tasks updated with `hasDesign: true`.
+[2026-04-06T22:34:48.498Z] tech_lead-1 agent completed
+[2026-04-06 22:34:48] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 22:34:48] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 22:34:48] [workflow] work_loop [EXEC] developer
+[2026-04-06 22:34:48] [agent_start] developer developer
+[2026-04-06T22:34:48.546Z] Running developer agent...
+[2026-04-06 22:35:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:13, done:101)
+[2026-04-06 22:35:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:13, done:101)
+M26 tech lead work is complete:
+
+- `design.md` created for milestone m26
+- All 5 tasks already had `design.md` files (created by a previous agent run)
+- All 5 tasks marked `hasDesign: true`
+
+**Summary of designs:**
+
+| Task | Design |
+|------|--------|
+| task-1775514586151 | Inline `gpu-detector.js` functions into `hardware.js`, delete the separate file |
+| task-1775514571886 | Add cpu-only fallback entry to `profiles/default.json` |
+| task-1775514647990 | Fix `llm.js` signature from `chat(message, options)` to `chat(messages, options)` (array) |
+| task-1775514589838 | Verify Admin UI `/admin` route, Docker build, `setup.sh` exit 0 |
+| task-1775514594768 | Append REST API docs section to `README.md` |
+[2026-04-06T22:35:14.597Z] tech_lead-2 agent completed
+[2026-04-06 22:35:14] [agent_complete] tech_lead-2 completed successfully
+[2026-04-06 22:35:14] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 22:35:14] [workflow] work_loop [EXEC] developer
+[2026-04-06 22:35:14] [agent_start] developer developer
+[2026-04-06T22:35:14.648Z] Running developer agent...
+[2026-04-06 22:35:45] [error] daemon Watchdog: busy for 410min, force reset
+[2026-04-06 22:35:45] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T22:35:45.315Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 410min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 22:35:47] [perf] daemon {"rss":"32MB","heapUsed":"10MB","heapTotal":"13MB","uptime":"24606s"}
+[2026-04-06 22:36:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:13, done:101)
+[2026-04-06 22:36:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:13, done:101)
+All three tasks are complete:
+
+- **task-1775514586151**: Merged `gpu-detector.js` into `hardware.js`, deleted the standalone file
+- **task-1775514571886**: Added cpu-only fallback profile (`gemma3:1b/q4`) to `profiles/default.json`
+- **task-1775514647990**: Fixed `chat()` signature to accept `messages` array directly
+
+No more `todo` tasks with `hasDesign=true` and no assignee remain.
+[2026-04-06T22:36:57.087Z] developer agent completed
+[2026-04-06 22:36:57] [agent_complete] developer completed successfully

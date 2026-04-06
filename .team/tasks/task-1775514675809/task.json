@@ -1,0 +1,13 @@
+{
+  "id": "task-1775514675809",
+  "title": "profiles/default.json内置硬件配置",
+  "description": "添加built-in default hardware profile，确保离线可用",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m27",
+  "hasDesign": false,
+  "created": "2026-04-06T22:31:15.809Z",
+  "updated": "2026-04-06T22:31:15.809Z"
+}

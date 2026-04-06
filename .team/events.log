@@ -5015,3 +5015,109 @@
 {"ts":"2026-04-06T22:29:04.975Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
 {"ts":"2026-04-06T22:29:04.976Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":15,"memoryTotalMB":19,"cpuUser":4.463551,"cpuSystem":8.400584}}}
 {"ts":"2026-04-06T22:29:17.607Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":11,"cpuUser":4.467472,"cpuSystem":8.40143}}}
+{"ts":"2026-04-06T22:29:17.704Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T22:29:17.704Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":4.471043,"cpuSystem":8.411039}}}
+{"ts":"2026-04-06T22:29:31.887Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514571886","title":"runtime/llm.js: chat(messages,options)→stream实现","priority":"P1","group":"m26"}}
+{"ts":"2026-04-06T22:29:41.357Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514581356","title":"profiles.js getProfile验证 + cpu-only profile补全","priority":"P1","group":"m26"}}
+{"ts":"2026-04-06T22:29:46.152Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514586151","title":"gpu-detector.js合并到hardware.js（架构规范对齐）","priority":"P1","group":"m26"}}
+{"ts":"2026-04-06T22:29:49.170Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514589169","title":"gpu-detector.js合并到hardware.js","priority":"P1","group":"m26"}}
+{"ts":"2026-04-06T22:29:49.201Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514589201","title":"Admin UI + Docker + setup.sh端到端验收","priority":"P1","group":"m26"}}
+{"ts":"2026-04-06T22:29:49.232Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514589231","title":"README.md补全","priority":"P1","group":"m26"}}
+{"ts":"2026-04-06T22:29:49.839Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514589838","title":"Admin UI + Docker + setup.sh端到端验收","priority":"P1","group":"m26"}}
+{"ts":"2026-04-06T22:29:54.769Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514594768","title":"README.md补全（npx/global/Docker安装 + API文档）","priority":"P1","group":"m26"}}
+{"ts":"2026-04-06T22:30:03.002Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":4.476437,"cpuSystem":8.419224}}}
+{"ts":"2026-04-06T22:30:03.033Z","type":"workflow","agent":"milestone_qg","data":{"details":"[BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop"}}
+{"ts":"2026-04-06T22:30:03.034Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度循环","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":4.484301,"cpuSystem":8.443037}}}
+{"ts":"2026-04-06T22:30:03.057Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-06T22:30:03.057Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T22:30:03.058Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":8,"memoryTotalMB":13,"cpuUser":4.490323,"cpuSystem":8.461156}}}
+{"ts":"2026-04-06T22:30:11.387Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":4.493527,"cpuSystem":8.466985}}}
+{"ts":"2026-04-06T22:30:11.410Z","type":"workflow","agent":"milestone_qg","data":{"details":"[BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop"}}
+{"ts":"2026-04-06T22:30:11.410Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度循环","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":4.499181,"cpuSystem":8.484589}}}
+{"ts":"2026-04-06T22:30:11.431Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-06T22:30:11.432Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T22:30:11.432Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":14,"cpuUser":4.504254,"cpuSystem":8.501311}}}
+{"ts":"2026-04-06T22:30:20.480Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":14,"cpuUser":4.504654,"cpuSystem":8.501999}}}
+{"ts":"2026-04-06T22:30:20.511Z","type":"workflow","agent":"milestone_qg","data":{"details":"[BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop"}}
+{"ts":"2026-04-06T22:30:20.512Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度循环","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":4.512108,"cpuSystem":8.526046}}}
+{"ts":"2026-04-06T22:30:20.535Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-06T22:30:20.535Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T22:30:20.535Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":4.517709,"cpuSystem":8.544316}}}
+{"ts":"2026-04-06T22:30:47.771Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"26MB\",\"heapUsed\":\"5MB\",\"heapTotal\":\"8MB\",\"uptime\":\"24306s\"}"}}
+{"ts":"2026-04-06T22:30:47.991Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514647990","title":"src/runtime/llm.js实现","priority":"P1","group":"m26"}}
+{"ts":"2026-04-06T22:30:50.013Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":4.524548,"cpuSystem":8.555503}}}
+{"ts":"2026-04-06T22:30:50.032Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] qa_lead"}}
+{"ts":"2026-04-06T22:30:50.032Z","type":"agent_start","agent":"qa_lead","data":{"details":"qa_lead","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":4.529067,"cpuSystem":8.570387}}}
+{"ts":"2026-04-06T22:31:01.663Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":4.529473,"cpuSystem":8.571116}}}
+{"ts":"2026-04-06T22:31:01.682Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] qa_lead"}}
+{"ts":"2026-04-06T22:31:01.683Z","type":"agent_start","agent":"qa_lead","data":{"details":"qa_lead","performance":{"memoryMB":10,"memoryTotalMB":14,"cpuUser":4.534228,"cpuSystem":8.586273}}}
+{"ts":"2026-04-06T22:31:15.716Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514675715","title":"src/runtime/stt+tts.js实现","priority":"P1","group":"m27"}}
+{"ts":"2026-04-06T22:31:15.749Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514675749","title":"src/runtime/sense+memory.js实现","priority":"P1","group":"m27"}}
+{"ts":"2026-04-06T22:31:15.780Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514675779","title":"src/server/hub+brain+api.js实现","priority":"P1","group":"m27"}}
+{"ts":"2026-04-06T22:31:15.810Z","type":"task_created","agent":null,"data":{"taskId":"task-1775514675809","title":"profiles/default.json内置硬件配置","priority":"P1","group":"m27"}}
+{"ts":"2026-04-06T22:31:45.619Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":4.550038,"cpuSystem":8.603948}}}
+{"ts":"2026-04-06T22:31:45.640Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] qa_lead"}}
+{"ts":"2026-04-06T22:31:45.640Z","type":"agent_start","agent":"qa_lead","data":{"details":"qa_lead","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":4.555145,"cpuSystem":8.619886}}}
+{"ts":"2026-04-06T22:31:57.876Z","type":"agent_complete","agent":"qa_lead","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":4.555567,"cpuSystem":8.620566}}}
+{"ts":"2026-04-06T22:31:57.895Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-06T22:31:57.895Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.559921,"cpuSystem":8.634818}}}
+{"ts":"2026-04-06T22:31:57.895Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":4.560088,"cpuSystem":8.635275}}}
+{"ts":"2026-04-06T22:31:57.896Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"tech_lead","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":4.560214,"cpuSystem":8.635619}}}
+{"ts":"2026-04-06T22:32:07.796Z","type":"agent_complete","agent":"qa_lead","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":4.563633,"cpuSystem":8.640574}}}
+{"ts":"2026-04-06T22:32:07.815Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-06T22:32:07.815Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.568195,"cpuSystem":8.655051}}}
+{"ts":"2026-04-06T22:32:07.816Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.568369,"cpuSystem":8.655479}}}
+{"ts":"2026-04-06T22:32:07.816Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"tech_lead","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.568494,"cpuSystem":8.655819}}}
+{"ts":"2026-04-06T22:32:23.480Z","type":"agent_complete","agent":"qa_lead","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.568769,"cpuSystem":8.65633}}}
+{"ts":"2026-04-06T22:32:23.502Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-06T22:32:23.502Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":4.572296,"cpuSystem":8.675004}}}
+{"ts":"2026-04-06T22:32:23.503Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.572484,"cpuSystem":8.675439}}}
+{"ts":"2026-04-06T22:32:23.503Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"tech_lead","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.572588,"cpuSystem":8.675787}}}
+{"ts":"2026-04-06T22:32:33.421Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:13, done:101)"}}
+{"ts":"2026-04-06T22:32:33.421Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:13, done:101)\"}"}}
+{"ts":"2026-04-06T22:32:38.274Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:13, done:101)"}}
+{"ts":"2026-04-06T22:32:38.274Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:13, done:101)\"}"}}
+{"ts":"2026-04-06T22:33:03.424Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:13, done:101)"}}
+{"ts":"2026-04-06T22:33:03.425Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:13, done:101)\"}"}}
+{"ts":"2026-04-06T22:33:08.274Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:13, done:101)"}}
+{"ts":"2026-04-06T22:33:08.275Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:13, done:101)\"}"}}
+{"ts":"2026-04-06T22:33:27.105Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"39MB\",\"heapUsed\":\"10MB\",\"heapTotal\":\"12MB\",\"uptime\":\"23701s\"}"}}
+{"ts":"2026-04-06T22:34:03.429Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:13, done:101)"}}
+{"ts":"2026-04-06T22:34:03.429Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:13, done:101)\"}"}}
+{"ts":"2026-04-06T22:34:08.284Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:13, done:101)"}}
+{"ts":"2026-04-06T22:34:08.285Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:13, done:101)\"}"}}
+{"ts":"2026-04-06T22:34:08.663Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":4.599101,"cpuSystem":8.716984}}}
+{"ts":"2026-04-06T22:34:09.457Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":4.599565,"cpuSystem":8.71753}}}
+{"ts":"2026-04-06T22:34:09.629Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":4.600012,"cpuSystem":8.71807}}}
+{"ts":"2026-04-06T22:34:12.536Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":4.600427,"cpuSystem":8.718506}}}
+{"ts":"2026-04-06T22:34:12.553Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T22:34:12.553Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T22:34:12.554Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":4.6047,"cpuSystem":8.73219}}}
+{"ts":"2026-04-06T22:34:12.554Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":4.604931,"cpuSystem":8.732667}}}
+{"ts":"2026-04-06T22:34:19.572Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":4.605267,"cpuSystem":8.733079}}}
+{"ts":"2026-04-06T22:34:21.102Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":4.605788,"cpuSystem":8.733672}}}
+{"ts":"2026-04-06T22:34:48.501Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":4.618245,"cpuSystem":8.743594}}}
+{"ts":"2026-04-06T22:34:48.518Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T22:34:48.519Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T22:34:48.519Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":4.622626,"cpuSystem":8.756867}}}
+{"ts":"2026-04-06T22:34:51.240Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775514571886","from":"todo","to":"inProgress","title":"profiles.js getProfile(hardware)实现验证 + cpu-only profile"}}
+{"ts":"2026-04-06T22:34:51.273Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775514586151","from":"todo","to":"inProgress","title":"gpu-detector.js合并到hardware.js（架构规范对齐）"}}
+{"ts":"2026-04-06T22:35:03.430Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:13, done:101)"}}
+{"ts":"2026-04-06T22:35:03.431Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:13, done:101)\"}"}}
+{"ts":"2026-04-06T22:35:08.287Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:13, done:101)"}}
+{"ts":"2026-04-06T22:35:08.288Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:13, done:101)\"}"}}
+{"ts":"2026-04-06T22:35:14.601Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.630162,"cpuSystem":8.767888}}}
+{"ts":"2026-04-06T22:35:14.620Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T22:35:14.620Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T22:35:14.621Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":4.634865,"cpuSystem":8.782569}}}
+{"ts":"2026-04-06T22:35:45.315Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 410min, force reset"}}
+{"ts":"2026-04-06T22:35:47.773Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"32MB\",\"heapUsed\":\"10MB\",\"heapTotal\":\"13MB\",\"uptime\":\"24606s\"}"}}
+{"ts":"2026-04-06T22:35:55.559Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775514571886","from":"inProgress","to":"review","title":"profiles.js getProfile(hardware)实现验证 + cpu-only profile"}}
+{"ts":"2026-04-06T22:35:55.599Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775514586151","from":"inProgress","to":"review","title":"gpu-detector.js合并到hardware.js（架构规范对齐）"}}
+{"ts":"2026-04-06T22:36:03.437Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:13, done:101)"}}
+{"ts":"2026-04-06T22:36:03.438Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:13, done:101)\"}"}}
+{"ts":"2026-04-06T22:36:08.288Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:13, done:101)"}}
+{"ts":"2026-04-06T22:36:08.289Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:13, done:101)\"}"}}
+{"ts":"2026-04-06T22:36:17.003Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775514647990","from":"todo","to":"inProgress","title":"src/runtime/llm.js实现"}}
+{"ts":"2026-04-06T22:36:45.655Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775514647990","from":"inProgress","to":"review","title":"src/runtime/llm.js实现"}}
+{"ts":"2026-04-06T22:36:57.091Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":4.654853,"cpuSystem":8.816267}}}

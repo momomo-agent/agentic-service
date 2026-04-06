@@ -1,5 +1,71 @@
 import os from 'node:os';
-import { detectGPU } from './gpu-detector.js';
+import { exec } from 'node:child_process';
+import { promisify } from 'node:util';
+import { access } from 'node:fs/promises';
+
+const execAsync = promisify(exec);
+
+async function detectGPU(platform) {
+  switch (platform) {
+    case 'darwin': return detectMacGPU();
+    case 'linux': return detectLinuxGPU();
+    case 'win32': return detectWindowsGPU();
+    default: return { type: 'none', vram: 0 };
+  }
+}
+
+async function detectMacGPU() {
+  try {
+    const { stdout } = await execAsync('system_profiler SPDisplaysDataType');
+    if (stdout.includes('Apple M') || stdout.includes('Apple Silicon')) {
+      const vramMatch = stdout.match(/VRAM.*?(\d+)\s*GB/i);
+      return { type: 'apple-silicon', vram: vramMatch ? parseInt(vramMatch[1]) : 0 };
+    }
+    if (stdout.includes('NVIDIA')) return { type: 'nvidia', vram: parseVRAM(stdout) };
+    if (stdout.includes('AMD')) return { type: 'amd', vram: parseVRAM(stdout) };
+    return { type: 'none', vram: 0 };
+  } catch { return { type: 'none', vram: 0 }; }
+}
+
+async function detectLinuxGPU() {
+  try {
+    const { stdout } = await execAsync('nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits');
+    return { type: 'nvidia', vram: Math.round(parseInt(stdout.trim()) / 1024) };
+  } catch {}
+  try {
+    const { stdout } = await execAsync('rocm-smi --showmeminfo vram');
+    const m = stdout.match(/(\d+)\s*MB/);
+    return { type: 'amd', vram: m ? Math.round(parseInt(m[1]) / 1024) : 0 };
+  } catch {}
+  try {
+    await access('/proc/driver/nvidia/version');
+    return { type: 'nvidia', vram: 0 };
+  } catch {}
+  return { type: 'none', vram: 0 };
+}
+
+async function detectWindowsGPU() {
+  try {
+    const { stdout } = await execAsync('wmic path win32_VideoController get Name,AdapterRAM');
+    if (stdout.includes('NVIDIA')) return { type: 'nvidia', vram: parseWindowsVRAM(stdout) };
+    if (stdout.includes('AMD') || stdout.includes('Radeon')) return { type: 'amd', vram: parseWindowsVRAM(stdout) };
+    return { type: 'none', vram: 0 };
+  } catch { return { type: 'none', vram: 0 }; }
+}
+
+function parseVRAM(output) {
+  const match = output.match(/VRAM.*?(\d+)\s*(?:GB|MB)/i);
+  if (match) {
+    const value = parseInt(match[1]);
+    return match[0].toUpperCase().includes('GB') ? value : Math.round(value / 1024);
+  }
+  return 0;
+}
+
+function parseWindowsVRAM(output) {
+  const match = output.match(/(\d+)/);
+  return match ? Math.round(parseInt(match[1]) / (1024 ** 3)) : 0;
+}
 
 /**
  * 检测硬件信息

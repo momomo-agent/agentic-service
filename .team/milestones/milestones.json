@@ -300,6 +300,31 @@
         "task-1775513784884"
       ],
       "created": "2026-04-06T22:16:11.000Z"
+    },
+    {
+      "id": "m26",
+      "name": "M26: Runtime层补全 (llm/stt/tts/sense/memory)",
+      "status": "ready-for-work",
+      "tasks": [
+        "task-1775514571886",
+        "task-1775514586151",
+        "task-1775514589838",
+        "task-1775514594768",
+        "task-1775514647990"
+      ],
+      "created": "2026-04-06T22:29:32.000Z"
+    },
+    {
+      "id": "m27",
+      "name": "M27: Runtime续 + Server层核心 (stt/tts/sense/memory/hub/brain/api)",
+      "status": "planned",
+      "tasks": [
+        "task-1775514675715",
+        "task-1775514675749",
+        "task-1775514675779",
+        "task-1775514675809"
+      ],
+      "created": "2026-04-06T22:31:33.000Z"
     }
   ]
 }
