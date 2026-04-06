@@ -1,0 +1,13 @@
+{
+  "id": "task-1775509421158",
+  "title": "hub.js广播wakeword事件",
+  "description": "hub.js收到wakeword消息时广播给所有连接设备，满足DBB要求",
+  "status": "review",
+  "priority": "P1",
+  "assignee": "developer",
+  "blockedBy": [],
+  "groupId": "m17",
+  "hasDesign": true,
+  "created": "2026-04-06T21:03:41.158Z",
+  "updated": "2026-04-06T21:09:14.614Z"
+}

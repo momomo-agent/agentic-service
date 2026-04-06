@@ -90,9 +90,9 @@ export function sendCommand(deviceId, command) {
   });
 }
 
-export function broadcastWakeword() {
+export function broadcastWakeword(deviceId) {
   for (const device of registry.values()) {
-    try { device.ws.send(JSON.stringify({ type: 'wakeword' })); } catch { /* ignore */ }
+    try { device.ws.send(JSON.stringify({ type: 'wakeword', deviceId })); } catch { /* ignore */ }
   }
 }
 
@@ -116,7 +116,7 @@ export function initWebSocket(httpServer) {
         const d = registry.get(deviceId);
         if (d) d.lastPong = Date.now();
       } else if (msg.type === 'wakeword') {
-        broadcastWakeword();
+        broadcastWakeword(deviceId);
       } else if (msg.type === 'join-session') {
         joinSession(msg.sessionId, deviceId);
         broadcastSession(msg.sessionId);

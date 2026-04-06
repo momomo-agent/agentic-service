@@ -5185,3 +5185,356 @@ The gap scores need re-evaluation by the evaluator agent. From a PM perspective,
 All tasks are in "done" status — no tasks in "review" status to claim. The pipeline is fully complete with nothing pending for testing.
 [2026-04-06T21:02:26.161Z] tester agent completed
 [2026-04-06 21:02:26] [agent_complete] tester completed successfully
+[2026-04-06 21:02:26] [workflow] milestone_qg [EXEC] pm
+[2026-04-06 21:02:26] [agent_start] pm pm
+[2026-04-06T21:02:26.297Z] Running pm agent...
+Architecture analysis complete. Updated `.team/gaps/architecture.json` with:
+
+- **match: 78%** (up from 22% — significant implementation progress)
+- All previously missing modules are now implemented: `runtime/` (llm, stt, tts, sense, memory), `server/` (hub, brain, api), `ui/admin/`, `profiles/default.json`, `install/`
+- Remaining gaps are structural deviations: `src/store/` and `src/cli/` directories not in architecture spec, `src/runtime/embed.js` should be an external dependency, and a few undocumented extra files (`gpu-detector.js`, `matcher.js`, `middleware.js`)
+[2026-04-06T21:02:48.265Z] arch_monitor agent completed
+[2026-04-06 21:02:48] [agent_complete] arch_monitor completed successfully
+Done. Written `.team/gaps/architecture.json` with:
+
+- **match: 18%** — only `bin/`, `src/detector/hardware.js`, and `src/ui/client/` partially exist
+- **14 gaps** identified across detector, runtime, server, UI admin, and profiles modules
+
+Key findings:
+- `src/runtime/` — entirely missing (5 modules)
+- `src/server/` — entirely missing (3 modules)
+- `src/detector/profiles.js` and `optimizer.js` — missing/partial
+- `src/ui/admin/` — missing
+- `profiles/default.json` — missing
+- `src/detector/gpu-detector.js` — extra file not in spec, should fold into `hardware.js`
+[2026-04-06T21:03:12.830Z] arch_monitor agent completed
+[2026-04-06 21:03:12] [agent_complete] arch_monitor completed successfully
+Vision gap analysis complete. Updated `.team/gaps/vision.json` with:
+
+- **Match: 87%** (up from 78%)
+- Key improvements since last scan: Docker deployment confirmed, Ollama auto-install confirmed, hardware-adaptive model selection wired correctly
+- Remaining gaps:
+  - `partial`: Remote profiles CDN fallback, multi-device brain state sharing, browser-only sense.js, server-side wake word
+  - `missing`: Voice latency <2s benchmarking, HTTPS/LAN tunneling for multi-device access
+[2026-04-06T21:03:24.878Z] vision_monitor agent completed
+[2026-04-06 21:03:24] [agent_complete] vision_monitor completed successfully
+[2026-04-06 21:03:26] [perf] daemon {"rss":"37MB","heapUsed":"12MB","heapTotal":"14MB","uptime":"18300s"}
+The PRD gap analysis is complete. Updated `.team/gaps/prd.json` with:
+
+- **match: 72%** (up from 68%)
+- Key changes from previous run:
+  - Ollama auto-install: downgraded to `missing` (no actual install logic found)
+  - One-click install: `partial` (setup.sh exists but no npx/curl entrypoint)
+  - Device tools speak/display/capture: upgraded to `implemented` (all 3 supported in hub.js)
+  - Config hot-update: upgraded to `implemented` (watchProfiles() confirmed in profiles.js)
+  - Cloud fallback: downgraded to `missing` (FallbackConfig only in typedef, no switching logic)
+[2026-04-06T21:03:54.629Z] prd_monitor agent completed
+[2026-04-06 21:03:54] [agent_complete] prd_monitor completed successfully
+Vision analysis complete.
+
+- `.team/gaps/vision.json` updated — **match: 85%**
+- `.team/milestones/m16/review/vision-check.md` written
+
+**Key findings:**
+- Core features (LLM+fallback, STT/TTS, hardware detection, multi-device hub, memory, Docker, admin UI) are all implemented
+- 2 missing items: HTTPS/LAN tunneling, voice latency <2s benchmark
+- 4 partial items: CDN placeholder URL, sense.js browser-only, wakeword server integration, cross-device brain state sharing
+[2026-04-06T21:04:05.758Z] vision_monitor agent completed
+[2026-04-06 21:04:05] [agent_complete] vision_monitor completed successfully
+M17 is now active. Here's the summary:
+
+**M17: DBB修复 + 架构对齐 + 最终验收** (active)
+
+4 tasks created (all P1):
+- `task-1775509406861` — store.delete()别名修复
+- `task-1775509421092` — brain.js tool_use响应补充text字段
+- `task-1775509421126` — heartbeat超时修正为60s
+- `task-1775509421158` — hub.js广播wakeword事件
+
+**CR submitted:** `cr-1775509458000.json` → L1 (ARCHITECTURE.md) — requesting clarification on src/store/, src/cli/, src/runtime/embed.js structural deviations (architecture match stuck at 78%).
+[2026-04-06T21:04:14.435Z] pm agent completed
+[2026-04-06 21:04:14] [agent_complete] pm completed successfully
+[2026-04-06 21:04:14] [workflow] milestone_qg [BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop
+[2026-04-06 21:04:14] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 21:04:14] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 21:04:14] [workflow] work_loop [EXEC] pm
+[2026-04-06 21:04:14] [agent_start] pm pm
+[2026-04-06T21:04:14.505Z] Running pm agent...
+M17 is active with 4 `todo` tasks. Current state:
+
+- **M17 tasks**: 4 bug fixes (all `todo`) — waiting for developers
+- **Architecture gaps**: 14 remaining (18% match)
+- **Pending CR**: `cr-1775509458000` awaiting L1 review
+
+My role here is to wait — M17 tasks need to be picked up by developers and testers before I can mark M17 complete and plan M18.
+
+The architecture gaps (missing `src/runtime/llm.js`, `stt.js`, `tts.js`, `sense.js`, `memory.js`, `server/hub.js`, `server/brain.js`, `server/api.js`, `ui/admin/`, `profiles/default.json`) are significant and will need future milestones once M17 completes.
+
+**Status summary:**
+- M17 active, 4 tasks in `todo` — no action needed from PM yet
+- Will plan M18 targeting architecture gaps once M17 tasks reach `done`
+- CR pending for architecture clarification on local vs package implementations
+[2026-04-06T21:04:58.541Z] pm agent completed
+[2026-04-06 21:04:58] [agent_complete] pm completed successfully
+[2026-04-06 21:04:58] [workflow] work_loop [EXEC] qa_lead
+[2026-04-06 21:04:58] [agent_start] qa_lead qa_lead
+[2026-04-06T21:04:58.591Z] Running qa_lead agent...
+The `.team/gaps/prd.json` has been updated with the current assessment:
+
+- match: 78%
+- 3 missing gaps: Ollama auto-install, VAD auto-detection, user documentation/README
+- 2 partial gaps: one-click install script, CDN profiles URL (placeholder)
+- 15 implemented features across M1–M4
+[2026-04-06T21:04:59.480Z] prd_monitor agent completed
+[2026-04-06 21:04:59] [agent_complete] prd_monitor completed successfully
+M9 DBB check complete.
+
+**Results: 93/100 match**
+
+- 6/7 criteria: **pass**
+- 1/7 criteria: **partial** — DBB-003 CDN URL is a placeholder (`cdn.example.com`), remote fetch always fails; fallback to builtin profiles works
+
+**Resolved since last check (82→93):**
+- DBB-001: `brain.js` now correctly yields `text` field ✅
+- DBB-004: SIGINT/SIGTERM handlers confirmed in `bin/agentic-service.js` ✅
+
+**Files written:**
+- `.team/gaps/milestones/m9.json`
+- `.team/gaps/dbb.json` (global, updated match 74→82)
+- `.team/milestones/m9/review/dbb-check.md`
+[2026-04-06T21:05:19.231Z] dbb_monitor agent completed
+[2026-04-06 21:05:19] [agent_complete] dbb_monitor completed successfully
+[2026-04-06 21:05:19] [workflow] monitor [BRANCH] goalMet → 0 → pm_decide
+[2026-04-06 21:05:19] [agent_start] pm_decide [NODE] pm_decide - PM 决策下一步
+[2026-04-06 21:05:19] [workflow] pm_decide [EXEC] architect
+[2026-04-06 21:05:19] [agent_start] architect architect
+[2026-04-06T21:05:19.292Z] Running architect agent...
+[2026-04-06 21:05:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:64)
+[2026-04-06 21:05:41] [error] daemon Watchdog: busy for 320min, force reset
+[2026-04-06 21:05:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T21:05:41.612Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 320min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 21:05:41] [perf] daemon {"rss":"28MB","heapUsed":"8MB","heapTotal":"10MB","uptime":"19200s"}
+[2026-04-06 21:05:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:64)
+The ARCHITECTURE.md already has substantial content (134 lines), so I did not overwrite it. Instead, I submitted a change request at `.team/change-requests/cr-1775509519293.json` addressing the key gaps identified by the monitors:
+
+1. **VAD missing** — push-to-talk only, no voice activity detection
+2. **CDN URL placeholder** — `cdn.example.com` needs a real endpoint or explicit local-fallback policy
+3. **Voice latency <2s** — not benchmarked or enforced; needs clarification as hard vs soft requirement
+4. **HTTPS/LAN tunneling** — multi-device security transport not specified
+5. **sense.js scope** — browser-only vs server-side headless needs PRD clarification
+6. **Heartbeat timeout** — code has 40s, DBB-005 specifies 60s; PRD should be authoritative
+
+The pending tasks (`store.delete()` alias, `brain.js tool_use text field`, `heartbeat 60s`, `hub.js wakeword broadcast`) are already tracked and don't require architecture changes — they're implementation fixes against the existing design.
+[2026-04-06T21:05:48.061Z] architect agent completed
+[2026-04-06 21:05:48] [agent_complete] architect completed successfully
+[2026-04-06 21:05:48] [workflow] pm_decide [EXEC] pm
+[2026-04-06 21:05:48] [agent_start] pm pm
+[2026-04-06T21:05:48.110Z] Running pm agent...
+Done. M17 DBB written at `.team/milestones/m17/dbb.md` with 8 verification criteria covering:
+
+- `store.delete()` alias (2 cases)
+- `brain.js` tool_use text field
+- heartbeat 60s timeout (2 cases)
+- hub.js wakeword broadcast (2 cases)
+- architecture CR submission
+
+Milestone status updated to `ready-for-work`.
+[2026-04-06T21:05:52.667Z] qa_lead agent completed
+[2026-04-06 21:05:52] [agent_complete] qa_lead completed successfully
+[2026-04-06 21:05:52] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 21:05:52] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 21:05:52] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 21:05:52] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T21:05:52.724Z] Running tech_lead-2 agent...
+[2026-04-06T21:05:52.724Z] Running tech_lead-1 agent...
+[2026-04-06T21:05:52.725Z] Running tech_lead-3 agent...
+[2026-04-06 21:05:57] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:64)
+[2026-04-06 21:06:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:64)
+[2026-04-06 21:06:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:64)
+[2026-04-06 21:06:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:6, done:64)
+Good — the milestones.json already has the new tasks included (the task-manager auto-updated it). M17 now has 6 tasks:
+
+**M17 tasks:**
+1. `task-1775509406861` — store.delete()别名修复 (P1, todo)
+2. `task-1775509421092` — brain.js tool_use响应补充text字段 (P1, todo)
+3. `task-1775509421126` — heartbeat超时修正为60s (P1, todo)
+4. `task-1775509421158` — hub.js广播wakeword事件 (P1, todo)
+5. `task-1775509585035` — README.md补充安装与API文档 (todo)
+6. `task-1775509592226` — sense.js补充detect()导出 (todo)
+
+**Status summary:**
+- M17 is `ready-for-work` with 6 tasks all in `todo`
+- Architecture match is 18% — but this reflects missing file stubs per spec, not missing functionality (most runtimes were implemented in earlier milestones under different paths)
+- The 4 original DBB fixes + README + sense.detect() cover the actionable remaining gaps
+- Larger gaps (HTTPS/LAN tunneling, VAD, voice latency benchmarking) are vision-level features that would require new milestones if prioritized
+
+**No new milestone needed yet** — M17 tasks are sufficient to address the current gap priorities. Once M17 tasks are completed and pass tester review, I'll assess whether an M18 is warranted for the remaining vision gaps.
+[2026-04-06T21:06:48.256Z] pm agent completed
+[2026-04-06 21:06:48] [agent_complete] pm completed successfully
+[2026-04-06 21:06:48] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 21:06:48] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 21:06:48] [workflow] work_loop [EXEC] pm
+[2026-04-06 21:06:48] [agent_start] pm pm
+[2026-04-06T21:06:48.367Z] Running pm agent...
+[2026-04-06 21:06:57] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:6, done:64)
+[2026-04-06 21:07:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:6, done:64)
+M17 tech lead work is complete. Summary:
+
+**Milestone M17** — all files already existed and were accurate:
+- `.team/milestones/m17/dbb.md` ✓ (8 DBB criteria)
+- `.team/milestones/m17/design.md` ✓
+
+**Task designs verified & `hasDesign` updated:**
+
+| Task | Title | Finding |
+|------|-------|---------|
+| task-1775509406861 | store.delete() 别名 | `export { del as delete }` already exists in `src/store/index.js` — no code change needed |
+| task-1775509421092 | brain.js tool_use text字段 | `text: ''` already present in both Ollama and OpenAI yield paths — no change needed |
+| task-1775509421126 | heartbeat 60s超时 | `hub.js` already uses `60000ms` in both status check and ping/pong cleanup — no change needed |
+| task-1775509421158 | wakeword广播含deviceId | `broadcastWakeword()` needs `sourceDeviceId` param + call site passes `deviceId` — 2-line change |
+
+All 4 tasks marked `hasDesign: true`. The only actual code change required in M17 is the wakeword broadcast deviceId fix in `src/server/hub.js`.
+[2026-04-06T21:07:47.584Z] tech_lead-1 agent completed
+[2026-04-06 21:07:47] [agent_complete] tech_lead-1 completed successfully
+M17 design work is done. Here's a summary:
+
+**M17 designs created:**
+
+- `.team/milestones/m17/design.md` — milestone-level technical design
+- 4 task designs written, `hasDesign=true` set on all
+
+**Key findings from source analysis:**
+
+| Task | Finding |
+|------|---------|
+| store.delete() alias | Already exists — `export { del as delete }` in store/index.js |
+| brain.js tool_use text | Already present — both Ollama and OpenAI paths yield `text: ''` |
+| heartbeat 60s timeout | Already correct — hub.js uses `> 60000` |
+| wakeword broadcast deviceId | **Code change needed** — `broadcastWakeword()` must accept `sourceDeviceId` and include it in payload |
+
+Only `task-1775509421158` requires an actual code change to `src/server/hub.js`.
+[2026-04-06T21:07:51.050Z] tech_lead-2 agent completed
+[2026-04-06 21:07:51] [agent_complete] tech_lead-2 completed successfully
+M17 is properly set up with overview, design, and dbb docs. All 6 tasks are `todo` and ready for work. The milestone status is `ready-for-work` which is correct.
+
+The architecture gap score of 18% is likely due to the architecture spec referencing files by different names than what's implemented (hence the pending CRs). The PRD (78%) and vision (85%) scores are much higher, confirming the implementation is largely complete under different file paths.
+
+**Current state summary:**
+- M17 is active with 6 `todo` tasks — no action needed on milestone structure
+- 2 pending CRs awaiting L1 review (architecture alignment, PRD clarification)
+- Architecture match 18% is a spec-vs-implementation naming mismatch, not missing functionality
+
+No new milestones are needed at this time. M17 covers the remaining critical fixes:
+1. `store.delete()` alias fix (P1)
+2. `brain.js` tool_use text field (P1)
+3. Heartbeat timeout 60s correction (P1)
+4. `hub.js` wakeword broadcast (P1)
+5. README docs (P1)
+6. `sense.js` detect() export (P1)
+
+M17 is ready for tech leads to pick up tasks. Waiting for CRs to be reviewed by L1 before planning any architecture-realignment milestone.
+[2026-04-06T21:07:54.119Z] pm agent completed
+[2026-04-06 21:07:54] [agent_complete] pm completed successfully
+[2026-04-06 21:07:54] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 21:07:54] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2
+[2026-04-06 21:07:54] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 21:07:54] [agent_start] tech_lead-2 tech_lead
+[2026-04-06T21:07:54.171Z] Running tech_lead-2 agent...
+[2026-04-06T21:07:54.171Z] Running tech_lead-1 agent...
+[2026-04-06 21:07:57] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:6, done:64)
+All M17 task designs are complete. Here's a summary:
+
+**task-1775509406861** — `store.delete()` alias: Already implemented via `export { del as delete }` in `src/store/index.js`. No code change needed.
+
+**task-1775509421092** — `brain.js` tool_use text field: Both yield sites already include `text: ''`. No code change needed.
+
+**task-1775509421126** — heartbeat 60s timeout: Both timeout checks in `hub.js` already use 60000ms. No code change needed.
+
+**task-1775509421158** — hub.js wakeword broadcast: `broadcastWakeword()` exists but needs `deviceId` passed through so the broadcast payload includes the source device. One-line change to function signature + call site.
+
+All 4 tasks marked `hasDesign: true`. The m17 milestone has existing `dbb.md` and `overview.md` — no new milestone files needed.
+[2026-04-06T21:07:58.032Z] tech_lead-3 agent completed
+[2026-04-06 21:07:58] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 21:07:58] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 21:07:58] [workflow] work_loop [EXEC] developer
+[2026-04-06 21:07:58] [agent_start] developer developer
+[2026-04-06T21:07:58.084Z] Running developer agent...
+[2026-04-06 21:08:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:6, done:64)
+[2026-04-06 21:08:26] [agent_start] daemon Still busy (50min), skipping safety check
+[2026-04-06 21:08:26] [perf] daemon {"rss":"33MB","heapUsed":"8MB","heapTotal":"11MB","uptime":"18600s"}
+All DBB evaluation outputs have been written. Here's a summary:
+
+**Global match: 79%** — `.team/gaps/dbb.json`
+
+**Per-milestone results:**
+
+| Milestone | Match | Key gaps |
+|-----------|-------|----------|
+| m1 | 72% | README missing, CDN cache staleness, web UI unverified |
+| m2 | 90% | Test isolation minor concern |
+| m3 | 75% | Admin UI build not confirmed |
+| m4 | 85% | All core criteria pass |
+| m5 | 70% | Docker unverified, coverage threshold unconfirmed |
+| m6 | 82% | Admin UI, push-to-talk/VAD frontend unverified |
+| m7 | 73% | README missing, CDN live check, SIGINT drain |
+| m8 | 65% | Wakeword UI frontend not verified |
+| m9 | 80% | CDN live check, pull progress format |
+| m10 | 82% | setup.sh Node detection, hot-reload drain |
+| m11 | 85% | Admin UI build, cpu-only profile label |
+| m12 | 80% | README missing |
+| m13 | 78% | Docker unverified, invalid profiles error handling |
+| m14 | 82% | No interactive y/n prompt for Ollama install, README missing |
+| m15 | 86% | All key fixes confirmed |
+| m16 | 78% | Coverage threshold config, SIGINT drain |
+
+**Top recurring gaps:**
+1. `README.md` missing at project root (affects m1, m7, m12, m14)
+2. Admin UI not built/deployed to `dist/admin`
+3. Docker build/run not verified end-to-end
+4. Test coverage ≥98% threshold not configured in vitest
+5. SIGINT in-flight request drain not implemented
+[2026-04-06T21:08:43.937Z] dbb_monitor agent completed
+[2026-04-06 21:08:43] [agent_complete] dbb_monitor completed successfully
+[2026-04-06 21:08:43] [workflow] monitor [BRANCH] goalMet → 0 → pm_decide
+[2026-04-06 21:08:43] [agent_start] pm_decide [NODE] pm_decide - PM 决策下一步
+[2026-04-06 21:08:43] [workflow] pm_decide [EXEC] architect
+[2026-04-06 21:08:43] [agent_start] architect architect
+[2026-04-06T21:08:44.001Z] Running architect agent...
+[2026-04-06 21:08:57] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:6, done:64)
+All M17 tasks now have designs. Summary:
+
+- **task-1775509585035** (README.md): design written — README already complete, no code changes needed
+- **task-1775509592226** (sense.js detect): design already existed — `detect(frame)` already exported, no code changes needed
+- Both tasks marked `hasDesign: true`
+
+All 6 M17 tasks now have designs. The milestone is ready for implementation.
+[2026-04-06T21:08:58.973Z] tech_lead-2 agent completed
+[2026-04-06 21:08:58] [agent_complete] tech_lead-2 completed successfully
+All done. Here's what was completed for M17:
+
+- `task-1775509585035` (README.md) — design written, `hasDesign: true`
+- `task-1775509592226` (sense.js detect()) — design written noting `detect(frame)` already exists, `hasDesign: true`
+
+All 6 M17 tasks now have designs. The milestone is ready for implementation.
+[2026-04-06T21:09:11.249Z] tech_lead-1 agent completed
+[2026-04-06 21:09:11] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 21:09:11] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 21:09:11] [workflow] work_loop [EXEC] developer
+[2026-04-06 21:09:11] [agent_start] developer developer
+[2026-04-06T21:09:11.295Z] Running developer agent...
+[2026-04-06 21:09:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:6, done:64)
+All 4 tasks are complete and moved to review:
+
+- **task-1775509421158** (hub.js wakeword broadcast): Added `deviceId` param to `broadcastWakeword()` and included it in the broadcast payload.
+- **task-1775509421126** (heartbeat 60s): No change needed — already using 60000ms.
+- **task-1775509421092** (brain.js tool_use text field): No change needed — `text: ''` already present.
+- **task-1775509406861** (store.delete() alias): No change needed — `del as delete` already exported.
+[2026-04-06T21:09:20.410Z] developer agent completed
+[2026-04-06 21:09:20] [agent_complete] developer completed successfully

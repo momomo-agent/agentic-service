@@ -1,19 +1,22 @@
 {
-  "match": 78,
-  "timestamp": "2026-04-06T18:27:23.110Z",
+  "match": 85,
+  "timestamp": "2026-04-06T21:03:41.409Z",
   "gaps": [
-    { "description": "Docker deployment missing: no Dockerfile, setup.sh, or docker-compose.yml in install/ directory", "status": "missing" },
-    { "description": "Remote profiles.json fetch — unclear if actual remote URL is configured vs always using local default.json", "status": "partial" },
-    { "description": "Hardware-adaptive model selection: optimizer.js exists but llm.js loadConfig() is hardcoded to gemma4:26b, not wired to optimizer output", "status": "partial" },
-    { "description": "Multi-device coordination: hub.js device registry exists but cross-device session sharing not verified", "status": "partial" },
-    { "description": "Ollama auto-download and model pull progress display during first-run setup not confirmed", "status": "partial" },
-    { "description": "sense.js uses requestAnimationFrame — browser-only, no server-side camera/perception path", "status": "partial" },
+    { "description": "Docker deployment (Dockerfile, docker-compose.yml, setup.sh) now present in install/", "status": "implemented" },
+    { "description": "Remote profiles.json fetch with local cache — CDN URL configured but fallback to default.json not fully verified", "status": "partial" },
+    { "description": "Hardware-adaptive model selection wired through optimizer.js into llm.js loadConfig()", "status": "implemented" },
+    { "description": "Multi-device session coordination (joinSession/broadcastSession) implemented; deep cross-device AI brain state sharing is minimal", "status": "partial" },
+    { "description": "Ollama auto-install and model pull with progress display implemented in cli/setup.js", "status": "implemented" },
+    { "description": "sense.js perception runtime is browser-only (videoElement); no server-side headless camera path", "status": "partial" },
+    { "description": "Wake word detection in UI composable (useWakeWord.js) but not integrated into server-side always-on pipeline", "status": "partial" },
+    { "description": "Voice latency <2s end-to-end (STT+LLM+TTS) not benchmarked or enforced in code", "status": "missing" },
+    { "description": "HTTPS / LAN tunneling for secure multi-device access not implemented", "status": "missing" },
     { "description": "LLM runtime with local Ollama + cloud fallback (OpenAI/Anthropic)", "status": "implemented" },
-    { "description": "STT/TTS runtime modules", "status": "implemented" },
-    { "description": "Memory module with vector search (embed + cosine similarity)", "status": "implemented" },
-    { "description": "REST API with all required endpoints", "status": "implemented" },
-    { "description": "Admin UI with hardware panel, device list, log viewer", "status": "implemented" },
-    { "description": "Client UI with wake word, VAD, push-to-talk voice interface", "status": "implemented" },
-    { "description": "Hardware detection (GPU, memory, arch)", "status": "implemented" }
+    { "description": "STT/TTS adaptive runtime with cloud fallback", "status": "implemented" },
+    { "description": "Memory module with vector embedding (agentic-store + agentic-embed)", "status": "implemented" },
+    { "description": "REST API with all required endpoints (/api/chat, /api/transcribe, /api/synthesize, /api/status, /api/config)", "status": "implemented" },
+    { "description": "Admin UI and client voice UI (Vue 3 + Vite)", "status": "implemented" },
+    { "description": "Hardware detection (GPU/memory/arch) for Apple Silicon / NVIDIA / CPU-only", "status": "implemented" },
+    { "description": "Hot-reload config via watchProfiles", "status": "implemented" }
   ]
 }

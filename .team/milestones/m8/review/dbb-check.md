@@ -1,15 +1,13 @@
 # M8 DBB Check
 
-**Match: 60%** | 2026-04-06T18:28:07.326Z
+**Match: 65%** | 2026-04-06T21:06:17Z
 
 ## Pass
-- stt.js: ADAPTERS map includes sensevoice — local-first when profile.stt.provider=sensevoice
-- stt.js: falls back to openai-whisper adapter when provider not in ADAPTERS or unavailable
-- tts.js: ADAPTERS map includes kokoro — local-first when profile.tts.provider=kokoro
-- tts.js: falls back to openai-tts adapter when local unavailable
+- sense.js emits face_detected, gesture_detected events via on()/emit()
+- hub.js broadcasts wakeword via broadcastWakeword()
+- stt.js: sensevoice local-first, falls back to openai-whisper
+- tts.js: kokoro local-first, falls back to openai-tts
 
 ## Partial
-- **Wake word trigger**: useWakeWord.js exists in client UI — server-side hub.js broadcast of wakeword events not implemented
-- **Wake word configurable**: PUT /api/config {wakeWord} persists to disk — but wakeword detection reload not wired
-- **Face detection broadcast**: sense.js emits face_detected events — hub.js does not forward these to WebSocket clients
-- **Gesture detection broadcast**: same gap as face detection — sense.js events not forwarded via hub.js
+- Wakeword UI activation: hub.js handles 'wakeword' WS message and broadcasts, but frontend wakeword detection UI not verified
+- Wakeword configurable via PUT /api/config: config stored but wakeword detection reload not confirmed

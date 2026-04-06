@@ -1,16 +1,18 @@
 # M4 DBB Check
 
-**Match: 85%** | 2026-04-06T18:28:07.326Z
+**Match: 85%** | 2026-04-06T21:06:17Z
 
 ## Pass
-- embed.js: returns [] for empty string, delegates to agentic-embed for non-empty
-- store/index.js: get/set/del via agentic-store SQLite — persistent across restarts
-- store.get on missing key returns null (JSON.parse of null → null)
-- store.del calls store.delete() on underlying store
-- hub.js: getDevices() returns registry values; GET /api/status includes devices field
-- brain.js: chatWithTools yields {type:'tool_use'} blocks when LLM returns tool calls
-- POST /api/chat without tools returns {type:'content'} text chunks
+- embed.js: empty string returns [], non-empty delegates to agentic-embed
+- store/index.js: get/set/del/delete all implemented via agentic-store SQLite
+- store.get nonexistent: returns null (val==null check)
+- store.delete: exported as alias for del
+- GET /api/status: includes devices: getDevices() — returns [] when empty, array when registered
+- hub.js registerDevice/getDevices implemented
+- brain.js: tool_use yielded with {type:'tool_use', id, name, input, text:''}
+- /api/chat without tools: yields {type:'content', text}
 
-## Partial
-- **store.delete() export**: store/index.js exports `del` not `delete` — M4 DBB-004 tests `store.delete('k')` which would fail if test imports named export `delete`
-- **embed returns float32**: depends on agentic-embed implementation — not directly verifiable
+## Evidence
+- src/store/index.js:29 exports `delete` alias
+- src/server/api.js:85 includes `devices: getDevices()`
+- src/server/brain.js:40 yields tool_use with text field

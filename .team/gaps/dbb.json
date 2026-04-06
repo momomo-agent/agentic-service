@@ -1,18 +1,24 @@
 {
-  "match": 74,
-  "timestamp": "2026-04-06T18:28:07.326Z",
+  "match": 79,
+  "timestamp": "2026-04-06T21:06:17.386Z",
   "gaps": [
-    { "description": "Docker/docker-compose files missing — Dockerfile and docker-compose.yml not found in project root or install/", "status": "missing" },
-    { "description": "README.md missing at project root — no install instructions or REST API documentation", "status": "missing" },
-    { "description": "CDN URL uses jsdelivr.net proxy, not the specified cdn.example.com — M1 DBB specifies exact URL", "status": "partial" },
-    { "description": "SIGINT graceful shutdown not fully verified — no explicit process.on('SIGINT') handler found in server or CLI entry", "status": "partial" },
-    { "description": "sense.js uses requestAnimationFrame (browser API) — not compatible with Node.js server-side execution", "status": "partial" },
-    { "description": "sense.detect() direct call not exported — only event-based API (on/start/stop), M4/M5 DBB expects detect(frame) export", "status": "partial" },
-    { "description": "store.js exports del() but not delete() — memory.js imports del correctly, but M4 DBB tests store.delete()", "status": "partial" },
-    { "description": "tool_use response format inconsistency — brain.js yields {type:'tool_use'} but M9 DBB expects text field in response", "status": "partial" },
-    { "description": "Admin panel (/admin) served as static dist — dist/admin directory may not exist if not built", "status": "partial" },
-    { "description": "Wake word detection (useWakeWord.js) exists in UI client but hub.js does not broadcast wakeword events", "status": "partial" },
-    { "description": "Test coverage >= 98% not verified — no coverage report found", "status": "partial" },
-    { "description": "heartbeat removes device after 40s (not 60s as specified in M7 DBB-005)", "status": "partial" }
+    { "description": "README.md missing at project root (npx/global/Docker install + API docs)", "status": "missing" },
+    { "description": "profiles/default.json missing cpu-only profile (only apple-silicon and nvidia present)", "status": "partial" },
+    { "description": "/admin UI panel not verified to load with device list, logs, hardware panels", "status": "partial" },
+    { "description": "Docker build and docker-compose not verified to work end-to-end", "status": "partial" },
+    { "description": "Test coverage >=98% not confirmed (threshold config not verified)", "status": "partial" },
+    { "description": "SIGINT during in-flight request: graceful drain not confirmed", "status": "partial" },
+    { "description": "CDN profiles.json cache staleness check (7-day refresh) not implemented", "status": "partial" },
+    { "description": "setup.sh Node.js detection and idempotency not fully verified", "status": "partial" },
+    { "description": "Wakeword UI activation (VAD/recording start) not implemented in frontend", "status": "missing" },
+    { "description": "push-to-talk and VAD auto-STT in web UI not verified", "status": "missing" },
+    { "criterion": "sense.js detect(null) edge case — pipeline null guard returns empty result", "status": "implemented" },
+    { "description": "store.del() alias confirmed present in store/index.js", "status": "implemented" },
+    { "description": "hub.js heartbeat timeout correctly set to 60000ms", "status": "implemented" },
+    { "description": "brain.js tool_use yields text field in response", "status": "implemented" },
+    { "description": "hub.js broadcastWakeword() implemented and triggered on wakeword message", "status": "implemented" },
+    { "description": "hub.js session management (joinSession, broadcastSession, getSessionData)", "status": "implemented" },
+    { "description": "llm.js uses optimizer/getProfile for hardware-adaptive model selection", "status": "implemented" },
+    { "description": "memory.js uses mutex lock for concurrent write safety", "status": "implemented" }
   ]
 }

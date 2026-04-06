@@ -1,19 +1,20 @@
 {
-  "match": 22,
-  "timestamp": "2026-04-06T18:27:02.325Z",
+  "match": 18,
+  "timestamp": "2026-04-06T21:02:56.816Z",
   "gaps": [
-    { "description": "src/detector/profiles.js missing — remote fetch + local cache not implemented; matcher.js only covers matching logic", "status": "partial" },
-    { "description": "src/detector/optimizer.js missing entirely", "status": "missing" },
+    { "description": "src/detector/profiles.js missing — getProfile(hardware) not implemented", "status": "missing" },
+    { "description": "src/detector/optimizer.js missing — replaced by matcher.js which may not cover full optimization logic", "status": "partial" },
     { "description": "src/runtime/llm.js missing — chat(messages, options) → stream not implemented", "status": "missing" },
     { "description": "src/runtime/stt.js missing — transcribe(audioBuffer) → text not implemented", "status": "missing" },
     { "description": "src/runtime/tts.js missing — synthesize(text) → audioBuffer not implemented", "status": "missing" },
-    { "description": "src/runtime/sense.js missing — MediaPipe sense wrapper not implemented", "status": "missing" },
-    { "description": "src/runtime/memory.js missing — KV store wrapper not implemented", "status": "missing" },
+    { "description": "src/runtime/sense.js missing — MediaPipe sense runtime not implemented", "status": "missing" },
+    { "description": "src/runtime/memory.js missing — memory runtime not implemented", "status": "missing" },
     { "description": "src/server/hub.js missing — device management not implemented", "status": "missing" },
-    { "description": "src/server/brain.js missing — LLM inference + tool call handler not implemented", "status": "missing" },
-    { "description": "src/server/api.js missing — all REST endpoints (POST /api/chat, /api/transcribe, /api/synthesize, GET /api/status, /api/config, PUT /api/config) not implemented", "status": "missing" },
+    { "description": "src/server/brain.js missing — LLM inference + tool calling not implemented", "status": "missing" },
+    { "description": "src/server/api.js missing — REST API endpoints not implemented", "status": "missing" },
     { "description": "src/ui/admin/ missing — admin panel not implemented", "status": "missing" },
-    { "description": "profiles/default.json missing — built-in default profile config absent", "status": "missing" },
-    { "description": "install/ directory missing — setup.sh, Dockerfile, docker-compose.yml all absent", "status": "missing" }
+    { "description": "profiles/default.json missing — built-in default hardware profile absent", "status": "missing" },
+    { "description": "src/detector/gpu-detector.js not in architecture spec — should be merged into hardware.js", "status": "partial" },
+    { "description": "src/ui/client/ partially started — chat UI present but admin route missing", "status": "partial" }
   ]
 }

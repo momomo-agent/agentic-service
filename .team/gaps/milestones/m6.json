@@ -1,18 +1,18 @@
 {
   "milestoneId": "m6",
-  "match": 80,
-  "timestamp": "2026-04-06T18:28:07.326Z",
+  "match": 82,
+  "timestamp": "2026-04-06T21:04:06.537Z",
   "criteria": [
-    { "criterion": "POST /api/chat returns SSE stream with text/event-stream header", "status": "pass" },
-    { "criterion": "POST /api/transcribe returns {text: string}", "status": "pass" },
-    { "criterion": "POST /api/synthesize returns audio/wav binary", "status": "pass" },
+    { "criterion": "POST /api/chat returns SSE stream with text/event-stream", "status": "pass" },
+    { "criterion": "POST /api/transcribe returns {text}", "status": "pass" },
+    { "criterion": "POST /api/synthesize returns audio binary", "status": "pass" },
     { "criterion": "GET /api/status returns {hardware, profile, devices}", "status": "pass" },
     { "criterion": "GET /api/config returns current config JSON", "status": "pass" },
-    { "criterion": "PUT /api/config persists config across restart", "status": "pass" },
+    { "criterion": "PUT /api/config persists config", "status": "pass" },
     { "criterion": "WebSocket device registration updates devices list", "status": "pass" },
-    { "criterion": "brain.js tool_use: tool result injected into conversation", "status": "pass" },
-    { "criterion": "/admin page loads with 200, shows devices/logs/hardware panels", "status": "partial" },
-    { "criterion": "Push-to-talk triggers STT and fills input box", "status": "partial" },
-    { "criterion": "VAD auto-detects speech end and triggers STT", "status": "partial" }
+    { "criterion": "brain.js tool_use executes tool and returns result", "status": "pass" },
+    { "criterion": "/admin page loads with HTTP 200", "status": "partial" },
+    { "criterion": "push-to-talk triggers STT and fills input", "status": "partial" },
+    { "criterion": "VAD auto-detects speech and triggers STT", "status": "partial" }
   ]
 }
