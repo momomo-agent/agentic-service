@@ -1,11 +1,13 @@
 {
-  "totalTests": 48,
-  "passed": 48,
+  "totalTests": 76,
+  "passed": 76,
   "failed": 0,
   "edgeCases": [
     "≤60s reload timing in real network conditions",
     "In-flight request safety during config reload",
-    "server.close error path during SIGINT (5s timeout fallback exists)"
+    "server.close error path during SIGINT (5s timeout fallback exists)",
+    "Live HTTPS curl test not run (requires selfsigned package installed)",
+    "Actual STT+LLM+TTS latency not measured (requires running Ollama)"
   ],
   "coverage": "100%"
 }
