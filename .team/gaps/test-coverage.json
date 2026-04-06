@@ -1,6 +1,6 @@
 {
-  "totalTests": 35,
-  "passed": 35,
+  "totalTests": 42,
+  "passed": 42,
   "failed": 0,
   "edgeCases": [
     "Node.js version < 18 rejection (requires mock node binary)",

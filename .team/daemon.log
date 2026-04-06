@@ -3943,3 +3943,16 @@ All 3 m12 tasks are now done:
 Total: 35 tests passing across the project, coverage updated to 95%.
 [2026-04-06T18:49:55.439Z] tester-1 agent completed
 [2026-04-06 18:49:55] [agent_complete] tester-1 completed successfully
+[2026-04-06 18:50:41] [perf] daemon {"rss":"37MB","heapUsed":"11MB","heapTotal":"13MB","uptime":"11100s"}
+[2026-04-06 18:53:26] [perf] daemon {"rss":"36MB","heapUsed":"7MB","heapTotal":"9MB","uptime":"10500s"}
+Task `task-1775500291531` (server/hub.js 设备管理) is now marked **done**.
+
+Summary:
+- 7 tests run, 7 passed
+- DBB-001 fully verified: `registerDevice`, `heartbeat`, `getDevices`, offline detection
+- Added `test/server/hub-m11-offline.test.js` with 2 additional edge case tests
+- Coverage updated: 35 → 42 total tests
+
+The review tasks (m12) cannot be claimed yet — they're likely locked pending other agents or a different tester assignment. No further claimable work available at this time.
+[2026-04-06T18:53:34.235Z] tester-2 agent completed
+[2026-04-06 18:53:34] [agent_complete] tester-2 completed successfully
