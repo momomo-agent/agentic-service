@@ -8301,3 +8301,98 @@ The existing `App.vue` already wired everything correctly — `onStart` → `sta
 [no content]
 [2026-04-06T22:46:24.160Z] developer agent completed
 [2026-04-06 22:46:24] [agent_complete] developer completed successfully
+[2026-04-06 22:46:24] [workflow] work_loop [LOOP] Iteration 3
+[2026-04-06 22:46:24] [workflow] work_loop [EXEC] pm
+[2026-04-06 22:46:24] [agent_start] pm pm
+[2026-04-06T22:46:24.295Z] Running pm agent...
+Good. Now I have the full picture. Let me summarize the current state and actions taken:
+
+**M26 (active) — status:**
+- `task-1775514571886` — unblocked → `todo` (profiles.js verification + cpu-only profile)
+- `task-1775514586151` — `done` (gpu-detector merge)
+- `task-1775514647990` — `done` (llm.js)
+- `task-1775514589838` — `todo` (Admin UI + Docker + setup.sh)
+- `task-1775514594768` — `todo` (README.md)
+
+M26 has 3 todo tasks remaining. These need to be picked up by developers/testers.
+
+**M27 (planned)** — 4 todo tasks for stt/tts/sense/memory/hub/brain/api — waiting for m26 to complete.
+
+**M28 (planned)** — 4 tasks in `review` — I must NOT touch these. Testers must approve.
+
+**Action taken:** Unblocked `task-1775514571886` (was incorrectly marked blocked with no actual blockers, and the file exists).
+
+**Current priorities for the team:**
+1. Developer should pick up m26 todo tasks (profiles.js verification, Admin UI/Docker, README)
+2. Testers should review m28 tasks (VAD, HTTPS, CDN cache, Docker)
+3. M27 remains planned until m26 completes
+
+No new milestones needed — m26 through m28 cover all remaining architecture gaps. The architecture match at 18% is the critical gap, but m26-m28 tasks directly address it (runtime layer, server layer, profiles, README).
+[2026-04-06T22:46:39.530Z] pm agent completed
+[2026-04-06 22:46:39] [agent_complete] pm completed successfully
+[2026-04-06 22:46:39] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 22:46:39] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 22:46:39] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 22:46:39] [agent_start] tester-1 tester
+[2026-04-06 22:46:39] [agent_start] tester-2 tester
+[2026-04-06T22:46:39.588Z] Running tester-2 agent...
+[2026-04-06T22:46:39.588Z] Running tester-1 agent...
+Here's the current PM status summary:
+
+**M26 (active) — 3 tasks remaining:**
+- `task-1775514571886` — profiles.js getProfile + cpu-only profile → P0, assigned developer
+- `task-1775514589838` — Admin UI + Docker + setup.sh → P1, assigned developer
+- `task-1775514594768` — README.md → P1, assigned developer
+
+**M27 (planned) — 4 tasks, all P0:**
+- stt+tts.js, sense+memory.js, hub+brain+api.js, profiles/default.json
+- All blocked until M26 completes
+
+**M28 (planned) — 4 tasks in `review`:**
+- VAD, HTTPS, CDN cache, Docker/setup.sh
+- Waiting on tester approval — I will NOT approve these
+
+**Architecture match is 18%** — the biggest gap. M26 and M27 directly target the missing runtime and server modules. No new milestones needed at this time; the pipeline through M28 covers all identified gaps.
+[2026-04-06T22:47:01.397Z] pm agent completed
+[2026-04-06 22:47:01] [agent_complete] pm completed successfully
+[2026-04-06 22:47:01] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 22:47:01] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 22:47:01] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 22:47:01] [agent_start] tester-1 tester
+[2026-04-06 22:47:01] [agent_start] tester-2 tester
+[2026-04-06T22:47:01.451Z] Running tester-1 agent...
+[2026-04-06T22:47:01.451Z] Running tester-2 agent...
+Status summary:
+
+**M26 (active)** — 3 todo tasks prioritized:
+- `task-1775514571886` → P0: `profiles.js getProfile(hardware)` (architecture gap: missing)
+- `task-1775514589838` → P1: `Admin UI + Docker + setup.sh`
+- `task-1775514594768` → P1: `README.md补全`
+
+**M27 (planned)** — 4 tasks all set to P0:
+- `stt+tts.js`, `sense+memory.js`, `hub+brain+api.js`, `profiles/default.json` — all architecture "missing" gaps
+
+**M28 (planned)** — 4 tasks in `review`, waiting for tester approval. No action taken per rules.
+
+No new milestones needed — m26/m27/m28 cover all remaining architecture gaps. Work can proceed once developers pick up the open todos.
+[2026-04-06T22:47:10.663Z] pm agent completed
+[2026-04-06 22:47:10] [agent_complete] pm completed successfully
+[2026-04-06 22:47:10] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 22:47:10] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 22:47:10] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 22:47:10] [agent_start] tester-1 tester
+[2026-04-06 22:47:10] [agent_start] tester-2 tester
+[2026-04-06T22:47:10.728Z] Running tester-2 agent...
+[2026-04-06T22:47:10.728Z] Running tester-1 agent...
+[2026-04-06 22:48:26] [agent_start] daemon Still busy (20min), skipping safety check
+[2026-04-06 22:48:27] [perf] daemon {"rss":"35MB","heapUsed":"6MB","heapTotal":"9MB","uptime":"24601s"}
+No more review tasks remain. All tasks have been processed. My work as tester-2 is complete for this session.
+
+**Summary:**
+- Claimed: task-1775515085107 (CDN profiles.json 7天缓存刷新)
+- Tests written: `test/m28-profiles-cache.test.js` (5 tests)
+- Result: 5/5 passed ✅
+- DBB covered: DBB-005, DBB-006
+- Task status: done
+[2026-04-06T22:49:07.927Z] tester-2 agent completed
+[2026-04-06 22:49:07] [agent_complete] tester-2 completed successfully
