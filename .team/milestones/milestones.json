@@ -51,7 +51,7 @@
     ,{
       "id": "m5",
       "name": "M5: 感知运行时 + 记忆模块 + Docker 打包",
-      "status": "ready-for-work",
+      "status": "active",
       "tasks": [
         "task-1775494462710",
         "task-1775494466328",
@@ -75,7 +75,7 @@
     {
       "id": "m7",
       "name": "M7: 云端回退 + 设备协调 + DBB修复 + 文档",
-      "status": "planned",
+      "status": "completed",
       "tasks": [
         "task-1775495670314",
         "task-1775495680384",
@@ -87,7 +87,7 @@
     {
       "id": "m8",
       "name": "M8: 唤醒词 + 视觉感知 + STT/TTS 自适应",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775498242331",
         "task-1775498246089",
