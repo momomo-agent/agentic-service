@@ -233,7 +233,7 @@
     {
       "id": "m20",
       "name": "M20: Server层实现 (hub/brain/api) + Admin UI + 默认Profile",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775510277966",
         "task-1775510284163",
