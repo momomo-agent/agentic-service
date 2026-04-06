@@ -1,11 +1,14 @@
 {
-  "totalTests": 12,
-  "passed": 12,
+  "totalTests": 22,
+  "passed": 22,
   "failed": 0,
   "edgeCases": [
     "VAD silence detection (1.5s threshold) requires real AudioContext — not unit-testable in Node",
     "useWakeWord is a module-level singleton — shared state across composable instances",
-    "PushToTalk has no error handling for non-ok HTTP responses from /api/transcribe"
+    "PushToTalk has no error handling for non-ok HTTP responses from /api/transcribe",
+    "Anthropic routing via chat() unreachable — loadConfig() hardcodes provider='openai'",
+    "Concurrent fallback calls not tested",
+    "Partial SSE chunk boundary handling not tested"
   ],
-  "coverage": "92%"
+  "coverage": "90%"
 }

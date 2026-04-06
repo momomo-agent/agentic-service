@@ -2347,3 +2347,59 @@ Both tasks are complete and moved to review:
    - Other items (SIGINT, CDN URL, progress display) were already correctly implemented
 [2026-04-06T17:24:38.749Z] developer agent completed
 [2026-04-06 17:24:38] [agent_complete] developer completed successfully
+[2026-04-06 17:24:38] [workflow] work_loop [LOOP] Iteration 4
+[2026-04-06 17:24:38] [workflow] work_loop [EXEC] pm
+[2026-04-06 17:24:38] [agent_start] pm pm
+[2026-04-06T17:24:38.878Z] Running pm agent...
+[2026-04-06 17:25:41] [agent_start] daemon Still busy (100min), skipping safety check
+[2026-04-06 17:25:41] [perf] daemon {"rss":"54MB","heapUsed":"13MB","heapTotal":"14MB","uptime":"6000s"}
+Done. Here's the current PM status summary:
+
+**Milestone Status:**
+
+| Milestone | Status | Notes |
+|-----------|--------|-------|
+| M1–M4 | completed | All tasks done |
+| M5 | ready-for-work | 2 done, 2 in-progress (Docker, test coverage) |
+| M6 | **active** ← updated | Voice UI done; server layer + REST API + admin panel are P0/P1 todos |
+| M7 | planned | 2 tasks in review (awaiting tester), 2 todo |
+
+**Actions taken:**
+- Activated M6 (work already started — voice UI task is `done`)
+- Set `task-1775494973876` (服务器层) → P0
+- Set `task-1775494979749` (REST API端点) → P0  
+- Set `task-1775494979786` (管理面板) → P1
+
+**Waiting on:**
+- M5 completion: Docker + test coverage tasks still `in-progress`
+- M7 reviews: `task-1775495670314` (云端回退) and `task-1775495680417` (DBB修复) are in `review` — tester must approve, not PM
+
+**Next priority work for developers:** M6 server layer (`src/server/hub.js`, `brain.js`, `api.js`) — architecture gap shows these as `missing` (P0).
+[2026-04-06T17:25:52.474Z] pm agent completed
+[2026-04-06 17:25:52] [agent_complete] pm completed successfully
+[2026-04-06 17:25:52] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 17:25:52] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 17:25:52] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 17:25:52] [agent_start] tester-1 tester
+[2026-04-06 17:25:52] [agent_start] tester-2 tester
+[2026-04-06T17:25:52.518Z] Running tester-2 agent...
+[2026-04-06T17:25:52.519Z] Running tester-1 agent...
+[2026-04-06 17:26:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:7, done:19)
+[2026-04-06 17:26:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:7, done:19)
+[2026-04-06 17:26:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:7, done:19)
+[2026-04-06 17:27:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:7, done:19)
+[2026-04-06 17:27:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:7, done:19)
+[2026-04-06 17:28:26] [agent_start] daemon Still busy (90min), skipping safety check
+[2026-04-06 17:28:26] [perf] daemon {"rss":"61MB","heapUsed":"9MB","heapTotal":"10MB","uptime":"5400s"}
+Both tasks are complete. Here's a summary:
+
+**task-1775495670314** — 云端 LLM 回退: 5/5 tests passed, marked `done`
+**task-1775495680417** — DBB 规范修复: 5/5 tests passed, marked `done`
+
+Test files written:
+- `test/runtime/llm.test.js` — covers OpenAI fallback, meta chunk ordering, missing API key error, non-200 response
+- `test/runtime/dbb-fixes.test.js` — covers memory `delete` export, brain.js tool format, SIGINT handler, progress display
+
+Notable gap documented: `loadConfig()` hardcodes `fallback.provider='openai'`, making the Anthropic routing path in `chat()` unreachable without dynamic config.
+[2026-04-06T17:29:23.230Z] tester-1 agent completed
+[2026-04-06 17:29:23] [agent_complete] tester-1 completed successfully

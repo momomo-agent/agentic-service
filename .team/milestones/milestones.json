@@ -63,7 +63,7 @@
     {
       "id": "m6",
       "name": "M6: 服务器层 + REST API + 管理面板 + 语音UI",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775494973876",
         "task-1775494979749",
