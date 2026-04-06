@@ -2678,3 +2678,20 @@ New test files written:
 - `test/server/ws-hub.test.js` — covers WebSocket registration, ping/pong, sendCommand speak/capture, disconnect (DBB-007)
 [2026-04-06T17:54:46.499Z] tester-1 agent completed
 [2026-04-06 17:54:46] [agent_complete] tester-1 completed successfully
+Both tasks are complete. Here's a summary of what was done:
+
+**task-1775494979749 — REST API 端点实现** → `done`
+- Wrote `test/server/api-m6.test.js` with 11 tests covering DBB-001 through DBB-006
+- Fixed mock path issue (existing tests mocked `llm.js` instead of `brain.js`)
+- All 11 tests pass
+
+**task-1775495680384 — WebSocket 设备协调** → `done`
+- Wrote `test/server/hub-ws.test.js` with 6 tests covering DBB-007 + sendCommand scenarios
+- Installed missing `ws` package
+- All 6 tests pass
+
+**test-coverage.json** updated: 44 total / 44 passed / 95% coverage
+
+Edge cases noted but not blocking: capture timeout testing requires fake timers, and there's a minor design deviation where `/api/transcribe` uses multipart upload instead of base64 JSON body.
+[2026-04-06T17:54:47.993Z] tester-2 agent completed
+[2026-04-06 17:54:48] [agent_complete] tester-2 completed successfully
