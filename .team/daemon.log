@@ -5760,3 +5760,79 @@ All tasks are complete. Here's a summary of what was done:
 - Updated `.team/gaps/test-coverage.json` to reflect 41 total tests, all passing.
 [2026-04-06T21:14:21.738Z] tester-1 agent completed
 [2026-04-06 21:14:21] [agent_complete] tester-1 completed successfully
+[2026-04-06 21:14:21] [workflow] work_loop [SKIP] implement: designedTasks > 0
+[2026-04-06 21:14:21] [workflow] work_loop [LOOP] Iteration 3
+[2026-04-06 21:14:21] [workflow] work_loop [EXEC] pm
+[2026-04-06 21:14:21] [agent_start] pm pm
+[2026-04-06T21:14:21.888Z] Running pm agent...
+[2026-04-06 21:15:41] [error] daemon Watchdog: busy for 330min, force reset
+[2026-04-06 21:15:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T21:15:41.619Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 330min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 21:15:41] [perf] daemon {"rss":"34MB","heapUsed":"10MB","heapTotal":"11MB","uptime":"19800s"}
+M18 milestone design work is complete. Here's a summary of what was done:
+
+**Created:**
+- `.team/milestones/m18/dbb.md` — 9 DBB criteria covering all 5 runtime modules
+- `.team/milestones/m18/design.md` — milestone-level technical overview
+- `.team/tasks/task-1775509987337/design.md` — llm.js design
+- `.team/tasks/task-1775509992341/design.md` — stt.js design
+- `.team/tasks/task-1775509992376/design.md` — tts.js design
+- `.team/tasks/task-1775509995439/design.md` — sense.js design
+- `.team/tasks/task-1775509998581/design.md` — memory.js design
+
+**Updated:** All 5 M18 tasks marked `hasDesign: true`
+
+**Key finding:** All 5 runtime files already exist with complete implementations matching ARCHITECTURE.md contracts. The tasks are verification/finalization work, not greenfield implementation.
+[2026-04-06T21:15:46.715Z] tech_lead-2 agent completed
+[2026-04-06 21:15:46] [agent_complete] tech_lead-2 completed successfully
+M18 milestone design work is complete:
+
+- `.team/milestones/m18/dbb.md` — 10 verification criteria covering all 5 runtime modules
+- `.team/milestones/m18/design.md` — technical overview of all modules
+- Task designs created for all 5 tasks:
+  - `task-1775509987337` — llm.js (chat, fallback logic)
+  - `task-1775509992341` — stt.js (transcribe, EMPTY_AUDIO guard)
+  - `task-1775509992376` — tts.js (synthesize, EMPTY_TEXT guard)
+  - `task-1775509995439` — sense.js (detect, init guard)
+  - `task-1775509998581` — memory.js (add/search/remove, cosine similarity)
+- All 5 tasks updated to `hasDesign: true`
+
+All runtime files already exist with implementations. The designs document the contracts and edge cases developers need to verify against the DBB criteria.
+[2026-04-06T21:15:52.808Z] tech_lead-1 agent completed
+[2026-04-06 21:15:52] [agent_complete] tech_lead-1 completed successfully
+Done. Here's a summary of what was completed:
+
+**M18 milestone files created:**
+- `.team/milestones/m18/dbb.md` — 9 verification criteria covering all 5 runtime modules
+- `.team/milestones/m18/design.md` — technical overview confirming all files exist and match ARCHITECTURE.md contracts
+
+**Task designs written + marked `hasDesign: true`:**
+- `task-1775509987337` — llm.js: chat() stream, Ollama→fallback logic
+- `task-1775509992341` — stt.js: transcribe(), adapter pattern, EMPTY_AUDIO guard
+- `task-1775509992376` — tts.js: synthesize(), adapter pattern, EMPTY_TEXT guard
+- `task-1775509995439` — sense.js: detect(), init/start/stop/on, safe no-pipeline fallback
+- `task-1775509998581` — memory.js: add/search/remove/delete, cosine similarity, lock chain
+
+All 5 M18 tasks are now ready for developer implementation. No CRs needed — existing implementations already align with ARCHITECTURE.md contracts.
+[2026-04-06T21:15:54.411Z] tech_lead-3 agent completed
+[2026-04-06 21:15:54] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 21:15:54] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 21:15:54] [workflow] work_loop [SKIP] implement: designedTasks > 0
+[2026-04-06 21:15:54] [workflow] work_loop [BRANCH] doneCount > 0 → true → milestone_qg
+[2026-04-06 21:15:54] [workflow] work_loop [EXIT] todoCount == 0 && designedTasks == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 && blockedCount == 0 → milestone_qg
+[2026-04-06 21:15:54] [agent_start] milestone_qg [NODE] milestone_qg - 里程碑 QG - 对照 DBB 验收
+[2026-04-06 21:15:54] [workflow] milestone_qg [EXEC] tester
+[2026-04-06 21:15:54] [agent_start] tester tester
+[2026-04-06T21:15:54.468Z] Running tester agent...
+No tasks are currently available to claim — all tasks are in "done" status and none are in "review" status. There's nothing for me to test right now.
+
+I'll wait for new tasks to enter "review" status before proceeding.
+[2026-04-06T21:16:18.714Z] tester agent completed
+[2026-04-06 21:16:18] [agent_complete] tester completed successfully

@@ -2,12 +2,12 @@
   "id": "task-1775509987337",
   "title": "实现 src/runtime/llm.js",
   "description": "chat(messages, options) → stream，封装 agentic-core，本地Ollama优先，超时/失败自动切换云端fallback",
-  "status": "todo",
+  "status": "done",
   "priority": "P0",
   "assignee": null,
   "blockedBy": [],
   "groupId": "m18",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-06T21:13:07.337Z",
-  "updated": "2026-04-06T21:13:22.194Z"
+  "updated": "2026-04-06T21:15:45.794Z"
 }

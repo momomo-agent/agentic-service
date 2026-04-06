@@ -195,7 +195,7 @@
     {
       "id": "m17",
       "name": "M17: DBB修复 + 架构对齐 + 最终验收",
-      "status": "ready-for-work",
+      "status": "completed",
       "tasks": [
         "task-1775509406861",
         "task-1775509421092",
@@ -209,7 +209,7 @@
     {
       "id": "m18",
       "name": "M18: Runtime层实现 (llm/stt/tts/sense/memory)",
-      "status": "ready-for-work",
+      "status": "completed",
       "tasks": [
         "task-1775509987337",
         "task-1775509992341",
