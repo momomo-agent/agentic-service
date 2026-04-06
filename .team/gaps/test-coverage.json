@@ -1,6 +1,6 @@
 {
-  "totalTests": 60,
-  "passed": 58,
+  "totalTests": 75,
+  "passed": 73,
   "failed": 2,
   "edgeCases": [
     "null gpu object (no gpu key at all)",

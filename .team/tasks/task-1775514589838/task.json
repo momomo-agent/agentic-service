@@ -2,13 +2,13 @@
   "id": "task-1775514589838",
   "title": "Admin UI + Docker + setup.sh端到端验收",
   "description": "验证Admin UI路由、Docker构建、setup.sh一键安装流程端到端可用",
-  "status": "testing",
+  "status": "done",
   "priority": "P1",
   "assignee": "tester-2",
   "blockedBy": [],
   "groupId": "m26",
   "hasDesign": true,
   "created": "2026-04-06T22:29:49.838Z",
-  "updated": "2026-04-06T22:56:37.035Z",
+  "updated": "2026-04-06T22:57:55.567Z",
   "milestoneId": "m26"
 }
