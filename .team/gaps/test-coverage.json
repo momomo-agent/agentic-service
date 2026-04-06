@@ -1,17 +1,10 @@
 {
-  "totalTests": 90,
-  "passed": 90,
+  "totalTests": 6,
+  "passed": 6,
   "failed": 0,
   "edgeCases": [
-    "No test for matchProfile() logic against this file",
-    "stop() called before start() — safe via optional chaining but not explicitly tested",
-    "rapid speech/silence oscillation within silenceMs window",
-    "vitest coverage thresholds set to 98% in package.json (no vitest.config.js)",
-    "real Ollama/STT/TTS service latency not tested (mocks only)",
-    "HTTPS port collision (port+443 already in use) not tested",
-    "Ollama install failure on unsupported platform not integration-tested",
-    "initHeadless with custom options subset not tested",
-    "detectFrame with non-Buffer input not tested"
+    "null gpu object (no gpu key at all)",
+    "memory exactly at minMemory boundary"
   ],
-  "coverage": "98%"
+  "coverage": "100%"
 }
