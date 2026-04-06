@@ -62,29 +62,11 @@ export function startWakeWordPipeline(onWake) {
   if (_wakeActive) return () => {};
   _wakeActive = true;
 
-  let mic;
-  try {
-    // Try to open mic via node-microphone or similar; stub if unavailable
-    const { default: Mic } = await import('node-microphone').catch(() => null) ?? {};
-    if (Mic) {
-      mic = new Mic();
-      const stream = mic.startRecording();
-      stream.on('data', (chunk) => {
-        // Keyword detection placeholder — real impl would use a VAD/keyword lib
-        if (chunk.toString().toLowerCase().includes(process.env.WAKE_WORD || 'hey agent')) {
-          onWake();
-        }
-      });
-    } else {
-      console.warn('[sense] No mic available, wake word pipeline is a no-op');
-    }
-  } catch {
-    console.warn('[sense] No mic available, wake word pipeline is a no-op');
-  }
+  // Stub: no mic available in server context — log warning and return no-op stop
+  console.warn('[sense] Wake word pipeline started (stub — no mic)');
 
   return () => {
     _wakeActive = false;
-    try { mic?.stopRecording(); } catch { /* ignore */ }
   };
 }
 

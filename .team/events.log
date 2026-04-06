@@ -5484,3 +5484,16 @@
 {"ts":"2026-04-06T23:09:52.250Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775516748265","from":"todo","to":"inProgress","title":"语音延迟<2s端到端基准"}}
 {"ts":"2026-04-06T23:09:52.291Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775516748300","from":"todo","to":"inProgress","title":"README用户文档补全"}}
 {"ts":"2026-04-06T23:09:59.864Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":5.427037,"cpuSystem":10.429552}}}
+{"ts":"2026-04-06T23:10:00.032Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775516748230: inProgress → review"}}
+{"ts":"2026-04-06T23:10:00.033Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775516748265: inProgress → review"}}
+{"ts":"2026-04-06T23:10:00.033Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775516748300: inProgress → review"}}
+{"ts":"2026-04-06T23:10:00.060Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 7"}}
+{"ts":"2026-04-06T23:10:00.060Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:10:00.060Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":5.434578,"cpuSystem":10.453156}}}
+{"ts":"2026-04-06T23:10:32.199Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":5.449658,"cpuSystem":10.469627}}}
+{"ts":"2026-04-06T23:10:32.224Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:10:32.224Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T23:10:32.224Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-06T23:10:32.224Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":5.454935,"cpuSystem":10.486098}}}
+{"ts":"2026-04-06T23:10:32.225Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":5.455108,"cpuSystem":10.48654}}}
+{"ts":"2026-04-06T23:10:52.614Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":5.463024,"cpuSystem":10.498288}}}

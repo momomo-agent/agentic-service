@@ -9,7 +9,8 @@ import { chat } from './brain.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
 import { errorHandler } from './middleware.js';
-import { getDevices, initWebSocket, startWakeWordDetection } from './hub.js';
+import { getDevices, initWebSocket, startWakeWordDetection, broadcastWakeword } from './hub.js';
+import { startWakeWordPipeline } from '../runtime/sense.js';
 
 function getLanIp() {
   for (const ifaces of Object.values(os.networkInterfaces())) {
@@ -198,6 +199,8 @@ export async function startServer(port = 3000, { https: useHttps = false } = {})
   await listenAsync(httpServer, port);
   initWebSocket(httpServer);
   startWakeWordDetection();
+  const stopWake = startWakeWordPipeline(() => broadcastWakeword('server'));
+  process.once('SIGINT', () => { stopWake(); httpServer.close(); });
   await Promise.all([stt.init(), tts.init()]).catch(err =>
     console.warn('Runtime init warning:', err.message)
   );

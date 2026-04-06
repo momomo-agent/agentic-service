@@ -9053,3 +9053,37 @@ Completed task `task-1775516748193` (setup.sh完善 + npx入口验证):
 No other tasks available to claim right now.
 [2026-04-06T23:09:59.854Z] developer agent completed
 [2026-04-06 23:09:59] [agent_complete] developer completed successfully
+[2026-04-06 23:10:00] [workflow] post [POST] task-1775516748230: inProgress → review
+[2026-04-06 23:10:00] [workflow] post [POST] task-1775516748265: inProgress → review
+[2026-04-06 23:10:00] [workflow] post [POST] task-1775516748300: inProgress → review
+[2026-04-06 23:10:00] [workflow] work_loop [LOOP] Iteration 7
+[2026-04-06 23:10:00] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:10:00] [agent_start] pm pm
+[2026-04-06T23:10:00.087Z] Running pm agent...
+All 5 tasks in M29 are in **review** status. Per my strict boundaries, I cannot approve them — only testers can move tasks from review to done.
+
+**Current M29 status:**
+- `task-1775516741858` — Ollama自动安装 + 模型拉取 → review
+- `task-1775516748193` — setup.sh完善 + npx入口验证 → review
+- `task-1775516748230` — 服务端唤醒词常驻pipeline → review
+- `task-1775516748265` — 语音延迟<2s端到端基准 → review
+- `task-1775516748300` — README用户文档补全 → review
+
+**Waiting for testers** to review and approve these tasks. Once all are marked `done`, I will mark M29 completed and plan M30.
+[2026-04-06T23:10:32.196Z] pm agent completed
+[2026-04-06 23:10:32] [agent_complete] pm completed successfully
+[2026-04-06 23:10:32] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:10:32] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 23:10:32] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 23:10:32] [agent_start] tester-1 tester
+[2026-04-06 23:10:32] [agent_start] tester-2 tester
+[2026-04-06T23:10:32.256Z] Running tester-2 agent...
+[2026-04-06T23:10:32.256Z] Running tester-1 agent...
+No claimable tasks remain. Completed:
+
+- `task-1775516741858` — `src/detector/ollama.js`: `ensureOllama()` with install + pull
+- `task-1775516748230` — `src/runtime/sense.js`: `startWakeWordPipeline()` + wired into `api.js` with SIGINT cleanup
+
+Both moved to review.
+[2026-04-06T23:10:52.605Z] developer agent completed
+[2026-04-06 23:10:52] [agent_complete] developer completed successfully

@@ -195,3 +195,11 @@ Config file: `~/.agentic-service/config.json`
 | `cloudFallback.timeoutMs` | `5000` | Local timeout before fallback triggers |
 | `wakeWord` | `null` | Wake word for voice activation (e.g. `"hey momo"`) |
 | `vad` | `false` | Enable voice activity detection |
+
+## Troubleshooting
+
+| Problem | Solution |
+|---|---|
+| Ollama not found | Install from https://ollama.ai or run `brew install ollama` |
+| Port in use | Set `PORT=3001` env var or update `~/.agentic-service/config.json` |
+| No microphone | Check browser permissions or use text-only mode via `/api/chat` |
