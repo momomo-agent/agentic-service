@@ -1229,3 +1229,66 @@ Task `task-1775446002754` (基础 HTTP 服务) is complete.
 The task can't be claimed. All tasks are either done or blocked. No work available right now.
 [2026-04-06T16:02:19.249Z] developer agent completed
 [2026-04-06 16:02:19] [agent_complete] developer completed successfully
+[2026-04-06 16:02:19] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-06 16:02:19] [workflow] work_loop [EXEC] pm
+[2026-04-06 16:02:19] [agent_start] pm pm
+[2026-04-06T16:02:19.345Z] Running pm agent...
+[2026-04-06 16:03:26] [perf] daemon {"rss":"55MB","heapUsed":"7MB","heapTotal":"8MB","uptime":"300s"}
+Done. Here's the current state:
+
+**M1: 硬件检测 + 一键启动** (active)
+- 5/6 tasks `done`
+- `task-1775446002815` (CLI 入口 + 一键安装) → assigned to `developer`, P1
+
+**M2: API 稳定性 + 配置持久化** (planned)
+- `task-1775491387415` — 修复 /api/status Ollama 真实检测 (P0)
+- `task-1775491392036` — 实现 /api/config 持久化 (P0)
+- `task-1775491396691` — 修复 EADDRINUSE 检测 (P1)
+
+M2 will activate once M1's CLI task is complete and tested.
+[2026-04-06T16:03:42.046Z] pm agent completed
+[2026-04-06 16:03:42] [agent_complete] pm completed successfully
+[2026-04-06 16:03:42] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 16:03:42] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 16:03:42] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 16:03:42] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 16:03:42] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T16:03:42.085Z] Running tech_lead-1 agent...
+[2026-04-06T16:03:42.085Z] Running tech_lead-3 agent...
+[2026-04-06T16:03:42.088Z] Running tech_lead-2 agent...
+[no content]
+[2026-04-06T16:04:46.323Z] tech_lead-3 agent completed
+[2026-04-06 16:04:46] [agent_complete] tech_lead-3 completed successfully
+All M2 work is done:
+
+- `.team/milestones/m2/dbb.md` — verification criteria for all 3 tasks
+- `.team/milestones/m2/design.md` — milestone-level technical approach
+- `.team/tasks/task-1775491387415/design.md` — Ollama real detection via `/api/tags` fetch with 2s timeout
+- `.team/tasks/task-1775491392036/design.md` — config persistence to `~/.agentic-service/config.json` with atomic write
+- `.team/tasks/task-1775491396691/design.md` — EADDRINUSE fix via `createApp()` factory + `startServer()` promise
+- All 3 tasks updated to `hasDesign: true`
+[2026-04-06T16:05:15.673Z] tech_lead-2 agent completed
+[2026-04-06 16:05:15] [agent_complete] tech_lead-2 completed successfully
+All done. Here's a summary of what was completed:
+
+**M2 milestone** — both `dbb.md` and `design.md` already existed and were complete.
+
+**3 task designs** — all existed with full detail:
+- `task-1775491387415`: `getOllamaStatus()` via `fetch` to `/api/tags` with 2s timeout
+- `task-1775491392036`: `readConfig`/`writeConfig` to `~/.agentic-service/config.json` with atomic tmp+rename
+- `task-1775491396691`: `createApp()` factory to eliminate Express singleton, `stopServer()` for test cleanup
+
+**`hasDesign: true`** set on all 3 tasks. They're ready for developer assignment.
+[2026-04-06T16:05:28.894Z] tech_lead-1 agent completed
+[2026-04-06 16:05:28] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 16:05:28] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 16:05:28] [workflow] work_loop [EXEC] developer
+[2026-04-06 16:05:28] [agent_start] developer developer
+[2026-04-06T16:05:28.933Z] Running developer agent...
+[2026-04-06 16:05:41] [perf] daemon {"rss":"53MB","heapUsed":"8MB","heapTotal":"9MB","uptime":"1200s"}
+[2026-04-06 16:05:41] [agent_start] daemon Still busy (20min), skipping safety check
+[2026-04-06 16:06:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:5)
+[2026-04-06 16:07:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:5)
+[no content]
+[2026-04-06T16:07:12.536Z] developer agent completed
+[2026-04-06 16:07:12] [agent_complete] developer completed successfully

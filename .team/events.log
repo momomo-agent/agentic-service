@@ -2350,3 +2350,37 @@
 {"ts":"2026-04-06T16:02:00.132Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
 {"ts":"2026-04-06T16:02:00.132Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.038789,"cpuSystem":0.018094}}}
 {"ts":"2026-04-06T16:02:19.251Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":7,"cpuUser":0.03922,"cpuSystem":0.018614}}}
+{"ts":"2026-04-06T16:02:19.318Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 2"}}
+{"ts":"2026-04-06T16:02:19.318Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T16:02:19.318Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.041013,"cpuSystem":0.020766}}}
+{"ts":"2026-04-06T16:03:07.416Z","type":"task_created","agent":null,"data":{"taskId":"task-1775491387415","title":"修复 /api/status Ollama 真实检测","priority":"P1","group":"m2"}}
+{"ts":"2026-04-06T16:03:12.037Z","type":"task_created","agent":null,"data":{"taskId":"task-1775491392036","title":"实现 /api/config 持久化","priority":"P1","group":"m2"}}
+{"ts":"2026-04-06T16:03:16.692Z","type":"task_created","agent":null,"data":{"taskId":"task-1775491396691","title":"修复 EADDRINUSE 检测","priority":"P1","group":"m2"}}
+{"ts":"2026-04-06T16:03:20.714Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy, skipping safety check","performance":{"memoryMB":8,"memoryTotalMB":9,"cpuUser":0.278795,"cpuSystem":0.228255}}}
+{"ts":"2026-04-06T16:03:20.721Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"52MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"9MB\",\"uptime\":\"8400s\"}"}}
+{"ts":"2026-04-06T16:03:26.013Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"55MB\",\"heapUsed\":\"7MB\",\"heapTotal\":\"8MB\",\"uptime\":\"300s\"}"}}
+{"ts":"2026-04-06T16:03:42.048Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.044425,"cpuSystem":0.023093}}}
+{"ts":"2026-04-06T16:03:42.051Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T16:03:42.051Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-06T16:03:42.051Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":0.045225,"cpuSystem":0.024648}}}
+{"ts":"2026-04-06T16:03:42.052Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":0.045446,"cpuSystem":0.025039}}}
+{"ts":"2026-04-06T16:03:42.052Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"tech_lead","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":0.045652,"cpuSystem":0.025357}}}
+{"ts":"2026-04-06T16:04:09.412Z","type":"agent_complete","agent":"daemon","data":{"details":"DevTeam daemon stopped","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":0.283093,"cpuSystem":0.230476}}}
+{"ts":"2026-04-06T16:04:10.848Z","type":"agent_complete","agent":"daemon","data":{"details":"DevTeam daemon stopped","performance":{"memoryMB":54,"memoryTotalMB":159,"cpuUser":7986.143037,"cpuSystem":110.25142}}}
+{"ts":"2026-04-06T16:04:46.327Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":0.04913,"cpuSystem":0.028437}}}
+{"ts":"2026-04-06T16:05:15.678Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.051694,"cpuSystem":0.030946}}}
+{"ts":"2026-04-06T16:05:28.899Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":0.054122,"cpuSystem":0.033136}}}
+{"ts":"2026-04-06T16:05:28.902Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T16:05:28.903Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T16:05:28.903Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":8,"memoryTotalMB":9,"cpuUser":0.055793,"cpuSystem":0.03544}}}
+{"ts":"2026-04-06T16:05:41.464Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"53MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"9MB\",\"uptime\":\"1200s\"}"}}
+{"ts":"2026-04-06T16:05:41.469Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (20min), skipping safety check","performance":{"memoryMB":9,"memoryTotalMB":9,"cpuUser":0.072431,"cpuSystem":0.043696}}}
+{"ts":"2026-04-06T16:05:47.020Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775491387415","from":"todo","to":"inProgress","title":"修复 /api/status Ollama 真实检测"}}
+{"ts":"2026-04-06T16:06:24.979Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775491387415","from":"inProgress","to":"review","title":"修复 /api/status Ollama 真实检测"}}
+{"ts":"2026-04-06T16:06:30.276Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775491392036","from":"todo","to":"inProgress","title":"实现 /api/config 持久化"}}
+{"ts":"2026-04-06T16:06:56.044Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:5)"}}
+{"ts":"2026-04-06T16:06:56.045Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:5)\"}"}}
+{"ts":"2026-04-06T16:07:05.775Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775491392036","from":"inProgress","to":"review","title":"实现 /api/config 持久化"}}
+{"ts":"2026-04-06T16:07:11.541Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:5)"}}
+{"ts":"2026-04-06T16:07:11.542Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:5)\"}"}}
+{"ts":"2026-04-06T16:07:12.540Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.063571,"cpuSystem":0.043114}}}

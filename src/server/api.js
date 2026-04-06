@@ -1,7 +1,27 @@
 import express from 'express';
 import cors from 'cors';
+import { promises as fs } from 'fs';
+import path from 'path';
+import os from 'os';
 import { chat } from '../runtime/llm.js';
 import { errorHandler } from './middleware.js';
+
+const CONFIG_PATH = path.join(os.homedir(), '.agentic-service', 'config.json');
+
+async function readConfig() {
+  try {
+    return JSON.parse(await fs.readFile(CONFIG_PATH, 'utf8'));
+  } catch {
+    return {};
+  }
+}
+
+async function writeConfig(data) {
+  const tmp = CONFIG_PATH + '.tmp';
+  await fs.mkdir(path.dirname(CONFIG_PATH), { recursive: true });
+  await fs.writeFile(tmp, JSON.stringify(data, null, 2));
+  await fs.rename(tmp, CONFIG_PATH);
+}
 
 const app = express();
 app.use(cors());
@@ -29,15 +49,38 @@ app.post('/api/chat', async (req, res) => {
   res.end();
 });
 
+async function getOllamaStatus() {
+  try {
+    const res = await fetch('http://localhost:11434/api/tags', {
+      signal: AbortSignal.timeout(2000)
+    });
+    if (!res.ok) return { running: false, models: [] };
+    const { models } = await res.json();
+    return { running: true, models: models.map(m => m.name) };
+  } catch {
+    return { running: false, models: [] };
+  }
+}
+
 app.get('/api/status', async (req, res) => {
   const { detect } = await import('../detector/hardware.js');
   const hardware = await detect();
-  res.json({ hardware, profile: {}, ollama: { installed: true, models: [] } });
+  const ollama = await getOllamaStatus();
+  res.json({ hardware, profile: {}, ollama });
 });
 
-app.get('/api/config', (req, res) => res.json({}));
+app.get('/api/config', async (req, res) => {
+  res.json(await readConfig());
+});
 
-app.put('/api/config', (req, res) => res.json(req.body));
+app.put('/api/config', async (req, res) => {
+  try {
+    await writeConfig(req.body);
+    res.json({ ok: true });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
 
 app.use(errorHandler);
 
