@@ -170,7 +170,7 @@
     {
       "id": "m15",
       "name": "M15: DBB修复 + sense.js兼容 + 唤醒词广播",
-      "status": "ready-for-work",
+      "status": "completed",
       "tasks": [
         "task-1775507803330",
         "task-1775507813507",
@@ -179,6 +179,18 @@
         "task-1775507818526"
       ],
       "created": "2026-04-06T20:37:00.000Z"
+    },
+    {
+      "id": "m16",
+      "name": "M16: 测试覆盖率 + SIGINT + CDN + 多设备会话",
+      "status": "ready-for-work",
+      "tasks": [
+        "task-1775508540565",
+        "task-1775508549624",
+        "task-1775508549660",
+        "task-1775508549694"
+      ],
+      "created": "2026-04-06T20:49:14.956Z"
     }
   ]
 }

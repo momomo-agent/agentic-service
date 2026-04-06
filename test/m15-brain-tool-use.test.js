@@ -1,11 +1,13 @@
-// DBB-007: brain.js tool_use response includes text field
+// DBB-007: brain.js tool_use response includes text field (static analysis)
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 
-const src = readFileSync(new URL('../src/server/brain.js', import.meta.url), 'utf8');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const src = readFileSync(join(__dirname, '../src/server/brain.js'), 'utf8');
 
-// All tool_use yields must include text field
-const toolUseYields = [...src.matchAll(/yield\s*\{[^}]*type:\s*['"]tool_use['"][^}]*\}/gs)];
+const toolUseYields = [...src.matchAll(/yield\s*\{[^\n]*type:\s*['"]tool_use['"][^\n]*/g)];
 assert.ok(toolUseYields.length >= 1, 'Expected at least one tool_use yield');
 
 for (const match of toolUseYields) {
