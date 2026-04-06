@@ -4,7 +4,7 @@ import multer from 'multer';
 import { promises as fs } from 'fs';
 import path from 'path';
 import os from 'os';
-import { chat } from '../runtime/llm.js';
+import { chat } from './brain.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
 import { errorHandler } from './middleware.js';
@@ -56,7 +56,7 @@ export function createApp() {
   app.use(express.json());
 
   app.post('/api/chat', async (req, res) => {
-    const { message, history = [] } = req.body;
+    const { message, history = [], tools } = req.body;
     if (!message || typeof message !== 'string') {
       return res.status(400).json({ error: 'Invalid message' });
     }
@@ -65,8 +65,9 @@ export function createApp() {
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
 
+    const messages = [...history, { role: 'user', content: message }];
     try {
-      for await (const chunk of chat(message, { history })) {
+      for await (const chunk of chat(messages, { tools })) {
         res.write(`data: ${JSON.stringify(chunk)}\n\n`);
       }
       res.write('data: [DONE]\n\n');
