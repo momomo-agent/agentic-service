@@ -1292,3 +1292,52 @@ All done. Here's a summary of what was completed:
 [no content]
 [2026-04-06T16:07:12.536Z] developer agent completed
 [2026-04-06 16:07:12] [agent_complete] developer completed successfully
+[2026-04-06 16:07:12] [workflow] work_loop [LOOP] Iteration 3
+[2026-04-06 16:07:12] [workflow] work_loop [EXEC] pm
+[2026-04-06 16:07:12] [agent_start] pm pm
+[2026-04-06T16:07:12.651Z] Running pm agent...
+[2026-04-06 16:07:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:5)
+[2026-04-06 16:07:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:5)
+**Status summary:**
+
+**M1** — active, blocked on `task-1775446002815` (CLI 入口 + 一键安装, `todo`, assigned to developer). Cannot complete M1 until this is done.
+
+**M2** — planned:
+- `task-1775491387415` — `review` (waiting for tester)
+- `task-1775491392036` — `review` (waiting for tester)
+- `task-1775491396691` — `todo`, now assigned to developer ✓
+
+No further PM actions needed right now. Waiting on:
+1. Developer to complete M1's CLI task
+2. Tester to review/approve the two M2 tasks in review
+[2026-04-06T16:07:42.692Z] pm agent completed
+[2026-04-06 16:07:42] [agent_complete] pm completed successfully
+[2026-04-06 16:07:42] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 16:07:42] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 16:07:42] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 16:07:42] [agent_start] tester-1 tester
+[2026-04-06 16:07:42] [agent_start] tester-2 tester
+[2026-04-06T16:07:42.735Z] Running tester-1 agent...
+[2026-04-06T16:07:42.735Z] Running tester-2 agent...
+[2026-04-06 16:08:26] [perf] daemon {"rss":"57MB","heapUsed":"8MB","heapTotal":"8MB","uptime":"600s"}
+[2026-04-06 16:08:26] [agent_start] daemon Still busy (10min), skipping safety check
+[2026-04-06 16:08:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:5)
+[2026-04-06 16:08:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:5)
+[2026-04-06 16:09:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:5)
+[2026-04-06 16:09:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:5)
+[2026-04-06 16:10:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:5)
+[2026-04-06 16:10:41] [perf] daemon {"rss":"55MB","heapUsed":"10MB","heapTotal":"11MB","uptime":"1500s"}
+[2026-04-06 16:10:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:5)
+Both tasks are done. Here's a summary:
+
+**task-1775491387415** — 修复 /api/status Ollama 真实检测: **PASS** (3/3 tests)
+- Implementation correctly uses `fetch` with `AbortSignal.timeout(2000)` to detect real Ollama status
+- Returns `{ running: boolean, models: string[] }` — no hardcoded stubs
+
+**task-1775491392036** — 实现 /api/config 持久化: **PASS** (4/4 tests)
+- PUT/GET round-trip works, persists to `~/.agentic-service/config.json`
+- Atomic write via tmp+rename, graceful fallback to `{}` when file missing
+
+**Known bug noted** (not blocking these tasks): The `startServer()` EADDRINUSE detection is broken due to the module-level Express singleton — this affects `task-1775491396691` which is already in `todo` status for a developer to fix.
+[2026-04-06T16:11:10.010Z] tester-2 agent completed
+[2026-04-06 16:11:10] [agent_complete] tester-2 completed successfully

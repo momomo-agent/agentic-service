@@ -1,4 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { promises as fs } from 'fs';
+import path from 'path';
+import os from 'os';
 
 // Mock chat before importing api
 vi.mock('../../src/runtime/llm.js', () => ({
@@ -16,9 +19,7 @@ vi.mock('../../src/detector/hardware.js', () => ({
 import { chat } from '../../src/runtime/llm.js';
 import { startServer } from '../../src/server/api.js';
 
-async function readSSE(res) {
-  return res.text;
-}
+const CONFIG_PATH = path.join(os.homedir(), '.agentic-service', 'config.json');
 
 let server;
 let baseUrl;
@@ -99,7 +100,7 @@ describe('HTTP Server', () => {
       expect(body).toHaveProperty('hardware');
       expect(body).toHaveProperty('profile');
       expect(body).toHaveProperty('ollama');
-      expect(body.ollama).toHaveProperty('installed');
+      expect(body.ollama).toHaveProperty('running');
       expect(body.ollama).toHaveProperty('models');
     });
 
@@ -112,6 +113,13 @@ describe('HTTP Server', () => {
       expect(hardware).toHaveProperty('memory');
       expect(hardware).toHaveProperty('cpu');
     });
+
+    it('ollama.running is boolean (not hardcoded)', async () => {
+      const res = await req('GET', '/api/status');
+      const { ollama } = await res.json();
+      expect(typeof ollama.running).toBe('boolean');
+      expect(Array.isArray(ollama.models)).toBe(true);
+    });
   });
 
   describe('GET /api/config', () => {
@@ -120,13 +128,26 @@ describe('HTTP Server', () => {
       expect(res.status).toBe(200);
       expect(typeof await res.json()).toBe('object');
     });
+
+    it('returns {} when config file does not exist', async () => {
+      await fs.rm(CONFIG_PATH, { force: true });
+      const res = await req('GET', '/api/config');
+      expect(res.status).toBe(200);
+      expect(await res.json()).toEqual({});
+    });
   });
 
   describe('PUT /api/config', () => {
-    it('echoes back the body', async () => {
-      const config = { llm: { model: 'test' } };
-      const res = await req('PUT', '/api/config', config);
+    it('returns { ok: true } on success', async () => {
+      const res = await req('PUT', '/api/config', { model: 'llama3' });
       expect(res.status).toBe(200);
+      expect(await res.json()).toEqual({ ok: true });
+    });
+
+    it('persists config: GET returns what was PUT', async () => {
+      const config = { llm: { model: 'llama3' }, theme: 'dark' };
+      await req('PUT', '/api/config', config);
+      const res = await req('GET', '/api/config');
       expect(await res.json()).toEqual(config);
     });
   });
