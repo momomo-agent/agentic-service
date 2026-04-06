@@ -4912,3 +4912,24 @@
 {"ts":"2026-04-06T22:20:39.298Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":4.290325,"cpuSystem":8.052493}}}
 {"ts":"2026-04-06T22:20:47.765Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"31MB\",\"heapUsed\":\"11MB\",\"heapTotal\":\"13MB\",\"uptime\":\"23706s\"}"}}
 {"ts":"2026-04-06T22:20:58.288Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":4.290719,"cpuSystem":8.053187}}}
+{"ts":"2026-04-06T22:20:58.394Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 13"}}
+{"ts":"2026-04-06T22:20:58.394Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T22:20:58.394Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":4.296367,"cpuSystem":8.069725}}}
+{"ts":"2026-04-06T22:21:09.800Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.30245,"cpuSystem":8.078428}}}
+{"ts":"2026-04-06T22:21:09.818Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T22:21:09.818Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T22:21:09.818Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-06T22:21:09.818Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.307044,"cpuSystem":8.092033}}}
+{"ts":"2026-04-06T22:21:09.819Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.307194,"cpuSystem":8.092449}}}
+{"ts":"2026-04-06T22:21:31.931Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.307524,"cpuSystem":8.092984}}}
+{"ts":"2026-04-06T22:21:31.949Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T22:21:31.949Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T22:21:31.949Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-06T22:21:31.949Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":4.311956,"cpuSystem":8.106979}}}
+{"ts":"2026-04-06T22:21:31.950Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":4.312108,"cpuSystem":8.107386}}}
+{"ts":"2026-04-06T22:21:33.383Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:7, done:94)"}}
+{"ts":"2026-04-06T22:21:33.384Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:7, done:94)\"}"}}
+{"ts":"2026-04-06T22:21:38.231Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:7, done:94)"}}
+{"ts":"2026-04-06T22:21:38.232Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:7, done:94)\"}"}}
+{"ts":"2026-04-06T22:21:40.783Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775513217925","from":"review","to":"testing","title":"语音端到端延迟<2s基准测试"}}
+{"ts":"2026-04-06T22:21:42.867Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":13,"cpuUser":4.31918,"cpuSystem":8.118448}}}
