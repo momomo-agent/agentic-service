@@ -8,6 +8,7 @@ import { chat } from '../runtime/llm.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
 import { errorHandler } from './middleware.js';
+import { getDevices } from './hub.js';
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -80,7 +81,7 @@ export function createApp() {
     const { detect } = await import('../detector/hardware.js');
     const hardware = await detect();
     const ollama = await getOllamaStatus();
-    res.json({ hardware, profile: {}, ollama });
+    res.json({ hardware, profile: {}, ollama, devices: getDevices() });
   });
 
   app.get('/api/config', async (req, res) => {
