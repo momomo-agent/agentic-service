@@ -1,15 +1,11 @@
 {
-  "totalTests": 38,
-  "passed": 38,
-  "failed": 0,
+  "totalTests": 16,
+  "passed": 11,
+  "failed": 5,
   "edgeCases": [
-    "VAD silence detection (1.5s threshold) requires real AudioContext — not unit-testable in Node",
-    "useWakeWord is a module-level singleton — shared state across composable instances",
-    "PushToTalk has no error handling for non-ok HTTP responses from /api/transcribe",
-    "Anthropic routing via chat() unreachable — loadConfig() hardcodes provider='openai'",
-    "Concurrent fallback calls not tested",
-    "Partial SSE chunk boundary handling not tested",
-    "api.test.js mocks wrong module (llm.js vs direct fetch) — 3 pre-existing test bugs"
+    "HardwarePanel.vue missing — build will fail at runtime",
+    "LogViewer.vue missing — build will fail at runtime",
+    "/api/logs endpoint used in App.vue but not specified in DBB"
   ],
-  "coverage": "95%"
+  "coverage": "69%"
 }
