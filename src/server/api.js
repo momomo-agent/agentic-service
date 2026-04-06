@@ -39,9 +39,7 @@ async function writeConfig(data) {
 
 async function getOllamaStatus() {
   try {
-    const res = await fetch('http://localhost:11434/api/tags', {
-      signal: AbortSignal.timeout(2000)
-    });
+    const res = await fetch('http://localhost:11434/api/tags', { signal: AbortSignal.timeout(2000) });
     if (!res.ok) return { running: false, models: [] };
     const { models } = await res.json();
     return { running: true, models: models.map(m => m.name) };
@@ -50,21 +48,15 @@ async function getOllamaStatus() {
   }
 }
 
-export function createApp() {
-  const app = express();
-  app.use(cors());
-  app.use(express.json());
-
-  app.post('/api/chat', async (req, res) => {
+function addRoutes(r) {
+  r.post('/api/chat', async (req, res) => {
     const { message, history = [], tools } = req.body;
     if (!message || typeof message !== 'string') {
       return res.status(400).json({ error: 'Invalid message' });
     }
-
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
-
     const messages = [...history, { role: 'user', content: message }];
     try {
       for await (const chunk of chat(messages, { tools })) {
@@ -72,24 +64,23 @@ export function createApp() {
       }
       res.write('data: [DONE]\n\n');
     } catch (error) {
-      console.error('Chat error:', error);
       res.write(`data: ${JSON.stringify({ error: error.message })}\n\n`);
     }
     res.end();
   });
 
-  app.get('/api/status', async (req, res) => {
+  r.get('/api/status', async (req, res) => {
     const { detect } = await import('../detector/hardware.js');
     const hardware = await detect();
     const ollama = await getOllamaStatus();
     res.json({ hardware, profile: {}, ollama, devices: getDevices() });
   });
 
-  app.get('/api/config', async (req, res) => {
-    res.json(await readConfig());
-  });
+  r.get('/api/devices', (req, res) => res.json(getDevices()));
 
-  app.put('/api/config', async (req, res) => {
+  r.get('/api/config', async (req, res) => res.json(await readConfig()));
+
+  r.put('/api/config', async (req, res) => {
     try {
       await writeConfig(req.body);
       res.json({ ok: true });
@@ -98,17 +89,16 @@ export function createApp() {
     }
   });
 
-  app.post('/api/transcribe', upload.single('audio'), async (req, res) => {
+  r.post('/api/transcribe', upload.single('audio'), async (req, res) => {
     if (!req.file) return res.status(400).json({ error: 'audio required' });
     try {
-      const text = await stt.transcribe(req.file.buffer);
-      res.json({ text });
+      res.json({ text: await stt.transcribe(req.file.buffer) });
     } catch (e) {
       res.status(e.code === 'EMPTY_AUDIO' ? 400 : 500).json({ error: e.message });
     }
   });
 
-  app.post('/api/synthesize', async (req, res) => {
+  r.post('/api/synthesize', async (req, res) => {
     const { text } = req.body;
     if (!text) return res.status(400).json({ error: 'text required' });
     try {
@@ -119,12 +109,24 @@ export function createApp() {
     }
   });
 
-  app.get('/api/logs', (req, res) => res.json(logBuffer.slice(-50)));
+  r.get('/api/logs', (req, res) => res.json(logBuffer.slice(-50)));
 
   const adminDist = new URL('../../dist/admin', import.meta.url).pathname;
-  app.use('/admin', express.static(adminDist));
-  app.get('/admin', (req, res) => res.sendFile(path.join(adminDist, 'index.html')));
+  r.use('/admin', express.static(adminDist));
+  r.get('/admin', (req, res) => res.sendFile(path.join(adminDist, 'index.html')));
+}
 
+export function createRouter() {
+  const router = express.Router();
+  addRoutes(router);
+  return router;
+}
+
+export function createApp() {
+  const app = express();
+  app.use(cors());
+  app.use(express.json());
+  addRoutes(app);
   app.use(errorHandler);
   return app;
 }
