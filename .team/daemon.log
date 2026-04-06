@@ -3154,3 +3154,61 @@ All four tasks are complete and moved to review:
 - **task-1775498249905** (STT/TTS adaptive selection): `tts.js` rewritten with profile-based adapter selection, `api.js` now calls `stt.init()` + `tts.init()` on server start
 [2026-04-06T18:21:39.554Z] developer agent completed
 [2026-04-06 18:21:39] [agent_complete] developer completed successfully
+[2026-04-06 18:21:39] [workflow] work_loop [LOOP] Iteration 3
+[2026-04-06 18:21:39] [workflow] work_loop [EXEC] pm
+[2026-04-06 18:21:39] [agent_start] pm pm
+[2026-04-06T18:21:39.675Z] Running pm agent...
+[2026-04-06 18:22:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:4, done:28)
+Now I have a clear picture. Let me assess the current state:
+
+**Active milestones status:**
+- **m5**: 2 tasks `in-progress` (Docker 打包, 边缘用例测试覆盖) — waiting for developers
+- **m8**: 1 task `review` (STT/TTS 硬件自适应选择) — waiting for tester
+- **m9**: 3 tasks `testing` — waiting for tester approval
+
+**My role**: I cannot move tasks from review/testing to done. I need to check if there are remaining gaps that need new tasks planned.
+
+Key remaining gaps from the gap files:
+- `architecture.json`: `runtime/` missing (but many tasks done), `server/` missing (done), Docker partial
+- `dbb.json`: sense.js, memory.js, Docker missing (m5 in-progress), test coverage partial
+- `vision.json`: wake word (done m8), cloud fallback (done m7), Docker missing
+- `prd.json`: STT/TTS partial (m8 review), wake word (done), WebSocket (done)
+
+The in-progress tasks in m5 cover the remaining Docker and test coverage gaps. M8 and M9 cover the remaining DBB/vision gaps. No new tasks are needed right now — all remaining gaps are covered by active tasks.
+
+**Current status summary:**
+
+| Milestone | Status | Blocking |
+|-----------|--------|---------|
+| m5 | active | 2 tasks in-progress (developer) |
+| m8 | active | 1 task in review (tester needed) |
+| m9 | active | 3 tasks in testing (tester needed) |
+
+All gaps are covered. Waiting on:
+1. Developer to complete Docker packaging + edge case tests (m5)
+2. Tester to approve STT/TTS adaptive selection (m8)
+3. Tester to approve m9 DBB fixes, SIGINT, npx flow
+
+No new milestone or tasks needed at this time.
+[2026-04-06T18:22:25.328Z] pm agent completed
+[2026-04-06 18:22:25] [agent_complete] pm completed successfully
+[2026-04-06 18:22:25] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 18:22:25] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 18:22:25] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 18:22:25] [agent_start] tester-1 tester
+[2026-04-06 18:22:25] [agent_start] tester-2 tester
+[2026-04-06T18:22:25.375Z] Running tester-2 agent...
+[2026-04-06T18:22:25.375Z] Running tester-1 agent...
+[2026-04-06 18:22:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:28)
+[2026-04-06 18:23:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:4, done:28)
+[2026-04-06 18:23:26] [perf] daemon {"rss":"37MB","heapUsed":"11MB","heapTotal":"12MB","uptime":"8700s"}
+All 3 tasks are complete. Here's a summary:
+
+**Tasks tested and marked done:**
+- `task-1775499114484` — DBB 规范修复: brain.js yields `text` field ✓, store.del() wraps delete() ✓, CDN fallback ✓
+- `task-1775499138579` — SIGINT 优雅关闭: shutdown() closes server + force-exits after 5s ✓, SIGTERM handled ✓
+- `task-1775499138612` — npx 一键安装: openBrowser() works + fails safely ✓, CDN 404 fallback ✓
+
+**8 tests written, 8 passed.** Coverage updated to 133 total tests at 98%.
+[2026-04-06T18:23:30.034Z] tester-1 agent completed
+[2026-04-06 18:23:30] [agent_complete] tester-1 completed successfully

@@ -1,6 +1,6 @@
 {
-  "totalTests": 125,
-  "passed": 125,
+  "totalTests": 133,
+  "passed": 133,
   "failed": 0,
   "edgeCases": [
     "dist/admin not built — runtime /admin 200 check requires npm run build",
@@ -12,7 +12,9 @@
     "PUT /api/config replaces config (no merge), design says merge",
     "tts.js missing init() and profile-based adapter selection (DBB-007/008 blocked)",
     "sense.js: agentic-sense load failure not tested",
-    "WakeWord: wakeWord prop change mid-session not tested end-to-end"
+    "WakeWord: wakeWord prop change mid-session not tested end-to-end",
+    "DBB-005: Ollama not installed path not fully integration-tested (requires real process spawn)",
+    "DBB-006: pullModel % progress not integration-tested (requires real Ollama stream)"
   ],
   "coverage": "98%"
 }
