@@ -2528,3 +2528,9 @@
 {"ts":"2026-04-06T16:33:52.199Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775492459233","from":"testing","to":"done","title":"STT 运行时"}}
 {"ts":"2026-04-06T16:33:58.594Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775492469000","from":"review","to":"testing","title":"TTS 运行时"}}
 {"ts":"2026-04-06T16:34:47.429Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":14,"cpuUser":0.204082,"cpuSystem":0.212074}}}
+{"ts":"2026-04-06T16:35:05.157Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775492469000","from":"testing","to":"done","title":"TTS 运行时"}}
+{"ts":"2026-04-06T16:35:09.389Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775492469046","from":"review","to":"testing","title":"Admin 管理面板"}}
+{"ts":"2026-04-06T16:35:41.484Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (50min), skipping safety check","performance":{"memoryMB":6,"memoryTotalMB":6,"cpuUser":0.214475,"cpuSystem":0.181644}}}
+{"ts":"2026-04-06T16:35:41.485Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"54MB\",\"heapUsed\":\"6MB\",\"heapTotal\":\"6MB\",\"uptime\":\"3000s\"}"}}
+{"ts":"2026-04-06T16:36:04.864Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775492469046","from":"testing","to":"done","title":"Admin 管理面板"}}
+{"ts":"2026-04-06T16:36:11.691Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":15,"cpuUser":0.210959,"cpuSystem":0.220169}}}

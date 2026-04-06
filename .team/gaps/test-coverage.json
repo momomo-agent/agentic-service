@@ -1,6 +1,6 @@
 {
-  "totalTests": 117,
-  "passed": 117,
+  "totalTests": 129,
+  "passed": 129,
   "failed": 0,
   "edgeCases": [
     "Ollama installed but service not running (ollama serve not started)",
