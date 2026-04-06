@@ -270,7 +270,7 @@
     {
       "id": "m23",
       "name": "M23: App.vue修复 + VAD + 测试覆盖率 + README",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775512890701",
         "task-1775512894391",
@@ -282,7 +282,7 @@
     {
       "id": "m24",
       "name": "M24: HTTPS安全访问 + 语音延迟基准 + 服务端唤醒词 + npx入口",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775513213884",
         "task-1775513217925",
