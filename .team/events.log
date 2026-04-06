@@ -3877,3 +3877,6 @@
 {"ts":"2026-04-06T20:42:57.390Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:55)"}}
 {"ts":"2026-04-06T20:42:57.391Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:5, done:55)\"}"}}
 {"ts":"2026-04-06T20:42:58.019Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":2.415462,"cpuSystem":3.475013}}}
+{"ts":"2026-04-06T20:43:12.829Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:55)"}}
+{"ts":"2026-04-06T20:43:12.830Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:5, done:55)\"}"}}
+{"ts":"2026-04-06T20:43:14.254Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":2.416321,"cpuSystem":3.476228}}}
