@@ -3865,3 +3865,16 @@ All 4 review tasks are assigned to "developer" and `can-claim` returns false for
 There are no tasks available for me to claim right now. I'll wait for new tasks to enter "review" status or for existing ones to become claimable.
 [2026-04-06T18:44:00.361Z] tester-1 agent completed
 [2026-04-06 18:44:00] [agent_complete] tester-1 completed successfully
+All done. Here's a summary of what was completed:
+
+**Tasks tested and marked done:**
+
+- `task-1775500180912` — install/setup.sh: 8/8 tests passed (shebang, set -e, node check, npm install, service start, idempotency)
+- `task-1775500180946` — config hot-reload watchProfiles: 6/6 tests passed (export, stop fn, onReload trigger, 304 skip, network error safety, stop cancels polling)
+- `task-1775500299074` — profiles/default.json: 8/8 tests passed (structure, apple-silicon/nvidia/cpu-only profiles, required fields, llm provider+model)
+
+**Total: 22/22 tests passed, 100% coverage**
+
+**Notable edge case found:** The hot-reload test writes a stale cache (`"new-model"`) that pollutes `profiles.test.js` when run in sequence — those tests need cache cleanup in `beforeEach`. Documented in `test-coverage.json`.
+[2026-04-06T18:44:06.522Z] tester-1 agent completed
+[2026-04-06 18:44:06] [agent_complete] tester-1 completed successfully
