@@ -1,11 +1,15 @@
 {
-  "totalTests": 16,
-  "passed": 11,
-  "failed": 5,
+  "totalTests": 44,
+  "passed": 44,
+  "failed": 0,
   "edgeCases": [
     "HardwarePanel.vue missing — build will fail at runtime",
     "LogViewer.vue missing — build will fail at runtime",
-    "/api/logs endpoint used in App.vue but not specified in DBB"
+    "/api/logs endpoint used in App.vue but not specified in DBB",
+    "capture timeout (10s) not tested — requires fake timers",
+    "device disconnects mid-capture rejects pending promise — not directly tested",
+    "/api/transcribe accepts multipart only, design says base64 JSON",
+    "PUT /api/config replaces config (no merge), design says merge"
   ],
-  "coverage": "69%"
+  "coverage": "95%"
 }

@@ -2623,3 +2623,58 @@ The developer needs to implement the two missing Vue components before this task
 The only `todo` task (README docs) is blocked by a task still in `review`. There are no claimable tasks available right now. I'll wait for blockers to resolve before proceeding.
 [2026-04-06T17:48:56.793Z] developer agent completed
 [2026-04-06 17:48:56] [agent_complete] developer completed successfully
+[2026-04-06 17:48:56] [workflow] work_loop [LOOP] Iteration 8
+[2026-04-06 17:48:56] [workflow] work_loop [EXEC] pm
+[2026-04-06 17:48:56] [agent_start] pm pm
+[2026-04-06T17:48:56.902Z] Running pm agent...
+[2026-04-06 17:49:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:3, done:22)
+[2026-04-06 17:49:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:4, done:22)
+Current status summary:
+
+**M5** (ready-for-work):
+- ✅ sense.js — done
+- ✅ memory.js — done
+- 🔄 Docker 打包 — in-progress
+- 🔄 边缘用例测试覆盖 — in-progress
+
+**M6** (active):
+- ✅ 服务器层 hub.js/brain.js/api.js — done
+- 🔍 REST API 端点实现 — in review (waiting for tester)
+- ⏳ 管理面板 src/ui/admin/ — todo, blocked by REST API review
+- ✅ 语音UI控件 — done
+
+**M7** (planned):
+- ✅ 云端LLM回退 — done
+- 🔍 WebSocket设备协调 — in review (waiting for tester)
+- ✅ DBB规范修复 — done
+- ⏳ 用户文档README — todo, blocked by WebSocket review
+
+No PM action needed right now — two tasks are in review (tester's domain), and dependent tasks are correctly blocked. M5's in-progress tasks are with developers. Waiting for testers to clear the review queue before m6 can complete and m7 can fully unblock.
+[2026-04-06T17:49:59.905Z] pm agent completed
+[2026-04-06 17:49:59] [agent_complete] pm completed successfully
+[2026-04-06 17:49:59] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 17:49:59] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 17:49:59] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 17:49:59] [agent_start] tester-1 tester
+[2026-04-06 17:49:59] [agent_start] tester-2 tester
+[2026-04-06T17:49:59.950Z] Running tester-2 agent...
+[2026-04-06T17:49:59.950Z] Running tester-1 agent...
+[2026-04-06 17:50:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:4, done:22)
+[2026-04-06 17:50:41] [perf] daemon {"rss":"32MB","heapUsed":"10MB","heapTotal":"12MB","uptime":"7500s"}
+[2026-04-06 17:50:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:4, done:22)
+[2026-04-06 17:51:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:4, done:22)
+[2026-04-06 17:51:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:4, done:22)
+[2026-04-06 17:52:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:4, done:22)
+[2026-04-06 17:52:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:4, done:22)
+[2026-04-06 17:53:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:4, done:22)
+[2026-04-06 17:53:26] [perf] daemon {"rss":"9MB","heapUsed":"7MB","heapTotal":"9MB","uptime":"6900s"}
+Both tasks are complete:
+
+- `task-1775494979749` (REST API 端点实现) — **done**, 11/11 tests passed
+- `task-1775495680384` (WebSocket 设备协调) — **done**, 7/7 tests passed
+
+New test files written:
+- `test/server/rest-api-endpoints.test.js` — covers all 6 REST endpoints (DBB-001 through DBB-006)
+- `test/server/ws-hub.test.js` — covers WebSocket registration, ping/pong, sendCommand speak/capture, disconnect (DBB-007)
+[2026-04-06T17:54:46.499Z] tester-1 agent completed
+[2026-04-06 17:54:46] [agent_complete] tester-1 completed successfully

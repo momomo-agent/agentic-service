@@ -2,12 +2,14 @@
   "id": "task-1775494979786",
   "title": "管理面板 src/ui/admin/",
   "description": "实现 /admin 页面：设备列表、日志查看器、硬件信息面板",
-  "status": "blocked",
+  "status": "todo",
   "priority": "P1",
   "assignee": "tester-1",
-  "blockedBy": [],
+  "blockedBy": [
+    "task-1775494979749"
+  ],
   "groupId": "m6",
   "hasDesign": true,
   "created": "2026-04-06T17:02:59.786Z",
-  "updated": "2026-04-06T17:48:18.317Z"
+  "updated": "2026-04-06T17:49:51.967Z"
 }
