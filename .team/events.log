@@ -2583,3 +2583,28 @@
 {"ts":"2026-04-06T16:42:09.840Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775493437268","from":"inProgress","to":"review","title":"向量嵌入运行时"}}
 {"ts":"2026-04-06T16:42:09.873Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775493442807","from":"inProgress","to":"review","title":"KV 存储抽象"}}
 {"ts":"2026-04-06T16:42:16.421Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":6,"cpuUser":0.278506,"cpuSystem":0.289938}}}
+{"ts":"2026-04-06T16:42:16.516Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 2"}}
+{"ts":"2026-04-06T16:42:16.516Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T16:42:16.516Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":6,"memoryTotalMB":7,"cpuUser":0.280569,"cpuSystem":0.293797}}}
+{"ts":"2026-04-06T16:42:41.702Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:12)"}}
+{"ts":"2026-04-06T16:42:41.703Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:4, done:12)\"}"}}
+{"ts":"2026-04-06T16:42:42.176Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":7,"cpuUser":0.282899,"cpuSystem":0.29661}}}
+{"ts":"2026-04-06T16:42:42.181Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T16:42:42.181Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T16:42:42.181Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-06T16:42:42.182Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.284959,"cpuSystem":0.300099}}}
+{"ts":"2026-04-06T16:42:42.182Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.285133,"cpuSystem":0.300554}}}
+{"ts":"2026-04-06T16:42:56.277Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:12)"}}
+{"ts":"2026-04-06T16:42:56.277Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:4, done:12)\"}"}}
+{"ts":"2026-04-06T16:43:12.214Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775493437268","from":"review","to":"testing","title":"向量嵌入运行时"}}
+{"ts":"2026-04-06T16:43:16.809Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775493442807","from":"review","to":"testing","title":"KV 存储抽象"}}
+{"ts":"2026-04-06T16:43:26.237Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"59MB\",\"heapUsed\":\"6MB\",\"heapTotal\":\"8MB\",\"uptime\":\"2700s\"}"}}
+{"ts":"2026-04-06T16:43:41.704Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:12)"}}
+{"ts":"2026-04-06T16:43:41.705Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:4, done:12)\"}"}}
+{"ts":"2026-04-06T16:43:56.283Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:12)"}}
+{"ts":"2026-04-06T16:43:56.284Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:4, done:12)\"}"}}
+{"ts":"2026-04-06T16:44:41.712Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:12)"}}
+{"ts":"2026-04-06T16:44:41.714Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:4, done:12)\"}"}}
+{"ts":"2026-04-06T16:44:42.262Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775493437268","from":"testing","to":"done","title":"向量嵌入运行时"}}
+{"ts":"2026-04-06T16:44:42.297Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775493442807","from":"testing","to":"done","title":"KV 存储抽象"}}
+{"ts":"2026-04-06T16:44:47.275Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.294664,"cpuSystem":0.312232}}}

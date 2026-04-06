@@ -1,6 +1,6 @@
 {
-  "totalTests": 129,
-  "passed": 129,
+  "totalTests": 138,
+  "passed": 138,
   "failed": 0,
   "edgeCases": [
     "Ollama installed but service not running (ollama serve not started)",
@@ -12,7 +12,9 @@
     "Non-EADDRINUSE listen errors (e.g. EACCES) pass through — not explicitly tested",
     "CLI --port flag with non-numeric value not tested",
     "SIGINT graceful shutdown not unit tested (integration only)",
-    "npx invocation end-to-end not tested"
+    "npx invocation end-to-end not tested",
+    "agentic-store DB open failure propagation not tested (requires real SQLite)",
+    "store singleton reset across process restarts (requires integration test)"
   ],
-  "coverage": "95%"
+  "coverage": "96%"
 }
