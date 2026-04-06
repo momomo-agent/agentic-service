@@ -2,13 +2,13 @@
   "id": "task-1775516741858",
   "title": "Ollama自动安装 + 模型拉取",
   "description": "检测Ollama binary是否存在，自动下载安装，拉取推荐模型，显示进度",
-  "status": "review",
+  "status": "testing",
   "priority": "P0",
-  "assignee": "developer",
+  "assignee": "tester-1",
   "blockedBy": [],
   "groupId": "m29",
   "hasDesign": true,
   "created": "2026-04-06T23:05:41.859Z",
-  "updated": "2026-04-06T23:09:27.253Z",
+  "updated": "2026-04-06T23:11:57.134Z",
   "milestoneId": "m29"
 }

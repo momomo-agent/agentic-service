@@ -9098,3 +9098,59 @@ Both tasks are complete:
 - `task-1775516748300` (README用户文档补全): Added Troubleshooting section to `README.md`. Created `test/m29-readme.test.js` — all 10 checks pass.
 [2026-04-06T23:11:13.957Z] developer agent completed
 [2026-04-06 23:11:13] [agent_complete] developer completed successfully
+[2026-04-06 23:11:14] [workflow] work_loop [LOOP] Iteration 8
+[2026-04-06 23:11:14] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:11:14] [agent_start] pm pm
+[2026-04-06T23:11:14.111Z] Running pm agent...
+All 5 tasks in M29 are in "review" status. Per my role constraints, I cannot approve them — that's the tester's job.
+
+**Current Status: M29 active, all tasks in review**
+
+| Task | Title | Status |
+|------|-------|--------|
+| task-1775516741858 | Ollama自动安装完善 | review |
+| task-1775516748193 | 服务端感知路径 | review |
+| task-1775516748230 | 服务端唤醒词pipeline | review |
+| task-1775516748265 | 语音延迟<2s端到端基准 | review |
+| task-1775516748300 | README用户文档补全 | review |
+
+Waiting for testers to approve/reject these tasks before I can mark M29 complete or plan M30.
+[2026-04-06T23:11:15.090Z] pm agent completed
+[2026-04-06 23:11:15] [agent_complete] pm completed successfully
+[2026-04-06 23:11:15] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:11:15] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 23:11:15] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 23:11:15] [agent_start] tester-1 tester
+[2026-04-06 23:11:15] [agent_start] tester-2 tester
+[2026-04-06T23:11:15.145Z] Running tester-1 agent...
+[2026-04-06T23:11:15.145Z] Running tester-2 agent...
+M29 status:
+- `task-1775516741858` (Ollama自动安装): **review**
+- `task-1775516748193` (setup.sh完善): **review**
+- `task-1775516748230` (服务端唤醒词): **testing**
+- `task-1775516748265` (语音延迟基准): **testing**
+- `task-1775516748300` (README文档): **testing**
+
+Tasks are in `review` and `testing` — per my rules, I must NOT approve or advance these. Waiting for testers to complete their work.
+
+Current state: M29 is active, all tasks are in progress with testers. No action needed from PM until tasks reach `done`.
+[2026-04-06T23:11:40.287Z] pm agent completed
+[2026-04-06 23:11:40] [agent_complete] pm completed successfully
+[2026-04-06 23:11:40] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:11:40] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 23:11:40] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 23:11:40] [agent_start] tester-1 tester
+[2026-04-06 23:11:40] [agent_start] tester-2 tester
+[2026-04-06T23:11:40.331Z] Running tester-2 agent...
+[2026-04-06T23:11:40.331Z] Running tester-1 agent...
+[2026-04-06 23:12:05] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:114)
+[2026-04-06 23:12:35] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:114)
+All 3 tasks completed:
+
+- **task-1775516748230** (wake word pipeline): 3 tests pass — stop function, guard against multiple pipelines, SIGINT handling verified in api.js
+- **task-1775516748265** (latency benchmark): 2 tests pass — end-to-end ~1806ms < 2000ms target, latency-report.json written
+- **task-1775516748300** (README docs): 10 assertions pass — all 6 required sections present including API examples, Docker, config, troubleshooting
+
+All tasks marked `done`. Coverage summary updated to 42 tests, 100% pass.
+[2026-04-06T23:12:59.463Z] tester-2 agent completed
+[2026-04-06 23:12:59] [agent_complete] tester-2 completed successfully

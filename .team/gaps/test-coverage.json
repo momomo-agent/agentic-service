@@ -1,11 +1,14 @@
 {
-  "totalTests": 27,
-  "passed": 27,
+  "totalTests": 42,
+  "passed": 42,
   "failed": 0,
   "edgeCases": [
     "Concurrent add() calls serialized via _lock chain (not directly testable without timing)",
     "sendCommand with unknown device throws Device not found (covered by existing hub tests)",
-    "search() with undefined argument (not tested)"
+    "search() with undefined argument (not tested)",
+    "Wake word pipeline: onWake callback not tested with actual keyword match (stub only)",
+    "Latency: only mock adapters tested, real hardware latency not measured",
+    "README: PROFILES_URL env var not explicitly checked in test"
   ],
   "coverage": "100%"
 }
