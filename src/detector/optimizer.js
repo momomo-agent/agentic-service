@@ -1,4 +1,5 @@
 import { exec, spawn } from 'node:child_process';
+import { createInterface } from 'node:readline';
 import { promisify } from 'node:util';
 import ora from 'ora';
 import chalk from 'chalk';
@@ -12,8 +13,18 @@ export async function setupOllama(profile) {
 
     if (!installed) {
       spinner.fail('Ollama not installed');
-      promptInstallation(process.platform);
-      return { installed: false, version: null, modelReady: false, modelName: profile.llm.model };
+      await executeInstall(process.platform);
+      const result2 = await detectOllama();
+      if (!result2.installed) return { installed: false, version: null, modelReady: false, modelName: profile.llm.model };
+      spinner.succeed(`Ollama ${result2.version} installed`);
+      const modelName2 = profile.llm.model;
+      spinner.start(`Checking model: ${modelName2}...`);
+      const modelExists2 = await checkModelExists(modelName2);
+      if (modelExists2) { spinner.succeed(`Model ${modelName2} ready`); return { installed: true, version: result2.version, modelReady: true, modelName: modelName2 }; }
+      spinner.info(`Model ${modelName2} not found, pulling...`);
+      await pullModel(modelName2, (p, s) => { spinner.text = `Pulling ${modelName2}: ${p}% (${s})`; });
+      spinner.succeed(`Model ${modelName2} pulled successfully`);
+      return { installed: true, version: result2.version, modelReady: true, modelName: modelName2 };
     }
 
     spinner.succeed(`Ollama ${version} detected`);
@@ -96,15 +107,32 @@ async function pullModel(modelName, onProgress) {
   });
 }
 
-function promptInstallation(platform) {
-  console.log(chalk.yellow('\n⚠️  Ollama is not installed\n'));
+function askConfirm(question) {
+  return new Promise(resolve => {
+    const rl = createInterface({ input: process.stdin, output: process.stdout });
+    rl.question(question, ans => { rl.close(); resolve(ans.trim().toLowerCase()); });
+  });
+}
+
+async function executeInstall(platform) {
   const instructions = {
-    darwin: ['Install with Homebrew:', '  brew install ollama'],
-    linux: ['Install with:', '  curl -fsSL https://ollama.ai/install.sh | sh'],
-    win32: ['Download installer from:', '  https://ollama.ai/download/windows']
+    darwin: ['brew install ollama', () => spawn('brew', ['install', 'ollama'], { stdio: 'inherit' })],
+    linux: ['curl -fsSL https://ollama.ai/install.sh | sh', () => spawn('sh', ['-c', 'curl -fsSL https://ollama.ai/install.sh | sh'], { stdio: 'inherit' })]
   };
-  const [label, cmd] = instructions[platform] || ['Visit:', '  https://ollama.ai/download'];
-  console.log(chalk.cyan(label));
-  console.log(chalk.white(cmd + '\n'));
-  console.log(chalk.gray('After installation, run this command again.\n'));
+
+  if (platform === 'win32') {
+    console.log(chalk.yellow('\nDownload Ollama from: https://ollama.ai/download/windows'));
+    process.exit(1);
+  }
+
+  const [cmd, runInstall] = instructions[platform] || instructions.linux;
+  console.log(chalk.cyan(`\nInstall command: ${cmd}`));
+  const ans = await askConfirm('Install Ollama now? [y/N] ');
+  if (ans !== 'y') { console.log(chalk.yellow('Installation declined.')); process.exit(1); }
+
+  await new Promise((resolve, reject) => {
+    const proc = runInstall();
+    proc.on('close', code => code === 0 ? resolve() : reject(new Error('Install failed')));
+    proc.on('error', reject);
+  });
 }

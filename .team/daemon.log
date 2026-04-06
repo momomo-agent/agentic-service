@@ -4267,3 +4267,142 @@ All 4 M13 tasks are now done. Here's a summary:
 All tasks are in "done" status — there's nothing in "review" status to claim and test. The pipeline is fully complete with no pending work for the tester.
 [2026-04-06T20:18:36.266Z] tester agent completed
 [2026-04-06 20:18:36] [agent_complete] tester completed successfully
+[2026-04-06 20:18:36] [workflow] milestone_qg [EXEC] pm
+[2026-04-06 20:18:36] [agent_start] pm pm
+[2026-04-06T20:18:36.385Z] Running pm agent...
+[2026-04-06 20:19:57] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 72min (active:4, done:51)
+M14 is set up. Here's the summary:
+
+**M13** → marked `completed` (all 4 tasks were done)
+
+**M14: Ollama自动安装 + 设备命令 + 硬件自适应 + README** → `active`
+
+| Task | Priority | Gap |
+|------|----------|-----|
+| Ollama自动安装: setup.js执行安装命令 | P1 | PRD partial |
+| hub.js设备命令: speak/display支持 | P1 | PRD partial |
+| llm.js硬件自适应: 接入optimizer输出 | P1 | Vision partial |
+| README.md: 安装说明 + REST API文档 | P1 | PRD missing |
+
+Two gaps are out of scope for M14 and need CRs:
+- `sense.js` browser-only issue → requires `agentic-sense` package change (architecture constraint)
+- CDN URL mismatch → requires PRD update
+
+Shall I submit those change requests?
+[2026-04-06T20:20:09.684Z] pm agent completed
+[2026-04-06 20:20:09] [agent_complete] pm completed successfully
+[2026-04-06 20:20:09] [workflow] milestone_qg [BRANCH] todoCount == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 → false → work_loop
+[2026-04-06 20:20:09] [agent_start] work_loop [NODE] work_loop - PM 调度循环
+[2026-04-06 20:20:09] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-06 20:20:09] [workflow] work_loop [EXEC] pm
+[2026-04-06 20:20:09] [agent_start] pm pm
+[2026-04-06T20:20:09.749Z] Running pm agent...
+[2026-04-06 20:20:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 72min (active:4, done:51)
+[2026-04-06 20:20:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 73min (active:4, done:51)
+[2026-04-06 20:20:41] [perf] daemon {"rss":"33MB","heapUsed":"6MB","heapTotal":"7MB","uptime":"16500s"}
+[2026-04-06 20:20:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 73min (active:4, done:51)
+M14 is active with 4 `todo` tasks. The milestone is properly planned and ready for developers to pick up. No action needed from PM — tasks are assigned and waiting for execution.
+
+**M14 Status Summary:**
+- `task-1775506784289` — Ollama自动安装: setup.js执行安装命令 (todo)
+- `task-1775506792151` — hub.js设备命令: speak/display支持 (todo)
+- `task-1775506792183` — llm.js硬件自适应: 接入optimizer输出 (todo)
+- `task-1775506792214` — README.md: 安装说明 + REST API文档 (todo)
+
+All tasks target remaining gaps from architecture.json (partial/missing items). Waiting for developers to begin work.
+[2026-04-06T20:20:51.556Z] pm agent completed
+[2026-04-06 20:20:51] [agent_complete] pm completed successfully
+[2026-04-06 20:20:51] [workflow] work_loop [EXEC] qa_lead
+[2026-04-06 20:20:51] [agent_start] qa_lead qa_lead
+[2026-04-06T20:20:51.600Z] Running qa_lead agent...
+[2026-04-06 20:21:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 74min (active:4, done:51)
+[2026-04-06 20:21:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 74min (active:4, done:51)
+Done. Here's what was completed:
+
+- Wrote `.team/milestones/m14/dbb.md` with 11 verification criteria covering:
+  - Ollama auto-install (execute, skip, user decline)
+  - hub.js speak/display/capture commands + unknown command handling
+  - Hardware-adaptive model selection via optimizer
+  - README existence with install instructions and API docs
+- Updated m14 status: `active` → `ready-for-work`
+[2026-04-06T20:22:05.336Z] qa_lead agent completed
+[2026-04-06 20:22:05] [agent_complete] qa_lead completed successfully
+[2026-04-06 20:22:05] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 20:22:05] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 20:22:05] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 20:22:05] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T20:22:05.386Z] Running tech_lead-1 agent...
+[2026-04-06T20:22:05.386Z] Running tech_lead-3 agent...
+[2026-04-06T20:22:05.386Z] Running tech_lead-2 agent...
+[2026-04-06 20:22:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 75min (active:4, done:51)
+[2026-04-06 20:22:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 75min (active:4, done:51)
+[2026-04-06 20:23:26] [perf] daemon {"rss":"41MB","heapUsed":"11MB","heapTotal":"13MB","uptime":"15900s"}
+[2026-04-06 20:23:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 76min (active:4, done:51)
+[2026-04-06 20:23:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 76min (active:4, done:51)
+[2026-04-06 20:24:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 77min (active:4, done:51)
+[2026-04-06 20:24:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 77min (active:4, done:51)
+M14 tech lead work is complete. Here's what was produced:
+
+**Milestone artifacts:**
+- `.team/milestones/m14/design.md` — technical approach for all 4 tasks
+- `.team/milestones/m14/dbb.md` — already existed with 11 verification criteria
+
+**Task designs (all 4 tasks now have `hasDesign: true`):**
+
+| Task | File | Key change |
+|------|------|-----------|
+| task-1775506784289 | `src/detector/optimizer.js` | Replace `promptInstallation` with async `executeInstall` — readline confirm → spawn install command |
+| task-1775506792151 | `src/server/hub.js` | Add `SUPPORTED` set to `sendCommand`; throw on unknown types; speak/display pass through via existing `...rest` spread |
+| task-1775506792183 | `src/runtime/llm.js` | Add `getProfile(hardware)` export to `optimizer.js`; `loadConfig` calls it instead of `profiles.getProfile` |
+| task-1775506792214 | `README.md` (new file) | Install instructions (npx/global/Docker) + all REST API endpoints documented |
+[2026-04-06T20:25:02.444Z] tech_lead-2 agent completed
+[2026-04-06 20:25:02] [agent_complete] tech_lead-2 completed successfully
+All M14 task designs are complete. Here's a summary of what was done:
+
+**M14 tasks — all marked `hasDesign: true`**
+
+- **task-1775506784289** — `optimizer.js`: replace `promptInstallation` with `executeInstall` that prompts user via `readline` and spawns the actual install command (brew/curl/sh), then re-detects Ollama after install.
+
+- **task-1775506792151** — `hub.js`: add `SUPPORTED = ['capture', 'speak', 'display']` check to `sendCommand`; throw on unknown types. `speak`/`display` payloads forwarded via existing `...rest` spread — no structural change.
+
+- **task-1775506792183** — `optimizer.js` + `llm.js`: add `getProfile(hardware)` export to `optimizer.js` with hardware-based model selection (apple-silicon/nvidia/fallback tiers), then import and call it in `llm.js`'s `loadConfig()` instead of the static profile.
+
+- **task-1775506792214** — `README.md`: pure doc file at project root with npx/global/Docker install sections and REST API endpoint table. No code changes.
+[2026-04-06T20:25:16.236Z] tech_lead-3 agent completed
+[2026-04-06 20:25:16] [agent_complete] tech_lead-3 completed successfully
+All M14 task designs are complete:
+
+- **task-1775506784289** — Ollama auto-install: replace `promptInstallation` with `executeInstall` using readline confirm + spawn
+- **task-1775506792151** — hub.js speak/display: add `SUPPORTED` set, throw on unknown command types
+- **task-1775506792183** — llm.js hardware-adaptive: verify `config.llm.model` is used (already wired via `profiles.js`), no hardcoded model
+- **task-1775506792214** — README.md: static file with 3 install methods + REST API endpoint table
+
+All 4 tasks marked `hasDesign: true`. M14 dbb.md and design.md were already present.
+[2026-04-06T20:25:18.370Z] tech_lead-1 agent completed
+[2026-04-06 20:25:18] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 20:25:18] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 20:25:18] [workflow] work_loop [EXEC] developer
+[2026-04-06 20:25:18] [agent_start] developer developer
+[2026-04-06T20:25:18.413Z] Running developer agent...
+[2026-04-06 20:25:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 78min (active:4, done:51)
+[2026-04-06 20:25:41] [error] daemon Watchdog: busy for 280min, force reset
+[2026-04-06 20:25:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T20:25:41.595Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 280min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 20:25:41] [perf] daemon {"rss":"35MB","heapUsed":"7MB","heapTotal":"9MB","uptime":"16800s"}
+[2026-04-06 20:25:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 78min (active:4, done:51)
+[2026-04-06 20:26:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 79min (active:4, done:51)
+[2026-04-06 20:26:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 79min (active:4, done:51)
+All 3 tasks are complete and moved to review:
+
+- **task-1775506792151** (hub.js speak/display): Added `SUPPORTED` set + unknown type validation to `sendCommand`
+- **task-1775506784289** (optimizer.js auto-install): Replaced `promptInstallation` with interactive `executeInstall` + `askConfirm`, with re-detect and model pull after install
+- **task-1775506792183** (llm.js hardware adaptive): Verified — already correct, `config.llm.model` used throughout, no changes needed
+[2026-04-06T20:27:27.022Z] developer agent completed
+[2026-04-06 20:27:27] [agent_complete] developer completed successfully

@@ -54,6 +54,8 @@ export function unregisterDevice(id) {
 export function sendCommand(deviceId, command) {
   const device = registry.get(deviceId);
   if (!device) throw new Error(`Device not found: ${deviceId}`);
+  const SUPPORTED = ['capture', 'speak', 'display'];
+  if (!SUPPORTED.includes(command.type)) throw new Error(`Unsupported command type: ${command.type}`);
   const requestId = randomUUID();
   const { type, ...rest } = command;
   device.ws.send(JSON.stringify({ type: 'command', requestId, action: type, ...rest }));
