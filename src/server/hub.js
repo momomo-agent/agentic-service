@@ -1,9 +1,25 @@
 import { WebSocketServer } from 'ws';
 import { randomUUID } from 'node:crypto';
+import * as sense from '../runtime/sense.js';
+import { chat as brainChat } from './brain.js';
 
 const registry = new Map(); // id → { ws, name, capabilities, lastPong }
 const pendingCaptures = new Map(); // requestId → { resolve, reject, timer }
 const sessions = new Map(); // sessionId → { data: {}, deviceIds: Set }
+
+export async function init() {
+  const emitter = sense.startHeadless();
+  emitter.on('wakeword', async () => {
+    const chunks = [];
+    for await (const chunk of brainChat([])) {
+      if (chunk.type === 'content') chunks.push(chunk.text);
+    }
+    const text = chunks.join('');
+    for (const device of registry.values()) {
+      try { device.ws.send(JSON.stringify({ type: 'wakeword_response', text })); } catch { /* ignore */ }
+    }
+  });
+}
 
 export function joinSession(sessionId, deviceId) {
   if (!sessions.has(sessionId)) sessions.set(sessionId, { data: {}, deviceIds: new Set() });

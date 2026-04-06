@@ -5973,3 +5973,55 @@
 {"ts":"2026-04-06T23:36:05.218Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:15, done:123)\"}"}}
 {"ts":"2026-04-06T23:36:12.590Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":6.552786,"cpuSystem":13.163134}}}
 {"ts":"2026-04-06T23:36:16.140Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":6.553486,"cpuSystem":13.164092}}}
+{"ts":"2026-04-06T23:36:16.246Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T23:36:16.246Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":6.558568,"cpuSystem":13.179395}}}
+{"ts":"2026-04-06T23:36:34.150Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775518019834","from":"todo","to":"inProgress","title":"唤醒词服务端管道集成"}}
+{"ts":"2026-04-06T23:36:34.526Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":6.558997,"cpuSystem":13.180037}}}
+{"ts":"2026-04-06T23:36:34.555Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:36:34.591Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 13"}}
+{"ts":"2026-04-06T23:36:34.592Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] monitors: iteration == 1 || iteration % 5 == 0"}}
+{"ts":"2026-04-06T23:36:34.592Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:36:34.592Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":6.574003,"cpuSystem":13.230834}}}
+{"ts":"2026-04-06T23:36:41.871Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":6.577852,"cpuSystem":13.237547}}}
+{"ts":"2026-04-06T23:36:41.898Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:36:41.935Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 10"}}
+{"ts":"2026-04-06T23:36:41.953Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:36:41.953Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":6.596486,"cpuSystem":13.300654}}}
+{"ts":"2026-04-06T23:36:55.678Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":6.596834,"cpuSystem":13.301306}}}
+{"ts":"2026-04-06T23:36:55.706Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:36:55.743Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 13"}}
+{"ts":"2026-04-06T23:36:55.743Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] monitors: iteration == 1 || iteration % 5 == 0"}}
+{"ts":"2026-04-06T23:36:55.743Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:36:55.743Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":6.612108,"cpuSystem":13.351443}}}
+{"ts":"2026-04-06T23:37:03.343Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":6.612475,"cpuSystem":13.352077}}}
+{"ts":"2026-04-06T23:37:03.371Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:37:03.408Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 14"}}
+{"ts":"2026-04-06T23:37:03.409Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] monitors: iteration == 1 || iteration % 5 == 0"}}
+{"ts":"2026-04-06T23:37:03.409Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:37:03.409Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":6.62757,"cpuSystem":13.403281}}}
+{"ts":"2026-04-06T23:37:05.234Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:15, done:123)"}}
+{"ts":"2026-04-06T23:37:05.234Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:15, done:123)\"}"}}
+{"ts":"2026-04-06T23:37:14.774Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":6.643141,"cpuSystem":13.419544}}}
+{"ts":"2026-04-06T23:37:14.803Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:37:14.840Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 14"}}
+{"ts":"2026-04-06T23:37:14.840Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] monitors: iteration == 1 || iteration % 5 == 0"}}
+{"ts":"2026-04-06T23:37:14.840Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:37:14.840Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":6.658382,"cpuSystem":13.471016}}}
+{"ts":"2026-04-06T23:37:21.053Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":6.658777,"cpuSystem":13.471657}}}
+{"ts":"2026-04-06T23:37:21.080Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:37:21.116Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 11"}}
+{"ts":"2026-04-06T23:37:21.116Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] monitors: iteration == 1 || iteration % 5 == 0"}}
+{"ts":"2026-04-06T23:37:21.116Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:37:21.116Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":6.673291,"cpuSystem":13.520369}}}
+{"ts":"2026-04-06T23:37:25.130Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":6.673642,"cpuSystem":13.520947}}}
+{"ts":"2026-04-06T23:37:25.158Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:37:25.197Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 15"}}
+{"ts":"2026-04-06T23:37:25.214Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:37:25.214Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":6.69263,"cpuSystem":13.586255}}}
+{"ts":"2026-04-06T23:37:43.551Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":6.700573,"cpuSystem":13.601223}}}
+{"ts":"2026-04-06T23:37:43.579Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:37:43.616Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 15"}}
+{"ts":"2026-04-06T23:37:43.633Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:37:43.634Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":6.719401,"cpuSystem":13.665505}}}
+{"ts":"2026-04-06T23:37:53.424Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775518019834","from":"inProgress","to":"review","title":"唤醒词服务端管道集成"}}
+{"ts":"2026-04-06T23:37:58.204Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":6.719756,"cpuSystem":13.666156}}}

@@ -10326,3 +10326,165 @@ The two review tasks cannot be claimed right now (likely already claimed by anot
 I'll check back periodically for tasks moving into `review` status. No action needed at this time.
 [2026-04-06T23:36:16.138Z] tester-2 agent completed
 [2026-04-06 23:36:16] [agent_complete] tester-2 completed successfully
+[2026-04-06 23:36:16] [workflow] work_loop [EXEC] developer
+[2026-04-06 23:36:16] [agent_start] developer developer
+[2026-04-06T23:36:16.270Z] Running developer agent...
+The project state is clear. Here's my assessment:
+
+**M30 (active):** 2 tasks in `review`, 2 in `in-progress`. Cannot close — waiting on testers to approve reviewed tasks and developers to finish in-progress work.
+
+**M31/M32/M33 (planned):** All architecture gaps are covered by existing todo tasks:
+- M31 covers all runtime layer modules (llm/stt/tts/sense/memory)
+- M32 covers server layer (hub/brain/api) + admin UI + README
+- M33 covers wakeword pipeline + voice latency benchmark
+
+**No action needed from PM side.** The plan is complete and well-structured. Current blockers are execution (developers) and review approval (testers), not planning gaps.
+[2026-04-06T23:36:34.522Z] pm agent completed
+[2026-04-06 23:36:34] [agent_complete] pm completed successfully
+[2026-04-06 23:36:34] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:36:34] [workflow] work_loop [LOOP] Iteration 13
+[2026-04-06 23:36:34] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:36:34] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:36:34] [agent_start] pm pm
+[2026-04-06T23:36:34.618Z] Running pm agent...
+Good. The cancelled duplicates are cleaned up. The active task structure is clean:
+
+**M30 (active):** 2 in `review` (VAD, CDN), 2 `in-progress` (HTTPS, multi-device brain sharing) — waiting on testers.
+
+**M31 (planned):** 5 `todo` tasks — runtime/llm, stt, tts, sense, memory  
+**M32 (planned):** 5 `todo` tasks — server/hub, brain, api, admin UI, README  
+**M33 (planned):** 3 `todo` tasks — headless sense, wakeword pipeline, voice latency benchmark
+
+Architecture match is at 18% — the planned milestones directly target the missing gaps. No new tasks needed. Status is healthy — waiting for m30 testers to complete their reviews before m31 can activate.
+[2026-04-06T23:36:41.869Z] pm agent completed
+[2026-04-06 23:36:41] [agent_complete] pm completed successfully
+[2026-04-06 23:36:41] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:36:41] [workflow] work_loop [LOOP] Iteration 10
+[2026-04-06 23:36:41] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:36:41] [agent_start] pm pm
+[2026-04-06T23:36:41.978Z] Running pm agent...
+The milestones and tasks are already well-structured. Let me verify the current state summary:
+
+**m30 (active)**: 2 tasks in `review`, 2 tasks `in-progress` — waiting for testers/developers to complete.
+
+**m31 (planned)**: 9 tasks — 4 `done` (detector layer), 3 `todo` (llm/stt/tts runtime), 2 `todo` (sense/memory runtime). Ready to activate once m30 completes.
+
+**m32 (planned)**: 5 tasks — all `todo` (hub/brain/api/admin/readme). Blocked on m31 runtime completion.
+
+**m33 (planned)**: 3 tasks — all `todo` (sense path, wakeword pipeline, latency benchmark).
+
+The architecture gap score is 18% — the remaining gaps are all covered by m31/m32/m33 tasks. No new milestones needed right now.
+
+**Action taken**: Updated `milestoneId` on 3 new tasks (task-1775518460838, task-1775518464754, task-1775518468358) that were using `groupId` instead. They are already registered in milestones.json for m31/m32.
+
+**Status**: Waiting on m30 in-progress tasks (HTTPS tunnel + multi-device brain state) and review tasks (VAD + CDN endpoints) to complete before m31 activates.
+[2026-04-06T23:36:55.675Z] pm agent completed
+[2026-04-06 23:36:55] [agent_complete] pm completed successfully
+[2026-04-06 23:36:55] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:36:55] [workflow] work_loop [LOOP] Iteration 13
+[2026-04-06 23:36:55] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:36:55] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:36:55] [agent_start] pm pm
+[2026-04-06T23:36:55.767Z] Running pm agent...
+M30 status: 2 tasks in `review`, 2 tasks `in-progress`, 4 `cancelled`.
+
+Per my rules: I must NOT move tasks from "review" to "done" — that's the tester's job. The `in-progress` tasks (HTTPS/LAN tunnel + multi-device brain state sharing) are still active.
+
+Current state:
+- `task-1775517321148` — VAD auto-detection → **review**
+- `task-1775517325421` — CDN profiles real endpoint → **review**
+- `task-1775517330333` — HTTPS/LAN tunnel → **in-progress**
+- `task-1775517334300` — Multi-device brain state sharing → **in-progress**
+
+M30 is not complete. Two tasks are still in-progress and two await tester review. I will report status and wait — no action needed from PM side until testers approve the review tasks and the in-progress tasks complete.
+
+**Status report:**
+- M30 is **active** with 2 tasks pending tester review and 2 still in-progress
+- M31, M32, M33 are planned with tasks queued
+- Architecture match is 18% — significant gaps remain (runtime layer, server layer, detector profiles)
+- Next action: wait for tester to process review tasks and developers to complete in-progress tasks before advancing to M31
+[2026-04-06T23:37:03.339Z] pm agent completed
+[2026-04-06 23:37:03] [agent_complete] pm completed successfully
+[2026-04-06 23:37:03] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:37:03] [workflow] work_loop [LOOP] Iteration 14
+[2026-04-06 23:37:03] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:37:03] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:37:03] [agent_start] pm pm
+[2026-04-06T23:37:03.435Z] Running pm agent...
+[2026-04-06 23:37:05] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:15, done:123)
+M30 status:
+- 2 tasks in **review** (waiting for tester approval)
+- 2 tasks **in-progress**
+
+Per my rules: I must NOT approve review tasks or mark the milestone complete. I'll wait for testers to move review tasks to done, and monitor in-progress tasks.
+
+No action needed from me right now — milestone m30 is progressing normally.
+[2026-04-06T23:37:14.770Z] pm agent completed
+[2026-04-06 23:37:14] [agent_complete] pm completed successfully
+[2026-04-06 23:37:14] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:37:14] [workflow] work_loop [LOOP] Iteration 14
+[2026-04-06 23:37:14] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:37:14] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:37:14] [agent_start] pm pm
+[2026-04-06T23:37:14.866Z] Running pm agent...
+M30 status: 2 tasks in `review`, 2 tasks `in-progress`. Per my rules, I cannot mark m30 complete — I must wait for testers to approve the review tasks, and the in-progress tasks need to finish.
+
+Let me report the current state clearly:
+
+**M30 Status:**
+- `task-1775517321148` — VAD自动检测实现 → **review** (waiting for tester)
+- `task-1775517325421` — CDN profiles真实端点配置 → **review** (waiting for tester)
+- `task-1775517330333` — HTTPS/LAN隧道安全访问 → **in-progress**
+- `task-1775517334300` — 多设备脑状态深度共享 → **in-progress**
+
+M30 is still active. The planned milestones m31, m32, m33 already exist with tasks queued.
+
+**Action:** Check if m31/m32/m33 tasks need any gaps filled based on the architecture gaps (18% match). The architecture gaps show many `missing` items — but those are already covered by tasks in m31/m32. No new tasks needed right now.
+
+**Waiting on:** Testers to move the 2 `review` tasks to `done`, and developers to complete the 2 `in-progress` tasks before m30 can close and m31 activates.
+[2026-04-06T23:37:21.049Z] pm agent completed
+[2026-04-06 23:37:21] [agent_complete] pm completed successfully
+[2026-04-06 23:37:21] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:37:21] [workflow] work_loop [LOOP] Iteration 11
+[2026-04-06 23:37:21] [workflow] work_loop [SKIP] monitors: iteration == 1 || iteration % 5 == 0
+[2026-04-06 23:37:21] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:37:21] [agent_start] pm pm
+[2026-04-06T23:37:21.142Z] Running pm agent...
+M30 status:
+- 2 tasks in **review** (waiting for tester approval)
+- 2 tasks **in-progress**
+
+Per my constraints: I cannot approve review tasks or mark the milestone complete. I'll wait for testers to move review tasks to done, and monitor in-progress tasks.
+
+No action needed from me right now — milestone m30 is progressing normally.
+[2026-04-06T23:37:25.127Z] pm agent completed
+[2026-04-06 23:37:25] [agent_complete] pm completed successfully
+[2026-04-06 23:37:25] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:37:25] [workflow] work_loop [LOOP] Iteration 15
+[2026-04-06 23:37:25] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:37:25] [agent_start] pm pm
+[2026-04-06T23:37:25.239Z] Running pm agent...
+M30 status:
+- 2 tasks in **review** (VAD, CDN profiles) — waiting for tester approval
+- 2 tasks **in-progress** (HTTPS/LAN, multi-device brain sync) — still being worked on
+
+Per PM rules: cannot approve review tasks or mark milestone complete. Waiting for testers to move review tasks to done, and developers to complete in-progress tasks.
+
+No action needed from PM at this time.
+[2026-04-06T23:37:43.546Z] pm agent completed
+[2026-04-06 23:37:43] [agent_complete] pm completed successfully
+[2026-04-06 23:37:43] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:37:43] [workflow] work_loop [LOOP] Iteration 15
+[2026-04-06 23:37:43] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:37:43] [agent_start] pm pm
+[2026-04-06T23:37:43.658Z] Running pm agent...
+Task complete. Here's a summary of what was implemented:
+
+**task-1775518019834: 唤醒词服务端管道集成**
+
+- `src/runtime/sense.js`: Added `startHeadless()` — wraps existing `startWakeWordPipeline` with a Node.js `EventEmitter`, emitting `'wakeword'` events
+- `src/server/hub.js`: Added `init()` — calls `sense.startHeadless()`, listens for `'wakeword'`, invokes `brainChat([])` to trigger inference, and broadcasts the response to all connected WebSocket devices as `wakeword_response`
+
+Task moved to `review`.
+[2026-04-06T23:37:58.200Z] developer agent completed
+[2026-04-06 23:37:58] [agent_complete] developer completed successfully

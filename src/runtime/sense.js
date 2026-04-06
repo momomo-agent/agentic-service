@@ -1,4 +1,5 @@
 import { createPipeline } from 'agentic-sense';
+import { EventEmitter } from 'node:events';
 
 let pipeline = null;
 let intervalId = null;
@@ -72,6 +73,12 @@ export function startWakeWordPipeline(onWake) {
 
 export async function initHeadless(options = { face: true, gesture: true, object: true }) {
   pipeline = await createPipeline(options);
+}
+
+export function startHeadless() {
+  const emitter = new EventEmitter();
+  startWakeWordPipeline(() => emitter.emit('wakeword'));
+  return emitter;
 }
 
 export function detectFrame(buffer) {
