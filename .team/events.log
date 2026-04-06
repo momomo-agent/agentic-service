@@ -4816,3 +4816,9 @@
 {"ts":"2026-04-06T22:09:54.115Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.071297,"cpuSystem":7.619523}}}
 {"ts":"2026-04-06T22:09:54.116Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.071453,"cpuSystem":7.619966}}}
 {"ts":"2026-04-06T22:09:59.777Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.071788,"cpuSystem":7.620601}}}
+{"ts":"2026-04-06T22:10:03.331Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:8, done:91)"}}
+{"ts":"2026-04-06T22:10:03.332Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:8, done:91)\"}"}}
+{"ts":"2026-04-06T22:10:08.175Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:8, done:91)"}}
+{"ts":"2026-04-06T22:10:08.176Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:8, done:91)\"}"}}
+{"ts":"2026-04-06T22:10:08.657Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775512900298","from":"review","to":"testing","title":"提升测试覆盖率至98%"}}
+{"ts":"2026-04-06T22:10:15.779Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":4.079154,"cpuSystem":7.631666}}}
