@@ -1,31 +1,31 @@
 {
   "pm": {
-    "status": "running",
-    "lastRun": "2026-04-06T23:06:26.980Z",
-    "currentTask": "pm",
+    "status": "idle",
+    "lastRun": "2026-04-06T23:07:31.506Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-1": {
-    "status": "running",
-    "lastRun": "2026-04-06T23:06:08.439Z",
-    "currentTask": "tech_lead",
+    "status": "idle",
+    "lastRun": "2026-04-06T23:08:43.653Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-2": {
-    "status": "running",
-    "lastRun": "2026-04-06T23:06:08.440Z",
-    "currentTask": "tech_lead",
+    "status": "idle",
+    "lastRun": "2026-04-06T23:09:25.872Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-3": {
-    "status": "running",
-    "lastRun": "2026-04-06T23:06:08.441Z",
-    "currentTask": "tech_lead",
+    "status": "idle",
+    "lastRun": "2026-04-06T23:08:45.249Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "developer": {
     "status": "idle",
-    "lastRun": "2026-04-06T22:59:43.188Z",
+    "lastRun": "2026-04-06T23:09:59.863Z",
     "currentTask": null,
     "retryCount": 1
   },

@@ -1,6 +1,11 @@
 #!/bin/sh
 set -e
 
+if [ "$AGENTIC_GLOBAL" = "1" ]; then
+  npm install -g agentic-service
+  exec agentic-service "$@"
+fi
+
 if ! command -v node >/dev/null 2>&1; then
   echo "Error: Node.js not found. Install from https://nodejs.org" >&2; exit 1
 fi

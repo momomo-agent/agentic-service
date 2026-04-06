@@ -5440,3 +5440,47 @@
 {"ts":"2026-04-06T23:06:26.980Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
 {"ts":"2026-04-06T23:06:26.980Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":11,"memoryTotalMB":13,"cpuUser":5.334473,"cpuSystem":10.184795}}}
 {"ts":"2026-04-06T23:06:56.416Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":5.339315,"cpuSystem":10.201232}}}
+{"ts":"2026-04-06T23:06:56.848Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] implement: designedTasks > 0"}}
+{"ts":"2026-04-06T23:06:56.880Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 6"}}
+{"ts":"2026-04-06T23:06:56.880Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T23:06:56.880Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":5.351308,"cpuSystem":10.251865}}}
+{"ts":"2026-04-06T23:07:11.140Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":5.364968,"cpuSystem":10.273124}}}
+{"ts":"2026-04-06T23:07:11.172Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:07:11.172Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-06T23:07:11.172Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":5.370159,"cpuSystem":10.28983}}}
+{"ts":"2026-04-06T23:07:11.173Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":5.370345,"cpuSystem":10.290346}}}
+{"ts":"2026-04-06T23:07:11.173Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"tech_lead","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":5.370463,"cpuSystem":10.290661}}}
+{"ts":"2026-04-06T23:07:31.507Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":5.370871,"cpuSystem":10.292757}}}
+{"ts":"2026-04-06T23:07:31.537Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T23:07:31.538Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-06T23:07:31.538Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"tech_lead","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":5.376067,"cpuSystem":10.309673}}}
+{"ts":"2026-04-06T23:07:31.539Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"tech_lead","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":5.376237,"cpuSystem":10.310173}}}
+{"ts":"2026-04-06T23:07:31.539Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"tech_lead","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":5.376349,"cpuSystem":10.310501}}}
+{"ts":"2026-04-06T23:08:09.205Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":5.389209,"cpuSystem":10.335607}}}
+{"ts":"2026-04-06T23:08:13.271Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":5.389773,"cpuSystem":10.336825}}}
+{"ts":"2026-04-06T23:08:15.628Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":5.390157,"cpuSystem":10.33734}}}
+{"ts":"2026-04-06T23:08:19.856Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":5.390627,"cpuSystem":10.338167}}}
+{"ts":"2026-04-06T23:08:19.882Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T23:08:19.882Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T23:08:19.883Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":5.394724,"cpuSystem":10.351923}}}
+{"ts":"2026-04-06T23:08:26.542Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (40min), skipping safety check","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":5.395065,"cpuSystem":10.353097}}}
+{"ts":"2026-04-06T23:08:26.689Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":5.39577,"cpuSystem":10.356576}}}
+{"ts":"2026-04-06T23:08:27.411Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":5.396099,"cpuSystem":10.357086}}}
+{"ts":"2026-04-06T23:08:28.290Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"13MB\",\"heapUsed\":\"10MB\",\"heapTotal\":\"13MB\",\"uptime\":\"25802s\"}"}}
+{"ts":"2026-04-06T23:08:43.653Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":14,"cpuUser":5.40331,"cpuSystem":10.37219}}}
+{"ts":"2026-04-06T23:08:43.838Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775516741858","from":"todo","to":"inProgress","title":"Ollama自动安装 + 模型拉取"}}
+{"ts":"2026-04-06T23:08:45.250Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":14,"cpuUser":5.403677,"cpuSystem":10.373186}}}
+{"ts":"2026-04-06T23:08:45.267Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T23:08:45.268Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T23:08:45.268Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":5.407917,"cpuSystem":10.38681}}}
+{"ts":"2026-04-06T23:09:05.928Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775516748193","from":"todo","to":"inProgress","title":"setup.sh完善 + npx入口验证"}}
+{"ts":"2026-04-06T23:09:25.875Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":5.416117,"cpuSystem":10.402732}}}
+{"ts":"2026-04-06T23:09:25.898Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-06T23:09:25.898Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-06T23:09:25.898Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":5.42052,"cpuSystem":10.417538}}}
+{"ts":"2026-04-06T23:09:27.254Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775516741858","from":"inProgress","to":"review","title":"Ollama自动安装 + 模型拉取"}}
+{"ts":"2026-04-06T23:09:37.515Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775516748230","from":"todo","to":"inProgress","title":"服务端唤醒词常驻pipeline"}}
+{"ts":"2026-04-06T23:09:46.063Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775516748193","from":"inProgress","to":"review","title":"setup.sh完善 + npx入口验证"}}
+{"ts":"2026-04-06T23:09:52.250Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775516748265","from":"todo","to":"inProgress","title":"语音延迟<2s端到端基准"}}
+{"ts":"2026-04-06T23:09:52.291Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775516748300","from":"todo","to":"inProgress","title":"README用户文档补全"}}
+{"ts":"2026-04-06T23:09:59.864Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":5.427037,"cpuSystem":10.429552}}}

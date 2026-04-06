@@ -8871,3 +8871,185 @@ Task `task-1775514675749` (sense+memory) is done. All 7 tests passed covering DB
 The other two review tasks (`task-1775514675779` is blocked by `task-1775514675715`, and `task-1775514571886` is in `blocked` status assigned to tester-1) are not claimable. No further work available right now.
 [2026-04-06T23:06:56.368Z] tester-2 agent completed
 [2026-04-06 23:06:56] [agent_complete] tester-2 completed successfully
+[2026-04-06 23:06:56] [workflow] work_loop [SKIP] implement: designedTasks > 0
+[2026-04-06 23:06:56] [workflow] work_loop [LOOP] Iteration 6
+[2026-04-06 23:06:56] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:06:56] [agent_start] pm pm
+[2026-04-06T23:06:57.133Z] Running pm agent...
+M27 marked completed. M29 is active with 5 todo tasks targeting remaining gaps:
+
+- Ollama自动安装 + 模型拉取
+- setup.sh完善 + npx入口验证  
+- 服务端唤醒词常驻pipeline
+- 语音延迟<2s端到端基准
+- README用户文档补全
+
+These map directly to open gaps in prd.json and vision.json. M29 is correctly scoped. No new milestone needed — the active work is already queued.
+
+**Current status:**
+- M27: completed (all 4 tasks done)
+- M29: active, 5 tasks in `todo` — ready for developer assignment
+- Architecture match: 18% (still low — runtime/server files were the main gaps, now addressed in m27)
+
+The team should pick up M29 tasks. No blockers or dependencies between them — all 5 can be worked in parallel.
+[2026-04-06T23:07:11.134Z] pm agent completed
+[2026-04-06 23:07:11] [agent_complete] pm completed successfully
+[2026-04-06 23:07:11] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:07:11] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 23:07:11] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 23:07:11] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 23:07:11] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T23:07:11.211Z] Running tech_lead-2 agent...
+[2026-04-06T23:07:11.211Z] Running tech_lead-3 agent...
+[2026-04-06T23:07:11.211Z] Running tech_lead-1 agent...
+M29 is properly set up. All 5 tasks are `todo` with clear DBB criteria. The milestone covers the remaining open gaps:
+
+- PRD gaps: Ollama auto-install, setup.sh/npx, VAD, README
+- DBB gaps: wakeword pipeline, voice latency benchmark
+
+No new tasks needed. M29 is ready for developers to pick up work.
+
+**Current M29 status:**
+- `task-1775516741858` — Ollama自动安装 + 模型拉取 (P0)
+- `task-1775516748193` — setup.sh完善 + npx入口验证 (P0)
+- `task-1775516748230` — 服务端唤醒词常驻pipeline (P1)
+- `task-1775516748265` — 语音延迟<2s端到端基准 (P1)
+- `task-1775516748300` — README用户文档补全 (P1)
+
+All tasks unblocked, no assignees yet — ready for developer pickup.
+[2026-04-06T23:07:31.501Z] pm agent completed
+[2026-04-06 23:07:31] [agent_complete] pm completed successfully
+[2026-04-06 23:07:31] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:07:31] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 23:07:31] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 23:07:31] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 23:07:31] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T23:07:31.575Z] Running tech_lead-2 agent...
+[2026-04-06T23:07:31.575Z] Running tech_lead-3 agent...
+[2026-04-06T23:07:31.575Z] Running tech_lead-1 agent...
+M29 design work is complete. Here's a summary of what was created:
+
+**M29 milestone files:**
+- `.team/milestones/m29/dbb.md` — verification criteria for all 5 tasks
+- `.team/milestones/m29/design.md` — technical approach overview
+
+**Task designs (all marked `hasDesign=true`):**
+- `task-1775516741858` — `ensureOllama(profile)` in `src/cli/setup.js`: detect→install→pull model
+- `task-1775516748193` — `install/setup.sh` curl-pipe rewrite + npx entry validation
+- `task-1775516748230` — `startWakeWord(keyword, onDetected)` in `src/runtime/sense.js` + server integration
+- `task-1775516748265` — `test/benchmark/voice-latency.js` measuring STT→LLM→TTS p50/p95/max
+- `task-1775516748300` — `README.md` update with install/API/Docker/config/troubleshooting sections
+[2026-04-06T23:08:09.190Z] tech_lead-3 agent completed
+[2026-04-06 23:08:09] [agent_complete] tech_lead-3 completed successfully
+All work for M29 is already complete:
+
+- `dbb.md` — exists with full verification criteria
+- `design.md` — exists with technical approach
+- All 5 tasks have `hasDesign: true` and task-level `design.md` files
+
+Nothing to do. M29 is fully designed and ready for implementation.
+[2026-04-06T23:08:13.267Z] tech_lead-2 agent completed
+[2026-04-06 23:08:13] [agent_complete] tech_lead-2 completed successfully
+M29 designs complete. Here's a summary of what was created:
+
+**Milestone m29:**
+- `dbb.md` — verification criteria for all 5 tasks
+- `design.md` — technical overview and key file mapping
+
+**Task designs (all marked `hasDesign=true`):**
+- `task-1775516741858` — `src/detector/ollama.js`: `ensureOllama()` + `pullModel()` with progress callbacks
+- `task-1775516748193` — `install/setup.sh` curl-pipe global install + `bin/agentic-service.js` shebang verification
+- `task-1775516748230` — `src/runtime/sense.js` `startWakeWord()` + `src/server/api.js` pipeline integration with SIGINT cleanup
+- `task-1775516748265` — `test/latency.test.js` mock pipeline benchmark, outputs `test/results/latency-report.json`
+- `task-1775516748300` — `README.md` with install/API/Docker/config/troubleshooting sections
+[2026-04-06T23:08:15.618Z] tech_lead-2 agent completed
+[2026-04-06 23:08:15] [agent_complete] tech_lead-2 completed successfully
+M29 designs complete. Here's a summary of what was created:
+
+**Milestone files:**
+- `.team/milestones/m29/dbb.md` — already existed, kept as-is
+- `.team/milestones/m29/design.md` — created
+
+**Task designs (all 5 marked `hasDesign=true`):**
+
+| Task | Title | Key file |
+|------|-------|----------|
+| task-1775516741858 | Ollama自动安装 + 模型拉取 | `src/detector/ollama.js` (new) |
+| task-1775516748193 | setup.sh完善 + npx入口验证 | `install/setup.sh` update |
+| task-1775516748230 | 服务端唤醒词常驻pipeline | `src/runtime/sense.js` + `src/server/api.js` |
+| task-1775516748265 | 语音延迟<2s端到端基准 | `test/latency.test.js` (exists, add report output) |
+| task-1775516748300 | README用户文档补全 | `README.md` |
+[2026-04-06T23:08:19.844Z] tech_lead-1 agent completed
+[2026-04-06 23:08:19] [agent_complete] tech_lead-1 completed successfully
+[2026-04-06 23:08:19] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 23:08:19] [workflow] work_loop [EXEC] developer
+[2026-04-06 23:08:19] [agent_start] developer developer
+[2026-04-06T23:08:19.915Z] Running developer agent...
+[2026-04-06 23:08:26] [agent_start] daemon Still busy (40min), skipping safety check
+All M29 tasks already have complete designs (`hasDesign: true`) and well-written `design.md` files. The milestone also has both `dbb.md` and `design.md` in place.
+
+**Summary of M29 status:**
+
+- `m29/dbb.md` — exists with verification criteria for all 5 tasks
+- `m29/design.md` — exists with technical approach for all 5 tasks
+- All 5 tasks have `hasDesign: true` and detailed `design.md` files:
+  - `task-1775516741858` — Ollama auto-install: `src/detector/ollama.js` with `ensureOllama(model, onProgress)`
+  - `task-1775516748193` — setup.sh + npx: curl-pipe install script + bin field verification
+  - `task-1775516748230` — Wake word pipeline: `startWakeWordPipeline(onWake)` in `src/runtime/sense.js`
+  - `task-1775516748265` — Voice latency benchmark: mock STT+LLM+TTS pipeline, p95 ≤ 2000ms
+  - `task-1775516748300` — README: 6 required sections with API examples
+
+No action needed — all designs are complete and ready for implementation.
+[2026-04-06T23:08:26.684Z] tech_lead-1 agent completed
+[2026-04-06 23:08:26] [agent_complete] tech_lead-1 completed successfully
+All done. M29 technical designs are complete:
+
+- **task-1775516741858** (Ollama自动安装) — design existed, marked `hasDesign=true`
+- **task-1775516748193** (setup.sh + npx) — design existed, marked `hasDesign=true`
+- **task-1775516748230** (唤醒词pipeline) — design existed, marked `hasDesign=true`
+- **task-1775516748265** (语音延迟基准) — design written + marked `hasDesign=true`
+- **task-1775516748300** (README文档) — design existed, marked `hasDesign=true`
+
+M29 milestone dbb.md and design.md were already present. All 5 tasks now have `hasDesign=true`.
+[2026-04-06T23:08:27.405Z] tech_lead-3 agent completed
+[2026-04-06 23:08:27] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 23:08:28] [perf] daemon {"rss":"13MB","heapUsed":"10MB","heapTotal":"13MB","uptime":"25802s"}
+All 5 m29 tasks now have designs and `hasDesign: true`:
+
+- **task-1775516741858** — Ollama自动安装: `src/detector/ollama.js` with `ensureOllama(model, onProgress)`
+- **task-1775516748193** — setup.sh + npx入口: curl-pipe install, Node≥18 check, bin field verification
+- **task-1775516748230** — 唤醒词pipeline: `startWakeWordPipeline(onWake)` in `src/runtime/sense.js`, broadcast via hub, SIGINT cleanup
+- **task-1775516748265** — 语音延迟基准: `test/latency.test.js` with mocked STT+LLM+TTS, report to `test/results/latency-report.json`
+- **task-1775516748300** — README文档: 6 sections (install, quick start, API, Docker, config, troubleshooting)
+[2026-04-06T23:08:43.648Z] tech_lead-1 agent completed
+[2026-04-06 23:08:43] [agent_complete] tech_lead-1 completed successfully
+M29 milestone design work is complete. All files were already in place from a previous run:
+
+- `.team/milestones/m29/dbb.md` — done-by-definition criteria for all 5 tasks
+- `.team/milestones/m29/design.md` — milestone-level technical approach
+- 5 task `design.md` files — each with exact file paths, function signatures, logic, and test cases
+- All 5 `task.json` files — `hasDesign: true`
+
+No further action needed.
+[2026-04-06T23:08:45.246Z] tech_lead-3 agent completed
+[2026-04-06 23:08:45] [agent_complete] tech_lead-3 completed successfully
+[2026-04-06 23:08:45] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 23:08:45] [workflow] work_loop [EXEC] developer
+[2026-04-06 23:08:45] [agent_start] developer developer
+[2026-04-06T23:08:45.298Z] Running developer agent...
+All M29 task designs are complete. All 5 tasks now have `hasDesign: true` and detailed design files covering exact file paths, function signatures, logic, edge cases, and test cases. The milestone is ready for implementation.
+[2026-04-06T23:09:25.860Z] tech_lead-2 agent completed
+[2026-04-06 23:09:25] [agent_complete] tech_lead-2 completed successfully
+[2026-04-06 23:09:25] [workflow] work_loop [SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-06 23:09:25] [workflow] work_loop [EXEC] developer
+[2026-04-06 23:09:25] [agent_start] developer developer
+[2026-04-06T23:09:25.928Z] Running developer agent...
+All remaining tasks are currently not claimable (likely assigned to other agents). 
+
+Completed task `task-1775516748193` (setup.sh完善 + npx入口验证):
+- Added `AGENTIC_GLOBAL=1` global install path to `install/setup.sh`
+- Verified shebang and `package.json` bin field were already correct
+
+No other tasks available to claim right now.
+[2026-04-06T23:09:59.854Z] developer agent completed
+[2026-04-06 23:09:59] [agent_complete] developer completed successfully
