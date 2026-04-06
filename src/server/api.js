@@ -8,7 +8,7 @@ import { chat } from './brain.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
 import { errorHandler } from './middleware.js';
-import { getDevices, initWebSocket } from './hub.js';
+import { getDevices, initWebSocket, startWakeWordDetection } from './hub.js';
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -146,6 +146,7 @@ export async function startServer(port = 3000, { https: useHttps = false } = {})
   const httpServer = (await import('http')).default.createServer(app);
   await listenAsync(httpServer, port);
   initWebSocket(httpServer);
+  startWakeWordDetection();
   await Promise.all([stt.init(), tts.init()]).catch(err =>
     console.warn('Runtime init warning:', err.message)
   );

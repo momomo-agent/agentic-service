@@ -101,6 +101,19 @@ export function broadcastWakeword(deviceId) {
   }
 }
 
+export function startWakeWordDetection(keyword = process.env.WAKE_WORD || 'hey agent') {
+  if (!process.stdin.isTTY) return;
+  process.stdin.setEncoding('utf8');
+  process.stdin.on('data', (chunk) => {
+    if (chunk.toLowerCase().includes(keyword.toLowerCase())) {
+      const data = JSON.stringify({ type: 'wake', keyword });
+      for (const { ws } of registry.values()) {
+        if (ws.readyState === ws.OPEN) ws.send(data);
+      }
+    }
+  });
+}
+
 export function initWebSocket(httpServer) {
   const wss = new WebSocketServer({ server: httpServer });
 
