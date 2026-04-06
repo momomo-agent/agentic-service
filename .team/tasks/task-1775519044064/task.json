@@ -6,8 +6,9 @@
   "priority": "P1",
   "assignee": null,
   "blockedBy": [],
-  "groupId": "m32",
+  "groupId": "m34",
   "hasDesign": false,
   "created": "2026-04-06T23:44:04.064Z",
-  "updated": "2026-04-06T23:44:04.065Z"
+  "updated": "2026-04-06T23:44:21.306Z",
+  "milestoneId": "m34"
 }
