@@ -1,0 +1,14 @@
+{
+  "id": "task-1775516748193",
+  "title": "setup.sh完善 + npx入口验证",
+  "description": "setup.sh支持curl-pipe一键安装，验证npx agentic-service入口可用",
+  "status": "todo",
+  "priority": "P0",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m29",
+  "hasDesign": false,
+  "created": "2026-04-06T23:05:48.193Z",
+  "updated": "2026-04-06T23:06:00.280Z",
+  "milestoneId": "m29"
+}

@@ -1,9 +1,10 @@
 {
-  "totalTests": 8,
-  "passed": 8,
+  "totalTests": 20,
+  "passed": 20,
   "failed": 0,
   "edgeCases": [
-    "No test for matchProfile() logic against this file"
+    "Concurrent add() calls serialized via _lock chain (not directly testable without timing)",
+    "sendCommand with unknown device throws Device not found (covered by existing hub tests)"
   ],
   "coverage": "100%"
 }

@@ -8819,3 +8819,45 @@ Task complete. Here's a summary of what was done:
 The second task (task-1775514675779) is blocked by task-1775514675715 and not yet claimable.
 [2026-04-06T23:03:31.589Z] tester-2 agent completed
 [2026-04-06 23:03:31] [agent_complete] tester-2 completed successfully
+[2026-04-06 23:03:33] [workflow] post [POST] task-1775514675779: testing → blocked
+[2026-04-06 23:03:34] [workflow] work_loop [SKIP] implement: designedTasks > 0
+[2026-04-06 23:03:35] [workflow] work_loop [LOOP] Iteration 6
+[2026-04-06 23:03:35] [workflow] work_loop [EXEC] pm
+[2026-04-06 23:03:35] [agent_start] pm pm
+[2026-04-06T23:03:35.166Z] Running pm agent...
+Done. Here's the summary of actions taken:
+
+**M26** → marked `completed` (all 5 tasks were done)
+
+**M28** → marked `completed` (all 4 tasks were done)
+
+**task-1775514675779** (src/server/hub+brain+api.js) → unblocked, status set to `todo` (was blocked by a task already `done`)
+
+**M29 created** — active milestone targeting remaining PRD/Vision gaps:
+- `task-1775516741858` [P0] Ollama自动安装 + 模型拉取
+- `task-1775516748193` [P0] setup.sh完善 + npx入口验证
+- `task-1775516748230` [P1] 服务端唤醒词常驻pipeline
+- `task-1775516748265` [P1] 语音延迟<2s端到端基准
+- `task-1775516748300` [P1] README用户文档补全
+
+**Current state:**
+- M27 still active — 1 task `todo` (server hub/brain/api), 3 done
+- M29 active — 5 tasks `todo`, targeting PRD 78%→~95% and Vision 85%→~95%
+[2026-04-06T23:06:08.377Z] pm agent completed
+[2026-04-06 23:06:08] [agent_complete] pm completed successfully
+[2026-04-06 23:06:08] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:06:08] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-06 23:06:08] [agent_start] tech_lead-1 tech_lead
+[2026-04-06 23:06:08] [agent_start] tech_lead-2 tech_lead
+[2026-04-06 23:06:08] [agent_start] tech_lead-3 tech_lead
+[2026-04-06T23:06:08.477Z] Running tech_lead-3 agent...
+[2026-04-06T23:06:08.477Z] Running tech_lead-1 agent...
+[2026-04-06T23:06:08.477Z] Running tech_lead-2 agent...
+Both tasks are now complete:
+
+- `task-1775514675749` (sense+memory): 7/7 tests passed → **done**
+- `task-1775514675779` (hub+brain+api): 5/5 tests passed → **done**
+
+No tasks remain in testing or review status.
+[2026-04-06T23:06:26.737Z] tester-1 agent completed
+[2026-04-06 23:06:26] [agent_complete] tester-1 completed successfully
