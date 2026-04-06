@@ -3,12 +3,12 @@
   "title": "用户文档 README",
   "description": "编写 README.md 涵盖安装、配置、API 使用、Docker 部署说明",
   "status": "todo",
-  "priority": "P2",
-  "assignee": null,
+  "priority": "P1",
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m12",
   "hasDesign": true,
   "created": "2026-04-06T18:33:59.158Z",
-  "updated": "2026-04-06T18:36:46.132Z",
+  "updated": "2026-04-06T18:42:50.031Z",
   "milestoneId": "m12"
 }

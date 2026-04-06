@@ -51,7 +51,7 @@
     {
       "id": "m5",
       "name": "M5: 感知运行时 + 记忆模块 + Docker 打包",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775494462710",
         "task-1775494466328",
@@ -135,7 +135,7 @@
     {
       "id": "m12",
       "name": "M12: Ollama自动安装 + STT/TTS完善 + 用户文档",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775500429396",
         "task-1775500434960",
