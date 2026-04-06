@@ -1,24 +1,27 @@
 # Test Result: STT/TTS 硬件自适应选择
 
-## Status: BLOCKED
+## Status: PASS
 
-## Tests: 7/8 passed, 1 failed
+## Tests: 14/14 passed
 
-### STT (stt.js) — PASSED 5/5
-- DBB-005: sensevoice provider → sensevoice adapter called ✓
-- whisper provider → whisper adapter called ✓
-- DBB-006: unknown provider → falls back to openai-whisper ✓
-- profile load failure → falls back to openai-whisper ✓
+### STT (stt.js) — PASSED 6/6
+- DBB-005: sensevoice provider → sensevoice adapter ✓
+- whisper provider → whisper adapter ✓
+- DBB-006: unknown provider → openai-whisper fallback ✓
+- profile load failure → default fallback ✓
 - transcribe before init → throws 'not initialized' ✓
+- empty audio → throws EMPTY_AUDIO ✓
 
-### TTS (tts.js) — FAILED 1/3
-- ✗ DBB-007: tts.js has init() export — FAILED (init is undefined)
-- DBB-007: kokoro provider → skipped (init missing)
-- DBB-008: unknown tts provider fallback → skipped (init missing)
+### TTS (tts.js) — PASSED 8/8
+- DBB-007: tts.js has init() export ✓
+- DBB-007: kokoro provider → kokoro adapter ✓
+- piper provider → piper adapter ✓
+- DBB-008: unknown provider → openai-tts fallback ✓
+- profile load failure → default fallback ✓
+- synthesize before init → throws 'not initialized' ✓
+- empty text → throws EMPTY_TEXT ✓
+- piper synthesize returns buffer ✓
 
-## Bug: tts.js missing init() and profile-based adapter selection
-tts.js uses `createTTS()` from agentic-voice directly with no profile lookup.
-Design requires ADAPTERS map (kokoro/piper/openai-tts) and init() that reads profile.
-DBB-007 and DBB-008 cannot pass until tts.js is fixed.
-
-## Test file: test/runtime/stt-tts-adaptive.test.js
+## Test files
+- test/runtime/stt-tts-adaptive.test.js (8 tests)
+- test/runtime/stt-adaptive.test.js (6 tests)

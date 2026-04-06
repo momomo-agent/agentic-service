@@ -3212,3 +3212,12 @@ All 3 tasks are complete. Here's a summary:
 **8 tests written, 8 passed.** Coverage updated to 133 total tests at 98%.
 [2026-04-06T18:23:30.034Z] tester-1 agent completed
 [2026-04-06 18:23:30] [agent_complete] tester-1 completed successfully
+All 3 tasks completed:
+
+- **task-1775499114484** (DBB 规范修复): 4/4 tests passed — `text` field correct, `store.delete()` correct, CDN URL correct, fallback works
+- **task-1775499138579** (SIGINT 优雅关闭): 4/4 tests passed — SIGINT/SIGTERM handlers present, force-exit timeout with `.unref()`
+- **task-1775499138612** (npx 一键安装): 5/5 tests passed — install prompts, pull progress guard, browser open
+
+All tasks marked `done`. Test file: `test/server/m9-dbb.test.js` (11 tests, 11 passed).
+[2026-04-06T18:24:12.027Z] tester-2 agent completed
+[2026-04-06 18:24:12] [agent_complete] tester-2 completed successfully

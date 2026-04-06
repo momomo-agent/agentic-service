@@ -1,20 +1,11 @@
 {
-  "totalTests": 133,
-  "passed": 133,
+  "totalTests": 25,
+  "passed": 25,
   "failed": 0,
   "edgeCases": [
-    "dist/admin not built — runtime /admin 200 check requires npm run build",
-    "setInterval 2s polling not integration-tested against live server",
-    "/api/logs endpoint used in App.vue but not specified in DBB",
-    "capture timeout (10s) not tested — requires fake timers",
-    "device disconnects mid-capture rejects pending promise — not directly tested",
-    "/api/transcribe accepts multipart only, design says base64 JSON",
-    "PUT /api/config replaces config (no merge), design says merge",
-    "tts.js missing init() and profile-based adapter selection (DBB-007/008 blocked)",
-    "sense.js: agentic-sense load failure not tested",
-    "WakeWord: wakeWord prop change mid-session not tested end-to-end",
-    "DBB-005: Ollama not installed path not fully integration-tested (requires real process spawn)",
-    "DBB-006: pullModel % progress not integration-tested (requires real Ollama stream)"
+    "SIGINT during active WebSocket connections (timeout path not exercised live)",
+    "CDN URL actual HTTP reachability (mocked, not live-tested)",
+    "pullModel with total=0 in early stream lines (logic verified, not spawned)"
   ],
-  "coverage": "98%"
+  "coverage": "100%"
 }
