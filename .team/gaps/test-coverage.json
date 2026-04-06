@@ -1,10 +1,9 @@
 {
-  "totalTests": 6,
-  "passed": 6,
+  "totalTests": 8,
+  "passed": 8,
   "failed": 0,
   "edgeCases": [
-    "null gpu object (no gpu key at all)",
-    "memory exactly at minMemory boundary"
+    "No test for matchProfile() logic against this file"
   ],
   "coverage": "100%"
 }

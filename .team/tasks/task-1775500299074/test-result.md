@@ -1,7 +1,7 @@
 # Test Result: profiles/default.json
 
 ## Summary
-- Passed: 9
+- Passed: 8
 - Failed: 0
 
 - [PASS] has profiles array
@@ -11,5 +11,4 @@
 - [PASS] profile[0] has llm/stt/tts/fallback fields
 - [PASS] profile[1] has llm/stt/tts/fallback fields
 - [PASS] profile[2] has llm/stt/tts/fallback fields
-- [PASS] profile[3] has llm/stt/tts/fallback fields
 - [PASS] llm configs have provider and model
