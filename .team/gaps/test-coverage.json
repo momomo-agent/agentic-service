@@ -1,13 +1,12 @@
 {
-  "totalTests": 16,
-  "passed": 15,
+  "totalTests": 28,
+  "passed": 27,
   "failed": 1,
   "edgeCases": [
     "null gpu object (no gpu key at all)",
     "memory exactly at minMemory boundary",
     "gpu type mismatch should eliminate profile in matcher.js (currently not enforced)",
-    "DBB-008 runtime docker run not verified (no Docker daemon in test env)",
-    "Port conflict fallback not tested"
+    "DBB-008 runtime docker run not verified (no Docker daemon in test env)"
   ],
-  "coverage": "94%"
+  "coverage": "96%"
 }
