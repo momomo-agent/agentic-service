@@ -1,13 +1,13 @@
 {
   "id": "task-1775498249905",
   "title": "STT/TTS 硬件自适应选择",
-  "description": "根据硬件 profile 自动选择本地或云端 STT/TTS 提供商，Vision gap",
-  "status": "blocked",
+  "description": "根据硬件 profile 自动选择本地或云端 STT/TTS 提供商；需先实现 tts.js init() 和 profile-based adapter selection (DBB-007/008)，Vision gap",
+  "status": "todo",
   "priority": "P1",
-  "assignee": "tester-1",
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m8",
   "hasDesign": true,
   "created": "2026-04-06T17:57:29.905Z",
-  "updated": "2026-04-06T18:09:44.673Z"
+  "updated": "2026-04-06T18:11:18.838Z"
 }

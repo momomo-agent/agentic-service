@@ -2,7 +2,7 @@
   "id": "task-1775494979786",
   "title": "管理面板 src/ui/admin/",
   "description": "实现 /admin 页面：设备列表、日志查看器、硬件信息面板",
-  "status": "inProgress",
+  "status": "review",
   "priority": "P0",
   "assignee": "developer",
   "blockedBy": [
@@ -11,5 +11,5 @@
   "groupId": "m6",
   "hasDesign": true,
   "created": "2026-04-06T17:02:59.786Z",
-  "updated": "2026-04-06T18:10:21.704Z"
+  "updated": "2026-04-06T18:11:32.954Z"
 }
