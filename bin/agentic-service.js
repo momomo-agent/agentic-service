@@ -55,7 +55,7 @@ program
       console.log(chalk.green(`✓ Server running at ${proto}://localhost:${port}\n`));
 
       if (isFirstRun || options.browser) {
-        await openBrowser(`http://localhost:${port}`);
+        await openBrowser(`${proto}://localhost:${port}`);
       }
 
       console.log(chalk.gray('Press Ctrl+C to stop'));

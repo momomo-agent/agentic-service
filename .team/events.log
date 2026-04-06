@@ -5233,3 +5233,9 @@
 {"ts":"2026-04-06T22:45:24.409Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775515085136","from":"todo","to":"inProgress","title":"Docker端到端验收 + setup.sh幂等性"}}
 {"ts":"2026-04-06T22:45:34.250Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775515078705","from":"inProgress","to":"review","title":"VAD自动语音检测集成"}}
 {"ts":"2026-04-06T22:45:39.996Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":4.838158,"cpuSystem":9.167947}}}
+{"ts":"2026-04-06T22:45:40.096Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775515085075: inProgress → review"}}
+{"ts":"2026-04-06T22:45:40.096Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775515085136: inProgress → review"}}
+{"ts":"2026-04-06T22:45:40.119Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 3"}}
+{"ts":"2026-04-06T22:45:40.119Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T22:45:40.119Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":4.844731,"cpuSystem":9.188018}}}
+{"ts":"2026-04-06T22:46:18.063Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":4.860551,"cpuSystem":9.198582}}}
