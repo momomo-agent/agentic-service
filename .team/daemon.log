@@ -8709,3 +8709,37 @@ All 3 review tasks are currently claimed by another tester (can-claim: false). T
 I'll wait for tasks to become available or for the other tester to release them.
 [2026-04-06T23:00:39.584Z] tester-2 agent completed
 [2026-04-06 23:00:39] [agent_complete] tester-2 completed successfully
+Here's the current status summary:
+
+**M26 (active):** 1 task in `review`, 4 done — waiting for tester to approve `task-1775514571886` (profiles.js getProfile)
+
+**M27 (planned):** 2 tasks in `review` (sense+memory.js, hub+brain+api.js), 2 done — also waiting for tester
+
+**M28 (planned):** All 4 tasks `done` ✓
+
+**Remaining architecture gaps still open:**
+- `src/runtime/sense.js` — MediaPipe sense runtime (missing)
+- `src/server/hub.js` — device management (missing)
+- `src/server/brain.js` — LLM inference + tool calling (missing)
+- `src/server/api.js` — REST API endpoints (missing)
+- `src/ui/admin/` — admin panel (missing)
+- `src/detector/optimizer.js` — partial
+- `src/ui/client/` — admin route missing (partial)
+
+The tasks in m27 review (`sense+memory.js`, `hub+brain+api.js`) directly address several of these gaps. Once testers approve those, the architecture match should improve significantly from 18%.
+
+**Current state:** No action needed from PM. M26 and M27 both have tasks in `review` — waiting on testers. M28 tasks are all done but m27 must complete first. No new milestones are needed at this time — the planned milestones cover the remaining gaps.
+[2026-04-06T23:00:50.989Z] pm agent completed
+[2026-04-06 23:00:50] [agent_complete] pm completed successfully
+[2026-04-06 23:00:51] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 23:00:51] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 23:00:51] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 23:00:51] [agent_start] tester-1 tester
+[2026-04-06 23:00:51] [agent_start] tester-2 tester
+[2026-04-06T23:00:51.045Z] Running tester-1 agent...
+[2026-04-06T23:00:51.046Z] Running tester-2 agent...
+All 3 tasks in 'review' status cannot be claimed right now — they're likely already assigned to other testers. There's nothing for me to pick up at this moment.
+
+I'll wait for new tasks to enter 'review' status or for existing ones to become claimable.
+[2026-04-06T23:00:51.574Z] tester-1 agent completed
+[2026-04-06 23:00:51] [agent_complete] tester-1 completed successfully
