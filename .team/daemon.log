@@ -4090,3 +4090,69 @@ All 4 tasks are complete and moved to review:
 - **task-1775501747301** — `watchProfiles` already wired in `llm.js`; no changes needed, task confirmed complete
 [2026-04-06T19:01:47.504Z] developer agent completed
 [2026-04-06 19:01:47] [agent_complete] developer completed successfully
+[2026-04-06 19:01:47] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-06 19:01:47] [workflow] work_loop [EXEC] pm
+[2026-04-06 19:01:47] [agent_start] pm pm
+[2026-04-06T19:01:47.642Z] Running pm agent...
+M13 has all 4 tasks in "review" status. Per my rules, I must NOT approve them — only testers can do that. I'll report the current state.
+
+**Current Status:**
+
+- M1–M12: completed
+- M13 "DBB修复 + Docker + 配置热更新": **ready-for-work**, all 4 tasks in **review**
+
+**M13 tasks awaiting tester review:**
+1. `task-1775501713057` — DBB修复: heartbeat 60s + wakeword广播 + SIGINT关闭 (P0)
+2. `task-1775501732245` — brain.js tool_use响应格式修复 (P0)
+3. `task-1775501737286` — Docker部署: Dockerfile + docker-compose.yml (P1)
+4. `task-1775501747301` — 配置热更新: watchProfiles → loadConfig自动重载 (P1)
+
+**Waiting for tester to review and approve M13 tasks before I can:**
+- Mark M13 as completed
+- Plan M14
+
+No action needed from PM until tester completes review.
+[2026-04-06T19:02:15.838Z] pm agent completed
+[2026-04-06 19:02:15] [agent_complete] pm completed successfully
+[2026-04-06 19:02:15] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 19:02:15] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 19:02:15] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 19:02:15] [agent_start] tester-1 tester
+[2026-04-06 19:02:15] [agent_start] tester-2 tester
+[2026-04-06T19:02:15.887Z] Running tester-1 agent...
+[2026-04-06T19:02:15.887Z] Running tester-2 agent...
+[2026-04-06 19:02:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:4, done:47)
+[2026-04-06 19:02:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:4, done:47)
+[2026-04-06 19:03:26] [perf] daemon {"rss":"37MB","heapUsed":"8MB","heapTotal":"11MB","uptime":"11100s"}
+[2026-04-06 19:03:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:4, done:47)
+[2026-04-06 19:03:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:4, done:47)
+[2026-04-06 19:04:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 15min (active:4, done:47)
+[2026-04-06 19:04:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 15min (active:4, done:47)
+[2026-04-06 19:05:27] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 16min (active:4, done:47)
+[2026-04-06 19:05:41] [error] daemon Watchdog: busy for 200min, force reset
+[2026-04-06 19:05:41] Unhandled rejection: Unhandled error. ({
+  ts: '2026-04-06T19:05:41.556Z',
+  type: 'error',
+  agent: 'daemon',
+  data: {
+    details: 'Watchdog: busy for 200min, force reset',
+    performance: undefined
+  }
+})
+[2026-04-06 19:05:41] [perf] daemon {"rss":"38MB","heapUsed":"12MB","heapTotal":"13MB","uptime":"12000s"}
+[2026-04-06 19:08:26] [agent_start] daemon Still busy (60min), skipping safety check
+[2026-04-06 19:08:26] [perf] daemon {"rss":"38MB","heapUsed":"8MB","heapTotal":"11MB","uptime":"11400s"}
+[2026-04-06 19:10:41] [perf] daemon {"rss":"38MB","heapUsed":"12MB","heapTotal":"14MB","uptime":"12300s"}
+[2026-04-06 19:13:26] [perf] daemon {"rss":"38MB","heapUsed":"8MB","heapTotal":"11MB","uptime":"11700s"}
+All 4 M13 tasks are now done. Here's a summary:
+
+**Tasks completed:**
+
+- `task-1775501713057` — DBB修复: heartbeat 60s + wakeword广播 + SIGINT关闭 → **done** (5 tests)
+- `task-1775501732245` — brain.js tool_use响应格式修复 → **done** (1 test)
+- `task-1775501737286` — Docker部署: Dockerfile + docker-compose.yml → **done** (8 tests)
+- `task-1775501747301` — 配置热更新: watchProfiles → loadConfig自动重载 → **done** (4 tests)
+
+**Total: 18 new tests, all passing.** Coverage updated to 98%.
+[2026-04-06T19:14:20.613Z] tester-2 agent completed
+[2026-04-06 19:14:20] [agent_complete] tester-2 completed successfully
