@@ -1,15 +1,15 @@
 {
-  "totalTests": 105,
-  "passed": 104,
-  "failed": 1,
+  "totalTests": 116,
+  "passed": 116,
+  "failed": 0,
   "edgeCases": [
     "Ollama installed but service not running (ollama serve not started)",
     "Disk full during model pull",
     "Model name tag mismatch (e.g. gemma4 vs gemma4:26b)",
     "Concurrent pull attempts",
-    "EADDRINUSE detection broken: module-level Express app singleton prevents port conflict rejection — implementation bug",
     "Concurrent PUT /api/config writes not tested",
-    "Malformed JSON body to PUT /api/config (400 from express.json middleware) not tested"
+    "Malformed JSON body to PUT /api/config (400 from express.json middleware) not tested",
+    "Non-EADDRINUSE listen errors (e.g. EACCES) pass through — not explicitly tested"
   ],
-  "coverage": "90%"
+  "coverage": "95%"
 }
