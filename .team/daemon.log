@@ -1523,3 +1523,36 @@ All three m3 tasks are done and in review:
 - **task-1775492469046** (Admin 管理面板): `src/ui/admin/` scaffolded with Vue 3 + Vite, `/api/logs` + `/admin` static serving added
 [2026-04-06T16:28:57.745Z] developer agent completed
 [2026-04-06 16:28:57] [agent_complete] developer completed successfully
+[2026-04-06 16:28:57] [workflow] work_loop [LOOP] Iteration 6
+[2026-04-06 16:28:57] [workflow] work_loop [EXEC] pm
+[2026-04-06 16:28:57] [agent_start] pm pm
+[2026-04-06T16:28:57.887Z] Running pm agent...
+**Status summary:**
+
+- **M1** (硬件检测 + 一键启动): all 6 tasks `done` ✓
+- **M2** (API 稳定性 + 配置持久化): all 3 tasks `done` ✓ — already marked completed
+- **M3** (语音能力 + 管理面板): all 3 tasks in `review` — waiting for tester approval
+
+M3 tasks are in review. Per my role constraints, I cannot approve them — that's the tester's job. No action needed from me until the tester moves those tasks to `done`.
+
+Once M3 tasks are approved, I'll mark M3 completed and assess whether a new milestone is needed based on remaining gaps.
+[2026-04-06T16:29:18.945Z] pm agent completed
+[2026-04-06 16:29:18] [agent_complete] pm completed successfully
+[2026-04-06 16:29:18] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 16:29:18] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 16:29:18] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 16:29:18] [agent_start] tester-1 tester
+[2026-04-06 16:29:18] [agent_start] tester-2 tester
+[2026-04-06T16:29:18.987Z] Running tester-2 agent...
+[2026-04-06T16:29:18.987Z] Running tester-1 agent...
+[2026-04-06 16:30:41] [perf] daemon {"rss":"53MB","heapUsed":"13MB","heapTotal":"14MB","uptime":"2700s"}
+[2026-04-06 16:31:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:3, done:9)
+[2026-04-06 16:31:56] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:3, done:9)
+[2026-04-06 16:32:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:3, done:9)
+[2026-04-06 16:32:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:3, done:9)
+[2026-04-06 16:33:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:3, done:9)
+[2026-04-06 16:33:26] [perf] daemon {"rss":"53MB","heapUsed":"13MB","heapTotal":"15MB","uptime":"2100s"}
+[2026-04-06 16:33:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:3, done:9)
+[no content]
+[2026-04-06T16:34:47.423Z] tester-1 agent completed
+[2026-04-06 16:34:47] [agent_complete] tester-1 completed successfully
