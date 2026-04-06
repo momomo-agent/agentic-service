@@ -4655,3 +4655,20 @@
 {"ts":"2026-04-06T21:54:27.845Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":3.779787,"cpuSystem":6.949338}}}
 {"ts":"2026-04-06T21:54:43.239Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":3.786707,"cpuSystem":6.974717}}}
 {"ts":"2026-04-06T21:54:44.663Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":3.787499,"cpuSystem":6.977494}}}
+{"ts":"2026-04-06T21:54:45.132Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775510291601: inProgress → review"}}
+{"ts":"2026-04-06T21:54:45.231Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 9"}}
+{"ts":"2026-04-06T21:54:45.233Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-06T21:54:45.234Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":3.803473,"cpuSystem":7.039035}}}
+{"ts":"2026-04-06T21:54:45.238Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":3.804016,"cpuSystem":7.040595}}}
+{"ts":"2026-04-06T21:54:45.281Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-06T21:54:45.282Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":3.810439,"cpuSystem":7.065345}}}
+{"ts":"2026-04-06T21:55:19.278Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775510291601","from":"review","to":"testing","title":"实现 src/ui/admin/ 管理面板"}}
+{"ts":"2026-04-06T21:55:21.849Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":15,"memoryTotalMB":17,"cpuUser":3.816974,"cpuSystem":7.089437}}}
+{"ts":"2026-04-06T21:55:22.005Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-06T21:55:22.007Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-06T21:55:22.008Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-06T21:55:22.008Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":3.826815,"cpuSystem":7.131763}}}
+{"ts":"2026-04-06T21:55:45.407Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 370min, force reset"}}
+{"ts":"2026-04-06T21:55:47.666Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"9MB\",\"heapUsed\":\"13MB\",\"heapTotal\":\"15MB\",\"uptime\":\"22206s\"}"}}
+{"ts":"2026-04-06T21:56:39.422Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775510291601","from":"testing","to":"blocked","title":"实现 src/ui/admin/ 管理面板"}}
+{"ts":"2026-04-06T21:56:45.578Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":3.845292,"cpuSystem":7.183186}}}
