@@ -1,8 +1,8 @@
 {
   "pm": {
-    "status": "idle",
-    "lastRun": "2026-04-06T21:11:19.967Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-06T21:12:13.026Z",
+    "currentTask": "pm",
     "retryCount": 0
   },
   "tech_lead-1": {
@@ -37,7 +37,7 @@
   },
   "tester-1": {
     "status": "idle",
-    "lastRun": "2026-04-06T21:12:12.916Z",
+    "lastRun": "2026-04-06T21:13:09.008Z",
     "currentTask": null,
     "retryCount": 0
   },
