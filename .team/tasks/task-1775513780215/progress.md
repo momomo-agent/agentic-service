@@ -2,3 +2,6 @@
 
 ## Progress
 
+- Added `isOllamaInstalled()`, `isModelPulled()`, `getInstallCommand()` helpers to setup.js
+- Updated `runSetup()` Ollama block to use new helpers directly
+- Removed `setupOllama` import from optimizer.js

@@ -3,10 +3,31 @@ import chalk from 'chalk';
 import { promises as fs } from 'fs';
 import path from 'path';
 import os from 'os';
-import { spawn } from 'child_process';
+import { spawn, execSync } from 'child_process';
 import { detect } from '../detector/hardware.js';
 import { getProfile } from '../detector/profiles.js';
-import { setupOllama } from '../detector/optimizer.js';
+
+async function isOllamaInstalled() {
+  try { execSync('which ollama', { stdio: 'ignore' }); return true; } catch { return false; }
+}
+
+async function isModelPulled(model) {
+  try {
+    const { stdout } = await new Promise((resolve, reject) => {
+      const child = spawn('ollama', ['list'], { stdio: ['ignore', 'pipe', 'ignore'] });
+      let out = '';
+      child.stdout.on('data', d => { out += d; });
+      child.on('close', code => code === 0 ? resolve({ stdout: out }) : reject(new Error('ollama list failed')));
+    });
+    return stdout.split('\n').some(line => line.startsWith(model));
+  } catch { return false; }
+}
+
+function getInstallCommand(platform) {
+  if (platform === 'darwin') return 'brew install ollama';
+  if (platform === 'linux') return 'curl -fsSL https://ollama.ai/install.sh | sh';
+  throw new Error(`unsupported platform for auto-install: ${platform}`);
+}
 
 async function installOllama(cmd) {
   await new Promise((resolve, reject) => {
@@ -51,20 +72,15 @@ export async function runSetup() {
   }
 
   if (profile.llm.provider === 'ollama') {
-    console.log(chalk.bold('Setting up Ollama...\n'));
-    const ollamaStatus = await setupOllama(profile);
-
-    if (ollamaStatus.needsInstall) {
-      const installSpinner = ora('Installing Ollama...').start();
-      await installOllama(ollamaStatus.installCommand);
-      installSpinner.succeed('Ollama installed');
-      await pullModel(profile.llm.model);
+    if (!await isOllamaInstalled()) {
+      const spinner = ora('Installing Ollama...').start();
+      await installOllama(getInstallCommand(hardware.platform));
+      spinner.succeed('Ollama installed');
     }
-
-    if (ollamaStatus.ready) {
-      console.log(chalk.green(`✓ Ollama ready with model ${ollamaStatus.model}\n`));
+    if (!await isModelPulled(profile.llm.model)) {
+      await pullModel(profile.llm.model);
     } else {
-      console.log(chalk.yellow(`⚠ Model ${ollamaStatus.model} may not be fully ready\n`));
+      console.log(chalk.green(`✓ Model ${profile.llm.model} already present`));
     }
   }
 

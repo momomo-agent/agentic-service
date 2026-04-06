@@ -55,3 +55,12 @@ export function stop() {
   if (intervalId != null) { clearInterval(intervalId); intervalId = null; }
   pipeline = null;
 }
+
+export async function initHeadless(options = { face: true, gesture: true, object: true }) {
+  pipeline = await createPipeline(options);
+}
+
+export function detectFrame(buffer) {
+  if (!pipeline || buffer == null) return { faces: [], gestures: [], objects: [] };
+  return detect(buffer);
+}
