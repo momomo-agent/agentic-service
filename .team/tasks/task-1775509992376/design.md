@@ -1,24 +1,33 @@
-# Design: 实现 src/runtime/tts.js
+# task-1775509992376 设计 — src/runtime/tts.js
 
-## File
-`src/runtime/tts.js` — already exists, implementation complete.
+## 文件
+`src/runtime/tts.js`
 
-## Interface
+## 接口
 ```js
-export async function init() → Promise<void>
-export async function synthesize(text: string) → Promise<Buffer>
+export async function init(): Promise<void>
+export async function synthesize(text: string): Promise<Buffer>
 ```
 
-## Logic
-1. `init()`: read profile, select adapter by `profile.tts.provider`
-2. Adapter map: `kokoro` → `agentic-voice/kokoro`, `piper` → `agentic-voice/piper`, default → `agentic-voice/openai-tts`
-3. If adapter load fails → fallback to default
-4. `synthesize()`: guard empty/whitespace text → throw `{ code: 'EMPTY_TEXT' }`, else delegate to `adapter.synthesize(text)`
+## 逻辑
+1. `init()` 读取 `profile.tts.provider`，从 `ADAPTERS` map 懒加载
+2. 加载失败时静默 fallback 到 `agentic-voice/openai-tts`
+3. `synthesize()` 校验文本非空，委托给 `adapter.synthesize(text)`
 
-## Error handling
-- Not initialized: throw `Error('not initialized')`
-- Empty text: throw with `code: 'EMPTY_TEXT'`
+## 适配器 map
+```js
+const ADAPTERS = {
+  kokoro:  () => import('agentic-voice/kokoro'),
+  piper:   () => import('agentic-voice/piper'),
+  default: () => import('agentic-voice/openai-tts'),
+}
+```
 
-## Test cases (DBB-005, DBB-006)
-- Valid text → returns Buffer/Uint8Array
-- Empty string → throws EMPTY_TEXT
+## 错误处理
+- `adapter` 为 null → 抛出 `Error('not initialized')`
+- 空/空白文本 → 抛出 `Object.assign(new Error('text required'), { code: 'EMPTY_TEXT' })`
+
+## 测试用例
+- 正常文本 → 返回 audio Buffer
+- 空字符串 → 抛出 EMPTY_TEXT
+- 未 init → 抛出 not initialized

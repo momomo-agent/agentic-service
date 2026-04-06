@@ -1,28 +1,34 @@
-# Design: src/runtime/llm.js
+# task-1775509987337 设计 — src/runtime/llm.js
 
-## 现状
-文件已存在，实现了 chat(message, options) → AsyncGenerator。
+## 文件
+`src/runtime/llm.js`
 
-## 接口签名
+## 接口
 ```js
-export async function* chat(message: string, options?: { history?: Message[] }): AsyncGenerator<{type, content, done}>
+export async function* chat(message: string, options?: { history?: Message[] }): AsyncGenerator<Chunk>
+// Chunk: { type: 'content', content: string, done: boolean } | { type: 'meta', provider: string }
 ```
 
 ## 逻辑
-1. 合并 history + 当前 message 为 messages 数组
-2. 尝试 chatWithOllama(messages)，超时 30s
-3. 失败 → 读取 config.fallback，调用 chatWithOpenAI 或 chatWithAnthropic
-4. 每个 provider 均为 async generator，yield { type:'content', content, done }
+1. `loadConfig()` 懒加载硬件检测 + profile（单例缓存）
+2. 先尝试 `chatWithOllama(messages)`，使用 `AbortSignal.timeout(30000)`
+3. Ollama 失败 → warn + fallback：yield `{ type:'meta', provider:'cloud' }`
+4. 按 `profile.fallback.provider` 路由到 `chatWithOpenAI` 或 `chatWithAnthropic`
 
-## 需修复
-- ARCHITECTURE.md 规定接口为 `chat(messages, options)`（messages 数组），当前实现接受 `(message, options)`（单字符串）
-- 需将签名改为 `chat(messages: Message[], options?)`，移除内部 history 拼接逻辑
+## 内部函数
+```js
+async function loadConfig(): Promise<Config>
+async function* chatWithOllama(messages): AsyncGenerator<Chunk>
+async function* chatWithOpenAI(messages, model): AsyncGenerator<Chunk>
+async function* chatWithAnthropic(messages, model): AsyncGenerator<Chunk>
+```
 
-## 边界处理
-- Ollama 不可用：catch 后 fallback，不抛出
-- fallback provider 无 API key：抛出明确错误
-- 空 messages：直接传给 provider，由 provider 处理
+## 错误处理
+- Ollama 超时/非200 → 静默 fallback，不抛出
+- 云端 API key 缺失 → 抛出 `Error('ANTHROPIC_API_KEY not set')` 等
+- 不支持的 fallback provider → 抛出 `Error('Unsupported fallback provider')`
 
 ## 测试用例
-- chat([{role:'user',content:'hi'}]) → 第一个 yield.content 非空
-- Ollama 不可用时 → 切换 fallback，无未捕获异常
+- Ollama 正常返回 → 流式 content chunks
+- Ollama 超时 → fallback 到云端，先有 meta chunk
+- 无 API key → 抛错

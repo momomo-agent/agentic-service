@@ -31,6 +31,7 @@ program
   .option('-p, --port <port>', 'server port', '3000')
   .option('--no-browser', 'do not open browser automatically')
   .option('--skip-setup', 'skip first-time setup')
+  .option('--https', 'enable HTTPS with self-signed certificate')
   .action(async (options) => {
     try {
       console.log(chalk.bold.blue('🚀 Agentic Service\n'));
@@ -45,11 +46,13 @@ program
       }
 
       const port = parseInt(options.port);
+      const useHttps = options.https || process.env.HTTPS_ENABLED === 'true';
       console.log(chalk.cyan(`Starting server on port ${port}...`));
 
-      const server = await startServer(port);
+      const server = await startServer(port, { https: useHttps });
 
-      console.log(chalk.green(`✓ Server running at http://localhost:${port}\n`));
+      const proto = useHttps ? 'https' : 'http';
+      console.log(chalk.green(`✓ Server running at ${proto}://localhost:${port}\n`));
 
       if (isFirstRun || options.browser) {
         await openBrowser(`http://localhost:${port}`);

@@ -129,9 +129,17 @@ export function createApp() {
   return app;
 }
 
-export function startServer(port = 3000) {
+export async function startServer(port = 3000, { https: useHttps = false } = {}) {
+  const app = createApp();
+  let server;
+  if (useHttps) {
+    const { createServer } = await import('./httpsServer.js');
+    server = createServer(app);
+    server.listen(port);
+  } else {
+    server = app.listen(port);
+  }
   return new Promise((resolve, reject) => {
-    const server = createApp().listen(port);
     server.once('listening', async () => {
       initWebSocket(server);
       await Promise.all([stt.init(), tts.init()]).catch(err =>
