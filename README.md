@@ -146,6 +146,13 @@ services:
       - ~/.agentic-service:/root/.agentic-service
 ```
 
+## UI
+
+| Route | Description |
+|---|---|
+| `/` | Chat interface |
+| `/admin` | Admin panel (devices, config, logs) |
+
 ## Profiles
 
 Hardware profiles are loaded from `profiles/default.json` (or fetched from CDN). Each profile matches hardware and sets providers:
