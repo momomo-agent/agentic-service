@@ -3114,3 +3114,43 @@ All three tasks are complete and moved to review:
 - **task-1775499138612** (npx 一键安装流程完善): Fixed first-run detection to capture state before setup runs, browser opens unconditionally on first run
 [2026-04-06T18:20:09.484Z] developer agent completed
 [2026-04-06 18:20:09] [agent_complete] developer completed successfully
+[2026-04-06 18:20:09] [workflow] work_loop [LOOP] Iteration 12
+[2026-04-06 18:20:09] [workflow] work_loop [EXEC] pm
+[2026-04-06 18:20:09] [agent_start] pm pm
+[2026-04-06T18:20:09.607Z] Running pm agent...
+[2026-04-06 18:20:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:4, done:28)
+[2026-04-06 18:20:41] [perf] daemon {"rss":"30MB","heapUsed":"9MB","heapTotal":"11MB","uptime":"9300s"}
+**PM Status Report:**
+
+**Completed this cycle:**
+- m6 → marked `completed` (all 4 tasks were `done`)
+- m9 → activated (3 tasks in `review`, awaiting tester approval)
+- task-1775498249905 (STT/TTS 硬件自适应选择) → assigned to developer
+
+**Current state:**
+
+| Milestone | Status | Blocking |
+|-----------|--------|---------|
+| m5 | active | 2 tasks `in-progress` (Docker, edge case tests) |
+| m8 | active | 1 task `todo` → developer assigned |
+| m9 | active | 3 tasks `in-review` → waiting for tester |
+
+**No new milestones needed** — all remaining gaps are covered by m8/m9. Once m9 tasks pass review and m5/m8 complete, the project will be at ~90%+ match across all gap dimensions.
+[2026-04-06T18:20:59.184Z] pm agent completed
+[2026-04-06 18:20:59] [agent_complete] pm completed successfully
+[2026-04-06 18:20:59] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-06 18:20:59] [workflow] work_loop [SKIP] write-design: todoWithoutDesign > 0
+[2026-04-06 18:20:59] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-06 18:20:59] [agent_start] tester-1 tester
+[2026-04-06 18:20:59] [agent_start] tester-2 tester
+[2026-04-06T18:20:59.228Z] Running tester-1 agent...
+[2026-04-06T18:20:59.228Z] Running tester-2 agent...
+[2026-04-06 18:21:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:4, done:28)
+All four tasks are complete and moved to review:
+
+- **task-1775499114484** (DBB fixes): `brain.js` content→text already fixed, CDN URL corrected, no `store.del()` issues
+- **task-1775499138579** (SIGINT graceful shutdown): Already correctly implemented in `bin/agentic-service.js`
+- **task-1775499138612** (npx install flow): `isFirstRun` captured before setup, `pullModel` updated to parse Ollama JSON streaming format
+- **task-1775498249905** (STT/TTS adaptive selection): `tts.js` rewritten with profile-based adapter selection, `api.js` now calls `stt.init()` + `tts.init()` on server start
+[2026-04-06T18:21:39.554Z] developer agent completed
+[2026-04-06 18:21:39] [agent_complete] developer completed successfully

@@ -1,17 +1,26 @@
-let _provider = null
+import { getProfile } from '../detector/profiles.js';
 
-async function getProvider() {
-  if (!_provider) {
-    const { createTTS } = await import('agentic-voice')
-    _provider = await createTTS()
-  }
-  return _provider
+const ADAPTERS = {
+  kokoro:  () => import('agentic-voice/kokoro'),
+  piper:   () => import('agentic-voice/piper'),
+  default: () => import('agentic-voice/openai-tts'),
+};
+
+let adapter = null;
+
+export async function init() {
+  let provider = 'default';
+  try {
+    const profile = await getProfile();
+    provider = profile?.tts?.provider ?? 'default';
+  } catch {}
+  const load = ADAPTERS[provider] ?? ADAPTERS.default;
+  adapter = await load();
 }
 
 export async function synthesize(text) {
-  if (!text || !text.trim()) {
-    throw Object.assign(new Error('text required'), { code: 'EMPTY_TEXT' })
-  }
-  const provider = await getProvider()
-  return provider.synthesize(text)
+  if (!adapter) throw new Error('not initialized');
+  if (!text || !text.trim())
+    throw Object.assign(new Error('text required'), { code: 'EMPTY_TEXT' });
+  return adapter.synthesize(text);
 }

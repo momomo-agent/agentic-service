@@ -132,8 +132,11 @@ export function createApp() {
 export function startServer(port = 3000) {
   return new Promise((resolve, reject) => {
     const server = createApp().listen(port);
-    server.once('listening', () => {
+    server.once('listening', async () => {
       initWebSocket(server);
+      await Promise.all([stt.init(), tts.init()]).catch(err =>
+        console.warn('Runtime init warning:', err.message)
+      );
       console.log(`Server running at http://localhost:${port}`);
       resolve(server);
     });

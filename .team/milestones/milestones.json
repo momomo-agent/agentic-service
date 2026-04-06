@@ -63,7 +63,7 @@
     {
       "id": "m6",
       "name": "M6: 服务器层 + REST API + 管理面板 + 语音UI",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775494973876",
         "task-1775494979749",
@@ -98,7 +98,7 @@
     {
       "id": "m9",
       "name": "M9: DBB 规范修复 + 一键安装完善",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775499114484",
         "task-1775499138579",
