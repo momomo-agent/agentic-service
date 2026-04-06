@@ -1,6 +1,6 @@
 {
-  "totalTests": 15,
-  "passed": 15,
+  "totalTests": 23,
+  "passed": 23,
   "failed": 0,
   "edgeCases": [
     "win32 Ollama install: cannot auto-install, prints URL and exits (not testable in CI)",
