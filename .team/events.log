@@ -18504,3 +18504,23 @@
 {"ts":"2026-04-07T10:53:09.622Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 22min (active:9, done:173)\"}"}}
 {"ts":"2026-04-07T10:53:44.988Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":21,"memoryTotalMB":24,"cpuUser":1.188656,"cpuSystem":2.731768}}}
 {"ts":"2026-04-07T10:53:44.989Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] blocked: No claimable tasks — all 3 review tasks (task-1775536622791, task-1775538907396, task-1775539931917)"}}
+{"ts":"2026-04-07T10:53:45.285Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 2"}}
+{"ts":"2026-04-07T10:53:45.299Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T10:53:45.299Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":22,"memoryTotalMB":25,"cpuUser":1.225895,"cpuSystem":2.851267}}}
+{"ts":"2026-04-07T10:54:09.625Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 23min (active:9, done:173)"}}
+{"ts":"2026-04-07T10:54:09.625Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 23min (active:9, done:173)\"}"}}
+{"ts":"2026-04-07T10:55:02.856Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":1.262578,"cpuSystem":2.919412}}}
+{"ts":"2026-04-07T10:55:02.856Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Analyzed 5 active milestones, identified review bottleneck and M83 blocker, waiting for tester appro"}}
+{"ts":"2026-04-07T10:55:02.915Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T10:55:02.915Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T10:55:02.915Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T10:55:02.915Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T10:55:02.915Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":1.276177,"cpuSystem":2.965673}}}
+{"ts":"2026-04-07T10:55:02.916Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T10:55:02.916Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":1.27639,"cpuSystem":2.966129}}}
+{"ts":"2026-04-07T10:55:02.917Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":1.276545,"cpuSystem":2.966396}}}
+{"ts":"2026-04-07T10:55:09.630Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 24min (active:9, done:173)"}}
+{"ts":"2026-04-07T10:55:09.631Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 24min (active:9, done:173)\"}"}}
+{"ts":"2026-04-07T10:55:22.696Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775538907092","from":"todo","to":"inProgress","title":"Fix TTS import paths to use package.json imports map"}}
+{"ts":"2026-04-07T10:55:26.995Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":1.301069,"cpuSystem":3.000998}}}
+{"ts":"2026-04-07T10:55:26.996Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Checked all tasks in review status — task-1775536622791 (assigned to tester-2), task-1775538907396, "}}
