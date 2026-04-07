@@ -1,6 +1,6 @@
 {
-  "totalTests": 769,
-  "passed": 696,
+  "totalTests": 776,
+  "passed": 703,
   "failed": 66,
   "edgeCases": [
     "createPipeline not exported correctly from src/runtime/adapters/sense.js",

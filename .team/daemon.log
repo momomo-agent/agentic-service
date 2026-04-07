@@ -31492,3 +31492,78 @@ There are no tasks available for me to claim at this moment. I'll wait for new t
 [2026-04-07T13:53:12.441Z] tester-2 agent completed
 [2026-04-07 13:53:12] [agent_complete] tester-2 completed successfully
 [2026-04-07 13:53:12] [workflow] tester-2 [SIGNAL] blocked: No claimable tasks — task-1775569348331 in review but cannot be claimed, task-1775569230828 already 
+[2026-04-07 13:53:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 16min (active:8, done:190)
+All 4 task designs written and marked complete.
+
+**Summary:**
+- `task-1775569820076` — sense.js should import `createPipeline` from `./adapters/sense.js` instead of directly from `agentic-sense`
+- `task-1775569826523` — optimizer.js logic is correct; likely an export/import path issue to verify
+- `task-1775569826557` — add try/catch in `loadBuiltinProfiles()` to return safe empty default if file read fails
+- `task-1775569826588` — SIGINT handler needs to call `startDrain()` + `waitDrain()` before `httpServer.close()`
+
+```signal
+{"status": "completed", "summary": "Wrote technical designs for 4 todo tasks in m87 (sense export, optimizer shape, CDN fallback, SIGINT drain) and marked all hasDesign=true"}
+```
+[2026-04-07T13:54:21.501Z] tech_lead-3 agent completed
+[2026-04-07 13:54:21] [agent_complete] tech_lead-3 completed successfully
+[2026-04-07 13:54:21] [workflow] tech_lead-3 [SIGNAL] completed: Wrote technical designs for 4 todo tasks in m87 (sense export, optimizer shape, CDN fallback, SIGINT
+[2026-04-07 13:54:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 17min (active:8, done:190)
+All 4 tasks in M87 already have `hasDesign=true` and their design files are complete. The milestone dbb.md and design.md also exist.
+
+Nothing to do — all designs are already in place.
+
+```signal
+{"status": "completed", "summary": "All M87 tasks (task-1775569820076, task-1775569826523, task-1775569826557, task-1775569826588) already have hasDesign=true and complete design.md files. M87 milestone dbb.md and design.md also exist. No work needed."}
+```
+[2026-04-07T13:54:45.756Z] tech_lead-1 agent completed
+[2026-04-07 13:54:45] [agent_complete] tech_lead-1 completed successfully
+[2026-04-07 13:54:45] [workflow] tech_lead-1 [SIGNAL] completed: All M87 tasks (task-1775569820076, task-1775569826523, task-1775569826557, task-1775569826588) alrea
+[2026-04-07 13:55:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 18min (active:8, done:190)
+Everything is already in order. Both active milestones have all required files:
+
+- **m86**: has `dbb.md`, `design.md`, `overview.md` — all tasks have `hasDesign: true`
+- **m87**: has `dbb.md`, `design.md`, `overview.md` — all tasks have `hasDesign: true` with complete design files
+
+No work needed from the tech lead role.
+
+```signal
+{"status": "completed", "summary": "All active milestones (m86, m87) already have dbb.md and design.md. All todo tasks have hasDesign=true with complete design.md files. No new designs needed."}
+```
+[2026-04-07T13:55:51.523Z] tech_lead-2 agent completed
+[2026-04-07 13:55:51] [agent_complete] tech_lead-2 completed successfully
+[2026-04-07 13:55:51] [workflow] tech_lead-2 [SIGNAL] completed: All active milestones (m86, m87) already have dbb.md and design.md. All todo tasks have hasDesign=tr
+[2026-04-07 13:56:06] [perf] daemon {"rss":"39MB","heapUsed":"5MB","uptime":"12300s"}
+The CR already exists and is correct. All work is done:
+
+- `m87/dbb.md` — created
+- `m87/design.md` — created
+- `task-1775569629612/design.md` — created, `hasDesign=true`
+- `task-1775569652492` — already had `hasDesign=true`, CR `cr-1775569800000.json` already exists and is pending
+
+```signal
+{"status": "completed", "summary": "Created m87 dbb.md and design.md. Wrote task designs for both m87 tasks. Updated task-1775569629612 hasDesign=true. CR cr-1775569800000 for ARCHITECTURE.md already exists and is pending."}
+```
+[2026-04-07T13:56:16.748Z] tech_lead-2 agent completed
+[2026-04-07 13:56:16] [agent_complete] tech_lead-2 completed successfully
+[2026-04-07 13:56:16] [workflow] tech_lead-2 [SIGNAL] completed: Created m87 dbb.md and design.md. Wrote task designs for both m87 tasks. Updated task-1775569629612 
+[2026-04-07 13:56:16] [workflow] work_loop [LOOP] Iteration 22
+[2026-04-07 13:56:16] [workflow] work_loop [EXEC] pm
+[2026-04-07 13:56:16] [agent_start] pm 管理任务和里程碑
+[2026-04-07T13:56:16.967Z] Running pm agent...
+Done. Here's the summary:
+
+**task-1775569230828** (Fix Docker build) → `done`
+- 7/7 tests pass in `test/m86-docker-fix.test.js`
+- Implementation matches design: `file:` deps, Dockerfile copies vendor/ before npm ci, docker-build.sh packs all 4 packages
+
+**task-1775569348331** (Wire agentic-sense) → `blocked`
+- 1/3 tests pass in `test/m86-sense-wiring.test.js`
+- Bug: `#agentic-sense` missing from `package.json` imports map
+- Fix needed: add `"#agentic-sense": "./src/runtime/adapters/sense.js"` to imports
+
+```signal
+{"status": "completed", "summary": "Tested 2 M86 tasks: task-1775569230828 done (7/7 pass), task-1775569348331 blocked (missing #agentic-sense in imports map)"}
+```
+[2026-04-07T13:57:19.039Z] tester-1 agent completed
+[2026-04-07 13:57:19] [agent_complete] tester-1 completed successfully
+[2026-04-07 13:57:19] [workflow] tester-1 [SIGNAL] completed: Tested 2 M86 tasks: task-1775569230828 done (7/7 pass), task-1775569348331 blocked (missing #agentic

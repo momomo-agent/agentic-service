@@ -41,8 +41,7 @@
   },
   "imports": {
     "#agentic-embed": "./src/runtime/adapters/embed.js",
-    "#agentic-voice": "./src/runtime/adapters/voice/openai-tts.js",
-    "#agentic-sense": "./src/runtime/adapters/sense.js"
+    "#agentic-voice": "./src/runtime/adapters/voice/openai-tts.js"
   },
   "dependencies": {
     "agentic-sense": "file:./vendor/agentic-sense.tgz",

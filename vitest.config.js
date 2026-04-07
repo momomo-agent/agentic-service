@@ -4,7 +4,6 @@ import path from 'path'
 export default defineConfig({
   resolve: {
     alias: {
-      '#agentic-sense': path.resolve('./src/runtime/adapters/sense.js'),
       '#agentic-embed': path.resolve('./src/runtime/adapters/embed.js'),
     }
   },
