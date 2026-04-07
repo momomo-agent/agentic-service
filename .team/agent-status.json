@@ -42,9 +42,9 @@
     "retryCount": 1
   },
   "tester-2": {
-    "status": "running",
-    "lastRun": "2026-04-07T14:16:41.741Z",
-    "currentTask": "验证功能",
+    "status": "idle",
+    "lastRun": "2026-04-07T14:26:46.099Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "qa_lead": {

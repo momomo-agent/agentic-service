@@ -31927,3 +31927,18 @@ All tasks are complete. Here's the summary:
 [2026-04-07T14:24:51.946Z] tester-1 agent completed
 [2026-04-07 14:24:51] [agent_complete] tester-1 completed successfully
 [2026-04-07 14:24:51] [workflow] tester-1 [SIGNAL] completed: Tested 3 review tasks: 2 marked done (m87 sense wiring + createPipeline export), 1 blocked (Docker b
+[2026-04-07 14:26:06] [perf] daemon {"rss":"38MB","heapUsed":"5MB","uptime":"14100s"}
+Done. Here's a summary of what I completed:
+
+**task-1775569629612** (Wire agentic-sense as external package) → **done**
+- All 11 tests passed: `vitest.config.js` has no `#agentic-sense` alias, `package.json` has the dependency, `sense.js` imports directly from `'agentic-sense'`
+
+**task-1775569820076** (Fix createPipeline export) → **blocked**
+- 10/11 tests pass. One failure: `sense-dbb001.test.js` "returns mapped faces/gestures/objects after init()" — the adapter uses `AgenticSense` class directly instead of `agentic-sense.createPipeline`, so the test mock has no effect. Implementation bug in `src/runtime/adapters/sense.js` — needs developer fix.
+
+```signal
+{"status": "completed", "summary": "Tested 2 tasks: task-1775569629612 marked done (11/11 pass), task-1775569820076 marked blocked (10/11 pass, adapter uses AgenticSense directly instead of createPipeline causing mock mismatch)"}
+```
+[2026-04-07T14:26:46.097Z] tester-2 agent completed
+[2026-04-07 14:26:46] [agent_complete] tester-2 completed successfully
+[2026-04-07 14:26:46] [workflow] tester-2 [SIGNAL] completed: Tested 2 tasks: task-1775569629612 marked done (11/11 pass), task-1775569820076 marked blocked (10/1

@@ -1,7 +1,7 @@
 {
   "agent": "tester-2",
-  "timestamp": "2026-04-07T14:16:36.473Z",
+  "timestamp": "2026-04-07T14:26:46.096Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Tested and closed 3 stuck tasks: optimizer shape mismatch (1/1), CDN profiles fallback (2/2), SIGINT drain (6/6) — all passed, all marked done"
+  "summary": "Tested 2 tasks: task-1775569629612 marked done (11/11 pass), task-1775569820076 marked blocked (10/11 pass, adapter uses AgenticSense directly instead of createPipeline causing mock mismatch)"
 }
