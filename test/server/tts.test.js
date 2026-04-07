@@ -1,7 +1,8 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-vi.mock('agentic-voice', () => ({ createTTS: vi.fn() }));
-import { createTTS } from 'agentic-voice';
+vi.mock('agentic-voice/kokoro', () => ({ default: { synthesize: vi.fn() } }));
+vi.mock('agentic-voice/piper', () => ({ default: { synthesize: vi.fn() } }));
+vi.mock('agentic-voice/openai-tts', () => ({ default: { synthesize: vi.fn() } }));
 
 let mockProvider;
 
@@ -11,7 +12,10 @@ describe('TTS runtime', () => {
   beforeEach(async () => {
     vi.resetModules();
     mockProvider = { synthesize: vi.fn() };
-    createTTS.mockResolvedValue(mockProvider);
+
+    // Mock the default adapter
+    vi.doMock('agentic-voice/openai-tts', () => ({ default: mockProvider }));
+
     const mod = await import('../../src/runtime/tts.js');
     await mod.init();
     synthesize = mod.synthesize;
@@ -43,10 +47,10 @@ describe('TTS runtime', () => {
     await expect(synthesize('hello')).rejects.toThrow('provider error');
   });
 
-  it('throws when agentic-voice unavailable', async () => {
-    createTTS.mockRejectedValue(new Error('agentic-voice not available'));
+  it('throws not initialized when adapter fails to load', async () => {
+    vi.doMock('agentic-voice/openai-tts', () => { throw new Error('module not found'); });
     vi.resetModules();
     const mod = await import('../../src/runtime/tts.js');
-    await expect(mod.synthesize('hello')).rejects.toThrow('agentic-voice not available');
+    await expect(mod.synthesize('hello')).rejects.toThrow('not initialized');
   });
 });

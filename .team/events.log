@@ -18850,3 +18850,21 @@
 {"ts":"2026-04-07T11:55:02.885Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775561920576","from":"testing","to":"done","title":"Wire agentic-sense as external package dependency"}}
 {"ts":"2026-04-07T11:55:17.889Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.059666,"cpuSystem":8.699016}}}
 {"ts":"2026-04-07T11:55:17.891Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: Tested agentic-sense wiring: 5/5 tests passed, task marked done"}}
+{"ts":"2026-04-07T11:56:06.776Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"15MB\",\"heapUsed\":\"8MB\",\"uptime\":\"5100s\"}"}}
+{"ts":"2026-04-07T12:00:10.969Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:00:10.975Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:00:43.930Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:00:43.962Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:01:06.864Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"13MB\",\"heapUsed\":\"8MB\",\"uptime\":\"5400s\"}"}}
+{"ts":"2026-04-07T12:01:07.252Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (90min), skipping","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":4.339218,"cpuSystem":9.454726}}}
+{"ts":"2026-04-07T12:01:40.901Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:01:40.902Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:02:40.923Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:02:40.924Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:03:40.913Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:03:40.913Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:04:40.900Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:04:40.901Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:05:11.701Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775535895960","from":"inProgress","to":"review","title":"Fix mocked module initialization across failing test files"}}
+{"ts":"2026-04-07T12:05:21.944Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.526178,"cpuSystem":9.913225}}}
+{"ts":"2026-04-07T12:05:21.945Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Fixed mock initialization for runtime modules (tts.js, stt.js) - improved test pass rate from 82% to"}}
