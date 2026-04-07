@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T16:29:02.663Z",
+  "timestamp": "2026-04-07T16:33:35.636Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Assessed m89/m90 state. Unblocked npx startup task (task-1775573593682): set blockedBy agentic-sense task, reassigned to developer. m89 has 1 task in review — waiting for tester. m90 has 2 tasks in review, 1 unblocked, 2 done. No new tasks needed."
+  "status": "blocked",
+  "summary": "M89 has 1 task in testing, M90 has 2 tasks in review awaiting tester approval. PM cannot proceed until testers clear these."
 }

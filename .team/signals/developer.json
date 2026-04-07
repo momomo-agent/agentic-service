@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T16:29:22.848Z",
+  "timestamp": "2026-04-07T16:34:00.605Z",
   "exitCode": 0,
   "status": "blocked",
-  "summary": "task-1775573593682 blocked by task-1775573229039 (still in review), no other claimable tasks available"
+  "summary": "task-1775573593682 is blocked by task-1775573229039 (still in testing). No other todo tasks with hasDesign=true are available to claim."
 }
