@@ -18500,3 +18500,7 @@
 {"ts":"2026-04-07T10:52:33.415Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":1.143024,"cpuSystem":2.658263}}}
 {"ts":"2026-04-07T10:53:04.548Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":16,"memoryTotalMB":18,"cpuUser":1.152804,"cpuSystem":2.67489}}}
 {"ts":"2026-04-07T10:53:04.548Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Checked all tasks in review status (task-1775536622791, task-1775538907396, task-1775539931917) but "}}
+{"ts":"2026-04-07T10:53:09.622Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 22min (active:9, done:173)"}}
+{"ts":"2026-04-07T10:53:09.622Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 22min (active:9, done:173)\"}"}}
+{"ts":"2026-04-07T10:53:44.988Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":21,"memoryTotalMB":24,"cpuUser":1.188656,"cpuSystem":2.731768}}}
+{"ts":"2026-04-07T10:53:44.989Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] blocked: No claimable tasks — all 3 review tasks (task-1775536622791, task-1775538907396, task-1775539931917)"}}

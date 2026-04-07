@@ -29256,3 +29256,12 @@ All three tasks in 'review' status cannot be claimed right now — they're likel
 [2026-04-07T10:53:04.546Z] tester-1 agent completed
 [2026-04-07 10:53:04] [agent_complete] tester-1 completed successfully
 [2026-04-07 10:53:04] [workflow] tester-1 [SIGNAL] completed: Checked all tasks in review status (task-1775536622791, task-1775538907396, task-1775539931917) but 
+[2026-04-07 10:53:09] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 22min (active:9, done:173)
+All three tasks in "review" status cannot be claimed — they're already assigned or locked. No work available for me to pick up right now.
+
+```signal
+{"status": "blocked", "summary": "No claimable tasks — all 3 review tasks (task-1775536622791, task-1775538907396, task-1775539931917) returned canClaim: false"}
+```
+[2026-04-07T10:53:44.985Z] tester-2 agent completed
+[2026-04-07 10:53:44] [agent_complete] tester-2 completed successfully
+[2026-04-07 10:53:44] [workflow] tester-2 [SIGNAL] blocked: No claimable tasks — all 3 review tasks (task-1775536622791, task-1775538907396, task-1775539931917)
