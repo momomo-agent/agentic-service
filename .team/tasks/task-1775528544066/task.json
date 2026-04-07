@@ -2,12 +2,13 @@
   "id": "task-1775528544066",
   "title": "README completeness",
   "description": "Ensure README covers npx/Docker/global install, API endpoints, and config options",
-  "status": "done",
+  "status": "review",
   "priority": "P1",
-  "assignee": "tester-2",
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m72",
   "hasDesign": true,
   "created": "2026-04-07T02:22:24.066Z",
-  "updated": "2026-04-07T02:49:44.000Z"
+  "updated": "2026-04-07T02:51:47.799Z",
+  "milestoneId": "m72"
 }

@@ -1,21 +1,18 @@
-# M75: Voice Pipeline & npx Entrypoint Verification
+# M75: CDN Staleness + README + LAN Tunnel
 
 ## Goals
-Close the highest-priority remaining gaps: voice latency enforcement, server-side VAD wiring, agentic-voice/agentic-sense package verification, and npx entrypoint completeness.
+Close remaining partial gaps after m71/m72/m74: CDN cache staleness enforcement, README completeness verification, and LAN tunnel (ngrok/cloudflare) for remote access.
 
 ## Scope
-1. Voice latency benchmark — measure and enforce <2s STT+LLM+TTS end-to-end
-2. Server-side VAD — wire real VAD into hub.js wakeword pipeline (remove stub)
-3. agentic-voice/agentic-sense — verify packages exist or stub gracefully with clear error
-4. npx entrypoint — verify `npx agentic-service` starts correctly end-to-end
+1. CDN profiles.json 7-day staleness check — re-fetch if cached copy is older than 7 days
+2. README completeness — verify npx/Docker/API docs are accurate and complete
+3. LAN tunnel — implement ngrok or cloudflare tunnel for remote device access
 
 ## Acceptance Criteria
-- [ ] `npm run bench:voice` reports p95 latency <2000ms or test fails
-- [ ] SIGINT + wakeword event fires through hub.js when VAD detects speech
-- [ ] `require('agentic-voice')` and `require('agentic-sense')` either resolve or throw a clear "package not installed" error (no silent stub)
-- [ ] `npx agentic-service` exits 0 on `--version` and starts server on `--port 3000`
+- [ ] profiles.js re-fetches CDN when cache age > 7 days
+- [ ] README covers: npx install, Docker deploy, API endpoints, admin panel URL
+- [ ] `npm run tunnel` starts a LAN tunnel and prints the public URL
 
 ## Out of Scope
-- LAN tunnel (ngrok/cloudflare) — deferred to M76
-- Remote profiles CDN fallback — deferred to M76
-- README completeness — deferred to M76
+- Multi-device brain state deep sharing — deferred
+- agentic-store/agentic-embed as true external packages — deferred (architecture CR needed)
