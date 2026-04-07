@@ -18562,3 +18562,10 @@
 {"ts":"2026-04-07T11:00:09.653Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 29min (active:8, done:173)\"}"}}
 {"ts":"2026-04-07T11:00:16.895Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":1.531838,"cpuSystem":3.486984}}}
 {"ts":"2026-04-07T11:00:16.896Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Checked all 4 tasks in review status - none are claimable (all assigned to other agents). No work av"}}
+{"ts":"2026-04-07T11:00:32.768Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775536700459","from":"todo","to":"inProgress","title":"Verify and fix npx bin entrypoint"}}
+{"ts":"2026-04-07T11:01:06.692Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"53MB\",\"heapUsed\":\"21MB\",\"uptime\":\"1800s\"}"}}
+{"ts":"2026-04-07T11:01:07.219Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (30min), skipping","performance":{"memoryMB":21,"memoryTotalMB":24,"cpuUser":1.549034,"cpuSystem":3.513998}}}
+{"ts":"2026-04-07T11:01:09.657Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 30min (active:8, done:173)"}}
+{"ts":"2026-04-07T11:01:09.657Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 30min (active:8, done:173)\"}"}}
+{"ts":"2026-04-07T11:01:32.211Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":1.576229,"cpuSystem":3.552245}}}
+{"ts":"2026-04-07T11:01:32.212Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: No tasks available for testing. 4 tasks in review status are assigned to developer and cannot be cla"}}
