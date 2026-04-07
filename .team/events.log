@@ -18693,3 +18693,9 @@
 {"ts":"2026-04-07T11:25:30.243Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775536706050","from":"inProgress","to":"review","title":"Verify CDN profiles.json fallback to default.json"}}
 {"ts":"2026-04-07T11:25:37.940Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":2.629901,"cpuSystem":5.656169}}}
 {"ts":"2026-04-07T11:25:37.941Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Verified CDN profiles fallback chain is correct, default.json has cpu-only entries, created test/pro"}}
+{"ts":"2026-04-07T11:26:02.522Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775535887205","from":"testing","to":"done","title":"Fix TTS runtime test setup — add missing init() call"}}
+{"ts":"2026-04-07T11:26:02.557Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775536619023","from":"testing","to":"done","title":"Wire agentic-store as external package"}}
+{"ts":"2026-04-07T11:26:02.588Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775536700459","from":"testing","to":"done","title":"Verify and fix npx bin entrypoint"}}
+{"ts":"2026-04-07T11:26:06.711Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"46MB\",\"heapUsed\":\"8MB\",\"uptime\":\"3300s\"}"}}
+{"ts":"2026-04-07T11:26:27.807Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":16,"memoryTotalMB":19,"cpuUser":2.665888,"cpuSystem":5.720992}}}
+{"ts":"2026-04-07T11:26:27.808Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Tested and marked done all 5 review tasks: TTS import paths, agentic-store wiring, TTS test setup, s"}}
