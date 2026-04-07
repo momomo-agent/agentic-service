@@ -1,12 +1,12 @@
 {
-  "totalTests": 776,
-  "passed": 703,
-  "failed": 66,
+  "totalTests": 787,
+  "passed": 711,
+  "failed": 69,
   "edgeCases": [
-    "createPipeline not exported correctly from src/runtime/adapters/sense.js",
+    "sense.js start() uses setInterval instead of requestAnimationFrame — breaks RAF-based test stubs (DBB-003, DBB-004)",
     "optimizer.js hardware-adaptive config output shape mismatch",
     "CDN profiles fallback when fetch fails and no cache exists",
     "SIGINT graceful drain during in-flight requests not fully tested"
   ],
-  "coverage": "91%"
+  "coverage": "90%"
 }
