@@ -1,16 +1,16 @@
 # M69: DBB Missing Gaps — Server VAD, Optimizer, External Packages, CPU Profile
 
 ## Goals
-Close DBB "missing" gaps and remaining architecture partial gaps.
+Close remaining DBB partial gaps: server-side VAD, optimizer.js correctness, external package wiring, and cpu-only profile.
 
 ## Tasks
-- task-1775528066183: Server-side VAD silence suppression (P0)
-- task-1775528071612: optimizer.js hardware-adaptive config output (P0)
-- task-1775528078539: agentic-store and agentic-embed external package wiring (P1)
-- task-1775528084166: profiles/default.json add cpu-only profile (P1)
+- Server-side VAD silence suppression
+- optimizer.js hardware-adaptive config output
+- agentic-store and agentic-embed external package wiring
+- profiles/default.json add cpu-only profile
 
 ## Acceptance Criteria
-- Server-side VAD filters silence before audio reaches STT/LLM pipeline
-- optimizer.js returns hardware-adaptive config (model size, threads, memory) based on detected GPU/CPU
-- src/store/index.js wraps agentic-store; src/runtime/embed.js wraps agentic-embed
-- profiles/default.json contains cpu-only profile entry
+- Server VAD suppresses silence before audio reaches STT/LLM pipeline
+- optimizer.js outputs hardware-adaptive config (model size, threads, memory limits), no ollama setup code
+- src/store/index.js and src/runtime/embed.js wrap agentic-store and agentic-embed packages
+- profiles/default.json includes cpu-only profile alongside apple-silicon and nvidia

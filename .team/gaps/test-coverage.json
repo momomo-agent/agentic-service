@@ -1,6 +1,6 @@
 {
-  "totalTests": 35,
-  "passed": 34,
+  "totalTests": 41,
+  "passed": 40,
   "failed": 1,
   "edgeCases": [
     "SSE streaming responses counted as in-flight until stream ends",

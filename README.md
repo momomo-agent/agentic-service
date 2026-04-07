@@ -29,6 +29,8 @@ On first run, agentic-service will:
 | `OPENAI_API_KEY` | Cloud fallback via OpenAI |
 | `ANTHROPIC_API_KEY` | Cloud fallback via Anthropic |
 | `PORT` | HTTP port (default: `3000`) |
+| `PROFILES_URL` | Override CDN URL for hardware profiles JSON |
+| `WAKE_WORD` | Wake word for voice activation (default: `"hey agent"`) |
 
 ## API Reference
 
