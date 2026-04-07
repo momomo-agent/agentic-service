@@ -20623,3 +20623,12 @@
 {"ts":"2026-04-07T17:19:19.600Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775581724582","from":"inProgress","to":"review","title":"Add README.md to project root"}}
 {"ts":"2026-04-07T17:19:25.221Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":27,"memoryTotalMB":32,"cpuUser":2.912818,"cpuSystem":7.039983}}}
 {"ts":"2026-04-07T17:19:25.222Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Verified agentic-sense wiring (all 4 checks passed: no #agentic-sense import map refs, sense.js load"}}
+{"ts":"2026-04-07T17:19:26.772Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 25min (active:6, done:210)"}}
+{"ts":"2026-04-07T17:19:26.772Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 25min (active:6, done:210)\"}"}}
+{"ts":"2026-04-07T17:19:51.115Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775581717200","from":"review","to":"testing","title":"Add Dockerfile and docker-compose.yml to project root"}}
+{"ts":"2026-04-07T17:20:26.780Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 26min (active:6, done:210)"}}
+{"ts":"2026-04-07T17:20:26.780Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 26min (active:6, done:210)\"}"}}
+{"ts":"2026-04-07T17:20:40.522Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775581712916","from":"testing","to":"done","title":"Fix stale agentic-sense mocks and test bugs"}}
+{"ts":"2026-04-07T17:21:16.890Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775581717200","from":"testing","to":"done","title":"Add Dockerfile and docker-compose.yml to project root"}}
+{"ts":"2026-04-07T17:21:21.908Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":2.995219,"cpuSystem":7.186826}}}
+{"ts":"2026-04-07T17:21:21.909Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Tested and marked done: task-1775581712916 (10/10 sense mock tests pass) and task-1775581717200 (Doc"}}

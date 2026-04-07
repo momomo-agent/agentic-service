@@ -21,9 +21,8 @@ ok('agentic-sense entry exists in imports', pkg.dependencies && 'agentic-sense' 
 // 3. M84 supersedes M77: sense.js imports from 'agentic-sense' directly (no # prefix)
 const adapterPath = resolve('src/runtime/adapters/sense.js');
 const senseRuntimePath = resolve('src/runtime/sense.js');
-const checkPath = existsSync(senseRuntimePath) ? senseRuntimePath : adapterPath;
-if (existsSync(checkPath)) {
-  const src = readFileSync(checkPath, 'utf8');
+if (existsSync(adapterPath)) {
+  const src = readFileSync(adapterPath, 'utf8');
   ok('agentic-sense key starts with # (Node.js spec)', src.includes('agentic-sense'));
 }
 

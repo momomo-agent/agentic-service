@@ -33964,3 +33964,16 @@ Both tasks are complete.
 [2026-04-07T17:19:25.216Z] developer agent completed
 [2026-04-07 17:19:25] [agent_complete] developer completed successfully
 [2026-04-07 17:19:25] [workflow] developer [SIGNAL] completed: Verified agentic-sense wiring (all 4 checks passed: no #agentic-sense import map refs, sense.js load
+[2026-04-07 17:19:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 25min (active:6, done:210)
+[2026-04-07 17:20:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 26min (active:6, done:210)
+Both tasks are complete.
+
+- **task-1775581712916** (Fix stale agentic-sense mocks): 10 tests across m87, m84, m77 — all passed. Marked done.
+- **task-1775581717200** (Add Dockerfile and docker-compose.yml): Both files exist at project root with correct `build: .` config. Marked done.
+
+```signal
+{"status": "completed", "summary": "Tested and marked done: task-1775581712916 (10/10 sense mock tests pass) and task-1775581717200 (Dockerfile + docker-compose.yml verified at project root)"}
+```
+[2026-04-07T17:21:21.905Z] tester-1 agent completed
+[2026-04-07 17:21:21] [agent_complete] tester-1 completed successfully
+[2026-04-07 17:21:21] [workflow] tester-1 [SIGNAL] completed: Tested and marked done: task-1775581712916 (10/10 sense mock tests pass) and task-1775581717200 (Doc

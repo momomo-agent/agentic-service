@@ -2600,3 +2600,5 @@
 {"time":"2026-04-07T17:17:26.772Z","type":"no_progress","message":"No progress for 23min (active:6, done:210)"}
 {"time":"2026-04-07T17:18:26.774Z","type":"no_progress","message":"No progress for 24min (active:6, done:210)"}
 {"time":"2026-04-07T17:18:26.775Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T17:19:26.772Z","type":"no_progress","message":"No progress for 25min (active:6, done:210)"}
+{"time":"2026-04-07T17:20:26.780Z","type":"no_progress","message":"No progress for 26min (active:6, done:210)"}
