@@ -2,12 +2,12 @@
   "id": "task-1775569826523",
   "title": "Fix optimizer.js hardware-adaptive config output shape mismatch",
   "description": "optimizer.js returns a config shape that doesn't match what tests expect. Fix the output shape to match the documented hardware-adaptive config contract.",
-  "status": "review",
+  "status": "testing",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "tester-1",
   "blockedBy": [],
   "groupId": "m87",
   "hasDesign": true,
   "created": "2026-04-07T13:50:26.523Z",
-  "updated": "2026-04-07T14:02:21.870Z"
+  "updated": "2026-04-07T14:08:14.097Z"
 }

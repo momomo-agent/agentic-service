@@ -2,12 +2,12 @@
   "id": "task-1775569826557",
   "title": "Fix CDN profiles fallback when fetch fails and no cache exists",
   "description": "When CDN fetch fails and no local cache exists, the fallback to default.json is not working correctly. Fix the fallback path in detector/profiles.js.",
-  "status": "review",
+  "status": "testing",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "tester-1",
   "blockedBy": [],
   "groupId": "m87",
   "hasDesign": true,
   "created": "2026-04-07T13:50:26.557Z",
-  "updated": "2026-04-07T14:03:33.170Z"
+  "updated": "2026-04-07T14:08:20.210Z"
 }
