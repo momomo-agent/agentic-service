@@ -6,13 +6,12 @@
     "startup",
     "monitor",
     "pm_decide",
-    "work_loop",
     "work_loop"
   ],
   "loopIterations": {
-    "work_loop": 1
+    "work_loop": 15
   },
-  "transitionDepth": 5,
+  "transitionDepth": 4,
   "contextOverrides": {},
-  "timestamp": "2026-04-07T03:52:34.167Z"
+  "timestamp": "2026-04-07T03:55:31.689Z"
 }
