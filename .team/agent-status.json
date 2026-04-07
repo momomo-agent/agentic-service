@@ -1,20 +1,20 @@
 {
   "pm": {
-    "status": "running",
-    "lastRun": "2026-04-07T13:45:56.066Z",
-    "currentTask": "管理任务和里程碑",
+    "status": "idle",
+    "lastRun": "2026-04-07T13:48:18.529Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-1": {
-    "status": "idle",
-    "lastRun": "2026-04-07T13:45:10.804Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T13:48:18.590Z",
+    "currentTask": "出技术方案",
     "retryCount": 0
   },
   "tech_lead-2": {
-    "status": "idle",
-    "lastRun": "2026-04-07T13:44:39.806Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T13:48:18.590Z",
+    "currentTask": "出技术方案",
     "retryCount": 0
   },
   "tech_lead-3": {
@@ -24,14 +24,14 @@
     "retryCount": 0
   },
   "developer": {
-    "status": "idle",
-    "lastRun": "2026-04-07T13:45:55.705Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T13:48:18.591Z",
+    "currentTask": "实现功能",
     "retryCount": 0
   },
   "tester": {
     "status": "idle",
-    "lastRun": "2026-04-07T13:46:36.287Z",
+    "lastRun": "2026-04-07T13:49:41.328Z",
     "currentTask": null,
     "retryCount": 0
   },
