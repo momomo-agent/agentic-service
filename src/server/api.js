@@ -262,7 +262,12 @@ export async function startServer(port = 3000, { https: useHttps = false } = {})
   initWebSocket(httpServer);
   startWakeWordDetection();
   const stopWake = startWakeWordPipeline(() => broadcastWakeword('server'));
-  process.once('SIGINT', () => { stopWake(); httpServer.close(); });
+  process.once('SIGINT', async () => {
+    startDrain();
+    stopWake();
+    try { await waitDrain(10_000); } catch { /* timeout, proceed */ }
+    httpServer.close(() => process.exit(0));
+  });
   await Promise.all([stt.init(), tts.init()]).catch(err =>
     console.warn('Runtime init warning:', err.message)
   );

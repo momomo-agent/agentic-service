@@ -107,9 +107,13 @@ function isCacheExpired(timestamp) {
  * @returns {Promise<ProfilesData>}
  */
 async function loadBuiltinProfiles() {
-  const builtinPath = new URL('../../profiles/default.json', import.meta.url);
-  const content = await fs.readFile(builtinPath, 'utf-8');
-  return JSON.parse(content);
+  try {
+    const builtinPath = new URL('../../profiles/default.json', import.meta.url);
+    const content = await fs.readFile(builtinPath, 'utf-8');
+    return JSON.parse(content);
+  } catch {
+    return { version: '0', profiles: [] };
+  }
 }
 
 /**
