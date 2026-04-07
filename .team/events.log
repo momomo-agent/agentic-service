@@ -9872,3 +9872,51 @@
 {"ts":"2026-04-07T02:57:45.169Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:10, done:147)\"}"}}
 {"ts":"2026-04-07T02:57:56.301Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775529637595","from":"testing","to":"done","title":"Test coverage >=98% threshold enforcement"}}
 {"ts":"2026-04-07T02:58:02.972Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":11,"cpuUser":2.075492,"cpuSystem":4.027457}}}
+{"ts":"2026-04-07T02:58:26.682Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度中心 — PM 评估后并行派发所有角色，全部完成后回 PM","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":21.726401,"cpuSystem":59.815949}}}
+{"ts":"2026-04-07T02:58:26.783Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-07T02:58:26.783Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:58:26.783Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":12,"memoryTotalMB":16,"cpuUser":21.749187,"cpuSystem":59.894777}}}
+{"ts":"2026-04-07T02:58:28.435Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"30MB\",\"heapUsed\":\"13MB\",\"heapTotal\":\"16MB\",\"uptime\":\"39602s\"}"}}
+{"ts":"2026-04-07T02:58:56.218Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":21.768367,"cpuSystem":59.922143}}}
+{"ts":"2026-04-07T02:58:56.273Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:58:56.362Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 34"}}
+{"ts":"2026-04-07T02:58:56.363Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:58:56.363Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":21.79884,"cpuSystem":60.035557}}}
+{"ts":"2026-04-07T02:58:59.631Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":21.79912,"cpuSystem":60.036135}}}
+{"ts":"2026-04-07T02:59:11.381Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":21.8065,"cpuSystem":60.049359}}}
+{"ts":"2026-04-07T02:59:17.533Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":2.103487,"cpuSystem":4.07426}}}
+{"ts":"2026-04-07T02:59:29.061Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":21.806806,"cpuSystem":60.049733}}}
+{"ts":"2026-04-07T02:59:29.138Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T02:59:29.138Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":21.817797,"cpuSystem":60.114978}}}
+{"ts":"2026-04-07T02:59:29.139Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":21.817942,"cpuSystem":60.115436}}}
+{"ts":"2026-04-07T02:59:37.946Z","type":"error","agent":"pm","data":{"details":"failed (code=1) after retry, marking as error"}}
+{"ts":"2026-04-07T02:59:38.003Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:59:38.094Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 45"}}
+{"ts":"2026-04-07T02:59:38.094Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:59:38.095Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":18,"cpuUser":21.860447,"cpuSystem":60.242291}}}
+{"ts":"2026-04-07T02:59:40.330Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775528544100","from":"testing","to":"done","title":"agentic-sense and agentic-voice external package wiring"}}
+{"ts":"2026-04-07T02:59:44.843Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (80min), skipping","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":2.103891,"cpuSystem":4.074551}}}
+{"ts":"2026-04-07T02:59:44.845Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"45MB\",\"heapUsed\":\"13MB\",\"uptime\":\"4800s\"}"}}
+{"ts":"2026-04-07T02:59:45.644Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775528544066","from":"review","to":"testing","title":"README completeness"}}
+{"ts":"2026-04-07T02:59:51.800Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":18,"cpuUser":21.860727,"cpuSystem":60.242855}}}
+{"ts":"2026-04-07T02:59:51.854Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:59:51.944Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 2"}}
+{"ts":"2026-04-07T02:59:51.945Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:59:51.945Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":21.894625,"cpuSystem":60.357105}}}
+{"ts":"2026-04-07T03:00:01.712Z","type":"task_created","agent":null,"data":{"taskId":"task-1775530801711","title":"Wire agentic-store external package","priority":"P1","group":"m77"}}
+{"ts":"2026-04-07T03:00:07.612Z","type":"task_created","agent":null,"data":{"taskId":"task-1775530807610","title":"Wire agentic-embed external package","priority":"P1","group":"m77"}}
+{"ts":"2026-04-07T03:00:14.124Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775529637624","from":"review","to":"testing","title":"setup.sh Node.js detection and idempotency"}}
+{"ts":"2026-04-07T03:00:14.854Z","type":"task_created","agent":null,"data":{"taskId":"task-1775530814854","title":"Confirm agentic-voice wrapping in stt.js and tts.js","priority":"P1","group":"m77"}}
+{"ts":"2026-04-07T03:00:19.816Z","type":"task_created","agent":null,"data":{"taskId":"task-1775530819815","title":"Confirm agentic-sense wrapping in runtime/sense.js","priority":"P1","group":"m77"}}
+{"ts":"2026-04-07T03:00:20.037Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":21.902103,"cpuSystem":60.370811}}}
+{"ts":"2026-04-07T03:00:20.097Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:00:20.194Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 35"}}
+{"ts":"2026-04-07T03:00:20.195Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:00:20.195Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":21.93433,"cpuSystem":60.495762}}}
+{"ts":"2026-04-07T03:00:31.841Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775528544066","from":"testing","to":"done","title":"README completeness"}}
+{"ts":"2026-04-07T03:00:47.787Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":21.94919,"cpuSystem":60.51134}}}
+{"ts":"2026-04-07T03:00:47.842Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:00:47.934Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 89"}}
+{"ts":"2026-04-07T03:00:47.934Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:00:47.934Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":21.980708,"cpuSystem":60.627752}}}
+{"ts":"2026-04-07T03:01:01.053Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":2.13893,"cpuSystem":4.117695}}}

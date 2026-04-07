@@ -1,19 +1,16 @@
-# M76 Design: cpu-only Profile + Server-Side VAD + optimizer.js Fix
+# M76 Technical Design: cpu-only Profile + Server-Side VAD + optimizer.js Fix
 
-## Tasks
-
-### task-1775530542647: Add cpu-only profile
+## task-1775530542647: cpu-only profile
 - File: `profiles/default.json`
-- Add entry with `match: { gpu: "none" }` (already exists — verify model is `gemma2:2b` q4)
-- No code changes needed if entry already present
+- Update existing `{ "match": { "gpu": "none" } }` entry to use `gemma3:1b` q4 (currently `gemma2:2b`)
+- Ensures cpu-only systems get the lightest model
 
-### task-1775530548652: Server-side VAD silence suppression
+## task-1775530548652: Server-side VAD
 - File: `src/server/hub.js`
-- In `init()` wakeword handler, add RMS check before forwarding audio to STT
-- `function isSilent(buffer, threshold=0.01)` — compute RMS of Float32 PCM, return true if below threshold
-- Drop silent frames; only forward speech frames to `brainChat()`
+- Add `isSilent(buffer: Buffer, threshold=0.01): boolean` — reads PCM16 samples, computes RMS, returns true if below threshold
+- In `init()` wakeword handler, call `isSilent(chunk)` on each audio chunk; skip `brainChat()` if silent
 
-### task-1775530556380: Fix optimizer.js
+## task-1775530556380: optimizer.js fix
 - File: `src/detector/optimizer.js`
-- Already correct — exports `optimize(hardware)` returning `{ threads, memoryLimit, model, quantization }`
-- Verify no ollama setup code remains
+- Current implementation is already correct (returns `{ threads, memoryLimit, model, quantization }`)
+- Verify: no ollama install/exec code present; all three GPU branches covered (apple-silicon, nvidia, fallback)

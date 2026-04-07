@@ -2,8 +2,8 @@
 
 ## Verification Criteria
 
-1. `src/server/hub.js` drops silent audio frames (RMS < 0.01) before forwarding to STT pipeline
-2. `src/detector/optimizer.js` `optimize()` returns `{ threads, memoryLimit, model, quantization }` for apple-silicon, nvidia, and cpu-only hardware
-3. `profiles/default.json` has a cpu-only profile entry with model `gemma3:1b` and `q4` quantization
-4. `optimize()` does not contain any ollama install/setup code
-5. Unit test confirms silent buffer is filtered and `brainChat` is not called
+1. `src/server/hub.js` wakeword pipeline drops audio frames with RMS < 0.01 before STT
+2. Silent audio does not reach `brainChat()` — verified by unit test
+3. `src/detector/optimizer.js` `optimize(hardware)` returns `{ threads, memoryLimit, model, quantization }` for all GPU types
+4. `optimize({ gpu: { type: 'none' }, memory: 8, cpu: { cores: 4 } })` returns valid config with all four fields
+5. `profiles/default.json` contains a `cpu-only` profile entry with `gemma2:2b` + `q4`

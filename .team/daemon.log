@@ -20877,3 +20877,187 @@ Task complete. Here's a summary:
 The other review task (`task-1775528544066` — README completeness) could not be claimed, likely already assigned to another tester.
 [2026-04-07T02:58:02.956Z] tester-1 agent completed
 [2026-04-07 02:58:02] [agent_complete] tester-1 completed successfully
+[2026-04-07 02:58:26] [agent_start] work_loop [NODE] work_loop - PM 调度中心 — PM 评估后并行派发所有角色，全部完成后回 PM
+[2026-04-07 02:58:26] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-07 02:58:26] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:58:26] [agent_start] pm pm
+[2026-04-07T02:58:26.813Z] Running pm agent...
+[2026-04-07 02:58:28] [perf] daemon {"rss":"30MB","heapUsed":"13MB","heapTotal":"16MB","uptime":"39602s"}
+Current state is now clean:
+
+**Active milestones:**
+- **m72** — waiting on tester (1 testing, 1 review, 1 todo)
+- **m74** — in-progress (2 in-progress, 1 testing, 1 review)
+- **m76** — ready for developer (3 todo P0/P1 + 2 todo P1)
+
+**m75** — marked completed (tasks moved to m76)
+**m77** — removed (duplicate of m76)
+
+M76 is the primary active milestone with 5 tasks ready to assign. The m72 task `task-1775530235262` (Fix package.json imports map) is also unblocked and ready.
+
+No further planning action needed — work is queued and waiting on developers/testers to progress m72 and m74.
+[2026-04-07T02:58:56.210Z] pm agent completed
+[2026-04-07 02:58:56] [agent_complete] pm completed successfully
+[2026-04-07 02:58:56] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:58:56] [workflow] work_loop [LOOP] Iteration 34
+[2026-04-07 02:58:56] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:58:56] [agent_start] pm pm
+[2026-04-07T02:58:56.392Z] Running pm agent...
+All three m76 tasks now have `hasDesign: true`:
+
+- **task-1775530542647** — Add cpu-only profile to `profiles/default.json`
+- **task-1775530548652** — Server-side VAD silence suppression in `src/server/hub.js`
+- **task-1775530556380** — Verify/fix `optimizer.js` hardware-adaptive logic
+
+Design files were already present in each task directory. No new designs needed to be written.
+[2026-04-07T02:58:59.618Z] tech_lead-2 agent completed
+[2026-04-07 02:58:59] [agent_complete] tech_lead-2 completed successfully
+All done. Here's a summary of what was completed:
+
+**M76** (active):
+- Updated `dbb.md` with correct verification criteria for cpu-only profile, server-side VAD, and optimizer.js
+- Updated `design.md` with task-level technical approach
+
+**M77** (active):
+- Created `dbb.md` with verification criteria
+- Created `design.md` with technical approach for all 3 tasks
+
+**Task designs created** (m77 tasks):
+- `task-1775530582785` — server-side VAD: `isSilent()` helper in `hub.js`, filters silent frames before `brainChat()`
+- `task-1775530589269` — optimizer.js: verify existing implementation is correct, no ollama setup code
+- `task-1775530589309` — cpu-only profile: add/update `profiles/default.json` entry for `gpu: "cpu-only"`
+
+All three m77 tasks marked `hasDesign: true`.
+[2026-04-07T02:59:11.371Z] tech_lead-3 agent completed
+[2026-04-07 02:59:11] [agent_complete] tech_lead-3 completed successfully
+All done. Here's a summary of what was completed:
+
+**m77 milestone files created:**
+- `.team/milestones/m77/dbb.md` — 5 verification criteria
+- `.team/milestones/m77/design.md` — technical approach
+
+**Task designs written + `hasDesign=true` set for 6 tasks:**
+
+| Task | Title | Milestone |
+|------|-------|-----------|
+| task-1775530542647 | Add cpu-only profile to profiles/default.json | m76 |
+| task-1775530548652 | Server-side VAD silence suppression | m76 |
+| task-1775530556380 | Fix optimizer.js hardware-adaptive config | m76 |
+| task-1775530582785 | Server-side VAD silence suppression | m77 |
+| task-1775530589269 | Fix optimizer.js hardware-adaptive config | m77 |
+| task-1775530589309 | Add cpu-only profile to profiles/default.json | m77 |
+
+Key design decisions:
+- VAD uses RMS < 0.01 threshold on Float32 PCM buffer; silent frames dropped before `brainChat()`
+- `optimizer.js` already has correct shape — design confirms no ollama setup code should be present
+- `cpu-only` profile uses `gemma2:2b` + `q4`, inserted before the catch-all `{}` match in `profiles/default.json`
+[2026-04-07T02:59:17.516Z] tech_lead-2 agent completed
+[2026-04-07 02:59:17] [agent_complete] tech_lead-2 completed successfully
+All designs are complete. Here's a summary of what was done:
+
+**M76** (3 tasks designed):
+- `task-1775530542647` — cpu-only profile in `profiles/default.json` (verify existing `gpu: "none"` entry)
+- `task-1775530548652` — server-side VAD `isSilent()` in `src/server/hub.js`
+- `task-1775530556380` — verify `optimizer.js` has no ollama setup code
+
+**M77** (3 tasks designed — designs already existed):
+- `task-1775530582785` — same VAD silence suppression in `hub.js`
+- `task-1775530589269` — optimizer.js hardware-adaptive config verification
+- `task-1775530589309` — cpu-only profile in `profiles/default.json`
+
+All 6 tasks marked `hasDesign: true`. M76 milestone design.md updated to reflect actual tasks.
+[2026-04-07T02:59:29.055Z] tech_lead-1 agent completed
+[2026-04-07 02:59:29] [agent_complete] tech_lead-1 completed successfully
+[2026-04-07 02:59:29] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-07 02:59:29] [agent_start] tester-1 tester
+[2026-04-07 02:59:29] [agent_start] tester-2 tester
+[2026-04-07T02:59:29.170Z] Running tester-1 agent...
+[2026-04-07T02:59:29.170Z] Running tester-2 agent...
+API Error: 429 {"error":{"message":"并发请求数量过多，请稍后再试","type":"rate_limit_error"},"type":"error"}
+[2026-04-07T02:59:37.939Z] pm agent failed: Command failed: claude --print --dangerously-skip-permissions < "/Users/kenefe/LOCAL/momo-agent/projects/agentic-service/.team/.prompt-pm-1775530527720.md"
+[2026-04-07 02:59:37] [error] pm failed (code=1) after retry, marking as error
+[2026-04-07 02:59:38] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:59:38] [workflow] work_loop [LOOP] Iteration 45
+[2026-04-07 02:59:38] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:59:38] [agent_start] pm pm
+[2026-04-07T02:59:38.123Z] Running pm agent...
+[2026-04-07 02:59:44] [agent_start] daemon Still busy (80min), skipping
+[2026-04-07 02:59:44] [perf] daemon {"rss":"45MB","heapUsed":"13MB","uptime":"4800s"}
+Now I have a clear picture. Let me assess the current state:
+
+**Active milestones:**
+- **m72**: 2 done, 1 review (README), 1 testing (external packages), 1 todo (imports map fix)
+- **m74**: 2 in-progress (Docker, SIGINT), 1 done (coverage), 1 review (setup.sh)
+- **m75**: 2 todo (CDN staleness, LAN tunnel) — these are actually in m76 group
+- **m76**: 3 todo (cpu-only profile, server VAD, optimizer fix)
+
+The m76 tasks cover the remaining DBB gaps (missing/partial). Tasks are already created and assigned. The milestones are properly structured.
+
+**Current status is healthy** — no action needed from PM side:
+- m72/m74/m75/m76 are active with tasks in various stages
+- Developers are working on Docker, SIGINT (in-progress)
+- Testers have README and setup.sh in review
+- m76 todo tasks target the 3 remaining DBB gaps (VAD missing, optimizer missing, cpu-only partial)
+
+The dbb match is 62% because those 3 gaps (VAD, optimizer, cpu-only) are still open — m76 tasks directly address them. No new milestone needed until m76 tasks complete.
+
+**Waiting for:**
+1. m74 in-progress tasks (Docker, SIGINT) to move to review/done
+2. m72/m74 review tasks to be approved by tester
+3. m76 todo tasks to be picked up by developer
+
+No gaps require new task creation at this time.
+[2026-04-07T02:59:51.797Z] pm agent completed
+[2026-04-07 02:59:51] [agent_complete] pm completed successfully
+[2026-04-07 02:59:51] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:59:51] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-07 02:59:51] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:59:51] [agent_start] pm pm
+[2026-04-07T02:59:51.974Z] Running pm agent...
+The current state looks healthy. All m76 tasks are assigned to developer with correct priorities and design files ready. No action needed — the team is working.
+
+**Status summary:**
+- m72: README in testing, imports map fix todo
+- m74: Docker + SIGINT in-progress, setup.sh in review  
+- m76: 5 todos ready (P0: VAD + optimizer.js, P1: cpu-only + CDN + LAN tunnel)
+
+No new milestone needed until m76 tasks start completing. DBB match is 62% — m76 directly targets the missing/partial DBB gaps.
+[2026-04-07T03:00:20.034Z] pm agent completed
+[2026-04-07 03:00:20] [agent_complete] pm completed successfully
+[2026-04-07 03:00:20] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 03:00:20] [workflow] work_loop [LOOP] Iteration 35
+[2026-04-07 03:00:20] [workflow] work_loop [EXEC] pm
+[2026-04-07 03:00:20] [agent_start] pm pm
+[2026-04-07T03:00:20.223Z] Running pm agent...
+M77 has been created and registered. Here's the current state:
+
+**Active milestones:**
+- **M74** (active): Docker, SIGINT, Coverage, Setup — 2 in-progress, 1 done, 1 review
+- **M75** (marked completed in JSON but tasks still todo) — needs attention
+- **M76** (active): cpu-only profile, server-side VAD, optimizer.js fix — 3 todo tasks
+
+**New milestone:**
+- **M77** (planned): External package wiring — agentic-store, agentic-embed, agentic-voice, agentic-sense — 4 tasks created
+
+**Note on M75:** The milestones.json shows M75 as `completed` but tasks `task-1775530134599` (CDN staleness) and `task-1775530233859` (LAN tunnel) are still `todo`. These tasks are also listed under M76. I cannot mark them done — testers must approve. The developer should pick them up.
+
+**Priority order for developers:**
+1. M76 P0 tasks: server-side VAD, optimizer.js fix
+2. M74 in-progress: Docker, SIGINT
+3. M76 P1: cpu-only profile
+4. M77 (planned, after M76 completes)
+[2026-04-07T03:00:47.784Z] pm agent completed
+[2026-04-07 03:00:47] [agent_complete] pm completed successfully
+[2026-04-07 03:00:47] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 03:00:47] [workflow] work_loop [LOOP] Iteration 89
+[2026-04-07 03:00:47] [workflow] work_loop [EXEC] pm
+[2026-04-07 03:00:47] [agent_start] pm pm
+[2026-04-07T03:00:47.961Z] Running pm agent...
+Both tasks are complete:
+
+- **task-1775528544100** (agentic-sense/agentic-voice wiring) — 18/18 tests passed → `done`
+- **task-1775528544066** (README completeness) — 13/13 tests passed → `done`
+
+No review tasks remain in the queue.
+[2026-04-07T03:01:01.040Z] tester-2 agent completed
+[2026-04-07 03:01:01] [agent_complete] tester-2 completed successfully

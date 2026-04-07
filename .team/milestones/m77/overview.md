@@ -1,14 +1,19 @@
-# M77: Server-side VAD + Hardware Optimizer + CPU-only Profile
+# M77: External Package Wiring — agentic-store, agentic-embed, agentic-voice, agentic-sense
 
 ## Goals
-Address three missing/partial gaps blocking architecture compliance and DBB match.
-
-## Scope
-1. Server-side VAD — silence suppression before STT/LLM pipeline
-2. optimizer.js — hardware-adaptive config output (replace ollama setup stub)
-3. profiles/default.json — add cpu-only profile
+- Confirm/wire agentic-store as external package (replace local src/store/index.js stub)
+- Confirm/wire agentic-embed as external package (replace local src/runtime/embed.js stub)
+- Confirm agentic-voice wrapping in stt.js and tts.js
+- Confirm agentic-sense wrapping in runtime/sense.js
 
 ## Acceptance Criteria
-- hub.js wakeword pipeline filters silence via server-side VAD before forwarding to brain
-- optimizer.js returns hardware-adaptive config object based on detected hardware
-- profiles/default.json contains cpu-only entry alongside apple-silicon and nvidia
+- src/store/index.js imports from agentic-store package (or CR submitted if package unavailable)
+- src/runtime/embed.js imports from agentic-embed package (or CR submitted if package unavailable)
+- runtime/stt.js and tts.js wrap agentic-voice package methods
+- runtime/sense.js wraps agentic-sense (MediaPipe) package methods
+
+## Gaps Addressed
+- Architecture partial: agentic-store not confirmed as external package
+- Architecture partial: agentic-embed not confirmed as external package
+- Architecture partial: agentic-voice not confirmed as external package
+- Architecture partial: agentic-sense not confirmed as external package
