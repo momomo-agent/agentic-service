@@ -1,6 +1,6 @@
 {
-  "totalTests": 3,
-  "passed": 3,
+  "totalTests": 11,
+  "passed": 11,
   "failed": 0,
   "edgeCases": [],
   "coverage": "100%"
