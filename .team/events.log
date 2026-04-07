@@ -19967,3 +19967,54 @@
 {"ts":"2026-04-07T15:17:38.252Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:4, done:202)\"}"}}
 {"ts":"2026-04-07T15:17:49.296Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":8,"cpuUser":0.338999,"cpuSystem":0.524674}}}
 {"ts":"2026-04-07T15:17:49.296Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Verified npx startup (no fixes needed) and implemented wake word pipeline with node-record-lpcm16 + "}}
+{"ts":"2026-04-07T15:18:38.258Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:202)"}}
+{"ts":"2026-04-07T15:18:38.258Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:4, done:202)\"}"}}
+{"ts":"2026-04-07T15:19:38.258Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:202)"}}
+{"ts":"2026-04-07T15:19:38.259Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:4, done:202)\"}"}}
+{"ts":"2026-04-07T15:20:38.205Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"82MB\",\"heapUsed\":\"9MB\",\"uptime\":\"600s\"}"}}
+{"ts":"2026-04-07T15:20:38.260Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:4, done:202)"}}
+{"ts":"2026-04-07T15:20:38.261Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:4, done:202)\"}"}}
+{"ts":"2026-04-07T15:20:38.354Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (10min), skipping","performance":{"memoryMB":22,"memoryTotalMB":24,"cpuUser":0.434342,"cpuSystem":0.678411}}}
+{"ts":"2026-04-07T15:21:38.262Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:4, done:202)"}}
+{"ts":"2026-04-07T15:21:38.263Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:4, done:202)\"}"}}
+{"ts":"2026-04-07T15:21:54.610Z","type":"error","agent":"tester-1","data":{"details":"hung (0% CPU for 10min), killing"}}
+{"ts":"2026-04-07T15:21:54.614Z","type":"error","agent":"tester-1","data":{"details":"timed out after 3900s, skipping"}}
+{"ts":"2026-04-07T15:21:54.628Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775573593582: testing → review"}}
+{"ts":"2026-04-07T15:21:54.910Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 2"}}
+{"ts":"2026-04-07T15:21:54.940Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T15:21:54.941Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":13,"memoryTotalMB":18,"cpuUser":0.54104,"cpuSystem":0.937883}}}
+{"ts":"2026-04-07T15:22:38.263Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 12min (active:4, done:202)"}}
+{"ts":"2026-04-07T15:22:38.263Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 12min (active:4, done:202)\"}"}}
+{"ts":"2026-04-07T15:22:43.328Z","type":"task_created","agent":null,"data":{"taskId":"task-1775575363327","title":"Fix tunnel.js export and re-verify LAN tunnel + HTTPS cert","priority":"P1","group":"m90"}}
+{"ts":"2026-04-07T15:22:51.975Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775573593639","from":"blocked","to":"todo","title":"Verify LAN tunnel and HTTPS cert generation"}}
+{"ts":"2026-04-07T15:23:05.748Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":18,"memoryTotalMB":25,"cpuUser":0.571574,"cpuSystem":0.973337}}}
+{"ts":"2026-04-07T15:23:05.748Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Assessed M89/M90 state. Created tunnel.js fix task (task-1775575363327, P1, developer). Unblocked LA"}}
+{"ts":"2026-04-07T15:23:05.810Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T15:23:05.811Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] write-design, implement, run-tests"}}
+{"ts":"2026-04-07T15:23:05.811Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tech_lead"}}
+{"ts":"2026-04-07T15:23:05.811Z","type":"agent_start","agent":"tech_lead","data":{"details":"出技术方案","performance":{"memoryMB":20,"memoryTotalMB":30,"cpuUser":0.585723,"cpuSystem":1.023007}}}
+{"ts":"2026-04-07T15:23:05.812Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T15:23:05.812Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":21,"memoryTotalMB":30,"cpuUser":0.585939,"cpuSystem":1.023465}}}
+{"ts":"2026-04-07T15:23:05.812Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T15:23:05.812Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":21,"memoryTotalMB":30,"cpuUser":0.586108,"cpuSystem":1.023826}}}
+{"ts":"2026-04-07T15:23:05.813Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":21,"memoryTotalMB":30,"cpuUser":0.586209,"cpuSystem":1.024052}}}
+{"ts":"2026-04-07T15:23:08.274Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 12min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:23:08.274Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 12min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:23:29.348Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775575363327","from":"todo","to":"inProgress","title":"Fix tunnel.js export and re-verify LAN tunnel + HTTPS cert"}}
+{"ts":"2026-04-07T15:23:38.264Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 13min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:23:38.265Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 13min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:24:01.416Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775573593582","from":"review","to":"testing","title":"Verify and fix cloud fallback (OpenAI/Anthropic) in llm.js"}}
+{"ts":"2026-04-07T15:24:20.884Z","type":"agent_complete","agent":"tech_lead","data":{"details":"completed successfully","performance":{"memoryMB":21,"memoryTotalMB":37,"cpuUser":0.629449,"cpuSystem":1.087265}}}
+{"ts":"2026-04-07T15:24:20.885Z","type":"workflow","agent":"tech_lead","data":{"details":"[SIGNAL] completed: Wrote design for task-1775575363327 (tunnel.js export fix); all other tasks and milestone docs alrea"}}
+{"ts":"2026-04-07T15:24:38.280Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 14min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:24:38.281Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 14min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:25:38.207Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"85MB\",\"heapUsed\":\"8MB\",\"uptime\":\"900s\"}"}}
+{"ts":"2026-04-07T15:25:38.284Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 15min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:25:38.284Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 15min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:26:38.278Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 16min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:26:38.279Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 16min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:27:38.280Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 17min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:27:38.281Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 17min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:28:30.982Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775575363327","from":"inProgress","to":"review","title":"Fix tunnel.js export and re-verify LAN tunnel + HTTPS cert"}}
+{"ts":"2026-04-07T15:28:36.905Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":0.761295,"cpuSystem":1.270935}}}
+{"ts":"2026-04-07T15:28:36.905Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Fixed tunnel.js to export startTunnel(port), downgraded selfsigned to v1 for sync generateCert(), al"}}
