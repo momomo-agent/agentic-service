@@ -1,7 +1,7 @@
 {
   "workflowId": "dev-team",
   "nodeId": "work_loop",
-  "stepIndex": 2,
+  "stepIndex": 0,
   "visitedNodes": [
     "startup",
     "monitor",
@@ -10,7 +10,7 @@
     "work_loop"
   ],
   "loopIterations": {
-    "work_loop": 20
+    "work_loop": 21
   },
   "transitionDepth": 5,
   "nodeVisitCounts": {
@@ -24,5 +24,5 @@
     "agentEscalated": 0,
     "agentBlocked": 1
   },
-  "timestamp": "2026-04-07T13:43:10.118Z"
+  "timestamp": "2026-04-07T13:45:56.066Z"
 }
