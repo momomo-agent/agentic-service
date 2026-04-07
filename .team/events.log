@@ -20447,3 +20447,20 @@
 {"ts":"2026-04-07T17:02:56.709Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:2, done:210)\"}"}}
 {"ts":"2026-04-07T17:03:09.138Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":29,"memoryTotalMB":57,"cpuUser":1.884909,"cpuSystem":4.601503}}}
 {"ts":"2026-04-07T17:03:09.138Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No available developer tasks found. All todo tasks are either assigned to tester-2 or are verificati"}}
+{"ts":"2026-04-07T17:03:09.469Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 7"}}
+{"ts":"2026-04-07T17:03:09.483Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T17:03:09.483Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":34,"memoryTotalMB":53,"cpuUser":1.921254,"cpuSystem":4.731626}}}
+{"ts":"2026-04-07T17:03:26.708Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T17:03:26.709Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T17:03:44.360Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":1.946096,"cpuSystem":4.752251}}}
+{"ts":"2026-04-07T17:03:44.360Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: M91 active with 2 P0 todo tasks assigned to tester-2; dev prereq done; waiting on tester-2 to execut"}}
+{"ts":"2026-04-07T17:03:44.424Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T17:03:44.425Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T17:03:44.425Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-07T17:03:44.425Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement"}}
+{"ts":"2026-04-07T17:03:44.425Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T17:03:44.425Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":1.960801,"cpuSystem":4.803855}}}
+{"ts":"2026-04-07T17:03:56.719Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:2, done:210)"}}
+{"ts":"2026-04-07T17:03:56.719Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:2, done:210)\"}"}}
+{"ts":"2026-04-07T17:04:10.751Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":1.981455,"cpuSystem":4.831821}}}
+{"ts":"2026-04-07T17:04:10.752Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Checked task list - all tasks are done, no available work to claim"}}
