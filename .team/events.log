@@ -20596,3 +20596,30 @@
 {"ts":"2026-04-07T17:16:26.768Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 22min (active:6, done:210)\"}"}}
 {"ts":"2026-04-07T17:16:31.974Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":2.75869,"cpuSystem":6.671088}}}
 {"ts":"2026-04-07T17:16:31.974Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Fixed agentic-sense mocks: added init() to m87 mock, made createPipeline sync (real AgenticSense has"}}
+{"ts":"2026-04-07T17:16:32.333Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 14"}}
+{"ts":"2026-04-07T17:16:32.347Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T17:16:32.347Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":10,"memoryTotalMB":14,"cpuUser":2.798275,"cpuSystem":6.805158}}}
+{"ts":"2026-04-07T17:17:17.768Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.81672,"cpuSystem":6.830312}}}
+{"ts":"2026-04-07T17:17:17.769Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Assigned 4 unassigned tasks across M91/M92; M91 has 2 active dev tasks, M92 blocked on tester review"}}
+{"ts":"2026-04-07T17:17:17.930Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T17:17:17.930Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T17:17:17.930Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T17:17:17.931Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T17:17:17.931Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.832649,"cpuSystem":6.89422}}}
+{"ts":"2026-04-07T17:17:17.931Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T17:17:17.932Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.833035,"cpuSystem":6.894719}}}
+{"ts":"2026-04-07T17:17:17.932Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.833154,"cpuSystem":6.895028}}}
+{"ts":"2026-04-07T17:17:26.772Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 23min (active:6, done:210)"}}
+{"ts":"2026-04-07T17:17:26.773Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 23min (active:6, done:210)\"}"}}
+{"ts":"2026-04-07T17:17:51.720Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775579897222","from":"todo","to":"inProgress","title":"Verify agentic-sense wiring complete and sense.js loads without errors"}}
+{"ts":"2026-04-07T17:17:51.760Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775581724582","from":"todo","to":"inProgress","title":"Add README.md to project root"}}
+{"ts":"2026-04-07T17:17:56.352Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"64MB\",\"heapUsed\":\"8MB\",\"uptime\":\"2700s\"}"}}
+{"ts":"2026-04-07T17:18:26.774Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 24min (active:6, done:210)"}}
+{"ts":"2026-04-07T17:18:26.774Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 24min (active:6, done:210)\"}"}}
+{"ts":"2026-04-07T17:18:26.775Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T17:18:26.775Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T17:18:33.519Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775581712916","from":"review","to":"testing","title":"Fix stale agentic-sense mocks and test bugs"}}
+{"ts":"2026-04-07T17:18:55.048Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775579897222","from":"inProgress","to":"review","title":"Verify agentic-sense wiring complete and sense.js loads without errors"}}
+{"ts":"2026-04-07T17:19:19.600Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775581724582","from":"inProgress","to":"review","title":"Add README.md to project root"}}
+{"ts":"2026-04-07T17:19:25.221Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":27,"memoryTotalMB":32,"cpuUser":2.912818,"cpuSystem":7.039983}}}
+{"ts":"2026-04-07T17:19:25.222Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Verified agentic-sense wiring (all 4 checks passed: no #agentic-sense import map refs, sense.js load"}}

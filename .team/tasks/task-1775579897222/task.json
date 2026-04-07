@@ -2,12 +2,12 @@
   "id": "task-1775579897222",
   "title": "Verify agentic-sense wiring complete and sense.js loads without errors",
   "description": "After developer fixes agentic-sense wiring (task-1775573229039), verify: no '#agentic-sense' import map refs remain, sense.js imports resolve correctly, adapters/sense.js uses correct named exports from agentic-sense package.",
-  "status": "todo",
+  "status": "review",
   "priority": "P0",
-  "assignee": "tester-2",
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m91",
   "hasDesign": true,
   "created": "2026-04-07T16:38:17.222Z",
-  "updated": "2026-04-07T16:51:09.045Z"
+  "updated": "2026-04-07T17:18:55.048Z"
 }
