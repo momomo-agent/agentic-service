@@ -29805,3 +29805,33 @@ All 5 tasks completed successfully:
 [2026-04-07T11:26:27.802Z] tester-2 agent completed
 [2026-04-07 11:26:27] [agent_complete] tester-2 completed successfully
 [2026-04-07 11:26:27] [workflow] tester-2 [SIGNAL] completed: Tested and marked done all 5 review tasks: TTS import paths, agentic-store wiring, TTS test setup, s
+
+
+All remaining tasks are in-progress, not ready for testing yet. Let me provide a summary of my work.
+
+```signal
+{"status": "completed", "summary": "Tested and verified 2 tasks: task-1775536700459 (npx bin entrypoint) and task-1775536706050 (CDN profiles fallback). Both passed all tests and marked as done."}
+```
+
+## Summary
+
+Successfully completed testing for 2 tasks:
+
+### Task 1: Verify and fix npx bin entrypoint (task-1775536700459)
+- ✅ Verified shebang `#!/usr/bin/env node` present
+- ✅ Confirmed package.json bin field correctly configured
+- ✅ Verified file has executable permissions
+- ✅ Tested `node bin/agentic-service.js --help` exits with code 0
+- **Result**: 4/4 tests passed, marked as done
+
+### Task 2: Verify CDN profiles.json fallback (task-1775536706050)
+- ✅ Verified fallback chain works when fetch fails and cache is absent
+- ✅ Confirmed profiles/default.json contains cpu-only catch-all profiles
+- ✅ Validated loadBuiltinProfiles() implementation
+- ✅ Confirmed timeout handling with AbortSignal.timeout(5000)
+- **Result**: 2/2 tests passed, marked as done
+
+No more tasks in review status. All remaining tasks are in-progress by other team members.
+[2026-04-07T11:28:11.716Z] tester-1 agent completed
+[2026-04-07 11:28:11] [agent_complete] tester-1 completed successfully
+[2026-04-07 11:28:11] [workflow] tester-1 [SIGNAL] completed: Tested and verified 2 tasks: task-1775536700459 (npx bin entrypoint) and task-1775536706050 (CDN pro
