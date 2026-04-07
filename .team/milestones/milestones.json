@@ -199,6 +199,18 @@
         "task-1775573249297"
       ],
       "created": "2026-04-07T14:47:38.619Z"
+    },
+    {
+      "id": "m90",
+      "name": "M90: Vision & PRD Gap Closure — Wake Word, Cloud Fallback, LAN Tunnel",
+      "status": "planned",
+      "tasks": [
+        "task-1775573586694",
+        "task-1775573593582",
+        "task-1775573593639",
+        "task-1775573593682"
+      ],
+      "created": "2026-04-07T14:53:14.019Z"
     }
   ]
 }

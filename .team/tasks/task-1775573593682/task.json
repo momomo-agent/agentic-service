@@ -1,0 +1,14 @@
+{
+  "id": "task-1775573593682",
+  "title": "Verify npx agentic-service one-command startup",
+  "description": "Run npx agentic-service end-to-end and confirm server starts without errors. Fix any bin entrypoint issues.",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m90",
+  "hasDesign": false,
+  "created": "2026-04-07T14:53:13.682Z",
+  "updated": "2026-04-07T14:53:32.403Z",
+  "milestoneId": "m90"
+}

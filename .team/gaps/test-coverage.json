@@ -1,9 +1,10 @@
 {
-  "totalTests": 10,
-  "passed": 10,
+  "totalTests": 7,
+  "passed": 7,
   "failed": 0,
   "edgeCases": [
-    "No test for matchProfile() logic against this file"
+    "profiler metrics not reset between test runs — shared module state could cause cross-test interference",
+    "llm.js profiler timing only tested indirectly via getMetrics; no direct unit test for llm startMark/endMark wiring"
   ],
   "coverage": "100%"
 }
