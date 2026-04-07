@@ -1,9 +1,10 @@
 {
-  "totalTests": 11,
-  "passed": 11,
+  "totalTests": 17,
+  "passed": 17,
   "failed": 0,
   "edgeCases": [
-    "test/sense-wrapping-test.js references #agentic-sense but is not in vitest suite"
+    "test/sense-wrapping-test.js references #agentic-sense but is not in vitest suite",
+    "agentic-sense vendor package does not export createPipeline as named export (pre-existing)"
   ],
   "coverage": "100%"
 }
