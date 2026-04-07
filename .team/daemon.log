@@ -34036,3 +34036,14 @@ Once those move to `done`, `task-1775579897264` and `task-1775581731172` can be 
 [2026-04-07T17:24:17.554Z] tester-2 agent completed
 [2026-04-07 17:24:17] [agent_complete] tester-2 completed successfully
 [2026-04-07 17:24:17] [workflow] tester-2 [SIGNAL] completed: 
+Both tasks completed successfully.
+
+- **task-1775579897222** (agentic-sense wiring): All 4 checks passed — no `#agentic-sense` import map refs, `sense.js` loads cleanly, adapter uses correct named import, `package.json` has dependency.
+- **task-1775581724582** (README.md): All 4 checks passed — file exists with npx quickstart, docker run command, and API endpoints.
+
+```signal
+{"status": "completed", "summary": "Tested and marked done: task-1775579897222 (agentic-sense wiring verified, 4/4 checks passed) and task-1775581724582 (README.md verified, 4/4 checks passed)"}
+```
+[2026-04-07T17:25:07.081Z] tester-1 agent completed
+[2026-04-07 17:25:07] [agent_complete] tester-1 completed successfully
+[2026-04-07 17:25:07] [workflow] tester-1 [SIGNAL] completed: Tested and marked done: task-1775579897222 (agentic-sense wiring verified, 4/4 checks passed) and ta

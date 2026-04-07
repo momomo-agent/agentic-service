@@ -4,10 +4,10 @@
   "description": "Create README.md in project root with npx/Docker/API docs. PRD gap: 'Complete user documentation/README — no README.md found in project root'. Include: npx agentic-service quickstart, Docker run command, API endpoints overview.",
   "status": "done",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "tester-1",
   "blockedBy": [],
   "groupId": "m92",
   "hasDesign": true,
   "created": "2026-04-07T17:08:44.584Z",
-  "updated": "2026-04-07T17:23:23.283Z"
+  "updated": "2026-04-07T17:25:00.381Z"
 }
