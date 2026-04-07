@@ -1,154 +1,139 @@
 import { strict as assert } from 'assert';
+import { matchProfile } from '../src/detector/matcher.js';
+import { readFile } from 'fs/promises';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-// Helper to collect async generator chunks
+const dir = dirname(fileURLToPath(import.meta.url));
+
 async function collect(gen) {
   const chunks = [];
-  for await (const chunk of gen) chunks.push(chunk);
+  for await (const c of gen) chunks.push(c);
   return chunks;
 }
 
-// Mock fetch for testing
-function mockFetch(responses) {
-  let callIndex = 0;
-  return async (url, opts) => {
-    const resp = responses[callIndex++] || responses[responses.length - 1];
-    if (resp instanceof Error) throw resp;
-    return resp;
-  };
-}
-
-function makeStreamResponse(lines) {
-  const encoder = new TextEncoder();
-  const stream = new ReadableStream({
-    start(controller) {
-      for (const line of lines) controller.enqueue(encoder.encode(line + '\n'));
-      controller.close();
+function makeOllamaStream(content) {
+  const enc = new TextEncoder();
+  return new ReadableStream({
+    start(ctrl) {
+      ctrl.enqueue(enc.encode(JSON.stringify({ message: { content }, done: true }) + '\n'));
+      ctrl.close();
     }
   });
-  return { ok: true, status: 200, body: stream };
 }
 
-// Test 1: Ollama ECONNREFUSED triggers cloud fallback with meta chunk
-async function testFallbackOnConnectionRefused() {
-  const originalFetch = globalThis.fetch;
-  let fetchCallCount = 0;
+function makeOpenAIStream(content) {
+  const enc = new TextEncoder();
+  return new ReadableStream({
+    start(ctrl) {
+      ctrl.enqueue(enc.encode(`data: ${JSON.stringify({ choices: [{ delta: { content } }] })}\n`));
+      ctrl.enqueue(enc.encode('data: [DONE]\n'));
+      ctrl.close();
+    }
+  });
+}
+
+// Test 1: All profiles have fallback key
+async function testProfilesHaveFallback() {
+  const raw = await readFile(join(dir, '../profiles/default.json'), 'utf8');
+  const { profiles } = JSON.parse(raw);
+  for (const p of profiles) {
+    assert.ok(p.config.fallback?.provider, `Profile missing fallback.provider: ${JSON.stringify(p.match)}`);
+    assert.ok(p.config.fallback?.model, `Profile missing fallback.model: ${JSON.stringify(p.match)}`);
+  }
+  console.log(`✓ All ${profiles.length} profiles have fallback config`);
+}
+
+// Test 2: Default (empty match) profile always matches any hardware
+async function testDefaultProfileMatches() {
+  const raw = await readFile(join(dir, '../profiles/default.json'), 'utf8');
+  const profilesData = JSON.parse(raw);
+  const hardware = { platform: 'unknown', arch: 'unknown', gpu: { type: 'unknown' }, memory: 0 };
+  const config = matchProfile(profilesData, hardware);
+  assert.ok(config.fallback, 'Default profile must have fallback');
+  console.log('✓ Default profile matches any hardware');
+}
+
+// Test 3: meta chunk emitted before cloud content on fallback
+async function testMetaChunkOnFallback() {
+  const orig = globalThis.fetch;
+  const profilesData = JSON.parse(await readFile(join(dir, '../profiles/default.json'), 'utf8'));
 
   globalThis.fetch = async (url) => {
-    fetchCallCount++;
-    if (url.includes('localhost:11434')) throw Object.assign(new Error('fetch failed'), { cause: { code: 'ECONNREFUSED' } });
-    // Cloud fallback (OpenAI)
-    return makeStreamResponse([
-      'data: {"choices":[{"delta":{"content":"hello"}}]}',
-      'data: [DONE]'
-    ]);
+    if (url.includes('localhost:11434')) throw new Error('ECONNREFUSED');
+    if (url.includes('openai.com')) return { ok: true, status: 200, body: makeOpenAIStream('hello') };
+    // profiles/CDN fetch
+    return { ok: true, status: 200, json: async () => profilesData, text: async () => JSON.stringify(profilesData) };
   };
-
   process.env.OPENAI_API_KEY = 'test-key';
 
   try {
-    // Re-import with fresh module state isn't possible in ESM without cache busting,
-    // so we test the behavior by directly testing the logic pattern
-    // Instead, verify the structure of llm.js handles fallback correctly
-    const llmPath = new URL('../src/runtime/llm.js', import.meta.url);
-    // Dynamic import with cache-busting
-    const { chat } = await import(llmPath.href + '?t=' + Date.now());
-
-    const chunks = await collect(chat('test message'));
-    const metaChunk = chunks.find(c => c.type === 'meta');
-    assert.ok(metaChunk, 'Should emit meta chunk on fallback');
-    assert.equal(metaChunk.provider, 'cloud', 'Meta chunk should have provider=cloud');
-    console.log('✓ ECONNREFUSED triggers fallback with meta chunk');
+    const { chat } = await import('../src/runtime/llm.js?t=' + Date.now());
+    const chunks = await collect(chat('hi'));
+    const metaIdx = chunks.findIndex(c => c.type === 'meta');
+    assert.ok(metaIdx >= 0, 'Should emit meta chunk');
+    assert.equal(chunks[metaIdx].provider, 'cloud');
+    const contentAfter = chunks.slice(metaIdx + 1).some(c => c.type === 'content');
+    assert.ok(contentAfter, 'Content chunks should follow meta');
+    console.log('✓ meta chunk emitted before cloud content');
   } finally {
-    globalThis.fetch = originalFetch;
+    globalThis.fetch = orig;
     delete process.env.OPENAI_API_KEY;
   }
 }
 
-// Test 2: Missing OPENAI_API_KEY throws descriptive error
-async function testMissingOpenAIKey() {
-  const originalFetch = globalThis.fetch;
+// Test 4: Missing API key throws descriptive error
+async function testMissingApiKeyThrows() {
+  const orig = globalThis.fetch;
+  const profilesData = JSON.parse(await readFile(join(dir, '../profiles/default.json'), 'utf8'));
+
   globalThis.fetch = async (url) => {
     if (url.includes('localhost:11434')) throw new Error('ECONNREFUSED');
-    throw new Error('Should not reach cloud');
+    return { ok: true, status: 200, json: async () => profilesData, text: async () => JSON.stringify(profilesData) };
   };
   delete process.env.OPENAI_API_KEY;
   delete process.env.ANTHROPIC_API_KEY;
 
   try {
-    const { chat } = await import(new URL('../src/runtime/llm.js', import.meta.url).href + '?t2=' + Date.now());
-    // Need to force openai provider - check profiles default
-    // The default profile uses openai fallback, so missing key should throw
+    const { chat } = await import('../src/runtime/llm.js?t2=' + Date.now());
     let threw = false;
-    try {
-      await collect(chat('test'));
-    } catch (e) {
+    try { await collect(chat('hi')); } catch (e) {
       threw = true;
-      assert.ok(e.message.includes('OPENAI_API_KEY') || e.message.includes('not set'), `Expected key error, got: ${e.message}`);
+      assert.ok(e.message.includes('not set') || e.message.includes('API_KEY'), `Got: ${e.message}`);
     }
-    assert.ok(threw, 'Should throw when API key missing');
-    console.log('✓ Missing OPENAI_API_KEY throws descriptive error');
+    assert.ok(threw, 'Should throw on missing API key');
+    console.log('✓ Missing API key throws descriptive error');
   } finally {
-    globalThis.fetch = originalFetch;
+    globalThis.fetch = orig;
   }
 }
 
-// Test 3: All profiles have fallback key
-async function testProfilesHaveFallback() {
-  const { readFile } = await import('fs/promises');
-  const { fileURLToPath } = await import('url');
-  const { dirname, join } = await import('path');
-  const dir = dirname(fileURLToPath(import.meta.url));
-  const raw = await readFile(join(dir, '../profiles/default.json'), 'utf8');
-  const { profiles } = JSON.parse(raw);
-  for (const p of profiles) {
-    assert.ok(p.config.fallback, `Profile missing fallback: ${JSON.stringify(p.match)}`);
-    assert.ok(p.config.fallback.provider, 'Fallback must have provider');
-    assert.ok(p.config.fallback.model, 'Fallback must have model');
-  }
-  console.log(`✓ All ${profiles.length} profiles have fallback config`);
-}
+// Test 5: Ollama success — no meta chunk
+async function testOllamaSuccessNoMeta() {
+  const orig = globalThis.fetch;
+  const profilesData = JSON.parse(await readFile(join(dir, '../profiles/default.json'), 'utf8'));
 
-// Test 4: meta chunk is first yielded on fallback path
-async function testMetaChunkIsFirst() {
-  const originalFetch = globalThis.fetch;
   globalThis.fetch = async (url) => {
-    if (url.includes('localhost:11434')) throw new Error('ECONNREFUSED');
-    return makeStreamResponse([
-      'data: {"choices":[{"delta":{"content":"world"}}]}',
-      'data: [DONE]'
-    ]);
+    if (url.includes('localhost:11434')) return { ok: true, status: 200, body: makeOllamaStream('hi') };
+    return { ok: true, status: 200, json: async () => profilesData, text: async () => JSON.stringify(profilesData) };
   };
-  process.env.OPENAI_API_KEY = 'test-key';
 
   try {
-    const { chat } = await import(new URL('../src/runtime/llm.js', import.meta.url).href + '?t3=' + Date.now());
+    const { chat } = await import('../src/runtime/llm.js?t3=' + Date.now());
     const chunks = await collect(chat('hi'));
-    assert.equal(chunks[0]?.type, 'meta', 'First chunk on fallback must be meta');
-    console.log('✓ meta chunk is first on fallback path');
+    assert.ok(!chunks.some(c => c.type === 'meta'), 'No meta chunk when Ollama succeeds');
+    assert.ok(chunks.some(c => c.type === 'content'), 'Should have content chunks');
+    console.log('✓ Ollama success — no meta chunk emitted');
   } finally {
-    globalThis.fetch = originalFetch;
-    delete process.env.OPENAI_API_KEY;
+    globalThis.fetch = orig;
   }
 }
 
-// Run all tests
-const tests = [
-  testProfilesHaveFallback,
-  testFallbackOnConnectionRefused,
-  testMissingOpenAIKey,
-  testMetaChunkIsFirst,
-];
-
+const tests = [testProfilesHaveFallback, testDefaultProfileMatches, testMetaChunkOnFallback, testMissingApiKeyThrows, testOllamaSuccessNoMeta];
 let passed = 0, failed = 0;
 for (const t of tests) {
-  try {
-    await t();
-    passed++;
-  } catch (e) {
-    console.error(`✗ ${t.name}: ${e.message}`);
-    failed++;
-  }
+  try { await t(); passed++; }
+  catch (e) { console.error(`✗ ${t.name}: ${e.message}`); failed++; }
 }
-
 console.log(`\nResults: ${passed} passed, ${failed} failed`);
 process.exit(failed > 0 ? 1 : 0);

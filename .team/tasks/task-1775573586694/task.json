@@ -2,13 +2,13 @@
   "id": "task-1775573586694",
   "title": "Implement wake word server-side audio pipeline",
   "description": "Replace startWakeWordPipeline() stub in sense.js with real mic/audio capture pipeline that triggers wake word detection on server side.",
-  "status": "todo",
+  "status": "review",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m90",
   "hasDesign": true,
   "created": "2026-04-07T14:53:06.694Z",
-  "updated": "2026-04-07T15:00:06.123Z",
+  "updated": "2026-04-07T15:17:37.664Z",
   "milestoneId": "m90"
 }

@@ -32707,3 +32707,18 @@ Developer needs to:
 [2026-04-07T15:15:56.940Z] tester-2 agent completed
 [2026-04-07 15:15:56] [agent_complete] tester-2 completed successfully
 [2026-04-07 15:15:56] [workflow] tester-2 [SIGNAL] completed: Tested task-1775573593639 (LAN tunnel + HTTPS cert). 4 failures: tunnel.js not refactored to export 
+[2026-04-07 15:16:08] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:202)
+[2026-04-07 15:16:38] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:202)
+[2026-04-07 15:17:38] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:202)
+Both tasks are complete.
+
+**task-1775573593682** — Verify npx startup: all checks passed, no fixes needed. Server starts, `/api/status` returns valid JSON, SIGINT handled cleanly.
+
+**task-1775573586694** — Wake word pipeline: replaced `mic` stub with `node-record-lpcm16`, added `stopWakeWordPipeline()` export, wired `detectVoiceActivity()` from vad.js, added dep to package.json.
+
+```signal
+{"status": "completed", "summary": "Verified npx startup (no fixes needed) and implemented wake word pipeline with node-record-lpcm16 + stopWakeWordPipeline()"}
+```
+[2026-04-07T15:17:49.293Z] developer agent completed
+[2026-04-07 15:17:49] [agent_complete] developer completed successfully
+[2026-04-07 15:17:49] [workflow] developer [SIGNAL] completed: Verified npx startup (no fixes needed) and implemented wake word pipeline with node-record-lpcm16 + 

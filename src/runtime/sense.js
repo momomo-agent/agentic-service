@@ -1,5 +1,6 @@
 import { createPipeline } from './adapters/sense.js';
 import { EventEmitter } from 'node:events';
+import { detectVoiceActivity } from './vad.js';
 
 let pipeline = null;
 let intervalId = null;
@@ -60,61 +61,34 @@ export function stop() {
   pipeline = null;
 }
 
-let _wakeActive = false;
-let _micInstance = null;
+let _recorder = null;
 
-function _calcEnergy(buffer) {
-  let sum = 0;
-  for (let i = 0; i + 1 < buffer.length; i += 2) {
-    const sample = buffer.readInt16LE(i);
-    sum += sample * sample;
-  }
-  return Math.sqrt(sum / (buffer.length / 2));
-}
+export async function startWakeWordPipeline(onWakeWord) {
+  if (_recorder) stopWakeWordPipeline();
 
-export async function startWakeWordPipeline(onWake) {
-  if (_wakeActive) return () => {};
-  _wakeActive = true;
-
-  // check arecord is available (required by mic package)
+  let record;
   try {
-    const { execSync } = await import('node:child_process');
-    execSync('which arecord', { stdio: 'ignore' });
+    record = (await import('node-record-lpcm16')).default;
   } catch {
-    console.warn('[sense] arecord not found — wake word pipeline disabled');
-    _wakeActive = false;
-    return () => {};
+    console.warn('[sense] node-record-lpcm16 unavailable — wake word pipeline disabled');
+    return;
   }
 
-  let micMod;
   try {
-    micMod = (await import('mic')).default;
-  } catch {
-    console.warn('[sense] mic package unavailable — wake word pipeline disabled');
-    _wakeActive = false;
-    return () => {};
-  }
-
-  let inst;
-  try {
-    inst = micMod({ rate: '16000', channels: '1', encoding: 'signed-integer', device: 'default' });
-    const stream = inst.getAudioStream();
-    stream.on('data', (buf) => { if (_calcEnergy(buf) > 1000) onWake(); });
-    stream.on('error', (err) => console.warn('[sense] mic error:', err.message));
-    inst.start();
-    _micInstance = inst;
+    _recorder = record.record({ sampleRate: 16000, channels: 1 });
+    _recorder.stream()
+      .on('data', (buf) => { if (detectVoiceActivity(buf)) { onWakeWord(); emit('wake_word', {}); } })
+      .on('error', (err) => console.warn('[sense] mic error:', err.message));
     console.log('[sense] Wake word pipeline started');
   } catch (err) {
     console.warn('[sense] mic start failed:', err.message);
-    _wakeActive = false;
-    return () => {};
+    _recorder = null;
   }
+}
 
-  return () => {
-    _wakeActive = false;
-    try { _micInstance?.stop(); } catch { /* ignore */ }
-    _micInstance = null;
-  };
+export function stopWakeWordPipeline() {
+  try { _recorder?.stop(); } catch { /* ignore */ }
+  _recorder = null;
 }
 
 export async function initHeadless(options = { face: true, gesture: true, object: true }) {
