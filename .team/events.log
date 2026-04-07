@@ -19716,3 +19716,6 @@
 {"ts":"2026-04-07T14:42:27.137Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775569652492: testing → review"}}
 {"ts":"2026-04-07T14:42:41.624Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":18,"cpuUser":11.987097,"cpuSystem":26.365002}}}
 {"ts":"2026-04-07T14:42:41.625Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No tasks available to claim — all hasDesign=true tasks are done/review, new todo tasks have hasDesig"}}
+{"ts":"2026-04-07T14:43:11.051Z","type":"task_status","agent":null,"data":{"taskId":"task-1775569652492","from":"review","to":"done","title":"Document tunnel, CLI, HTTPS, VAD, embed in ARCHITECTURE.md"}}
+{"ts":"2026-04-07T14:43:29.718Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":21,"memoryTotalMB":35,"cpuUser":12.006651,"cpuSystem":26.411451}}}
+{"ts":"2026-04-07T14:43:29.718Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: Tested 2 review tasks: docker e2e blocked (Dockerfile COPY order bug), ARCHITECTURE.md CR task marke"}}

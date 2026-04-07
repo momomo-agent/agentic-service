@@ -32149,3 +32149,21 @@ No tasks are available with `hasDesign=true` and `status=todo`. All eligible tas
 [2026-04-07T14:42:41.622Z] developer agent completed
 [2026-04-07 14:42:41] [agent_complete] developer completed successfully
 [2026-04-07 14:42:41] [workflow] developer [SIGNAL] completed: No tasks available to claim — all hasDesign=true tasks are done/review, new todo tasks have hasDesig
+Done. Here's the summary:
+
+**task-1775529630008** (Docker build e2e) → **blocked**
+- m86-docker-fix tests: 7/7 passed
+- m74-docker-e2e tests: 2 failed — `install/Dockerfile` runs `npm run build` before `COPY . .`, so Vite can't find `index.html`
+- Bug documented in test-result.md for developer to fix
+
+**task-1775569652492** (Document modules in ARCHITECTURE.md) → **done**
+- 3 pending CRs already cover all 5 modules (tunnel, CLI, HTTPS/middleware, VAD, embed)
+- All source files verified to exist
+- DBB criteria met
+
+```signal
+{"status": "completed", "summary": "Tested 2 review tasks: docker e2e blocked (Dockerfile COPY order bug), ARCHITECTURE.md CR task marked done (3 pending CRs satisfy DBB)"}
+```
+[2026-04-07T14:43:29.714Z] tester agent completed
+[2026-04-07 14:43:29] [agent_complete] tester completed successfully
+[2026-04-07 14:43:29] [workflow] tester [SIGNAL] completed: Tested 2 review tasks: docker e2e blocked (Dockerfile COPY order bug), ARCHITECTURE.md CR task marke
