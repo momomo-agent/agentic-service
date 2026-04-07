@@ -47,9 +47,7 @@ if [ "$AGENTIC_GLOBAL" = "1" ]; then
   exec agentic-service "$@"
 fi
 
-if npm list -g agentic-service >/dev/null 2>&1; then
-  echo "agentic-service already installed"
-else
+if [ ! -d node_modules ]; then
   npm install --prefer-offline
 fi
 node bin/agentic-service.js

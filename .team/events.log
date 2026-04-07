@@ -9817,3 +9817,25 @@
 {"ts":"2026-04-07T02:54:12.188Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775529637595","from":"inProgress","to":"review","title":"Test coverage >=98% threshold enforcement"}}
 {"ts":"2026-04-07T02:54:12.442Z","type":"task_created","agent":null,"data":{"taskId":"task-1775530452440","title":"Wire agentic-embed as external package","priority":"P1","group":"m76"}}
 {"ts":"2026-04-07T02:54:27.245Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":16,"cpuUser":21.435882,"cpuSystem":58.771244}}}
+{"ts":"2026-04-07T02:54:27.454Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775529637624: inProgress → review"}}
+{"ts":"2026-04-07T02:54:27.603Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 13"}}
+{"ts":"2026-04-07T02:54:27.604Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:54:27.604Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":21.462049,"cpuSystem":58.881379}}}
+{"ts":"2026-04-07T02:54:32.793Z","type":"task_created","agent":null,"data":{"taskId":"task-1775530472792","title":"Replace local src/runtime/embed.js with agentic-embed package","priority":"P1","group":"m76"}}
+{"ts":"2026-04-07T02:54:39.352Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775529637595","from":"review","to":"testing","title":"Test coverage >=98% threshold enforcement"}}
+{"ts":"2026-04-07T02:54:44.846Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"21MB\",\"heapUsed\":\"13MB\",\"uptime\":\"4500s\"}"}}
+{"ts":"2026-04-07T02:54:52.789Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":21.47739,"cpuSystem":58.908504}}}
+{"ts":"2026-04-07T02:54:52.865Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:54:52.938Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775530446448","from":"todo","to":"cancelled","title":"Wire agentic-store as external package"}}
+{"ts":"2026-04-07T02:54:52.978Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775530452440","from":"todo","to":"cancelled","title":"Wire agentic-embed as external package"}}
+{"ts":"2026-04-07T02:54:52.988Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 87"}}
+{"ts":"2026-04-07T02:54:52.988Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:54:52.988Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":21.513207,"cpuSystem":59.060288}}}
+{"ts":"2026-04-07T02:55:21.735Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775530445802","from":"todo","to":"cancelled","title":"Replace local src/store/index.js with agentic-store package"}}
+{"ts":"2026-04-07T02:55:21.820Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775530472792","from":"todo","to":"cancelled","title":"Replace local src/runtime/embed.js with agentic-embed package"}}
+{"ts":"2026-04-07T02:55:27.336Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":21.525161,"cpuSystem":59.102967}}}
+{"ts":"2026-04-07T02:55:27.528Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:55:27.676Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 44"}}
+{"ts":"2026-04-07T02:55:27.677Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:55:27.677Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":21.567901,"cpuSystem":59.287135}}}
+{"ts":"2026-04-07T02:55:31.482Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":2.014664,"cpuSystem":3.907225}}}

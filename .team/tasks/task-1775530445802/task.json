@@ -1,13 +1,13 @@
 {
   "id": "task-1775530445802",
-  "title": "npx bin entrypoint wiring",
-  "description": "Wire bin/agentic-service.js to cli/setup.js so npx agentic-service starts the server end-to-end without error",
-  "status": "todo",
+  "title": "Replace local src/store/index.js with agentic-store package",
+  "description": "Remove local store/index.js stub and import from agentic-store package. Verify package.json lists agentic-store as dependency and import resolves at runtime.",
+  "status": "cancelled",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m76",
   "hasDesign": false,
   "created": "2026-04-07T02:54:05.803Z",
-  "updated": "2026-04-07T02:54:05.803Z"
+  "updated": "2026-04-07T02:55:21.733Z"
 }
