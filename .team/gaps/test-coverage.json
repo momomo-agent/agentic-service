@@ -1,13 +1,10 @@
 {
-  "totalTests": 787,
-  "passed": 711,
-  "failed": 69,
+  "totalTests": 11,
+  "passed": 8,
+  "failed": 3,
   "edgeCases": [
-    "sense.js start() uses setInterval instead of requestAnimationFrame — breaks RAF-based test stubs (DBB-003, DBB-004)",
-    "createPipeline not exported by agentic-sense package — adapter uses wrong API (actual exports: AgenticSense, AgenticAudio, IDX, extractFrame)",
-    "optimizer.js hardware-adaptive config output shape mismatch",
-    "CDN profiles fallback when fetch fails and no cache exists",
-    "SIGINT graceful drain during in-flight requests not fully tested"
+    "RAF not available in Node.js — needs global stub or conditional fallback",
+    "stop() called before start() should be no-op"
   ],
-  "coverage": "90%"
+  "coverage": "73%"
 }

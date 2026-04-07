@@ -19467,3 +19467,16 @@
 {"ts":"2026-04-07T14:05:49.177Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775569629612","from":"testing","to":"blocked","title":"Wire agentic-sense as external package"}}
 {"ts":"2026-04-07T14:06:04.342Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":10.230446,"cpuSystem":22.793097}}}
 {"ts":"2026-04-07T14:06:04.342Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: Tested task-1775569629612: vitest alias removed and package wired correctly, but adapter calls creat"}}
+{"ts":"2026-04-07T14:06:04.522Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775569820076: testing → blocked"}}
+{"ts":"2026-04-07T14:06:04.680Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 7"}}
+{"ts":"2026-04-07T14:06:04.694Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T14:06:04.694Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":10.266323,"cpuSystem":22.916893}}}
+{"ts":"2026-04-07T14:06:06.949Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"45MB\",\"heapUsed\":\"9MB\",\"uptime\":\"12900s\"}"}}
+{"ts":"2026-04-07T14:06:12.799Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:192)"}}
+{"ts":"2026-04-07T14:06:12.799Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:5, done:192)\"}"}}
+{"ts":"2026-04-07T14:06:42.790Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:5, done:192)"}}
+{"ts":"2026-04-07T14:06:42.790Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:5, done:192)\"}"}}
+{"ts":"2026-04-07T14:06:56.685Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775569820076","from":"blocked","to":"todo","title":"Fix createPipeline export in src/runtime/adapters/sense.js"}}
+{"ts":"2026-04-07T14:06:56.726Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775569629612","from":"blocked","to":"todo","title":"Wire agentic-sense as external package"}}
+{"ts":"2026-04-07T14:07:07.214Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":13,"cpuUser":10.308607,"cpuSystem":22.974887}}}
+{"ts":"2026-04-07T14:07:07.214Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: 3/11 tests fail — sense.js uses setInterval but tests expect requestAnimationFrame; task marked bloc"}}
