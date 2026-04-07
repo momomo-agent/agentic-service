@@ -22,13 +22,13 @@ describe('agentic-sense and agentic-voice package wiring', () => {
 
   it('package.json imports map has agentic-sense entry', () => {
     const imports = pkg.imports || {};
-    const hasAgenticSense = Object.keys(imports).some(k => k.startsWith('agentic-sense'));
+    const hasAgenticSense = Object.keys(imports).some(k => k.includes('agentic-sense'));
     expect(hasAgenticSense, 'agentic-sense missing from imports map').toBe(true);
   });
 
   it('package.json imports map has agentic-voice entries', () => {
     const imports = pkg.imports || {};
-    const hasAgenticVoice = Object.keys(imports).some(k => k.startsWith('agentic-voice'));
+    const hasAgenticVoice = Object.keys(imports).some(k => k.includes('agentic-voice'));
     expect(hasAgenticVoice, 'agentic-voice missing from imports map').toBe(true);
   });
 });

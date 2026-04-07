@@ -1,12 +1,9 @@
 {
-  "totalTests": 769,
-  "passed": 692,
-  "failed": 70,
+  "totalTests": 10,
+  "passed": 10,
+  "failed": 0,
   "edgeCases": [
-    "Import resolution with subpath imports (#agentic-* pattern)",
-    "Adapter module initialization in test environment",
-    "Mock setup for external package dependencies",
-    "Package.json imports map configuration validation"
+    "No test for matchProfile() logic against this file"
   ],
-  "coverage": "89.98%"
+  "coverage": "100%"
 }

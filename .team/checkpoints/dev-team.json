@@ -7,22 +7,23 @@
     "monitor",
     "monitor",
     "pm_decide",
+    "work_loop",
     "work_loop"
   ],
   "loopIterations": {
-    "work_loop": 19
+    "work_loop": 3
   },
-  "transitionDepth": 5,
+  "transitionDepth": 6,
   "nodeVisitCounts": {
     "startup": 1,
     "monitor": 2,
     "pm_decide": 1,
-    "work_loop": 1
+    "work_loop": 2
   },
   "contextOverrides": {
     "lastAgentSignal": "blocked",
     "agentEscalated": 0,
     "agentBlocked": 1
   },
-  "timestamp": "2026-04-07T13:26:56.313Z"
+  "timestamp": "2026-04-07T13:33:58.847Z"
 }

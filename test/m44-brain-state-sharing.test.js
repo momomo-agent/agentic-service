@@ -28,6 +28,7 @@ describe('DBB-004: multi-device brain state sharing', () => {
     const received = [];
     const ws = { send: (msg) => received.push(JSON.parse(msg)) };
     registerDevice({ id: 'dev-trunc', name: 'T', capabilities: [], ws, lastPong: Date.now() });
+    joinSession('sess-trunc', 'dev-trunc');
 
     const longHistory = Array.from({ length: 25 }, (_, i) => ({ role: 'user', content: `msg${i}` }));
     setSessionData('sess-trunc', 'history', longHistory);
