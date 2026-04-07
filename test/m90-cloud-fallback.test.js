@@ -1,6 +1,6 @@
 import { strict as assert } from 'assert';
 import { matchProfile } from '../src/detector/matcher.js';
-import { readFile, writeFile, mkdir } from 'fs/promises';
+import { readFile, writeFile, mkdir, unlink } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { execFile } from 'child_process';
@@ -10,13 +10,28 @@ import path from 'path';
 
 const execFileAsync = promisify(execFile);
 const dir = dirname(fileURLToPath(import.meta.url));
-const profilesPath = join(dir, '../profiles/default.json');
+const root = join(dir, '..');
+const profilesPath = join(root, 'profiles/default.json');
 const cacheFile = path.join(os.homedir(), '.agentic-service', 'profiles.json');
 
-// Pre-warm cache so subprocess tests don't hit network on module-level loadConfig()
+// Pre-warm cache
 const profilesData = JSON.parse(await readFile(profilesPath, 'utf8'));
 await mkdir(path.dirname(cacheFile), { recursive: true });
 await writeFile(cacheFile, JSON.stringify({ data: profilesData, timestamp: Date.now() }));
+
+async function runScript(code, env = {}) {
+  const tmp = path.join(os.tmpdir(), `llm-test-${Date.now()}.mjs`);
+  await writeFile(tmp, code);
+  try {
+    const { stdout } = await execFileAsync('node', [tmp], {
+      env: { ...process.env, ...env },
+      timeout: 20000
+    });
+    return stdout.trim();
+  } finally {
+    await unlink(tmp).catch(() => {});
+  }
+}
 
 // Test 1: All profiles have fallback key
 async function testProfilesHaveFallback() {
@@ -27,7 +42,7 @@ async function testProfilesHaveFallback() {
   console.log(`✓ All ${profilesData.profiles.length} profiles have fallback config`);
 }
 
-// Test 2: Default (empty match) profile always matches any hardware
+// Test 2: Default profile matches any hardware
 async function testDefaultProfileMatches() {
   const hardware = { platform: 'unknown', arch: 'unknown', gpu: { type: 'unknown' }, memory: 0 };
   const config = matchProfile(profilesData, hardware);
@@ -35,9 +50,9 @@ async function testDefaultProfileMatches() {
   console.log('✓ Default profile matches any hardware');
 }
 
-// Test 3: meta chunk emitted on fallback (subprocess with mocked fetch)
+// Test 3: meta chunk emitted on fallback
 async function testMetaChunkOnFallback() {
-  const script = `
+  const out = await runScript(`
 globalThis.fetch = async (url) => {
   if (url.includes('localhost:11434')) throw new Error('ECONNREFUSED');
   if (url.includes('openai.com')) {
@@ -52,31 +67,26 @@ globalThis.fetch = async (url) => {
   throw new Error('unexpected fetch: ' + url);
 };
 process.env.OPENAI_API_KEY = 'test-key';
-const { chat } = await import(${JSON.stringify(join(dir, '../src/runtime/llm.js'))});
+const { chat } = await import(${JSON.stringify(join(root, 'src/runtime/llm.js'))});
 const chunks = [];
 for await (const c of chat('hi')) chunks.push(c);
 const meta = chunks.find(c => c.type === 'meta');
-if (!meta) { console.error('NO META'); process.exit(1); }
-if (meta.provider !== 'cloud') { console.error('BAD PROVIDER'); process.exit(1); }
+if (!meta || meta.provider !== 'cloud') { console.error('NO META'); process.exit(1); }
 console.log('ok');
 process.exit(0);
-`;
-  const { stdout } = await execFileAsync('node', ['--input-type=module'], { input: script, env: process.env });
-  assert.ok(stdout.includes('ok'), `Unexpected output: ${stdout}`);
+`, { OPENAI_API_KEY: 'test-key' });
+  assert.ok(out.includes('ok'), `Unexpected: ${out}`);
   console.log('✓ meta chunk emitted before cloud content');
 }
 
 // Test 4: Missing API key throws descriptive error
 async function testMissingApiKeyThrows() {
-  const script = `
+  const out = await runScript(`
 globalThis.fetch = async (url) => {
   if (url.includes('localhost:11434')) throw new Error('ECONNREFUSED');
   throw new Error('unexpected fetch: ' + url);
 };
-const env = process.env;
-delete env.OPENAI_API_KEY;
-delete env.ANTHROPIC_API_KEY;
-const { chat } = await import(${JSON.stringify(join(dir, '../src/runtime/llm.js'))});
+const { chat } = await import(${JSON.stringify(join(root, 'src/runtime/llm.js'))});
 try {
   for await (const c of chat('hi')) {}
   console.error('NO THROW'); process.exit(1);
@@ -87,18 +97,14 @@ try {
   console.log('ok');
   process.exit(0);
 }
-`;
-  const { stdout } = await execFileAsync('node', ['--input-type=module'], {
-    input: script,
-    env: { ...process.env, OPENAI_API_KEY: '', ANTHROPIC_API_KEY: '' }
-  });
-  assert.ok(stdout.includes('ok'), `Unexpected output: ${stdout}`);
+`, { OPENAI_API_KEY: '', ANTHROPIC_API_KEY: '' });
+  assert.ok(out.includes('ok'), `Unexpected: ${out}`);
   console.log('✓ Missing API key throws descriptive error');
 }
 
 // Test 5: Ollama success — no meta chunk
 async function testOllamaSuccessNoMeta() {
-  const script = `
+  const out = await runScript(`
 globalThis.fetch = async (url) => {
   if (url.includes('localhost:11434')) {
     const enc = new TextEncoder();
@@ -110,16 +116,15 @@ globalThis.fetch = async (url) => {
   }
   throw new Error('unexpected fetch: ' + url);
 };
-const { chat } = await import(${JSON.stringify(join(dir, '../src/runtime/llm.js'))});
+const { chat } = await import(${JSON.stringify(join(root, 'src/runtime/llm.js'))});
 const chunks = [];
 for await (const c of chat('hi')) chunks.push(c);
 if (chunks.some(c => c.type === 'meta')) { console.error('HAS META'); process.exit(1); }
 if (!chunks.some(c => c.type === 'content')) { console.error('NO CONTENT'); process.exit(1); }
 console.log('ok');
 process.exit(0);
-`;
-  const { stdout } = await execFileAsync('node', ['--input-type=module'], { input: script, env: process.env });
-  assert.ok(stdout.includes('ok'), `Unexpected output: ${stdout}`);
+`);
+  assert.ok(out.includes('ok'), `Unexpected: ${out}`);
   console.log('✓ Ollama success — no meta chunk emitted');
 }
 

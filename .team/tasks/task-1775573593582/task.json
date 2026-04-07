@@ -2,7 +2,7 @@
   "id": "task-1775573593582",
   "title": "Verify and fix cloud fallback (OpenAI/Anthropic) in llm.js",
   "description": "Confirm cloud fallback activates when local Ollama is unavailable. Fix any gaps in llm.js/brain.js fallback logic.",
-  "status": "testing",
+  "status": "done",
   "priority": "P1",
   "assignee": "tester-2",
   "blockedBy": [],

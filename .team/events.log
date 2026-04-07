@@ -20100,3 +20100,36 @@
 {"ts":"2026-04-07T15:45:38.220Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"66MB\",\"heapUsed\":\"8MB\",\"uptime\":\"2100s\"}"}}
 {"ts":"2026-04-07T15:46:07.500Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":1.440381,"cpuSystem":2.541344}}}
 {"ts":"2026-04-07T15:46:07.501Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: No claimable tasks — all review tasks are either assigned to developer or being tested by tester-2. "}}
+{"ts":"2026-04-07T15:49:38.470Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:203)"}}
+{"ts":"2026-04-07T15:49:38.470Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:5, done:203)\"}"}}
+{"ts":"2026-04-07T15:50:08.479Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:203)"}}
+{"ts":"2026-04-07T15:50:08.480Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:5, done:203)\"}"}}
+{"ts":"2026-04-07T15:50:38.225Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"60MB\",\"heapUsed\":\"4MB\",\"uptime\":\"2400s\"}"}}
+{"ts":"2026-04-07T15:50:38.472Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (40min), skipping","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":1.601215,"cpuSystem":2.796355}}}
+{"ts":"2026-04-07T15:51:08.390Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:203)"}}
+{"ts":"2026-04-07T15:51:08.390Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:5, done:203)\"}"}}
+{"ts":"2026-04-07T15:52:08.392Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:203)"}}
+{"ts":"2026-04-07T15:52:08.392Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:5, done:203)\"}"}}
+{"ts":"2026-04-07T15:53:08.398Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:5, done:203)"}}
+{"ts":"2026-04-07T15:53:08.399Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:5, done:203)\"}"}}
+{"ts":"2026-04-07T15:54:08.401Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:5, done:203)"}}
+{"ts":"2026-04-07T15:54:08.401Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:5, done:203)\"}"}}
+{"ts":"2026-04-07T15:54:34.500Z","type":"error","agent":"tester-2","data":{"details":"hung (0% CPU for 10min), killing"}}
+{"ts":"2026-04-07T15:54:34.502Z","type":"error","agent":"tester-2","data":{"details":"timed out after 3900s, skipping"}}
+{"ts":"2026-04-07T15:54:34.514Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775573593582: testing → done"}}
+{"ts":"2026-04-07T15:54:34.679Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 5"}}
+{"ts":"2026-04-07T15:54:34.692Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T15:54:34.693Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":6,"memoryTotalMB":10,"cpuUser":1.758082,"cpuSystem":3.071276}}}
+{"ts":"2026-04-07T15:55:09.157Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":9,"cpuUser":1.788836,"cpuSystem":3.111421}}}
+{"ts":"2026-04-07T15:55:09.157Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] blocked: m89 has 1 task in review (agentic-sense wiring), m90 has 3 tasks in review (wake word pipeline, npx "}}
+{"ts":"2026-04-07T15:55:09.157Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] pm → blocked: m89 has 1 task in review (agentic-sense wiring), m90 has 3 tasks in review (wake"}}
+{"ts":"2026-04-07T15:55:09.219Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T15:55:09.220Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T15:55:09.220Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] implement: designedTasks > 0"}}
+{"ts":"2026-04-07T15:55:09.220Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] run-tests"}}
+{"ts":"2026-04-07T15:55:09.220Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T15:55:09.220Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":6,"memoryTotalMB":10,"cpuUser":1.802739,"cpuSystem":3.160577}}}
+{"ts":"2026-04-07T15:55:09.221Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":6,"memoryTotalMB":10,"cpuUser":1.802921,"cpuSystem":3.160951}}}
+{"ts":"2026-04-07T15:55:38.226Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"66MB\",\"heapUsed\":\"6MB\",\"uptime\":\"2700s\"}"}}
+{"ts":"2026-04-07T15:55:51.400Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":13,"cpuUser":1.821013,"cpuSystem":3.18435}}}
+{"ts":"2026-04-07T15:55:51.400Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Checked all 4 review tasks - all have canClaim: false (already claimed by other agents). Task-177557"}}
