@@ -18953,3 +18953,24 @@
 {"ts":"2026-04-07T12:14:40.851Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 20min (active:5, done:186)\"}"}}
 {"ts":"2026-04-07T12:14:45.643Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":5.069956,"cpuSystem":11.169972}}}
 {"ts":"2026-04-07T12:14:45.644Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] blocked: No unblocked todo tasks with designs available. 4 tasks in review awaiting tester approval (task-177"}}
+{"ts":"2026-04-07T12:14:45.785Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] developer → blocked: No unblocked todo tasks with designs available. 4 tasks in review awaiting teste"}}
+{"ts":"2026-04-07T12:14:45.947Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 16"}}
+{"ts":"2026-04-07T12:14:45.962Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T12:14:45.962Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":6,"memoryTotalMB":10,"cpuUser":5.105036,"cpuSystem":11.289309}}}
+{"ts":"2026-04-07T12:15:40.875Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 21min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:15:40.876Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 21min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:16:06.787Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"38MB\",\"heapUsed\":\"8MB\",\"uptime\":\"6300s\"}"}}
+{"ts":"2026-04-07T12:16:40.870Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 22min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:16:40.870Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 22min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:16:45.360Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":5.180327,"cpuSystem":11.398222}}}
+{"ts":"2026-04-07T12:16:45.360Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Marked M76 completed (all tasks done). Assigned m85 test pass rate task to developer. Four tasks acr"}}
+{"ts":"2026-04-07T12:16:45.421Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T12:16:45.421Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T12:16:45.422Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T12:16:45.422Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T12:16:45.422Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":5.193705,"cpuSystem":11.447308}}}
+{"ts":"2026-04-07T12:16:45.422Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T12:16:45.423Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":5.193906,"cpuSystem":11.447739}}}
+{"ts":"2026-04-07T12:16:45.423Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":5.194007,"cpuSystem":11.448003}}}
+{"ts":"2026-04-07T12:17:37.429Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":5.212909,"cpuSystem":11.47444}}}
+{"ts":"2026-04-07T12:17:37.429Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Checked all review tasks - none claimable (all 4 already claimed by other agents)"}}

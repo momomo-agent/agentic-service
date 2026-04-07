@@ -32,7 +32,8 @@
     {
       "id": "m76",
       "name": "M76: DBB Gaps — CPU Profile, VAD, Optimizer, LAN Tunnel",
-      "status": "active",
+      "status": "completed",
+      "completed": "2026-04-07T12:16:22.081Z",
       "tasks": [
         "task-1775530542647",
         "task-1775530548652",
