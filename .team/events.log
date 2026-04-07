@@ -19144,3 +19144,37 @@
 {"ts":"2026-04-07T13:06:12.624Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 20min (active:3, done:188)\"}"}}
 {"ts":"2026-04-07T13:06:45.384Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":7.537574,"cpuSystem":17.016143}}}
 {"ts":"2026-04-07T13:06:45.385Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Let me fix sense-pipeline.test.js to use fake timers instead of rafCallback."}}
+{"ts":"2026-04-07T13:07:12.631Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 21min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:07:12.632Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 21min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:08:12.724Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 22min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:08:12.725Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 22min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:09:12.970Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 23min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:09:12.971Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 23min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:10:12.663Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 24min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:10:12.664Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 24min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:11:06.911Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"13MB\",\"heapUsed\":\"5MB\",\"uptime\":\"9600s\"}"}}
+{"ts":"2026-04-07T13:11:07.290Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (30min), skipping","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":7.686168,"cpuSystem":17.354705}}}
+{"ts":"2026-04-07T13:11:13.971Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 25min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:11:13.972Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 25min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:12:12.687Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 26min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:12:12.688Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 26min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:13:12.656Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 27min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:13:12.657Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 27min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:14:12.761Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 28min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:14:12.762Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 28min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:15:12.690Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 29min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:15:12.691Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 29min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:16:06.923Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"13MB\",\"heapUsed\":\"5MB\",\"uptime\":\"9900s\"}"}}
+{"ts":"2026-04-07T13:16:12.674Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 30min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:16:12.675Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 30min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:17:12.720Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 31min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:17:12.720Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 31min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:18:12.717Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 32min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:18:12.718Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 32min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:19:12.740Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 33min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:19:12.741Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 33min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:20:12.739Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 34min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:20:12.740Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 34min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:20:33.526Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775535895960","from":"testing","to":"done","title":"Fix mocked module initialization across failing test files"}}
+{"ts":"2026-04-07T13:20:40.933Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":9,"cpuUser":8.079133,"cpuSystem":18.303727}}}
+{"ts":"2026-04-07T13:20:40.934Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Fixed mock initialization patterns in stt/tts/sense tests, fixed ESM import-in-body issues, added vi"}}

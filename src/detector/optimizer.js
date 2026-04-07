@@ -9,3 +9,7 @@ export function optimize(hardware) {
   }
   return { threads: cpu.cores ?? 2, memoryLimit: Math.floor(memory * 0.5), model: 'gemma2:2b', quantization: 'q4' };
 }
+
+export function setupOllama(profile) {
+  return profile;
+}

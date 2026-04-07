@@ -1,4 +1,7 @@
 import { test } from 'vitest';
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 // Tests for config hot-reload — DBB-005
 import { watchProfiles } from '../../src/detector/profiles.js'
 
@@ -113,9 +116,6 @@ await testAsync('stop() cancels further polling', async () => {
 
 console.log(`\nResults: ${passed} passed, ${failed} failed\n`)
 
-import fs from 'fs'
-import path from 'path'
-import { fileURLToPath } from 'url'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 
 const resultMd = `# Test Result: config 热更新 — 远程 profiles 变更触发重载

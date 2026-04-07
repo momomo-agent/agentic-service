@@ -1,9 +1,11 @@
 {
-  "totalTests": 10,
-  "passed": 10,
-  "failed": 0,
+  "totalTests": 775,
+  "passed": 698,
+  "failed": 70,
   "edgeCases": [
-    "No test for matchProfile() logic against this file"
+    "sense.js detect() does not catch pipeline errors — propagates instead of returning empty",
+    "Missing #agentic-voice/* import map entries in package.json",
+    "Several test files had ESM import inside function bodies (invalid syntax)"
   ],
-  "coverage": "100%"
+  "coverage": "90%"
 }

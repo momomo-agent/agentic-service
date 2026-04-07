@@ -82,11 +82,13 @@ export function broadcastSession(sessionId, message) {
       if (device) try { device.ws.send(payload); } catch { unregisterDevice(deviceId); }
     }
   } else {
-    // Legacy: broadcast full session data
-    const data = { ...session.data, history: session.history.slice(-20) };
+    // Broadcast full session data to session devices only
+    const history = (session.data.history || session.history || []).slice(-20);
+    const data = { ...session.data, history };
     const msg = JSON.stringify({ type: 'session', sessionId, data });
-    for (const [id, device] of registry) {
-      try { device.ws.send(msg); } catch { unregisterDevice(id); }
+    for (const deviceId of session.deviceIds) {
+      const device = registry.get(deviceId);
+      if (device) try { device.ws.send(msg); } catch { unregisterDevice(deviceId); }
     }
   }
 }

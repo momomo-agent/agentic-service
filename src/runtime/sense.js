@@ -1,4 +1,19 @@
-import { createPipeline } from '#agentic-sense';
+import * as _agenticSense from 'agentic-sense';
+const _pkg = _agenticSense.default ?? _agenticSense;
+
+async function createPipeline(options = {}) {
+  if (typeof _pkg.createPipeline === 'function') return _pkg.createPipeline(options);
+  if (typeof _agenticSense.createPipeline === 'function') return _agenticSense.createPipeline(options);
+  const AgenticSense = _pkg.AgenticSense;
+  const sense = new AgenticSense(null);
+  return {
+    _video: null,
+    detect(frame) {
+      try { return sense.detect ? sense.detect(frame) : { faces: [], gestures: [], objects: [] }; }
+      catch { return { faces: [], gestures: [], objects: [] }; }
+    }
+  };
+}
 import { EventEmitter } from 'node:events';
 
 let pipeline = null;
