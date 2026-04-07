@@ -12,7 +12,8 @@
     "test:run": "vitest run",
     "start": "node bin/agentic-service.js",
     "dev": "node bin/agentic-service.js --skip-setup",
-    "build": "cd src/ui/admin && npm install && npm run build"
+    "build": "cd src/ui/admin && npm install && npm run build",
+    "tunnel": "node src/tunnel.js"
   },
   "keywords": [
     "ai",

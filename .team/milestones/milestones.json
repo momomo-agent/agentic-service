@@ -842,13 +842,12 @@
     {
       "id": "m72",
       "name": "M72: Voice Latency + npx Entrypoint + README + External Packages",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775528530048",
         "task-1775528544032",
         "task-1775528544066",
-        "task-1775528544100",
-        "task-1775530235262"
+        "task-1775528544100"
       ],
       "created": "2026-04-07T02:23:45.918Z"
     },
@@ -879,7 +878,7 @@
     {
       "id": "m75",
       "name": "M75: CDN Staleness + LAN Tunnel",
-      "status": "completed",
+      "status": "active",
       "tasks": [
         "task-1775530134599",
         "task-1775530233859"
@@ -907,9 +906,34 @@
         "task-1775530801711",
         "task-1775530807610",
         "task-1775530814854",
-        "task-1775530819815"
+        "task-1775530819815",
+        "task-1775530235262"
       ],
       "created": "2026-04-07T03:00:25.457Z"
+    },
+    {
+      "id": "m78",
+      "name": "M78: Architecture Alignment — Unspecified Files CR",
+      "status": "completed",
+      "tasks": [
+        "task-1775530955188",
+        "task-1775530960767",
+        "task-1775530965690"
+      ],
+      "created": "2026-04-07T03:04:10.274Z"
+    },
+    {
+      "id": "m79",
+      "name": "M79: CDN Staleness + LAN Tunnel + VAD + Optimizer + External Packages",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775531184003",
+        "task-1775531195374",
+        "task-1775531231905",
+        "task-1775531236366",
+        "task-1775531240275"
+      ],
+      "created": "2026-04-07T03:06:24.327Z"
     }
   ]
 }

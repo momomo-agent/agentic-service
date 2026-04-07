@@ -2,12 +2,13 @@
   "id": "task-1775530556380",
   "title": "Fix optimizer.js: replace ollama setup code with hardware optimization logic",
   "description": "optimizer.js currently contains ollama setup code instead of hardware optimization logic. Refactor to return hardware-based model recommendations (model size, quantization, threads) based on detected GPU/CPU/memory.",
-  "status": "todo",
+  "status": "review",
   "priority": "P0",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m76",
   "hasDesign": true,
   "created": "2026-04-07T02:55:56.380Z",
-  "updated": "2026-04-07T03:02:59.860Z"
+  "updated": "2026-04-07T03:08:45.459Z",
+  "milestoneId": "m76"
 }

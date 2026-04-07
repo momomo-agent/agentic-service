@@ -1,6 +1,6 @@
 {
-  "totalTests": 30,
-  "passed": 30,
+  "totalTests": 36,
+  "passed": 36,
   "failed": 0,
   "edgeCases": ["nvidia vram=0 edge case not tested", "m16-coverage.test.js checks package.json for thresholds but config lives in vitest.config.js", "dynamic import of agentic-sense/agentic-voice only resolvable from package root, not test directory"],
   "coverage": "100%"

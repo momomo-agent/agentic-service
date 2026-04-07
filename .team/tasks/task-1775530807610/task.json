@@ -7,7 +7,8 @@
   "assignee": "developer-2",
   "blockedBy": [],
   "groupId": "m77",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-07T03:00:07.610Z",
-  "updated": "2026-04-07T03:03:05.444Z"
+  "updated": "2026-04-07T03:08:45.532Z",
+  "milestoneId": "m77"
 }

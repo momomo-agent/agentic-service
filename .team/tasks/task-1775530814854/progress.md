@@ -2,3 +2,4 @@
 
 ## Progress
 
+Verified: `stt.js` and `tts.js` already delegate to `agentic-voice` package via dynamic imports. No changes needed.
