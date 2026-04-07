@@ -1,0 +1,14 @@
+{
+  "id": "task-1775523564901",
+  "title": "VAD auto-detection",
+  "description": "Implement Voice Activity Detection in src/ui/client/ — auto-detect speech start/end without push-to-talk",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": "developer",
+  "blockedBy": [],
+  "groupId": "m43",
+  "hasDesign": true,
+  "created": "2026-04-07T00:59:24.901Z",
+  "updated": "2026-04-07T01:58:59.084Z",
+  "milestoneId": "m43"
+}

@@ -1,22 +1,24 @@
 {
-  "match": 85,
-  "timestamp": "2026-04-06T21:03:41.409Z",
+  "match": 75,
+  "timestamp": "2026-04-07T01:41:16.150Z",
   "gaps": [
-    { "description": "Docker deployment (Dockerfile, docker-compose.yml, setup.sh) now present in install/", "status": "implemented" },
+    { "description": "Docker deployment (Dockerfile, docker-compose.yml, setup.sh) present in install/", "status": "implemented" },
     { "description": "Remote profiles.json fetch with local cache — CDN URL configured but fallback to default.json not fully verified", "status": "partial" },
     { "description": "Hardware-adaptive model selection wired through optimizer.js into llm.js loadConfig()", "status": "implemented" },
-    { "description": "Multi-device session coordination (joinSession/broadcastSession) implemented; deep cross-device AI brain state sharing is minimal", "status": "partial" },
+    { "description": "Multi-device session coordination (joinSession/broadcastSession) implemented; deep cross-device brain state sharing is minimal", "status": "partial" },
     { "description": "Ollama auto-install and model pull with progress display implemented in cli/setup.js", "status": "implemented" },
-    { "description": "sense.js perception runtime is browser-only (videoElement); no server-side headless camera path", "status": "partial" },
-    { "description": "Wake word detection in UI composable (useWakeWord.js) but not integrated into server-side always-on pipeline", "status": "partial" },
+    { "description": "sense.js startWakeWordPipeline() is a stub — logs warning, no real mic/audio capture on server", "status": "partial" },
+    { "description": "Wake word server-side pipeline: hub.js wires wakeword event to brainChat but sense stub means it never fires", "status": "partial" },
     { "description": "Voice latency <2s end-to-end (STT+LLM+TTS) not benchmarked or enforced in code", "status": "missing" },
-    { "description": "HTTPS / LAN tunneling for secure multi-device access not implemented", "status": "missing" },
+    { "description": "HTTPS via httpsServer.js + cert.js exists; LAN tunnel (ngrok/cloudflare) not implemented", "status": "partial" },
     { "description": "LLM runtime with local Ollama + cloud fallback (OpenAI/Anthropic)", "status": "implemented" },
-    { "description": "STT/TTS adaptive runtime with cloud fallback", "status": "implemented" },
-    { "description": "Memory module with vector embedding (agentic-store + agentic-embed)", "status": "implemented" },
-    { "description": "REST API with all required endpoints (/api/chat, /api/transcribe, /api/synthesize, /api/status, /api/config)", "status": "implemented" },
+    { "description": "STT/TTS adaptive runtime with hardware-based provider selection", "status": "implemented" },
+    { "description": "Memory module with vector embedding (agentic-store + embed.js)", "status": "implemented" },
+    { "description": "REST API with chat/transcribe/synthesize/status/config endpoints", "status": "implemented" },
     { "description": "Admin UI and client voice UI (Vue 3 + Vite)", "status": "implemented" },
     { "description": "Hardware detection (GPU/memory/arch) for Apple Silicon / NVIDIA / CPU-only", "status": "implemented" },
-    { "description": "Hot-reload config via watchProfiles", "status": "implemented" }
+    { "description": "Hot-reload config via watchProfiles", "status": "implemented" },
+    { "description": "VAD client-side composable exists; server-side VAD integration missing", "status": "partial" },
+    { "description": "npx agentic-service one-command startup — cli/setup.js exists but bin entrypoint not verified", "status": "partial" }
   ]
 }

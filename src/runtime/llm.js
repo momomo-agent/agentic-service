@@ -117,6 +117,8 @@ export async function* chat(messages, options = {}) {
 
   const config = await loadConfig();
   const { provider, model } = config.fallback;
+  if (provider === 'openai' && !process.env.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY not set — cannot fallback to cloud');
+  if (provider === 'anthropic' && !process.env.ANTHROPIC_API_KEY) throw new Error('ANTHROPIC_API_KEY not set — cannot fallback to cloud');
   yield { type: 'meta', provider: 'cloud' };
   if (provider === 'openai') yield* chatWithOpenAI(messages, model);
   else if (provider === 'anthropic') yield* chatWithAnthropic(messages, model);

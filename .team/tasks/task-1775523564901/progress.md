@@ -1,0 +1,4 @@
+# VAD auto-detection
+
+## Progress
+

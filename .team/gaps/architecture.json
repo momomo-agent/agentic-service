@@ -1,20 +1,14 @@
 {
-  "match": 18,
-  "timestamp": "2026-04-06T21:02:56.816Z",
+  "match": 78,
+  "timestamp": "2026-04-07T01:41:14.600Z",
   "gaps": [
-    { "description": "src/detector/profiles.js missing — getProfile(hardware) not implemented", "status": "missing" },
-    { "description": "src/detector/optimizer.js missing — replaced by matcher.js which may not cover full optimization logic", "status": "partial" },
-    { "description": "src/runtime/llm.js missing — chat(messages, options) → stream not implemented", "status": "missing" },
-    { "description": "src/runtime/stt.js missing — transcribe(audioBuffer) → text not implemented", "status": "missing" },
-    { "description": "src/runtime/tts.js missing — synthesize(text) → audioBuffer not implemented", "status": "missing" },
-    { "description": "src/runtime/sense.js missing — MediaPipe sense runtime not implemented", "status": "missing" },
-    { "description": "src/runtime/memory.js missing — memory runtime not implemented", "status": "missing" },
-    { "description": "src/server/hub.js missing — device management not implemented", "status": "missing" },
-    { "description": "src/server/brain.js missing — LLM inference + tool calling not implemented", "status": "missing" },
-    { "description": "src/server/api.js missing — REST API endpoints not implemented", "status": "missing" },
-    { "description": "src/ui/admin/ missing — admin panel not implemented", "status": "missing" },
-    { "description": "profiles/default.json missing — built-in default hardware profile absent", "status": "missing" },
-    { "description": "src/detector/gpu-detector.js not in architecture spec — should be merged into hardware.js", "status": "partial" },
-    { "description": "src/ui/client/ partially started — chat UI present but admin route missing", "status": "partial" }
+    { "description": "src/store/index.js is a local module but architecture specifies agentic-store as an external package dependency", "status": "partial" },
+    { "description": "src/runtime/embed.js is a local module but architecture specifies agentic-embed as an external package dependency", "status": "partial" },
+    { "description": "src/detector/matcher.js not specified in architecture — only hardware.js, profiles.js, optimizer.js are listed", "status": "partial" },
+    { "description": "src/detector/ollama.js not specified in architecture", "status": "partial" },
+    { "description": "src/server/cert.js, httpsServer.js, middleware.js not specified in architecture — only hub.js, brain.js, api.js are listed", "status": "partial" },
+    { "description": "src/cli/ directory not specified in architecture — bin/agentic-service.js is the specified CLI entry point", "status": "partial" },
+    { "description": "agentic-sense (MediaPipe) not confirmed as external package — runtime/sense.js may be a local stub rather than wrapping the package", "status": "partial" },
+    { "description": "agentic-voice not confirmed as external package — runtime/stt.js and tts.js may be local stubs rather than wrapping the package", "status": "partial" }
   ]
 }

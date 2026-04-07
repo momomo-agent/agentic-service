@@ -31,6 +31,21 @@ console.log = (...args) => {
   _log(...args);
 };
 
+let inflight = 0;
+let draining = false;
+
+export function startDrain() { draining = true; }
+
+export function waitDrain(timeout = 10_000) {
+  if (inflight === 0) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error('drain timeout')), timeout);
+    const check = setInterval(() => {
+      if (inflight === 0) { clearInterval(check); clearTimeout(timer); resolve(); }
+    }, 50);
+  });
+}
+
 const CONFIG_PATH = path.join(os.homedir(), '.agentic-service', 'config.json');
 
 async function readConfig() {
@@ -137,6 +152,12 @@ export function createApp() {
   const app = express();
   app.use(cors());
   app.use(express.json());
+  app.use((req, res, next) => {
+    if (draining) return res.status(503).json({ error: 'server draining' });
+    inflight++;
+    res.on('finish', () => inflight--);
+    next();
+  });
   addRoutes(app);
   app.use(errorHandler);
   return app;

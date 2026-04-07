@@ -7,7 +7,7 @@ import path from 'path';
 import os from 'os';
 import chalk from 'chalk';
 import { runSetup } from '../src/cli/setup.js';
-import { startServer } from '../src/server/api.js';
+import { startServer, startDrain, waitDrain } from '../src/server/api.js';
 import { openBrowser } from '../src/cli/browser.js';
 
 const require = createRequire(import.meta.url);
@@ -62,17 +62,20 @@ program
 
       function shutdown() {
         console.log(chalk.yellow('\n\nShutting down...'));
-        const closing = server.http
-          ? [server.http, server.https]
-          : [server];
-        let closed = 0;
-        closing.forEach(s => s.close(() => {
-          if (++closed === closing.length) {
-            console.log(chalk.green('✓ Server closed'));
-            process.exit(0);
-          }
-        }));
-        setTimeout(() => process.exit(0), 5000).unref();
+        startDrain();
+        waitDrain(10_000).catch(() => {
+          console.warn(chalk.yellow('Drain timeout exceeded, forcing exit'));
+          process.exit(1);
+        }).then(() => {
+          const closing = server.http ? [server.http, server.https] : [server];
+          let closed = 0;
+          closing.forEach(s => s.close(() => {
+            if (++closed === closing.length) {
+              console.log(chalk.green('✓ Server closed'));
+              process.exit(0);
+            }
+          }));
+        });
       }
 
       process.on('SIGINT', shutdown);

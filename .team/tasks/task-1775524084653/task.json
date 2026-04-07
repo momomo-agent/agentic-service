@@ -1,0 +1,14 @@
+{
+  "id": "task-1775524084653",
+  "title": "Ollama non-200 fallback bug fix",
+  "description": "Fix known bug: Ollama non-200 response falls through to cloud instead of throwing directly per design",
+  "status": "review",
+  "priority": "P0",
+  "assignee": "developer",
+  "blockedBy": [],
+  "groupId": "m48",
+  "hasDesign": true,
+  "created": "2026-04-07T01:08:04.653Z",
+  "updated": "2026-04-07T01:56:11.307Z",
+  "milestoneId": "m48"
+}

@@ -1,24 +1,25 @@
 {
-  "match": 79,
-  "timestamp": "2026-04-06T21:06:17.386Z",
+  "match": 62,
+  "timestamp": "2026-04-07T01:42:09.774Z",
   "gaps": [
-    { "description": "README.md missing at project root (npx/global/Docker install + API docs)", "status": "missing" },
+    { "description": "README.md present with npx/Docker/API docs", "status": "implemented" },
+    { "description": "/admin UI panel implemented with device list, hardware panel, config, logs", "status": "implemented" },
+    { "description": "GPU detection via hardware.js; /api/status returns hardware.gpu fields", "status": "implemented" },
+    { "description": "gpu-detector.js removed — no references found in src/", "status": "implemented" },
     { "description": "profiles/default.json missing cpu-only profile (only apple-silicon and nvidia present)", "status": "partial" },
-    { "description": "/admin UI panel not verified to load with device list, logs, hardware panels", "status": "partial" },
     { "description": "Docker build and docker-compose not verified to work end-to-end", "status": "partial" },
     { "description": "Test coverage >=98% not confirmed (threshold config not verified)", "status": "partial" },
     { "description": "SIGINT during in-flight request: graceful drain not confirmed", "status": "partial" },
     { "description": "CDN profiles.json cache staleness check (7-day refresh) not implemented", "status": "partial" },
     { "description": "setup.sh Node.js detection and idempotency not fully verified", "status": "partial" },
-    { "description": "Wakeword UI activation (VAD/recording start) not implemented in frontend", "status": "missing" },
-    { "description": "push-to-talk and VAD auto-STT in web UI not verified", "status": "missing" },
-    { "criterion": "sense.js detect(null) edge case — pipeline null guard returns empty result", "status": "implemented" },
+    { "description": "VAD is client-side only (useVAD.js); no server-side voice activity detection implemented", "status": "missing" },
+    { "description": "Server-side VAD silence suppression missing — silence audio reaches STT/LLM pipeline", "status": "missing" },
+    { "description": "optimizer.js contains ollama setup code instead of hardware optimization logic; no hardware-adaptive config output", "status": "missing" },
     { "description": "store.del() alias confirmed present in store/index.js", "status": "implemented" },
     { "description": "hub.js heartbeat timeout correctly set to 60000ms", "status": "implemented" },
     { "description": "brain.js tool_use yields text field in response", "status": "implemented" },
     { "description": "hub.js broadcastWakeword() implemented and triggered on wakeword message", "status": "implemented" },
     { "description": "hub.js session management (joinSession, broadcastSession, getSessionData)", "status": "implemented" },
-    { "description": "llm.js uses optimizer/getProfile for hardware-adaptive model selection", "status": "implemented" },
     { "description": "memory.js uses mutex lock for concurrent write safety", "status": "implemented" }
   ]
 }

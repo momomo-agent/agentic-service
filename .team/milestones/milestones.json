@@ -2,7 +2,7 @@
   "milestones": [
     {
       "id": "m1",
-      "name": "M1: 硬件检测 + 一键启动",
+      "name": "M1: \u786c\u4ef6\u68c0\u6d4b + \u4e00\u952e\u542f\u52a8",
       "status": "completed",
       "tasks": [
         "task-1775446002661",
@@ -16,7 +16,7 @@
     },
     {
       "id": "m2",
-      "name": "M2: API 稳定性 + 配置持久化",
+      "name": "M2: API \u7a33\u5b9a\u6027 + \u914d\u7f6e\u6301\u4e45\u5316",
       "status": "completed",
       "tasks": [
         "task-1775491387415",
@@ -27,7 +27,7 @@
     },
     {
       "id": "m3",
-      "name": "M3: 语音能力 + 管理面板",
+      "name": "M3: \u8bed\u97f3\u80fd\u529b + \u7ba1\u7406\u9762\u677f",
       "status": "completed",
       "tasks": [
         "task-1775492459233",
@@ -38,7 +38,7 @@
     },
     {
       "id": "m4",
-      "name": "M4: 向量嵌入 + 设备管理",
+      "name": "M4: \u5411\u91cf\u5d4c\u5165 + \u8bbe\u5907\u7ba1\u7406",
       "status": "completed",
       "tasks": [
         "task-1775493437268",
@@ -50,7 +50,7 @@
     },
     {
       "id": "m5",
-      "name": "M5: 感知运行时 + 记忆模块 + Docker 打包",
+      "name": "M5: \u611f\u77e5\u8fd0\u884c\u65f6 + \u8bb0\u5fc6\u6a21\u5757 + Docker \u6253\u5305",
       "status": "completed",
       "tasks": [
         "task-1775494462710",
@@ -62,7 +62,7 @@
     },
     {
       "id": "m6",
-      "name": "M6: 服务器层 + REST API + 管理面板 + 语音UI",
+      "name": "M6: \u670d\u52a1\u5668\u5c42 + REST API + \u7ba1\u7406\u9762\u677f + \u8bed\u97f3UI",
       "status": "completed",
       "tasks": [
         "task-1775494973876",
@@ -74,7 +74,7 @@
     },
     {
       "id": "m7",
-      "name": "M7: 云端回退 + 设备协调 + DBB修复 + 文档",
+      "name": "M7: \u4e91\u7aef\u56de\u9000 + \u8bbe\u5907\u534f\u8c03 + DBB\u4fee\u590d + \u6587\u6863",
       "status": "completed",
       "tasks": [
         "task-1775495670314",
@@ -86,7 +86,7 @@
     },
     {
       "id": "m8",
-      "name": "M8: 唤醒词 + 视觉感知 + STT/TTS 自适应",
+      "name": "M8: \u5524\u9192\u8bcd + \u89c6\u89c9\u611f\u77e5 + STT/TTS \u81ea\u9002\u5e94",
       "status": "completed",
       "tasks": [
         "task-1775498242331",
@@ -97,7 +97,7 @@
     },
     {
       "id": "m9",
-      "name": "M9: DBB 规范修复 + 一键安装完善",
+      "name": "M9: DBB \u89c4\u8303\u4fee\u590d + \u4e00\u952e\u5b89\u88c5\u5b8c\u5584",
       "status": "completed",
       "tasks": [
         "task-1775499114484",
@@ -108,7 +108,7 @@
     },
     {
       "id": "m10",
-      "name": "M10: API 修复 + 硬件自适应 + 安装完善",
+      "name": "M10: API \u4fee\u590d + \u786c\u4ef6\u81ea\u9002\u5e94 + \u5b89\u88c5\u5b8c\u5584",
       "status": "completed",
       "tasks": [
         "task-1775500155143",
@@ -121,7 +121,7 @@
     },
     {
       "id": "m11",
-      "name": "M11: 服务器层 + Admin UI + 默认配置",
+      "name": "M11: \u670d\u52a1\u5668\u5c42 + Admin UI + \u9ed8\u8ba4\u914d\u7f6e",
       "status": "completed",
       "tasks": [
         "task-1775500291531",
@@ -134,7 +134,7 @@
     },
     {
       "id": "m12",
-      "name": "M12: Ollama自动安装 + STT/TTS完善 + 用户文档",
+      "name": "M12: Ollama\u81ea\u52a8\u5b89\u88c5 + STT/TTS\u5b8c\u5584 + \u7528\u6237\u6587\u6863",
       "status": "completed",
       "tasks": [
         "task-1775500429396",
@@ -145,7 +145,7 @@
     },
     {
       "id": "m13",
-      "name": "M13: DBB修复 + Docker + 配置热更新",
+      "name": "M13: DBB\u4fee\u590d + Docker + \u914d\u7f6e\u70ed\u66f4\u65b0",
       "status": "completed",
       "tasks": [
         "task-1775501713057",
@@ -157,7 +157,7 @@
     },
     {
       "id": "m14",
-      "name": "M14: Ollama自动安装 + 设备命令 + 硬件自适应 + README",
+      "name": "M14: Ollama\u81ea\u52a8\u5b89\u88c5 + \u8bbe\u5907\u547d\u4ee4 + \u786c\u4ef6\u81ea\u9002\u5e94 + README",
       "status": "completed",
       "tasks": [
         "task-1775506784289",
@@ -169,7 +169,7 @@
     },
     {
       "id": "m15",
-      "name": "M15: DBB修复 + sense.js兼容 + 唤醒词广播",
+      "name": "M15: DBB\u4fee\u590d + sense.js\u517c\u5bb9 + \u5524\u9192\u8bcd\u5e7f\u64ad",
       "status": "completed",
       "tasks": [
         "task-1775507803330",
@@ -182,7 +182,7 @@
     },
     {
       "id": "m16",
-      "name": "M16: 测试覆盖率 + SIGINT + CDN + 多设备会话",
+      "name": "M16: \u6d4b\u8bd5\u8986\u76d6\u7387 + SIGINT + CDN + \u591a\u8bbe\u5907\u4f1a\u8bdd",
       "status": "completed",
       "tasks": [
         "task-1775508540565",
@@ -194,7 +194,7 @@
     },
     {
       "id": "m17",
-      "name": "M17: DBB修复 + 架构对齐 + 最终验收",
+      "name": "M17: DBB\u4fee\u590d + \u67b6\u6784\u5bf9\u9f50 + \u6700\u7ec8\u9a8c\u6536",
       "status": "completed",
       "tasks": [
         "task-1775509406861",
@@ -208,7 +208,7 @@
     },
     {
       "id": "m18",
-      "name": "M18: Runtime层实现 (llm/stt/tts/sense/memory)",
+      "name": "M18: Runtime\u5c42\u5b9e\u73b0 (llm/stt/tts/sense/memory)",
       "status": "completed",
       "tasks": [
         "task-1775509987337",
@@ -221,7 +221,7 @@
     },
     {
       "id": "m19",
-      "name": "M19: CDN配置 + 性能验证 + 安全访问",
+      "name": "M19: CDN\u914d\u7f6e + \u6027\u80fd\u9a8c\u8bc1 + \u5b89\u5168\u8bbf\u95ee",
       "status": "completed",
       "tasks": [
         "task-1775510172768",
@@ -232,7 +232,7 @@
     },
     {
       "id": "m21",
-      "name": "M21: Detector完善 + Admin路由 + 架构对齐",
+      "name": "M21: Detector\u5b8c\u5584 + Admin\u8def\u7531 + \u67b6\u6784\u5bf9\u9f50",
       "status": "completed",
       "tasks": [
         "task-1775510905293",
@@ -243,7 +243,7 @@
     },
     {
       "id": "m20",
-      "name": "M20: Server层实现 (hub/brain/api) + Admin UI + 默认Profile",
+      "name": "M20: Server\u5c42\u5b9e\u73b0 (hub/brain/api) + Admin UI + \u9ed8\u8ba4Profile",
       "status": "completed",
       "tasks": [
         "task-1775510277966",
@@ -256,7 +256,7 @@
     },
     {
       "id": "m22",
-      "name": "M22: Runtime层修复 (llm/stt/tts/sense/memory)",
+      "name": "M22: Runtime\u5c42\u4fee\u590d (llm/stt/tts/sense/memory)",
       "status": "completed",
       "tasks": [
         "task-1775512321559",
@@ -269,7 +269,7 @@
     },
     {
       "id": "m23",
-      "name": "M23: App.vue修复 + VAD + 测试覆盖率 + README",
+      "name": "M23: App.vue\u4fee\u590d + VAD + \u6d4b\u8bd5\u8986\u76d6\u7387 + README",
       "status": "completed",
       "tasks": [
         "task-1775512890701",
@@ -281,7 +281,7 @@
     },
     {
       "id": "m24",
-      "name": "M24: HTTPS安全访问 + 语音延迟基准 + 服务端唤醒词 + npx入口",
+      "name": "M24: HTTPS\u5b89\u5168\u8bbf\u95ee + \u8bed\u97f3\u5ef6\u8fdf\u57fa\u51c6 + \u670d\u52a1\u7aef\u5524\u9192\u8bcd + npx\u5165\u53e3",
       "status": "completed",
       "tasks": [
         "task-1775513213884",
@@ -293,7 +293,7 @@
     },
     {
       "id": "m25",
-      "name": "M25: Ollama自动安装 + 服务端感知路径",
+      "name": "M25: Ollama\u81ea\u52a8\u5b89\u88c5 + \u670d\u52a1\u7aef\u611f\u77e5\u8def\u5f84",
       "status": "completed",
       "tasks": [
         "task-1775513780215",
@@ -303,7 +303,7 @@
     },
     {
       "id": "m26",
-      "name": "M26: Runtime层补全 (llm/stt/tts/sense/memory)",
+      "name": "M26: Runtime\u5c42\u8865\u5168 (llm/stt/tts/sense/memory)",
       "status": "completed",
       "tasks": [
         "task-1775514571886",
@@ -316,7 +316,7 @@
     },
     {
       "id": "m27",
-      "name": "M27: Runtime续 + Server层核心 (stt/tts/sense/memory/hub/brain/api)",
+      "name": "M27: Runtime\u7eed + Server\u5c42\u6838\u5fc3 (stt/tts/sense/memory/hub/brain/api)",
       "status": "completed",
       "tasks": [
         "task-1775514675715",
@@ -328,7 +328,7 @@
     },
     {
       "id": "m28",
-      "name": "M28: VAD + HTTPS + CDN缓存 + Docker验收 + setup.sh完善",
+      "name": "M28: VAD + HTTPS + CDN\u7f13\u5b58 + Docker\u9a8c\u6536 + setup.sh\u5b8c\u5584",
       "status": "completed",
       "tasks": [
         "task-1775515078705",
@@ -340,7 +340,7 @@
     },
     {
       "id": "m29",
-      "name": "M29: Ollama安装 + 服务端感知 + 语音延迟 + README",
+      "name": "M29: Ollama\u5b89\u88c5 + \u670d\u52a1\u7aef\u611f\u77e5 + \u8bed\u97f3\u5ef6\u8fdf + README",
       "status": "completed",
       "tasks": [
         "task-1775516741858",
@@ -353,7 +353,7 @@
     },
     {
       "id": "m30",
-      "name": "M30: VAD + CDN真实端点 + HTTPS + 多设备脑状态共享",
+      "name": "M30: VAD + CDN\u771f\u5b9e\u7aef\u70b9 + HTTPS + \u591a\u8bbe\u5907\u8111\u72b6\u6001\u5171\u4eab",
       "status": "completed",
       "tasks": [
         "task-1775517321148",
@@ -368,7 +368,7 @@
     },
     {
       "id": "m31",
-      "name": "M31: Detector层补全 + Runtime层全实现 (llm/stt/tts/sense/memory)",
+      "name": "M31: Detector\u5c42\u8865\u5168 + Runtime\u5c42\u5168\u5b9e\u73b0 (llm/stt/tts/sense/memory)",
       "status": "completed",
       "tasks": [
         "task-1775517565564",
@@ -385,7 +385,7 @@
     },
     {
       "id": "m32",
-      "name": "M32: Server层实现 (hub/brain/api) + Admin UI + README",
+      "name": "M32: Server\u5c42\u5b9e\u73b0 (hub/brain/api) + Admin UI + README",
       "status": "cancelled",
       "tasks": [
         "task-1775519282587",
@@ -404,7 +404,7 @@
     },
     {
       "id": "m33",
-      "name": "M33: 服务端感知 + 唤醒词管道 + 语音延迟基准",
+      "name": "M33: \u670d\u52a1\u7aef\u611f\u77e5 + \u5524\u9192\u8bcd\u7ba1\u9053 + \u8bed\u97f3\u5ef6\u8fdf\u57fa\u51c6",
       "status": "completed",
       "tasks": [
         "task-1775517741186",
@@ -415,7 +415,7 @@
     },
     {
       "id": "m34",
-      "name": "M34: Runtime层全实现 (llm/stt/tts/sense/memory)",
+      "name": "M34: Runtime\u5c42\u5168\u5b9e\u73b0 (llm/stt/tts/sense/memory)",
       "status": "cancelled",
       "tasks": [
         "task-1775519033213",
@@ -428,7 +428,7 @@
     },
     {
       "id": "m35",
-      "name": "M35: README + 一键安装 + 语音延迟基准 + CDN端点",
+      "name": "M35: README + \u4e00\u952e\u5b89\u88c5 + \u8bed\u97f3\u5ef6\u8fdf\u57fa\u51c6 + CDN\u7aef\u70b9",
       "status": "cancelled",
       "tasks": [
         "task-1775519386021",
@@ -440,8 +440,8 @@
     },
     {
       "id": "m36",
-      "name": "M36: README + 语音延迟基准 + headless camera",
-      "status": "ready-for-work",
+      "name": "M36: README + \u8bed\u97f3\u5ef6\u8fdf\u57fa\u51c6 + headless camera",
+      "status": "cancelled",
       "tasks": [
         "task-1775517732946",
         "task-1775517741153",
@@ -451,36 +451,36 @@
     },
     {
       "id": "m37",
-      "name": "M37: Runtime层全实现 (llm/stt/tts/sense/memory)",
+      "name": "M37: Runtime\u5c42\u5168\u5b9e\u73b0 (llm/stt/tts/sense/memory)",
       "status": "cancelled",
       "tasks": [],
       "created": "2026-04-06T23:53:50.000Z"
     },
     {
       "id": "m38",
-      "name": "M38: Runtime核心 (llm/stt/tts/sense)",
+      "name": "M38: Runtime\u6838\u5fc3 (llm/stt/tts/sense)",
       "status": "cancelled",
       "tasks": [],
       "created": "2026-04-06T23:58:00.000Z"
     },
     {
       "id": "m39",
-      "name": "M39: Runtime memory + Server层 (hub/brain/api)",
+      "name": "M39: Runtime memory + Server\u5c42 (hub/brain/api)",
       "status": "cancelled",
       "tasks": [],
       "created": "2026-04-06T23:58:00.000Z"
     },
     {
       "id": "m40",
-      "name": "M40: Admin UI + Detector层补全 + 默认Profile",
+      "name": "M40: Admin UI + Detector\u5c42\u8865\u5168 + \u9ed8\u8ba4Profile",
       "status": "cancelled",
       "tasks": [],
       "created": "2026-04-06T23:58:00.000Z"
     },
     {
       "id": "m41",
-      "name": "M41: Runtime层完整实现 + Server层核心 (llm/stt/tts/sense/memory/hub/brain/api)",
-      "status": "active",
+      "name": "M41: Runtime\u5c42\u5b8c\u6574\u5b9e\u73b0 + Server\u5c42\u6838\u5fc3 (llm/stt/tts/sense/memory/hub/brain/api)",
+      "status": "completed",
       "tasks": [
         "task-1775519613741",
         "task-1775519617446",
@@ -497,17 +497,262 @@
     },
     {
       "id": "m42",
-      "name": "M42: Admin UI + Detector清理 + VAD + README",
-      "status": "ready-for-work",
+      "name": "M42: Wake Word + Voice Latency + HTTPS",
+      "status": "active",
       "tasks": [
-        "task-1775522596218",
-        "task-1775522602124",
-        "task-1775522602184",
-        "task-1775522602232",
-        "task-1775522924391",
-        "task-1775522930453"
+        "task-1775523312966",
+        "task-1775523317979",
+        "task-1775523318012"
       ],
       "created": "2026-04-07T00:43:27.297Z"
+    },
+    {
+      "id": "m43",
+      "name": "M43: VAD + README + CDN Endpoint + Headless Sense",
+      "status": "planned",
+      "tasks": [
+        "task-1775523564901",
+        "task-1775523572887",
+        "task-1775523572919",
+        "task-1775523572950"
+      ],
+      "created": "2026-04-07T00:59:12.202Z"
+    },
+    {
+      "id": "m44",
+      "name": "M44: Ollama Auto-Install + npx Entrypoint + Multi-Device Brain State",
+      "status": "planned",
+      "tasks": [
+        "task-1775523676474",
+        "task-1775523681453",
+        "task-1775523681486"
+      ],
+      "created": "2026-04-07T01:01:27.000Z"
+    },
+    {
+      "id": "m45",
+      "name": "M45: Core Runtime \u2014 LLM + STT + TTS + Memory",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775523779748",
+        "task-1775523784686",
+        "task-1775523784719",
+        "task-1775523784754",
+        "task-1775523994639"
+      ],
+      "created": "2026-04-07T01:03:22.827Z"
+    },
+    {
+      "id": "m46",
+      "name": "M46: Core Server \u2014 brain.js + api.js + hub.js + profiles",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775523791407",
+        "task-1775523791441",
+        "task-1775523791472",
+        "task-1775523791502"
+      ],
+      "created": "2026-04-07T01:03:22.827Z"
+    },
+    {
+      "id": "m47",
+      "name": "M47: Admin UI + optimizer.js + UI Route Completion",
+      "status": "planned",
+      "tasks": [
+        "task-1775523890981",
+        "task-1775523895031",
+        "task-1775523899911",
+        "task-1775524560816"
+      ],
+      "created": "2026-04-07T01:05:27.455Z"
+    },
+    {
+      "id": "m48",
+      "name": "M48: Docker + Test Coverage + SIGINT + setup.sh + Ollama Fallback",
+      "status": "planned",
+      "tasks": [
+        "task-1775524071620",
+        "task-1775524078711",
+        "task-1775524084592",
+        "task-1775524084623",
+        "task-1775524084653"
+      ],
+      "created": "2026-04-07T01:09:11.884Z"
+    },
+    {
+      "id": "m49",
+      "name": "M49: Core Runtime \u2014 llm.js + stt.js + tts.js + memory.js + sense.js",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775524194190",
+        "task-1775524199166",
+        "task-1775524199199"
+      ],
+      "created": "2026-04-07T01:10:19.499Z"
+    },
+    {
+      "id": "m50",
+      "name": "M50: Core Server \u2014 brain.js + api.js + hub.js + profiles",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775524204595",
+        "task-1775524204631",
+        "task-1775524204665"
+      ],
+      "created": "2026-04-07T01:10:19.499Z"
+    },
+    {
+      "id": "m52",
+      "name": "M52: Core Runtime Layer \u2014 llm.js + stt.js + tts.js + sense.js + memory.js",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775524878215",
+        "task-1775524878249",
+        "task-1775524883327"
+      ],
+      "created": "2026-04-07T01:21:55.000Z"
+    },
+    {
+      "id": "m53",
+      "name": "M53: Core Server Layer \u2014 hub.js + brain.js + api.js + profiles",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775524889052",
+        "task-1775524889088",
+        "task-1775524894186",
+        "task-1775524894221"
+      ],
+      "created": "2026-04-07T01:21:55.000Z"
+    },
+    {
+      "id": "m51",
+      "name": "M51: Core Server Layer \u2014 hub.js + brain.js + api.js + profiles",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775524672913",
+        "task-1775524680027",
+        "task-1775524680061",
+        "task-1775524685959"
+      ],
+      "created": "2026-04-07T01:18:42.085Z"
+    },
+    {
+      "id": "m54",
+      "name": "M54: Runtime Layer \u2014 llm.js + stt.js + tts.js + sense.js + memory.js",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775525083965",
+        "task-1775525088183",
+        "task-1775525092607",
+        "task-1775525193162"
+      ],
+      "created": "2026-04-07T01:25:29.543Z"
+    },
+    {
+      "id": "m56",
+      "name": "M56: Runtime Layer \u2014 llm.js + stt.js + tts.js + memory.js",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775525610758",
+        "task-1775525614944",
+        "task-1775525619511"
+      ],
+      "created": "2026-04-07T01:33:48.217Z"
+    },
+    {
+      "id": "m57",
+      "name": "M57: Server Layer \u2014 hub.js + brain.js + api.js + profiles.js",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775525627764",
+        "task-1775525627797",
+        "task-1775525627832",
+        "task-1775525627873"
+      ],
+      "created": "2026-04-07T01:33:48.217Z"
+    },
+    {
+      "id": "m55",
+      "name": "M55: Server Layer \u2014 hub.js + brain.js + api.js + profiles.js",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775525108725",
+        "task-1775525116359",
+        "task-1775525116392",
+        "task-1775525116426",
+        "task-1775525410073"
+      ],
+      "created": "2026-04-07T01:25:29.543Z"
+    },
+    {
+      "id": "m58",
+      "name": "M58: Runtime Layer \u2014 llm.js + stt.js + tts.js + sense.js + memory.js",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775525837680",
+        "task-1775525837714",
+        "task-1775525837743",
+        "task-1775525843501",
+        "task-1775525843534"
+      ],
+      "created": "2026-04-07T01:36:05.825Z"
+    },
+    {
+      "id": "m59",
+      "name": "M59: Server Layer \u2014 hub.js + brain.js + api.js + profiles.js",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775525848502",
+        "task-1775525848536",
+        "task-1775525853453",
+        "task-1775525853487"
+      ],
+      "created": "2026-04-07T01:36:05.825Z"
+    },
+    {
+      "id": "m60",
+      "name": "M60: Detector + UI Gaps",
+      "status": "cancelled",
+      "tasks": [
+        "task-1775525962527",
+        "task-1775525970741",
+        "task-1775525970776",
+        "task-1775525970847",
+        "task-1775525970880"
+      ],
+      "created": "2026-04-07T01:39:45.382Z"
+    },
+    {
+      "id": "m61",
+      "name": "M61: DBB Compliance \u2014 cpu-only Profile + CDN Staleness",
+      "status": "planned",
+      "tasks": [
+        "task-1775526662402",
+        "task-1775526709100"
+      ],
+      "created": "2026-04-07T01:52:00.918Z"
+    },
+    {
+      "id": "m62",
+      "name": "M62: DBB Compliance \u2014 Server VAD + optimizer.js + SIGINT + Docker",
+      "status": "planned",
+      "tasks": [
+        "task-1775526816885",
+        "task-1775526823938",
+        "task-1775526823973",
+        "task-1775526824008",
+        "task-1775526916299"
+      ],
+      "created": "2026-04-07T01:53:57.640Z"
+    },
+    {
+      "id": "m63",
+      "name": "M63: Architecture Compliance \u2014 agentic-sense Package Verification",
+      "status": "planned",
+      "tasks": [
+        "task-1775527006703"
+      ],
+      "created": "2026-04-07T01:56:47.030Z"
     }
   ]
 }

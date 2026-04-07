@@ -1,12 +1,16 @@
-# M42: optimizer.js 硬件优化接线
+# M42: Wake Word Integration + Voice Latency + HTTPS
 
 ## Goals
-- Add `optimize(hardware, profile)` export to `src/detector/optimizer.js`
-- Wire optimizer output into `src/runtime/llm.js` for hardware-adaptive settings
+- Integrate wake word detection into server-side STT pipeline
+- Benchmark and enforce voice latency <2s end-to-end
+- HTTPS / LAN tunneling for secure multi-device access
 
 ## Acceptance Criteria
-- `optimizer.js` exports `optimize(hardware, profile)` returning adjusted config (quantization, threads, context size)
-- `llm.js` calls optimizer to apply hardware-specific settings before chat
+- Wake word triggers server-side STT pipeline (not just UI composable)
+- STT+LLM+TTS round-trip measured and passes <2s gate
+- HTTPS enabled via self-signed cert or LAN tunnel
 
 ## Tasks
-- task-1775522924391: src/detector/optimizer.js — 硬件优化逻辑补全 (P1)
+- task-1775523312966: Wake word server-side pipeline integration (P1)
+- task-1775523317979: Voice latency <2s benchmark (P1)
+- task-1775523318012: HTTPS / LAN tunnel for multi-device access (P1)
