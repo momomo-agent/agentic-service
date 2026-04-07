@@ -1,9 +1,9 @@
 {
-  "totalTests": 6,
-  "passed": 6,
+  "totalTests": 10,
+  "passed": 10,
   "failed": 0,
   "edgeCases": [
-    "Runtime adapter load failure (falls back to default — verified in source but not integration-tested)"
+    "Concurrent calls to same profiler label (last one wins — acceptable for sequential pipeline)"
   ],
   "coverage": "100%"
 }

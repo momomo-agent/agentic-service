@@ -1,5 +1,12 @@
-# Add cpu-only profile to profiles/default.json
+# Progress
 
-## Progress
+## Status: Complete
 
-Added `cpu-only` profile to `profiles/default.json` before the `gpu: "none"` entry, using gemma2:2b q4 as specified.
+cpu-only profile already exists in profiles/default.json (lines 57-65) with correct config:
+- match: { "gpu": "cpu-only" }
+- llm: gemma2:2b q4
+- stt: sensevoice small
+- tts: kokoro default
+- fallback: openai gpt-4o-mini
+
+No changes needed.

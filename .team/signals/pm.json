@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T11:34:01.614Z",
+  "timestamp": "2026-04-07T11:39:12.843Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Reset 4 stalled in-progress tasks to todo; assigned CPU profiling task to m80; all active milestones (m74/m76/m80/m83/m84) have clear todo work queued for developers and testers"
+  "summary": "Marked m84 completed. Created m85 with 3 tasks targeting remaining DBB/architecture gaps: agentic-sense wiring (P0), test pass rate >=90% (P0, blocked by m83), and ARCHITECTURE.md documentation (P1)."
 }

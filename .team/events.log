@@ -18759,3 +18759,37 @@
 {"ts":"2026-04-07T11:36:39.609Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775536622791","from":"testing","to":"done","title":"Wire agentic-voice as external package"}}
 {"ts":"2026-04-07T11:36:46.222Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":3.158832,"cpuSystem":6.746137}}}
 {"ts":"2026-04-07T11:36:46.223Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: Tested task-1775536622791: agentic-voice external package wiring. All 6 tests passed — package.json "}}
+{"ts":"2026-04-07T11:36:46.528Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 10"}}
+{"ts":"2026-04-07T11:36:46.541Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T11:36:46.541Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":8,"memoryTotalMB":13,"cpuUser":3.19346,"cpuSystem":6.860328}}}
+{"ts":"2026-04-07T11:38:40.576Z","type":"task_created","agent":null,"data":{"taskId":"task-1775561920576","title":"Wire agentic-sense as external package dependency","priority":"P1","group":"m85"}}
+{"ts":"2026-04-07T11:38:45.077Z","type":"task_created","agent":null,"data":{"taskId":"task-1775561925076","title":"Push test pass rate to >=90% after M83 fixes","priority":"P1","group":"m85"}}
+{"ts":"2026-04-07T11:38:50.546Z","type":"task_created","agent":null,"data":{"taskId":"task-1775561930545","title":"Document tunnel, CLI, VAD, HTTPS modules in ARCHITECTURE.md","priority":"P1","group":"m85"}}
+{"ts":"2026-04-07T11:39:12.847Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":3.294045,"cpuSystem":7.029446}}}
+{"ts":"2026-04-07T11:39:12.848Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Marked m84 completed. Created m85 with 3 tasks targeting remaining DBB/architecture gaps: agentic-se"}}
+{"ts":"2026-04-07T11:39:12.913Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T11:39:12.914Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] write-design, implement, run-tests"}}
+{"ts":"2026-04-07T11:39:12.914Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-07T11:39:12.914Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"出技术方案","performance":{"memoryMB":8,"memoryTotalMB":17,"cpuUser":3.307526,"cpuSystem":7.077433}}}
+{"ts":"2026-04-07T11:39:12.915Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"出技术方案","performance":{"memoryMB":8,"memoryTotalMB":17,"cpuUser":3.307696,"cpuSystem":7.077853}}}
+{"ts":"2026-04-07T11:39:12.915Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"出技术方案","performance":{"memoryMB":8,"memoryTotalMB":17,"cpuUser":3.307814,"cpuSystem":7.078143}}}
+{"ts":"2026-04-07T11:39:12.916Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T11:39:12.916Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":8,"memoryTotalMB":17,"cpuUser":3.307971,"cpuSystem":7.078585}}}
+{"ts":"2026-04-07T11:39:12.916Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-07T11:39:12.916Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":17,"cpuUser":3.308109,"cpuSystem":7.078916}}}
+{"ts":"2026-04-07T11:39:41.713Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775530542647","from":"todo","to":"inProgress","title":"Add cpu-only profile to profiles/default.json"}}
+{"ts":"2026-04-07T11:39:47.696Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775561368213","from":"review","to":"testing","title":"CPU profiling and voice latency instrumentation"}}
+{"ts":"2026-04-07T11:40:03.208Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775530542647","from":"inProgress","to":"review","title":"Add cpu-only profile to profiles/default.json"}}
+{"ts":"2026-04-07T11:40:12.425Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775534863944","from":"todo","to":"inProgress","title":"Voice latency <2s benchmark and enforcement"}}
+{"ts":"2026-04-07T11:41:06.721Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"44MB\",\"heapUsed\":\"8MB\",\"uptime\":\"4200s\"}"}}
+{"ts":"2026-04-07T11:41:07.240Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (70min), skipping","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":3.361963,"cpuSystem":7.175734}}}
+{"ts":"2026-04-07T11:41:09.716Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":3.362714,"cpuSystem":7.176749}}}
+{"ts":"2026-04-07T11:41:09.717Z","type":"workflow","agent":"tech_lead-1","data":{"details":"[SIGNAL] completed: Created M85 dbb.md, design.md, task designs for all 3 todo tasks, marked hasDesign=true, submitted C"}}
+{"ts":"2026-04-07T11:41:27.845Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":16,"memoryTotalMB":19,"cpuUser":3.375718,"cpuSystem":7.202711}}}
+{"ts":"2026-04-07T11:41:27.846Z","type":"workflow","agent":"tech_lead-2","data":{"details":"[SIGNAL] completed: Created m85 milestone design, wrote task designs for all 3 todo tasks, marked hasDesign=true"}}
+{"ts":"2026-04-07T11:41:39.826Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:9, done:182)"}}
+{"ts":"2026-04-07T11:41:39.826Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:9, done:182)\"}"}}
+{"ts":"2026-04-07T11:41:41.108Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775534863944","from":"inProgress","to":"review","title":"Voice latency <2s benchmark and enforcement"}}
+{"ts":"2026-04-07T11:41:48.177Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775561368213","from":"testing","to":"done","title":"CPU profiling and voice latency instrumentation"}}
+{"ts":"2026-04-07T11:41:49.495Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":3.400959,"cpuSystem":7.241591}}}
+{"ts":"2026-04-07T11:41:49.495Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Added voice latency instrumentation (latency-log.js) to STT/LLM/TTS pipeline and benchmark test; cpu"}}

@@ -1,6 +1,7 @@
 import { detect } from '../detector/hardware.js';
 import { getProfile } from '../detector/profiles.js';
 import { startMark, endMark } from './profiler.js';
+import { record } from './latency-log.js';
 
 const ADAPTERS = {
   kokoro:  () => import('agentic-voice/kokoro'),
@@ -30,7 +31,9 @@ export async function synthesize(text) {
   if (!text || !text.trim())
     throw Object.assign(new Error('text required'), { code: 'EMPTY_TEXT' });
   startMark('tts');
+  const t0 = Date.now();
   const result = await adapter.synthesize(text);
   synthesize._lastMs = endMark('tts');
+  record('tts', Date.now() - t0);
   return result;
 }

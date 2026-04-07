@@ -1,6 +1,7 @@
 import { detect } from '../detector/hardware.js';
 import { getProfile } from '../detector/profiles.js';
 import { startMark, endMark } from './profiler.js';
+import { record } from './latency-log.js';
 
 const ADAPTERS = {
   sensevoice: () => import('agentic-voice/sensevoice'),
@@ -30,7 +31,9 @@ export async function transcribe(audioBuffer) {
   if (!audioBuffer || audioBuffer.length === 0)
     throw Object.assign(new Error('empty audio'), { code: 'EMPTY_AUDIO' });
   startMark('stt');
+  const t0 = Date.now();
   const result = await adapter.transcribe(audioBuffer);
   transcribe._lastMs = endMark('stt');
+  record('stt', Date.now() - t0);
   return result;
 }

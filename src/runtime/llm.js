@@ -1,5 +1,6 @@
 import { detect as detectHardware } from '../detector/hardware.js'
 import { getProfile, watchProfiles } from '../detector/profiles.js'
+import { record } from './latency-log.js'
 
 let _config = null
 async function loadConfig() {
@@ -108,19 +109,33 @@ async function* chatWithOpenAI(messages, model) {
 }
 
 export async function* chat(messages, options = {}) {
+  const t0 = Date.now();
+  let first = true;
   try {
-    yield* chatWithOllama(messages);
-    return;
-  } catch (error) {
-    console.warn('Ollama failed, falling back to cloud:', error.message);
-  }
+    try {
+      for await (const chunk of chatWithOllama(messages)) {
+        if (first) { record('llm_ttft', Date.now() - t0); first = false; }
+        yield chunk;
+      }
+      record('llm_total', Date.now() - t0);
+      return;
+    } catch (error) {
+      console.warn('Ollama failed, falling back to cloud:', error.message);
+    }
 
-  const config = await loadConfig();
-  const { provider, model } = config.fallback;
-  if (provider === 'openai' && !process.env.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY not set — cannot fallback to cloud');
-  if (provider === 'anthropic' && !process.env.ANTHROPIC_API_KEY) throw new Error('ANTHROPIC_API_KEY not set — cannot fallback to cloud');
-  yield { type: 'meta', provider: 'cloud' };
-  if (provider === 'openai') yield* chatWithOpenAI(messages, model);
-  else if (provider === 'anthropic') yield* chatWithAnthropic(messages, model);
-  else throw new Error(`Unsupported fallback provider: ${provider}`);
+    const config = await loadConfig();
+    const { provider, model } = config.fallback;
+    if (provider === 'openai' && !process.env.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY not set — cannot fallback to cloud');
+    if (provider === 'anthropic' && !process.env.ANTHROPIC_API_KEY) throw new Error('ANTHROPIC_API_KEY not set — cannot fallback to cloud');
+    yield { type: 'meta', provider: 'cloud' };
+    const src = provider === 'openai' ? chatWithOpenAI(messages, model)
+      : provider === 'anthropic' ? chatWithAnthropic(messages, model)
+      : (() => { throw new Error(`Unsupported fallback provider: ${provider}`); })();
+    for await (const chunk of src) {
+      if (first) { record('llm_ttft', Date.now() - t0); first = false; }
+      yield chunk;
+    }
+  } finally {
+    record('llm_total', Date.now() - t0);
+  }
 }
