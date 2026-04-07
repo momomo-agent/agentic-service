@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 import { existsSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+test('m26-hardware-merge', async () => {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // DBB-001: hardware.js exports GPU detection result
@@ -15,3 +17,4 @@ console.log('DBB-001 PASS: gpu =', hw.gpu);
 const gpuDetectorPath = path.join(__dirname, '../src/detector/gpu-detector.js');
 console.assert(!existsSync(gpuDetectorPath), 'DBB-002 FAIL: gpu-detector.js still exists');
 console.log('DBB-002 PASS: gpu-detector.js does not exist');
+});

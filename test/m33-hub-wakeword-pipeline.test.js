@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 import { strict as assert } from 'node:assert';
 import { EventEmitter } from 'node:events';
 
 // Mock sense.startHeadless
+test('m33-hub-wakeword-pipeline', async () => {
 const mockEmitter = new EventEmitter();
 let startHeadlessCalled = false;
 
@@ -96,3 +98,4 @@ async function runInit(sense, brainChat, registry) {
 }
 
 console.log('\nAll tests passed.');
+});

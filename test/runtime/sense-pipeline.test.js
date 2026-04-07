@@ -4,6 +4,7 @@ const mockDetect = vi.fn()
 const mockPipeline = { detect: mockDetect, _video: null }
 
 vi.mock('agentic-sense', () => ({
+  default: { AgenticSense: class { detect = mockDetect } },
   createPipeline: vi.fn(async () => mockPipeline)
 }))
 

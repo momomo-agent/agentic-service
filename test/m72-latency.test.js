@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 // Tests for task-1775528530048: Voice latency <2s benchmark
 // Uses mock adapters to avoid network calls in CI
 import assert from 'assert';
 
+test('m72-latency', async () => {
 let passed = 0, failed = 0;
 const failures = [];
 
@@ -39,3 +41,4 @@ test('DBB: latency target documented', () => {
 
 console.log(`\n${passed + failed} tests: ${passed} passed, ${failed} failed`);
 if (failures.length) { console.log('Failures:', failures); process.exit(1); }
+});

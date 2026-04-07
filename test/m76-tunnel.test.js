@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 import { execSync, spawnSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
+test('m76-tunnel', async () => {
 let passed = 0, failed = 0;
 function ok(name, cond) {
   if (cond) { console.log(`  PASS: ${name}`); passed++; }
@@ -46,3 +48,4 @@ ok('prints error message', (result.stderr || Buffer.alloc(0)).toString().include
 
 console.log(`\n${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

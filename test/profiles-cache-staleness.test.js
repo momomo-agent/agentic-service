@@ -1,5 +1,7 @@
+import { test } from 'vitest';
 import assert from 'assert';
 
+test('profiles-cache-staleness', async () => {
 const CACHE_MAX_AGE = 7 * 24 * 60 * 60 * 1000;
 
 function isCacheExpired(timestamp) {
@@ -39,3 +41,4 @@ assert.ok(src.includes('isCacheExpired(cached.timestamp)'), 'loadProfiles must c
 console.log('PASS: loadProfiles calls isCacheExpired(cached.timestamp)');
 
 console.log('\n6 passed, 0 failed');
+});

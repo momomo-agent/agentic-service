@@ -1,6 +1,8 @@
+import { test } from 'vitest';
 // Tests for hub.js broadcastSession — multi-device brain state sharing
 import { strict as assert } from 'assert';
 
+test('m44-hub-session', async () => {
 let passed = 0, failed = 0;
 async function test(name, fn) {
   try { await fn(); console.log(`  ✓ ${name}`); passed++; }
@@ -78,3 +80,4 @@ await test('broadcastSession removes disconnected device on send error', async (
 
 console.log(`\n${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

@@ -1,8 +1,10 @@
+import { test } from 'vitest';
 // Tests for profiles/default.json — DBB-005 (m11)
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+test('profiles-default', async () => {
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'profiles/default.json'), 'utf8'))
 
@@ -67,3 +69,4 @@ fs.writeFileSync(path.join(gapsDir, 'test-coverage.json'), JSON.stringify({
 }, null, 2))
 
 if (failed > 0) process.exit(1)
+});

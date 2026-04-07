@@ -20,9 +20,11 @@ export async function init() {
   } catch {}
   const load = ADAPTERS[provider] ?? ADAPTERS.default;
   try {
-    adapter = await load();
+    const mod = await load();
+    adapter = mod.synthesize ? mod : mod.default;
   } catch {
-    adapter = await ADAPTERS.default();
+    const mod = await ADAPTERS.default();
+    adapter = mod.synthesize ? mod : mod.default;
   }
 }
 

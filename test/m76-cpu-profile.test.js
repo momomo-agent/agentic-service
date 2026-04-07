@@ -1,6 +1,8 @@
+import { test } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
+test('m76-cpu-profile', async () => {
 let passed = 0, failed = 0;
 function ok(name, cond) {
   if (cond) { console.log(`  PASS: ${name}`); passed++; }
@@ -34,3 +36,4 @@ ok('nvidia profile intact', !!nvidia && nvidia.config?.llm?.model === 'gemma4:13
 
 console.log(`\n${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

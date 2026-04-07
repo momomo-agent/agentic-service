@@ -1,3 +1,4 @@
+import { test } from 'vitest';
 // Tests for voice UI controls: PushToTalk, useVAD, useWakeWord
 // These are unit tests using mocked browser APIs (no DOM framework needed)
 
@@ -6,6 +7,7 @@ import { describe, it, before, beforeEach } from 'node:test';
 
 // ─── Mock browser globals ────────────────────────────────────────────────────
 
+test('voice-ui', async () => {
 let mockRecorderInstance;
 let mockStreamTracks;
 
@@ -189,4 +191,5 @@ describe('ChatBox wake word integration', () => {
     onTranscribed('some text');
     assert.deepStrictEqual(filled, ['some text']);
   });
+});
 });

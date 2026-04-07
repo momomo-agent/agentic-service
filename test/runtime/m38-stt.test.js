@@ -1,3 +1,4 @@
+import { test } from 'vitest';
 import { describe, it, before, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 
@@ -6,6 +7,7 @@ import assert from 'node:assert/strict';
 // Instead, we test the exported functions with a mock adapter injected via
 // a test-only re-import with mocked dependencies.
 
+test('m38-stt', async () => {
 let sttModule;
 const mockAdapter = { transcribe: async (buf) => 'hello world' };
 
@@ -63,4 +65,5 @@ describe('m38: stt.js', () => {
     // Should have try/catch around adapter load with fallback to ADAPTERS.default
     assert.ok(src.includes('ADAPTERS.default'), 'falls back to ADAPTERS.default');
   });
+});
 });

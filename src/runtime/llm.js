@@ -108,7 +108,11 @@ async function* chatWithOpenAI(messages, model) {
   }
 }
 
-export async function* chat(messages, options = {}) {
+export async function* chat(messageOrText, options = {}) {
+  const { history = [], ...rest } = options;
+  const messages = typeof messageOrText === 'string'
+    ? [...history, { role: 'user', content: messageOrText }]
+    : messageOrText;
   const t0 = Date.now();
   let first = true;
   try {

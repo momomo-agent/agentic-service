@@ -2,13 +2,13 @@
   "id": "task-1775529630008",
   "title": "Docker build and docker-compose end-to-end verification",
   "description": "Verify docker build completes and docker-compose up starts the service correctly on port 3000",
-  "status": "blocked",
+  "status": "testing",
   "priority": "P1",
   "assignee": "tester-2",
   "blockedBy": [],
   "groupId": "m74",
   "hasDesign": true,
   "created": "2026-04-07T02:40:30.008Z",
-  "updated": "2026-04-07T12:36:52.802Z",
+  "updated": "2026-04-07T12:42:06.151Z",
   "milestoneId": "m74"
 }

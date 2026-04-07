@@ -30920,3 +30920,80 @@ Perfect! I've successfully completed testing task-1775561930545. Let me provide 
 [2026-04-07T12:37:09.681Z] tester-1 agent completed
 [2026-04-07 12:37:09] [agent_complete] tester-1 completed successfully
 [2026-04-07 12:37:09] [workflow] tester-1 [SIGNAL] completed: Verified ARCHITECTURE.md documentation for tunnel, CLI, VAD, and HTTPS modules. All 5 tests passed. 
+[2026-04-07 12:41:06] [perf] daemon {"rss":"13MB","heapUsed":"5MB","uptime":"7800s"}
+[2026-04-07 12:41:07] [error] daemon Watchdog: busy for 130min, force reset
+[2026-04-07 12:41:07] [workflow]  [RESUME] Resuming from checkpoint: node=work_loop, step=2
+[2026-04-07 12:41:07] [agent_start] work_loop [NODE] work_loop - PM 调度中心 — PM 评估后并行派发所有角色，全部完成后回 PM
+[2026-04-07 12:41:07] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-07 12:41:07] [workflow] work_loop [EXEC] pm
+[2026-04-07 12:41:07] [agent_start] pm 管理任务和里程碑
+[2026-04-07T12:41:07.619Z] Running pm agent...
+[2026-04-07 12:42:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:187)
+Now let me assess the overall state and determine if a new milestone is needed.
+
+**Current active milestone summary:**
+- **m74**: Docker task now in `testing`, rest done → nearly complete
+- **m80**: 1 task in `review` (wake word) — waiting on tester
+- **m83**: 1 task in `review` (mocked module init) — waiting on tester  
+- **m85**: 1 task `inProgress` (test pass rate >=90%)
+
+**Remaining gaps (real):**
+- Vision: `partial` — CDN fallback, cross-device brain state, wake word server pipeline, HTTPS/tunnel completeness, server-side VAD, npx entrypoint, agentic-store/voice/sense wiring, test suite
+- PRD: `partial` — STT/TTS agentic-voice dependency, wake word server pipeline, agentic-sense dependency, cloud fallback, config hot-update
+- Architecture: `partial` — store docs, HTTPS/middleware docs, embed runtime docs, detector docs
+
+The architecture doc gaps (tunnel, CLI, VAD, HTTPS) were addressed by the done task in m85. The gaps file is stale at 88% — actual match is likely higher now.
+
+No new milestone is needed right now. All active milestones have work in flight. The right action is to wait for:
+1. Testers to approve m80/m83 review tasks
+2. m85 inProgress task to complete
+3. m74 Docker testing to complete
+
+Once those resolve, I'll assess whether to close milestones and create m86.
+
+```signal
+{"status": "completed", "summary": "Assessed all active milestones. Unblocked Docker verification task (task-1775529630008) — files exist but task was stuck in blocked state with no dependencies. m74/m80/m83/m85 all have work in flight (review/testing/inProgress). No new milestone needed until current tasks resolve. Waiting on testers for m80 wake word review and m83 mocked module init review."}
+```
+[2026-04-07T12:42:20.945Z] pm agent completed
+[2026-04-07 12:42:20] [agent_complete] pm completed successfully
+[2026-04-07 12:42:20] [workflow] pm [SIGNAL] completed: Assessed all active milestones. Unblocked Docker verification task (task-1775529630008) — files exis
+[2026-04-07 12:42:21] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 12:42:21] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-07 12:42:21] [workflow] work_loop [PARALLEL-SKIP] implement: designedTasks > 0
+[2026-04-07 12:42:21] [workflow] work_loop [PARALLEL] run-tests
+[2026-04-07 12:42:21] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-07 12:42:21] [agent_start] tester-1 验证功能
+[2026-04-07 12:42:21] [agent_start] tester-2 验证功能
+[2026-04-07T12:42:21.048Z] Running tester-2 agent...
+[2026-04-07T12:42:21.048Z] Running tester-1 agent...
+[2026-04-07 12:42:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:187)
+[2026-04-07 12:43:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:187)
+[2026-04-07 12:44:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:187)
+[2026-04-07 12:45:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:187)
+[2026-04-07 12:46:06] [perf] daemon {"rss":"12MB","heapUsed":"8MB","uptime":"8100s"}
+[2026-04-07 12:51:06] [perf] daemon {"rss":"11MB","heapUsed":"8MB","uptime":"8400s"}
+[2026-04-07 12:51:07] [agent_start] daemon Still busy (10min), skipping
+[2026-04-07 12:51:41] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:3, done:188)
+[2026-04-07 12:52:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:3, done:188)
+[2026-04-07 12:53:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:3, done:188)
+[2026-04-07 12:54:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:3, done:188)
+[2026-04-07 12:55:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:3, done:188)
+[2026-04-07 12:56:06] [perf] daemon {"rss":"11MB","heapUsed":"8MB","uptime":"8700s"}
+[2026-04-07 12:56:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:3, done:188)
+[2026-04-07 12:57:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:3, done:188)
+[2026-04-07 12:58:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:3, done:188)
+[2026-04-07 12:59:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:3, done:188)
+[2026-04-07 13:00:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:3, done:188)
+[2026-04-07 13:01:06] [perf] daemon {"rss":"10MB","heapUsed":"8MB","uptime":"9000s"}
+[2026-04-07 13:01:07] [agent_start] daemon Still busy (20min), skipping
+[2026-04-07 13:01:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 15min (active:3, done:188)
+[2026-04-07 13:02:11] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 16min (active:3, done:188)
+[2026-04-07 13:03:14] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 17min (active:3, done:188)
+[2026-04-07 13:04:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 18min (active:3, done:188)
+[2026-04-07 13:05:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 19min (active:3, done:188)
+[2026-04-07 13:06:06] [perf] daemon {"rss":"12MB","heapUsed":"8MB","uptime":"9300s"}
+[2026-04-07 13:06:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 20min (active:3, done:188)
+Let me fix sense-pipeline.test.js to use fake timers instead of rafCallback.
+[2026-04-07T13:06:45.374Z] tester-2 agent completed
+[2026-04-07 13:06:45] [agent_complete] tester-2 completed successfully
+[2026-04-07 13:06:45] [workflow] tester-2 [SIGNAL] completed: Let me fix sense-pipeline.test.js to use fake timers instead of rafCallback.

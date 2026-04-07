@@ -1,9 +1,11 @@
+import { test } from 'vitest';
 // Tests for useVAD composable
 import assert from 'node:assert';
 import { describe, it, beforeEach } from 'node:test';
 
 // ─── Mock browser globals ─────────────────────────────────────────────────────
 
+test('vad', async () => {
 let rafCallbacks = [];
 global.requestAnimationFrame = (cb) => { rafCallbacks.push(cb); return rafCallbacks.length; };
 global.cancelAnimationFrame = () => { rafCallbacks = []; };
@@ -102,4 +104,5 @@ describe('useVAD', () => {
     // Restore
     global.navigator.mediaDevices.getUserMedia = async () => mockStream;
   });
+});
 });

@@ -1,17 +1,13 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 
 let detectFn
 vi.mock('agentic-sense', () => ({
+  default: { AgenticSense: class { detect(...args) { return detectFn(...args) } } },
   createPipeline: vi.fn(async () => ({
     detect: (...args) => detectFn(...args),
     _video: null,
   })),
 }))
-
-// Mock requestAnimationFrame / cancelAnimationFrame
-let rafCallback = null
-global.requestAnimationFrame = vi.fn((cb) => { rafCallback = cb; return 1 })
-global.cancelAnimationFrame = vi.fn()
 
 import { init, on, start, stop } from '../../src/runtime/sense.js'
 
@@ -20,9 +16,15 @@ function makeVideo(readyState = 4) {
 }
 
 beforeEach(async () => {
+  vi.useFakeTimers()
   stop()
   detectFn = vi.fn(() => ({ faces: [], gestures: [], objects: [] }))
   await init(makeVideo())
+})
+
+afterEach(() => {
+  stop()
+  vi.useRealTimers()
 })
 
 describe('sense (m8 API)', () => {
@@ -31,7 +33,7 @@ describe('sense (m8 API)', () => {
     const handler = vi.fn()
     on('face_detected', handler)
     start()
-    rafCallback()
+    vi.advanceTimersByTime(100)
     expect(handler).toHaveBeenCalledWith(expect.objectContaining({
       type: 'face_detected',
       data: { boundingBox: { x: 1, y: 2, w: 3, h: 4 } },
@@ -43,7 +45,7 @@ describe('sense (m8 API)', () => {
     const handler = vi.fn()
     on('gesture_detected', handler)
     start()
-    rafCallback()
+    vi.advanceTimersByTime(100)
     expect(handler).toHaveBeenCalledWith(expect.objectContaining({
       type: 'gesture_detected',
       data: { gesture: 'wave' },
@@ -58,22 +60,19 @@ describe('sense (m8 API)', () => {
     const handler = vi.fn()
     on('object_detected', handler)
     start()
-    rafCallback()
+    vi.advanceTimersByTime(100)
     expect(handler).toHaveBeenCalledTimes(1)
     expect(handler).toHaveBeenCalledWith(expect.objectContaining({ data: { label: 'cup', confidence: 0.8 } }))
   })
 
-  it('skips frame when video not ready', () => {
+  it('skips frame when video not ready', async () => {
     const handler = vi.fn()
     on('face_detected', handler)
-    // re-init with unready video
     stop()
-    const unreadyVideo = makeVideo(1)
-    init(unreadyVideo).then(() => {
-      start()
-      rafCallback()
-      expect(handler).not.toHaveBeenCalled()
-    })
+    await init(makeVideo(1))
+    start()
+    vi.advanceTimersByTime(100)
+    expect(handler).not.toHaveBeenCalled()
   })
 
   it('stop() prevents further events', () => {
@@ -82,7 +81,7 @@ describe('sense (m8 API)', () => {
     on('face_detected', handler)
     start()
     stop()
-    rafCallback?.()
+    vi.advanceTimersByTime(100)
     expect(handler).not.toHaveBeenCalled()
   })
 
@@ -91,7 +90,7 @@ describe('sense (m8 API)', () => {
     const handler = vi.fn()
     on('face_detected', handler)
     start()
-    rafCallback()
+    vi.advanceTimersByTime(100)
     expect(typeof handler.mock.calls[0][0].ts).toBe('number')
   })
 })

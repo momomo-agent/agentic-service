@@ -7,6 +7,7 @@ const __dir = dirname(fileURLToPath(import.meta.url))
 const src = (f) => join(__dir, '../../src', f)
 
 vi.mock('agentic-sense', () => ({
+  default: { AgenticSense: class { detect = vi.fn(() => ({ faces: [], gestures: [], objects: [] })) } },
   createPipeline: vi.fn(async () => ({ detect: vi.fn(() => ({ faces: [], gestures: [], objects: [] })) }))
 }))
 

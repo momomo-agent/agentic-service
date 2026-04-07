@@ -1,6 +1,8 @@
+import { test } from 'vitest';
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 
+test('m77-sense-imports', async () => {
 let passed = 0, failed = 0;
 function ok(name, cond) {
   if (cond) { console.log(`  PASS: ${name}`); passed++; }
@@ -41,3 +43,4 @@ try {
 
 console.log(`\n${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

@@ -1,3 +1,4 @@
+import { test } from 'vitest';
 // Tests for VAD (Voice Activity Detection) - task-1775517321148
 // Tests useVAD composable logic by simulating AudioContext behavior
 
@@ -6,6 +7,7 @@ import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
+test('m30-vad', async () => {
 const __dir = dirname(fileURLToPath(import.meta.url));
 const src = readFileSync(join(__dir, '../src/ui/client/src/composables/useVAD.js'), 'utf8');
 
@@ -196,3 +198,4 @@ if (failures.length) {
   failures.forEach(f => console.log(`  - ${f.name}: ${f.error}`));
   process.exit(1);
 }
+});

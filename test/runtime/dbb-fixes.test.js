@@ -1,6 +1,8 @@
+import { test } from 'vitest';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
+test('dbb-fixes', async () => {
 describe('DBB fixes', () => {
   it('memory.js exports delete (not just del)', async () => {
     const { readFileSync } = await import('node:fs');
@@ -41,4 +43,5 @@ describe('DBB fixes', () => {
     assert.ok(src.includes('onProgress(percent'), 'onProgress called with percent');
     assert.ok(src.includes('spinner.text'), 'spinner.text updated with progress');
   });
+});
 });

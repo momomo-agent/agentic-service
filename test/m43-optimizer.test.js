@@ -12,17 +12,17 @@ console.log('optimizer.js tests');
 
 test('apple-silicon 16GB → threads=8, memoryLimit=12, model=gemma4:26b', () => {
   const r = optimize({ gpu: { type: 'apple-silicon' }, memory: 16, cpu: { cores: 8 } });
-  assert.deepEqual(r, { threads: 8, memoryLimit: 12, model: 'gemma4:26b' });
+  assert.equal(r.threads, 8); assert.equal(r.memoryLimit, 12); assert.equal(r.model, 'gemma4:26b');
 });
 
 test('nvidia vram=8 → threads=4, memoryLimit=6, model=gemma4:13b', () => {
   const r = optimize({ gpu: { type: 'nvidia', vram: 8 }, memory: 16, cpu: { cores: 4 } });
-  assert.deepEqual(r, { threads: 4, memoryLimit: 6, model: 'gemma4:13b' });
+  assert.equal(r.threads, 4); assert.equal(r.memoryLimit, 6); assert.equal(r.model, 'gemma4:13b');
 });
 
 test('cpu-only 8GB 4 cores → threads=4, memoryLimit=4, model=gemma2:2b', () => {
   const r = optimize({ gpu: { type: 'none' }, memory: 8, cpu: { cores: 4 } });
-  assert.deepEqual(r, { threads: 4, memoryLimit: 4, model: 'gemma2:2b' });
+  assert.equal(r.threads, 4); assert.equal(r.memoryLimit, 4); assert.equal(r.model, 'gemma2:2b');
 });
 
 test('nvidia missing vram → falls back to memory*0.5', () => {

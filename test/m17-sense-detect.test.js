@@ -1,6 +1,9 @@
+import { test } from 'vitest';
 import assert from 'assert';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
-// Mock agentic-sense before importing sense.js
+test('m17-sense-detect', async () => {
 const mockPipeline = {
   detect: (frame) => ({
     faces: [{ boundingBox: { x: 0, y: 0, w: 10, h: 10 } }],
@@ -9,7 +12,6 @@ const mockPipeline = {
   })
 };
 
-// Inline test of detect() logic (mirrors sense.js implementation)
 function detect(frame, pipeline) {
   if (!pipeline) return { faces: [], gestures: [], objects: [] };
   const result = pipeline.detect(frame);
@@ -21,23 +23,14 @@ function detect(frame, pipeline) {
   };
 }
 
-// Test 1: detect before init returns empty arrays
 const before = detect(null, null);
 assert.deepStrictEqual(before, { faces: [], gestures: [], objects: [] });
-console.log('PASS: detect() before init returns empty arrays without throwing');
 
-// Test 2: detect with pipeline returns normalized result
 const after = detect({}, mockPipeline);
 assert.ok(Array.isArray(after.faces) && after.faces.length === 1);
 assert.ok(Array.isArray(after.gestures) && after.gestures[0].gesture === 'wave');
 assert.ok(Array.isArray(after.objects) && after.objects[0].label === 'cup');
-console.log('PASS: detect() with pipeline returns { faces, gestures, objects }');
 
-// Test 3: detect export exists in sense.js source
-import { readFileSync } from 'fs';
-import { join } from 'path';
 const src = readFileSync(join(import.meta.dirname, '../src/runtime/sense.js'), 'utf8');
 assert.ok(src.includes('export function detect'), 'detect() must be exported from sense.js');
-console.log('PASS: detect() is exported from src/runtime/sense.js');
-
-console.log('\nTotal: 3 passed, 0 failed');
+});

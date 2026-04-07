@@ -1,9 +1,11 @@
+import { test } from 'vitest';
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
+test('setup-ollama-m12', async () => {
 const src = await readFile(
   path.join(path.dirname(fileURLToPath(import.meta.url)), '../../src/cli/setup.js'),
   'utf8'
@@ -32,4 +34,5 @@ describe('setup.js DBB: Ollama auto-install', () => {
       'rejects on non-zero exit'
     );
   });
+});
 });

@@ -1,8 +1,10 @@
+import { test } from 'vitest';
 // Tests for task-1775528544066: README completeness
 import assert from 'assert';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
+test('m72-readme', async () => {
 let passed = 0, failed = 0;
 const failures = [];
 
@@ -28,3 +30,4 @@ test('DBB: documents config options', () => assert.ok(readme.includes('profile')
 
 console.log(`\n${passed + failed} tests: ${passed} passed, ${failed} failed`);
 if (failures.length) { console.log('Failures:', failures); process.exit(1); }
+});

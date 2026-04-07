@@ -1,8 +1,10 @@
+import { test } from 'vitest';
 // Tests for task-1775514647990: llm.js chat(messages, options) interface
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+test('m26-llm-chat', async () => {
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 let passed = 0, failed = 0
 const results = []
@@ -44,3 +46,4 @@ fs.mkdirSync(taskDir, { recursive: true })
 fs.writeFileSync(path.join(taskDir, 'test-result.md'), `# Test Result: llm.js chat()\n\n## Summary\n- Passed: ${passed}\n- Failed: ${failed}\n\n${results.map(r => `- [${r.pass ? 'PASS' : 'FAIL'}] ${r.name}${r.error ? ': ' + r.error : ''}`).join('\n')}\n`)
 
 if (failed > 0) process.exit(1)
+});

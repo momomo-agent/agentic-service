@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 vi.mock('agentic-sense', () => ({
+  default: { AgenticSense: class { detect = vi.fn() } },
   createPipeline: vi.fn(async () => ({ detect: vi.fn(), _video: null }))
 }));
 
@@ -11,17 +12,16 @@ describe('startWakeWordPipeline', () => {
 
   it('returns a stop function', async () => {
     const { startWakeWordPipeline } = await import('../src/runtime/sense.js');
-    const stop = startWakeWordPipeline(() => {});
+    const stop = await startWakeWordPipeline(() => {});
     expect(typeof stop).toBe('function');
     stop();
   });
 
   it('stop function halts pipeline (second call returns no-op)', async () => {
     const { startWakeWordPipeline } = await import('../src/runtime/sense.js');
-    const stop = startWakeWordPipeline(() => {});
+    const stop = await startWakeWordPipeline(() => {});
     stop();
-    // After stop, a new pipeline can be started (guard reset)
-    const stop2 = startWakeWordPipeline(() => {});
+    const stop2 = await startWakeWordPipeline(() => {});
     expect(typeof stop2).toBe('function');
     stop2();
   });
@@ -29,8 +29,8 @@ describe('startWakeWordPipeline', () => {
   it('multiple calls while active return no-op stop', async () => {
     const { startWakeWordPipeline } = await import('../src/runtime/sense.js');
     const cb = vi.fn();
-    const stop1 = startWakeWordPipeline(cb);
-    const stop2 = startWakeWordPipeline(cb); // second call while active
+    const stop1 = await startWakeWordPipeline(cb);
+    const stop2 = await startWakeWordPipeline(cb);
     expect(typeof stop2).toBe('function');
     stop1();
     stop2();

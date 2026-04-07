@@ -1,6 +1,8 @@
+import { test } from 'vitest';
 import { describe, it, before } from 'node:test';
 import assert from 'node:assert/strict';
 
+test('hub-m11', async () => {
 let registerDevice, heartbeat, getDevices;
 
 before(async () => {
@@ -52,4 +54,5 @@ describe('hub.js DBB-001: device management', () => {
     // Status starts online
     assert.equal(d.status, 'online');
   });
+});
 });

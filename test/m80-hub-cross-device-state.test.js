@@ -1,9 +1,11 @@
+import { test } from 'vitest';
 // M80: Cross-device brain state sharing tests
 // Tests joinSession() and broadcastSession() with full conversation history
 
 import { strict as assert } from 'assert';
 import { joinSession, broadcastSession, getSession, leaveSession } from '../src/server/hub.js';
 
+test('m80-hub-cross-device-state', async () => {
 let passed = 0, failed = 0;
 async function test(name, fn) {
   try {
@@ -216,3 +218,4 @@ await test('broadcastSession handles non-existent session gracefully', async () 
 
 console.log(`\n${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

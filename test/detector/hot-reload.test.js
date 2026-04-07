@@ -1,6 +1,8 @@
+import { test } from 'vitest';
 // Tests for config hot-reload — DBB-005
 import { watchProfiles } from '../../src/detector/profiles.js'
 
+test('hot-reload', async () => {
 let passed = 0, failed = 0
 const results = []
 
@@ -149,3 +151,4 @@ const coverage = {
 fs.writeFileSync(path.join(ROOT, '.team/gaps/test-coverage.json'), JSON.stringify(coverage, null, 2))
 
 if (failed > 0) process.exit(1)
+});

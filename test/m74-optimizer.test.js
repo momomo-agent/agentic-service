@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 import { optimize } from '../src/detector/optimizer.js';
 import assert from 'assert';
 
 // cpu.cores undefined → threads = 2
+test('m74-optimizer', async () => {
 const r1 = optimize({ gpu: { type: 'none' }, memory: 8, cpu: {} });
 assert.strictEqual(r1.threads, 2);
 assert.strictEqual(r1.memoryLimit, 4);
@@ -22,3 +24,4 @@ const r4 = optimize({ gpu: { type: 'apple-silicon' }, memory: 10, cpu: { cores: 
 assert.strictEqual(r4.memoryLimit, 7);
 
 console.log('All m74 optimizer edge case tests passed');
+});

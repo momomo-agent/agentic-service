@@ -1,9 +1,11 @@
+import { test } from 'vitest';
 // Tests for cpu-only profile in profiles/default.json — task-1775526662402
 import assert from 'assert';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
+test('m61-cpu-only-profile', async () => {
 const __dir = dirname(fileURLToPath(import.meta.url));
 const profiles = JSON.parse(readFileSync(join(__dir, '../profiles/default.json'), 'utf8'));
 
@@ -47,3 +49,4 @@ test('cpu-only placed before catch-all (empty match)', () => {
 
 console.log(`\n${passed + failed} tests: ${passed} passed, ${failed} failed`);
 if (failures.length) { console.log('Failures:', failures); process.exit(1); }
+});

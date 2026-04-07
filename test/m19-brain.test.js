@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 // Mock llm.js before importing brain.js
 import { createRequire } from 'module';
 import { register } from 'node:module';
 
+test('m19-brain', async () => {
 let passed = 0, failed = 0;
 function assert(condition, msg) {
   if (condition) { console.log('  ✅', msg); passed++; }
@@ -63,3 +65,4 @@ rmSync(patchedPath);
 
 console.log(`\nResults: ${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

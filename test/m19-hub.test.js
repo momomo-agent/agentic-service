@@ -1,5 +1,7 @@
+import { test } from 'vitest';
 import { registerDevice, getDevices, updateStatus } from '../src/server/hub.js';
 
+test('m19-hub', async () => {
 let passed = 0, failed = 0;
 
 function assert(condition, msg) {
@@ -34,3 +36,4 @@ assert(Array.isArray(getDevices()), 'getDevices returns array');
 
 console.log(`\nResults: ${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

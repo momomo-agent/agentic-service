@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 // Tests for task-1775528326243: Server-side VAD silence suppression
 import assert from 'assert';
 import { detectVoiceActivity } from '../src/runtime/vad.js';
 
+test('m71-vad', async () => {
 let passed = 0, failed = 0;
 const failures = [];
 
@@ -49,3 +51,4 @@ test('edge: 2-byte buffer with silence → false', () => {
 
 console.log(`\n${passed + failed} tests: ${passed} passed, ${failed} failed`);
 if (failures.length) { console.log('Failures:', failures); process.exit(1); }
+});

@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 import { optimize } from '../src/detector/optimizer.js';
 import assert from 'assert';
 
 // Apple Silicon
+test('optimizer', async () => {
 const r1 = optimize({ gpu: { type: 'apple-silicon' }, memory: 16, cpu: { cores: 8 } });
 assert.strictEqual(r1.threads, 8);
 assert.strictEqual(r1.memoryLimit, 12);
@@ -30,3 +32,4 @@ const r4 = optimize({ gpu: { type: 'nvidia' }, memory: 16, cpu: { cores: 4 } });
 assert.ok(r4.memoryLimit > 0);
 
 console.log('All tests passed');
+});

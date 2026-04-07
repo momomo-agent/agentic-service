@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 // Tests for server-side VAD — task-1775526816885
 import assert from 'assert';
 import { detectVoiceActivity } from '../src/runtime/vad.js';
 
+test('m62-server-vad', async () => {
 let passed = 0, failed = 0;
 const failures = [];
 
@@ -58,3 +60,4 @@ test('edge: mixed silence and speech — RMS above threshold returns true', () =
 
 console.log(`\n${passed + failed} tests: ${passed} passed, ${failed} failed`);
 if (failures.length) { console.log('Failures:', failures); process.exit(1); }
+});

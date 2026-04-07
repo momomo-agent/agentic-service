@@ -1,3 +1,4 @@
+import { test } from 'vitest';
 import { describe, it, before, after, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'fs';
@@ -5,6 +6,7 @@ import os from 'os';
 import path from 'path';
 
 // Ensure profiles cache has a catch-all profile before module import
+test('m38-llm-chat', async () => {
 const CACHE_FILE = path.join(os.homedir(), '.agentic-service', 'profiles.json');
 const CATCH_ALL_PROFILE = {
   data: {
@@ -169,4 +171,5 @@ describe('m38: llm.js chat() stream', () => {
       'should throw for unknown provider'
     );
   });
+});
 });

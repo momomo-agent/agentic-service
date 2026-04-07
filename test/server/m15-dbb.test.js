@@ -8,6 +8,7 @@ const root = join(__dir, '../..')
 
 // Mock agentic-sense
 vi.mock('agentic-sense', () => ({
+  default: { AgenticSense: class { detect = vi.fn(() => ({ faces: [], gestures: [], objects: [] })) } },
   createPipeline: vi.fn(async () => ({
     detect: vi.fn(() => ({ faces: [], gestures: [], objects: [] })),
     _video: null

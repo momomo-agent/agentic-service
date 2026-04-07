@@ -1,8 +1,10 @@
+import { test } from 'vitest';
 import { strict as assert } from 'assert';
 import { readFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+test('voice-latency', async () => {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Test 1: benchmark script passes (p95 <= 2000ms)
@@ -45,3 +47,4 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 }
 
 console.log('\nAll voice latency benchmark tests passed.');
+});

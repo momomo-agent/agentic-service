@@ -1,8 +1,10 @@
+import { test } from 'vitest';
 // Tests for task-1775534863944: Voice latency <2s benchmark
 import assert from 'assert';
 import { record, p95, reset } from '../src/runtime/latency-log.js';
 
 // Test record/p95/reset
+test('m80-voice-latency', async () => {
 reset();
 record('stt', 100);
 record('stt', 200);
@@ -24,3 +26,4 @@ const pipeline_p95 = p95('stt') + p95('llm_total') + p95('tts');
 console.log(`p95 pipeline: ${pipeline_p95.toFixed(0)}ms`);
 assert.ok(pipeline_p95 < 2000, `p95 ${pipeline_p95.toFixed(0)}ms >= 2000ms`);
 console.log('✓ p95 voice latency < 2000ms');
+});

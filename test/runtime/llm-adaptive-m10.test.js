@@ -1,6 +1,8 @@
+import { test } from 'vitest';
 import { describe, it, before, after, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 
+test('llm-adaptive-m10', async () => {
 describe('llm.js DBB-003: hardware-adaptive loadConfig', () => {
   let originalFetch;
 
@@ -75,4 +77,5 @@ describe('llm.js DBB-003: hardware-adaptive loadConfig', () => {
       'watchProfiles callback should update _config'
     );
   });
+});
 });

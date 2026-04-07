@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import assert from 'assert';
 
+test('m17-readme', async () => {
 const root = join(import.meta.dirname, '..');
 const readmePath = join(root, 'README.md');
 
@@ -26,3 +28,4 @@ console.log('PASS: Contains global npm install method');
 console.log('PASS: Contains Docker install method');
 for (const ep of endpoints) console.log(`PASS: Documents ${ep}`);
 console.log(`\nTotal: ${4 + endpoints.length} passed, 0 failed`);
+});

@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 // M28 VAD tests — verifies DBB-001 and DBB-002
 import assert from 'node:assert';
 import { describe, it, beforeEach } from 'node:test';
 
+test('m28-vad', async () => {
 let rafCallbacks = [];
 global.requestAnimationFrame = (cb) => { rafCallbacks.push(cb); return rafCallbacks.length; };
 global.cancelAnimationFrame = () => { rafCallbacks = []; };
@@ -133,4 +135,5 @@ describe('useVAD (M28 DBB-001/002)', () => {
     global.AudioContext = class { constructor() { return mockCtx; } };
     global.navigator.mediaDevices.getUserMedia = async () => mockStream;
   });
+});
 });

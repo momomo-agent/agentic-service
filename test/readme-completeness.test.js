@@ -1,6 +1,8 @@
+import { test } from 'vitest';
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+test('readme-completeness', async () => {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const readme = readFileSync(join(__dirname, '../README.md'), 'utf8');
@@ -36,3 +38,4 @@ for (const [name, pattern] of checks) {
 
 console.log(`\n${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

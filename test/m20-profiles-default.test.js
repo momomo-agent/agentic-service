@@ -1,8 +1,10 @@
+import { test } from 'vitest';
 // M20 DBB-007: profiles/default.json exists and has correct structure
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+test('m20-profiles-default', async () => {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 
@@ -42,3 +44,4 @@ assert(hasDefault, 'has a default/fallback profile (id=default, gpu=none, or emp
 
 console.log(`\nResults: ${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

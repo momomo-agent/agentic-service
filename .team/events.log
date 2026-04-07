@@ -19072,3 +19072,75 @@
 {"ts":"2026-04-07T12:37:01.215Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Tested Docker build — blocked due to agentic-store/embed/voice missing from npm registry; task marke"}}
 {"ts":"2026-04-07T12:37:09.687Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":6.239683,"cpuSystem":13.936035}}}
 {"ts":"2026-04-07T12:37:09.687Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Verified ARCHITECTURE.md documentation for tunnel, CLI, VAD, and HTTPS modules. All 5 tests passed. "}}
+{"ts":"2026-04-07T12:39:56.462Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775561925076","from":"todo","to":"inProgress","title":"Push test pass rate to >=90% after M83 fixes"}}
+{"ts":"2026-04-07T12:41:06.882Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"13MB\",\"heapUsed\":\"5MB\",\"uptime\":\"7800s\"}"}}
+{"ts":"2026-04-07T12:41:07.273Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 130min, force reset"}}
+{"ts":"2026-04-07T12:41:07.329Z","type":"workflow","agent":null,"data":{"details":"[RESUME] Resuming from checkpoint: node=work_loop, step=2"}}
+{"ts":"2026-04-07T12:41:07.330Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度中心 — PM 评估后并行派发所有角色，全部完成后回 PM","performance":{"memoryMB":5,"memoryTotalMB":9,"cpuUser":6.418439,"cpuSystem":14.33791}}}
+{"ts":"2026-04-07T12:41:07.562Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-07T12:41:07.590Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T12:41:07.591Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":6.44687,"cpuSystem":14.441152}}}
+{"ts":"2026-04-07T12:42:06.152Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775529630008","from":"blocked","to":"testing","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T12:42:11.416Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:187)"}}
+{"ts":"2026-04-07T12:42:11.417Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:187)\"}"}}
+{"ts":"2026-04-07T12:42:20.952Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.501559,"cpuSystem":14.565756}}}
+{"ts":"2026-04-07T12:42:20.953Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Assessed all active milestones. Unblocked Docker verification task (task-1775529630008) — files exis"}}
+{"ts":"2026-04-07T12:42:21.013Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T12:42:21.014Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T12:42:21.014Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] implement: designedTasks > 0"}}
+{"ts":"2026-04-07T12:42:21.014Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] run-tests"}}
+{"ts":"2026-04-07T12:42:21.014Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T12:42:21.014Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.515102,"cpuSystem":14.613296}}}
+{"ts":"2026-04-07T12:42:21.015Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.515266,"cpuSystem":14.61371}}}
+{"ts":"2026-04-07T12:42:41.317Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:187)"}}
+{"ts":"2026-04-07T12:42:41.318Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:4, done:187)\"}"}}
+{"ts":"2026-04-07T12:42:53.107Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775535895960","from":"review","to":"testing","title":"Fix mocked module initialization across failing test files"}}
+{"ts":"2026-04-07T12:43:08.313Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775531492452","from":"review","to":"testing","title":"Implement server-side wake word pipeline in sense.js"}}
+{"ts":"2026-04-07T12:43:42.022Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:187)"}}
+{"ts":"2026-04-07T12:43:42.056Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:4, done:187)\"}"}}
+{"ts":"2026-04-07T12:44:41.483Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:187)"}}
+{"ts":"2026-04-07T12:44:41.484Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:4, done:187)\"}"}}
+{"ts":"2026-04-07T12:45:41.439Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:187)"}}
+{"ts":"2026-04-07T12:45:41.440Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:4, done:187)\"}"}}
+{"ts":"2026-04-07T12:46:06.886Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"12MB\",\"heapUsed\":\"8MB\",\"uptime\":\"8100s\"}"}}
+{"ts":"2026-04-07T12:46:11.868Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775531492452","from":"testing","to":"done","title":"Implement server-side wake word pipeline in sense.js"}}
+{"ts":"2026-04-07T12:51:06.900Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"11MB\",\"heapUsed\":\"8MB\",\"uptime\":\"8400s\"}"}}
+{"ts":"2026-04-07T12:51:07.290Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (10min), skipping","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":6.909453,"cpuSystem":15.511133}}}
+{"ts":"2026-04-07T12:51:41.667Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:3, done:188)"}}
+{"ts":"2026-04-07T12:51:41.670Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T12:52:11.695Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:3, done:188)"}}
+{"ts":"2026-04-07T12:52:11.697Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T12:53:11.917Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:3, done:188)"}}
+{"ts":"2026-04-07T12:53:11.919Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T12:54:11.772Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:3, done:188)"}}
+{"ts":"2026-04-07T12:54:11.773Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T12:55:11.760Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:3, done:188)"}}
+{"ts":"2026-04-07T12:55:11.765Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T12:56:06.901Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"11MB\",\"heapUsed\":\"8MB\",\"uptime\":\"8700s\"}"}}
+{"ts":"2026-04-07T12:56:11.717Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:3, done:188)"}}
+{"ts":"2026-04-07T12:56:11.717Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T12:57:11.760Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:3, done:188)"}}
+{"ts":"2026-04-07T12:57:11.761Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T12:58:11.822Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 12min (active:3, done:188)"}}
+{"ts":"2026-04-07T12:58:11.823Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 12min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T12:59:11.761Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 13min (active:3, done:188)"}}
+{"ts":"2026-04-07T12:59:11.761Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 13min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:00:11.740Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 14min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:00:11.741Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 14min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:01:06.905Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"10MB\",\"heapUsed\":\"8MB\",\"uptime\":\"9000s\"}"}}
+{"ts":"2026-04-07T13:01:07.286Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (20min), skipping","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":7.297157,"cpuSystem":16.41812}}}
+{"ts":"2026-04-07T13:01:11.783Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 15min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:01:11.783Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 15min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:02:11.860Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 16min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:02:11.861Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 16min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:03:14.805Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 17min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:03:14.847Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 17min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:04:12.714Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 18min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:04:12.716Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 18min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:05:12.724Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 19min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:05:12.726Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 19min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:06:06.913Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"12MB\",\"heapUsed\":\"8MB\",\"uptime\":\"9300s\"}"}}
+{"ts":"2026-04-07T13:06:12.623Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 20min (active:3, done:188)"}}
+{"ts":"2026-04-07T13:06:12.624Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 20min (active:3, done:188)\"}"}}
+{"ts":"2026-04-07T13:06:45.384Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":7.537574,"cpuSystem":17.016143}}}
+{"ts":"2026-04-07T13:06:45.385Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Let me fix sense-pipeline.test.js to use fake timers instead of rafCallback."}}

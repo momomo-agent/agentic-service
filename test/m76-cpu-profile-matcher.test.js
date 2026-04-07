@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 import { matchProfile } from '../src/detector/matcher.js';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
+test('m76-cpu-profile-matcher', async () => {
 let passed = 0, failed = 0;
 function ok(name, cond) {
   if (cond) { console.log(`  PASS: ${name}`); passed++; }
@@ -29,3 +31,4 @@ ok('unknown hardware falls to catch-all', !!fallbackConfig?.llm?.model);
 
 console.log(`\n${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

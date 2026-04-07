@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 import { describe, it, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 
 // Helper to collect all chunks from an async generator
+test('llm', async () => {
 async function collect(gen) {
   const chunks = [];
   for await (const chunk of gen) chunks.push(chunk);
@@ -155,4 +157,5 @@ describe('llm.js cloud fallback', () => {
     }
     assert.ok(threw, 'should throw on non-200');
   });
+});
 });

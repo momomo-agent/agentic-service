@@ -1,6 +1,8 @@
+import { test } from 'vitest';
 import assert from 'assert';
 import { readFileSync, existsSync } from 'fs';
 
+test('cli-server-audit', async () => {
 const CR_PATH = '.team/change-requests/cr-1775527933536.json';
 
 // Test 1: CR file exists
@@ -35,3 +37,4 @@ for (const f of files) {
 console.log('PASS: All audited source files exist');
 
 console.log('\n4 passed, 0 failed');
+});

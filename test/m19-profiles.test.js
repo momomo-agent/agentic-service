@@ -1,7 +1,9 @@
+import { test } from 'vitest';
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+test('m19-profiles', async () => {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const profilesPath = join(__dirname, '../profiles/default.json');
 
@@ -36,3 +38,4 @@ assert(allHaveLlm, 'every profile has llm config');
 
 console.log(`\nResults: ${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});

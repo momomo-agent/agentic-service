@@ -1,6 +1,8 @@
+import { test } from 'vitest';
 import { describe, it, before } from 'node:test';
 import assert from 'node:assert/strict';
 
+test('hub-m11-offline', async () => {
 let registerDevice, heartbeat, getDevices;
 
 before(async () => {
@@ -28,4 +30,5 @@ describe('hub.js offline detection', () => {
     assert.equal(d.status, 'online');
     assert.ok(Date.now() - d.lastSeen < 100, 'lastSeen should be recent');
   });
+});
 });

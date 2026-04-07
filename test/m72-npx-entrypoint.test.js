@@ -1,8 +1,10 @@
+import { test } from 'vitest';
 // Tests for task-1775528544032: npx entrypoint verification
 import assert from 'assert';
 import { readFileSync, statSync } from 'fs';
 import { resolve } from 'path';
 
+test('m72-npx-entrypoint', async () => {
 let passed = 0, failed = 0;
 const failures = [];
 
@@ -33,3 +35,4 @@ test('DBB: package.json bin field points to bin/agentic-service.js', () => {
 
 console.log(`\n${passed + failed} tests: ${passed} passed, ${failed} failed`);
 if (failures.length) { console.log('Failures:', failures); process.exit(1); }
+});

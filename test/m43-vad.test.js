@@ -1,3 +1,4 @@
+import { test } from 'vitest';
 // Tests for useVAD — DBB-001: VAD auto-detects speech
 // Uses Node.js module mocking via a minimal Web Audio API stub
 
@@ -6,6 +7,7 @@ import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
+test('m43-vad', async () => {
 const __dir = dirname(fileURLToPath(import.meta.url));
 const src = readFileSync(join(__dir, '../src/ui/client/src/composables/useVAD.js'), 'utf8');
 
@@ -203,3 +205,4 @@ await test('suspended AudioContext calls resume()', async () => {
 
 console.log(`\n${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
+});
