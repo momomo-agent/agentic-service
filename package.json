@@ -40,6 +40,7 @@
     "node": ">=18.0.0"
   },
   "imports": {
+    "agentic-embed": "./src/runtime/adapters/embed.js",
     "agentic-sense": "./src/runtime/adapters/sense.js",
     "agentic-voice/openai-whisper": "./src/runtime/adapters/voice/openai-whisper.js",
     "agentic-voice/openai-tts":     "./src/runtime/adapters/voice/openai-tts.js",
@@ -49,6 +50,7 @@
     "agentic-voice/piper":          "./src/runtime/adapters/voice/piper.js"
   },
   "dependencies": {
+    "agentic-embed": "*",
     "chalk": "^5.6.2",
     "commander": "^12.1.0",
     "cors": "^2.8.6",

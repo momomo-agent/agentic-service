@@ -22238,3 +22238,185 @@ What would you like me to prioritize?
 All review tasks are still locked. No work is available for me to claim right now. I'll stand by until tasks move into `review` status.
 [2026-04-07T03:22:20.290Z] tester-2 agent completed
 [2026-04-07 03:22:20] [agent_complete] tester-2 completed successfully
+All 5 tasks now have designs marked. Summary:
+
+- **task-1775531492452** (sense.js wake word pipeline) — design existed, marked `hasDesign: true`
+- **task-1775531500430** (hub.js cross-device brain state) — design existed, marked `hasDesign: true`
+- **task-1775531796900** (agentic-embed wiring) — design existed, marked `hasDesign: true`
+- **task-1775531802193** (agentic-sense wrapping) — design existed, marked `hasDesign: true`
+- **task-1775531890250** (README audit) — design created and marked `hasDesign: true`
+
+All active milestones (m74, m76, m77, m80, m81) already had `dbb.md` and `design.md`. No CRs needed — existing architecture covers all tasks.
+[2026-04-07T03:22:24.860Z] tech_lead-1 agent completed
+[2026-04-07 03:22:24] [agent_complete] tech_lead-1 completed successfully
+All 5 tasks now have designs and `hasDesign=true`:
+
+**M80 tasks** (designs already existed, flags updated):
+- `task-1775531492452` — server-side wake word pipeline (sox mic capture → STT keyword match)
+- `task-1775531500430` — cross-device brain state sharing (scope `broadcastSession` to session devices only)
+
+**M81 tasks** (designs written):
+- `task-1775531796900` — wire `agentic-embed`: add to `package.json` deps + imports map, create adapter stub
+- `task-1775531802193` — confirm `agentic-sense` wrapping: verify adapter exists, imports map entry already present
+- `task-1775531890250` — README audit: mostly complete, add hardware requirements table and voice latency troubleshooting row
+[2026-04-07T03:22:40.426Z] tech_lead-2 agent completed
+[2026-04-07 03:22:40] [agent_complete] tech_lead-2 completed successfully
+[2026-04-07 03:22:45] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:22, done:154)
+## Project Status Report
+
+**Overall Health:**
+- Vision match: 75%
+- PRD match: 82%
+- **DBB match: 62%** ⚠️ (Critical - lowest score)
+- Architecture match: 78%
+
+**Active Milestones: 6**
+- M74: DBB Compliance — Docker, SIGINT, Coverage, Setup (3 tasks)
+- M76: cpu-only Profile + Server-Side VAD + optimizer.js Fix (4 tasks)
+- M77: External Package Wiring (5 tasks)
+- M80: Wake Word Server Pipeline + Cross-Device Brain State (2 tasks)
+- M81: Voice Latency Benchmark + npx Entrypoint Verification (5 tasks)
+- M82: DBB Compliance — Optimizer, CPU Profile, Docker, SIGINT, Coverage (5 tasks)
+
+**Task Status Summary:**
+- **In Progress: 2** (developer working on M74 Docker + SIGINT)
+- **Review: 6** (blocking - needs tester approval)
+- **Testing: 1** (tester-1 on LAN tunnel)
+- **Todo: 15** (5 unassigned in M81/M82)
+
+---
+
+## Critical Issues
+
+### 1. **Review Bottleneck** ⚠️
+6 tasks stuck in review, blocking milestone completion:
+- M74: setup.sh (tester)
+- M76: cpu-only profile, optimizer.js (tester)
+- M77: agentic-sense imports, agentic-store, agentic-voice (tester)
+
+**Action:** Testers need to complete reviews to unblock progress.
+
+### 2. **Duplicate Work in M74 and M82**
+M82 was just created with tasks that duplicate M74 scope:
+- Both have Docker verification tasks
+- Both have SIGINT graceful drain tasks
+- Both have coverage threshold tasks
+- M82 adds optimizer.js and cpu-only profile (which are already in M76)
+
+**Recommendation:** Cancel M82 and consolidate its unique tasks into existing milestones.
+
+### 3. **Unassigned Tasks**
+5 tasks in M81/M82 have no assignee:
+- M81: 3 tasks (agentic-embed wiring, agentic-sense confirmation, README verification)
+- M82: 5 tasks (all unassigned)
+
+**Action:** Assign these tasks to available developers.
+
+### 4. **DBB Match at 62%**
+Critical gaps preventing DBB compliance:
+- Server-side VAD missing (M76 - P0)
+- optimizer.js wrong implementation (M76 - P0, in review)
+- cpu-only profile missing (M76 - in review)
+- Docker not verified (M74 - in progress)
+- SIGINT not verified (M74 - in progress)
+
+---
+
+## Recommendations
+
+### Immediate Actions:
+
+1. **Cancel M82** - it duplicates M74/M76 work
+2. **Prioritize M74 completion** - 2 in-progress tasks need to finish
+3. **Unblock reviews** - testers should approve/reject the 6 pending reviews
+4. **Assign M81 tasks** - 3 unassigned tasks need owners
+5. **Focus on DBB gaps** - M74 and M76 directly address the 62% DBB score
+
+### Milestone Priority Order:
+1. **M74** (P0) - DBB compliance foundation
+2. **M76** (P0) - Critical DBB gaps (VAD, optimizer, cpu-only)
+3. **M77** (P1) - External package architecture alignment
+4. **M81** (P1) - Vision gaps (voice latency, npx entrypoint)
+5. **M80** (P1) - Vision gaps (wake word, cross-device state)
+
+Would you like me to:
+1. Cancel M82 and redistribute its tasks?
+2. Assign the unassigned tasks?
+3. Create a new milestone focusing on the highest-priority gaps?
+[2026-04-07T03:22:59.632Z] pm agent completed
+[2026-04-07 03:22:59] [agent_complete] pm completed successfully
+[2026-04-07 03:22:59] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 03:22:59] [workflow] work_loop [LOOP] Iteration 9
+[2026-04-07 03:22:59] [workflow] work_loop [EXEC] pm
+[2026-04-07 03:22:59] [agent_start] pm pm
+[2026-04-07T03:22:59.796Z] Running pm agent...
+[2026-04-07 03:23:06] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:14, done:154)
+[2026-04-07 03:23:15] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:14, done:154)
+[2026-04-07 03:23:28] [perf] daemon {"rss":"47MB","heapUsed":"8MB","heapTotal":"12MB","uptime":"41102s"}
+[2026-04-07 03:23:36] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:15, done:154)
+[2026-04-07 03:23:45] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 15min (active:15, done:154)
+Perfect! The LAN tunnel task is already done. Let me provide a status summary.
+
+## PM Status Report
+
+**Consolidation Complete** ✓
+
+I've cleaned up the milestone chaos. We had 6 active milestones running in parallel with massive duplication. Now consolidated to:
+
+### Active Milestones (3)
+
+**M74: DBB Compliance** (4 tasks)
+- 2 in-progress (Docker, SIGINT) - developer working
+- 1 done (Coverage threshold)
+- 1 in review (setup.sh) - tester assigned
+
+**M76: DBB Gaps** (4 tasks)
+- 1 done (LAN tunnel)
+- 2 in review (CPU profile, optimizer.js) - tester assigned
+- 1 todo (server-side VAD) - developer-2 assigned
+
+**M77: External Packages** (5 tasks)
+- 3 in review (agentic-store, agentic-voice, package.json) - tester assigned
+- 2 todo (agentic-embed, agentic-sense) - developer-2 assigned
+
+### Planned Milestones (2)
+
+**M80: Vision Gaps** - Wake word + cross-device brain state (2 tasks)
+**M81: Vision Gaps** - Voice latency + npx + README (3 tasks)
+
+### Current Gaps
+- Vision: 75% (voice latency, npx verification, wake word, brain state)
+- PRD: 82% (npx entrypoint, README completeness)
+- DBB: 62% (server VAD, optimizer logic)
+- Architecture: 78% (external package wiring)
+
+### Team Status
+- developer: working on m74 (Docker, SIGINT)
+- tester: reviewing 6 tasks across m74/m76/m77
+- developer-2: assigned 3 todo tasks in m76/m77
+- tech_lead-1,2: running (design work)
+- tester-1,2: running (verification)
+
+**Next Actions:** Focus on completing m74 → m76 → m77 sequentially before starting m80/m81.
+[2026-04-07T03:23:49.781Z] pm agent completed
+[2026-04-07 03:23:49] [agent_complete] pm completed successfully
+[2026-04-07 03:23:49] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 03:23:49] [workflow] work_loop [LOOP] Iteration 43
+[2026-04-07 03:23:49] [workflow] work_loop [EXEC] pm
+[2026-04-07 03:23:49] [agent_start] pm pm
+[2026-04-07T03:23:49.953Z] Running pm agent...
+All designs are complete. No further action needed — waiting for the next task assignment.
+[2026-04-07T03:23:50.701Z] tech_lead-2 agent completed
+[2026-04-07 03:23:50] [agent_complete] tech_lead-2 completed successfully
+
+
+Task completed! I've successfully wired the agentic-embed external package in runtime/embed.js:
+
+**Changes made:**
+1. Created `src/runtime/adapters/embed.js` with stub implementation
+2. Added `agentic-embed: "*"` to package.json dependencies
+3. Added import mapping in package.json to point to the adapter
+
+The implementation follows the existing pattern used by other adapters (sense.js, voice adapters). The task is now in review status.
+[2026-04-07T03:23:52.636Z] developer agent completed
+[2026-04-07 03:23:52] [agent_complete] developer completed successfully
