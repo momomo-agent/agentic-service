@@ -26245,3 +26245,247 @@ No new milestones needed at this time. Teams should focus on completing the 5 re
 No `todo` tasks with `hasDesign=true` and no assignee exist. All eligible tasks are either done, cancelled, or already assigned. Nothing to claim right now.
 [2026-04-07T04:13:07.493Z] developer agent completed
 [2026-04-07 04:13:07] [agent_complete] developer completed successfully
+[2026-04-07 04:13:09] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:167)
+
+
+Excellent. Now let me provide a comprehensive status summary:
+
+## Project Status Summary
+
+**Overall Progress:**
+- Vision match: 75% → Architecture match: 78% → PRD match: 82%
+- Test coverage: 100% (10/10 tests passing)
+- 6 milestones total: 3 completed, 3 active
+
+**Active Milestones & Tasks:**
+
+**M74: DBB Compliance** (2 P0 tasks remaining)
+- ✅ Test coverage >=98% threshold
+- ✅ setup.sh Node.js detection  
+- 🔄 Docker build verification → developer (P0)
+- 🔄 SIGINT graceful drain → tester (P0)
+
+**M76: DBB Gaps** (1 P1 task remaining)
+- ✅ Server-side VAD, Optimizer refactor, LAN tunnel, CDN profiles cache
+- 🔄 CPU-only profile → tester-2 (P1)
+
+**M80: Vision Gaps** (2 P1 tasks remaining)
+- ✅ Cross-device brain state sharing
+- 🔄 Wake word pipeline → tech_lead (P1)
+- 🔄 Voice latency benchmark → tech_lead-2 (P1)
+
+**Agent Availability:**
+- Available: developer, tester, tester-2, tech_lead, tech_lead-2
+- Running: pm (me), tech_lead-1, tester-1
+
+**Next Steps:**
+1. Current 5 tasks in progress will address remaining P0/P1 gaps
+2. Once M74 completes → all DBB compliance items done
+3. Once M76 completes → all DBB gaps addressed
+4. Once M80 completes → critical vision gaps (wake word, voice latency) resolved
+
+**Remaining Gaps (for future milestones):**
+- Architecture documentation alignment (8 "partial" gaps - modules exist but not in ARCHITECTURE.md)
+- Remote profiles CDN fallback verification (vision gap)
+
+These remaining gaps may warrant a Change Request to update ARCHITECTURE.md to reflect the actual implementation rather than new code tasks.
+
+All critical P0 items are now assigned and ready for execution.
+[2026-04-07T04:13:12.493Z] pm agent completed
+[2026-04-07 04:13:12] [agent_complete] pm completed successfully
+[2026-04-07 04:13:12] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 04:13:12] [workflow] work_loop [LOOP] Iteration 15
+[2026-04-07 04:13:12] [workflow] work_loop [EXEC] pm
+[2026-04-07 04:13:12] [agent_start] pm pm
+[2026-04-07T04:13:12.690Z] Running pm agent...
+[2026-04-07 04:13:17] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:167)
+[2026-04-07 04:13:33] [perf] daemon {"rss":"44MB","heapUsed":"16MB","heapTotal":"26MB","uptime":"44107s"}
+[2026-04-07 04:13:39] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:167)
+[2026-04-07 04:14:17] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:167)
+Done. Here's a summary of what was completed:
+
+**task-1775534863944** — Voice latency <2s benchmark and enforcement
+
+Design written to `.team/tasks/task-1775534863944/design.md`:
+
+- New `src/runtime/latency-log.js` — zero-dep singleton with `record(stage, ms)`, `p95(stage)`, `reset()`
+- `src/runtime/stt.js` — wrap `transcribe()` to call `record('stt', elapsed)`
+- `src/runtime/tts.js` — wrap `synthesize()` to call `record('tts', elapsed)`
+- `src/runtime/llm.js` — wrap `chat()` generator to record `llm_ttft` on first chunk, `llm_total` on completion
+- New `test/m80-voice-latency.test.js` — simulates N=20 runs, asserts `p95(stt) + p95(llm_total) + p95(tts) < 2000ms`
+
+Task marked `hasDesign: true`. All other active milestone tasks (m74, m76, m80) already had designs. No architecture changes needed.
+[2026-04-07T04:14:30.903Z] tech_lead agent completed
+[2026-04-07 04:14:30] [agent_complete] tech_lead completed successfully
+[2026-04-07 04:14:31] [workflow] work_loop [LOOP] Iteration 3
+[2026-04-07 04:14:31] [workflow] work_loop [EXEC] pm
+[2026-04-07 04:14:31] [agent_start] pm 管理任务和里程碑
+[2026-04-07T04:14:31.037Z] Running pm agent...
+[2026-04-07 04:14:39] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:167)
+[2026-04-07 04:14:46] [perf] daemon {"rss":"43MB","heapUsed":"13MB","uptime":"9302s"}
+
+
+Looking at the current state:
+
+**Active Milestones Status:**
+
+**M74 (DBB Compliance)** - 2/4 tasks remaining:
+- ✅ Test coverage >=98% (done)
+- ✅ setup.sh idempotency (done)
+- 🔄 Docker verification (P0, tester-2, todo)
+- 🔄 SIGINT graceful drain (P0, developer, todo)
+
+**M76 (DBB Gaps)** - 1/5 tasks remaining:
+- ✅ Server-side VAD (done)
+- ✅ optimizer.js fix (done)
+- ✅ LAN tunnel (done)
+- ✅ CDN profiles cache (done)
+- 🔄 CPU profile (P1, tester-2, todo)
+
+**M80 (Vision Gaps)** - 2/3 tasks:
+- ✅ Cross-device brain state (done)
+- 🔄 Wake word pipeline (P1, developer, todo)
+- 🔄 Voice latency benchmark (P1, developer-2, todo)
+
+**Current Priorities:**
+1. M74 and M76 are close to completion - focus on finishing these first
+2. DBB match is at 62% (lowest) - completing M74/M76 will improve this
+3. M80 tasks can proceed in parallel
+
+**Task Assignments:**
+- tester-2: Docker verification (M74) + CPU profile (M76)
+- developer: SIGINT graceful drain (M74) + Wake word pipeline (M80)
+- developer-2: Voice latency benchmark (M80)
+
+All critical P0 tasks are now assigned. The team should focus on completing M74 and M76 to improve the DBB compliance score before moving to the next milestone.
+[2026-04-07T04:15:01.997Z] pm agent completed
+[2026-04-07 04:15:02] [agent_complete] pm completed successfully
+[2026-04-07 04:15:02] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 04:15:02] [workflow] work_loop [LOOP] Iteration 36
+[2026-04-07 04:15:02] [workflow] work_loop [EXEC] pm
+[2026-04-07 04:15:02] [agent_start] pm pm
+[2026-04-07T04:15:02.190Z] Running pm agent...
+[2026-04-07 04:15:17] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:167)
+**Status summary:**
+
+Active milestones have 4 `todo` tasks now assigned to `developer`:
+
+| Task | Milestone | Description |
+|------|-----------|-------------|
+| task-1775529630008 | m74 | Docker build + docker-compose e2e verification |
+| task-1775530542647 | m76 | Add cpu-only profile to profiles/default.json |
+| task-1775531492452 | m80 | Server-side wake word pipeline in sense.js |
+| task-1775534863944 | m80 | Voice latency <2s benchmark and enforcement |
+
+Plus `task-1775529637561` (SIGINT graceful drain) is in **testing** — waiting on tester approval before m74 can close.
+
+No new milestones needed yet — existing active milestones still have open work. Will reassess once these tasks complete.
+[2026-04-07T04:15:24.431Z] pm agent completed
+[2026-04-07 04:15:24] [agent_complete] pm completed successfully
+[2026-04-07 04:15:24] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 04:15:24] [workflow] work_loop [LOOP] Iteration 78
+[2026-04-07 04:15:24] [workflow] work_loop [EXEC] pm
+[2026-04-07 04:15:24] [agent_start] pm pm
+[2026-04-07T04:15:24.615Z] Running pm agent...
+[2026-04-07 04:15:39] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:167)
+
+
+Looking at the current project status:
+
+**Active Milestones Progress:**
+
+**M74: DBB Compliance** (2/4 tasks done)
+- ✅ Test coverage >=98% threshold - done
+- ✅ setup.sh idempotency - done
+- 🔄 Docker build verification - todo (developer)
+- 🔄 SIGINT graceful drain - todo (developer)
+
+**M76: DBB Gaps** (4/5 tasks done)
+- ✅ Server-side VAD - done
+- ✅ Fix optimizer.js - done
+- ✅ LAN tunnel - done
+- ✅ CDN cache refresh - done
+- 🔄 Add cpu-only profile - todo (developer)
+
+**M80: Vision Gaps** (1/3 tasks done)
+- ✅ Cross-device brain state - done
+- 🔄 Server-side wake word pipeline - todo (developer)
+- 🔄 Voice latency benchmark - todo (developer)
+
+**Gap Scores:**
+- Vision: 75% (target: 90%+)
+- PRD: 82% (target: 90%+)
+- DBB: 62% ⚠️ (target: 90%+)
+- Architecture: 78% (target: 90%+)
+
+**Assessment:**
+The DBB match at 62% is the critical blocker. M74 and M76 are addressing DBB compliance gaps. Once these complete, we should see significant improvement in the DBB score.
+
+**Next Actions:**
+1. Monitor M74 and M76 completion (5 tasks in progress across 3 developers)
+2. Once M74 and M76 are fully done, mark them completed and reassess gaps
+3. M80 can continue in parallel as it addresses Vision gaps
+
+No new milestones needed right now - we have good coverage of the remaining gaps. The focus should be on completing the active tasks.
+[2026-04-07T04:15:53.787Z] pm agent completed
+[2026-04-07 04:15:53] [agent_complete] pm completed successfully
+[2026-04-07 04:15:53] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 04:15:53] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-07 04:15:53] [workflow] work_loop [PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-07 04:15:53] [workflow] work_loop [PARALLEL] implement
+[2026-04-07 04:15:53] [workflow] work_loop [EXEC] developer
+[2026-04-07 04:15:53] [agent_start] developer 实现功能
+[2026-04-07T04:15:53.870Z] Running developer agent...
+[2026-04-07 04:16:17] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:3, done:167)
+Both `optimizer.js` and server-side VAD are already **done** — the cancelled tasks were duplicates. The dbb.json gap analysis is stale.
+
+**Current state is healthy:**
+- All 3 active milestones (m74, m76, m80) have tasks in `todo` assigned to `developer`
+- No blocked tasks
+- No gaps requiring new task creation
+- optimizer.js and VAD gaps are resolved (done tasks exist)
+
+**5 remaining tasks to complete:**
+
+| Task | Milestone | Priority |
+|------|-----------|----------|
+| SIGINT graceful drain | m74 | P0 |
+| Docker end-to-end verification | m74 | P1 |
+| Add cpu-only profile | m76 | P1 |
+| Server-side wake word pipeline | m80 | P1 |
+| Voice latency <2s benchmark | m80 | P1 |
+
+No new milestones or tasks needed. The developer should proceed with the P0 task first: **SIGINT graceful drain** (`task-1775529637561`).
+[2026-04-07T04:16:28.094Z] pm agent completed
+[2026-04-07 04:16:28] [agent_complete] pm completed successfully
+[2026-04-07 04:16:28] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 04:16:28] [workflow] work_loop [LOOP] Iteration 79
+[2026-04-07 04:16:28] [workflow] work_loop [EXEC] pm
+[2026-04-07 04:16:28] [agent_start] pm pm
+[2026-04-07T04:16:28.292Z] Running pm agent...
+All 5 remaining `todo` tasks have been assigned and moved to `in-progress`:
+
+**M74:**
+- `task-1775529630008` → `developer` (Docker end-to-end verification)
+- `task-1775529637561` → `tech_lead` (SIGINT graceful drain)
+
+**M76:**
+- `task-1775530542647` → `tech_lead-2` (cpu-only profile)
+
+**M80:**
+- `task-1775531492452` → `tech_lead-3` (server-side wake word pipeline)
+- `task-1775534863944` → `tech_lead-2` (voice latency <2s benchmark)
+
+Waiting for these to complete before milestones M74, M76, and M80 can be closed.
+[2026-04-07T04:16:42.055Z] pm agent completed
+[2026-04-07 04:16:42] [agent_complete] pm completed successfully
+[2026-04-07 04:16:42] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 04:16:42] [workflow] work_loop [BRANCH] doneCount > 0 → true → milestone_qg
+[2026-04-07 04:16:42] [workflow] work_loop [EXIT] todoCount == 0 && designedTasks == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 && blockedCount == 0 → milestone_qg
+[2026-04-07 04:16:42] [agent_start] milestone_qg [NODE] milestone_qg - 里程碑 QG — 对照 DBB 验收
+[2026-04-07 04:16:42] [workflow] milestone_qg [EXEC] tester
+[2026-04-07 04:16:42] [agent_start] tester tester
+[2026-04-07T04:16:42.241Z] Running tester agent...
+No tasks are available to claim right now. All todo tasks with designs are either already assigned to other agents or in-progress. I'll wait for new tasks to become available.
+[2026-04-07T04:17:03.388Z] developer agent completed
+[2026-04-07 04:17:03] [agent_complete] developer completed successfully

@@ -11070,3 +11070,67 @@
 {"ts":"2026-04-07T04:13:03.159Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
 {"ts":"2026-04-07T04:13:03.159Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":16,"memoryTotalMB":21,"cpuUser":28.490857,"cpuSystem":80.965031}}}
 {"ts":"2026-04-07T04:13:07.497Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.720003,"cpuSystem":9.267211}}}
+{"ts":"2026-04-07T04:13:09.140Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:167)"}}
+{"ts":"2026-04-07T04:13:09.141Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:5, done:167)\"}"}}
+{"ts":"2026-04-07T04:13:12.500Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":16,"memoryTotalMB":19,"cpuUser":28.507001,"cpuSystem":80.980872}}}
+{"ts":"2026-04-07T04:13:12.560Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T04:13:12.662Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 15"}}
+{"ts":"2026-04-07T04:13:12.663Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T04:13:12.663Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":19,"memoryTotalMB":26,"cpuUser":28.540155,"cpuSystem":81.110426}}}
+{"ts":"2026-04-07T04:13:17.381Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:167)"}}
+{"ts":"2026-04-07T04:13:17.382Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:5, done:167)\"}"}}
+{"ts":"2026-04-07T04:13:33.228Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"44MB\",\"heapUsed\":\"16MB\",\"heapTotal\":\"26MB\",\"uptime\":\"44107s\"}"}}
+{"ts":"2026-04-07T04:13:39.141Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:167)"}}
+{"ts":"2026-04-07T04:13:39.141Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:5, done:167)\"}"}}
+{"ts":"2026-04-07T04:13:55.617Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775529637561","from":"todo","to":"testing","title":"SIGINT graceful drain during in-flight requests"}}
+{"ts":"2026-04-07T04:14:17.385Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:167)"}}
+{"ts":"2026-04-07T04:14:17.385Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:5, done:167)\"}"}}
+{"ts":"2026-04-07T04:14:27.333Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775529637561","from":"testing","to":"todo","title":"SIGINT graceful drain during in-flight requests"}}
+{"ts":"2026-04-07T04:14:30.906Z","type":"agent_complete","agent":"tech_lead","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":4.759412,"cpuSystem":9.319374}}}
+{"ts":"2026-04-07T04:14:31.010Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 3"}}
+{"ts":"2026-04-07T04:14:31.010Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T04:14:31.010Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":4.781563,"cpuSystem":9.400668}}}
+{"ts":"2026-04-07T04:14:39.143Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:167)"}}
+{"ts":"2026-04-07T04:14:39.143Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:5, done:167)\"}"}}
+{"ts":"2026-04-07T04:14:46.779Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"43MB\",\"heapUsed\":\"13MB\",\"uptime\":\"9302s\"}"}}
+{"ts":"2026-04-07T04:15:02.008Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":19,"memoryTotalMB":26,"cpuUser":28.572114,"cpuSystem":81.157421}}}
+{"ts":"2026-04-07T04:15:02.066Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T04:15:02.164Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 36"}}
+{"ts":"2026-04-07T04:15:02.164Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T04:15:02.165Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":11,"memoryTotalMB":17,"cpuUser":28.605843,"cpuSystem":81.281072}}}
+{"ts":"2026-04-07T04:15:17.388Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:167)"}}
+{"ts":"2026-04-07T04:15:17.388Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:5, done:167)\"}"}}
+{"ts":"2026-04-07T04:15:24.434Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":28.618469,"cpuSystem":81.295557}}}
+{"ts":"2026-04-07T04:15:24.494Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T04:15:24.590Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 78"}}
+{"ts":"2026-04-07T04:15:24.590Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T04:15:24.591Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":8,"memoryTotalMB":18,"cpuUser":28.651309,"cpuSystem":81.41818}}}
+{"ts":"2026-04-07T04:15:39.167Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:167)"}}
+{"ts":"2026-04-07T04:15:39.167Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:5, done:167)\"}"}}
+{"ts":"2026-04-07T04:15:53.789Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":4.823941,"cpuSystem":9.458786}}}
+{"ts":"2026-04-07T04:15:53.841Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T04:15:53.842Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T04:15:53.843Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-07T04:15:53.843Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement"}}
+{"ts":"2026-04-07T04:15:53.843Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T04:15:53.843Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":16,"memoryTotalMB":22,"cpuUser":4.834935,"cpuSystem":9.501308}}}
+{"ts":"2026-04-07T04:16:12.410Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775529630008","from":"todo","to":"in-progress","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T04:16:12.452Z","type":"task_status","agent":"tech_lead","data":{"taskId":"task-1775529637561","from":"todo","to":"in-progress","title":"SIGINT graceful drain during in-flight requests"}}
+{"ts":"2026-04-07T04:16:17.417Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:3, done:167)"}}
+{"ts":"2026-04-07T04:16:17.417Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:3, done:167)\"}"}}
+{"ts":"2026-04-07T04:16:28.096Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":18,"cpuUser":28.677505,"cpuSystem":81.461534}}}
+{"ts":"2026-04-07T04:16:28.162Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T04:16:28.267Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 79"}}
+{"ts":"2026-04-07T04:16:28.268Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T04:16:28.268Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":12,"memoryTotalMB":26,"cpuUser":28.711097,"cpuSystem":81.592803}}}
+{"ts":"2026-04-07T04:16:36.855Z","type":"task_status","agent":"tech_lead-2","data":{"taskId":"task-1775530542647","from":"todo","to":"in-progress","title":"Add cpu-only profile to profiles/default.json"}}
+{"ts":"2026-04-07T04:16:36.902Z","type":"task_status","agent":"tech_lead-3","data":{"taskId":"task-1775531492452","from":"todo","to":"in-progress","title":"Implement server-side wake word pipeline in sense.js"}}
+{"ts":"2026-04-07T04:16:36.941Z","type":"task_status","agent":"tech_lead-2","data":{"taskId":"task-1775534863944","from":"todo","to":"in-progress","title":"Voice latency <2s benchmark and enforcement"}}
+{"ts":"2026-04-07T04:16:42.059Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":28.730817,"cpuSystem":81.627102}}}
+{"ts":"2026-04-07T04:16:42.120Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T04:16:42.168Z","type":"workflow","agent":"work_loop","data":{"details":"[BRANCH] doneCount > 0 → true → milestone_qg"}}
+{"ts":"2026-04-07T04:16:42.168Z","type":"workflow","agent":"work_loop","data":{"details":"[EXIT] todoCount == 0 && designedTasks == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 && blockedCount == 0 → milestone_qg"}}
+{"ts":"2026-04-07T04:16:42.169Z","type":"agent_start","agent":"milestone_qg","data":{"details":"[NODE] milestone_qg - 里程碑 QG — 对照 DBB 验收","performance":{"memoryMB":12,"memoryTotalMB":17,"cpuUser":28.753766,"cpuSystem":81.713073}}}
+{"ts":"2026-04-07T04:16:42.216Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-07T04:16:42.216Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":9,"memoryTotalMB":17,"cpuUser":28.763492,"cpuSystem":81.750322}}}
+{"ts":"2026-04-07T04:17:03.392Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":16,"cpuUser":4.874802,"cpuSystem":9.56851}}}
