@@ -1,10 +1,12 @@
 {
-  "totalTests": 17,
-  "passed": 17,
-  "failed": 0,
+  "totalTests": 18,
+  "passed": 14,
+  "failed": 2,
   "edgeCases": [
     "test/sense-wrapping-test.js references #agentic-sense but is not in vitest suite",
-    "agentic-sense vendor package does not export createPipeline as named export (pre-existing)"
+    "agentic-sense vendor package does not export createPipeline as named export (pre-existing)",
+    "install/Dockerfile runs npm run build before COPY . . — index.html missing at build time",
+    "install/docker-compose.yml missing dockerfile: install/Dockerfile in build spec"
   ],
-  "coverage": "100%"
+  "coverage": "78%"
 }

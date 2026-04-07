@@ -176,6 +176,17 @@
         "task-1775569826588"
       ],
       "created": "2026-04-07T13:47:46.195Z"
+    },
+    {
+      "id": "m88",
+      "name": "M88: Voice Latency Benchmarking + CPU Profiling",
+      "status": "planned",
+      "tasks": [
+        "task-1775572886036",
+        "task-1775572892189",
+        "task-1775572898050"
+      ],
+      "created": "2026-04-07T14:41:44.301Z"
     }
   ]
 }

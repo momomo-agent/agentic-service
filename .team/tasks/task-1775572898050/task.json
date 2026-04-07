@@ -1,0 +1,13 @@
+{
+  "id": "task-1775572898050",
+  "title": "Expose performance metrics via /api/perf endpoint",
+  "description": "Add GET /api/perf endpoint that returns per-stage latency metrics collected by the profiling instrumentation.",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m88",
+  "hasDesign": false,
+  "created": "2026-04-07T14:41:38.050Z",
+  "updated": "2026-04-07T14:41:38.051Z"
+}
