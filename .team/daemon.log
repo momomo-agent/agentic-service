@@ -30760,3 +30760,14 @@ All 4 tasks in 'review' status cannot be claimed (likely already assigned to oth
 [2026-04-07T12:22:38.790Z] tester-1 agent completed
 [2026-04-07 12:22:38] [agent_complete] tester-1 completed successfully
 [2026-04-07 12:22:38] [workflow] tester-1 [SIGNAL] completed: Checked all 4 review tasks - none claimable (already assigned to other agents). No work available.
+[2026-04-07 12:22:40] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 28min (active:5, done:186)
+The blocking task `task-1775535895960` is in `review` status (not yet `done`), so `task-1775561925076` remains blocked. There are no other available `todo` tasks with designs to claim right now.
+
+I'll wait for the blocking task to be marked `done` before proceeding.
+
+```signal
+{"status": "blocked", "summary": "No claimable tasks available. task-1775561925076 blocked by task-1775535895960 which is in review. No other todo tasks with hasDesign=true and no assignee exist."}
+```
+[2026-04-07T12:23:24.868Z] developer agent completed
+[2026-04-07 12:23:24] [agent_complete] developer completed successfully
+[2026-04-07 12:23:24] [workflow] developer [SIGNAL] blocked: No claimable tasks available. task-1775561925076 blocked by task-1775535895960 which is in review. N

@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T12:17:42.380Z",
+  "timestamp": "2026-04-07T12:23:24.867Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "No actionable tasks available. task-1775561930545 is in review. task-1775561925076 is blocked by task-1775535895960 which is still in review."
+  "status": "blocked",
+  "summary": "No claimable tasks available. task-1775561925076 blocked by task-1775535895960 which is in review. No other todo tasks with hasDesign=true and no assignee exist."
 }
