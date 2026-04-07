@@ -1,9 +1,10 @@
 {
-  "totalTests": 10,
-  "passed": 10,
-  "failed": 0,
+  "totalTests": 8,
+  "passed": 6,
+  "failed": 2,
   "edgeCases": [
-    "No test for matchProfile() logic against this file"
+    "adapters/sense.js uses default import but agentic-sense has no default export",
+    "sense.js load blocked by adapter import error"
   ],
-  "coverage": "100%"
+  "coverage": "75%"
 }

@@ -33275,3 +33275,12 @@ The only claimable task is blocked. All other tasks are either `done`, `review`,
 [2026-04-07T16:34:00.605Z] developer agent completed
 [2026-04-07 16:34:00] [agent_complete] developer completed successfully
 [2026-04-07 16:34:00] [workflow] developer [SIGNAL] blocked: task-1775573593682 is blocked by task-1775573229039 (still in testing). No other todo tasks with has
+[2026-04-07 16:34:00] [workflow] work_loop [AGENT-SIGNAL] developer → blocked: task-1775573593682 is blocked by task-1775573229039 (still in testing). No other
+Both review tasks can't be claimed right now — they're likely locked by another tester agent. There's no available work for me at this moment.
+
+```signal
+{"status": "blocked", "summary": "No claimable tasks — both review tasks (task-1775573586694, task-1775575363327) returned canClaim: false. Another tester may be handling them."}
+```
+[2026-04-07T16:34:31.544Z] tester-1 agent completed
+[2026-04-07 16:34:31] [agent_complete] tester-1 completed successfully
+[2026-04-07 16:34:31] [workflow] tester-1 [SIGNAL] blocked: No claimable tasks — both review tasks (task-1775573586694, task-1775575363327) returned canClaim: f

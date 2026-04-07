@@ -1,7 +1,7 @@
 {
   "agent": "tester-1",
-  "timestamp": "2026-04-07T16:29:42.882Z",
+  "timestamp": "2026-04-07T16:34:31.544Z",
   "exitCode": 0,
   "status": "blocked",
-  "summary": "All review tasks have canClaim: false — being handled by another tester. task-1775573593682 is blocked by task-1775573229039 which is still in review."
+  "summary": "No claimable tasks — both review tasks (task-1775573586694, task-1775575363327) returned canClaim: false. Another tester may be handling them."
 }

@@ -20305,3 +20305,6 @@
 {"ts":"2026-04-07T16:33:35.709Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":17,"memoryTotalMB":26,"cpuUser":0.136668,"cpuSystem":0.271041}}}
 {"ts":"2026-04-07T16:34:00.610Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":15,"memoryTotalMB":23,"cpuUser":0.162208,"cpuSystem":0.301013}}}
 {"ts":"2026-04-07T16:34:00.611Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] blocked: task-1775573593682 is blocked by task-1775573229039 (still in testing). No other todo tasks with has"}}
+{"ts":"2026-04-07T16:34:00.788Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] developer → blocked: task-1775573593682 is blocked by task-1775573229039 (still in testing). No other"}}
+{"ts":"2026-04-07T16:34:31.549Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":22,"memoryTotalMB":28,"cpuUser":0.178176,"cpuSystem":0.327553}}}
+{"ts":"2026-04-07T16:34:31.549Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: No claimable tasks — both review tasks (task-1775573586694, task-1775575363327) returned canClaim: f"}}
