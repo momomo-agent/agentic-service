@@ -4,10 +4,10 @@
   "description": "Verify runtime/sense.js wraps agentic-sense (MediaPipe) package. If it is a local stub, wire it to the actual package.",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer-2",
   "blockedBy": [],
   "groupId": "m77",
   "hasDesign": false,
   "created": "2026-04-07T03:00:19.815Z",
-  "updated": "2026-04-07T03:00:19.816Z"
+  "updated": "2026-04-07T03:03:05.503Z"
 }

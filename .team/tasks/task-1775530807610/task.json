@@ -4,10 +4,10 @@
   "description": "Replace local src/runtime/embed.js with import from agentic-embed npm package. If package unavailable, submit CR to architecture.",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer-2",
   "blockedBy": [],
   "groupId": "m77",
   "hasDesign": false,
   "created": "2026-04-07T03:00:07.610Z",
-  "updated": "2026-04-07T03:00:07.611Z"
+  "updated": "2026-04-07T03:03:05.444Z"
 }
