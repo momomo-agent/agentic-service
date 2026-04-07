@@ -1,12 +1,17 @@
-# M81: Vision Completeness — Voice Latency + npx Entrypoint
+# M81: Completion — Voice Latency, npx, External Packages, Docs
 
 ## Goals
-Close remaining vision gaps: enforce voice latency <2s and verify npx one-command startup.
+Close remaining partial gaps across vision, PRD, and architecture.
 
 ## Scope
-- Voice latency benchmark: measure STT+LLM+TTS end-to-end, enforce <2s
+- Voice latency benchmark: enforce <2s STT+LLM+TTS end-to-end
 - npx agentic-service entrypoint verification
+- Wire agentic-embed as external package in runtime/embed.js
+- Confirm agentic-sense wrapping in runtime/sense.js
+- Complete README.md documentation
 
 ## Acceptance Criteria
-- Voice pipeline logs latency per request; fails if >2s threshold
-- `npx agentic-service` starts service without errors
+- Voice pipeline latency measured and enforced under 2s
+- `npx agentic-service` starts without errors
+- agentic-embed and agentic-sense are external packages, not local stubs
+- README covers all install methods, API, config, and hardware requirements

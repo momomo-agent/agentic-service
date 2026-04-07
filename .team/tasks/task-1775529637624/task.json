@@ -4,11 +4,11 @@
   "description": "Verify setup.sh detects existing Node.js installation and is safe to re-run without side effects",
   "status": "review",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "tester",
   "blockedBy": [],
   "groupId": "m74",
   "hasDesign": true,
   "created": "2026-04-07T02:40:37.624Z",
-  "updated": "2026-04-07T03:10:54.152Z",
+  "updated": "2026-04-07T03:22:01.883Z",
   "milestoneId": "m74"
 }

@@ -7,7 +7,8 @@
   "assignee": null,
   "blockedBy": [],
   "groupId": "m81",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-07T03:16:42.193Z",
-  "updated": "2026-04-07T03:16:42.193Z"
+  "updated": "2026-04-07T03:22:16.794Z",
+  "milestoneId": "m81"
 }

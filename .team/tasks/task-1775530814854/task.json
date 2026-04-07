@@ -4,11 +4,11 @@
   "description": "Verify runtime/stt.js and tts.js wrap agentic-voice package methods. If they are local stubs, wire them to the actual package.",
   "status": "review",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "tester",
   "blockedBy": [],
   "groupId": "m77",
   "hasDesign": true,
   "created": "2026-04-07T03:00:14.854Z",
-  "updated": "2026-04-07T03:08:45.568Z",
+  "updated": "2026-04-07T03:22:02.033Z",
   "milestoneId": "m77"
 }

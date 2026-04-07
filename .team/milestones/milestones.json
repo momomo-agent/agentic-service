@@ -958,9 +958,23 @@
         "task-1775531580027",
         "task-1775531586438",
         "task-1775531796900",
-        "task-1775531802193"
+        "task-1775531802193",
+        "task-1775531890250"
       ],
       "created": "2026-04-07T03:15:11.789Z"
+    },
+    {
+      "id": "m82",
+      "name": "M82: DBB Compliance — Optimizer, CPU Profile, Docker, SIGINT, Coverage",
+      "status": "active",
+      "tasks": [
+        "task-1775532047836",
+        "task-1775532073840",
+        "task-1775532084059",
+        "task-1775532084090",
+        "task-1775532084120"
+      ],
+      "created": "2026-04-07T03:21:01.633Z"
     }
   ]
 }

@@ -4,11 +4,11 @@
   "description": "Replace local src/store/index.js with import from agentic-store npm package. If package is unavailable in node_modules, submit a CR to architecture.",
   "status": "review",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "tester",
   "blockedBy": [],
   "groupId": "m77",
   "hasDesign": true,
   "created": "2026-04-07T03:00:01.711Z",
-  "updated": "2026-04-07T03:08:45.496Z",
+  "updated": "2026-04-07T03:22:01.996Z",
   "milestoneId": "m77"
 }

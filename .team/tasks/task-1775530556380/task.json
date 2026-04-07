@@ -4,11 +4,11 @@
   "description": "optimizer.js currently contains ollama setup code instead of hardware optimization logic. Refactor to return hardware-based model recommendations (model size, quantization, threads) based on detected GPU/CPU/memory.",
   "status": "review",
   "priority": "P0",
-  "assignee": "developer",
+  "assignee": "tester",
   "blockedBy": [],
   "groupId": "m76",
   "hasDesign": true,
   "created": "2026-04-07T02:55:56.380Z",
-  "updated": "2026-04-07T03:08:45.459Z",
+  "updated": "2026-04-07T03:22:01.960Z",
   "milestoneId": "m76"
 }
