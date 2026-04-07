@@ -19178,3 +19178,9 @@
 {"ts":"2026-04-07T13:20:33.526Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775535895960","from":"testing","to":"done","title":"Fix mocked module initialization across failing test files"}}
 {"ts":"2026-04-07T13:20:40.933Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":9,"cpuUser":8.079133,"cpuSystem":18.303727}}}
 {"ts":"2026-04-07T13:20:40.934Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Fixed mock initialization patterns in stt/tts/sense tests, fixed ESM import-in-body issues, added vi"}}
+{"ts":"2026-04-07T13:20:41.164Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775529630008: testing → blocked"}}
+{"ts":"2026-04-07T13:20:41.325Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 2"}}
+{"ts":"2026-04-07T13:20:41.338Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T13:20:41.339Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":6,"memoryTotalMB":10,"cpuUser":8.114979,"cpuSystem":18.427018}}}
+{"ts":"2026-04-07T13:21:06.917Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"17MB\",\"heapUsed\":\"14MB\",\"uptime\":\"10200s\"}"}}
+{"ts":"2026-04-07T13:21:07.296Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (40min), skipping","performance":{"memoryMB":14,"memoryTotalMB":18,"cpuUser":8.133379,"cpuSystem":18.459229}}}

@@ -67,7 +67,8 @@
     {
       "id": "m80",
       "name": "M80: Vision Gaps — Wake Word + Cross-Device Brain State",
-      "status": "active",
+      "status": "completed",
+      "completed": "2026-04-07T13:24:55.160Z",
       "tasks": [
         "task-1775531492452",
         "task-1775531500430",

@@ -31022,3 +31022,10 @@ Task complete.
 [2026-04-07T13:20:40.925Z] tester-1 agent completed
 [2026-04-07 13:20:40] [agent_complete] tester-1 completed successfully
 [2026-04-07 13:20:40] [workflow] tester-1 [SIGNAL] completed: Fixed mock initialization patterns in stt/tts/sense tests, fixed ESM import-in-body issues, added vi
+[2026-04-07 13:20:41] [workflow] post [POST] task-1775529630008: testing → blocked
+[2026-04-07 13:20:41] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-07 13:20:41] [workflow] work_loop [EXEC] pm
+[2026-04-07 13:20:41] [agent_start] pm 管理任务和里程碑
+[2026-04-07T13:20:41.365Z] Running pm agent...
+[2026-04-07 13:21:06] [perf] daemon {"rss":"17MB","heapUsed":"14MB","uptime":"10200s"}
+[2026-04-07 13:21:07] [agent_start] daemon Still busy (40min), skipping
