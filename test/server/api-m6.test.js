@@ -7,8 +7,8 @@ vi.mock('../../src/server/brain.js', () => ({ chat: vi.fn() }));
 vi.mock('../../src/detector/hardware.js', () => ({
   detect: vi.fn().mockResolvedValue({ platform: 'darwin', arch: 'arm64', gpu: {}, memory: 16, cpu: {} })
 }));
-vi.mock('../../src/runtime/stt.js', () => ({ transcribe: vi.fn() }));
-vi.mock('../../src/runtime/tts.js', () => ({ synthesize: vi.fn() }));
+vi.mock('../../src/runtime/stt.js', () => ({ init: vi.fn(), transcribe: vi.fn() }));
+vi.mock('../../src/runtime/tts.js', () => ({ init: vi.fn(), synthesize: vi.fn() }));
 
 import { chat } from '../../src/server/brain.js';
 import * as stt from '../../src/runtime/stt.js';

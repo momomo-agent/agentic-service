@@ -13,6 +13,7 @@ describe('TTS runtime', () => {
     mockProvider = { synthesize: vi.fn() };
     createTTS.mockResolvedValue(mockProvider);
     const mod = await import('../../src/runtime/tts.js');
+    await mod.init();
     synthesize = mod.synthesize;
   });
 

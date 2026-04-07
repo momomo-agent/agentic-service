@@ -1,10 +1,11 @@
 {
-  "totalTests": 25,
-  "passed": 25,
+  "totalTests": 5,
+  "passed": 5,
   "failed": 0,
   "edgeCases": [
-    "LLM generator throws before yielding — latency still recorded in finally block (not tested)",
-    "getProfile with hardware object using gpu.type='cpu-only' vs gpu='cpu-only' string matching"
+    "Pipeline behavior with invalid video element",
+    "Concurrent detect() calls on same pipeline",
+    "Memory cleanup when pipeline is destroyed"
   ],
   "coverage": "100%"
 }

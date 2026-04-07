@@ -4,12 +4,14 @@ import { writeFileSync, mkdirSync } from 'fs';
 function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 vi.mock('../src/runtime/stt.js', () => ({
+  init: vi.fn(),
   transcribe: vi.fn(async () => { await delay(300); return 'hello'; })
 }));
 vi.mock('../src/server/brain.js', () => ({
   chat: vi.fn(async function*() { await delay(1000); yield 'hi'; })
 }));
 vi.mock('../src/runtime/tts.js', () => ({
+  init: vi.fn(),
   synthesize: vi.fn(async () => { await delay(500); return Buffer.alloc(0); })
 }));
 

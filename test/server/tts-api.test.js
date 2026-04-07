@@ -5,7 +5,7 @@ vi.mock('../../src/runtime/llm.js', () => ({ chat: vi.fn() }));
 vi.mock('../../src/detector/hardware.js', () => ({
   detect: vi.fn().mockResolvedValue({ platform: 'darwin', arch: 'arm64', gpu: {}, memory: 16, cpu: {} })
 }));
-vi.mock('../../src/runtime/stt.js', () => ({ transcribe: vi.fn() }));
+vi.mock('../../src/runtime/stt.js', () => ({ init: vi.fn(), transcribe: vi.fn() }));
 vi.mock('multer', () => {
   const multer = () => ({ single: () => (req, res, next) => next() });
   multer.memoryStorage = () => ({});
@@ -13,7 +13,7 @@ vi.mock('multer', () => {
 });
 
 const mockSynthesize = vi.fn();
-vi.mock('../../src/runtime/tts.js', () => ({ synthesize: (...args) => mockSynthesize(...args) }));
+vi.mock('../../src/runtime/tts.js', () => ({ init: vi.fn(), synthesize: (...args) => mockSynthesize(...args) }));
 
 describe('POST /api/synthesize', () => {
   let server, baseUrl;

@@ -8,8 +8,8 @@ vi.mock('../../src/server/hub.js', () => ({
 vi.mock('../../src/detector/hardware.js', () => ({
   detect: vi.fn().mockResolvedValue({ platform: 'darwin', arch: 'arm64', gpu: {}, memory: 16, cpu: {} }),
 }));
-vi.mock('../../src/runtime/stt.js', () => ({ transcribe: vi.fn() }));
-vi.mock('../../src/runtime/tts.js', () => ({ synthesize: vi.fn() }));
+vi.mock('../../src/runtime/stt.js', () => ({ init: vi.fn(), transcribe: vi.fn() }));
+vi.mock('../../src/runtime/tts.js', () => ({ init: vi.fn(), synthesize: vi.fn() }));
 vi.mock('multer', () => {
   const m = () => ({ single: () => (req, _res, next) => { req.file = req._mockFile; next(); } });
   m.memoryStorage = () => ({});

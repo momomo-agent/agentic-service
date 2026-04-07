@@ -4,7 +4,7 @@ vi.mock('../../src/runtime/llm.js', () => ({ chat: vi.fn() }));
 vi.mock('../../src/detector/hardware.js', () => ({
   detect: vi.fn().mockResolvedValue({ platform: 'darwin', arch: 'arm64', gpu: {}, memory: 16, cpu: {} })
 }));
-vi.mock('../../src/runtime/tts.js', () => ({ synthesize: vi.fn() }));
+vi.mock('../../src/runtime/tts.js', () => ({ init: vi.fn(), synthesize: vi.fn() }));
 vi.mock('multer', () => {
   const multer = () => ({
     single: () => (req, res, next) => {
@@ -19,7 +19,7 @@ vi.mock('multer', () => {
 });
 
 const mockTranscribe = vi.fn();
-vi.mock('../../src/runtime/stt.js', () => ({ transcribe: (...args) => mockTranscribe(...args) }));
+vi.mock('../../src/runtime/stt.js', () => ({ init: vi.fn(), transcribe: (...args) => mockTranscribe(...args) }));
 
 describe('POST /api/transcribe', () => {
   let server, baseUrl;
