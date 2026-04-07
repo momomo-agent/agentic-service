@@ -1,7 +1,7 @@
 {
   "pm": {
     "status": "running",
-    "lastRun": "2026-04-07T03:41:49.926Z",
+    "lastRun": "2026-04-07T03:42:59.014Z",
     "currentTask": "pm",
     "retryCount": 1
   },
@@ -24,9 +24,9 @@
     "retryCount": 0
   },
   "developer": {
-    "status": "idle",
-    "lastRun": "2026-04-07T03:42:08.751Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T03:42:46.141Z",
+    "currentTask": "实现功能",
     "retryCount": 1
   },
   "tester": {
@@ -36,14 +36,14 @@
     "retryCount": 0
   },
   "tester-1": {
-    "status": "idle",
-    "lastRun": "2026-04-07T03:41:25.464Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T03:42:46.142Z",
+    "currentTask": "验证功能",
     "retryCount": 2
   },
   "tester-2": {
     "status": "idle",
-    "lastRun": "2026-04-07T03:41:26.862Z",
+    "lastRun": "2026-04-07T03:43:27.097Z",
     "currentTask": null,
     "retryCount": 1
   },
