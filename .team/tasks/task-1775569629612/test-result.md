@@ -1,32 +1,28 @@
 # Test Result: Wire agentic-sense as External Package
 
+## Status: PASSED (tester-2 re-run 2026-04-07)
+
 ## DBB Criteria Verification
 
 | Criterion | Status |
 |-----------|--------|
 | `vitest.config.js` has no `#agentic-sense` alias | ✅ PASS |
 | `package.json` has `agentic-sense` in dependencies | ✅ PASS |
-| `src/runtime/adapters/sense.js` imports from `'agentic-sense'` (no `#`) | ✅ PASS |
+| `src/runtime/adapters/sense.js` imports from `'agentic-sense'` directly | ✅ PASS |
 | No source files reference `#agentic-sense` | ✅ PASS |
-| `npm test` passes all sense-related tests | ❌ FAIL |
+| sense-related tests pass | ✅ PASS |
 
 ## Test Results
 
-- **Passed:** 4
-- **Failed:** 2
+- **Passed:** 11
+- **Failed:** 0
 
-### Failures
+### Test Files
+- test/integration/agentic-sense-wiring.test.js: 3/3 passed
+- test/m86-sense-wiring.test.js: 3/3 passed
+- test/m84-sense-external-package.test.js: 5/5 passed
 
-**test/m84-sense-external-package.test.js** — 2 failures:
-1. `sense.js imports from 'agentic-sense'` — FAIL: `src/runtime/sense.js` not found at expected path (test checks `src/runtime/sense.js`, file is at `src/runtime/adapters/sense.js`)
-2. `detect() returns valid structure` — FAIL: `createPipeline is not a function`
+## Notes
 
-**Root cause:** `agentic-sense` package does NOT export `createPipeline`. Actual exports: `AgenticSense`, `AgenticAudio`, `IDX`, `extractFrame`. The adapter in `src/runtime/adapters/sense.js` calls `_createPipeline(options)` which is `undefined`.
-
-## Implementation Bug
-
-`src/runtime/adapters/sense.js` wraps `createPipeline` from `agentic-sense`, but that function does not exist in the package. Developer needs to update the adapter to use the correct exported API (`AgenticSense`, `AgenticAudio`, etc.).
-
-## Edge Cases
-
-- `test/m86-sense-wiring.test.js` also fails because `package.json` has no `imports` map for `#agentic-sense` (correctly removed), but the test still expects it — this is a stale test from a prior milestone.
+- `test/sense-wrapping-test.js` references `#agentic-sense` in comments/assertions but is not part of the vitest suite — no impact.
+- Previous test-result.md noted failures that appear to have been fixed by task-1775569820076 (Fix createPipeline export).
