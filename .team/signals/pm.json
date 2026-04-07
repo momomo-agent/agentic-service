@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T12:16:45.357Z",
+  "timestamp": "2026-04-07T12:22:02.682Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Marked M76 completed (all tasks done). Assigned m85 test pass rate task to developer. Four tasks across m74/m80/m83/m85 are in review awaiting tester approval."
+  "summary": "Analyzed project state: 4 milestones active, 4 tasks in review awaiting tester approval, M85 blocked by M83 completion"
 }

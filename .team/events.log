@@ -18984,3 +18984,24 @@
 {"ts":"2026-04-07T12:19:40.885Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 25min (active:5, done:186)\"}"}}
 {"ts":"2026-04-07T12:19:56.791Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":5.30636,"cpuSystem":11.633632}}}
 {"ts":"2026-04-07T12:19:56.792Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: No claimable tasks available. All 4 review tasks (task-1775529630008, task-1775531492452, task-17755"}}
+{"ts":"2026-04-07T12:19:57.093Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 17"}}
+{"ts":"2026-04-07T12:19:57.105Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T12:19:57.105Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":5.341673,"cpuSystem":11.7491}}}
+{"ts":"2026-04-07T12:20:40.885Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 26min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:20:40.885Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 26min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:21:06.791Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"35MB\",\"heapUsed\":\"5MB\",\"uptime\":\"6600s\"}"}}
+{"ts":"2026-04-07T12:21:07.261Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (110min), skipping","performance":{"memoryMB":5,"memoryTotalMB":9,"cpuUser":5.376676,"cpuSystem":11.80472}}}
+{"ts":"2026-04-07T12:21:40.896Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 27min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:21:40.896Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 27min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:22:02.686Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":9,"cpuUser":5.40986,"cpuSystem":11.856346}}}
+{"ts":"2026-04-07T12:22:02.687Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Analyzed project state: 4 milestones active, 4 tasks in review awaiting tester approval, M85 blocked"}}
+{"ts":"2026-04-07T12:22:02.747Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T12:22:02.747Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T12:22:02.747Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T12:22:02.748Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T12:22:02.748Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":5.423821,"cpuSystem":11.904158}}}
+{"ts":"2026-04-07T12:22:02.748Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T12:22:02.748Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":5.424028,"cpuSystem":11.904622}}}
+{"ts":"2026-04-07T12:22:02.749Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":5.424131,"cpuSystem":11.904896}}}
+{"ts":"2026-04-07T12:22:38.795Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":5.445658,"cpuSystem":11.937261}}}
+{"ts":"2026-04-07T12:22:38.795Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Checked all 4 review tasks - none claimable (already assigned to other agents). No work available."}}
