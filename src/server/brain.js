@@ -1,4 +1,5 @@
 import { chat as llmChat } from '../runtime/llm.js';
+import { getSession, broadcastSession } from './hub.js';
 
 const tools = new Map();
 
@@ -115,4 +116,26 @@ export async function* chat(messages, options = {}) {
   } catch (err) {
     yield { type: 'error', error: err.message };
   }
+}
+
+export async function chatSession(sessionId, userMessage, options = {}) {
+  const session = getSession(sessionId);
+  if (!session) throw new Error(`Session ${sessionId} not found`);
+
+  const messages = [
+    { role: 'system', content: session.brainState.systemPrompt },
+    ...session.history.filter(m => m.role === 'user' || m.role === 'assistant').map(m => ({ role: m.role, content: m.content })),
+    { role: 'user', content: userMessage }
+  ];
+
+  const chunks = [];
+  for await (const chunk of chat(messages, options)) {
+    if (chunk.type === 'content') chunks.push(chunk.text);
+  }
+  const response = chunks.join('');
+
+  broadcastSession(sessionId, { role: 'user', content: userMessage, deviceId: options.deviceId });
+  broadcastSession(sessionId, { role: 'assistant', content: response, deviceId: 'brain' });
+
+  return response;
 }

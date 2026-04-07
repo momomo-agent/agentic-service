@@ -22,12 +22,25 @@ export async function init() {
 }
 
 export function joinSession(sessionId, deviceId) {
-  if (!sessions.has(sessionId)) sessions.set(sessionId, { data: {}, deviceIds: new Set() });
-  sessions.get(sessionId).deviceIds.add(deviceId);
+  if (!sessions.has(sessionId)) {
+    sessions.set(sessionId, {
+      id: sessionId,
+      deviceIds: new Set(),
+      history: [],
+      brainState: { context: [], systemPrompt: 'You are a helpful AI assistant.', temperature: 0.7 },
+      createdAt: Date.now(),
+      lastActivity: Date.now(),
+      data: {}
+    });
+  }
+  const session = sessions.get(sessionId);
+  session.deviceIds.add(deviceId);
+  session.lastActivity = Date.now();
+  return { sessionId, history: session.history, brainState: session.brainState, deviceCount: session.deviceIds.size };
 }
 
 export function setSessionData(sessionId, key, value) {
-  if (!sessions.has(sessionId)) sessions.set(sessionId, { data: {}, deviceIds: new Set() });
+  if (!sessions.has(sessionId)) sessions.set(sessionId, { id: sessionId, deviceIds: new Set(), history: [], brainState: { context: [], systemPrompt: 'You are a helpful AI assistant.', temperature: 0.7 }, createdAt: Date.now(), lastActivity: Date.now(), data: {} });
   sessions.get(sessionId).data[key] = value;
 }
 
@@ -35,15 +48,34 @@ export function getSessionData(sessionId, key) {
   return sessions.get(sessionId)?.data[key] ?? null;
 }
 
-export function broadcastSession(sessionId) {
+export function getSession(sessionId) {
+  return sessions.get(sessionId) ?? null;
+}
+
+export function broadcastSession(sessionId, message) {
   const session = sessions.get(sessionId);
   if (!session) return;
-  const history = session.data.history;
-  const data = { ...session.data };
-  if (Array.isArray(history) && history.length > 20) data.history = history.slice(-20);
-  const msg = JSON.stringify({ type: 'session', sessionId, data });
-  for (const [id, device] of registry) {
-    try { device.ws.send(msg); } catch { unregisterDevice(id); }
+
+  if (message) {
+    const msg = { ...message, timestamp: Date.now(), sessionId };
+    session.history.push(msg);
+    session.lastActivity = Date.now();
+    if (message.role === 'user' || message.role === 'assistant') {
+      session.brainState.context.push(message.content);
+      if (session.brainState.context.length > 20) session.brainState.context = session.brainState.context.slice(-20);
+    }
+    const payload = JSON.stringify({ type: 'session-message', sessionId, message: msg, deviceCount: session.deviceIds.size });
+    for (const deviceId of session.deviceIds) {
+      const device = registry.get(deviceId);
+      if (device) try { device.ws.send(payload); } catch { unregisterDevice(deviceId); }
+    }
+  } else {
+    // Legacy: broadcast full session data
+    const data = { ...session.data, history: session.history.slice(-20) };
+    const msg = JSON.stringify({ type: 'session', sessionId, data });
+    for (const [id, device] of registry) {
+      try { device.ws.send(msg); } catch { unregisterDevice(id); }
+    }
   }
 }
 
@@ -88,7 +120,22 @@ export function getDevices() {
   return Array.from(devices.values()).map(d => ({ ...d }))
 }
 
+export function leaveSession(deviceId) {
+  for (const [sessionId, session] of sessions) {
+    if (session.deviceIds.has(deviceId)) {
+      session.deviceIds.delete(deviceId);
+      if (session.deviceIds.size === 0) {
+        setTimeout(() => {
+          if (sessions.get(sessionId)?.deviceIds.size === 0) sessions.delete(sessionId);
+        }, 5 * 60 * 1000);
+      }
+      break;
+    }
+  }
+}
+
 export function unregisterDevice(id) {
+  leaveSession(id);
   registry.delete(id);
   for (const [reqId, pending] of pendingCaptures) {
     if (pending.deviceId === id) {
@@ -158,8 +205,8 @@ export function initWebSocket(httpServer) {
       } else if (msg.type === 'wakeword') {
         broadcastWakeword(deviceId);
       } else if (msg.type === 'join-session') {
-        joinSession(msg.sessionId, deviceId);
-        broadcastSession(msg.sessionId);
+        const state = joinSession(msg.sessionId, deviceId);
+        ws.send(JSON.stringify({ type: 'session-joined', ...state }));
       } else if (msg.type === 'capture_result') {
         const pending = pendingCaptures.get(msg.requestId);
         if (pending) {

@@ -144,6 +144,36 @@ function addRoutes(r) {
     }
   });
 
+  r.post('/api/voice', upload.single('audio'), async (req, res) => {
+    if (!req.file) return res.status(400).json({ error: 'audio required' });
+    if (!detectVoiceActivity(req.file.buffer)) return res.json({ text: '', skipped: true });
+
+    const t0 = Date.now();
+    try {
+      // STT
+      const text = await stt.transcribe(req.file.buffer);
+
+      // LLM
+      const messages = [{ role: 'user', content: text }];
+      const replyChunks = [];
+      for await (const chunk of chat(messages)) {
+        if (chunk.type === 'content') replyChunks.push(chunk.text);
+      }
+      const reply = replyChunks.join('');
+
+      // TTS
+      const audio = await tts.synthesize(reply);
+
+      const ms = Date.now() - t0;
+      console.log(`[voice] latency: ${ms}ms`);
+      if (ms > 2000) console.error(`[voice] LATENCY EXCEEDED: ${ms}ms`);
+
+      res.set('Content-Type', 'audio/wav').send(audio);
+    } catch (e) {
+      res.status(500).json({ error: e.message });
+    }
+  });
+
   r.get('/api/logs', (req, res) => res.json(logBuffer.slice(-50)));
 
   const adminDist = new URL('../../dist/admin', import.meta.url).pathname;

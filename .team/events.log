@@ -10443,3 +10443,80 @@
 {"ts":"2026-04-07T03:32:49.826Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775530542647","from":"done","to":"testing","title":"Add cpu-only profile to profiles/default.json"}}
 {"ts":"2026-04-07T03:33:07.535Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775529637624","from":"review","to":"testing","title":"setup.sh Node.js detection and idempotency"}}
 {"ts":"2026-04-07T03:33:14.984Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":15,"memoryTotalMB":19,"cpuUser":24.402459,"cpuSystem":67.580247}}}
+{"ts":"2026-04-07T03:33:15.129Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775529637624: testing → blocked"}}
+{"ts":"2026-04-07T03:33:15.129Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775530542647: testing → blocked"}}
+{"ts":"2026-04-07T03:33:15.178Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T03:33:15.178Z","type":"agent_start","agent":"developer","data":{"details":"developer","performance":{"memoryMB":15,"memoryTotalMB":19,"cpuUser":24.414511,"cpuSystem":67.627591}}}
+{"ts":"2026-04-07T03:33:28.458Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"52MB\",\"heapUsed\":\"13MB\",\"heapTotal\":\"19MB\",\"uptime\":\"41702s\"}"}}
+{"ts":"2026-04-07T03:33:31.708Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775530542647","from":"blocked","to":"todo","title":"Add cpu-only profile to profiles/default.json"}}
+{"ts":"2026-04-07T03:33:31.741Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775529637624","from":"blocked","to":"todo","title":"setup.sh Node.js detection and idempotency"}}
+{"ts":"2026-04-07T03:33:36.517Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":19,"cpuUser":24.415037,"cpuSystem":67.628362}}}
+{"ts":"2026-04-07T03:33:36.573Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:33:36.667Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 57"}}
+{"ts":"2026-04-07T03:33:36.667Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:33:36.667Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":15,"memoryTotalMB":18,"cpuUser":24.4467,"cpuSystem":67.746781}}}
+{"ts":"2026-04-07T03:33:46.246Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":14,"cpuUser":24.459327,"cpuSystem":67.762846}}}
+{"ts":"2026-04-07T03:33:46.300Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:33:46.395Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 47"}}
+{"ts":"2026-04-07T03:33:46.395Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:33:46.396Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":8,"memoryTotalMB":14,"cpuUser":24.490792,"cpuSystem":67.881584}}}
+{"ts":"2026-04-07T03:34:06.526Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775529637624","from":"todo","to":"done","title":"setup.sh Node.js detection and idempotency"}}
+{"ts":"2026-04-07T03:34:14.128Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775530801711","from":"review","to":"testing","title":"Wire agentic-store external package"}}
+{"ts":"2026-04-07T03:34:14.161Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775530814854","from":"review","to":"testing","title":"Confirm agentic-voice wrapping in stt.js and tts.js"}}
+{"ts":"2026-04-07T03:34:26.076Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":24.504163,"cpuSystem":67.897057}}}
+{"ts":"2026-04-07T03:34:26.143Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:34:26.258Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 14"}}
+{"ts":"2026-04-07T03:34:26.259Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:34:26.259Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":24.54068,"cpuSystem":68.0437}}}
+{"ts":"2026-04-07T03:34:44.862Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"54MB\",\"heapUsed\":\"8MB\",\"uptime\":\"6900s\"}"}}
+{"ts":"2026-04-07T03:34:49.177Z","type":"task_status","agent":"developer-2","data":{"taskId":"task-1775530542647","from":"todo","to":"in-progress","title":"Add cpu-only profile to profiles/default.json"}}
+{"ts":"2026-04-07T03:34:56.213Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775530235262","from":"inProgress","to":"review","title":"Fix package.json imports map: add agentic-sense entry"}}
+{"ts":"2026-04-07T03:34:57.891Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":24.552688,"cpuSystem":68.05779}}}
+{"ts":"2026-04-07T03:34:57.956Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:34:58.065Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 48"}}
+{"ts":"2026-04-07T03:34:58.066Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:34:58.066Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":24.588849,"cpuSystem":68.197157}}}
+{"ts":"2026-04-07T03:35:09.159Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":24.600924,"cpuSystem":68.208866}}}
+{"ts":"2026-04-07T03:35:09.215Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:35:09.309Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 58"}}
+{"ts":"2026-04-07T03:35:09.309Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:35:09.309Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":11,"memoryTotalMB":17,"cpuUser":24.632919,"cpuSystem":68.327407}}}
+{"ts":"2026-04-07T03:35:16.013Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775530819815","from":"todo","to":"inProgress","title":"Confirm agentic-sense wrapping in runtime/sense.js"}}
+{"ts":"2026-04-07T03:35:24.806Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775531500430","from":"todo","to":"inProgress","title":"Deepen cross-device brain state sharing in hub.js"}}
+{"ts":"2026-04-07T03:35:48.360Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":15,"memoryTotalMB":17,"cpuUser":24.641419,"cpuSystem":68.342121}}}
+{"ts":"2026-04-07T03:35:48.426Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:35:48.548Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 15"}}
+{"ts":"2026-04-07T03:35:48.549Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:35:48.549Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":15,"memoryTotalMB":17,"cpuUser":24.679199,"cpuSystem":68.49327}}}
+{"ts":"2026-04-07T03:36:09.537Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775530819815","from":"inProgress","to":"review","title":"Confirm agentic-sense wrapping in runtime/sense.js"}}
+{"ts":"2026-04-07T03:36:30.308Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":24.693552,"cpuSystem":68.508298}}}
+{"ts":"2026-04-07T03:36:30.364Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:36:30.461Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 49"}}
+{"ts":"2026-04-07T03:36:30.462Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:36:30.462Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":15,"cpuUser":24.726096,"cpuSystem":68.630146}}}
+{"ts":"2026-04-07T03:36:31.289Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775531580027","from":"todo","to":"inProgress","title":"Voice latency benchmark: enforce <2s STT+LLM+TTS end-to-end"}}
+{"ts":"2026-04-07T03:36:57.299Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":24.738292,"cpuSystem":68.644457}}}
+{"ts":"2026-04-07T03:36:57.355Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:36:57.450Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 59"}}
+{"ts":"2026-04-07T03:36:57.450Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:36:57.450Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":24.771055,"cpuSystem":68.76309}}}
+{"ts":"2026-04-07T03:37:06.245Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":24.771363,"cpuSystem":68.763657}}}
+{"ts":"2026-04-07T03:37:06.301Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:37:06.397Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 16"}}
+{"ts":"2026-04-07T03:37:06.397Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:37:06.397Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":24.804787,"cpuSystem":68.8833}}}
+{"ts":"2026-04-07T03:37:15.320Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:11, done:157)"}}
+{"ts":"2026-04-07T03:37:15.320Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:11, done:157)\"}"}}
+{"ts":"2026-04-07T03:37:28.489Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775531580027","from":"inProgress","to":"review","title":"Voice latency benchmark: enforce <2s STT+LLM+TTS end-to-end"}}
+{"ts":"2026-04-07T03:37:37.021Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:11, done:157)"}}
+{"ts":"2026-04-07T03:37:37.022Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:11, done:157)\"}"}}
+{"ts":"2026-04-07T03:37:37.260Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":24.83286,"cpuSystem":68.926977}}}
+{"ts":"2026-04-07T03:37:37.311Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:37:37.398Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 50"}}
+{"ts":"2026-04-07T03:37:37.399Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:37:37.399Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":12,"memoryTotalMB":18,"cpuUser":24.863258,"cpuSystem":69.036115}}}
+{"ts":"2026-04-07T03:37:45.059Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775530801711","from":"testing","to":"done","title":"Wire agentic-store external package"}}
+{"ts":"2026-04-07T03:37:45.089Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775530814854","from":"testing","to":"done","title":"Confirm agentic-voice wrapping in stt.js and tts.js"}}
+{"ts":"2026-04-07T03:37:46.415Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775530548652","from":"todo","to":"inProgress","title":"Implement server-side VAD silence suppression"}}
+{"ts":"2026-04-07T03:37:55.222Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775531500430","from":"inProgress","to":"review","title":"Deepen cross-device brain state sharing in hub.js"}}
+{"ts":"2026-04-07T03:37:59.398Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":17,"memoryTotalMB":24,"cpuUser":3.329598,"cpuSystem":6.264536}}}

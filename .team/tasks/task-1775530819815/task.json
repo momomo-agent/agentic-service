@@ -2,13 +2,13 @@
   "id": "task-1775530819815",
   "title": "Confirm agentic-sense wrapping in runtime/sense.js",
   "description": "Verify runtime/sense.js wraps agentic-sense (MediaPipe) package. If it is a local stub, wire it to the actual package.",
-  "status": "todo",
+  "status": "review",
   "priority": "P1",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m77",
   "hasDesign": true,
   "created": "2026-04-07T03:00:19.815Z",
-  "updated": "2026-04-07T03:32:35.956Z",
+  "updated": "2026-04-07T03:36:09.536Z",
   "milestoneId": "m77"
 }
