@@ -2,12 +2,13 @@
   "id": "task-1775583813340",
   "title": "Verify wake word server-side pipeline is not a stub",
   "description": "Check sense.js startWakeWordPipeline() — confirm it has real mic/audio capture or document as intentional design. PRD gap: wake word server-side mic capture pipeline unverified.",
-  "status": "todo",
+  "status": "review",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m93",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-07T17:43:33.340Z",
-  "updated": "2026-04-07T17:43:33.341Z"
+  "updated": "2026-04-07T18:04:48.922Z",
+  "milestoneId": "m93"
 }

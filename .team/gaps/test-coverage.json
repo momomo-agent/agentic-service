@@ -1,12 +1,10 @@
 {
-  "totalTests": 642,
-  "passed": 573,
-  "failed": 69,
+  "totalTests": 6,
+  "passed": 5,
+  "failed": 1,
   "edgeCases": [
-    "optimizer.js returns extra fields not expected by deep-equal assertions",
-    "agentic-voice/openai-tts and openai-whisper modules not resolving in test environment",
-    "sox not installed — mic spawn fails silently in sense adapter tests",
-    "agentic-sense adapter named export mismatches still present in some test paths"
+    "≤60s reload timing in real network conditions",
+    "In-flight request safety during config reload"
   ],
-  "coverage": "89%"
+  "coverage": "83%"
 }

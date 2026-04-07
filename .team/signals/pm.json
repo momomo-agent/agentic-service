@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T17:44:05.211Z",
+  "timestamp": "2026-04-07T17:48:02.572Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Unblocked m91 test task (stale blocker cleared), noted m92 review task awaiting tester, created m93 with 3 tasks targeting remaining PRD partial gaps (STT/TTS, wake word, cloud fallback, npx entrypoint)"
+  "summary": "Fixed missing milestoneId on 10 tasks (m91/m92/m93), assigned task-1775579897264 to tester. m91 waiting on test suite run, m92 waiting on tester review approval, m93 queued."
 }
