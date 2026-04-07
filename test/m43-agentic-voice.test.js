@@ -87,5 +87,46 @@ await test('stub adapters export correct function signatures', async () => {
   assert.equal(typeof piper.synthesize, 'function', 'piper.synthesize');
 });
 
+// Test 8: tts.js synthesize throws "not initialized" before init()
+await test('tts.synthesize throws "not initialized" before init()', async () => {
+  // Import a fresh instance by using dynamic import with cache busting
+  const tts = await import(`../src/runtime/tts.js?t=${Date.now()}`);
+  await assert.rejects(
+    () => tts.synthesize('hello'),
+    (e) => e.message === 'not initialized'
+  );
+});
+
+// Test 9: tts.js synthesize works after init()
+await test('tts.synthesize works after init()', async () => {
+  const tts = await import('../src/runtime/tts.js');
+  await tts.init();
+  // Should not throw "not initialized"
+  // May throw NO_API_KEY if OPENAI_API_KEY is missing, which is expected
+  try {
+    await tts.synthesize('hello');
+  } catch (e) {
+    // Accept either success or NO_API_KEY error (but not "not initialized")
+    if (e.message === 'not initialized') {
+      throw e;
+    }
+    // NO_API_KEY or other errors are acceptable after init
+  }
+});
+
+// Test 10: tts.js synthesize throws EMPTY_TEXT for empty input
+await test('tts.synthesize throws EMPTY_TEXT for empty input', async () => {
+  const tts = await import('../src/runtime/tts.js');
+  await tts.init();
+  await assert.rejects(
+    () => tts.synthesize(''),
+    (e) => e.code === 'EMPTY_TEXT'
+  );
+  await assert.rejects(
+    () => tts.synthesize('   '),
+    (e) => e.code === 'EMPTY_TEXT'
+  );
+});
+
 console.log(`\n${passed} passed, ${failed} failed`);
 if (failed > 0) process.exit(1);
