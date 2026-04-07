@@ -1,4 +1,4 @@
-import { createPipeline } from 'agentic-sense';
+import { createPipeline } from '#agentic-sense';
 import { EventEmitter } from 'node:events';
 
 let pipeline = null;

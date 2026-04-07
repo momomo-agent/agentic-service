@@ -1,8 +1,17 @@
 {
   "workflowId": "default",
   "nodeId": "work_loop",
-  "stepIndex": 2,
+  "stepIndex": 0,
   "visitedNodes": [
+    "work_loop",
+    "milestone_qg",
+    "monitor",
+    "pm_decide",
+    "work_loop",
+    "milestone_qg",
+    "work_loop",
+    "milestone_qg",
+    "work_loop",
     "milestone_qg",
     "work_loop",
     "milestone_qg",
@@ -11,9 +20,9 @@
     "work_loop"
   ],
   "loopIterations": {
-    "work_loop": 100
+    "work_loop": 46
   },
-  "transitionDepth": 6,
+  "transitionDepth": 15,
   "contextOverrides": {},
-  "timestamp": "2026-04-07T03:32:00.082Z"
+  "timestamp": "2026-04-07T03:32:47.119Z"
 }
