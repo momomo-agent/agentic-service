@@ -30219,3 +30219,15 @@ The task is now in review status.
 [2026-04-07T11:48:18.639Z] developer agent completed
 [2026-04-07 11:48:18] [agent_complete] developer completed successfully
 [2026-04-07 11:48:18] [workflow] developer [SIGNAL] completed: Wired agentic-sense as external package dependency via import map
+Both tasks are complete.
+
+**task-1775530542647** (cpu-only profile): 11 tests passed — profile exists in `profiles/default.json` with `gemma2:2b`/`q4`, appears before catch-all, existing profiles unaffected, matcher correctly routes `gpu.type='cpu-only'` hardware. → **done**
+
+**task-1775534863944** (voice latency benchmark): 3 tests passed — `latency-log.js` record/p95/reset work correctly, p95 pipeline latency ~277ms (well under 2000ms limit), instrumentation confirmed in stt.js, llm.js, tts.js. → **done**
+
+```signal
+{"status": "completed", "summary": "Tested and passed 2 tasks: cpu-only profile (11 tests) and voice latency benchmark (3 tests). Both marked done."}
+```
+[2026-04-07T11:48:19.287Z] tester-1 agent completed
+[2026-04-07 11:48:19] [agent_complete] tester-1 completed successfully
+[2026-04-07 11:48:19] [workflow] tester-1 [SIGNAL] completed: Tested and passed 2 tasks: cpu-only profile (11 tests) and voice latency benchmark (3 tests). Both m
