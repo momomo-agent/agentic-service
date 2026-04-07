@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T10:55:02.853Z",
+  "timestamp": "2026-04-07T10:59:04.688Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Analyzed 5 active milestones, identified review bottleneck and M83 blocker, waiting for tester approvals"
+  "status": "blocked",
+  "summary": "All active tasks are either in-progress or awaiting tester review. m83/m84 unblock once task-1775538907092 and task-1775538907396 pass review. No new tasks needed — waiting on testers to approve review items."
 }
