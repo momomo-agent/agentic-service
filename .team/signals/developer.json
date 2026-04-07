@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T14:03:50.428Z",
+  "timestamp": "2026-04-07T14:05:21.824Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": ""
+  "summary": "Fixed CDN profiles fallback (try/catch in loadBuiltinProfiles) and SIGINT graceful drain (startDrain+waitDrain before close) in two tasks"
 }

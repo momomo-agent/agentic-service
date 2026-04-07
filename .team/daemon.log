@@ -31660,3 +31660,17 @@ Done. Here's the summary:
 [2026-04-07T14:05:20.705Z] tester-2 agent completed
 [2026-04-07 14:05:20] [agent_complete] tester-2 completed successfully
 [2026-04-07 14:05:20] [workflow] tester-2 [SIGNAL] completed: Tested task-1775569820076: 8/11 passed, 3 failed due to setInterval vs requestAnimationFrame mismatc
+Both tasks are complete:
+
+- **task-1775569826557** (CDN profiles fallback): Added try/catch to `loadBuiltinProfiles()` in `src/detector/profiles.js` — returns `{ version: '0', profiles: [] }` if default.json is missing/unreadable.
+
+- **task-1775569826588** (SIGINT graceful drain): Updated SIGINT handler in `src/server/api.js` to call `startDrain()` → `waitDrain(10_000)` → `httpServer.close()` before exit.
+
+Both moved to `review`.
+
+```signal
+{"status": "completed", "summary": "Fixed CDN profiles fallback (try/catch in loadBuiltinProfiles) and SIGINT graceful drain (startDrain+waitDrain before close) in two tasks"}
+```
+[2026-04-07T14:05:21.824Z] developer agent completed
+[2026-04-07 14:05:21] [agent_complete] developer completed successfully
+[2026-04-07 14:05:21] [workflow] developer [SIGNAL] completed: Fixed CDN profiles fallback (try/catch in loadBuiltinProfiles) and SIGINT graceful drain (startDrain
