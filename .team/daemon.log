@@ -32644,3 +32644,66 @@ M89 is unblocked on the dev side. M90 remains planned and ready to activate once
 [2026-04-07T15:10:07.307Z] developer agent completed
 [2026-04-07 15:10:07] [agent_complete] developer completed successfully
 [2026-04-07 15:10:07] [workflow] developer [SIGNAL] completed: 
+[2026-04-07 15:10:07] [workflow] post [POST] task-1775573593639: inProgress → review
+[2026-04-07 15:10:21] [perf] daemon {"rss":"58MB","heapUsed":"13MB","uptime":"600s"}
+[2026-04-07 15:10:21] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:6, done:201)
+[2026-04-07 15:10:21] [agent_start] daemon Still busy (10min), skipping
+[2026-04-07 15:10:35] [agent_complete] daemon DevTeam daemon stopped
+[2026-04-07 15:10:38] [workflow] daemon Reset stuck agent: tester
+[2026-04-07 15:10:38] [agent_start] daemon DevTeam daemon started (safety=600s, timeout=7200s)
+[2026-04-07 15:10:38] [workflow] monitor [HEALTH] Monitor started
+[2026-04-07 15:10:38] [workflow]  [RESUME] Resuming from checkpoint: node=work_loop, step=2
+[2026-04-07 15:10:38] [agent_start] work_loop [NODE] work_loop - PM 调度中心 — PM 评估后并行派发所有角色，全部完成后回 PM
+[2026-04-07 15:10:38] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-07 15:10:38] [workflow] work_loop [EXEC] pm
+[2026-04-07 15:10:38] [agent_start] pm 管理任务和里程碑
+[2026-04-07T15:10:38.378Z] Running pm agent...
+[2026-04-07T15:11:00.426Z] tester agent failed: Command failed: claude --print --dangerously-skip-permissions < "/Users/kenefe/LOCAL/momo-agent/projects/agentic-service/.team/.prompt-tester-1775574352641.md"
+Docker and README exist. PRD gap is stale. m90 tasks cover the remaining real gaps. Current state is healthy:
+
+- m89: 1 task in `review` (agentic-sense wiring), 1 `done` — waiting for tester
+- m90: 2 tasks in `review`, 2 in `todo` — active work in progress
+- Test coverage: 91% ✓
+
+No new tasks needed. m90 already covers: wake word pipeline, cloud fallback, LAN tunnel, npx startup.
+
+```signal
+{"status": "completed", "summary": "Assessed state: m89 has 1 task in review (blocked on tester), m90 has 4 tasks covering remaining gaps. No new tasks needed — coverage 91%, Docker/README confirmed present, all gaps addressed."}
+```
+[2026-04-07T15:11:54.502Z] pm agent completed
+[2026-04-07 15:11:54] [agent_complete] pm completed successfully
+[2026-04-07 15:11:54] [workflow] pm [SIGNAL] completed: Assessed state: m89 has 1 task in review (blocked on tester), m90 has 4 tasks covering remaining gap
+[2026-04-07 15:11:54] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 15:11:54] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-07 15:11:54] [workflow] work_loop [PARALLEL] implement, run-tests
+[2026-04-07 15:11:54] [workflow] work_loop [EXEC] developer
+[2026-04-07 15:11:54] [agent_start] developer 实现功能
+[2026-04-07 15:11:54] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-07 15:11:54] [agent_start] tester-1 验证功能
+[2026-04-07 15:11:54] [agent_start] tester-2 验证功能
+[2026-04-07T15:11:54.601Z] Running tester-2 agent...
+[2026-04-07T15:11:54.601Z] Running tester-1 agent...
+[2026-04-07T15:11:54.601Z] Running developer agent...
+[2026-04-07 15:15:38] [perf] daemon {"rss":"74MB","heapUsed":"10MB","uptime":"300s"}
+Done. Here's a summary of what I did:
+
+**Task: task-1775573593639 — Verify LAN Tunnel and HTTPS Cert Generation**
+
+**Result: BLOCKED (4 failures)**
+
+Failures found:
+1. `src/tunnel.js` is still a top-level script — does not export `startTunnel(port)` as required by design
+2. `selfsigned` package missing from `package.json` dependencies — `generateCert()` fails at runtime
+
+Tests written: `test/m90-tunnel-cert.test.js` (15 tests, 11 passed, 4 failed)
+
+Developer needs to:
+1. Refactor `tunnel.js` to `export function startTunnel(port)` and remove top-level execution
+2. Add `selfsigned` to `package.json` dependencies
+
+```signal
+{"status": "completed", "summary": "Tested task-1775573593639 (LAN tunnel + HTTPS cert). 4 failures: tunnel.js not refactored to export startTunnel(port), selfsigned missing from package.json. Task marked blocked, test-result.md written."}
+```
+[2026-04-07T15:15:56.940Z] tester-2 agent completed
+[2026-04-07 15:15:56] [agent_complete] tester-2 completed successfully
+[2026-04-07 15:15:56] [workflow] tester-2 [SIGNAL] completed: Tested task-1775573593639 (LAN tunnel + HTTPS cert). 4 failures: tunnel.js not refactored to export 

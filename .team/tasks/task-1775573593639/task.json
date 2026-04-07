@@ -2,13 +2,13 @@
   "id": "task-1775573593639",
   "title": "Verify LAN tunnel and HTTPS cert generation",
   "description": "Confirm tunnel.js establishes HTTPS connection on LAN. Verify cert.js generates valid self-signed cert.",
-  "status": "inProgress",
+  "status": "blocked",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "tester-2",
   "blockedBy": [],
   "groupId": "m90",
   "hasDesign": true,
   "created": "2026-04-07T14:53:13.640Z",
-  "updated": "2026-04-07T15:09:59.992Z",
+  "updated": "2026-04-07T15:15:47.568Z",
   "milestoneId": "m90"
 }

@@ -1,9 +1,12 @@
 {
-  "totalTests": 10,
-  "passed": 10,
-  "failed": 0,
+  "totalTests": 805,
+  "passed": 725,
+  "failed": 73,
   "edgeCases": [
-    "No test for matchProfile() logic against this file"
+    "agentic-sense mock not set up in m87-sense-pipeline.test.js — createPipeline fails at runtime",
+    "48 other test files missing vi.mock for agentic-sense or related modules",
+    "tunnel.js startTunnel(port) not exported — SIGINT subprocess kill untestable",
+    "generateCert runtime validation blocked by missing selfsigned dependency"
   ],
-  "coverage": "100%"
+  "coverage": "90%"
 }
