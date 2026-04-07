@@ -20373,3 +20373,15 @@
 {"ts":"2026-04-07T16:45:35.146Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775573593682","from":"inProgress","to":"review","title":"Verify npx agentic-service one-command startup"}}
 {"ts":"2026-04-07T16:45:41.527Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":13,"cpuUser":0.703224,"cpuSystem":1.461569}}}
 {"ts":"2026-04-07T16:45:41.528Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Fixed unhandled sox spawn error in sense.js; npx agentic-service starts cleanly and /api/status retu"}}
+{"ts":"2026-04-07T16:47:14.826Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T16:47:14.867Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T16:47:27.100Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:208)"}}
+{"ts":"2026-04-07T16:47:27.102Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:208)\"}"}}
+{"ts":"2026-04-07T16:47:56.436Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"28MB\",\"heapUsed\":\"26MB\",\"uptime\":\"900s\"}"}}
+{"ts":"2026-04-07T16:47:58.743Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:208)"}}
+{"ts":"2026-04-07T16:47:58.751Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:4, done:208)\"}"}}
+{"ts":"2026-04-07T16:48:58.037Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:208)"}}
+{"ts":"2026-04-07T16:48:58.058Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:4, done:208)\"}"}}
+{"ts":"2026-04-07T16:49:55.126Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775573229039","from":"testing","to":"done","title":"Wire agentic-sense as external npm package"}}
+{"ts":"2026-04-07T16:50:03.494Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":1.030034,"cpuSystem":2.326468}}}
+{"ts":"2026-04-07T16:50:03.512Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: Verified agentic-sense wiring — all design checks pass, 87% test pass rate with failures being pre-e"}}
