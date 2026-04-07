@@ -4,10 +4,10 @@
   "description": "Verify bin/agentic-service.js is correctly wired so npx agentic-service launches without error — check package.json bin field and entrypoint",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m64",
   "hasDesign": false,
   "created": "2026-04-07T02:00:54.959Z",
-  "updated": "2026-04-07T02:00:54.960Z"
+  "updated": "2026-04-07T02:05:49.478Z"
 }

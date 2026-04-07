@@ -8834,3 +8834,51 @@
 {"ts":"2026-04-07T02:04:06.517Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":8,"memoryTotalMB":17,"cpuUser":17.016973,"cpuSystem":44.956169}}}
 {"ts":"2026-04-07T02:04:07.914Z","type":"task_created","agent":null,"data":{"taskId":"task-1775527447913","title":"cpu-only profile — profiles/default.json","priority":"P1","group":"m65"}}
 {"ts":"2026-04-07T02:04:08.963Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":9,"cpuUser":0.702938,"cpuSystem":1.450129}}}
+{"ts":"2026-04-07T02:04:12.589Z","type":"task_created","agent":null,"data":{"taskId":"task-1775527452588","title":"CDN profiles 7-day cache staleness — profiles.js","priority":"P1","group":"m65"}}
+{"ts":"2026-04-07T02:04:14.903Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 24min (active:29, done:129)"}}
+{"ts":"2026-04-07T02:04:14.903Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 24min (active:29, done:129)\"}"}}
+{"ts":"2026-04-07T02:04:16.506Z","type":"task_created","agent":null,"data":{"taskId":"task-1775527456505","title":"setup.sh Node.js detection and idempotency verification","priority":"P1","group":"m65"}}
+{"ts":"2026-04-07T02:04:23.405Z","type":"task_created","agent":null,"data":{"taskId":"task-1775527463404","title":"Docker end-to-end build verification","priority":"P1","group":"m65"}}
+{"ts":"2026-04-07T02:04:36.296Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 81min (active:31, done:129)"}}
+{"ts":"2026-04-07T02:04:36.296Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 81min (active:31, done:129)\"}"}}
+{"ts":"2026-04-07T02:04:44.808Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"68MB\",\"heapUsed\":\"11MB\",\"uptime\":\"1500s\"}"}}
+{"ts":"2026-04-07T02:04:44.901Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 25min (active:31, done:129)"}}
+{"ts":"2026-04-07T02:04:44.901Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 25min (active:31, done:129)\"}"}}
+{"ts":"2026-04-07T02:04:51.135Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":17.023804,"cpuSystem":44.967121}}}
+{"ts":"2026-04-07T02:04:51.183Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:04:51.262Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 62"}}
+{"ts":"2026-04-07T02:04:51.263Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:04:51.263Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":17.051585,"cpuSystem":45.067692}}}
+{"ts":"2026-04-07T02:04:53.106Z","type":"task_status","agent":null,"data":{"taskId":"task-1775527447913","from":"todo","to":"cancelled","title":"cpu-only profile — profiles/default.json"}}
+{"ts":"2026-04-07T02:04:53.138Z","type":"task_status","agent":null,"data":{"taskId":"task-1775527452588","from":"todo","to":"cancelled","title":"CDN profiles 7-day cache staleness — profiles.js"}}
+{"ts":"2026-04-07T02:04:53.171Z","type":"task_status","agent":null,"data":{"taskId":"task-1775527456505","from":"todo","to":"cancelled","title":"setup.sh Node.js detection and idempotency verification"}}
+{"ts":"2026-04-07T02:04:53.205Z","type":"task_status","agent":null,"data":{"taskId":"task-1775527463404","from":"todo","to":"cancelled","title":"Docker end-to-end build verification"}}
+{"ts":"2026-04-07T02:05:05.395Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":17.051847,"cpuSystem":45.068269}}}
+{"ts":"2026-04-07T02:05:05.447Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:05:05.526Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 18"}}
+{"ts":"2026-04-07T02:05:05.526Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:05:05.527Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":17.080416,"cpuSystem":45.171377}}}
+{"ts":"2026-04-07T02:05:06.303Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 82min (active:27, done:129)"}}
+{"ts":"2026-04-07T02:05:06.304Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 82min (active:27, done:129)\"}"}}
+{"ts":"2026-04-07T02:05:11.947Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":6,"memoryTotalMB":13,"cpuUser":0.723213,"cpuSystem":1.484589}}}
+{"ts":"2026-04-07T02:05:14.902Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 25min (active:27, done:129)"}}
+{"ts":"2026-04-07T02:05:14.903Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 25min (active:27, done:129)\"}"}}
+{"ts":"2026-04-07T02:05:19.258Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":17.093074,"cpuSystem":45.185493}}}
+{"ts":"2026-04-07T02:05:19.305Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:05:19.384Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 5"}}
+{"ts":"2026-04-07T02:05:19.384Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:05:19.384Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":17.12078,"cpuSystem":45.284102}}}
+{"ts":"2026-04-07T02:05:20.821Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775524084592","from":"testing","to":"done","title":"SIGINT graceful drain during in-flight requests"}}
+{"ts":"2026-04-07T02:05:48.334Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775524084623","from":"testing","to":"done","title":"setup.sh Node.js detection and idempotency"}}
+{"ts":"2026-04-07T02:05:48.367Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775524084653","from":"testing","to":"done","title":"Ollama non-200 fallback bug fix"}}
+{"ts":"2026-04-07T02:05:48.399Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775524560816","from":"testing","to":"done","title":"src/detector/gpu-detector.js — merge into hardware.js"}}
+{"ts":"2026-04-07T02:05:53.615Z","type":"task_created","agent":null,"data":{"taskId":"task-1775527553614","title":"cpu-only profile — profiles/default.json","priority":"P1","group":"m66"}}
+{"ts":"2026-04-07T02:05:59.986Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":17.127317,"cpuSystem":45.295628}}}
+{"ts":"2026-04-07T02:06:00.038Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:06:00.112Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 74"}}
+{"ts":"2026-04-07T02:06:00.112Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:06:00.113Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":12,"memoryTotalMB":16,"cpuUser":17.154903,"cpuSystem":45.39498}}}
+{"ts":"2026-04-07T02:06:01.278Z","type":"task_created","agent":null,"data":{"taskId":"task-1775527561277","title":"CDN profiles 7-day cache staleness — profiles.js","priority":"P1","group":"m66"}}
+{"ts":"2026-04-07T02:06:01.312Z","type":"task_created","agent":null,"data":{"taskId":"task-1775527561311","title":"setup.sh Node.js detection and idempotency","priority":"P1","group":"m66"}}
+{"ts":"2026-04-07T02:06:01.342Z","type":"task_created","agent":null,"data":{"taskId":"task-1775527561341","title":"Docker end-to-end build verification","priority":"P1","group":"m66"}}
+{"ts":"2026-04-07T02:06:03.515Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":14,"cpuUser":0.73639,"cpuSystem":1.506009}}}

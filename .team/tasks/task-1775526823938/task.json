@@ -4,11 +4,11 @@
   "description": "Rewrite optimizer.js to output hardware-adaptive config (thread count, memory limits, model selection) — currently contains ollama setup code instead of optimization logic",
   "status": "todo",
   "priority": "P0",
-  "assignee": "developer-2",
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m62",
   "hasDesign": true,
   "created": "2026-04-07T01:53:43.938Z",
-  "updated": "2026-04-07T01:58:54.084Z",
+  "updated": "2026-04-07T02:05:31.050Z",
   "milestoneId": "m62"
 }

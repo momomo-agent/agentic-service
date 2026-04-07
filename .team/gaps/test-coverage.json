@@ -1,9 +1,12 @@
 {
-  "totalTests": 25,
-  "passed": 25,
+  "totalTests": 19,
+  "passed": 19,
   "failed": 0,
   "edgeCases": [
-    "Ollama non-200 should throw directly per design, but implementation falls through to cloud — documented as known bug"
+    "SSE streaming responses counted as in-flight until stream ends",
+    "waitDrain timeout exceeded — forces process.exit(1)",
+    "Ollama 200 but stream errors mid-way — not tested",
+    "setup.sh on Linux without apt or nvm — falls back to curl nvm install"
   ],
   "coverage": "100%"
 }
