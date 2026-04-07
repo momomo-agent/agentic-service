@@ -1,9 +1,10 @@
 {
-  "totalTests": 10,
-  "passed": 10,
-  "failed": 0,
+  "totalTests": 9,
+  "passed": 3,
+  "failed": 6,
   "edgeCases": [
-    "No test for matchProfile() logic against this file"
+    "agentic-embed/agentic-sense/agentic-store/agentic-voice listed as npm deps but don't exist in registry — docker build fails",
+    "docker-compose.yml build context uses 'build: ..' without specifying dockerfile path"
   ],
-  "coverage": "100%"
+  "coverage": "33%"
 }
