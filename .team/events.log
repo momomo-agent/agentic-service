@@ -11744,3 +11744,18 @@
 {"ts":"2026-04-07T04:53:33.477Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775536918185","from":"testing","to":"done","title":"Add matchProfile() unit tests"}}
 {"ts":"2026-04-07T04:53:33.486Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"10MB\",\"heapUsed\":\"15MB\",\"heapTotal\":\"21MB\",\"uptime\":\"46507s\"}"}}
 {"ts":"2026-04-07T04:53:39.265Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":6.63341,"cpuSystem":14.294923}}}
+{"ts":"2026-04-07T05:01:40.383Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:10, done:170)"}}
+{"ts":"2026-04-07T05:01:40.432Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:10, done:170)\"}"}}
+{"ts":"2026-04-07T05:01:40.617Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:10, done:170)"}}
+{"ts":"2026-04-07T05:01:40.634Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:10, done:170)\"}"}}
+{"ts":"2026-04-07T05:01:43.105Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":34.231736,"cpuSystem":100.89784}}}
+{"ts":"2026-04-07T05:01:46.656Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T05:01:46.890Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 13"}}
+{"ts":"2026-04-07T05:01:46.892Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T05:01:46.896Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":18,"cpuUser":34.297056,"cpuSystem":101.186114}}}
+{"ts":"2026-04-07T05:02:05.781Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":17,"memoryTotalMB":19,"cpuUser":34.315772,"cpuSystem":101.249455}}}
+{"ts":"2026-04-07T05:02:05.967Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T05:02:06.114Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 14"}}
+{"ts":"2026-04-07T05:02:06.115Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T05:02:06.116Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":17,"memoryTotalMB":25,"cpuUser":34.357716,"cpuSystem":101.430646}}}
+{"ts":"2026-04-07T05:02:19.668Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":17,"memoryTotalMB":19,"cpuUser":7.116434,"cpuSystem":15.72699}}}
