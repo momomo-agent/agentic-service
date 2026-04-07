@@ -76,6 +76,16 @@ export async function startWakeWordPipeline(onWake) {
   if (_wakeActive) return () => {};
   _wakeActive = true;
 
+  // check arecord is available (required by mic package)
+  try {
+    const { execSync } = await import('node:child_process');
+    execSync('which arecord', { stdio: 'ignore' });
+  } catch {
+    console.warn('[sense] arecord not found — wake word pipeline disabled');
+    _wakeActive = false;
+    return () => {};
+  }
+
   let micMod;
   try {
     micMod = (await import('mic')).default;
@@ -90,7 +100,7 @@ export async function startWakeWordPipeline(onWake) {
     inst = micMod({ rate: '16000', channels: '1', encoding: 'signed-integer', device: 'default' });
     const stream = inst.getAudioStream();
     stream.on('data', (buf) => { if (_calcEnergy(buf) > 1000) onWake(); });
-    stream.on('error', (err) => console.error('[sense] mic error:', err));
+    stream.on('error', (err) => console.warn('[sense] mic error:', err.message));
     inst.start();
     _micInstance = inst;
     console.log('[sense] Wake word pipeline started');
