@@ -4,10 +4,10 @@
   "description": "Ensure SIGINT handler waits for in-flight requests to complete before process exit",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m74",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-07T02:40:37.561Z",
-  "updated": "2026-04-07T02:40:43.487Z"
+  "updated": "2026-04-07T02:45:08.938Z"
 }

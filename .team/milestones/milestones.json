@@ -791,7 +791,7 @@
     {
       "id": "m68",
       "name": "M68: DBB Compliance — Docker, SIGINT, Coverage, CDN Cache, Setup",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775527919479",
         "task-1775527924127",
@@ -862,6 +862,18 @@
         "task-1775529080520"
       ],
       "created": "2026-04-07T02:31:26.070Z"
+    },
+    {
+      "id": "m74",
+      "name": "M74: DBB Compliance — Docker, SIGINT, Coverage, Setup",
+      "status": "active",
+      "tasks": [
+        "task-1775529630008",
+        "task-1775529637561",
+        "task-1775529637595",
+        "task-1775529637624"
+      ],
+      "created": "2026-04-07T02:42:31.808Z"
     }
   ]
 }
