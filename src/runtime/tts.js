@@ -2,9 +2,9 @@ import { detect } from '../detector/hardware.js';
 import { getProfile } from '../detector/profiles.js';
 
 const ADAPTERS = {
-  kokoro:  () => import('agentic-voice/kokoro'),
-  piper:   () => import('agentic-voice/piper'),
-  default: () => import('agentic-voice/openai-tts'),
+  kokoro:  () => import('#agentic-voice/kokoro'),
+  piper:   () => import('#agentic-voice/piper'),
+  default: () => import('#agentic-voice/openai-tts'),
 };
 
 let adapter = null;

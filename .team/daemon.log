@@ -29344,3 +29344,13 @@ All 3 tasks in 'review' status cannot be claimed (likely already assigned to oth
 [2026-04-07T10:55:26.993Z] tester-1 agent completed
 [2026-04-07 10:55:26] [agent_complete] tester-1 completed successfully
 [2026-04-07 10:55:26] [workflow] tester-1 [SIGNAL] completed: Checked all tasks in review status — task-1775536622791 (assigned to tester-2), task-1775538907396, 
+[2026-04-07 10:56:06] [perf] daemon {"rss":"54MB","heapUsed":"25MB","uptime":"1500s"}
+[2026-04-07 10:56:09] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 25min (active:9, done:173)
+Both blocked tasks still can't be claimed (their blocker tasks are in "review" not "done" yet). No more claimable tasks available for me right now.
+
+```signal
+{"status": "completed", "summary": "Fixed TTS import paths (#agentic-voice/* prefixes in src/runtime/tts.js) and wired agentic-sense as external package (updated src/runtime/sense.js import + package.json dependencies + removed #agentic-sense from imports map). Both tasks moved to review."}
+```
+[2026-04-07T10:56:35.097Z] developer agent completed
+[2026-04-07 10:56:35] [agent_complete] developer completed successfully
+[2026-04-07 10:56:35] [workflow] developer [SIGNAL] completed: Fixed TTS import paths (#agentic-voice/* prefixes in src/runtime/tts.js) and wired agentic-sense as 

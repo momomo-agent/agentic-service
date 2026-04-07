@@ -41,9 +41,9 @@
   },
   "imports": {
     "#agentic-embed": "./src/runtime/adapters/embed.js",
-    "#agentic-sense": "./src/runtime/adapters/sense.js"
   },
   "dependencies": {
+    "agentic-sense": "*",
     "agentic-store": "*",
     "agentic-embed": "*",
     "agentic-voice": "*",
