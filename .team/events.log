@@ -20675,3 +20675,87 @@
 {"ts":"2026-04-07T17:31:05.442Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:2, done:214)\"}"}}
 {"ts":"2026-04-07T17:31:10.389Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":3.463867,"cpuSystem":8.163035}}}
 {"ts":"2026-04-07T17:31:10.390Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: "}}
+{"ts":"2026-04-07T17:31:10.583Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775579897264: inProgress → review"}}
+{"ts":"2026-04-07T17:31:10.753Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 16"}}
+{"ts":"2026-04-07T17:31:10.766Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T17:31:10.767Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":3.502947,"cpuSystem":8.295925}}}
+{"ts":"2026-04-07T17:31:52.813Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":3.528479,"cpuSystem":8.330394}}}
+{"ts":"2026-04-07T17:31:52.814Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Assessed M91/M92 state. M91 has 1 task in review awaiting tester approval. M92's todo task is unbloc"}}
+{"ts":"2026-04-07T17:31:52.882Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T17:31:52.882Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T17:31:52.882Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T17:31:52.882Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T17:31:52.882Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":3.54235,"cpuSystem":8.385279}}}
+{"ts":"2026-04-07T17:31:52.883Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-07T17:31:52.883Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":3.542548,"cpuSystem":8.385667}}}
+{"ts":"2026-04-07T17:32:05.443Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:32:05.443Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:32:51.591Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775579897264","from":"review","to":"testing","title":"Re-run full test suite and confirm >=90% pass rate"}}
+{"ts":"2026-04-07T17:32:56.294Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (60min), skipping","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":3.589742,"cpuSystem":8.454046}}}
+{"ts":"2026-04-07T17:32:56.639Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"41MB\",\"heapUsed\":\"8MB\",\"uptime\":\"3601s\"}"}}
+{"ts":"2026-04-07T17:33:05.434Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:33:05.435Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:33:35.443Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T17:33:35.444Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T17:34:05.535Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:34:05.536Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:34:19.210Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775581731172","from":"todo","to":"inProgress","title":"Verify test pass rate >=90% after mock fixes"}}
+{"ts":"2026-04-07T17:35:06.662Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 12min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:35:06.663Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 12min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:36:10.388Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 13min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:36:10.395Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 13min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:37:08.328Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 14min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:37:08.362Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 14min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:37:56.869Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"18MB\",\"heapUsed\":\"8MB\",\"uptime\":\"3901s\"}"}}
+{"ts":"2026-04-07T17:38:09.721Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 15min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:38:09.728Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 15min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:38:40.596Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T17:38:40.605Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T17:39:29.548Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 16min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:39:38.444Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 16min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:40:14.403Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 17min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:40:14.487Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 17min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:41:11.002Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 18min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:41:11.005Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 18min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:41:49.314Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775579897264","from":"testing","to":"blocked","title":"Re-run full test suite and confirm >=90% pass rate"}}
+{"ts":"2026-04-07T17:41:53.488Z","type":"error","agent":"developer","data":{"details":"hung (0% CPU for 10min), killing"}}
+{"ts":"2026-04-07T17:41:53.542Z","type":"error","agent":"developer","data":{"details":"timed out after 3900s, skipping"}}
+{"ts":"2026-04-07T17:41:56.100Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775581731172: inProgress → review"}}
+{"ts":"2026-04-07T17:41:56.187Z","type":"error","agent":"tester","data":{"details":"hung (0% CPU for 10min), killing"}}
+{"ts":"2026-04-07T17:41:56.266Z","type":"error","agent":"tester","data":{"details":"timed out after 3900s, skipping"}}
+{"ts":"2026-04-07T17:41:56.694Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 17"}}
+{"ts":"2026-04-07T17:41:56.719Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T17:41:56.720Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":4.288639,"cpuSystem":10.02134}}}
+{"ts":"2026-04-07T17:42:14.021Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 19min (active:1, done:214)"}}
+{"ts":"2026-04-07T17:42:14.062Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 19min (active:1, done:214)\"}"}}
+{"ts":"2026-04-07T17:42:49.069Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775579897264","from":"blocked","to":"todo","title":"Re-run full test suite and confirm >=90% pass rate"}}
+{"ts":"2026-04-07T17:42:57.028Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (70min), skipping","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":4.346929,"cpuSystem":10.152659}}}
+{"ts":"2026-04-07T17:42:57.056Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"21MB\",\"heapUsed\":\"8MB\",\"uptime\":\"4201s\"}"}}
+{"ts":"2026-04-07T17:43:10.307Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 20min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:43:10.328Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 20min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:43:25.886Z","type":"task_created","agent":null,"data":{"taskId":"task-1775583805854","title":"Verify agentic-voice STT/TTS resolves in test environment","priority":"P1","group":"m93"}}
+{"ts":"2026-04-07T17:43:33.343Z","type":"task_created","agent":null,"data":{"taskId":"task-1775583813340","title":"Verify wake word server-side pipeline is not a stub","priority":"P1","group":"m93"}}
+{"ts":"2026-04-07T17:43:33.386Z","type":"task_created","agent":null,"data":{"taskId":"task-1775583813385","title":"Verify cloud fallback and npx entrypoint","priority":"P1","group":"m93"}}
+{"ts":"2026-04-07T17:43:40.996Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 20min (active:5, done:214)"}}
+{"ts":"2026-04-07T17:43:41.004Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 20min (active:5, done:214)\"}"}}
+{"ts":"2026-04-07T17:43:41.091Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T17:43:41.095Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T17:44:06.524Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.401501,"cpuSystem":10.271678}}}
+{"ts":"2026-04-07T17:44:06.593Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Unblocked m91 test task (stale blocker cleared), noted m92 review task awaiting tester, created m93 "}}
+{"ts":"2026-04-07T17:44:09.972Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T17:44:09.992Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] write-design, implement, run-tests"}}
+{"ts":"2026-04-07T17:44:09.995Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-07T17:44:10.016Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"出技术方案","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":4.429191,"cpuSystem":10.366268}}}
+{"ts":"2026-04-07T17:44:10.073Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"出技术方案","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":4.429685,"cpuSystem":10.367108}}}
+{"ts":"2026-04-07T17:44:10.100Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"出技术方案","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":4.43009,"cpuSystem":10.367952}}}
+{"ts":"2026-04-07T17:44:10.126Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T17:44:10.138Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":4.430982,"cpuSystem":10.368923}}}
+{"ts":"2026-04-07T17:44:10.235Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-07T17:44:10.239Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":4.431717,"cpuSystem":10.369967}}}
+{"ts":"2026-04-07T17:44:10.320Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 21min (active:5, done:214)"}}
+{"ts":"2026-04-07T17:44:10.325Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 21min (active:5, done:214)\"}"}}
+{"ts":"2026-04-07T17:44:51.379Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775581731172","from":"review","to":"testing","title":"Verify test pass rate >=90% after mock fixes"}}
+{"ts":"2026-04-07T17:45:11.631Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 22min (active:5, done:214)"}}
+{"ts":"2026-04-07T17:45:11.785Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 22min (active:5, done:214)\"}"}}
+{"ts":"2026-04-07T17:45:12.497Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":17,"memoryTotalMB":19,"cpuUser":4.484685,"cpuSystem":10.451244}}}
+{"ts":"2026-04-07T17:45:12.498Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No claimable tasks available. All todo tasks either lack a design (hasDesign=false) or are already a"}}

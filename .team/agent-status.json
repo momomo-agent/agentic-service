@@ -1,38 +1,38 @@
 {
   "pm": {
     "status": "idle",
-    "lastRun": "2026-04-07T17:22:24.447Z",
+    "lastRun": "2026-04-07T17:44:06.444Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-1": {
-    "status": "idle",
-    "lastRun": "2026-04-07T17:11:57.817Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T17:44:10.040Z",
+    "currentTask": "出技术方案",
     "retryCount": 0
   },
   "tech_lead-2": {
-    "status": "idle",
-    "lastRun": "2026-04-07T17:11:53.554Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T17:44:10.096Z",
+    "currentTask": "出技术方案",
     "retryCount": 0
   },
   "tech_lead-3": {
-    "status": "idle",
-    "lastRun": "2026-04-07T17:11:21.424Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T17:44:10.120Z",
+    "currentTask": "出技术方案",
     "retryCount": 0
   },
   "developer": {
     "status": "idle",
-    "lastRun": "2026-04-07T17:31:10.389Z",
+    "lastRun": "2026-04-07T17:45:12.497Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tester": {
-    "status": "timeout",
-    "lastRun": "2026-04-07T17:01:17.664Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T17:44:10.256Z",
+    "currentTask": "验证功能",
     "retryCount": 0
   },
   "tester-1": {

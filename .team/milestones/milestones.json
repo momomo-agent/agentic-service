@@ -238,6 +238,17 @@
         "task-1775581731172"
       ],
       "created": "2026-04-07T17:08:57.600Z"
+    },
+    {
+      "id": "m93",
+      "name": "M93: PRD Partial Gap Closure — STT/TTS, Wake Word, Cloud Fallback",
+      "status": "planned",
+      "tasks": [
+        "task-1775583805854",
+        "task-1775583813340",
+        "task-1775583813385"
+      ],
+      "created": "2026-04-07T17:43:43.231Z"
     }
   ]
 }

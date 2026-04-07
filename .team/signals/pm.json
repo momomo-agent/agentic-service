@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T17:22:24.443Z",
+  "timestamp": "2026-04-07T17:44:05.211Z",
   "exitCode": 0,
-  "status": "blocked",
-  "summary": "2 tasks in review awaiting tester approval (task-1775579897222, task-1775581724582); todo tasks blocked until reviews complete"
+  "status": "completed",
+  "summary": "Unblocked m91 test task (stale blocker cleared), noted m92 review task awaiting tester, created m93 with 3 tasks targeting remaining PRD partial gaps (STT/TTS, wake word, cloud fallback, npx entrypoint)"
 }
