@@ -2,7 +2,7 @@
   "milestones": [
     {
       "id": "m1",
-      "name": "M1: \u786c\u4ef6\u68c0\u6d4b + \u4e00\u952e\u542f\u52a8",
+      "name": "M1: 硬件检测 + 一键启动",
       "status": "completed",
       "tasks": [
         "task-1775446002661",
@@ -16,7 +16,7 @@
     },
     {
       "id": "m74",
-      "name": "M74: DBB Compliance \u2014 Docker, SIGINT, Coverage, Setup",
+      "name": "M74: DBB Compliance — Docker, SIGINT, Coverage, Setup",
       "status": "completed",
       "completed": "2026-04-07T14:49:54.961Z",
       "tasks": [
@@ -32,7 +32,7 @@
     },
     {
       "id": "m76",
-      "name": "M76: DBB Gaps \u2014 CPU Profile, VAD, Optimizer, LAN Tunnel",
+      "name": "M76: DBB Gaps — CPU Profile, VAD, Optimizer, LAN Tunnel",
       "status": "completed",
       "completed": "2026-04-07T12:16:22.081Z",
       "tasks": [
@@ -50,7 +50,7 @@
     },
     {
       "id": "m77",
-      "name": "M77: External Package Wiring \u2014 agentic-store, agentic-embed, agentic-voice, agentic-sense",
+      "name": "M77: External Package Wiring — agentic-store, agentic-embed, agentic-voice, agentic-sense",
       "status": "completed",
       "completed": "2026-04-07T04:05:39.612Z",
       "tasks": [
@@ -67,7 +67,7 @@
     },
     {
       "id": "m80",
-      "name": "M80: Vision Gaps \u2014 Wake Word + Cross-Device Brain State",
+      "name": "M80: Vision Gaps — Wake Word + Cross-Device Brain State",
       "status": "completed",
       "completed": "2026-04-07T13:24:55.160Z",
       "tasks": [
@@ -80,7 +80,7 @@
     },
     {
       "id": "m81",
-      "name": "M81: Vision Gaps \u2014 Voice Latency + npx + README",
+      "name": "M81: Vision Gaps — Voice Latency + npx + README",
       "status": "completed",
       "tasks": [
         "task-1775531580027",
@@ -93,7 +93,7 @@
     },
     {
       "id": "m82",
-      "name": "M82: DBB Compliance \u2014 Optimizer, VAD, Coverage, Setup, CDN Cache",
+      "name": "M82: DBB Compliance — Optimizer, VAD, Coverage, Setup, CDN Cache",
       "status": "cancelled",
       "tasks": [
         "task-1775535489083",
@@ -108,7 +108,7 @@
     },
     {
       "id": "m83",
-      "name": "M83: Test Suite Repair \u2014 Fix 119 Failing Tests",
+      "name": "M83: Test Suite Repair — Fix 119 Failing Tests",
       "status": "completed",
       "completed": "2026-04-07T13:25:00.000Z",
       "primaryFocus": true,
@@ -124,7 +124,7 @@
     },
     {
       "id": "m84",
-      "name": "M84: Architecture Package Compliance \u2014 External Package Verification",
+      "name": "M84: Architecture Package Compliance — External Package Verification",
       "status": "completed",
       "completed": "2026-04-07T11:37:52.574Z",
       "tasks": [
@@ -142,7 +142,7 @@
     },
     {
       "id": "m85",
-      "name": "M85: Final Compliance \u2014 agentic-sense, Test Pass Rate, Architecture Docs",
+      "name": "M85: Final Compliance — agentic-sense, Test Pass Rate, Architecture Docs",
       "status": "completed",
       "completed": "2026-04-07T13:39:54.738Z",
       "tasks": [
@@ -154,7 +154,7 @@
     },
     {
       "id": "m86",
-      "name": "M86: Docker Fix \u2014 npm Package Resolution for agentic-* deps",
+      "name": "M86: Docker Fix — npm Package Resolution for agentic-* deps",
       "status": "completed",
       "completed": "2026-04-07T13:58:33.018Z",
       "tasks": [
@@ -166,7 +166,7 @@
     },
     {
       "id": "m87",
-      "name": "M87: Test Edge Cases \u2014 sense.js, optimizer, CDN fallback, SIGINT",
+      "name": "M87: Test Edge Cases — sense.js, optimizer, CDN fallback, SIGINT",
       "status": "completed",
       "completed": "2026-04-07T14:44:06.553Z",
       "tasks": [
@@ -194,16 +194,17 @@
     {
       "id": "m89",
       "name": "M89: agentic-sense Wiring + Test Pass Rate >=90%",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775573229039",
         "task-1775573249297"
       ],
-      "created": "2026-04-07T14:47:38.619Z"
+      "created": "2026-04-07T14:47:38.619Z",
+      "completed": "2026-04-07T16:51:00.000Z"
     },
     {
       "id": "m90",
-      "name": "M90: Vision & PRD Gap Closure \u2014 Wake Word, Cloud Fallback, LAN Tunnel",
+      "name": "M90: Vision & PRD Gap Closure — Wake Word, Cloud Fallback, LAN Tunnel",
       "status": "active",
       "tasks": [
         "task-1775573586694",
@@ -217,7 +218,7 @@
     {
       "id": "m91",
       "name": "M91: Architecture Doc Sync + agentic-sense Completion",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775579891016",
         "task-1775579897222",

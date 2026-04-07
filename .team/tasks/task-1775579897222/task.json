@@ -5,11 +5,9 @@
   "status": "todo",
   "priority": "P0",
   "assignee": "tester-2",
-  "blockedBy": [
-    "task-1775573229039"
-  ],
+  "blockedBy": [],
   "groupId": "m91",
   "hasDesign": true,
   "created": "2026-04-07T16:38:17.222Z",
-  "updated": "2026-04-07T16:40:59.651Z"
+  "updated": "2026-04-07T16:51:09.045Z"
 }

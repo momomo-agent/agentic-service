@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T16:42:15.162Z",
+  "timestamp": "2026-04-07T16:51:16.301Z",
   "exitCode": 0,
-  "status": "blocked",
-  "summary": "All remaining tasks blocked on task-1775573229039 (agentic-sense wiring) in review. CR submitted for ARCHITECTURE.md gaps. Waiting for tester to complete review."
+  "status": "completed",
+  "summary": "Marked m89 completed, activated m91, unblocked m91 todo tasks. m90 waiting on tester review of task-1775573593682."
 }
