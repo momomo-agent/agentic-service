@@ -2,13 +2,13 @@
   "id": "task-1775531492452",
   "title": "Implement server-side wake word pipeline in sense.js",
   "description": "Replace startWakeWordPipeline() stub with real mic/audio capture. Wire wakeword event to hub.js brainChat so detection fires without client trigger.",
-  "status": "todo",
+  "status": "inProgress",
   "priority": "P1",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m80",
   "hasDesign": true,
   "created": "2026-04-07T03:11:32.452Z",
-  "updated": "2026-04-07T11:49:05.510Z",
+  "updated": "2026-04-07T12:07:59.864Z",
   "milestoneId": "m80"
 }

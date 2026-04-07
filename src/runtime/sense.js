@@ -58,16 +58,49 @@ export function stop() {
 }
 
 let _wakeActive = false;
+let _micInstance = null;
 
-export function startWakeWordPipeline(onWake) {
+function _calcEnergy(buffer) {
+  let sum = 0;
+  for (let i = 0; i + 1 < buffer.length; i += 2) {
+    const sample = buffer.readInt16LE(i);
+    sum += sample * sample;
+  }
+  return Math.sqrt(sum / (buffer.length / 2));
+}
+
+export async function startWakeWordPipeline(onWake) {
   if (_wakeActive) return () => {};
   _wakeActive = true;
 
-  // Stub: no mic available in server context — log warning and return no-op stop
-  console.warn('[sense] Wake word pipeline started (stub — no mic)');
+  let micMod;
+  try {
+    micMod = (await import('mic')).default;
+  } catch {
+    console.warn('[sense] mic package unavailable — wake word pipeline disabled');
+    _wakeActive = false;
+    return () => {};
+  }
+
+  let inst;
+  try {
+    inst = micMod({ rate: '16000', channels: '1', encoding: 'signed-integer', device: 'default' });
+    const stream = inst.getAudioStream();
+    stream.on('data', (buf) => { if (_calcEnergy(buf) > 1000) onWake(); });
+    stream.on('error', (err) => console.error('[sense] mic error:', err));
+    inst.start();
+    _micInstance = inst;
+    console.log('[sense] Wake word pipeline started');
+  } catch (err) {
+    console.warn('[sense] mic start failed:', err.message);
+    _wakeActive = false;
+    return () => {};
+  }
 
   return () => {
     _wakeActive = false;
+    try { _micInstance?.stop(); } catch { /* ignore */ }
+    _micInstance = null;
   };
 }
 
@@ -75,9 +108,9 @@ export async function initHeadless(options = { face: true, gesture: true, object
   pipeline = await createPipeline(options);
 }
 
-export function startHeadless() {
+export async function startHeadless() {
   const emitter = new EventEmitter();
-  startWakeWordPipeline(() => emitter.emit('wakeword'));
+  await startWakeWordPipeline(() => emitter.emit('wakeword'));
   return emitter;
 }
 

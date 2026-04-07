@@ -15,7 +15,7 @@ function isSilent(buffer) {
 }
 
 export async function init() {
-  const emitter = sense.startHeadless();
+  const emitter = await sense.startHeadless();
   emitter.on('wakeword', async () => {
     const chunks = [];
     for await (const chunk of brainChat([])) {

@@ -18868,3 +18868,26 @@
 {"ts":"2026-04-07T12:05:11.701Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775535895960","from":"inProgress","to":"review","title":"Fix mocked module initialization across failing test files"}}
 {"ts":"2026-04-07T12:05:21.944Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.526178,"cpuSystem":9.913225}}}
 {"ts":"2026-04-07T12:05:21.945Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Fixed mock initialization for runtime modules (tts.js, stt.js) - improved test pass rate from 82% to"}}
+{"ts":"2026-04-07T12:05:22.395Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 13"}}
+{"ts":"2026-04-07T12:05:22.409Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T12:05:22.411Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":10,"memoryTotalMB":14,"cpuUser":4.566382,"cpuSystem":10.046351}}}
+{"ts":"2026-04-07T12:05:40.832Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:05:40.832Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:06:02.137Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.587092,"cpuSystem":10.081178}}}
+{"ts":"2026-04-07T12:06:02.138Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Assessed all active milestones, assigned 2 unblocked todo tasks to developer (Docker verification m7"}}
+{"ts":"2026-04-07T12:06:02.301Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T12:06:02.302Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T12:06:02.302Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T12:06:02.302Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T12:06:02.303Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.602417,"cpuSystem":10.142007}}}
+{"ts":"2026-04-07T12:06:02.303Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-07T12:06:02.303Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":4.602652,"cpuSystem":10.14251}}}
+{"ts":"2026-04-07T12:06:06.779Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"32MB\",\"heapUsed\":\"9MB\",\"uptime\":\"5700s\"}"}}
+{"ts":"2026-04-07T12:06:28.497Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775529630008","from":"todo","to":"inProgress","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T12:06:40.836Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 12min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:06:40.837Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 12min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:07:40.843Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 13min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:07:40.844Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 13min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:07:59.865Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775531492452","from":"todo","to":"inProgress","title":"Implement server-side wake word pipeline in sense.js"}}
+{"ts":"2026-04-07T12:08:05.867Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.678685,"cpuSystem":10.280407}}}
+{"ts":"2026-04-07T12:08:05.867Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] blocked: No tasks available in review status for testing. One task (task-1775535895960) is in review but cann"}}

@@ -1,7 +1,7 @@
 {
   "agent": "tester",
-  "timestamp": "2026-04-07T11:55:17.879Z",
+  "timestamp": "2026-04-07T12:08:05.858Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Tested agentic-sense wiring: 5/5 tests passed, task marked done"
+  "status": "blocked",
+  "summary": "No tasks available in review status for testing. One task (task-1775535895960) is in review but cannot be claimed yet."
 }

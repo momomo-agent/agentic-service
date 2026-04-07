@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T11:49:13.317Z",
+  "timestamp": "2026-04-07T12:06:02.132Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Reviewed all active milestones (M74, M76, M80, M83, M85). Assigned 4 unassigned todo tasks to developer. M85 review task awaiting tester. No new milestones needed — all gaps covered by active work."
+  "summary": "Assessed all active milestones, assigned 2 unblocked todo tasks to developer (Docker verification m74, wake word pipeline m80). Identified m83 review blocker gating m85 test pass rate task. No milestone completions possible until tester approves review."
 }
