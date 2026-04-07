@@ -76,6 +76,8 @@ async function getOllamaStatus() {
 }
 
 function addRoutes(r) {
+  r.get('/health', (req, res) => res.json({ status: 'ok' }));
+
   r.post('/api/chat', async (req, res) => {
     const { message, history = [], tools, sessionId } = req.body;
     if (!message || typeof message !== 'string') {

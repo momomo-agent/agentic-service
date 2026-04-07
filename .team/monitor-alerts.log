@@ -2416,3 +2416,7 @@
 {"time":"2026-04-07T13:18:12.716Z","type":"no_progress","message":"No progress for 32min (active:3, done:188)"}
 {"time":"2026-04-07T13:19:12.739Z","type":"no_progress","message":"No progress for 33min (active:3, done:188)"}
 {"time":"2026-04-07T13:20:12.739Z","type":"no_progress","message":"No progress for 34min (active:3, done:188)"}
+{"time":"2026-04-07T13:25:42.615Z","type":"no_progress","message":"No progress for 5min (active:2, done:189)"}
+{"time":"2026-04-07T13:26:12.614Z","type":"no_progress","message":"No progress for 6min (active:2, done:189)"}
+{"time":"2026-04-07T13:27:12.624Z","type":"no_progress","message":"No progress for 7min (active:2, done:189)"}
+{"time":"2026-04-07T13:28:12.608Z","type":"no_progress","message":"No progress for 8min (active:2, done:189)"}
