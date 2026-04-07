@@ -11134,3 +11134,10 @@
 {"ts":"2026-04-07T04:16:42.216Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
 {"ts":"2026-04-07T04:16:42.216Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":9,"memoryTotalMB":17,"cpuUser":28.763492,"cpuSystem":81.750322}}}
 {"ts":"2026-04-07T04:17:03.392Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":16,"cpuUser":4.874802,"cpuSystem":9.56851}}}
+{"ts":"2026-04-07T04:17:03.587Z","type":"workflow","agent":"work_loop","data":{"details":"[BRANCH] doneCount > 0 → true → milestone_qg"}}
+{"ts":"2026-04-07T04:17:03.588Z","type":"workflow","agent":"work_loop","data":{"details":"[EXIT] todoCount == 0 && designedTasks == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 && blockedCount == 0 → milestone_qg"}}
+{"ts":"2026-04-07T04:17:03.588Z","type":"agent_start","agent":"milestone_qg","data":{"details":"[NODE] milestone_qg - 里程碑 QG — 对照 DBB 验收","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":4.887482,"cpuSystem":9.613334}}}
+{"ts":"2026-04-07T04:17:03.635Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-07T04:17:03.635Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":4.900471,"cpuSystem":9.651147}}}
+{"ts":"2026-04-07T04:17:25.372Z","type":"task_status","agent":"tech_lead-3","data":{"taskId":"task-1775529637561","from":"in-progress","to":"done","title":"SIGINT graceful drain during in-flight requests"}}
+{"ts":"2026-04-07T04:17:27.473Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":4.917947,"cpuSystem":9.681251}}}

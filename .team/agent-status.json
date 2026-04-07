@@ -30,9 +30,9 @@
     "retryCount": 2
   },
   "tester": {
-    "status": "running",
-    "lastRun": "2026-04-07T04:16:42.216Z",
-    "currentTask": "tester",
+    "status": "idle",
+    "lastRun": "2026-04-07T04:17:27.473Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "tester-1": {
