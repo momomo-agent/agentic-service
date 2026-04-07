@@ -20315,3 +20315,33 @@
 {"ts":"2026-04-07T16:36:32.221Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775575363327","from":"testing","to":"done","title":"Fix tunnel.js export and re-verify LAN tunnel + HTTPS cert"}}
 {"ts":"2026-04-07T16:36:33.908Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":0.242777,"cpuSystem":0.46421}}}
 {"ts":"2026-04-07T16:36:33.908Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] blocked: task-1775573229039 blocked: adapters/sense.js uses default import from agentic-sense but package has"}}
+{"ts":"2026-04-07T16:36:34.331Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 2"}}
+{"ts":"2026-04-07T16:36:34.346Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T16:36:34.347Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":6,"memoryTotalMB":10,"cpuUser":0.283881,"cpuSystem":0.621694}}}
+{"ts":"2026-04-07T16:37:14.484Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775573229039","from":"blocked","to":"todo","title":"Wire agentic-sense as external npm package"}}
+{"ts":"2026-04-07T16:37:56.047Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"67MB\",\"heapUsed\":\"14MB\",\"uptime\":\"300s\"}"}}
+{"ts":"2026-04-07T16:38:01.504Z","type":"task_created","agent":null,"data":{"taskId":"task-1775579881503","title":"Submit CR to document tunnel, CLI, HTTPS, VAD, embed in ARCHITECTURE.md","priority":"P1","group":"m91"}}
+{"ts":"2026-04-07T16:38:11.017Z","type":"task_created","agent":null,"data":{"taskId":"task-1775579891016","title":"Submit CR to document tunnel, CLI, HTTPS, VAD, embed in ARCHITECTURE.md","priority":"P1","group":"m91"}}
+{"ts":"2026-04-07T16:38:17.223Z","type":"task_created","agent":null,"data":{"taskId":"task-1775579897222","title":"Verify agentic-sense wiring complete and sense.js loads without errors","priority":"P1","group":"m91"}}
+{"ts":"2026-04-07T16:38:17.265Z","type":"task_created","agent":null,"data":{"taskId":"task-1775579897264","title":"Re-run full test suite and confirm >=90% pass rate","priority":"P1","group":"m91"}}
+{"ts":"2026-04-07T16:39:09.837Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":8,"cpuUser":0.378827,"cpuSystem":0.766079}}}
+{"ts":"2026-04-07T16:39:09.837Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Reassigned blocked agentic-sense task to developer; activated m90; created m91 with 3 tasks targetin"}}
+{"ts":"2026-04-07T16:39:09.901Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T16:39:09.901Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-07T16:39:09.902Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] write-design, implement"}}
+{"ts":"2026-04-07T16:39:09.902Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-07T16:39:09.902Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"出技术方案","performance":{"memoryMB":6,"memoryTotalMB":14,"cpuUser":0.394025,"cpuSystem":0.816514}}}
+{"ts":"2026-04-07T16:39:09.902Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"出技术方案","performance":{"memoryMB":6,"memoryTotalMB":14,"cpuUser":0.394216,"cpuSystem":0.81688}}}
+{"ts":"2026-04-07T16:39:09.903Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"出技术方案","performance":{"memoryMB":6,"memoryTotalMB":14,"cpuUser":0.394336,"cpuSystem":0.817142}}}
+{"ts":"2026-04-07T16:39:09.903Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T16:39:09.903Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":6,"memoryTotalMB":14,"cpuUser":0.394485,"cpuSystem":0.817475}}}
+{"ts":"2026-04-07T16:39:26.072Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 21 pending CRs"}}
+{"ts":"2026-04-07T16:39:26.073Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"21 pending CRs\"}"}}
+{"ts":"2026-04-07T16:39:32.276Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775573229039","from":"todo","to":"inProgress","title":"Wire agentic-sense as external npm package"}}
+{"ts":"2026-04-07T16:40:37.590Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":22,"memoryTotalMB":28,"cpuUser":0.439393,"cpuSystem":0.889868}}}
+{"ts":"2026-04-07T16:40:37.591Z","type":"workflow","agent":"tech_lead-3","data":{"details":"[SIGNAL] completed: Created m91/dbb.md, m91/design.md, task designs for task-1775579891016/task-1775579897222/task-17755"}}
+{"ts":"2026-04-07T16:40:38.322Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775573229039","from":"inProgress","to":"review","title":"Wire agentic-sense as external npm package"}}
+{"ts":"2026-04-07T16:40:41.775Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":22,"memoryTotalMB":28,"cpuUser":0.440093,"cpuSystem":0.890557}}}
+{"ts":"2026-04-07T16:40:41.776Z","type":"workflow","agent":"tech_lead-2","data":{"details":"[SIGNAL] completed: Created m91 dbb.md + design.md, wrote task designs for all 3 m91 tasks, updated hasDesign=true"}}
+{"ts":"2026-04-07T16:40:55.266Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":22,"memoryTotalMB":28,"cpuUser":0.440724,"cpuSystem":0.891186}}}
+{"ts":"2026-04-07T16:40:55.267Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Fixed adapters/sense.js to use named import { AgenticSense } from 'agentic-sense'. Package.json alre"}}

@@ -1,0 +1,13 @@
+{
+  "id": "cr-1775579949939",
+  "from": "tech_lead",
+  "fromLevel": "L3",
+  "toLevel": "L1",
+  "targetFile": "ARCHITECTURE.md",
+  "reason": "tunnel.js, src/cli/, HTTPS/middleware, VAD, and agentic-embed are all implemented in source but absent or partial in ARCHITECTURE.md, causing doc/code drift",
+  "proposedChange": "Add the following sections to ARCHITECTURE.md:\n\n## 5. Tunnel\n```javascript\n// src/tunnel.js\nstartTunnel(port: number) → void\n// Spawns ngrok or cloudflared; prefers ngrok; handles SIGINT cleanup\n```\n\n## 6. CLI Modules\n```javascript\n// src/cli/setup.js — first-run wizard: detect hardware, pull profile, install Ollama, pull model\n// src/cli/browser.js — open browser to http://localhost:<port> after server starts\n```\n\n## 7. VAD\n```javascript\n// src/runtime/vad.js\ndetectVoiceActivity(buffer: Buffer) → boolean\n// RMS energy threshold 0.01; true if audio contains speech\n```\n\n## 8. HTTPS & Middleware\n```javascript\n// src/server/cert.js — generates self-signed cert via selfsigned\n// src/server/httpsServer.js — createServer(app) → https.Server\n// src/server/middleware.js — errorHandler(err, req, res, next) → void\n```\n\n## 9. agentic-embed\nAdd agentic-embed to the dependency tree and note its role: vector embedding (bge-m3), used by memory.js for semantic search.",
+  "status": "pending",
+  "createdAt": "2026-04-07T16:40:10.036Z",
+  "reviewedAt": null,
+  "reviewedBy": null
+}

@@ -2,6 +2,7 @@
 
 ## Progress
 
-Fixed `src/runtime/adapters/sense.js`: agentic-sense is CJS, named ESM imports fail.
-Used default import + destructure AgenticSense, wrap with createPipeline factory using init().
-All 3 verification steps pass.
+- `agentic-sense` already in dependencies as `file:./vendor/agentic-sense.tgz` ✓
+- No `#agentic-sense` import map or src references ✓
+- Fixed `adapters/sense.js`: replaced default import+destructure with named import `{ AgenticSense }`
+- All 3 verification steps pass ✓

@@ -33298,3 +33298,80 @@ Task complete. Here's the summary:
 [2026-04-07T16:36:33.905Z] tester-2 agent completed
 [2026-04-07 16:36:33] [agent_complete] tester-2 completed successfully
 [2026-04-07 16:36:33] [workflow] tester-2 [SIGNAL] blocked: task-1775573229039 blocked: adapters/sense.js uses default import from agentic-sense but package has
+[2026-04-07 16:36:34] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-07 16:36:34] [workflow] work_loop [EXEC] pm
+[2026-04-07 16:36:34] [agent_start] pm 管理任务和里程碑
+[2026-04-07T16:36:34.373Z] Running pm agent...
+[2026-04-07T16:36:41.610Z] tester-2 agent failed: Command failed: claude --print --dangerously-skip-permissions < "/Users/kenefe/LOCAL/momo-agent/projects/agentic-service/.team/.prompt-tester-2-1775579342772.md"
+[2026-04-07 16:37:56] [perf] daemon {"rss":"67MB","heapUsed":"14MB","uptime":"300s"}
+All actions complete. Here's the summary:
+
+**m89 (active):**
+- `task-1775573229039` — reassigned from `tester-2` → `developer`, status `blocked` → `todo`. Developer will fix agentic-sense wiring (correct named exports, remove import map).
+- `task-1775573249297` — `done`
+
+**m90 (activated):**
+- 4/5 tasks `done`
+- `task-1775573593682` (npx startup) — `todo`, blocked by agentic-sense wiring
+
+**m91 (planned):**
+- 3 tasks created:
+  - `task-1775579891016` — Submit CR for ARCHITECTURE.md doc sync (P1)
+  - `task-1775579897222` — Verify agentic-sense wiring + sense.js loads (P0, blocked by agentic-sense task)
+  - `task-1775579897264` — Re-run full test suite, confirm >=90% (P0, blocked by sense verification)
+
+**CR submitted:** `cr-1775579794375` → L1, requesting ARCHITECTURE.md additions for tunnel, CLI, HTTPS, VAD, embed modules.
+
+```signal
+{"status": "completed", "summary": "Reassigned blocked agentic-sense task to developer; activated m90; created m91 with 3 tasks targeting architecture doc sync and sense verification; submitted CR-1775579794375 to L1 for ARCHITECTURE.md gap closure"}
+```
+[2026-04-07T16:39:09.833Z] pm agent completed
+[2026-04-07 16:39:09] [agent_complete] pm completed successfully
+[2026-04-07 16:39:09] [workflow] pm [SIGNAL] completed: Reassigned blocked agentic-sense task to developer; activated m90; created m91 with 3 tasks targetin
+[2026-04-07 16:39:09] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 16:39:09] [workflow] work_loop [PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-07 16:39:09] [workflow] work_loop [PARALLEL] write-design, implement
+[2026-04-07 16:39:09] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-07 16:39:09] [agent_start] tech_lead-1 出技术方案
+[2026-04-07 16:39:09] [agent_start] tech_lead-2 出技术方案
+[2026-04-07 16:39:09] [agent_start] tech_lead-3 出技术方案
+[2026-04-07 16:39:09] [workflow] work_loop [EXEC] developer
+[2026-04-07 16:39:09] [agent_start] developer 实现功能
+[2026-04-07T16:39:09.938Z] Running tech_lead-3 agent...
+[2026-04-07T16:39:09.938Z] Running tech_lead-2 agent...
+[2026-04-07T16:39:09.938Z] Running tech_lead-1 agent...
+[2026-04-07T16:39:09.939Z] Running developer agent...
+[2026-04-07 16:39:26] [workflow] monitor ⚠️ [ALERT:cr_explosion] 21 pending CRs
+All work is complete.
+
+```signal
+{"status": "completed", "summary": "Created m91/dbb.md, m91/design.md, task designs for task-1775579891016/task-1775579897222/task-1775579897264, marked all hasDesign=true, submitted cr-1775579949939.json for ARCHITECTURE.md gaps"}
+```
+[2026-04-07T16:40:37.587Z] tech_lead-3 agent completed
+[2026-04-07 16:40:37] [agent_complete] tech_lead-3 completed successfully
+[2026-04-07 16:40:37] [workflow] tech_lead-3 [SIGNAL] completed: Created m91/dbb.md, m91/design.md, task designs for task-1775579891016/task-1775579897222/task-17755
+All done. Here's what was completed:
+
+**M91 milestone files created:**
+- `.team/milestones/m91/dbb.md` — verification criteria for CR submission, sense wiring, and test pass rate
+- `.team/milestones/m91/design.md` — technical approach for all 3 tasks
+
+**Task designs written + hasDesign updated:**
+- `task-1775579891016` — CR submission for ARCHITECTURE.md gaps (tunnel, CLI, HTTPS, VAD, embed)
+- `task-1775579897222` — agentic-sense wiring verification (3 grep/node checks)
+- `task-1775579897264` — test suite re-run, assert >=90% pass rate
+
+```signal
+{"status": "completed", "summary": "Created m91 dbb.md + design.md, wrote task designs for all 3 m91 tasks, updated hasDesign=true"}
+```
+[2026-04-07T16:40:41.772Z] tech_lead-2 agent completed
+[2026-04-07 16:40:41] [agent_complete] tech_lead-2 completed successfully
+[2026-04-07 16:40:41] [workflow] tech_lead-2 [SIGNAL] completed: Created m91 dbb.md + design.md, wrote task designs for all 3 m91 tasks, updated hasDesign=true
+Task complete.
+
+```signal
+{"status": "completed", "summary": "Fixed adapters/sense.js to use named import { AgenticSense } from 'agentic-sense'. Package.json already had correct dependency. No #agentic-sense import map references found. All verification steps pass."}
+```
+[2026-04-07T16:40:55.263Z] developer agent completed
+[2026-04-07 16:40:55] [agent_complete] developer completed successfully
+[2026-04-07 16:40:55] [workflow] developer [SIGNAL] completed: Fixed adapters/sense.js to use named import { AgenticSense } from 'agentic-sense'. Package.json alre

@@ -1,7 +1,7 @@
 {
   "agent": "tester-2",
-  "timestamp": "2026-04-07T16:36:33.904Z",
-  "exitCode": 0,
-  "status": "blocked",
-  "summary": "task-1775573229039 blocked: adapters/sense.js uses default import from agentic-sense but package has no default export — needs developer fix"
+  "timestamp": "2026-04-07T16:36:41.609Z",
+  "exitCode": 1,
+  "status": "completed",
+  "summary": "Tested 3 tasks: 2 done (wake word pipeline, tunnel+cert), 1 blocked (agentic-sense default import bug in adapters/sense.js)"
 }
