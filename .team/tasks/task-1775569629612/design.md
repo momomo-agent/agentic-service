@@ -1,15 +1,21 @@
-# Technical Design: Wire agentic-sense as external package
+# Design: Wire agentic-sense as External Package
 
-## Files to Modify
+## Problem
+`vitest.config.js` has an alias `'#agentic-sense'` → `./src/runtime/adapters/sense.js` that bypasses the real package. `src/runtime/adapters/sense.js` already imports from `'agentic-sense'` directly — no source change needed there.
 
-- `vitest.config.js` — remove `'#agentic-sense': path.resolve('./src/runtime/adapters/sense.js')` alias line
+## Change Required
 
-## No other changes needed
+**File:** `vitest.config.js`
 
-`src/runtime/adapters/sense.js` already imports from `'agentic-sense'` directly.
-`package.json` already has `"agentic-sense": "file:./vendor/agentic-sense.tgz"`.
+Remove the alias entry:
+```js
+'#agentic-sense': path.resolve('./src/runtime/adapters/sense.js'),
+```
 
 ## Verification
+- `vitest.config.js` contains no `#agentic-sense` reference
+- `npm test` passes
 
-- `grep '#agentic-sense' vitest.config.js` returns nothing
-- `npm test` sense tests pass
+## Edge Cases
+- If other test files import `#agentic-sense` directly, update them to import from `'agentic-sense'`
+- `package.json` already has `"agentic-sense": "file:./vendor/agentic-sense.tgz"` — no change needed

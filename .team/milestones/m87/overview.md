@@ -1,10 +1,15 @@
-# M87: Architecture Docs + agentic-sense Wiring
+# M87: Test Edge Cases — sense.js, optimizer, CDN fallback, SIGINT
 
-## Goals
-1. Wire agentic-sense as external package (remove import map stub)
-2. Update ARCHITECTURE.md to document: tunnel, CLI, HTTPS/middleware, VAD, embed modules
+## Goal
+Fix the 4 known failing test edge cases to push test pass rate above 90%.
+
+## Scope
+- Fix `createPipeline` export in `src/runtime/adapters/sense.js`
+- Fix `optimizer.js` hardware-adaptive config output shape mismatch
+- Fix CDN profiles fallback when fetch fails and no cache exists
+- Fix SIGINT graceful drain during in-flight requests
 
 ## Acceptance Criteria
-- agentic-sense in package.json dependencies, imported directly (not via '#agentic-sense')
-- ARCHITECTURE.md covers all 5 missing/partial modules
-- DBB architecture match >= 92%
+- All 4 edge cases pass
+- Test pass rate >= 90%
+- No regressions in existing passing tests

@@ -164,11 +164,13 @@
     },
     {
       "id": "m87",
-      "name": "M87: agentic-sense Wiring + Architecture Docs",
+      "name": "M87: Test Edge Cases — sense.js, optimizer, CDN fallback, SIGINT",
       "status": "planned",
       "tasks": [
-        "task-1775569629612",
-        "task-1775569652492"
+        "task-1775569820076",
+        "task-1775569826523",
+        "task-1775569826557",
+        "task-1775569826588"
       ],
       "created": "2026-04-07T13:47:46.195Z"
     }

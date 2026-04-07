@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T13:48:18.526Z",
+  "timestamp": "2026-04-07T13:51:07.348Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Marked test pass rate task done (91% coverage). Created M87 with 2 tasks targeting agentic-sense wiring and architecture docs. Submitted CR-1775569674000 for ARCHITECTURE.md updates."
+  "summary": "Updated m87 scope to cover 4 test edge cases (sense.js createPipeline, optimizer shape, CDN fallback, SIGINT drain). Created 4 P1 tasks. Set blockedBy dependency on m74 Docker verify task. m86 active with Docker fix in review + agentic-sense wiring todo. Voice latency/CPU profiling gaps deferred to future milestone."
 }
