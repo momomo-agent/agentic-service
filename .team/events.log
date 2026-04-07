@@ -18947,3 +18947,9 @@
 {"ts":"2026-04-07T12:13:14.495Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Checked all 4 review tasks - none claimable (already assigned to other agents)"}}
 {"ts":"2026-04-07T12:13:15.582Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":5.014424,"cpuSystem":11.083597}}}
 {"ts":"2026-04-07T12:13:15.582Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Checked all 4 review tasks - none claimable (already assigned to other agents)"}}
+{"ts":"2026-04-07T12:13:40.856Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 19min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:13:40.857Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 19min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:14:40.850Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 20min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:14:40.851Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 20min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:14:45.643Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":5.069956,"cpuSystem":11.169972}}}
+{"ts":"2026-04-07T12:14:45.644Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] blocked: No unblocked todo tasks with designs available. 4 tasks in review awaiting tester approval (task-177"}}
