@@ -1,3 +1,4 @@
+import { detect } from '../detector/hardware.js';
 import { getProfile } from '../detector/profiles.js';
 
 const ADAPTERS = {
@@ -11,7 +12,8 @@ let adapter = null;
 export async function init() {
   let provider = 'default';
   try {
-    const profile = await getProfile();
+    const hardware = await detect();
+    const profile = await getProfile(hardware);
     provider = profile?.stt?.provider ?? 'default';
   } catch {}
   const load = ADAPTERS[provider] ?? ADAPTERS.default;

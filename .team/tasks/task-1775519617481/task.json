@@ -1,0 +1,13 @@
+{
+  "id": "task-1775519617481",
+  "title": "src/runtime/tts.js — synthesize实现",
+  "description": "实现synthesize(text) → audioBuffer，对接本地TTS引擎",
+  "status": "inProgress",
+  "priority": "P0",
+  "assignee": "developer",
+  "blockedBy": [],
+  "groupId": "m38",
+  "hasDesign": true,
+  "created": "2026-04-06T23:53:37.481Z",
+  "updated": "2026-04-06T23:59:42.886Z"
+}
