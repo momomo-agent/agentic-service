@@ -2,13 +2,13 @@
   "id": "task-1775531890250",
   "title": "Verify and complete README.md documentation",
   "description": "Audit README.md for completeness: ensure it covers npx install, Docker, configuration, API endpoints, and hardware requirements as specified in architecture. Fill any missing sections.",
-  "status": "review",
+  "status": "done",
   "priority": "P2",
-  "assignee": "developer",
+  "assignee": "tester-2",
   "blockedBy": [],
   "groupId": "m81",
   "hasDesign": true,
   "created": "2026-04-07T03:18:10.250Z",
-  "updated": "2026-04-07T03:39:35.217Z",
+  "updated": "2026-04-07T04:00:05.755Z",
   "milestoneId": "m81"
 }
