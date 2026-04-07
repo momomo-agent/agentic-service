@@ -20233,3 +20233,5 @@
 {"ts":"2026-04-07T16:22:08.517Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 28min (active:4, done:204)\"}"}}
 {"ts":"2026-04-07T16:22:10.017Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":13,"cpuUser":2.877664,"cpuSystem":4.902451}}}
 {"ts":"2026-04-07T16:22:10.018Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No claimable tasks available. All todo tasks with hasDesign=true are either assigned or completed. t"}}
+{"ts":"2026-04-07T16:22:26.683Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":13,"cpuUser":2.883486,"cpuSystem":4.912005}}}
+{"ts":"2026-04-07T16:22:26.684Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: No claimable tasks available — all review tasks already claimed, no new tasks assigned to tester-1"}}

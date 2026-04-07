@@ -33122,3 +33122,16 @@ The only remaining task (`task-1775573593682`) is already assigned to `tester-2`
 [2026-04-07T16:22:10.014Z] developer agent completed
 [2026-04-07 16:22:10] [agent_complete] developer completed successfully
 [2026-04-07 16:22:10] [workflow] developer [SIGNAL] completed: No claimable tasks available. All todo tasks with hasDesign=true are either assigned or completed. t
+There are no tasks available for `tester-1` to claim right now:
+
+- 3 tasks in `review` status — all assigned to `developer`, and `can-claim` returns false (likely already claimed by other testers)
+- 1 task in `todo` — assigned to `tester-2`
+
+All my previously assigned tasks are `done` or `cancelled`. I have no work to do at this time.
+
+```signal
+{"status": "completed", "summary": "No claimable tasks available — all review tasks already claimed, no new tasks assigned to tester-1"}
+```
+[2026-04-07T16:22:26.679Z] tester-1 agent completed
+[2026-04-07 16:22:26] [agent_complete] tester-1 completed successfully
+[2026-04-07 16:22:26] [workflow] tester-1 [SIGNAL] completed: No claimable tasks available — all review tasks already claimed, no new tasks assigned to tester-1

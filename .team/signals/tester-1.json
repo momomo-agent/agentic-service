@@ -1,7 +1,7 @@
 {
   "agent": "tester-1",
-  "timestamp": "2026-04-07T16:18:59.525Z",
+  "timestamp": "2026-04-07T16:22:26.678Z",
   "exitCode": 0,
-  "status": "blocked",
-  "summary": "task-1775573593682 blocked — adapters/sense.js uses broken default import from agentic-sense, server cannot start, 2/4 tests passed"
+  "status": "completed",
+  "summary": "No claimable tasks available — all review tasks already claimed, no new tasks assigned to tester-1"
 }
