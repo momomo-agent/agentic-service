@@ -10045,3 +10045,5 @@
 {"ts":"2026-04-07T03:09:06.917Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:11, done:153)\"}"}}
 {"ts":"2026-04-07T03:09:10.915Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775529637624","from":"todo","to":"done","title":"setup.sh Node.js detection and idempotency"}}
 {"ts":"2026-04-07T03:09:11.334Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":10,"cpuUser":2.396078,"cpuSystem":4.603503}}}
+{"ts":"2026-04-07T03:09:15.467Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775529637624","from":"done","to":"inProgress","title":"setup.sh Node.js detection and idempotency"}}
+{"ts":"2026-04-07T03:09:15.622Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":2.411158,"cpuSystem":4.633657}}}

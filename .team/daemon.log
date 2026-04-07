@@ -21435,3 +21435,15 @@ All gaps are tracked. Waiting for developers/testers to progress M74 in-progress
 [no content]
 [2026-04-07T03:09:11.330Z] developer agent completed
 [2026-04-07 03:09:11] [agent_complete] developer completed successfully
+Task complete. All 6 tests for `task-1775529637624` passed:
+
+- setup.sh detects existing Node.js and skips install
+- Version check guards against Node < 18
+- node_modules install is idempotent
+- Global install skipped if already present
+- No unconditional PATH modifications
+- All install steps inside guarded function
+
+Task marked **done**.
+[2026-04-07T03:09:15.619Z] tester agent completed
+[2026-04-07 03:09:15] [agent_complete] tester completed successfully
