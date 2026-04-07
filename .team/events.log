@@ -20998,3 +20998,52 @@
 {"ts":"2026-04-07T18:54:28.148Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775587524323","from":"testing","to":"done","title":"Verify voice latency <2s end-to-end benchmark"}}
 {"ts":"2026-04-07T18:54:39.195Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":8,"cpuUser":5.693541,"cpuSystem":13.314422}}}
 {"ts":"2026-04-07T18:54:39.220Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Voice latency <2s benchmark verified: 30/30 tests passed, all DBB criteria met, task marked done"}}
+{"ts":"2026-04-07T18:55:25.356Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T18:55:26.708Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T18:55:37.154Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"22MB\",\"heapUsed\":\"4MB\",\"uptime\":\"4200s\"}"}}
+{"ts":"2026-04-07T18:56:00.500Z","type":"error","agent":"tester-1","data":{"details":"hung (0% CPU for 10min across process tree), killing"}}
+{"ts":"2026-04-07T18:56:01.528Z","type":"error","agent":"tester-1","data":{"details":"timed out after 3900s, skipping"}}
+{"ts":"2026-04-07T18:56:02.972Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775581731172: testing → review"}}
+{"ts":"2026-04-07T18:56:07.131Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 3"}}
+{"ts":"2026-04-07T18:56:07.218Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T18:56:07.231Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":7,"memoryTotalMB":14,"cpuUser":5.873542,"cpuSystem":13.882055}}}
+{"ts":"2026-04-07T18:56:07.287Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (71min), skipping","performance":{"memoryMB":7,"memoryTotalMB":14,"cpuUser":5.874852,"cpuSystem":13.883655}}}
+{"ts":"2026-04-07T18:57:59.657Z","type":"task_created","agent":null,"data":{"taskId":"task-1775588279635","title":"Run full test suite and fix remaining failures to >=90%","priority":"P1","group":"m95"}}
+{"ts":"2026-04-07T18:57:59.891Z","type":"task_created","agent":null,"data":{"taskId":"task-1775588279869","title":"Verify and fix agentic-sense external package wiring","priority":"P1","group":"m95"}}
+{"ts":"2026-04-07T18:58:00.010Z","type":"task_created","agent":null,"data":{"taskId":"task-1775588280002","title":"Run fresh DBB/PRD/Vision gap evaluation","priority":"P1","group":"m95"}}
+{"ts":"2026-04-07T18:58:44.485Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":8,"cpuUser":6.129145,"cpuSystem":14.552726}}}
+{"ts":"2026-04-07T18:58:44.507Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Created M95 final push milestone, assigned all unassigned tasks across M91-M95, activated M93/M94. C"}}
+{"ts":"2026-04-07T18:58:45.435Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T18:58:45.437Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] write-design, implement, run-tests"}}
+{"ts":"2026-04-07T18:58:45.440Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-07T18:58:45.441Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"出技术方案","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.14787,"cpuSystem":14.624476}}}
+{"ts":"2026-04-07T18:58:45.454Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"出技术方案","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.148221,"cpuSystem":14.62534}}}
+{"ts":"2026-04-07T18:58:45.455Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"出技术方案","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.148507,"cpuSystem":14.625884}}}
+{"ts":"2026-04-07T18:58:45.589Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T18:58:45.590Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.149337,"cpuSystem":14.626827}}}
+{"ts":"2026-04-07T18:58:45.591Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T18:58:45.592Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":6.149725,"cpuSystem":14.627515}}}
+{"ts":"2026-04-07T18:58:45.594Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":6.150055,"cpuSystem":14.628137}}}
+{"ts":"2026-04-07T18:59:10.897Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775587524244","from":"todo","to":"inProgress","title":"Review and merge Architecture CR for undocumented modules"}}
+{"ts":"2026-04-07T18:59:15.192Z","type":"task_status","agent":null,"data":{"taskId":"task-1775587524244","from":"inProgress","to":"todo","title":"Review and merge Architecture CR for undocumented modules"}}
+{"ts":"2026-04-07T18:59:18.794Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775581731172","from":"review","to":"testing","title":"Verify test pass rate >=90% after mock fixes"}}
+{"ts":"2026-04-07T18:59:23.834Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775587524443","from":"todo","to":"testing","title":"Verify CDN fallback and agentic-store integration"}}
+{"ts":"2026-04-07T18:59:51.713Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:9, done:215)"}}
+{"ts":"2026-04-07T18:59:51.770Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:9, done:215)\"}"}}
+{"ts":"2026-04-07T19:00:11.534Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775588279869","from":"todo","to":"inProgress","title":"Verify and fix agentic-sense external package wiring"}}
+{"ts":"2026-04-07T19:00:24.172Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:9, done:215)"}}
+{"ts":"2026-04-07T19:00:24.180Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:9, done:215)\"}"}}
+{"ts":"2026-04-07T19:00:37.405Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"26MB\",\"heapUsed\":\"8MB\",\"uptime\":\"4500s\"}"}}
+{"ts":"2026-04-07T19:00:54.009Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T19:00:54.037Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T19:01:24.153Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:9, done:215)"}}
+{"ts":"2026-04-07T19:01:24.593Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:9, done:215)\"}"}}
+{"ts":"2026-04-07T19:01:54.030Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775587524443","from":"testing","to":"done","title":"Verify CDN fallback and agentic-store integration"}}
+{"ts":"2026-04-07T19:01:57.287Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":17,"memoryTotalMB":19,"cpuUser":6.385329,"cpuSystem":15.084835}}}
+{"ts":"2026-04-07T19:01:57.292Z","type":"workflow","agent":"tech_lead-3","data":{"details":"[SIGNAL] completed: Created M95 DBB, milestone design, and 3 task-level designs; updated hasDesign on all 3 tasks"}}
+{"ts":"2026-04-07T19:02:02.555Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775587524244","from":"todo","to":"testing","title":"Review and merge Architecture CR for undocumented modules"}}
+{"ts":"2026-04-07T19:02:10.575Z","type":"task_status","agent":"None","data":{"taskId":"task-1775587524244","from":"testing","to":"todo","title":"Review and merge Architecture CR for undocumented modules"}}
+{"ts":"2026-04-07T19:02:37.220Z","type":"agent_complete","agent":"tech_lead-2","data":{"details":"completed successfully","performance":{"memoryMB":17,"memoryTotalMB":19,"cpuUser":6.437997,"cpuSystem":15.221396}}}
+{"ts":"2026-04-07T19:02:37.317Z","type":"workflow","agent":"tech_lead-2","data":{"details":"[SIGNAL] completed: Created M95 milestone DBB, design, and 3 task technical designs. Root cause identified: stale #agent"}}
+{"ts":"2026-04-07T19:02:40.081Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":7,"cpuUser":6.441374,"cpuSystem":15.226785}}}
+{"ts":"2026-04-07T19:02:40.083Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Verified CDN fallback 4-tier chain and agentic-store integration. Ran 46 tests across 12 files: 43 p"}}

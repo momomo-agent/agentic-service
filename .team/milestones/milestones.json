@@ -242,7 +242,7 @@
     {
       "id": "m93",
       "name": "M93: PRD Partial Gap Closure — STT/TTS, Wake Word, Cloud Fallback",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775583805854",
         "task-1775583813340",
@@ -253,13 +253,24 @@
     {
       "id": "m94",
       "name": "M94: Architecture Doc Merge + Voice Latency Verification + Remaining PRD Gaps",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775587524244",
         "task-1775587524323",
         "task-1775587524443"
       ],
       "created": "2026-04-08T02:44:00.000Z"
+    },
+    {
+      "id": "m95",
+      "name": "M95: Final Push — Test Pass Rate + Gap Re-evaluation",
+      "status": "active",
+      "tasks": [
+        "task-1775588279635",
+        "task-1775588279869",
+        "task-1775588280002"
+      ],
+      "created": "2026-04-08T03:10:00.000Z"
     }
   ]
 }

@@ -34478,3 +34478,111 @@ Created `test/m94-voice-latency-verification.test.js` with 20 new verification t
 [2026-04-07T18:54:38.958Z] tester-2 agent completed
 [2026-04-07 18:54:39] [agent_complete] tester-2 completed successfully
 [2026-04-07 18:54:39] [workflow] tester-2 [SIGNAL] completed: Voice latency <2s benchmark verified: 30/30 tests passed, all DBB criteria met, task marked done
+[2026-04-07 18:55:25] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+[2026-04-07 18:55:37] [perf] daemon {"rss":"22MB","heapUsed":"4MB","uptime":"4200s"}
+[2026-04-07 18:55:59] [error] tester-1 hung (0% CPU for 10min across process tree), killing
+[2026-04-07 18:56:01] [error] tester-1 timed out after 3900s, skipping
+[2026-04-07 18:56:02] [workflow] post [POST] task-1775581731172: testing → review
+[2026-04-07 18:56:07] [workflow] work_loop [LOOP] Iteration 3
+[2026-04-07 18:56:07] [workflow] work_loop [EXEC] pm
+[2026-04-07 18:56:07] [agent_start] pm 管理任务和里程碑
+[2026-04-07 18:56:07] [agent_start] daemon Still busy (71min), skipping
+[2026-04-07T18:56:07.368Z] Running pm agent...
+Here's the current project status and what I've done:
+
+## Status Summary
+
+**Current Scores:** Vision 72% | PRD 78% | Architecture 88%
+**Goal:** Vision >=90% | PRD >=90%
+
+## Active Milestones (5)
+
+| Milestone | Status | Key Items |
+|-----------|--------|-----------|
+| **M91** | 2/3 done | 1 blocked — waiting for test pass rate confirmation |
+| **M92** | 3/4 done | 1 in review — test verification (assigned to tester) |
+| **M93** | 3 in review | STT/TTS, wake word, cloud fallback (assigned to developer) |
+| **M94** | 1/3 done | Architecture CR merge, CDN fallback (assigned to developer, tester-2) |
+| **M95** | 3 todo | **NEW** — final push for test pass rate + fresh gap eval |
+
+## Actions Taken
+
+1. **Assigned unassigned tasks** — M93 tasks to developer, M94 tasks to developer/tester-2, M92 verification to tester
+2. **Activated M93 and M94** — moved from "planned" to "active"
+3. **Created M95 milestone** with 3 P0 tasks:
+   - `task-1775588279635`: Run full test suite & fix remaining failures to >=90% (developer)
+   - `task-1775588279869`: Verify/fix agentic-sense external package wiring (developer)
+   - `task-1775588280002`: Run fresh DBB/PRD/Vision gap evaluation (tester, blocked by above)
+
+## Critical Path
+
+The main blocker is **test pass rate at ~81.7%** (120 failing). M92's mock fixes should help but the verification is in review. M95 creates a fresh developer task to fix remaining test failures, which is the key lever — once tests pass >=90%, gap re-evaluation should push Vision and PRD scores toward 90%.
+
+## Waiting On
+
+- **Tester**: Approve M92 task-1775581731172 (test verification) and M91 task-1775579897264 (blocked)
+- **Developer**: Execute M93 review tasks, M94 CR review + CDN fallback, M95 test fixes + agentic-sense wiring
+
+```signal
+{"status": "completed", "summary": "Created M95 final push milestone, assigned all unassigned tasks across M91-M95, activated M93/M94. Critical path: test pass rate must reach >=90% before gap re-evaluation can confirm Vision/PRD targets met."}
+```
+[2026-04-07T18:58:44.430Z] pm agent completed
+[2026-04-07 18:58:44] [agent_complete] pm completed successfully
+[2026-04-07 18:58:44] [workflow] pm [SIGNAL] completed: Created M95 final push milestone, assigned all unassigned tasks across M91-M95, activated M93/M94. C
+[2026-04-07 18:58:45] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 18:58:45] [workflow] work_loop [PARALLEL] write-design, implement, run-tests
+[2026-04-07 18:58:45] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-07 18:58:45] [agent_start] tech_lead-1 出技术方案
+[2026-04-07 18:58:45] [agent_start] tech_lead-2 出技术方案
+[2026-04-07 18:58:45] [agent_start] tech_lead-3 出技术方案
+[2026-04-07 18:58:45] [workflow] work_loop [EXEC] developer
+[2026-04-07 18:58:45] [agent_start] developer 实现功能
+[2026-04-07 18:58:45] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-07 18:58:45] [agent_start] tester-1 验证功能
+[2026-04-07 18:58:45] [agent_start] tester-2 验证功能
+[2026-04-07T18:58:45.636Z] Running tester-1 agent...
+[2026-04-07T18:58:45.636Z] Running developer agent...
+[2026-04-07T18:58:45.636Z] Running tester-2 agent...
+[2026-04-07T18:58:45.640Z] Running tech_lead-3 agent...
+[2026-04-07T18:58:45.640Z] Running tech_lead-1 agent...
+[2026-04-07T18:58:45.640Z] Running tech_lead-2 agent...
+[2026-04-07 18:59:51] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:9, done:215)
+[2026-04-07 19:00:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:9, done:215)
+[2026-04-07 19:00:37] [perf] daemon {"rss":"26MB","heapUsed":"8MB","uptime":"4500s"}
+[2026-04-07 19:00:54] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+[2026-04-07 19:01:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:9, done:215)
+All tasks completed. Here's a summary:
+
+**M95 DBB & Design created:**
+- `.team/milestones/m95/dbb.md` — verification criteria for test pass rate >=90%, agentic-sense wiring, and fresh gap evaluation
+- `.team/milestones/m95/design.md` — technical approach with root cause analysis (stale import maps, mock path mismatches)
+
+**Task designs created:**
+- `task-1775588279635/design.md` — test suite fix plan: categorize failures (stale mocks, import resolution, timeouts, assertion drift), fix in priority order, verify after each batch
+- `task-1775588279869/design.md` — agentic-sense wiring plan: remove `#agentic-sense` from import maps, update mock paths, verify all 4 agentic-* packages resolve
+- `task-1775588280002/design.md` — gap evaluation plan: re-run DBB/Vision/PRD scoring after prerequisites complete
+
+**All 3 tasks updated** with `hasDesign=true`.
+
+Key finding from investigation: the linter-enhanced design identified that `package.json` still has `#agentic-sense` in the imports map and test files mock `'#agentic-sense'` (with hash) while source imports `'agentic-sense'` (without hash) — these are the primary failure categories.
+
+```signal
+{"status": "completed", "summary": "Created M95 DBB, milestone design, and 3 task-level designs; updated hasDesign on all 3 tasks"}
+```
+[2026-04-07T19:01:47.156Z] tech_lead-3 agent completed
+[2026-04-07 19:01:57] [agent_complete] tech_lead-3 completed successfully
+[2026-04-07 19:01:57] [workflow] tech_lead-3 [SIGNAL] completed: Created M95 DBB, milestone design, and 3 task-level designs; updated hasDesign on all 3 tasks
+```signal
+{"status": "completed", "summary": "Created M95 milestone DBB, design, and 3 task technical designs. Root cause identified: stale #agentic-sense in package.json imports map + old tests mocking #agentic-sense with hash prefix. All tasks updated with hasDesign=true."}
+```
+[2026-04-07T19:02:34.459Z] tech_lead-2 agent completed
+[2026-04-07 19:02:37] [agent_complete] tech_lead-2 completed successfully
+[2026-04-07 19:02:37] [workflow] tech_lead-2 [SIGNAL] completed: Created M95 milestone DBB, design, and 3 task technical designs. Root cause identified: stale #agent
+All available testing tasks are either completed or blocked by developer work. I've successfully verified CDN fallback and agentic-store integration.
+
+```signal
+{"status": "completed", "summary": "Verified CDN fallback 4-tier chain and agentic-store integration. Ran 46 tests across 12 files: 43 passed, 3 failed (pre-existing stale test expectations). CDN fallback: all 4 tiers verified working. agentic-store: init/get/set/del operations verified end-to-end. Memory integration verified. Task marked done."}
+```
+[2026-04-07T19:02:39.963Z] tester-2 agent completed
+[2026-04-07 19:02:40] [agent_complete] tester-2 completed successfully
+[2026-04-07 19:02:40] [workflow] tester-2 [SIGNAL] completed: Verified CDN fallback 4-tier chain and agentic-store integration. Ran 46 tests across 12 files: 43 p
