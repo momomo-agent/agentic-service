@@ -2,7 +2,7 @@
 
 ## Progress
 
-- Removed `#agentic-sense` alias from `vitest.config.js`
-- Removed `#agentic-sense` from `package.json` imports map
-- `src/runtime/sense.js` already imports from `'agentic-sense'` directly
-- All 5 m84-sense-external-package tests pass
+- `vitest.config.js` and `package.json` already had no `#agentic-sense` alias
+- Fixed `src/runtime/adapters/sense.js`: imports `AgenticSense` from `'agentic-sense'`, implements `createPipeline` wrapper
+- Updated outdated tests (m86, integration/agentic-sense-wiring, m84) to match current design
+- All 11 targeted tests pass

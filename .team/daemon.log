@@ -31826,3 +31826,18 @@ Coverage updated: 19 total tests, 19 passed, 0 failed.
 [2026-04-07T14:15:04.409Z] tester-2 agent completed
 [2026-04-07 14:15:04] [agent_complete] tester-2 completed successfully
 [2026-04-07 14:15:04] [workflow] tester-2 [SIGNAL] completed: Tested and marked done 3 review tasks: optimizer shape, CDN fallback, SIGINT drain — all 19 tests pa
+Task complete. Here's a summary:
+
+**task-1775569629612: Wire agentic-sense as external package**
+
+- Fixed `src/runtime/adapters/sense.js` to import `AgenticSense` from `'agentic-sense'` and implement `createPipeline` as a wrapper (the package exports `AgenticSense` class, not `createPipeline`)
+- Updated 3 outdated tests that expected the old `#agentic-sense` import map entry to match the current design
+- All 11 targeted tests pass
+- Task moved to `review`
+
+```signal
+{"status": "completed", "summary": "Wired agentic-sense as external package: fixed adapters/sense.js to use AgenticSense from agentic-sense package, updated 3 outdated tests, all 11 targeted tests pass"}
+```
+[2026-04-07T14:15:25.210Z] developer agent completed
+[2026-04-07 14:15:25] [agent_complete] developer completed successfully
+[2026-04-07 14:15:25] [workflow] developer [SIGNAL] completed: Wired agentic-sense as external package: fixed adapters/sense.js to use AgenticSense from agentic-se
