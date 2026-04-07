@@ -30885,3 +30885,38 @@ Done. Here's a summary of what I did:
 [2026-04-07T12:37:01.206Z] tester-2 agent completed
 [2026-04-07 12:37:01] [agent_complete] tester-2 completed successfully
 [2026-04-07 12:37:01] [workflow] tester-2 [SIGNAL] completed: Tested Docker build — blocked due to agentic-store/embed/voice missing from npm registry; task marke
+Perfect! I've successfully completed testing task-1775561930545. Let me provide a summary:
+
+## Test Completion Summary
+
+**Task**: Document tunnel, CLI, VAD, HTTPS modules in ARCHITECTURE.md
+
+**Result**: ✅ ALL TESTS PASSED
+
+**Test Results**:
+- Total Tests: 5
+- Passed: 5
+- Failed: 0
+- Coverage: 100%
+
+**Verification**:
+1. ✅ Tunnel.js section (Section 5) - documents ngrok/cloudflared LAN tunnel
+2. ✅ CLI Modules section (Section 6) - documents setup.js and browser.js
+3. ✅ VAD section (Section 7) - documents voice activity detection
+4. ✅ HTTPS & Middleware section (Section 8) - documents cert.js, httpsServer.js, middleware.js
+5. ✅ Keyword verification - all required keywords present
+
+**DBB Compliance**: All M85 architecture documentation requirements met.
+
+**Task Status**: Updated to "done"
+
+**Artifacts Created**:
+- `.team/tasks/task-1775561930545/test-result.md` - detailed test report
+- `.team/gaps/test-coverage.json` - test coverage summary
+
+```signal
+{"status": "completed", "summary": "Verified ARCHITECTURE.md documentation for tunnel, CLI, VAD, and HTTPS modules. All 5 tests passed. Task marked as done."}
+```
+[2026-04-07T12:37:09.681Z] tester-1 agent completed
+[2026-04-07 12:37:09] [agent_complete] tester-1 completed successfully
+[2026-04-07 12:37:09] [workflow] tester-1 [SIGNAL] completed: Verified ARCHITECTURE.md documentation for tunnel, CLI, VAD, and HTTPS modules. All 5 tests passed. 
