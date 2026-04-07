@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T15:33:45.564Z",
+  "timestamp": "2026-04-07T15:44:34.345Z",
   "exitCode": 0,
   "status": "blocked",
-  "summary": "M89 has 1 task in review awaiting tester approval. M90 has 4 tasks in review and 1 in todo. Cannot advance milestones until testers approve reviewed tasks."
+  "summary": "M89 and M90 tasks are in review status awaiting tester approval. Closed duplicate tunnel task (task-1775573593639) and fixed missing milestoneId on task-1775575363327."
 }

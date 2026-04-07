@@ -59,6 +59,7 @@ const meta = chunks.find(c => c.type === 'meta');
 if (!meta) { console.error('NO META'); process.exit(1); }
 if (meta.provider !== 'cloud') { console.error('BAD PROVIDER'); process.exit(1); }
 console.log('ok');
+process.exit(0);
 `;
   const { stdout } = await execFileAsync('node', ['--input-type=module'], { input: script, env: process.env });
   assert.ok(stdout.includes('ok'), `Unexpected output: ${stdout}`);
@@ -84,6 +85,7 @@ try {
     console.error('BAD MSG: ' + e.message); process.exit(1);
   }
   console.log('ok');
+  process.exit(0);
 }
 `;
   const { stdout } = await execFileAsync('node', ['--input-type=module'], {
@@ -114,6 +116,7 @@ for await (const c of chat('hi')) chunks.push(c);
 if (chunks.some(c => c.type === 'meta')) { console.error('HAS META'); process.exit(1); }
 if (!chunks.some(c => c.type === 'content')) { console.error('NO CONTENT'); process.exit(1); }
 console.log('ok');
+process.exit(0);
 `;
   const { stdout } = await execFileAsync('node', ['--input-type=module'], { input: script, env: process.env });
   assert.ok(stdout.includes('ok'), `Unexpected output: ${stdout}`);

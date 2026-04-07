@@ -20058,3 +20058,45 @@
 {"ts":"2026-04-07T15:34:38.325Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 24min (active:6, done:202)\"}"}}
 {"ts":"2026-04-07T15:35:01.755Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":10,"cpuUser":1.043476,"cpuSystem":1.794249}}}
 {"ts":"2026-04-07T15:35:01.756Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: No claimable tasks - all review tasks assigned to developer, testing task claimed by tester-2"}}
+{"ts":"2026-04-07T15:35:38.214Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"97MB\",\"heapUsed\":\"4MB\",\"uptime\":\"1500s\"}"}}
+{"ts":"2026-04-07T15:35:38.333Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 25min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:35:38.333Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 25min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:36:38.333Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 26min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:36:38.334Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 26min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:37:38.338Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 27min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:37:38.338Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 27min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:38:38.342Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 28min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:38:38.342Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 28min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:39:38.339Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 29min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:39:38.339Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 29min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:40:38.217Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"105MB\",\"heapUsed\":\"14MB\",\"uptime\":\"1800s\"}"}}
+{"ts":"2026-04-07T15:40:38.351Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 30min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:40:38.351Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 30min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:40:38.361Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (30min), skipping","performance":{"memoryMB":17,"memoryTotalMB":28,"cpuUser":1.219877,"cpuSystem":2.053879}}}
+{"ts":"2026-04-07T15:41:38.355Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 31min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:41:38.356Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 31min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:42:38.358Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 32min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:42:38.358Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 32min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:43:38.473Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 33min (active:6, done:202)"}}
+{"ts":"2026-04-07T15:43:38.473Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 33min (active:6, done:202)\"}"}}
+{"ts":"2026-04-07T15:43:45.668Z","type":"error","agent":"tester-2","data":{"details":"hung (0% CPU for 10min), killing"}}
+{"ts":"2026-04-07T15:43:45.672Z","type":"error","agent":"tester-2","data":{"details":"timed out after 3900s, skipping"}}
+{"ts":"2026-04-07T15:43:45.684Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775573593582: testing → review"}}
+{"ts":"2026-04-07T15:43:45.954Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 4"}}
+{"ts":"2026-04-07T15:43:45.991Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T15:43:45.992Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":11,"memoryTotalMB":17,"cpuUser":1.362333,"cpuSystem":2.407164}}}
+{"ts":"2026-04-07T15:44:28.786Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775573593639","from":"todo","to":"done","title":"Verify LAN tunnel and HTTPS cert generation"}}
+{"ts":"2026-04-07T15:44:34.349Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":18,"memoryTotalMB":25,"cpuUser":1.380268,"cpuSystem":2.429922}}}
+{"ts":"2026-04-07T15:44:34.349Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] blocked: M89 and M90 tasks are in review status awaiting tester approval. Closed duplicate tunnel task (task-"}}
+{"ts":"2026-04-07T15:44:34.350Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] pm → blocked: M89 and M90 tasks are in review status awaiting tester approval. Closed duplicat"}}
+{"ts":"2026-04-07T15:44:34.477Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T15:44:34.478Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T15:44:34.478Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] implement: designedTasks > 0"}}
+{"ts":"2026-04-07T15:44:34.478Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] run-tests"}}
+{"ts":"2026-04-07T15:44:34.478Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T15:44:34.479Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":15,"memoryTotalMB":24,"cpuUser":1.394374,"cpuSystem":2.487264}}}
+{"ts":"2026-04-07T15:44:34.479Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":15,"memoryTotalMB":24,"cpuUser":1.394605,"cpuSystem":2.487707}}}
+{"ts":"2026-04-07T15:45:38.161Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775573593582","from":"review","to":"testing","title":"Verify and fix cloud fallback (OpenAI/Anthropic) in llm.js"}}
+{"ts":"2026-04-07T15:45:38.220Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"66MB\",\"heapUsed\":\"8MB\",\"uptime\":\"2100s\"}"}}
+{"ts":"2026-04-07T15:46:07.500Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":1.440381,"cpuSystem":2.541344}}}
+{"ts":"2026-04-07T15:46:07.501Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: No claimable tasks — all review tasks are either assigned to developer or being tested by tester-2. "}}

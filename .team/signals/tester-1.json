@@ -1,7 +1,7 @@
 {
   "agent": "tester-1",
-  "timestamp": "2026-04-07T15:35:01.751Z",
+  "timestamp": "2026-04-07T15:46:07.495Z",
   "exitCode": 0,
-  "status": "blocked",
-  "summary": "No claimable tasks - all review tasks assigned to developer, testing task claimed by tester-2"
+  "status": "completed",
+  "summary": "No claimable tasks — all review tasks are either assigned to developer or being tested by tester-2. All tester-1 tasks are done."
 }
