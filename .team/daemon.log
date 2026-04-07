@@ -34300,3 +34300,181 @@ The m72-m87 batch completed: **24 files (19 pass, 5 fail), 77 tests (68 pass, 9 
 [2026-04-07T18:41:49.618Z] tester agent completed
 [2026-04-07 18:41:50] [agent_complete] tester completed successfully
 [2026-04-07 18:41:50] [workflow] tester [SIGNAL] completed: Background m72-m87 batch completed: 68/77 tests passed. Consistent with earlier analysis. Pass rate 
+[2026-04-07 18:41:56] [workflow] post [POST] task-1775581731172: testing → review
+[2026-04-07 18:41:56] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-07 18:41:56] [workflow] work_loop [EXEC] pm
+[2026-04-07 18:41:56] [agent_start] pm 管理任务和里程碑
+[2026-04-07T18:41:56.437Z] Running pm agent...
+[2026-04-07 18:42:47] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 57min (active:4, done:214)
+[2026-04-07 18:43:19] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 58min (active:4, done:214)
+[2026-04-07 18:44:21] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 59min (active:4, done:214)
+[2026-04-07 18:44:44] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+[2026-04-07 18:45:25] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 60min (active:4, done:214)
+[2026-04-07 18:45:37] [perf] daemon {"rss":"22MB","heapUsed":"8MB","uptime":"3600s"}
+[2026-04-07 18:45:50] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 60min (active:7, done:214)
+## PM Status Report
+
+### Current Scores
+| Metric | Current | Target | Gap |
+|--------|---------|--------|-----|
+| Vision | 72% | ≥90% | 18% |
+| PRD | 78% | ≥90% | 12% |
+| Architecture | 88% | ≥90% | 2% |
+| DBB | 75% | — | — |
+
+### Milestone Status
+
+**M91 (Active)** — Architecture Doc Sync + agentic-sense Completion
+- task-1775579891016: CR submission — **done**
+- task-1775579897222: agentic-sense wiring verification — **done**
+- task-1775579897264: Test suite ≥90% pass rate — **blocked**
+- Status: 2/3 done, 1 blocked. Cannot mark complete until test verification passes.
+
+**M92 (Active)** — Test Fix + PRD Closure
+- task-1775581712916: Fix stale mocks — **done**
+- task-1775581717200: Add Dockerfile — **done**
+- task-1775581724582: Add README.md — **done**
+- task-1775581731172: Verify test pass rate ≥90% — **review**
+- Status: 3/4 done, 1 in review. Tester needs to approve.
+
+**M93 (Planned)** — PRD Partial Gap Closure
+- All 3 tasks (STT/TTS, wake word, cloud fallback) — **review**
+- Developers completed work, awaiting tester approval.
+- Blocked on M91/M92 test pass rate confirmation.
+
+**M94 (Planned)** — Architecture Doc Merge + Voice Latency + Remaining PRD Gaps *(newly created)*
+- Review and merge Architecture CR (tunnel, CLI, HTTPS, VAD, embed, store docs)
+- Verify voice latency <2s end-to-end
+- Verify CDN fallback + agentic-store integration
+- Blocked on M91/M92/M93 completion.
+
+### Action Items for Team
+1. **Tester**: Approve or rework task-1775581731172 (M92 test verification) and task-1775579897264 (M91 test verification)
+2. **Developer**: Address any issues if test pass rate is still below 90%
+3. Once M91+M92 test verification passes, M93 tasks can move from review → done
+4. Then M94 can begin to close remaining architecture (→90%+) and vision (→90%+) gaps
+
+```signal
+{"status": "completed", "summary": "Updated M92 to active status. Created M94 (3 tasks) for remaining architecture doc merge, voice latency verification, and CDN fallback verification. All milestones planned through M94. Current blockers: test pass rate verification tasks in review across M91/M92. Team needs tester approval to unblock."}
+```
+[2026-04-07T18:45:57.668Z] pm agent completed
+[2026-04-07 18:45:57] [agent_complete] pm completed successfully
+[2026-04-07 18:45:57] [workflow] pm [SIGNAL] completed: Updated M92 to active status. Created M94 (3 tasks) for remaining architecture doc merge, voice late
+[2026-04-07 18:45:58] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 18:45:58] [workflow] work_loop [PARALLEL-SKIP] implement: designedTasks > 0
+[2026-04-07 18:45:58] [workflow] work_loop [PARALLEL] write-design, run-tests
+[2026-04-07 18:45:58] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-07 18:45:58] [agent_start] tech_lead-1 出技术方案
+[2026-04-07 18:45:58] [agent_start] tech_lead-2 出技术方案
+[2026-04-07 18:45:58] [agent_start] tech_lead-3 出技术方案
+[2026-04-07 18:45:58] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-07 18:45:58] [agent_start] tester-1 验证功能
+[2026-04-07 18:45:58] [agent_start] tester-2 验证功能
+[2026-04-07T18:45:59.210Z] Running tester-2 agent...
+[2026-04-07T18:45:59.210Z] Running tech_lead-2 agent...
+[2026-04-07T18:45:59.210Z] Running tester-1 agent...
+[2026-04-07T18:45:59.210Z] Running tech_lead-3 agent...
+[2026-04-07T18:45:59.210Z] Running tech_lead-1 agent...
+[2026-04-07 18:46:05] [agent_start] daemon Still busy (60min), skipping
+[2026-04-07 18:46:20] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 61min (active:7, done:214)
+[2026-04-07 18:47:47] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 62min (active:7, done:214)
+[2026-04-07 18:48:24] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 63min (active:7, done:214)
+## Summary
+
+Completed all M94 Tech Lead deliverables:
+
+### Milestone-Level Documents
+- **`.team/milestones/m94/dbb.md`** — 6 verification criteria: architecture docs completeness, CR merge, voice latency <2s, CDN fallback, agentic-store integration, test pass rate ≥90%
+- **`.team/milestones/m94/design.md`** — technical approach with task breakdown, module audit table, and risk assessment
+
+### Task-Level Designs (3 tasks, all `hasDesign=true`)
+- **task-1775587524244** (Architecture CR merge) — exact documentation additions for 5 undocumented modules (matcher, ollama, store, embed) plus Package Distribution section for Docker
+- **task-1775587524323** (Voice latency benchmark) — verification steps using existing m88/m72 benchmark tests, per-stage latency measurement, bottleneck identification if >2s
+- **task-1775587524443** (CDN fallback + agentic-store) — verification of 3-tier fallback chain in profiles.js and store get/set/del roundtrip
+
+### Key Findings
+- ARCHITECTURE.md is missing docs for `matcher.js`, `ollama.js`, `store/index.js`, `embed.js`, and a Package Distribution strategy
+- CDN fallback already has robust 3-tier implementation (remote → cache → builtin)
+- agentic-store integration exists in `src/store/index.js` with clean API
+
+```signal
+{"status": "completed", "summary": "Created M94 dbb.md, design.md, and 3 task-level designs for architecture doc merge, voice latency benchmark, and CDN fallback verification. Updated all tasks with hasDesign=true."}
+```
+[2026-04-07T18:49:11.617Z] tech_lead-1 agent completed
+[2026-04-07 18:49:11] [agent_complete] tech_lead-1 completed successfully
+[2026-04-07 18:49:11] [workflow] tech_lead-1 [SIGNAL] completed: Created M94 dbb.md, design.md, and 3 task-level designs for architecture doc merge, voice latency be
+[2026-04-07 18:49:23] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 64min (active:7, done:214)
+[2026-04-07 18:49:50] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+[2026-04-07 18:50:19] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 65min (active:7, done:214)
+[2026-04-07 18:50:38] [perf] daemon {"rss":"23MB","heapUsed":"4MB","uptime":"3902s"}
+All done. Here's a summary of what was completed:
+
+**Milestone M94 (already existed):**
+- `.team/milestones/m94/dbb.md` — 6 verification criteria (Architecture CR, voice latency, CDN fallback, agentic-store, test pass rate)
+- `.team/milestones/m94/design.md` — technical design covering all 3 tasks with module comparison table
+
+**Task Designs Created:**
+
+| Task | Design Focus |
+|------|-------------|
+| `task-1775587524244` | Architecture CR merge — 6 modules to add (matcher.js, ollama.js, store, embed.js, memory.js, Package Distribution section) with exact function signatures |
+| `task-1775587524323` | Voice latency <2s — verification steps for profiler.js, latency-log.js, benchmark scripts, results file checks |
+| `task-1775587524443` | CDN fallback + agentic-store — 4-tier fallback verification, store get/set/del end-to-end, watchProfiles ETag reload |
+
+**Updated:** All 3 task.json files set `hasDesign: true`.
+
+```signal
+{"status": "completed", "summary": "Created task-level technical designs for all 3 M94 todo tasks (Architecture CR merge, voice latency benchmark, CDN fallback + agentic-store). M94 dbb.md and design.md already existed with comprehensive content. All task.json files updated with hasDesign: true."}
+```
+[2026-04-07T18:50:57.127Z] tech_lead-3 agent completed
+[2026-04-07 18:50:57] [agent_complete] tech_lead-3 completed successfully
+[2026-04-07 18:50:57] [workflow] tech_lead-3 [SIGNAL] completed: Created task-level technical designs for all 3 M94 todo tasks (Architecture CR merge, voice latency 
+[2026-04-07 18:51:23] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 66min (active:7, done:214)
+[2026-04-07 18:52:19] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 67min (active:7, done:214)
+All work complete. Here's a summary of what I did for M94:
+
+## M94 Technical Lead — Summary
+
+### Milestone Files Updated
+- **`.team/milestones/m94/dbb.md`** — Refined verification criteria with accurate test file references, confirmed missing modules (matcher.js, ollama.js, memory.js API), and specific measurable targets
+- **`.team/milestones/m94/design.md`** — Updated with verified module exports, correct test file names, and accurate fallback chain description
+
+### Task Designs Updated
+- **task-1775587524244** (Architecture CR) — Corrected to focus on 3 confirmed missing modules (matcher.js, ollama.js, memory.js), added exact function signatures from source, corrected CR status change to "resolved"
+- **task-1775587524323** (Voice Latency) — Added `test/m19-benchmark.test.js` reference, verified all test files exist (m88, m72, m80, benchmark/voice-latency.*)
+- **task-1775587524443** (CDN + Store) — Added specific test file references (m19, m30, m28) with verified existence
+
+### Key Findings from Research
+- **3 modules missing from ARCHITECTURE.md**: `src/detector/matcher.js`, `src/detector/ollama.js`, `src/runtime/memory.js` (API level)
+- **Already documented**: tunnel.js, cli/, cert.js, httpsServer.js, middleware.js, vad.js, embed.js, store/index.js
+- **All referenced test files verified to exist** — no broken references in designs
+- All 3 tasks already had `hasDesign: true` in task.json
+
+```signal
+{"status": "completed", "summary": "Updated M94 dbb.md, design.md, and all 3 task designs with verified information. Confirmed 3 missing ARCHITECTURE.md modules (matcher.js, ollama.js, memory.js API). All test file references verified. Task designs refined with exact function signatures from source code."}
+```
+[2026-04-07T18:52:20.046Z] tech_lead-2 agent completed
+[2026-04-07 18:52:20] [agent_complete] tech_lead-2 completed successfully
+[2026-04-07 18:52:20] [workflow] tech_lead-2 [SIGNAL] completed: Updated M94 dbb.md, design.md, and all 3 task designs with verified information. Confirmed 3 missing
+[2026-04-07 18:53:21] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 68min (active:7, done:214)
+[2026-04-07 18:54:19] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 69min (active:7, done:214)
+**Task completed: task-1775587524323 — Verify voice latency <2s end-to-end benchmark**
+
+**Results: 30/30 tests passed (100%)**
+
+Verified all m94 DBB Section 3 criteria:
+- Benchmark script runs STT → LLM → TTS pipeline with wall-clock measurement
+- End-to-end latency p95=1807ms < 2000ms target (from `test/benchmark/results.json`)
+- All three stages individually profiled via `profiler.js` (stt.js, llm.js, tts.js)
+- Latency logged via `latency-log.js` per request
+- `/api/voice` logs "LATENCY EXCEEDED" when >2000ms
+- `/api/perf` endpoint returns `{last, avg, count}` per stage
+
+Created `test/m94-voice-latency-verification.test.js` with 20 new verification tests covering profiler instrumentation, pipeline order, threshold boundary behavior, p95 calculation correctness, and benchmark script structure.
+
+```signal
+{"status": "completed", "summary": "Voice latency <2s benchmark verified: 30/30 tests passed, all DBB criteria met, task marked done"}
+```
+[2026-04-07T18:54:38.958Z] tester-2 agent completed
+[2026-04-07 18:54:39] [agent_complete] tester-2 completed successfully
+[2026-04-07 18:54:39] [workflow] tester-2 [SIGNAL] completed: Voice latency <2s benchmark verified: 30/30 tests passed, all DBB criteria met, task marked done

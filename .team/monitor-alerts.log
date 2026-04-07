@@ -2689,3 +2689,19 @@
 {"time":"2026-04-07T18:39:28.492Z","type":"cr_explosion","message":"23 pending CRs"}
 {"time":"2026-04-07T18:40:20.411Z","type":"no_progress","message":"No progress for 55min (active:5, done:214)"}
 {"time":"2026-04-07T18:41:18.943Z","type":"no_progress","message":"No progress for 56min (active:4, done:214)"}
+{"time":"2026-04-07T18:42:47.320Z","type":"no_progress","message":"No progress for 57min (active:4, done:214)"}
+{"time":"2026-04-07T18:43:19.421Z","type":"no_progress","message":"No progress for 58min (active:4, done:214)"}
+{"time":"2026-04-07T18:44:21.202Z","type":"no_progress","message":"No progress for 59min (active:4, done:214)"}
+{"time":"2026-04-07T18:44:44.679Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T18:45:25.003Z","type":"no_progress","message":"No progress for 60min (active:4, done:214)"}
+{"time":"2026-04-07T18:45:50.975Z","type":"no_progress","message":"No progress for 60min (active:7, done:214)"}
+{"time":"2026-04-07T18:46:20.155Z","type":"no_progress","message":"No progress for 61min (active:7, done:214)"}
+{"time":"2026-04-07T18:47:47.478Z","type":"no_progress","message":"No progress for 62min (active:7, done:214)"}
+{"time":"2026-04-07T18:48:24.006Z","type":"no_progress","message":"No progress for 63min (active:7, done:214)"}
+{"time":"2026-04-07T18:49:23.313Z","type":"no_progress","message":"No progress for 64min (active:7, done:214)"}
+{"time":"2026-04-07T18:49:50.660Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T18:50:19.409Z","type":"no_progress","message":"No progress for 65min (active:7, done:214)"}
+{"time":"2026-04-07T18:51:23.218Z","type":"no_progress","message":"No progress for 66min (active:7, done:214)"}
+{"time":"2026-04-07T18:52:19.354Z","type":"no_progress","message":"No progress for 67min (active:7, done:214)"}
+{"time":"2026-04-07T18:53:21.382Z","type":"no_progress","message":"No progress for 68min (active:7, done:214)"}
+{"time":"2026-04-07T18:54:19.786Z","type":"no_progress","message":"No progress for 69min (active:7, done:214)"}

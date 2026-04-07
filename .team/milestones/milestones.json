@@ -230,7 +230,7 @@
     {
       "id": "m92",
       "name": "M92: Test Fix + PRD Closure — Stale Mocks, Docker, README",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775581712916",
         "task-1775581717200",
@@ -249,6 +249,17 @@
         "task-1775583813385"
       ],
       "created": "2026-04-07T17:43:43.231Z"
+    },
+    {
+      "id": "m94",
+      "name": "M94: Architecture Doc Merge + Voice Latency Verification + Remaining PRD Gaps",
+      "status": "planned",
+      "tasks": [
+        "task-1775587524244",
+        "task-1775587524323",
+        "task-1775587524443"
+      ],
+      "created": "2026-04-08T02:44:00.000Z"
     }
   ]
 }
