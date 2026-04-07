@@ -4,10 +4,10 @@
   "description": "src/detector/matcher.js and src/detector/ollama.js are not in the architecture spec. Either remove them or add inline comments documenting why they exist as intentional extensions.",
   "status": "todo",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "developer-2",
   "blockedBy": [],
   "groupId": "m64",
   "hasDesign": true,
   "created": "2026-04-07T02:01:59.694Z",
-  "updated": "2026-04-07T02:13:31.253Z"
+  "updated": "2026-04-07T02:14:18.032Z"
 }

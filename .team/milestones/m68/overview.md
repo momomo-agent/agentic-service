@@ -16,3 +16,4 @@ Close remaining DBB partial gaps not covered by m61–m64.
 - SIGINT drains active SSE/WebSocket connections before exit
 - CDN profiles.json refreshed if >7 days stale
 - setup.sh detects Node.js version correctly and is idempotent
+- src/cli/ and unspecified server files documented in ARCHITECTURE.md (via CR) or removed

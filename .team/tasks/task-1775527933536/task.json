@@ -4,10 +4,10 @@
   "description": "Audit src/cli/, src/server/cert.js, httpsServer.js, middleware.js against ARCHITECTURE.md; submit CR if architecture update needed",
   "status": "todo",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "developer-2",
   "blockedBy": [],
   "groupId": "m68",
   "hasDesign": false,
   "created": "2026-04-07T02:12:13.536Z",
-  "updated": "2026-04-07T02:13:23.675Z"
+  "updated": "2026-04-07T02:14:28.160Z"
 }

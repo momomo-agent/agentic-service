@@ -1,14 +1,15 @@
 {
-  "totalTests": 33,
-  "passed": 33,
-  "failed": 0,
+  "totalTests": 35,
+  "passed": 34,
+  "failed": 1,
   "edgeCases": [
     "SSE streaming responses counted as in-flight until stream ends",
     "waitDrain timeout exceeded — forces process.exit(1)",
     "Ollama 200 but stream errors mid-way — not tested",
     "setup.sh on Linux without apt or nvm — falls back to curl nvm install",
     "Non-PCM audio format VAD accuracy (acceptable for MVP)",
-    "Hardware with no gpu field falls through to catch-all profile"
+    "Hardware with no gpu field falls through to catch-all profile",
+    "agentic-store version pinning once package is published"
   ],
-  "coverage": "100%"
+  "coverage": "97%"
 }
