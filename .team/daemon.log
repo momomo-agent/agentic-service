@@ -30066,3 +30066,21 @@ Both tasks completed:
 [2026-04-07T11:41:49.490Z] developer agent completed
 [2026-04-07 11:41:49] [agent_complete] developer completed successfully
 [2026-04-07 11:41:49] [workflow] developer [SIGNAL] completed: Added voice latency instrumentation (latency-log.js) to STT/LLM/TTS pipeline and benchmark test; cpu
+All done. Here's a summary:
+
+**Task: CPU Profiling and Voice Latency Instrumentation**
+
+- Claimed and tested `task-1775561368213`
+- All 10 tests passed:
+  - `test/latency.test.js` — 2 tests (mocked pipeline < 2000ms)
+  - `test/benchmark/voice-latency.test.js` — 5 tests (benchmark + api.js checks)
+  - `test/m80-profiler.test.js` — 4 new unit tests for `profiler.js`
+- Implementation verified: `profiler.js`, `stt.js`, `tts.js`, `brain.js`, `api.js` all correctly instrumented
+- Task marked `done`
+
+```signal
+{"status": "completed", "summary": "10/10 tests passed for CPU profiling and voice latency instrumentation task"}
+```
+[2026-04-07T11:41:56.655Z] tester agent completed
+[2026-04-07 11:41:56] [agent_complete] tester completed successfully
+[2026-04-07 11:41:56] [workflow] tester [SIGNAL] completed: 10/10 tests passed for CPU profiling and voice latency instrumentation task
