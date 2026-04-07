@@ -18703,3 +18703,24 @@
 {"ts":"2026-04-07T11:27:47.874Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775536706050","from":"testing","to":"done","title":"Verify CDN profiles.json fallback to default.json"}}
 {"ts":"2026-04-07T11:28:11.719Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":15,"cpuUser":2.742415,"cpuSystem":5.850459}}}
 {"ts":"2026-04-07T11:28:11.720Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Tested and verified 2 tasks: task-1775536700459 (npx bin entrypoint) and task-1775536706050 (CDN pro"}}
+{"ts":"2026-04-07T11:28:12.031Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 8"}}
+{"ts":"2026-04-07T11:28:12.045Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T11:28:12.045Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":2.778547,"cpuSystem":5.968558}}}
+{"ts":"2026-04-07T11:28:57.241Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775535895960","from":"blocked","to":"todo","title":"Fix mocked module initialization across failing test files"}}
+{"ts":"2026-04-07T11:28:57.273Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775536622791","from":"blocked","to":"todo","title":"Wire agentic-voice as external package"}}
+{"ts":"2026-04-07T11:29:28.214Z","type":"task_created","agent":null,"data":{"taskId":"task-1775561368213","title":"CPU profiling and voice latency instrumentation","priority":"P1","group":"m80"}}
+{"ts":"2026-04-07T11:29:49.976Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":17,"memoryTotalMB":23,"cpuUser":2.836103,"cpuSystem":6.059415}}}
+{"ts":"2026-04-07T11:29:49.977Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Unblocked 2 tasks, submitted architecture CR, created CPU profiling task for missing vision gap"}}
+{"ts":"2026-04-07T11:29:50.036Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T11:29:50.037Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-07T11:29:50.037Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] write-design, implement"}}
+{"ts":"2026-04-07T11:29:50.037Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tech_lead"}}
+{"ts":"2026-04-07T11:29:50.037Z","type":"agent_start","agent":"tech_lead","data":{"details":"出技术方案","performance":{"memoryMB":15,"memoryTotalMB":19,"cpuUser":2.849697,"cpuSystem":6.106349}}}
+{"ts":"2026-04-07T11:29:50.038Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T11:29:50.038Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":15,"memoryTotalMB":19,"cpuUser":2.849903,"cpuSystem":6.106833}}}
+{"ts":"2026-04-07T11:30:10.887Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775536622791","from":"todo","to":"inProgress","title":"Wire agentic-voice as external package"}}
+{"ts":"2026-04-07T11:31:06.715Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"50MB\",\"heapUsed\":\"17MB\",\"uptime\":\"3600s\"}"}}
+{"ts":"2026-04-07T11:31:07.234Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (60min), skipping","performance":{"memoryMB":17,"memoryTotalMB":24,"cpuUser":2.888671,"cpuSystem":6.182838}}}
+{"ts":"2026-04-07T11:32:08.710Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775536622791","from":"inProgress","to":"review","title":"Wire agentic-voice as external package"}}
+{"ts":"2026-04-07T11:32:13.909Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":2.939092,"cpuSystem":6.282596}}}
+{"ts":"2026-04-07T11:32:13.909Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Wired agentic-voice as external package: fixed tts.js imports, removed import map aliases, deleted l"}}

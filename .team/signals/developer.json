@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T11:25:37.936Z",
+  "timestamp": "2026-04-07T11:32:13.905Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Verified CDN profiles fallback chain is correct, default.json has cpu-only entries, created test/profiles-fallback.test.js with 2 passing tests"
+  "summary": "Wired agentic-voice as external package: fixed tts.js imports, removed import map aliases, deleted local voice stubs"
 }

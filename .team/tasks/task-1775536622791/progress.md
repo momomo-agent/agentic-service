@@ -27,3 +27,8 @@
 
 Both stt.js and tts.js already had correct imports using the external package pattern. No code changes needed in runtime files.
 
+## Developer update (2026-04-07)
+- Fixed tts.js: `#agentic-voice/...` → `agentic-voice/...` (was still using import map aliases)
+- Removed `#agentic-voice/*` entries from package.json imports map
+- Deleted local voice stubs and removed empty adapters/voice/ directory
+

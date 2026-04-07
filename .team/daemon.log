@@ -29835,3 +29835,53 @@ No more tasks in review status. All remaining tasks are in-progress by other tea
 [2026-04-07T11:28:11.716Z] tester-1 agent completed
 [2026-04-07 11:28:11] [agent_complete] tester-1 completed successfully
 [2026-04-07 11:28:11] [workflow] tester-1 [SIGNAL] completed: Tested and verified 2 tasks: task-1775536700459 (npx bin entrypoint) and task-1775536706050 (CDN pro
+[2026-04-07 11:28:12] [workflow] work_loop [LOOP] Iteration 8
+[2026-04-07 11:28:12] [workflow] work_loop [EXEC] pm
+[2026-04-07 11:28:12] [agent_start] pm 管理任务和里程碑
+[2026-04-07T11:28:12.070Z] Running pm agent...
+The milestones.json already has task-1775561368213 in m80 (line 74) — the task manager added it automatically. Everything is in order.
+
+**Summary of actions taken:**
+
+1. **Unblocked 2 tasks** — `task-1775535895960` (m83: mock init fix) and `task-1775536622791` (m84: agentic-voice wire) — their blocker `task-1775538907092` was already done
+2. **Submitted CR** `cr-1775561292071` to L1 requesting ARCHITECTURE.md updates for 5 undocumented modules (tunnel, CLI, HTTPS/middleware, VAD, embed)
+3. **Created task** `task-1775561368213` (P1, m80) for CPU profiling + voice latency instrumentation — addresses the last `missing` vision gap
+
+**Active work in flight:**
+- m74: Docker verification (in-progress)
+- m76: cpu-only profile (in-progress)
+- m80: wake word pipeline + voice latency (in-progress) + new CPU profiling task
+- m83: mock init fix (now unblocked, todo)
+- m84: agentic-voice wire (now unblocked, todo)
+
+No milestones can be closed yet — all have active/in-progress tasks. Waiting on testers to complete review.
+
+```signal
+{"status": "completed", "summary": "Unblocked 2 tasks, submitted architecture CR, created CPU profiling task for missing vision gap"}
+```
+[2026-04-07T11:29:49.970Z] pm agent completed
+[2026-04-07 11:29:49] [agent_complete] pm completed successfully
+[2026-04-07 11:29:49] [workflow] pm [SIGNAL] completed: Unblocked 2 tasks, submitted architecture CR, created CPU profiling task for missing vision gap
+[2026-04-07 11:29:50] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 11:29:50] [workflow] work_loop [PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-07 11:29:50] [workflow] work_loop [PARALLEL] write-design, implement
+[2026-04-07 11:29:50] [workflow] work_loop [EXEC] tech_lead
+[2026-04-07 11:29:50] [agent_start] tech_lead 出技术方案
+[2026-04-07 11:29:50] [workflow] work_loop [EXEC] developer
+[2026-04-07 11:29:50] [agent_start] developer 实现功能
+[2026-04-07T11:29:50.066Z] Running developer agent...
+[2026-04-07T11:29:50.066Z] Running tech_lead agent...
+[2026-04-07 11:31:06] [perf] daemon {"rss":"50MB","heapUsed":"17MB","uptime":"3600s"}
+[2026-04-07 11:31:07] [agent_start] daemon Still busy (60min), skipping
+Task complete. Here's what was done:
+
+- `tts.js`: fixed imports from `#agentic-voice/...` → `agentic-voice/...`
+- `package.json`: removed `#agentic-voice/*` import map entries; `agentic-voice` dependency was already present
+- Deleted local voice stubs (`adapters/voice/`) — now all voice adapters resolve from the external `agentic-voice` package
+
+```signal
+{"status": "completed", "summary": "Wired agentic-voice as external package: fixed tts.js imports, removed import map aliases, deleted local voice stubs"}
+```
+[2026-04-07T11:32:13.905Z] developer agent completed
+[2026-04-07 11:32:13] [agent_complete] developer completed successfully
+[2026-04-07 11:32:13] [workflow] developer [SIGNAL] completed: Wired agentic-voice as external package: fixed tts.js imports, removed import map aliases, deleted l
