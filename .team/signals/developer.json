@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T14:36:52.524Z",
+  "timestamp": "2026-04-07T14:42:41.622Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Fixed createPipeline in src/runtime/adapters/sense.js to delegate to agentic-sense package instead of wrapping AgenticSense class. All 11 tests pass. Task moved to review."
+  "summary": "No tasks available to claim — all hasDesign=true tasks are done/review, new todo tasks have hasDesign=false"
 }

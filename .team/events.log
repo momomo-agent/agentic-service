@@ -19713,3 +19713,6 @@
 {"ts":"2026-04-07T14:42:13.149Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 18min (active:5, done:197)\"}"}}
 {"ts":"2026-04-07T14:42:26.968Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":18,"cpuUser":11.9846,"cpuSystem":26.355406}}}
 {"ts":"2026-04-07T14:42:26.969Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: Checked task list - no tasks in review status, nothing to test"}}
+{"ts":"2026-04-07T14:42:27.137Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775569652492: testing → review"}}
+{"ts":"2026-04-07T14:42:41.624Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":18,"cpuUser":11.987097,"cpuSystem":26.365002}}}
+{"ts":"2026-04-07T14:42:41.625Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No tasks available to claim — all hasDesign=true tasks are done/review, new todo tasks have hasDesig"}}

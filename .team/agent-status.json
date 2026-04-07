@@ -24,9 +24,9 @@
     "retryCount": 0
   },
   "developer": {
-    "status": "running",
-    "lastRun": "2026-04-07T14:42:03.850Z",
-    "currentTask": "实现功能",
+    "status": "idle",
+    "lastRun": "2026-04-07T14:42:41.624Z",
+    "currentTask": null,
     "retryCount": 2
   },
   "tester": {

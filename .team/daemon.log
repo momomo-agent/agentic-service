@@ -32140,3 +32140,12 @@ No tasks are currently in 'review' status. There's nothing for me to test right 
 [2026-04-07T14:42:26.964Z] tester agent completed
 [2026-04-07 14:42:26] [agent_complete] tester completed successfully
 [2026-04-07 14:42:26] [workflow] tester [SIGNAL] completed: Checked task list - no tasks in review status, nothing to test
+[2026-04-07 14:42:27] [workflow] post [POST] task-1775569652492: testing → review
+No tasks are available with `hasDesign=true` and `status=todo`. All eligible tasks are either done, in review, or the new m88 tasks lack designs.
+
+```signal
+{"status": "completed", "summary": "No tasks available to claim — all hasDesign=true tasks are done/review, new todo tasks have hasDesign=false"}
+```
+[2026-04-07T14:42:41.622Z] developer agent completed
+[2026-04-07 14:42:41] [agent_complete] developer completed successfully
+[2026-04-07 14:42:41] [workflow] developer [SIGNAL] completed: No tasks available to claim — all hasDesign=true tasks are done/review, new todo tasks have hasDesig
