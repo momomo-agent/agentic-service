@@ -20272,3 +20272,6 @@
 {"ts":"2026-04-07T16:29:08.534Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 35min (active:4, done:204)\"}"}}
 {"ts":"2026-04-07T16:29:22.852Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":3.198286,"cpuSystem":5.507313}}}
 {"ts":"2026-04-07T16:29:22.852Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] blocked: task-1775573593682 blocked by task-1775573229039 (still in review), no other claimable tasks availab"}}
+{"ts":"2026-04-07T16:29:23.026Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] developer → blocked: task-1775573593682 blocked by task-1775573229039 (still in review), no other cla"}}
+{"ts":"2026-04-07T16:29:42.887Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":3.219153,"cpuSystem":5.541513}}}
+{"ts":"2026-04-07T16:29:42.887Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: All review tasks have canClaim: false — being handled by another tester. task-1775573593682 is block"}}

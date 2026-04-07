@@ -33203,3 +33203,14 @@ I'll wait for the blocker to be resolved before proceeding.
 [2026-04-07T16:29:22.849Z] developer agent completed
 [2026-04-07 16:29:22] [agent_complete] developer completed successfully
 [2026-04-07 16:29:22] [workflow] developer [SIGNAL] blocked: task-1775573593682 blocked by task-1775573229039 (still in review), no other claimable tasks availab
+[2026-04-07 16:29:23] [workflow] work_loop [AGENT-SIGNAL] developer → blocked: task-1775573593682 blocked by task-1775573229039 (still in review), no other cla
+The 3 review tasks all have `canClaim: false` — they're being handled by another tester. The task in git status (`task-1775573593682`) is in `todo` status and blocked by `task-1775573229039` (which is in review).
+
+There are no claimable tasks for me right now. All review tasks are taken and the next task is blocked.
+
+```signal
+{"status": "blocked", "summary": "All review tasks have canClaim: false — being handled by another tester. task-1775573593682 is blocked by task-1775573229039 which is still in review."}
+```
+[2026-04-07T16:29:42.883Z] tester-1 agent completed
+[2026-04-07 16:29:42] [agent_complete] tester-1 completed successfully
+[2026-04-07 16:29:42] [workflow] tester-1 [SIGNAL] blocked: All review tasks have canClaim: false — being handled by another tester. task-1775573593682 is block
