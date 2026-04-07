@@ -1,23 +1,17 @@
 # Test Result: Fix SIGINT graceful drain during in-flight requests
 
-## Status: PASSED
-
-## Tests Run
-- File: `test/sigint.test.js` (1 test)
-- File: `test/m48-sigint-drain.test.js` (5 tests)
-- Total: 6 tests
-- Passed: 6
-- Failed: 0
+## Summary
+- Tests passed: 6/6
+- Tests failed: 0
 
 ## Results
-- SIGINT calls server.close ✓
-- waitDrain resolves immediately with no in-flight requests ✓
-- waitDrain resolves after in-flight request finishes ✓
-- waitDrain rejects on timeout if request never completes ✓
-- startDrain sets draining flag ✓
-- shutdown waits for in-flight then closes in correct order ✓
+- `test/sigint.test.js`: ✓ PASSED (1 test)
+  - `httpServer.close` called on SIGINT ✓
+- `test/m48-sigint-drain.test.js`: ✓ PASSED (5 tests, 313ms)
+  - `startDrain()` called before close ✓
+  - `waitDrain()` awaited before close ✓
+  - Drain timeout proceeds with close ✓
+  - No in-flight requests → resolves immediately ✓
+  - Double SIGINT handled via `process.once` ✓
 
-## Edge Cases
-- No in-flight requests → resolves immediately ✓
-- Drain timeout → proceeds with close anyway ✓
-- process.once ensures handler runs only once ✓
+## Verdict: PASS

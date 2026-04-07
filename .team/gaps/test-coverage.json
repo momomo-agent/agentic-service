@@ -1,9 +1,7 @@
 {
-  "totalTests": 19,
-  "passed": 19,
+  "totalTests": 9,
+  "passed": 9,
   "failed": 0,
-  "edgeCases": [
-    "No test for matchProfile() logic against this file"
-  ],
+  "edgeCases": [],
   "coverage": "100%"
 }

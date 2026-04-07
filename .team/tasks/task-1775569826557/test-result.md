@@ -1,17 +1,12 @@
 # Test Result: Fix CDN profiles fallback when fetch fails and no cache exists
 
-## Status: PASSED
-
-## Tests Run
-- File: `test/profiles-fallback.test.js`
-- Total: 2 tests
-- Passed: 2
-- Failed: 0
+## Summary
+- Tests passed: 2/2
+- Tests failed: 0
 
 ## Results
-- Fetch fails + no cache + default.json exists → returns builtin profile ✓
-- Fetch fails + no cache + default.json missing → returns empty-safe default, no throw ✓
+- `test/profiles-fallback.test.js`: ✓ PASSED (2 tests, 25ms)
+  - Fetch failure with no cache → falls back to built-in defaults ✓
+  - `loadBuiltinProfiles()` returns `{ version: '0', profiles: [] }` on error ✓
 
-## Edge Cases
-- loadBuiltinProfiles try/catch handles missing file gracefully
-- loadProfiles fallback chain always resolves without throwing
+## Verdict: PASS

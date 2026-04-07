@@ -3,6 +3,7 @@ FROM node:20-slim
 WORKDIR /app
 
 COPY package*.json ./
+COPY vendor ./vendor
 RUN npm ci --omit=dev
 
 COPY bin ./bin

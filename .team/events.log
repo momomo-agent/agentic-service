@@ -19543,3 +19543,12 @@
 {"ts":"2026-04-07T14:15:04.413Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Tested and marked done 3 review tasks: optimizer shape, CDN fallback, SIGINT drain — all 19 tests pa"}}
 {"ts":"2026-04-07T14:15:25.214Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":10.718805,"cpuSystem":23.804406}}}
 {"ts":"2026-04-07T14:15:25.215Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Wired agentic-sense as external package: fixed adapters/sense.js to use AgenticSense from agentic-se"}}
+{"ts":"2026-04-07T14:15:25.367Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775529630008: inProgress → review"}}
+{"ts":"2026-04-07T14:15:25.523Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 8"}}
+{"ts":"2026-04-07T14:15:25.536Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T14:15:25.537Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":6,"memoryTotalMB":10,"cpuUser":10.75495,"cpuSystem":23.925293}}}
+{"ts":"2026-04-07T14:16:06.957Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"36MB\",\"heapUsed\":\"8MB\",\"uptime\":\"13500s\"}"}}
+{"ts":"2026-04-07T14:16:12.861Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:195)"}}
+{"ts":"2026-04-07T14:16:12.862Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:4, done:195)\"}"}}
+{"ts":"2026-04-07T14:16:36.476Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":10.796054,"cpuSystem":23.99383}}}
+{"ts":"2026-04-07T14:16:36.476Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Tested and closed 3 stuck tasks: optimizer shape mismatch (1/1), CDN profiles fallback (2/2), SIGINT"}}
