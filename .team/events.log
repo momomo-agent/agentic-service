@@ -18633,3 +18633,25 @@
 {"ts":"2026-04-07T11:11:31.371Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] developer → blocked: All assigned tasks (task-1775535887205, task-1775536619023) are blocked by tasks"}}
 {"ts":"2026-04-07T11:12:59.839Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":25,"memoryTotalMB":27,"cpuUser":2.102493,"cpuSystem":4.637241}}}
 {"ts":"2026-04-07T11:12:59.840Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] blocked: No claimable review tasks - all review tasks still assigned to developer and cannot be claimed by te"}}
+{"ts":"2026-04-07T11:13:00.131Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 6"}}
+{"ts":"2026-04-07T11:13:00.144Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T11:13:00.144Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":17,"memoryTotalMB":22,"cpuUser":2.136563,"cpuSystem":4.754524}}}
+{"ts":"2026-04-07T11:14:39.708Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:7, done:174)"}}
+{"ts":"2026-04-07T11:14:39.709Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:7, done:174)\"}"}}
+{"ts":"2026-04-07T11:15:09.706Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:7, done:174)"}}
+{"ts":"2026-04-07T11:15:09.707Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:7, done:174)\"}"}}
+{"ts":"2026-04-07T11:15:28.430Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":2.222918,"cpuSystem":4.893457}}}
+{"ts":"2026-04-07T11:15:28.431Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Audited all active milestones (m74, m76, m80, m83, m84). Critical path blocked on 2 review tasks: ta"}}
+{"ts":"2026-04-07T11:15:28.490Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T11:15:28.490Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T11:15:28.491Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T11:15:28.491Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T11:15:28.491Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":2.236747,"cpuSystem":4.940887}}}
+{"ts":"2026-04-07T11:15:28.491Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T11:15:28.491Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":2.236939,"cpuSystem":4.941325}}}
+{"ts":"2026-04-07T11:15:28.492Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":14,"memoryTotalMB":17,"cpuUser":2.23704,"cpuSystem":4.941572}}}
+{"ts":"2026-04-07T11:16:06.703Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"45MB\",\"heapUsed\":\"8MB\",\"uptime\":\"2700s\"}"}}
+{"ts":"2026-04-07T11:16:09.706Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:7, done:174)"}}
+{"ts":"2026-04-07T11:16:09.706Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:7, done:174)\"}"}}
+{"ts":"2026-04-07T11:16:45.210Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":2.294079,"cpuSystem":5.024895}}}
+{"ts":"2026-04-07T11:16:45.210Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Checked all 4 review tasks - none claimable (already assigned to other agents)"}}
