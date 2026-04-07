@@ -1,0 +1,13 @@
+{
+  "id": "task-1775533867162",
+  "title": "Verify agentic-voice as external package dependency",
+  "description": "Architecture specifies agentic-voice as external package wrapping STT/TTS. Verify runtime/stt.js and runtime/tts.js properly wrap external agentic-voice package (not local stubs). Architecture gap: agentic-voice external package status unconfirmed",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m77",
+  "hasDesign": false,
+  "created": "2026-04-07T03:51:07.162Z",
+  "updated": "2026-04-07T03:51:07.163Z"
+}

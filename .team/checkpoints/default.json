@@ -3,12 +3,26 @@
   "nodeId": "work_loop",
   "stepIndex": 0,
   "visitedNodes": [
+    "work_loop",
+    "milestone_qg",
+    "monitor",
+    "pm_decide",
+    "work_loop",
+    "milestone_qg",
+    "work_loop",
+    "milestone_qg",
+    "work_loop",
+    "milestone_qg",
+    "work_loop",
+    "milestone_qg",
+    "work_loop",
+    "milestone_qg",
     "work_loop"
   ],
   "loopIterations": {
-    "work_loop": 20
+    "work_loop": 55
   },
-  "transitionDepth": 1,
+  "transitionDepth": 15,
   "contextOverrides": {},
-  "timestamp": "2026-04-07T03:44:09.284Z"
+  "timestamp": "2026-04-07T03:51:23.826Z"
 }
