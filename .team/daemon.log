@@ -32868,3 +32868,14 @@ All my previously assigned tasks are `done`. There are no `todo` tasks available
 [2026-04-07T15:34:19.368Z] developer agent completed
 [2026-04-07 15:34:19] [agent_complete] developer completed successfully
 [2026-04-07 15:34:19] [workflow] developer [SIGNAL] completed: No todo tasks available to claim. All developer-assigned tasks are done. Remaining tasks are in revi
+[2026-04-07 15:34:38] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 24min (active:6, done:202)
+No tasks are currently claimable for me. All review tasks are assigned to `developer`, and the only testing task (task-1775573593582) is already claimed by `tester-2`.
+
+I'll wait for developer tasks to move to review status before I can claim them.
+
+```signal
+{"status": "blocked", "summary": "No claimable tasks - all review tasks assigned to developer, testing task claimed by tester-2"}
+```
+[2026-04-07T15:35:01.752Z] tester-1 agent completed
+[2026-04-07 15:35:01] [agent_complete] tester-1 completed successfully
+[2026-04-07 15:35:01] [workflow] tester-1 [SIGNAL] blocked: No claimable tasks - all review tasks assigned to developer, testing task claimed by tester-2
