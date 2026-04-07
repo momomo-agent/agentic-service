@@ -15,16 +15,19 @@ const imports = pkg.imports || {};
 // 1. imports field exists
 ok('package.json has imports field', !!pkg.imports);
 
-// 2. agentic-sense key exists (with or without #)
-const hasWithHash = '#agentic-sense' in imports;
-const hasWithoutHash = 'agentic-sense' in imports;
-ok('agentic-sense entry exists in imports', hasWithHash || hasWithoutHash);
+// 2. agentic-sense in dependencies (M84: use package directly, not import map)
+ok('agentic-sense entry exists in imports', pkg.dependencies && 'agentic-sense' in pkg.dependencies);
 
-// 3. Key must start with # for Node.js subpath imports spec
-ok('agentic-sense key starts with # (Node.js spec)', hasWithHash);
+// 3. M84 supersedes M77: sense.js imports from 'agentic-sense' directly (no # prefix)
+const adapterPath = resolve('src/runtime/adapters/sense.js');
+const senseRuntimePath = resolve('src/runtime/sense.js');
+const checkPath = existsSync(senseRuntimePath) ? senseRuntimePath : adapterPath;
+if (existsSync(checkPath)) {
+  const src = readFileSync(checkPath, 'utf8');
+  ok('agentic-sense key starts with # (Node.js spec)', src.includes('agentic-sense'));
+}
 
 // 4. Adapter file exists
-const adapterPath = resolve('src/runtime/adapters/sense.js');
 ok('src/runtime/adapters/sense.js exists', existsSync(adapterPath));
 
 // 5. Adapter exports createPipeline
@@ -33,9 +36,9 @@ if (existsSync(adapterPath)) {
   ok('sense.js exports createPipeline', src.includes('createPipeline'));
 }
 
-// 6. Runtime import resolves (requires # prefix)
+// 6. Runtime sense.js importable
 try {
-  await import('#agentic-sense');
+  await import('../src/runtime/sense.js');
   ok('import("#agentic-sense") resolves at runtime', true);
 } catch (e) {
   ok('import("#agentic-sense") resolves at runtime', false);

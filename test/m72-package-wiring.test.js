@@ -21,9 +21,10 @@ describe('agentic-sense and agentic-voice package wiring', () => {
   });
 
   it('package.json imports map has agentic-sense entry', () => {
-    const imports = pkg.imports || {};
-    const hasAgenticSense = Object.keys(imports).some(k => k.includes('agentic-sense'));
-    expect(hasAgenticSense, 'agentic-sense missing from imports map').toBe(true);
+    // M84 supersedes M77: agentic-sense is a direct dependency, not in imports map
+    const hasDep = pkg.dependencies && 'agentic-sense' in pkg.dependencies;
+    const hasImport = Object.keys(pkg.imports || {}).some(k => k.includes('agentic-sense'));
+    expect(hasDep || hasImport, 'agentic-sense missing from imports map').toBe(true);
   });
 
   it('package.json imports map has agentic-voice entries', () => {
