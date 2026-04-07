@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 
 // Mock agentic-sense to return a pipeline with a detect method
 vi.mock('agentic-sense', () => ({
-  default: { AgenticSense: class { detect = vi.fn(() => ({ faces: [], gestures: [], objects: [] })) } },
+  AgenticSense: class { detect = vi.fn(() => ({ faces: [], gestures: [], objects: [] })) },
   createPipeline: vi.fn(async () => ({
     detect: vi.fn(() => ({
       faces: [{ boundingBox: { x: 0, y: 0, w: 100, h: 100 } }],

@@ -1,7 +1,9 @@
 {
-  "totalTests": 9,
-  "passed": 9,
+  "totalTests": 11,
+  "passed": 11,
   "failed": 0,
-  "edgeCases": [],
+  "edgeCases": [
+    "test/sense-wrapping-test.js references #agentic-sense but is not in vitest suite"
+  ],
   "coverage": "100%"
 }

@@ -31912,3 +31912,18 @@ Task complete. Three CRs for documenting the missing ARCHITECTURE.md modules (tu
 [2026-04-07T14:21:55.375Z] developer agent completed
 [2026-04-07 14:21:55] [agent_complete] developer completed successfully
 [2026-04-07 14:21:55] [workflow] developer [SIGNAL] completed: Found 3 existing CRs covering the same ARCHITECTURE.md documentation request. No new CR created. Tas
+[2026-04-07 14:22:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:3, done:195)
+All tasks are complete. Here's the summary:
+
+- **task-1775529630008** (Docker build verification) → **blocked**: `install/Dockerfile` runs `npm run build` before `COPY . .`, causing vite build to fail. Also `docker-compose.yml` missing `dockerfile: install/Dockerfile`. Bugs documented in test-result.md.
+
+- **task-1775569629612** (Wire agentic-sense as external package) → **done**: Already passing (tester-2 confirmed). `#agentic-sense` alias removed from vitest.config.js, vendor tgz in place.
+
+- **task-1775569820076** (Fix createPipeline export) → **done**: `sense.js` already imports from `./adapters/sense.js` and uses RAF. Wrote `test/m87-sense-pipeline.test.js` (4/4 pass).
+
+```signal
+{"status": "completed", "summary": "Tested 3 review tasks: 2 marked done (m87 sense wiring + createPipeline export), 1 blocked (Docker build COPY order bug + docker-compose path)"}
+```
+[2026-04-07T14:24:51.946Z] tester-1 agent completed
+[2026-04-07 14:24:51] [agent_complete] tester-1 completed successfully
+[2026-04-07 14:24:51] [workflow] tester-1 [SIGNAL] completed: Tested 3 review tasks: 2 marked done (m87 sense wiring + createPipeline export), 1 blocked (Docker b
