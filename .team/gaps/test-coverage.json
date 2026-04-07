@@ -1,18 +1,7 @@
 {
-  "totalTests": 73,
-  "passed": 72,
-  "failed": 1,
-  "edgeCases": [
-    "SSE streaming responses counted as in-flight until stream ends",
-    "waitDrain timeout exceeded — forces process.exit(1)",
-    "Ollama 200 but stream errors mid-way — not tested",
-    "setup.sh on Linux without apt or nvm — falls back to curl nvm install",
-    "Non-PCM audio format VAD accuracy (acceptable for MVP)",
-    "Hardware with no gpu field falls through to catch-all profile",
-    "agentic-store version pinning once package is published",
-    "api.js POST /api/chat integration with real HTTP server not tested (unit-level only)",
-    "concurrent broadcasts to many devices not stress-tested",
-    "agentic-sense missing from package.json imports map — runtime import will fail"
-  ],
-  "coverage": "98%"
+  "totalTests": 9,
+  "passed": 9,
+  "failed": 0,
+  "edgeCases": ["nvidia vram=0 edge case not tested"],
+  "coverage": "100%"
 }
