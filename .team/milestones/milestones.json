@@ -86,7 +86,7 @@
     {
       "id": "m82",
       "name": "M82: DBB Compliance — Optimizer, VAD, Coverage, Setup, CDN Cache",
-      "status": "active",
+      "status": "cancelled",
       "tasks": [
         "task-1775535489083",
         "task-1775535494677",
@@ -94,7 +94,9 @@
         "task-1775535500644",
         "task-1775535500715"
       ],
-      "created": "2026-04-07T04:18:31.639Z"
+      "created": "2026-04-07T04:18:31.639Z",
+      "cancelled": "2026-04-07T04:20:00.000Z",
+      "reason": "Duplicate work - all tasks handled in M74/M76"
     }
   ]
 }
