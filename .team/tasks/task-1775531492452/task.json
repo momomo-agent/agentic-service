@@ -4,12 +4,12 @@
   "description": "Replace startWakeWordPipeline() stub with real mic/audio capture. Wire wakeword event to hub.js brainChat so detection fires without client trigger.",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer-2",
   "blockedBy": [
     "task-1775530819815"
   ],
   "groupId": "m80",
   "hasDesign": false,
   "created": "2026-04-07T03:11:32.452Z",
-  "updated": "2026-04-07T03:11:46.508Z"
+  "updated": "2026-04-07T03:12:54.864Z"
 }

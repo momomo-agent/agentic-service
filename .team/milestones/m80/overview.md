@@ -1,20 +1,12 @@
 # M80: Wake Word Server Pipeline + Cross-Device Brain State
 
 ## Goals
-- Implement real server-side wake word pipeline (replace sense.js stub)
-- Improve cross-device brain state sharing beyond minimal joinSession/broadcastSession
+Implement server-side wake word pipeline and deepen cross-device brain state sharing.
 
 ## Scope
-- sense.js: replace startWakeWordPipeline() stub with real mic/audio capture
-- hub.js: wire wakeword event to brainChat once sense pipeline fires
-- hub.js: deepen cross-device brain state sync (shared context across sessions)
+- Server-side wake word pipeline in sense.js (partial → P1)
+- Cross-device brain state sharing in hub.js (partial → P1)
 
 ## Acceptance Criteria
-- Wake word detection fires brainChat on server without client trigger
-- Cross-device sessions share LLM context (not just session ID)
-- No regressions in existing hub.js tests
-
-## Gaps Addressed
-- vision.json: "multi-device cross-device brain state sharing is minimal" (partial)
-- vision.json: "sense.js startWakeWordPipeline() is a stub" (partial)
-- prd.json: "Wake word server-side pipeline: hub.js wires wakeword event to brainChat but sense stub means it never fires" (partial)
+- sense.js startWakeWordPipeline() captures mic audio and fires wakeword events
+- hub.js broadcastSession shares brain state across connected devices
