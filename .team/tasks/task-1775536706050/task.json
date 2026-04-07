@@ -4,11 +4,11 @@
   "description": "Confirm profiles.js correctly falls back to bundled default.json when CDN fetch fails or times out. Add test coverage for fallback path.",
   "status": "todo",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "tech_lead-2",
   "blockedBy": [],
   "groupId": "m84",
   "hasDesign": true,
   "created": "2026-04-07T04:38:26.050Z",
-  "updated": "2026-04-07T05:24:25.125Z",
+  "updated": "2026-04-07T05:34:06.268Z",
   "milestoneId": "m84"
 }

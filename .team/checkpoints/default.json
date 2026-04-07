@@ -4,16 +4,13 @@
   "stepIndex": 0,
   "visitedNodes": [
     "work_loop",
-    "work_loop",
-    "milestone_qg",
-    "work_loop",
     "milestone_qg",
     "work_loop"
   ],
   "loopIterations": {
-    "work_loop": 36
+    "work_loop": 30
   },
-  "transitionDepth": 6,
+  "transitionDepth": 3,
   "contextOverrides": {},
-  "timestamp": "2026-04-07T05:33:07.794Z"
+  "timestamp": "2026-04-07T05:35:03.109Z"
 }

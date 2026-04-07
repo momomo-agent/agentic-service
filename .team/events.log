@@ -12229,3 +12229,25 @@
 {"ts":"2026-04-07T05:33:07.795Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":7,"memoryTotalMB":9,"cpuUser":37.868301,"cpuSystem":113.257299}}}
 {"ts":"2026-04-07T05:33:20.200Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775536622791","from":"todo","to":"review","title":"Wire agentic-voice as external package"}}
 {"ts":"2026-04-07T05:33:26.657Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":8.24842,"cpuSystem":18.199342}}}
+{"ts":"2026-04-07T05:33:35.296Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"44MB\",\"heapUsed\":\"14MB\",\"heapTotal\":\"17MB\",\"uptime\":\"48909s\"}"}}
+{"ts":"2026-04-07T05:33:37.600Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 16min (active:10, done:172)"}}
+{"ts":"2026-04-07T05:33:37.600Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 16min (active:10, done:172)\"}"}}
+{"ts":"2026-04-07T05:33:39.024Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 16min (active:10, done:172)"}}
+{"ts":"2026-04-07T05:33:39.024Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 16min (active:10, done:172)\"}"}}
+{"ts":"2026-04-07T05:33:50.992Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":37.893586,"cpuSystem":113.2938}}}
+{"ts":"2026-04-07T05:33:51.056Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T05:33:51.157Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 26"}}
+{"ts":"2026-04-07T05:33:51.157Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T05:33:51.157Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":15,"cpuUser":37.932148,"cpuSystem":113.423955}}}
+{"ts":"2026-04-07T05:34:37.600Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 17min (active:10, done:172)"}}
+{"ts":"2026-04-07T05:34:37.601Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 17min (active:10, done:172)\"}"}}
+{"ts":"2026-04-07T05:34:39.026Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 17min (active:10, done:172)"}}
+{"ts":"2026-04-07T05:34:39.027Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 17min (active:10, done:172)\"}"}}
+{"ts":"2026-04-07T05:34:47.431Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"44MB\",\"heapUsed\":\"13MB\",\"uptime\":\"14103s\"}"}}
+{"ts":"2026-04-07T05:35:02.937Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":37.960607,"cpuSystem":113.468236}}}
+{"ts":"2026-04-07T05:35:03.002Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T05:35:03.109Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 30"}}
+{"ts":"2026-04-07T05:35:03.109Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T05:35:03.109Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":14,"memoryTotalMB":18,"cpuUser":37.997801,"cpuSystem":113.604367}}}
+{"ts":"2026-04-07T05:35:25.840Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775535865241","from":"testing","to":"done","title":"Wire agentic-embed as external package dependency"}}
+{"ts":"2026-04-07T05:35:30.362Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":21,"memoryTotalMB":24,"cpuUser":8.304492,"cpuSystem":18.289044}}}

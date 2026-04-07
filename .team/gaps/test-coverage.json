@@ -1,13 +1,14 @@
 {
-  "totalTests": 659,
-  "passed": 539,
+  "totalTests": 664,
+  "passed": 544,
   "failed": 113,
   "edgeCases": [
     "TTS runtime error handling - blocked by import path bug in tts.js (missing # prefix)",
     "STT runtime initialization - may have same import path issue as tts.js",
     "Memory runtime initialization - needs init() calls in test files",
     "17 test failures due to 'not initialized' errors across multiple test files",
-    "Mock strategy mismatch - tests mock 'agentic-voice' but code imports 'agentic-voice/kokoro' etc"
+    "Mock strategy mismatch - tests mock 'agentic-voice' but code imports 'agentic-voice/kokoro' etc",
+    "Local adapter throws 'not implemented' — real package needed for embed() functional test"
   ],
   "coverage": "82%"
 }
