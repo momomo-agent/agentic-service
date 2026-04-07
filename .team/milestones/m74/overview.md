@@ -3,11 +3,13 @@
 ## Goal
 Close remaining partial DBB gaps: Docker end-to-end, SIGINT graceful drain, test coverage threshold, setup.sh idempotency.
 
-## Tasks
-- task-1775529630008: Docker build and docker-compose end-to-end verification (P1)
-- task-1775529637561: SIGINT graceful drain during in-flight requests (P1)
-- task-1775529637595: Test coverage >=98% threshold enforcement (P1)
-- task-1775529637624: setup.sh Node.js detection and idempotency (P1)
+## Current State (2026-04-07T05:24)
+- task-1775529630008: Docker verification — in-progress
+- task-1775529637561: SIGINT graceful drain — done
+- task-1775529637595: Test coverage threshold — done
+- task-1775529637624: setup.sh idempotency — done
+
+## Status: Waiting on Docker task (task-1775529630008) to complete
 
 ## Acceptance Criteria
 - docker build succeeds and docker-compose up starts service on port 3000
