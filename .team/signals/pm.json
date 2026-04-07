@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T17:02:19.489Z",
+  "timestamp": "2026-04-07T17:02:52.296Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Marked M90 completed (all 5 tasks done). M91 active with 2 todo tasks assigned to tester-2 (agentic-sense wiring verification + test pass rate >=90%). PRD gaps for Docker and README identified for next milestone after M91 closes."
+  "status": "blocked",
+  "summary": "M91 active with 2 todo tasks assigned to tester-2. Waiting for tester to verify agentic-sense wiring and confirm >=90% test pass rate before milestone can complete."
 }
