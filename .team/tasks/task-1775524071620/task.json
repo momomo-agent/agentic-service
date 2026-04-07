@@ -4,11 +4,11 @@
   "description": "Verify docker build and docker-compose work end-to-end: build image, run container, confirm service starts and /api/status responds",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m48",
   "hasDesign": true,
   "created": "2026-04-07T01:07:51.620Z",
-  "updated": "2026-04-07T01:52:43.389Z",
+  "updated": "2026-04-07T01:59:16.121Z",
   "milestoneId": "m48"
 }

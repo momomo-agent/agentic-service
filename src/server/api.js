@@ -6,6 +6,7 @@ import path from 'path';
 import os from 'os';
 import http from 'http';
 import { chat } from './brain.js';
+import { detectVoiceActivity } from '../runtime/vad.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
 import { errorHandler } from './middleware.js';
@@ -117,6 +118,7 @@ function addRoutes(r) {
 
   r.post('/api/transcribe', upload.single('audio'), async (req, res) => {
     if (!req.file) return res.status(400).json({ error: 'audio required' });
+    if (!detectVoiceActivity(req.file.buffer)) return res.json({ text: '', skipped: true });
     try {
       res.json({ text: await stt.transcribe(req.file.buffer) });
     } catch (e) {

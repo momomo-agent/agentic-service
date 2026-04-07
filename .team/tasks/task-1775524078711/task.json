@@ -4,11 +4,11 @@
   "description": "Configure test coverage threshold at >=98% in test runner config and verify current coverage meets it",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer-2",
   "blockedBy": [],
   "groupId": "m48",
   "hasDesign": true,
   "created": "2026-04-07T01:07:58.712Z",
-  "updated": "2026-04-07T01:52:43.422Z",
+  "updated": "2026-04-07T01:59:16.154Z",
   "milestoneId": "m48"
 }

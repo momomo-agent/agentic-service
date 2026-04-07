@@ -4,11 +4,11 @@
   "description": "Sync conversation context and active profile across connected devices via hub.js broadcastSession",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m44",
   "hasDesign": true,
   "created": "2026-04-07T01:01:21.486Z",
-  "updated": "2026-04-07T01:49:53.285Z",
+  "updated": "2026-04-07T01:59:04.491Z",
   "milestoneId": "m44"
 }

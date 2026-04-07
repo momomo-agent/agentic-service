@@ -55,6 +55,15 @@
       }
     },
     {
+      "match": { "gpu": "none" },
+      "config": {
+        "llm": { "provider": "ollama", "model": "gemma2:2b", "quantization": "q4" },
+        "stt": { "provider": "sensevoice", "model": "small" },
+        "tts": { "provider": "kokoro", "voice": "default" },
+        "fallback": { "provider": "openai", "model": "gpt-4o-mini" }
+      }
+    },
+    {
       "match": {},
       "config": {
         "llm": { "provider": "ollama", "model": "gemma3:1b", "quantization": "q4" },

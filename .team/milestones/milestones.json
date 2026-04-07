@@ -735,12 +735,10 @@
     {
       "id": "m62",
       "name": "M62: DBB Compliance \u2014 Server VAD + optimizer.js + SIGINT + Docker",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775526816885",
         "task-1775526823938",
-        "task-1775526823973",
-        "task-1775526824008",
         "task-1775526916299"
       ],
       "created": "2026-04-07T01:53:57.640Z"
@@ -753,6 +751,21 @@
         "task-1775527006703"
       ],
       "created": "2026-04-07T01:56:47.030Z"
+    },
+    {
+      "id": "m64",
+      "name": "M64: Architecture Compliance \u2014 External Packages + Docs",
+      "status": "planned",
+      "tasks": [
+        "task-1775527242257",
+        "task-1775527246423",
+        "task-1775527254959",
+        "task-1775527260014",
+        "task-1775527307904",
+        "task-1775527313331",
+        "task-1775527319694"
+      ],
+      "created": "2026-04-07T02:01:00.332Z"
     }
   ]
 }

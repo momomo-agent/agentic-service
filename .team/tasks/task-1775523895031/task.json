@@ -4,11 +4,11 @@
   "description": "Complete the admin route in src/ui/client/ — wire up admin panel navigation and routing",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer-2",
   "blockedBy": [],
   "groupId": "m47",
   "hasDesign": true,
   "created": "2026-04-07T01:04:55.031Z",
-  "updated": "2026-04-07T01:52:22.446Z",
+  "updated": "2026-04-07T01:59:11.195Z",
   "milestoneId": "m47"
 }

@@ -4,11 +4,11 @@
   "description": "Detect missing Ollama binary, download and install it, pull recommended model with progress display in cli/setup.js",
   "status": "todo",
   "priority": "P0",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m44",
   "hasDesign": true,
   "created": "2026-04-07T01:01:16.474Z",
-  "updated": "2026-04-07T01:49:53.223Z",
+  "updated": "2026-04-07T01:59:04.431Z",
   "milestoneId": "m44"
 }

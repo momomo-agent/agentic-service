@@ -4,11 +4,11 @@
   "description": "Verify npx agentic-service works on fresh machine, fix bin entry in package.json and cli/index.js if needed",
   "status": "todo",
   "priority": "P0",
-  "assignee": null,
+  "assignee": "developer-2",
   "blockedBy": [],
   "groupId": "m44",
   "hasDesign": true,
   "created": "2026-04-07T01:01:21.453Z",
-  "updated": "2026-04-07T01:49:53.254Z",
+  "updated": "2026-04-07T01:59:04.462Z",
   "milestoneId": "m44"
 }

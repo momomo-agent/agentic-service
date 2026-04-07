@@ -4,11 +4,11 @@
   "description": "Implement the admin panel UI at src/ui/admin/ — device management, model selection, system status dashboard",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m47",
   "hasDesign": true,
   "created": "2026-04-07T01:04:50.981Z",
-  "updated": "2026-04-07T01:52:22.414Z",
+  "updated": "2026-04-07T01:59:11.163Z",
   "milestoneId": "m47"
 }
