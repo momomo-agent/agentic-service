@@ -20,12 +20,12 @@ await test('package.json imports map covers all agentic-voice subpaths', async (
   const pkg = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
   const imports = pkg.imports ?? {};
   const required = [
-    'agentic-voice/openai-whisper',
-    'agentic-voice/openai-tts',
-    'agentic-voice/sensevoice',
-    'agentic-voice/kokoro',
-    'agentic-voice/whisper',
-    'agentic-voice/piper',
+    '#agentic-voice/openai-whisper',
+    '#agentic-voice/openai-tts',
+    '#agentic-voice/sensevoice',
+    '#agentic-voice/kokoro',
+    '#agentic-voice/whisper',
+    '#agentic-voice/piper',
   ];
   for (const key of required) {
     assert.ok(imports[key], `Missing import map entry: ${key}`);

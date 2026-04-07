@@ -22,6 +22,11 @@ export function useVAD({ onStart, onStop, threshold = 0.01, silenceMs = 1200 }) 
     };
     source.connect(processor);
     processor.connect(audioCtx.destination);
+    document.addEventListener('visibilitychange', onVisibility);
+  }
+
+  function onVisibility() {
+    if (document.hidden && speaking) { speaking = false; onStop(); }
   }
 
   function stop() {
@@ -30,7 +35,8 @@ export function useVAD({ onStart, onStop, threshold = 0.01, silenceMs = 1200 }) 
     stream?.getTracks().forEach(t => t.stop());
     audioCtx?.close(); audioCtx = null;
     speaking = false;
+    document.removeEventListener('visibilitychange', onVisibility);
   }
 
-  return { start, stop };
+  return { start, stop, get isActive() { return speaking; } };
 }

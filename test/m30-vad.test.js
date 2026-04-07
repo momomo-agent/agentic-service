@@ -91,7 +91,7 @@ await test('RMS above threshold calls onStart once', async () => {
   const env = createMockEnv();
   const useVAD = buildUseVAD(env);
   let startCount = 0;
-  const vad = useVAD(() => startCount++, () => {});
+  const vad = useVAD({ onStart: () => startCount++, onStop: () => {} });
   await vad.start();
 
   // Simulate loud audio (RMS > 0.01)
@@ -107,7 +107,7 @@ await test('Silence after speech calls onStop after silenceMs', async () => {
   const env = createMockEnv();
   const useVAD = buildUseVAD(env);
   let stopped = false;
-  const vad = useVAD(() => {}, () => { stopped = true; }, { silenceMs: 50 });
+  const vad = useVAD({ onStart: () => {}, onStop: () => { stopped = true; }, silenceMs: 50 });
   await vad.start();
 
   // Start recording
@@ -128,7 +128,7 @@ await test('Background noise below threshold does not trigger onStart', async ()
   const env = createMockEnv();
   const useVAD = buildUseVAD(env);
   let startCount = 0;
-  const vad = useVAD(() => startCount++, () => {});
+  const vad = useVAD({ onStart: () => startCount++, onStop: () => {} });
   await vad.start();
 
   // Simulate quiet background (RMS < 0.01)
@@ -144,7 +144,7 @@ await test('Page hidden triggers onStop when recording', async () => {
   const env = createMockEnv();
   const useVAD = buildUseVAD(env);
   let stopped = false;
-  const vad = useVAD(() => {}, () => { stopped = true; });
+  const vad = useVAD({ onStart: () => {}, onStop: () => { stopped = true; } });
   await vad.start();
 
   // Start recording
@@ -164,7 +164,7 @@ await test('Page hidden triggers onStop when recording', async () => {
 await test('stop() tears down AudioContext and isActive is false', async () => {
   const env = createMockEnv();
   const useVAD = buildUseVAD(env);
-  const vad = useVAD(() => {}, () => {});
+  const vad = useVAD({ onStart: () => {}, onStop: () => {} });
   await vad.start();
 
   const loud = new Float32Array(4096).fill(0.1);
@@ -185,7 +185,7 @@ await test('Mic denied - start() throws, no crash', async () => {
     src.replace('export function useVAD', 'return function useVAD')
   );
   const useVAD = fn(navigator, AudioContext, env.mockDoc);
-  const vad = useVAD(() => {}, () => {});
+  const vad = useVAD({ onStart: () => {}, onStop: () => {} });
   await assert.rejects(() => vad.start(), /Permission denied/);
 });
 

@@ -1,0 +1,14 @@
+{
+  "id": "task-1775536619023",
+  "title": "Wire agentic-store as external package",
+  "description": "Verify package.json has agentic-store dependency; update src/store/index.js to import from 'agentic-store' not local stub",
+  "status": "todo",
+  "priority": "P0",
+  "assignee": "developer",
+  "blockedBy": [],
+  "groupId": "m84",
+  "hasDesign": true,
+  "created": "2026-04-07T04:36:59.023Z",
+  "updated": "2026-04-07T04:49:57.050Z",
+  "milestoneId": "m84"
+}

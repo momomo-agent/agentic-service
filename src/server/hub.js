@@ -105,9 +105,7 @@ export function registerDevice(idOrDevice, meta) {
   if (typeof idOrDevice === 'object') {
     const device = idOrDevice
     registry.set(device.id, device)
-    if (!devices.has(device.id)) {
-      devices.set(device.id, { id: device.id, meta: { name: device.name, capabilities: device.capabilities }, registeredAt: new Date().toISOString(), lastSeen: Date.now(), status: 'online' })
-    }
+    devices.set(device.id, { id: device.id, name: device.name, meta: { name: device.name, capabilities: device.capabilities }, registeredAt: devices.get(device.id)?.registeredAt ?? new Date().toISOString(), lastSeen: Date.now(), status: 'online' })
     return
   }
   const id = idOrDevice
@@ -149,6 +147,7 @@ export function leaveSession(deviceId) {
 export function unregisterDevice(id) {
   leaveSession(id);
   registry.delete(id);
+  devices.delete(id);
   for (const [reqId, pending] of pendingCaptures) {
     if (pending.deviceId === id) {
       clearTimeout(pending.timer);

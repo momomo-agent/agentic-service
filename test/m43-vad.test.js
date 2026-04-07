@@ -30,6 +30,11 @@ function makeVAD(overrides = {}) {
       resume() { return Promise.resolve(); }
       close() {}
     },
+    document: overrides.document ?? {
+      hidden: false,
+      addEventListener: () => {},
+      removeEventListener: () => {}
+    },
     setTimeout: overrides.setTimeout ?? globalThis.setTimeout,
     clearTimeout: overrides.clearTimeout ?? globalThis.clearTimeout,
   };
