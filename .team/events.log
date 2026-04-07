@@ -18598,3 +18598,16 @@
 {"ts":"2026-04-07T11:05:40.427Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] developer → blocked: No claimable tasks available. task-1775536619023 is blocked by task-177553890739"}}
 {"ts":"2026-04-07T11:05:48.821Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":1.792298,"cpuSystem":3.993266}}}
 {"ts":"2026-04-07T11:05:48.822Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: All 5 review tasks returned canClaim: false — likely claimed by another tester agent"}}
+{"ts":"2026-04-07T11:06:06.695Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"39MB\",\"heapUsed\":\"10MB\",\"uptime\":\"2100s\"}"}}
+{"ts":"2026-04-07T11:06:09.672Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 35min (active:8, done:173)"}}
+{"ts":"2026-04-07T11:06:09.673Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 35min (active:8, done:173)\"}"}}
+{"ts":"2026-04-07T11:06:59.851Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775536627468","from":"review","to":"testing","title":"Wire agentic-sense as external package"}}
+{"ts":"2026-04-07T11:07:09.681Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 36min (active:8, done:173)"}}
+{"ts":"2026-04-07T11:07:09.681Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 36min (active:8, done:173)\"}"}}
+{"ts":"2026-04-07T11:08:09.684Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 37min (active:8, done:173)"}}
+{"ts":"2026-04-07T11:08:09.685Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 37min (active:8, done:173)\"}"}}
+{"ts":"2026-04-07T11:09:09.789Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 38min (active:8, done:173)"}}
+{"ts":"2026-04-07T11:09:09.790Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 38min (active:8, done:173)\"}"}}
+{"ts":"2026-04-07T11:09:30.693Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775536627468","from":"testing","to":"done","title":"Wire agentic-sense as external package"}}
+{"ts":"2026-04-07T11:09:37.726Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":1.930834,"cpuSystem":4.256254}}}
+{"ts":"2026-04-07T11:09:37.726Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Tested task-1775536627468: agentic-sense external package wiring - 5/5 tests passed, all DBB criteri"}}
