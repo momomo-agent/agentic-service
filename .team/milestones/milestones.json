@@ -934,6 +934,16 @@
         "task-1775531240275"
       ],
       "created": "2026-04-07T03:06:24.327Z"
+    },
+    {
+      "id": "m80",
+      "name": "M80: Wake Word Server Pipeline + Cross-Device Brain State",
+      "status": "planned",
+      "tasks": [
+        "task-1775531492452",
+        "task-1775531500430"
+      ],
+      "created": "2026-04-07T03:11:02.602Z"
     }
   ]
 }
