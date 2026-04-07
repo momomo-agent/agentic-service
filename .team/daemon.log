@@ -28948,3 +28948,50 @@ Perfect! I've successfully completed the VAD callback signature mismatch task. H
 All VAD-related tests now pass, meeting M83 DBB criterion #4. The task has been marked as "done" and test results documented in `.team/tasks/task-1775535895922/test-result.md`.
 [2026-04-07T04:52:50.230Z] tester-1 agent completed
 [2026-04-07 04:52:51] [agent_complete] tester-1 completed successfully
+All 5 m84 tasks are now assigned to the developer. Current status across active milestones:
+
+**m74** — 1 in-progress (Docker e2e verification)
+**m76** — 2 in-progress, 1 review, 1 testing
+**m80** — 2 in-progress (wake word pipeline, voice latency)
+**m83** — 2 review, 1 testing, 1 in-progress (waiting on testers to approve)
+**m84** — 5 todo assigned to developer (external package wiring + npx + CDN fallback)
+
+Blocking note: m83 has tasks in `review` status — cannot mark that milestone complete until testers approve. Waiting on tester action.
+[2026-04-07T04:53:09.670Z] pm agent completed
+[2026-04-07 04:53:11] [agent_complete] pm completed successfully
+[2026-04-07 04:53:24] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 04:53:24] [workflow] work_loop [LOOP] Iteration 14
+[2026-04-07 04:53:24] [workflow] work_loop [EXEC] pm
+[2026-04-07 04:53:24] [agent_start] pm pm
+[2026-04-07T04:53:25.061Z] Running pm agent...
+The remaining M84 tasks are now assigned to the developer. Current status across active milestones:
+
+- **M74**: Docker task still in-progress — developer needs to complete it
+- **M76**: agentic-embed in review, matchProfile tests in testing — waiting on tester
+- **M80**: Wake word + voice latency in-progress
+- **M83**: 3 tasks in review — waiting on tester approval
+- **M84**: 3 package wiring tasks now assigned to developer, 2 verification tasks (npx bin + CDN fallback) still todo
+
+No new milestones needed yet — all gaps are covered by active work. Will reassess once M83 review tasks clear and M84 work begins.
+[2026-04-07T04:53:31.798Z] pm agent completed
+[2026-04-07 04:53:31] [agent_complete] pm completed successfully
+[2026-04-07 04:53:32] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 04:53:32] [workflow] work_loop [LOOP] Iteration 10
+[2026-04-07 04:53:32] [workflow] work_loop [EXEC] pm
+[2026-04-07 04:53:32] [agent_start] pm pm
+[2026-04-07T04:53:33.458Z] Running pm agent...
+[2026-04-07 04:53:33] [perf] daemon {"rss":"10MB","heapUsed":"15MB","heapTotal":"21MB","uptime":"46507s"}
+Task complete. Here's a summary:
+
+- Claimed `task-1775536918185` (Add matchProfile() unit tests)
+- Wrote `test/matcher.test.js` with 6 tests covering all design cases:
+  - apple-silicon match
+  - nvidia match
+  - cpu-only fallback
+  - missing gpu field (no throw)
+  - unknown GPU type (default fallback)
+  - no matching profile (throws)
+- All 6 tests passed
+- Task marked **done**
+[2026-04-07T04:53:39.031Z] tester-2 agent completed
+[2026-04-07 04:53:39] [agent_complete] tester-2 completed successfully

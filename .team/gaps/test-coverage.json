@@ -1,6 +1,6 @@
 {
-  "totalTests": 649,
-  "passed": 523,
+  "totalTests": 655,
+  "passed": 529,
   "failed": 119,
   "edgeCases": [
     "TTS runtime error handling for empty/whitespace text",
