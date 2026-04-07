@@ -32584,3 +32584,26 @@ Task complete. The test pass rate was already at 91.19% (69 failed / 783 total),
 [2026-04-07T15:04:07.527Z] developer agent completed
 [2026-04-07 15:04:07] [agent_complete] developer completed successfully
 [2026-04-07 15:04:07] [workflow] developer [SIGNAL] completed: Verified test pass rate is 91.19% (69/783 failing = 8.81%), already meeting the >=90% target. No fix
+Done. Here's the summary:
+
+**task-1775573229039 — Wire agentic-sense as external npm package → blocked**
+
+Wiring itself is correct:
+- `package.json` has `agentic-sense: file:./vendor/agentic-sense.tgz` ✅
+- No `#agentic-sense` alias in `src/` ✅
+- Package resolves via npm ✅
+
+Blocked by implementation bug:
+- `src/runtime/adapters/sense.js` imports `{ createPipeline }` from `agentic-sense`, but the package only exports `{ AgenticSense, AgenticAudio, IDX, extractFrame }` — `createPipeline` doesn't exist
+- `src/runtime/sense.js` fails to load as a result
+
+Test suite: 713/790 passed (90.3%) — meets the >=90% DBB threshold, but the 2 file errors include this adapter failure.
+
+Results written to `.team/tasks/task-1775573229039/test-result.md` and `.team/gaps/test-coverage.json`.
+
+```signal
+{"status": "blocked", "summary": "task-1775573229039 blocked: agentic-sense adapter imports non-existent 'createPipeline' export; package exports AgenticSense/AgenticAudio/IDX/extractFrame instead"}
+```
+[2026-04-07T15:04:58.976Z] tester agent completed
+[2026-04-07 15:04:58] [agent_complete] tester completed successfully
+[2026-04-07 15:04:58] [workflow] tester [SIGNAL] blocked: task-1775573229039 blocked: agentic-sense adapter imports non-existent 'createPipeline' export; pack

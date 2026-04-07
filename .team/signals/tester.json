@@ -1,7 +1,7 @@
 {
   "agent": "tester",
-  "timestamp": "2026-04-07T14:43:29.713Z",
+  "timestamp": "2026-04-07T15:04:58.975Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Tested 2 review tasks: docker e2e blocked (Dockerfile COPY order bug), ARCHITECTURE.md CR task marked done (3 pending CRs satisfy DBB)"
+  "status": "blocked",
+  "summary": "task-1775573229039 blocked: agentic-sense adapter imports non-existent 'createPipeline' export; package exports AgenticSense/AgenticAudio/IDX/extractFrame instead"
 }
