@@ -31796,3 +31796,11 @@ No tasks are currently in 'review' status. There's nothing for me to test right 
 [2026-04-07T14:09:17.743Z] tester-1 agent completed
 [2026-04-07 14:09:17] [agent_complete] tester-1 completed successfully
 [2026-04-07 14:09:17] [workflow] tester-1 [SIGNAL] completed: No tasks in review status found. Nothing to test.
+[2026-04-07 14:09:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:7, done:192)
+[2026-04-07 14:10:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:7, done:192)
+```signal
+{"status": "completed", "summary": "Tested 3 tasks (optimizer shape, CDN profiles fallback, SIGINT drain) — all 9 tests passed, marked all done"}
+```
+[2026-04-07T14:11:00.881Z] tester-1 agent completed
+[2026-04-07 14:11:00] [agent_complete] tester-1 completed successfully
+[2026-04-07 14:11:00] [workflow] tester-1 [SIGNAL] completed: Tested 3 tasks (optimizer shape, CDN profiles fallback, SIGINT drain) — all 9 tests passed, marked a

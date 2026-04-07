@@ -1,10 +1,10 @@
 {
-  "totalTests": 11,
-  "passed": 8,
+  "totalTests": 20,
+  "passed": 17,
   "failed": 3,
   "edgeCases": [
     "RAF not available in Node.js — needs global stub or conditional fallback",
     "stop() called before start() should be no-op"
   ],
-  "coverage": "73%"
+  "coverage": "85%"
 }
