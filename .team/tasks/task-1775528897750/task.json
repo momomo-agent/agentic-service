@@ -2,12 +2,12 @@
   "id": "task-1775528897750",
   "title": "optimizer.js hardware-adaptive config output",
   "description": "Fix optimizer.js to return hardware-adaptive config object (threads, model size, quantization) based on detected hardware instead of containing ollama setup code.",
-  "status": "todo",
+  "status": "review",
   "priority": "P0",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m71",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-07T02:28:17.751Z",
-  "updated": "2026-04-07T02:30:36.123Z"
+  "updated": "2026-04-07T02:39:34.322Z"
 }

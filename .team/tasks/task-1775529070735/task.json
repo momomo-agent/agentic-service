@@ -4,10 +4,10 @@
   "description": "Verify docker build completes and docker-compose up starts the service correctly end-to-end",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m73",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-07T02:31:10.735Z",
-  "updated": "2026-04-07T02:31:10.735Z"
+  "updated": "2026-04-07T02:40:13.930Z"
 }

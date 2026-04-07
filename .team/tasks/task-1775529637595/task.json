@@ -1,13 +1,13 @@
 {
-  "id": "task-1775529080487",
+  "id": "task-1775529637595",
   "title": "Test coverage >=98% threshold enforcement",
   "description": "Configure vitest coverage threshold at 98% and verify it fails CI when coverage drops below",
   "status": "todo",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": null,
   "blockedBy": [],
-  "groupId": "m73",
-  "hasDesign": true,
-  "created": "2026-04-07T02:31:20.487Z",
-  "updated": "2026-04-07T02:40:13.994Z"
+  "groupId": "m74",
+  "hasDesign": false,
+  "created": "2026-04-07T02:40:37.595Z",
+  "updated": "2026-04-07T02:40:43.518Z"
 }
