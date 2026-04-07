@@ -1,10 +1,7 @@
 {
-  "totalTests": 5,
-  "passed": 5,
+  "totalTests": 9,
+  "passed": 9,
   "failed": 0,
-  "edgeCases": [
-    "Browser vs Node.js context - external package is browser-first, adapter returns stub data in Node.js",
-    "Import map removal - #agentic-sense correctly removed from package.json imports field"
-  ],
+  "edgeCases": [],
   "coverage": "100%"
 }

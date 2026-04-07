@@ -29711,3 +29711,20 @@ All 4 tasks in 'review' status cannot be claimed (likely already assigned to oth
 [2026-04-07T11:16:45.207Z] tester-1 agent completed
 [2026-04-07 11:16:45] [agent_complete] tester-1 completed successfully
 [2026-04-07 11:16:45] [workflow] tester-1 [SIGNAL] completed: Checked all 4 review tasks - none claimable (already assigned to other agents)
+[2026-04-07 11:17:09] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:7, done:174)
+[2026-04-07 11:18:09] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:7, done:174)
+Task complete.
+
+- Claimed task-1775539931917 (Fix optimizer.js)
+- Read implementation: `src/detector/optimizer.js` — correct, matches design spec
+- Ran existing tests: 5 passed
+- Added edge case tests in `test/m74-optimizer.test.js`: 4 more cases (cpu.cores undefined, amd fallback, nvidia no-vram memoryLimit, apple-silicon floor rounding) — all passed
+- Wrote test-result.md and updated test-coverage.json
+- Marked task as **done**
+
+```signal
+{"status": "completed", "summary": "Tested optimizer.js — 9/9 tests passed, task marked done"}
+```
+[2026-04-07T11:18:53.927Z] tester-2 agent completed
+[2026-04-07 11:18:53] [agent_complete] tester-2 completed successfully
+[2026-04-07 11:18:53] [workflow] tester-2 [SIGNAL] completed: Tested optimizer.js — 9/9 tests passed, task marked done
