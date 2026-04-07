@@ -29526,3 +29526,12 @@ All available developer tasks are either in `review`, `done`, `blocked`, or `can
 [2026-04-07T11:05:40.256Z] developer agent completed
 [2026-04-07 11:05:40] [agent_complete] developer completed successfully
 [2026-04-07 11:05:40] [workflow] developer [SIGNAL] blocked: No claimable tasks available. task-1775536619023 is blocked by task-1775538907396 (in review). task-
+[2026-04-07 11:05:40] [workflow] work_loop [AGENT-SIGNAL] developer → blocked: No claimable tasks available. task-1775536619023 is blocked by task-177553890739
+None of the review tasks can be claimed right now — they're all locked (likely being worked on by another tester agent). No work available to pick up.
+
+```signal
+{"status": "blocked", "summary": "All 5 review tasks returned canClaim: false — likely claimed by another tester agent"}
+```
+[2026-04-07T11:05:48.816Z] tester-1 agent completed
+[2026-04-07 11:05:48] [agent_complete] tester-1 completed successfully
+[2026-04-07 11:05:48] [workflow] tester-1 [SIGNAL] blocked: All 5 review tasks returned canClaim: false — likely claimed by another tester agent

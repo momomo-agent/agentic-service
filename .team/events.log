@@ -18595,3 +18595,6 @@
 {"ts":"2026-04-07T11:05:12.399Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":20,"memoryTotalMB":25,"cpuUser":1.771066,"cpuSystem":3.966573}}}
 {"ts":"2026-04-07T11:05:40.259Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":1.78972,"cpuSystem":3.983966}}}
 {"ts":"2026-04-07T11:05:40.260Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] blocked: No claimable tasks available. task-1775536619023 is blocked by task-1775538907396 (in review). task-"}}
+{"ts":"2026-04-07T11:05:40.427Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] developer → blocked: No claimable tasks available. task-1775536619023 is blocked by task-177553890739"}}
+{"ts":"2026-04-07T11:05:48.821Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":1.792298,"cpuSystem":3.993266}}}
+{"ts":"2026-04-07T11:05:48.822Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: All 5 review tasks returned canClaim: false — likely claimed by another tester agent"}}
