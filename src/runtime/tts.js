@@ -1,5 +1,6 @@
 import { detect } from '../detector/hardware.js';
 import { getProfile } from '../detector/profiles.js';
+import { startMark, endMark } from './profiler.js';
 
 const ADAPTERS = {
   kokoro:  () => import('agentic-voice/kokoro'),
@@ -28,5 +29,8 @@ export async function synthesize(text) {
   if (!adapter) throw new Error('not initialized');
   if (!text || !text.trim())
     throw Object.assign(new Error('text required'), { code: 'EMPTY_TEXT' });
-  return adapter.synthesize(text);
+  startMark('tts');
+  const result = await adapter.synthesize(text);
+  synthesize._lastMs = endMark('tts');
+  return result;
 }

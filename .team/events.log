@@ -18724,3 +18724,35 @@
 {"ts":"2026-04-07T11:32:08.710Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775536622791","from":"inProgress","to":"review","title":"Wire agentic-voice as external package"}}
 {"ts":"2026-04-07T11:32:13.909Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":2.939092,"cpuSystem":6.282596}}}
 {"ts":"2026-04-07T11:32:13.909Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Wired agentic-voice as external package: fixed tts.js imports, removed import map aliases, deleted l"}}
+{"ts":"2026-04-07T11:32:22.718Z","type":"agent_complete","agent":"tech_lead","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":2.941549,"cpuSystem":6.291823}}}
+{"ts":"2026-04-07T11:32:22.719Z","type":"workflow","agent":"tech_lead","data":{"details":"[SIGNAL] completed: Wrote technical design for task-1775561368213 (CPU profiling + voice latency instrumentation); all a"}}
+{"ts":"2026-04-07T11:32:22.880Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 9"}}
+{"ts":"2026-04-07T11:32:22.893Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T11:32:22.893Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":9,"memoryTotalMB":13,"cpuUser":2.975608,"cpuSystem":6.409349}}}
+{"ts":"2026-04-07T11:33:09.775Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:3, done:181)"}}
+{"ts":"2026-04-07T11:33:09.776Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:3, done:181)\"}"}}
+{"ts":"2026-04-07T11:33:31.497Z","type":"task_status","agent":null,"data":{"taskId":"task-1775529630008","from":"in-progress","to":"todo","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T11:33:31.530Z","type":"task_status","agent":null,"data":{"taskId":"task-1775530542647","from":"in-progress","to":"todo","title":"Add cpu-only profile to profiles/default.json"}}
+{"ts":"2026-04-07T11:33:31.559Z","type":"task_status","agent":null,"data":{"taskId":"task-1775531492452","from":"in-progress","to":"todo","title":"Implement server-side wake word pipeline in sense.js"}}
+{"ts":"2026-04-07T11:33:31.590Z","type":"task_status","agent":null,"data":{"taskId":"task-1775534863944","from":"in-progress","to":"todo","title":"Voice latency <2s benchmark and enforcement"}}
+{"ts":"2026-04-07T11:33:39.790Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:7, done:181)"}}
+{"ts":"2026-04-07T11:33:39.790Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:7, done:181)\"}"}}
+{"ts":"2026-04-07T11:34:01.618Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":16,"memoryTotalMB":20,"cpuUser":3.031652,"cpuSystem":6.493115}}}
+{"ts":"2026-04-07T11:34:01.619Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Reset 4 stalled in-progress tasks to todo; assigned CPU profiling task to m80; all active milestones"}}
+{"ts":"2026-04-07T11:34:01.678Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T11:34:01.678Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T11:34:01.678Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T11:34:01.678Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T11:34:01.678Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":17,"memoryTotalMB":20,"cpuUser":3.044513,"cpuSystem":6.54033}}}
+{"ts":"2026-04-07T11:34:01.679Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-07T11:34:01.679Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":17,"memoryTotalMB":20,"cpuUser":3.04474,"cpuSystem":6.540761}}}
+{"ts":"2026-04-07T11:34:31.412Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775561368213","from":"todo","to":"inProgress","title":"CPU profiling and voice latency instrumentation"}}
+{"ts":"2026-04-07T11:34:39.794Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:7, done:181)"}}
+{"ts":"2026-04-07T11:34:39.794Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:7, done:181)\"}"}}
+{"ts":"2026-04-07T11:34:47.473Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775536622791","from":"review","to":"testing","title":"Wire agentic-voice as external package"}}
+{"ts":"2026-04-07T11:35:39.801Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:7, done:181)"}}
+{"ts":"2026-04-07T11:35:39.802Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:7, done:181)\"}"}}
+{"ts":"2026-04-07T11:36:06.717Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"53MB\",\"heapUsed\":\"21MB\",\"uptime\":\"3900s\"}"}}
+{"ts":"2026-04-07T11:36:24.943Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775561368213","from":"inProgress","to":"review","title":"CPU profiling and voice latency instrumentation"}}
+{"ts":"2026-04-07T11:36:32.700Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":3.136332,"cpuSystem":6.696004}}}
+{"ts":"2026-04-07T11:36:32.700Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Implemented profiler.js, instrumented stt/tts/brain with _lastMs timing, updated benchmark to use re"}}

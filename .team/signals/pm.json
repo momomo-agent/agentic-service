@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T11:29:49.969Z",
+  "timestamp": "2026-04-07T11:34:01.614Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Unblocked 2 tasks, submitted architecture CR, created CPU profiling task for missing vision gap"
+  "summary": "Reset 4 stalled in-progress tasks to todo; assigned CPU profiling task to m80; all active milestones (m74/m76/m80/m83/m84) have clear todo work queued for developers and testers"
 }

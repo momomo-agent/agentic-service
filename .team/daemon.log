@@ -29885,3 +29885,77 @@ Task complete. Here's what was done:
 [2026-04-07T11:32:13.905Z] developer agent completed
 [2026-04-07 11:32:13] [agent_complete] developer completed successfully
 [2026-04-07 11:32:13] [workflow] developer [SIGNAL] completed: Wired agentic-voice as external package: fixed tts.js imports, removed import map aliases, deleted l
+Done. Here's what I did:
+
+- All 5 active milestones (m74, m76, m80, m83, m84) already had `dbb.md` and `design.md` — no new milestone docs needed.
+- Found 1 task in `todo` without a design: `task-1775561368213` — "CPU profiling and voice latency instrumentation" (m80).
+- Wrote `design.md` covering:
+  - New `src/runtime/profiler.js` — lightweight `startMark/endMark` timing utility
+  - Minimal wraps on `stt.js`, `tts.js`, `brain.js` to record `_lastMs` per stage
+  - Updated `test/benchmark/voice-latency.js` to use real imports + profiler
+  - Existing `test/latency.test.js` already enforces <2000ms — no changes needed
+- Marked `hasDesign=true` on the task.
+
+```signal
+{"status": "completed", "summary": "Wrote technical design for task-1775561368213 (CPU profiling + voice latency instrumentation); all active milestone docs already existed."}
+```
+[2026-04-07T11:32:22.716Z] tech_lead agent completed
+[2026-04-07 11:32:22] [agent_complete] tech_lead completed successfully
+[2026-04-07 11:32:22] [workflow] tech_lead [SIGNAL] completed: Wrote technical design for task-1775561368213 (CPU profiling + voice latency instrumentation); all a
+[2026-04-07 11:32:22] [workflow] work_loop [LOOP] Iteration 9
+[2026-04-07 11:32:22] [workflow] work_loop [EXEC] pm
+[2026-04-07 11:32:22] [agent_start] pm 管理任务和里程碑
+[2026-04-07T11:32:22.920Z] Running pm agent...
+[2026-04-07 11:33:09] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:3, done:181)
+[2026-04-07 11:33:39] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:7, done:181)
+Clear picture. Here's the status summary and actions taken:
+
+**Active Milestones:**
+- m74: 4 done, 1 todo (Docker verification) — unblocked, ready for dev
+- m76: 6 done, 1 todo (cpu-only profile) — unblocked, ready for dev  
+- m80: 1 done, 3 todo (wake word, voice latency, CPU profiling) — unblocked
+- m83: 5 done, 1 todo (mocked module init fix) — assigned to tester-1
+- m84: 5 done, 1 review (agentic-voice wiring) — waiting on tester
+
+**Actions taken this run:**
+- Reset 4 stalled `in-progress` tasks back to `todo` (Docker, cpu-only profile, wake word, voice latency)
+- Assigned `task-1775561368213` (CPU profiling) to m80
+
+**No new milestones needed** — existing active milestones have sufficient unfinished work covering all current gaps. The team just needs to pick up the queued `todo` tasks.
+
+```signal
+{"status": "completed", "summary": "Reset 4 stalled in-progress tasks to todo; assigned CPU profiling task to m80; all active milestones (m74/m76/m80/m83/m84) have clear todo work queued for developers and testers"}
+```
+[2026-04-07T11:34:01.615Z] pm agent completed
+[2026-04-07 11:34:01] [agent_complete] pm completed successfully
+[2026-04-07 11:34:01] [workflow] pm [SIGNAL] completed: Reset 4 stalled in-progress tasks to todo; assigned CPU profiling task to m80; all active milestones
+[2026-04-07 11:34:01] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 11:34:01] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-07 11:34:01] [workflow] work_loop [PARALLEL] implement, run-tests
+[2026-04-07 11:34:01] [workflow] work_loop [EXEC] developer
+[2026-04-07 11:34:01] [agent_start] developer 实现功能
+[2026-04-07 11:34:01] [workflow] work_loop [EXEC] tester
+[2026-04-07 11:34:01] [agent_start] tester 验证功能
+[2026-04-07T11:34:01.707Z] Running developer agent...
+[2026-04-07T11:34:01.708Z] Running tester agent...
+[2026-04-07 11:34:39] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:7, done:181)
+[2026-04-07 11:35:39] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:7, done:181)
+[2026-04-07 11:36:06] [perf] daemon {"rss":"53MB","heapUsed":"21MB","uptime":"3900s"}
+Task complete. Here's a summary of what was implemented:
+
+**task-1775561368213: CPU profiling and voice latency instrumentation**
+
+- `src/runtime/profiler.js` — new lightweight timing utility (`startMark`, `endMark`, `measurePipeline`)
+- `src/runtime/stt.js` — added profiler import; `transcribe()` now stores `transcribe._lastMs`
+- `src/runtime/tts.js` — added profiler import; `synthesize()` now stores `synthesize._lastMs`
+- `src/server/brain.js` — added profiler import; `chat()` generator now stores `chat._lastMs`
+- `test/benchmark/voice-latency.js` — replaced mock delays with real imports + stage timing via `_lastMs`
+
+`api.js` already had `[voice] latency:` and `LATENCY EXCEEDED` logging, so no changes were needed there. Task moved to `review`.
+
+```signal
+{"status": "completed", "summary": "Implemented profiler.js, instrumented stt/tts/brain with _lastMs timing, updated benchmark to use real imports"}
+```
+[2026-04-07T11:36:32.696Z] developer agent completed
+[2026-04-07 11:36:32] [agent_complete] developer completed successfully
+[2026-04-07 11:36:32] [workflow] developer [SIGNAL] completed: Implemented profiler.js, instrumented stt/tts/brain with _lastMs timing, updated benchmark to use re

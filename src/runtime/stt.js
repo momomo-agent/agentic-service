@@ -1,5 +1,6 @@
 import { detect } from '../detector/hardware.js';
 import { getProfile } from '../detector/profiles.js';
+import { startMark, endMark } from './profiler.js';
 
 const ADAPTERS = {
   sensevoice: () => import('agentic-voice/sensevoice'),
@@ -28,5 +29,8 @@ export async function transcribe(audioBuffer) {
   if (!adapter) throw new Error('not initialized');
   if (!audioBuffer || audioBuffer.length === 0)
     throw Object.assign(new Error('empty audio'), { code: 'EMPTY_AUDIO' });
-  return adapter.transcribe(audioBuffer);
+  startMark('stt');
+  const result = await adapter.transcribe(audioBuffer);
+  transcribe._lastMs = endMark('stt');
+  return result;
 }

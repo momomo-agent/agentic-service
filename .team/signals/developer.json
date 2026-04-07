@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T11:32:13.905Z",
+  "timestamp": "2026-04-07T11:36:32.695Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Wired agentic-voice as external package: fixed tts.js imports, removed import map aliases, deleted local voice stubs"
+  "summary": "Implemented profiler.js, instrumented stt/tts/brain with _lastMs timing, updated benchmark to use real imports"
 }

@@ -1,5 +1,6 @@
 import { chat as llmChat } from '../runtime/llm.js';
 import { getSession, broadcastSession } from './hub.js';
+import { startMark, endMark } from '../runtime/profiler.js';
 
 const tools = new Map();
 
@@ -111,11 +112,13 @@ async function* chatWithTools(messages, tools) {
 export async function* chat(messages, options = {}) {
   const registeredTools = [...tools.entries()].map(([name, fn]) => ({ name, fn }));
   const mergedTools = [...(options.tools || []), ...registeredTools];
+  startMark('llm');
   try {
     yield* chatWithTools(messages, mergedTools);
   } catch (err) {
     yield { type: 'error', error: err.message };
   }
+  chat._lastMs = endMark('llm');
 }
 
 export async function chatSession(sessionId, userMessage, options = {}) {
