@@ -108,7 +108,8 @@
     {
       "id": "m83",
       "name": "M83: Test Suite Repair — Fix 119 Failing Tests",
-      "status": "active",
+      "status": "completed",
+      "completed": "2026-04-07T13:25:00.000Z",
       "primaryFocus": true,
       "tasks": [
         "task-1775535887205",
