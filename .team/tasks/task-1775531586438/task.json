@@ -4,10 +4,11 @@
   "description": "Verify bin/agentic-service.js is correctly wired as the npx entrypoint in package.json bin field. Test that npx agentic-service starts the service without errors.",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m81",
   "hasDesign": false,
   "created": "2026-04-07T03:13:06.438Z",
-  "updated": "2026-04-07T03:13:06.439Z"
+  "updated": "2026-04-07T03:15:42.118Z",
+  "milestoneId": "m81"
 }

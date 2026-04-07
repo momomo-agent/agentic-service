@@ -4,10 +4,11 @@
   "description": "Add a benchmark test or runtime measurement that verifies voice latency (STT+LLM+TTS) stays under 2 seconds end-to-end. Log latency per request and fail if threshold exceeded.",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m81",
   "hasDesign": false,
   "created": "2026-04-07T03:13:00.027Z",
-  "updated": "2026-04-07T03:13:00.027Z"
+  "updated": "2026-04-07T03:15:42.084Z",
+  "milestoneId": "m81"
 }

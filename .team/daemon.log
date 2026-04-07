@@ -21725,3 +21725,250 @@ Perfect! Task completed. I verified the 7-day cache staleness implementation in 
 The implementation was already correct - this was a verification task. All new tests passed successfully.
 [2026-04-07T03:14:25.602Z] developer agent completed
 [2026-04-07 03:14:25] [agent_complete] developer completed successfully
+## Project Status Report
+
+**Overall Progress:**
+- Vision: 75% | PRD: 82% | Architecture: 78%
+- 80 milestones total (73 completed, 3 cancelled, 4 active)
+
+**Active Milestones: 4** (M74, M76, M77, M80)
+
+---
+
+### **M74: DBB Compliance — Docker, SIGINT, Coverage, Setup**
+**Status:** 1 done, 2 in-progress, 1 review (75% complete)
+
+- ✅ Test coverage >=98% threshold - done
+- 🔄 Docker build verification - in-progress (developer)
+- 🔄 SIGINT graceful drain - in-progress (developer)
+- 📋 **setup.sh Node.js detection - REVIEW** (developer)
+
+**Blocker:** 1 task awaiting tester approval
+
+---
+
+### **M76: cpu-only Profile + Server-Side VAD + optimizer.js Fix**
+**Status:** 3 review, 1 in-progress, 1 todo (60% complete)
+
+- 📋 **cpu-only profile - REVIEW** (developer)
+- 📋 **optimizer.js fix - REVIEW** (developer)
+- 🔄 CDN staleness check - in-progress (developer)
+- 📋 **LAN tunnel - REVIEW** (developer)
+- ⏳ Server-side VAD - todo (developer-2)
+
+**Blocker:** 3 tasks awaiting tester approval
+
+---
+
+### **M77: External Package Wiring**
+**Status:** 3 review, 2 todo (60% complete)
+
+- 📋 **Fix package.json imports - REVIEW** (developer)
+- 📋 **Wire agentic-store - REVIEW** (developer)
+- 📋 **Confirm agentic-voice - REVIEW** (developer)
+- ⏳ Wire agentic-embed - todo (developer-2)
+- ⏳ Confirm agentic-sense - todo (developer-2)
+
+**Blocker:** 3 tasks awaiting tester approval
+
+---
+
+### **M80: Wake Word Server Pipeline + Cross-Device Brain State**
+**Status:** 2 todo, 5 cancelled (planned)
+
+- ⏳ Server-side wake word pipeline - todo (developer-2, **blocked by M77**)
+- ⏳ Cross-device brain state sharing - todo (developer)
+
+**Blocker:** Depends on M77 completion
+
+---
+
+## Critical Issue: Review Bottleneck
+
+**8 tasks in "review" status** across M74, M76, M77. Per my boundaries, I cannot approve reviewed code — only testers can move tasks from "review" to "done".
+
+**Impact:**
+- M74 cannot be marked completed (has 1 review task)
+- M76 cannot be marked completed (has 3 review tasks)
+- M77 cannot be marked completed (has 3 review tasks)
+- M80 is blocked by M77
+
+**Recommendation:** Wait for testers to approve the 8 review tasks, then reassess milestone completion and create next milestone if needed.
+[2026-04-07T03:14:30.256Z] pm agent completed
+[2026-04-07 03:14:30] [agent_complete] pm completed successfully
+[2026-04-07 03:14:30] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 03:14:30] [workflow] work_loop [LOOP] Iteration 50
+[2026-04-07 03:14:30] [workflow] work_loop [EXEC] pm
+[2026-04-07 03:14:30] [agent_start] pm pm
+[2026-04-07T03:14:30.427Z] Running pm agent...
+[2026-04-07 03:14:44] [perf] daemon {"rss":"55MB","heapUsed":"13MB","uptime":"5700s"}
+[2026-04-07 03:14:45] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:15, done:153)
+[2026-04-07 03:15:06] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:15, done:153)
+[2026-04-07 03:15:45] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:15, done:153)
+m81 was already added by another agent. The PM work is complete. Here's the current state:
+
+**Active milestones:**
+- m74: Docker (in-progress), SIGINT (in-progress), setup.sh (review)
+- m75/m76: CDN staleness (todo), LAN tunnel (review), cpu-only profile (review), server VAD (todo), optimizer.js (review)
+- m77: agentic-store (review), agentic-embed (todo), agentic-voice (review), agentic-sense (todo), package.json imports (review)
+- m80: wake word pipeline (todo, developer-2), cross-device brain state (todo, developer), + 5 more DBB tasks
+
+**Planned:**
+- m81: voice latency benchmark + npx entrypoint verification
+
+**Actions taken:**
+- Activated m80 (was "planned" → "active")
+- Assigned task-1775531500430 (cross-device brain state) → developer
+- Assigned task-1775531492452 (wake word pipeline) → developer-2 (blocked by m77 agentic-sense task)
+- Created task-1775531580027 (voice latency benchmark) in m81
+- Created task-1775531586438 (npx entrypoint verification) in m81
+- Registered m81 in milestones.json
+[2026-04-07T03:15:45.706Z] pm agent completed
+[2026-04-07 03:15:45] [agent_complete] pm completed successfully
+[2026-04-07 03:15:45] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 03:15:45] [workflow] work_loop [LOOP] Iteration 40
+[2026-04-07 03:15:45] [workflow] work_loop [EXEC] pm
+[2026-04-07 03:15:45] [agent_start] pm pm
+[2026-04-07T03:15:45.886Z] Running pm agent...
+Done. Here's the current PM status summary:
+
+**Active milestones:**
+
+- **m74** — Docker, SIGINT, setup.sh: 2 in-progress, 1 in review → waiting on testers
+- **m75** — CDN staleness, LAN tunnel: 2 in review → waiting on testers
+- **m76** — cpu-only profile, server-side VAD, optimizer.js: 2 in review, 1 todo (VAD)
+- **m77** — External package wiring (store/embed/voice/sense): 3 in review, 2 todo
+- **m80** — Wake word pipeline, cross-device brain state: 2 todo → assigned to developer
+- **m81** *(new)* — Voice latency benchmark + npx entrypoint: 2 todo → assigned to developer
+
+**Actions taken:**
+- Created m81 milestone for the 2 orphaned tasks that referenced `groupId: "m81"`
+- Assigned m80's 2 active tasks to developer
+- Assigned m81's 2 tasks to developer with correct milestoneId
+
+**Blocked:** m74/m75/m76/m77 tasks in review cannot be moved to done — waiting for testers to approve.
+[2026-04-07T03:15:51.426Z] pm agent completed
+[2026-04-07 03:15:51] [agent_complete] pm completed successfully
+[2026-04-07 03:15:51] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 03:15:51] [workflow] work_loop [LOOP] Iteration 94
+[2026-04-07 03:15:51] [workflow] work_loop [EXEC] pm
+[2026-04-07 03:15:51] [agent_start] pm pm
+[2026-04-07T03:15:51.604Z] Running pm agent...
+API Error: 429 {"error":{"message":"并发请求数量过多，请稍后再试","type":"rate_limit_error"},"type":"error"}
+[2026-04-07T03:16:02.796Z] pm agent failed: Command failed: claude --print --dangerously-skip-permissions < "/Users/kenefe/LOCAL/momo-agent/projects/agentic-service/.team/.prompt-pm-1775531518762.md"
+[2026-04-07 03:16:02] [error] pm failed (code=1) after retry, marking as error
+[2026-04-07 03:16:02] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 03:16:02] [workflow] work_loop [LOOP] Iteration 8
+[2026-04-07 03:16:02] [workflow] work_loop [EXEC] pm
+[2026-04-07 03:16:02] [agent_start] pm pm
+[2026-04-07T03:16:02.975Z] Running pm agent...
+[2026-04-07 03:16:06] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:15, done:153)
+[2026-04-07 03:16:36] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:16, done:153)
+[2026-04-07 03:16:45] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:17, done:153)
+[2026-04-07 03:17:06] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:17, done:153)
+
+
+I'll analyze the current state and manage the milestones.
+
+**Current Status Summary:**
+
+**Active Milestones (5):**
+- **M74** (DBB Compliance): 1 done, 2 in-progress, 1 review
+- **M75** (CDN + LAN Tunnel): 1 testing, 1 review (mostly cancelled tasks)
+- **M76** (cpu-only + VAD + optimizer): 3 review, 1 todo, shares 2 tasks with M75
+- **M77** (External Packages): 3 review, 2 todo
+- **M80** (Wake Word + Brain State): 2 todo (1 blocked by M77)
+
+**Key Issues:**
+1. **M75 and M76 have overlapping tasks** - task-1775530134599 and task-1775530233859 appear in both milestones
+2. **Too many active milestones** - work is fragmented across 5 milestones
+3. **Many tasks in review** - waiting for tester approval before completion
+
+**Gap Priorities:**
+- **Vision gaps (75%)**: Voice latency, npx entrypoint, server VAD, wake word pipeline
+- **Architecture gaps (78%)**: External packages (agentic-store, agentic-embed, agentic-voice, agentic-sense)
+- **DBB gaps (62%)**: Docker, SIGINT, coverage, setup.sh
+
+**Recommendations:**
+
+1. **M74 is near completion** - 2 tasks in-progress by developer, 1 in review. Once these complete, M74 can be marked done.
+
+2. **M75 should be cancelled** - its tasks are duplicated in M76 or already cancelled. The remaining active tasks (CDN staleness, LAN tunnel) are better tracked in M76.
+
+3. **Focus on M76 and M77** - these address critical architecture and DBB gaps:
+   - M76: cpu-only profile, server VAD, optimizer.js fix
+   - M77: External package wiring (unblocks M80)
+
+4. **M80 is blocked** - task-1775531492452 is blocked by task-1775530819815 (agentic-sense confirmation in M77)
+
+**Status Report:**
+- Total tasks across active milestones: ~15 active tasks
+- In-progress: 2 (both in M74)
+- Review: 7 (waiting for tester approval)
+- Testing: 1
+- Todo: 5
+- Done: 1
+
+The team is making progress. M74 should complete soon, then focus should shift to M76 and M77 to address remaining architecture and DBB gaps before tackling M80's wake word and brain state features.
+[2026-04-07T03:17:26.130Z] pm agent completed
+[2026-04-07 03:17:26] [agent_complete] pm completed successfully
+[2026-04-07 03:17:26] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 03:17:26] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-07 03:17:26] [agent_start] tech_lead-1 tech_lead
+[2026-04-07 03:17:26] [agent_start] tech_lead-2 tech_lead
+[2026-04-07 03:17:26] [agent_start] tech_lead-3 tech_lead
+[2026-04-07T03:17:26.233Z] Running tech_lead-1 agent...
+[2026-04-07T03:17:26.233Z] Running tech_lead-2 agent...
+[2026-04-07T03:17:26.233Z] Running tech_lead-3 agent...
+Current state is clear. Here's the PM status report:
+
+**Active work across milestones:**
+
+- **m74** (DBB Compliance): Docker + SIGINT still in-progress, setup.sh in review — waiting on tester
+- **m76** (cpu-only + VAD + optimizer): 2 tasks in review, server-side VAD (P0) assigned to developer-2 and unblocked
+- **m77** (external packages): 3 tasks in review, agentic-embed + agentic-sense still todo
+- **m80** (wake word + brain state): cross-device brain state unblocked/assigned; wake word blocked by m77 agentic-sense review
+- **m81** (voice latency + npx): both todo, assigned to developer
+
+**Blockers requiring tester action:**
+- m74: `task-1775529637624` (setup.sh) — in review
+- m76: `task-1775530542647` (cpu-only profile), `task-1775530556380` (optimizer.js) — in review
+- m77: `task-1775530801711` (agentic-store), `task-1775530814854` (agentic-voice), `task-1775530235262` (imports map) — in review
+
+**No new milestones needed** — existing active milestones cover all remaining gaps. The critical path is:
+1. Testers approve m77 reviews → unblocks wake word pipeline (m80)
+2. developer-2 completes server-side VAD (m76, P0)
+3. developer completes cross-device brain state (m80) + voice latency + npx (m81)
+
+No PM action required at this time — work is properly allocated and the bottleneck is tester review throughput.
+[2026-04-07T03:17:37.030Z] pm agent completed
+[2026-04-07 03:17:37] [agent_complete] pm completed successfully
+[2026-04-07 03:17:37] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 03:17:37] [workflow] work_loop [LOOP] Iteration 41
+[2026-04-07 03:17:37] [workflow] work_loop [EXEC] pm
+[2026-04-07 03:17:37] [agent_start] pm pm
+[2026-04-07T03:17:37.218Z] Running pm agent...
+[2026-04-07 03:17:45] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:17, done:153)
+Perfect! I've successfully completed testing task-1775530134599 (CDN profiles.json cache staleness check). 
+
+## Summary
+
+**Task**: CDN profiles.json cache staleness check (7-day refresh)
+**Status**: ✅ DONE
+
+**Test Results**:
+- Total tests: 9 (6 unit + 3 integration)
+- Passed: 9
+- Failed: 0
+- Coverage: 100%
+
+**Verified DBB Criteria**:
+- ✅ Re-fetches from CDN when cache > 7 days old
+- ✅ Uses fresh cache without network call
+- ✅ Falls back to expired cache if re-fetch fails
+- ✅ Cache timestamp updated after successful fetch
+- ✅ All boundary conditions tested (exactly 7 days, 7 days + 1ms)
+
+The implementation in `src/detector/profiles.js` is production-ready with comprehensive test coverage in both `test/profiles-cache-staleness.test.js` and `test/detector/profiles.test.js`.
+[2026-04-07T03:17:56.700Z] tester-1 agent completed
+[2026-04-07 03:17:56] [agent_complete] tester-1 completed successfully

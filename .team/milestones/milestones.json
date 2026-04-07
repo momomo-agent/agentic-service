@@ -949,6 +949,18 @@
         "task-1775531537689"
       ],
       "created": "2026-04-07T03:11:02.602Z"
+    },
+    {
+      "id": "m81",
+      "name": "M81: Voice Latency Benchmark + npx Entrypoint Verification",
+      "status": "active",
+      "tasks": [
+        "task-1775531580027",
+        "task-1775531586438",
+        "task-1775531796900",
+        "task-1775531802193"
+      ],
+      "created": "2026-04-07T03:15:11.789Z"
     }
   ]
 }
