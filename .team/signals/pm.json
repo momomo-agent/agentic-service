@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T14:34:20.695Z",
+  "timestamp": "2026-04-07T14:36:00.368Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Reviewed active milestones m74/m87. Two todo tasks assigned to developer, one in review waiting on tester. No new milestone needed until current tasks complete."
+  "status": "blocked",
+  "summary": "2 tasks in review awaiting tester approval, 1 task inProgress. Cannot proceed until testers clear review queue."
 }
