@@ -1,28 +1,25 @@
 import { describe, it, expect } from 'vitest';
 import { existsSync } from 'fs';
-import { execSync } from 'child_process';
+import { detect } from '../src/detector/hardware.js';
 
-describe('gpu-detector.js merged into hardware.js (DBB-005)', () => {
-  it('gpu-detector.js does not exist', () => {
+describe('gpu-detector.js merge into hardware.js', () => {
+  it('gpu-detector.js does not exist (merged or never existed)', () => {
     expect(existsSync('src/detector/gpu-detector.js')).toBe(false);
   });
 
-  it('no file imports gpu-detector', () => {
-    let result = '';
-    try {
-      result = execSync('grep -r "gpu-detector" src/', { encoding: 'utf8' });
-    } catch { result = ''; }
-    expect(result).toBe('');
-  });
-
-  it('hardware.js exports detect function', async () => {
-    const hw = await import('../src/detector/hardware.js');
-    expect(typeof hw.detect).toBe('function');
+  it('hardware.js exports detect()', async () => {
+    expect(typeof detect).toBe('function');
   });
 
   it('detect() returns gpu info', async () => {
-    const { detect } = await import('../src/detector/hardware.js');
     const result = await detect();
     expect(result).toHaveProperty('gpu');
+    expect(result.gpu).toHaveProperty('type');
+  });
+
+  it('no imports of gpu-detector.js in codebase', async () => {
+    const { execSync } = await import('child_process');
+    const result = execSync('grep -r "gpu-detector" src/ --include="*.js" 2>/dev/null || true').toString();
+    expect(result.trim()).toBe('');
   });
 });

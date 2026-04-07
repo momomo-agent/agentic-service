@@ -4,11 +4,11 @@
   "description": "Fix known bug: Ollama non-200 response falls through to cloud instead of throwing directly per design",
   "status": "done",
   "priority": "P0",
-  "assignee": "tester-1",
+  "assignee": "tester-2",
   "blockedBy": [],
   "groupId": "m48",
   "hasDesign": true,
   "created": "2026-04-07T01:08:04.653Z",
-  "updated": "2026-04-07T02:05:48.366Z",
+  "updated": "2026-04-07T02:08:03.572Z",
   "milestoneId": "m48"
 }

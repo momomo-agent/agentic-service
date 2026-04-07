@@ -1,19 +1,16 @@
-# Test Result: setup.sh Node.js detection and idempotency
+# Test Result: setup.sh Node.js Detection and Idempotency
 
-## Status: PASSED
+## Summary
+- **Tests**: 7 passed, 0 failed
 
-## Tests (7/7 passed)
-- checks for node command ✓
-- checks Node.js version >= 18 ✓
-- has install_node function ✓
-- handles macOS via brew or nvm ✓
-- handles Linux via nvm or apt ✓
-- is idempotent — checks if already installed before npm install ✓
-- exits with error on Windows ✓
+## Results
+1. ✅ Contains Node.js version check (NODE_MAJOR < 18)
+2. ✅ Contains idempotency check (npm list -g agentic-service)
+3. ✅ Handles macOS via brew or nvm
+4. ✅ Handles Linux via nvm or apt-get
+5. ✅ Rejects Windows with error + exit 1
+6. ✅ Uses set -e for fail-fast
+7. ✅ Idempotency dry run exits 0
 
-## Verification
-- install/setup.sh has install_node() for macOS (brew/nvm) and Linux (nvm/apt) ✓
-- Node version check: NODE_MAJOR < 18 triggers install ✓
-- Idempotency: `npm list -g agentic-service` check before install ✓
-- Windows: prints error and exits 1 ✓
-- DBB-005: setup.sh is idempotent — SATISFIED
+## Test File
+`test/m48-setup-sh.test.js`

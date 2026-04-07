@@ -1,15 +1,13 @@
-# Test Result: gpu-detector.js merge into hardware.js
+# Test Result: gpu-detector.js Merge into hardware.js
 
-## Status: PASSED
+## Summary
+- **Tests**: 4 passed, 0 failed
 
-## Tests (4/4 passed)
-- gpu-detector.js does not exist ✓
-- no file imports gpu-detector ✓
-- hardware.js exports detect function ✓
-- detect() returns gpu info ✓
+## Results
+1. ✅ gpu-detector.js does not exist (merged/never existed)
+2. ✅ hardware.js exports detect()
+3. ✅ detect() returns gpu info with type field
+4. ✅ No imports of gpu-detector.js in codebase
 
-## Verification
-- src/detector/gpu-detector.js absent — already merged/deleted ✓
-- grep -r "gpu-detector" src/ returns no results ✓
-- hardware.js detect() returns object with gpu property ✓
-- DBB-005: gpu-detector.js not referenced in codebase — SATISFIED
+## Test File
+`test/m47-gpu-detector-merge.test.js`

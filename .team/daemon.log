@@ -17904,3 +17904,138 @@ All 4 tasks completed successfully:
 **Total: 19/19 tests passed.** All tasks marked `done`.
 [2026-04-07T02:06:03.513Z] tester-1 agent completed
 [2026-04-07 02:06:03] [agent_complete] tester-1 completed successfully
+Good — SIGINT is covered (`task-1775524084592` is **done** in m48). The DBB gap for SIGINT drain is already resolved.
+
+**Summary of current state:**
+
+| Milestone | Status | Situation |
+|-----------|--------|-----------|
+| m42 | active | 3 tasks in-progress (developers working) |
+| m62 | active | 1 in review (wait for tester), 2 todo (unassigned) |
+| m48 | planned | 2 in testing, 2 todo |
+| m43–m65 | planned | Cover remaining gaps |
+
+**No new milestones or tasks needed.** The planned pipeline is sufficient to close all remaining gaps (dbb: 62%, arch: 78%).
+
+The PM role here is to **wait** — m42 tasks are in-progress, m62 has a task in review that only the tester can approve. No blocking issues to escalate.
+[2026-04-07T02:06:04.175Z] pm agent completed
+[2026-04-07 02:06:04] [agent_complete] pm completed successfully
+[2026-04-07 02:06:04] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:06:04] [workflow] work_loop [LOOP] Iteration 63
+[2026-04-07 02:06:04] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:06:04] [agent_start] pm pm
+[2026-04-07T02:06:04.329Z] Running pm agent...
+M61 is now active. Current state:
+
+**Active milestones:**
+- **m42**: 3 tasks in-progress (wake word, voice latency, HTTPS)
+- **m61**: 1 review + 1 todo (CDN staleness)
+- **m62**: 1 review + 2 todo (optimizer.js, agentic-voice)
+
+**Planned:** m63, m64
+
+All todo tasks are assigned to `developer` (currently idle) with no blockers. The task structure is correct — work can proceed as soon as the developer picks up their assigned tasks.
+
+No new milestones or tasks needed right now. The pipeline has sufficient work queued through m64.
+[2026-04-07T02:06:29.864Z] pm agent completed
+[2026-04-07 02:06:29] [agent_complete] pm completed successfully
+[2026-04-07 02:06:29] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:06:29] [workflow] work_loop [LOOP] Iteration 6
+[2026-04-07 02:06:29] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:06:29] [agent_start] pm pm
+[2026-04-07T02:06:30.017Z] Running pm agent...
+M66 is created and registered. Here's the current PM status:
+
+**Active milestones:**
+- **m42** — Wake Word + Voice Latency + HTTPS: 3 tasks `in-progress`
+- **m62** — Server VAD + optimizer.js + agentic-voice: 1 `review`, 2 `todo`
+
+**Planned milestones (queued):**
+- **m43** — VAD + README + CDN + Headless Sense: 4 tasks `todo`
+- **m44** — Ollama Auto-Install + npx + Multi-Device Brain State: 3 tasks `todo`
+- **m47** — Admin UI + optimizer.js + UI Routes: 4 tasks `todo`
+- **m48** — Docker + Test Coverage + SIGINT + setup.sh: 5 tasks `todo`
+- **m61** — DBB: cpu-only Profile + CDN Staleness: 2 tasks `todo`
+- **m63** — agentic-sense package verification: 1 task `todo`
+- **m64** — External Packages + Docs: 5 tasks `todo`
+- **m66** — DBB: Profiles + Cache + Setup + Docker: 4 tasks `todo` *(new)*
+
+**Waiting on:**
+- m42 tasks to complete (in-progress by developers)
+- m62 task-1775526816885 review result from tester before marking m62 done
+
+No further planning action needed — the backlog is well-covered. Monitoring for task completions.
+[2026-04-07T02:06:54.109Z] pm agent completed
+[2026-04-07 02:06:54] [agent_complete] pm completed successfully
+[2026-04-07 02:06:54] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:06:54] [workflow] work_loop [LOOP] Iteration 19
+[2026-04-07 02:06:54] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:06:54] [agent_start] pm pm
+[2026-04-07T02:06:54.264Z] Running pm agent...
+Current state summary:
+
+**Active work:**
+- **m42** (active): 3 tasks `in-progress` — Wake Word, Voice Latency, HTTPS. Waiting for tester.
+- **m62** (active): 1 task `review` (Server VAD), 2 tasks `todo` (optimizer.js, agentic-voice integration)
+
+**Planned milestones ready for work:**
+- **m61**: 1 task `review` (cpu-only profile), 1 task `todo` (CDN staleness)
+- **m63**: agentic-sense verification
+- **m64**: 5 tasks — npx smoke test, README audit, agentic-store/embed verification, detector docs
+- **m66**: 4 tasks — profiles, cache, setup.sh, Docker (just registered)
+- **m43, m44, m47, m48**: VAD, Ollama, Admin UI, Docker/test coverage
+
+**Actions taken:**
+- Registered m66 in milestones.json with its 4 todo tasks
+- Created `.team/milestones/m66/overview.md`
+
+**Blocked:** m42 tasks are `in-progress` — cannot advance until tester reviews. m61 has 1 task in `review` — cannot mark milestone complete yet.
+
+No new tasks needed — existing backlog covers all remaining gaps. Waiting on tester to process `review` tasks in m61 and m62 before those milestones can progress.
+[2026-04-07T02:07:21.574Z] pm agent completed
+[2026-04-07 02:07:21] [agent_complete] pm completed successfully
+[2026-04-07 02:07:21] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:07:21] [workflow] work_loop [LOOP] Iteration 75
+[2026-04-07 02:07:21] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:07:21] [agent_start] pm pm
+[2026-04-07T02:07:21.731Z] Running pm agent...
+**PM Status Report — 2026-04-07T02:07Z**
+
+**Active milestones:**
+
+- m42: 3 tasks `in-progress` (wake word pipeline, voice latency benchmark, HTTPS/LAN tunnel) — being worked on by developers
+- m61: 1 task `review` (cpu-only profile) — waiting for tester approval; 1 task `todo` (CDN 7-day staleness) — P1, ready to assign
+- m62: 1 task `review` (server-side VAD) — waiting for tester approval; 2 tasks `todo` (optimizer.js P0, agentic-voice P1) — ready to assign
+
+**Planned milestones (queued):**
+- m63: agentic-sense package verification (1 task)
+- m64: external packages + docs (5 tasks)
+
+**Actions taken:**
+- Fixed JSON syntax error in milestones.json (missing comma between m65 and m66)
+- Cancelled m66 (duplicate of m61/m62 work)
+- Set priorities: optimizer.js → P0, CDN staleness + agentic-voice → P1
+
+**Blocked:** Tasks in `review` (cpu-only profile, server VAD) — awaiting tester sign-off before milestones m61/m62 can progress to completion.
+[2026-04-07T02:07:47.834Z] pm agent completed
+[2026-04-07 02:07:47] [agent_complete] pm completed successfully
+[2026-04-07 02:07:47] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:07:48] [workflow] work_loop [LOOP] Iteration 64
+[2026-04-07 02:07:48] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:07:48] [agent_start] pm pm
+[2026-04-07T02:07:48.084Z] Running pm agent...
+All 4 review tasks are now complete. Here's a summary:
+
+**Tasks completed:**
+
+1. `task-1775524084592` — SIGINT graceful drain: 5 tests passed. Verified `startDrain()`/`waitDrain()` logic, timeout behavior, and shutdown sequence.
+
+2. `task-1775524084623` — setup.sh Node.js detection & idempotency: 7 tests passed. Verified Node version check, idempotency guard, OS-specific install paths, and Windows rejection.
+
+3. `task-1775524084653` — Ollama non-200 fallback: 4 tests passed. Verified `response.ok` check throws on non-200, and `chat()` correctly falls back to cloud.
+
+4. `task-1775524560816` — gpu-detector.js merge: 4 tests passed. Confirmed file doesn't exist, `hardware.js` has full GPU detection, no stale imports.
+
+**Total: 20 tests, all passed.** All tasks marked `done`.
+[2026-04-07T02:08:13.471Z] tester-2 agent completed
+[2026-04-07 02:08:13] [agent_complete] tester-2 completed successfully
