@@ -31253,3 +31253,100 @@ All actions complete. Here's the summary:
 [2026-04-07T13:41:35.660Z] tester agent completed
 [2026-04-07 13:41:35] [agent_complete] tester completed successfully
 [2026-04-07 13:41:35] [workflow] tester [SIGNAL] completed: 
+[2026-04-07 13:41:35] [workflow] post [POST] task-1775561925076: testing → blocked
+[2026-04-07 13:41:36] [workflow] work_loop [LOOP] Iteration 20
+[2026-04-07 13:41:36] [workflow] work_loop [EXEC] pm
+[2026-04-07 13:41:36] [agent_start] pm 管理任务和里程碑
+[2026-04-07T13:41:36.047Z] Running pm agent...
+M86 is now fully planned. Here's the current state:
+
+**M86: Docker Fix — npm Package Resolution for agentic-* deps** (active)
+
+| Task | Assignee | Priority | Status |
+|------|----------|----------|--------|
+| Fix Docker build — resolve agentic-* local package deps | developer | P0 | todo |
+| Wire agentic-sense as external package dependency | developer | P0 | todo |
+| Push test pass rate to ≥90% | tester | P0 | todo |
+
+**Remaining gaps addressed:**
+- DBB: Docker build failure → `task-1775569230828`
+- DBB: agentic-sense missing from deps → `task-1775569348331`
+- DBB: test pass rate 81.7% → `task-1775561925076` (unblocked)
+
+m74's Docker verification task (`task-1775529630008`) will unblock once the Docker fix lands.
+
+```signal
+{"status": "completed", "summary": "Assessed m86 state, assigned Docker fix and agentic-sense tasks to developer (P0), unblocked and reassigned test pass rate task to tester (P0), added all 3 tasks to m86 milestone"}
+```
+[2026-04-07T13:43:09.908Z] pm agent completed
+[2026-04-07 13:43:09] [agent_complete] pm completed successfully
+[2026-04-07 13:43:09] [workflow] pm [SIGNAL] completed: Assessed m86 state, assigned Docker fix and agentic-sense tasks to developer (P0), unblocked and rea
+[2026-04-07 13:43:10] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 13:43:10] [workflow] work_loop [PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-07 13:43:10] [workflow] work_loop [PARALLEL] write-design, implement
+[2026-04-07 13:43:10] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2
+[2026-04-07 13:43:10] [agent_start] tech_lead-1 出技术方案
+[2026-04-07 13:43:10] [agent_start] tech_lead-2 出技术方案
+[2026-04-07 13:43:10] [workflow] work_loop [EXEC] developer
+[2026-04-07 13:43:10] [agent_start] developer 实现功能
+[2026-04-07T13:43:10.214Z] Running tech_lead-2 agent...
+[2026-04-07T13:43:10.214Z] Running tech_lead-1 agent...
+[2026-04-07T13:43:10.214Z] Running developer agent...
+[2026-04-07 13:43:12] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:3, done:189)
+All done. Here's what was created:
+
+- `.team/milestones/m86/dbb.md` — 5 verification criteria for Docker build success
+- `.team/milestones/m86/design.md` — technical approach using `npm pack` + `vendor/` tarballs
+- `.team/tasks/task-1775569230828/design.md` — exact files, function signatures, edge cases
+- `task-1775569230828` updated with `hasDesign: true`
+
+```signal
+{"status": "completed", "summary": "Created m86 dbb.md, design.md, and task design for Docker agentic-* package fix; marked task hasDesign=true"}
+```
+[2026-04-07T13:43:27.531Z] tech_lead agent completed
+[2026-04-07 13:43:27] [agent_complete] tech_lead completed successfully
+[2026-04-07 13:43:27] [workflow] tech_lead [SIGNAL] completed: Created m86 dbb.md, design.md, and task design for Docker agentic-* package fix; marked task hasDesi
+[2026-04-07 13:43:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:3, done:189)
+All done. Here's a summary of what was completed:
+
+**M86 active milestone — all designs in place:**
+
+- `dbb.md` and `design.md` already existed for m86 — no changes needed
+- `task-1775569230828` (Docker fix) — already had `hasDesign=true`
+- `task-1775569348331` (wire agentic-sense) — wrote design and marked `hasDesign=true`
+
+**Design written for task-1775569348331:**
+- Change `package.json` dep from `"agentic-sense": "*"` → `"file:./vendor/agentic-sense.tgz"`
+- Add `"#agentic-sense": "./src/runtime/adapters/sense.js"` to the imports map
+- `sense.js` adapter needs no changes — already imports from `agentic-sense` correctly
+
+```signal
+{"status": "completed", "summary": "Wrote technical design for task-1775569348331 (agentic-sense wiring) and marked hasDesign=true. M86 milestone dbb.md and design.md were already present. All m86 tasks now have designs."}
+```
+[2026-04-07T13:44:39.803Z] tech_lead-2 agent completed
+[2026-04-07 13:44:39] [agent_complete] tech_lead-2 completed successfully
+[2026-04-07 13:44:39] [workflow] tech_lead-2 [SIGNAL] completed: Wrote technical design for task-1775569348331 (agentic-sense wiring) and marked hasDesign=true. M86 
+[2026-04-07 13:44:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:3, done:189)
+All m86 milestone files and task designs are already in place:
+
+- `dbb.md` — complete with 5 verification criteria
+- `design.md` — full technical approach for Docker package resolution
+- All 3 tasks have `hasDesign: true`
+
+Nothing to do.
+
+```signal
+{"status": "completed", "summary": "M86 milestone dbb.md and design.md already exist and are complete. All 3 tasks (task-1775569230828, task-1775569348331, task-1775561925076) already have hasDesign=true. No work needed."}
+```
+[2026-04-07T13:45:10.799Z] tech_lead-1 agent completed
+[2026-04-07 13:45:10] [agent_complete] tech_lead-1 completed successfully
+[2026-04-07 13:45:10] [workflow] tech_lead-1 [SIGNAL] completed: M86 milestone dbb.md and design.md already exist and are complete. All 3 tasks (task-1775569230828, 
+[2026-04-07 13:45:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:3, done:189)
+Task complete.
+
+```signal
+{"status": "completed", "summary": "Fixed Docker build: updated package.json agentic-* deps to file:./vendor/*.tgz, added COPY vendor/ to install/Dockerfile, created install/docker-build.sh to pack sibling packages and run docker build."}
+```
+[2026-04-07T13:45:55.700Z] developer agent completed
+[2026-04-07 13:45:55] [agent_complete] developer completed successfully
+[2026-04-07 13:45:55] [workflow] developer [SIGNAL] completed: Fixed Docker build: updated package.json agentic-* deps to file:./vendor/*.tgz, added COPY vendor/ t

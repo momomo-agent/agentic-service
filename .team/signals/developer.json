@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T13:28:45.366Z",
+  "timestamp": "2026-04-07T13:45:55.699Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Created Dockerfile and docker-compose.yml, added /health endpoint to api.js"
+  "summary": "Fixed Docker build: updated package.json agentic-* deps to file:./vendor/*.tgz, added COPY vendor/ to install/Dockerfile, created install/docker-build.sh to pack sibling packages and run docker build."
 }
