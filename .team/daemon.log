@@ -29634,3 +29634,27 @@ Both tasks assigned to me are blocked by tasks still in "review". No claimable w
 [2026-04-07T11:11:31.227Z] developer agent completed
 [2026-04-07 11:11:31] [agent_complete] developer completed successfully
 [2026-04-07 11:11:31] [workflow] developer [SIGNAL] blocked: All assigned tasks (task-1775535887205, task-1775536619023) are blocked by tasks in 'review' status 
+[2026-04-07 11:11:31] [workflow] work_loop [AGENT-SIGNAL] developer → blocked: All assigned tasks (task-1775535887205, task-1775536619023) are blocked by tasks
+
+
+I'm in a blocked state. Here's the situation:
+
+**Current State:**
+- 4 tasks in "review" status, all assigned to "developer"
+- I cannot claim any of them (can-claim returns false for all)
+- No tasks in "testing" status for me to work on
+- I have 1 blocked task (task-1775536622791) that depends on a review task
+
+**The Problem:**
+Tasks in "review" status are still assigned to "developer" and the workflow doesn't allow testers to claim them. The system needs either:
+1. Tasks to be reassigned from "developer" to a tester when they enter "review" status, OR
+2. The workflow to allow testers to claim tasks in "review" status
+
+This appears to be a workflow configuration issue rather than something I can resolve as a tester agent.
+
+```signal
+{"status": "blocked", "summary": "No claimable review tasks - all review tasks still assigned to developer and cannot be claimed by tester"}
+```
+[2026-04-07T11:12:59.837Z] tester-2 agent completed
+[2026-04-07 11:12:59] [agent_complete] tester-2 completed successfully
+[2026-04-07 11:12:59] [workflow] tester-2 [SIGNAL] blocked: No claimable review tasks - all review tasks still assigned to developer and cannot be claimed by te
