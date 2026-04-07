@@ -2,12 +2,12 @@
   "id": "task-1775527307904",
   "title": "agentic-store package verification — src/store/index.js",
   "description": "Confirm agentic-store is in package.json dependencies and src/store/index.js imports from the external package rather than being a local implementation",
-  "status": "todo",
+  "status": "testing",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "tester-2",
   "blockedBy": [],
   "groupId": "m64",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-07T02:01:47.904Z",
-  "updated": "2026-04-07T02:05:49.541Z"
+  "updated": "2026-04-07T02:12:47.583Z"
 }

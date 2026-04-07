@@ -10,7 +10,7 @@ import { detectVoiceActivity } from '../runtime/vad.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
 import { errorHandler } from './middleware.js';
-import { getDevices, initWebSocket, startWakeWordDetection, broadcastWakeword } from './hub.js';
+import { getDevices, initWebSocket, startWakeWordDetection, broadcastWakeword, setSessionData, broadcastSession } from './hub.js';
 import { startWakeWordPipeline } from '../runtime/sense.js';
 
 function getLanIp() {
@@ -77,7 +77,7 @@ async function getOllamaStatus() {
 
 function addRoutes(r) {
   r.post('/api/chat', async (req, res) => {
-    const { message, history = [], tools } = req.body;
+    const { message, history = [], tools, sessionId } = req.body;
     if (!message || typeof message !== 'string') {
       return res.status(400).json({ error: 'Invalid message' });
     }
@@ -85,11 +85,18 @@ function addRoutes(r) {
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
     const messages = [...history, { role: 'user', content: message }];
+    const assistantChunks = [];
     try {
       for await (const chunk of chat(messages, { tools })) {
         res.write(`data: ${JSON.stringify(chunk)}\n\n`);
+        if (chunk.type === 'content') assistantChunks.push(chunk.text);
       }
       res.write('data: [DONE]\n\n');
+      if (sessionId) {
+        const updatedHistory = [...messages, { role: 'assistant', content: assistantChunks.join('') }];
+        setSessionData(sessionId, 'history', updatedHistory);
+        broadcastSession(sessionId);
+      }
     } catch (error) {
       res.write(`data: ${JSON.stringify({ error: error.message })}\n\n`);
     }

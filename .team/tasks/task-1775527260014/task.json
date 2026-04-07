@@ -4,10 +4,10 @@
   "description": "Verify README.md covers all required sections: install, usage, API reference, Docker, and environment variables",
   "status": "todo",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": "tech_lead-1",
   "blockedBy": [],
   "groupId": "m64",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-07T02:01:00.014Z",
-  "updated": "2026-04-07T02:05:49.510Z"
+  "updated": "2026-04-07T02:11:42.305Z"
 }

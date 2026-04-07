@@ -36,8 +36,14 @@ export function getSessionData(sessionId, key) {
 }
 
 export function broadcastSession(sessionId) {
-  for (const device of registry.values()) {
-    try { device.ws.send(JSON.stringify({ type: 'session', sessionId })); } catch { /* ignore */ }
+  const session = sessions.get(sessionId);
+  if (!session) return;
+  const history = session.data.history;
+  const data = { ...session.data };
+  if (Array.isArray(history) && history.length > 20) data.history = history.slice(-20);
+  const msg = JSON.stringify({ type: 'session', sessionId, data });
+  for (const [id, device] of registry) {
+    try { device.ws.send(msg); } catch { unregisterDevice(id); }
   }
 }
 

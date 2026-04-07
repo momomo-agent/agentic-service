@@ -1486,3 +1486,10 @@
 {"time":"2026-04-07T02:04:44.901Z","type":"no_progress","message":"No progress for 25min (active:31, done:129)"}
 {"time":"2026-04-07T02:05:06.301Z","type":"no_progress","message":"No progress for 82min (active:27, done:129)"}
 {"time":"2026-04-07T02:05:14.902Z","type":"no_progress","message":"No progress for 25min (active:27, done:129)"}
+{"time":"2026-04-07T02:11:14.927Z","type":"no_progress","message":"No progress for 5min (active:14, done:133)"}
+{"time":"2026-04-07T02:11:36.326Z","type":"no_progress","message":"No progress for 6min (active:14, done:133)"}
+{"time":"2026-04-07T02:11:44.928Z","type":"no_progress","message":"No progress for 6min (active:14, done:133)"}
+{"time":"2026-04-07T02:12:06.328Z","type":"no_progress","message":"No progress for 6min (active:19, done:133)"}
+{"time":"2026-04-07T02:12:14.930Z","type":"no_progress","message":"No progress for 6min (active:25, done:133)"}
+{"time":"2026-04-07T02:12:36.327Z","type":"no_progress","message":"No progress for 7min (active:27, done:133)"}
+{"time":"2026-04-07T02:12:44.930Z","type":"no_progress","message":"No progress for 7min (active:27, done:133)"}
