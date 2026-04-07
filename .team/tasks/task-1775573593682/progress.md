@@ -13,4 +13,4 @@ Non-fatal warnings (expected, non-blocking):
 - `[sense] arecord not found` — wake word disabled on macOS
 - `Cannot find package 'agentic-voice'` — optional TTS dep
 
-No fixes needed.
+Fix applied: `src/runtime/sense.js` — added `_recorder.process?.on('error', ...)` to handle `spawn sox ENOENT` gracefully (was crashing with unhandled error on child process).

@@ -33375,3 +33375,71 @@ Task complete.
 [2026-04-07T16:40:55.263Z] developer agent completed
 [2026-04-07 16:40:55] [agent_complete] developer completed successfully
 [2026-04-07 16:40:55] [workflow] developer [SIGNAL] completed: Fixed adapters/sense.js to use named import { AgenticSense } from 'agentic-sense'. Package.json alre
+[2026-04-07 16:40:56] [workflow] monitor ⚠️ [ALERT:cr_explosion] 22 pending CRs
+All done. Here's what was completed:
+
+- Created `.team/milestones/m91/design.md` — technical approach for the 3 tracks
+- Created task designs for all 3 todo tasks:
+  - `task-1775579891016/design.md` — CR submission for ARCHITECTURE.md gaps
+  - `task-1775579897222/design.md` — agentic-sense wiring verification steps
+  - `task-1775579897264/design.md` — test suite run with pass/fail criteria
+- Updated `hasDesign: true` on all three tasks
+
+```signal
+{"status": "completed", "summary": "Created m91/design.md, wrote task designs for all 3 todo tasks (CR submission, sense wiring verify, test suite run), marked hasDesign=true on all"}
+```
+[2026-04-07T16:41:06.772Z] tech_lead-1 agent completed
+[2026-04-07 16:41:06] [agent_complete] tech_lead-1 completed successfully
+[2026-04-07 16:41:06] [workflow] tech_lead-1 [SIGNAL] completed: Created m91/design.md, wrote task designs for all 3 todo tasks (CR submission, sense wiring verify, 
+[2026-04-07 16:41:06] [workflow] work_loop [LOOP] Iteration 3
+[2026-04-07 16:41:06] [workflow] work_loop [EXEC] pm
+[2026-04-07 16:41:06] [agent_start] pm 管理任务和里程碑
+[2026-04-07T16:41:06.990Z] Running pm agent...
+[2026-04-07 16:41:56] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+The state is clear. Everything is blocked on task-1775573229039 (agentic-sense wiring) which is in `review` — waiting on tester approval.
+
+**Current status:**
+- m89: 1 task in `review` (cannot approve — tester's job), 1 done
+- m90: 1 task blocked by m89 review task, rest done
+- m91: CR submitted (done), 2 tester tasks blocked by m89 review task
+
+**Actions taken this session:**
+- Marked duplicate CR task done
+- Submitted `cr-1775580105000.json` to L1 for ARCHITECTURE.md gap closure (tunnel, CLI, HTTPS, VAD, embed)
+- Marked CR submission task done
+
+**Waiting on:** tester to approve/reject task-1775573229039 before the blocked chain (m90 npx verify + m91 sense wiring verify + test suite rerun) can proceed.
+
+```signal
+{"status": "blocked", "summary": "All remaining tasks blocked on task-1775573229039 (agentic-sense wiring) in review. CR submitted for ARCHITECTURE.md gaps. Waiting for tester to complete review."}
+```
+[2026-04-07T16:42:15.162Z] pm agent completed
+[2026-04-07 16:42:15] [agent_complete] pm completed successfully
+[2026-04-07 16:42:15] [workflow] pm [SIGNAL] blocked: All remaining tasks blocked on task-1775573229039 (agentic-sense wiring) in review. CR submitted for
+[2026-04-07 16:42:15] [workflow] work_loop [AGENT-SIGNAL] pm → blocked: All remaining tasks blocked on task-1775573229039 (agentic-sense wiring) in revi
+[2026-04-07 16:42:15] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 16:42:15] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-07 16:42:15] [workflow] work_loop [PARALLEL] implement, run-tests
+[2026-04-07 16:42:15] [workflow] work_loop [EXEC] developer
+[2026-04-07 16:42:15] [agent_start] developer 实现功能
+[2026-04-07 16:42:15] [workflow] work_loop [EXEC] tester
+[2026-04-07 16:42:15] [agent_start] tester 验证功能
+[2026-04-07T16:42:15.270Z] Running tester agent...
+[2026-04-07T16:42:15.270Z] Running developer agent...
+[2026-04-07 16:42:56] [perf] daemon {"rss":"58MB","heapUsed":"8MB","uptime":"600s"}
+[2026-04-07 16:42:56] [agent_start] daemon Still busy (10min), skipping
+Done. Here's a summary of what was completed:
+
+**task-1775573593682** — Verify npx agentic-service one-command startup
+
+- Found crash: `spawn sox ENOENT` was an unhandled error on the child process spawned by `node-record-lpcm16`
+- Fixed `src/runtime/sense.js`: added `_recorder.process?.on('error', ...)` to catch the spawn error gracefully
+- Verified: `node bin/agentic-service.js --skip-setup` starts cleanly, `GET /api/status` returns 200 with valid JSON
+- Task moved to `review`
+
+```signal
+{"status": "completed", "summary": "Fixed unhandled sox spawn error in sense.js; npx agentic-service starts cleanly and /api/status returns 200"}
+```
+[2026-04-07T16:45:41.493Z] developer agent completed
+[2026-04-07 16:45:41] [agent_complete] developer completed successfully
+[2026-04-07 16:45:41] [workflow] developer [SIGNAL] completed: Fixed unhandled sox spawn error in sense.js; npx agentic-service starts cleanly and /api/status retu

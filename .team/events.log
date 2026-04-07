@@ -20345,3 +20345,31 @@
 {"ts":"2026-04-07T16:40:41.776Z","type":"workflow","agent":"tech_lead-2","data":{"details":"[SIGNAL] completed: Created m91 dbb.md + design.md, wrote task designs for all 3 m91 tasks, updated hasDesign=true"}}
 {"ts":"2026-04-07T16:40:55.266Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":22,"memoryTotalMB":28,"cpuUser":0.440724,"cpuSystem":0.891186}}}
 {"ts":"2026-04-07T16:40:55.267Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Fixed adapters/sense.js to use named import { AgenticSense } from 'agentic-sense'. Package.json alre"}}
+{"ts":"2026-04-07T16:40:56.095Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 22 pending CRs"}}
+{"ts":"2026-04-07T16:40:56.095Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"22 pending CRs\"}"}}
+{"ts":"2026-04-07T16:41:06.775Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":26,"memoryTotalMB":36,"cpuUser":0.460067,"cpuSystem":0.929837}}}
+{"ts":"2026-04-07T16:41:06.775Z","type":"workflow","agent":"tech_lead-1","data":{"details":"[SIGNAL] completed: Created m91/design.md, wrote task designs for all 3 todo tasks (CR submission, sense wiring verify, "}}
+{"ts":"2026-04-07T16:41:06.951Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 3"}}
+{"ts":"2026-04-07T16:41:06.965Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T16:41:06.965Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":17,"memoryTotalMB":21,"cpuUser":0.499286,"cpuSystem":1.059576}}}
+{"ts":"2026-04-07T16:41:45.646Z","type":"task_status","agent":"pm","data":{"taskId":"task-1775579881503","from":"todo","to":"done","title":"Submit CR to document tunnel, CLI, HTTPS, VAD, embed in ARCHITECTURE.md"}}
+{"ts":"2026-04-07T16:41:56.170Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T16:41:56.170Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T16:41:59.411Z","type":"task_status","agent":"pm","data":{"taskId":"task-1775579891016","from":"todo","to":"done","title":"Submit CR to document tunnel, CLI, HTTPS, VAD, embed in ARCHITECTURE.md"}}
+{"ts":"2026-04-07T16:42:15.167Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":8,"cpuUser":0.537429,"cpuSystem":1.117363}}}
+{"ts":"2026-04-07T16:42:15.170Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] blocked: All remaining tasks blocked on task-1775573229039 (agentic-sense wiring) in review. CR submitted for"}}
+{"ts":"2026-04-07T16:42:15.170Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] pm → blocked: All remaining tasks blocked on task-1775573229039 (agentic-sense wiring) in revi"}}
+{"ts":"2026-04-07T16:42:15.235Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T16:42:15.235Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T16:42:15.235Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T16:42:15.235Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T16:42:15.236Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":0.551869,"cpuSystem":1.16884}}}
+{"ts":"2026-04-07T16:42:15.236Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-07T16:42:15.236Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":0.552135,"cpuSystem":1.169317}}}
+{"ts":"2026-04-07T16:42:43.987Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775573229039","from":"review","to":"testing","title":"Wire agentic-sense as external npm package"}}
+{"ts":"2026-04-07T16:42:56.050Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"58MB\",\"heapUsed\":\"8MB\",\"uptime\":\"600s\"}"}}
+{"ts":"2026-04-07T16:42:56.266Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (10min), skipping","performance":{"memoryMB":17,"memoryTotalMB":22,"cpuUser":0.588266,"cpuSystem":1.234517}}}
+{"ts":"2026-04-07T16:43:12.255Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775573593682","from":"todo","to":"inProgress","title":"Verify npx agentic-service one-command startup"}}
+{"ts":"2026-04-07T16:45:35.146Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775573593682","from":"inProgress","to":"review","title":"Verify npx agentic-service one-command startup"}}
+{"ts":"2026-04-07T16:45:41.527Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":13,"cpuUser":0.703224,"cpuSystem":1.461569}}}
+{"ts":"2026-04-07T16:45:41.528Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Fixed unhandled sox spawn error in sense.js; npx agentic-service starts cleanly and /api/status retu"}}

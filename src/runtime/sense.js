@@ -76,9 +76,14 @@ export async function startWakeWordPipeline(onWakeWord) {
 
   try {
     _recorder = record.record({ sampleRate: 16000, channels: 1 });
+    // Handle spawn errors (e.g. sox not installed) on the child process
+    _recorder.process?.on('error', (err) => {
+      console.warn('[sense] mic spawn error:', err.message);
+      _recorder = null;
+    });
     _recorder.stream()
-      .on('data', (buf) => { if (detectVoiceActivity(buf)) { onWakeWord(); emit('wake_word', {}); } })
-      .on('error', (err) => console.warn('[sense] mic error:', err.message));
+      .on('error', (err) => { console.warn('[sense] mic error:', err.message); _recorder = null; })
+      .on('data', (buf) => { if (detectVoiceActivity(buf)) { onWakeWord(); emit('wake_word', {}); } });
     console.log('[sense] Wake word pipeline started');
   } catch (err) {
     console.warn('[sense] mic start failed:', err.message);
