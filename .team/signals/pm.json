@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T15:00:50.720Z",
+  "timestamp": "2026-04-07T15:05:52.546Z",
   "exitCode": 0,
-  "status": "blocked",
-  "summary": "m89 has 1 task in review (awaiting tester approval) and 1 task in todo. Cannot advance milestone until tester clears the review task."
+  "status": "completed",
+  "summary": "Diagnosed m89 blocker (agentic-sense createPipeline export missing), reassigned task-1775573229039 to developer with corrected instructions. Waiting on tester to approve task-1775573249297."
 }
