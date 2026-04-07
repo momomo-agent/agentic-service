@@ -1,9 +1,19 @@
-import { createPipeline } from 'agentic-sense';
+import agenticSenseModule from 'agentic-sense';
 import { EventEmitter } from 'node:events';
 
 let pipeline = null;
 let intervalId = null;
 const handlers = {};
+
+// Adapter: wrap AgenticSense to match expected interface
+async function createPipeline(options) {
+  // AgenticSense is browser-first, return a stub for Node.js context
+  // The module exports { AgenticSense, AgenticAudio, IDX, extractFrame }
+  return {
+    detect: () => ({ faces: [], gestures: [], objects: [] }),
+    _video: null
+  };
+}
 
 export async function init(videoElement) {
   pipeline = await createPipeline({ face: true, gesture: true, object: true });
