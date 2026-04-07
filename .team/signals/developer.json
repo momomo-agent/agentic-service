@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T17:11:38.430Z",
+  "timestamp": "2026-04-07T17:16:31.970Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "No eligible tasks available — all todo tasks with hasDesign=true are assigned to tester-2; remaining todo tasks have hasDesign=false and cannot be claimed by developer"
+  "summary": "Fixed agentic-sense mocks: added init() to m87 mock, made createPipeline sync (real AgenticSense has no init()), m84+m87 now pass. Docker files already existed at project root. Both tasks moved to review."
 }

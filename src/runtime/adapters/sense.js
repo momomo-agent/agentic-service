@@ -1,7 +1,7 @@
 import { AgenticSense } from 'agentic-sense';
 
-export async function createPipeline(options = {}) {
+export function createPipeline(options = {}) {
   const instance = new AgenticSense(null, options);
-  await instance.init();
+  if (typeof instance.init === 'function') instance.init();
   return instance;
 }

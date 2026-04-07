@@ -33837,3 +33837,84 @@ Per my workflow rules, I can only claim tasks with `hasDesign: true`. There are 
 [2026-04-07T17:11:38.431Z] developer agent completed
 [2026-04-07 17:11:38] [agent_complete] developer completed successfully
 [2026-04-07 17:11:38] [workflow] developer [SIGNAL] completed: No eligible tasks available — all todo tasks with hasDesign=true are assigned to tester-2; remaining
+All work is complete. Here's a summary:
+
+**M92 milestone** — already had `dbb.md` and `design.md` in place.
+
+**4 tasks** — all had `design.md` files already written. Updated `hasDesign: true` for all:
+- `task-1775581712916` — Fix stale agentic-sense mocks
+- `task-1775581717200` — Add Dockerfile + docker-compose.yml to root
+- `task-1775581724582` — Add README.md to root
+- `task-1775581731172` — Verify test pass rate >=90%
+
+```signal
+{"status": "completed", "summary": "M92 milestone dbb.md/design.md verified, hasDesign=true set on all 4 todo tasks"}
+```
+[2026-04-07T17:11:53.550Z] tech_lead-2 agent completed
+[2026-04-07 17:11:53] [agent_complete] tech_lead-2 completed successfully
+[2026-04-07 17:11:53] [workflow] tech_lead-2 [SIGNAL] completed: M92 milestone dbb.md/design.md verified, hasDesign=true set on all 4 todo tasks
+All done. Here's what was completed:
+
+**M92 milestone:**
+- `.team/milestones/m92/dbb.md` — verification criteria for all 4 tasks
+- `.team/milestones/m92/design.md` — technical approach overview
+
+**Task designs created + `hasDesign=true` set:**
+- `task-1775581712916` — Fix stale mocks: add `init: vi.fn().mockResolvedValue(undefined)` to `AgenticSense` mocks in m87, m84, m77 tests
+- `task-1775581717200` — Copy `install/Dockerfile` to root; create root `docker-compose.yml` with `build: .`
+- `task-1775581724582` — Create `README.md` with npx quickstart, docker run, API table
+- `task-1775581731172` — Run `npm test`, confirm >= 599/665 passing
+
+```signal
+{"status": "completed", "summary": "Created m92 dbb.md, design.md, and 4 task designs; set hasDesign=true on all m92 tasks"}
+```
+[2026-04-07T17:11:57.814Z] tech_lead-1 agent completed
+[2026-04-07 17:11:57] [agent_complete] tech_lead-1 completed successfully
+[2026-04-07 17:11:57] [workflow] tech_lead-1 [SIGNAL] completed: Created m92 dbb.md, design.md, and 4 task designs; set hasDesign=true on all m92 tasks
+[2026-04-07 17:11:57] [workflow] work_loop [LOOP] Iteration 13
+[2026-04-07 17:11:58] [workflow] work_loop [EXEC] pm
+[2026-04-07 17:11:58] [agent_start] pm 管理任务和里程碑
+[2026-04-07T17:11:58.030Z] Running pm agent...
+M91 has 2 tasks still in `todo` status (task-1775579897222 and task-1775579897264) assigned to tester-2. M92 is planned with 4 tasks in `todo`.
+
+Current state:
+- M91 active, waiting on tester-2 to verify agentic-sense wiring and confirm >=90% test pass rate
+- M92 planned with stale mock fixes, Docker, README, and test verification tasks
+
+The test-coverage gap shows 86 failing tests (87% coverage) and stale mock issues. M92 tasks address these. No new tasks needed — work is already planned.
+
+My role here is to wait for testers to complete M91 tasks before M91 can close, then M92 can activate.
+
+```signal
+{"status": "completed", "summary": "M91 active with 2 todo tasks assigned to tester-2 (agentic-sense verification + test pass rate). M92 planned with 4 tasks covering stale mocks, Docker, README, and test verification. No new tasks needed — waiting on tester completion."}
+```
+[2026-04-07T17:12:24.206Z] pm agent completed
+[2026-04-07 17:12:24] [agent_complete] pm completed successfully
+[2026-04-07 17:12:24] [workflow] pm [SIGNAL] completed: M91 active with 2 todo tasks assigned to tester-2 (agentic-sense verification + test pass rate). M92
+[2026-04-07 17:12:24] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 17:12:24] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-07 17:12:24] [workflow] work_loop [PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-07 17:12:24] [workflow] work_loop [PARALLEL] implement
+[2026-04-07 17:12:24] [workflow] work_loop [EXEC] developer
+[2026-04-07 17:12:24] [agent_start] developer 实现功能
+[2026-04-07T17:12:24.298Z] Running developer agent...
+[2026-04-07 17:12:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 18min (active:6, done:210)
+[2026-04-07 17:12:56] [agent_start] daemon Still busy (40min), skipping
+[2026-04-07 17:12:56] [perf] daemon {"rss":"63MB","heapUsed":"8MB","uptime":"2400s"}
+[2026-04-07 17:13:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 19min (active:6, done:210)
+[2026-04-07 17:13:26] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+[2026-04-07 17:14:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 20min (active:6, done:210)
+[2026-04-07 17:15:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 21min (active:6, done:210)
+[2026-04-07 17:16:26] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 22min (active:6, done:210)
+The README task is a documentation file — I should check if it's in an allowed write path. My permissions allow `src/`, `lib/`, `test/`, and `.team/tasks/<taskId>/`. README.md is in the project root, which is not in my allowed paths.
+
+The test pass rate task (task-1775581731172) is a tester task — it involves running tests and reporting, not writing source code.
+
+Both remaining tasks are outside my role as developer. I'll leave them for the appropriate agents.
+
+```signal
+{"status": "completed", "summary": "Fixed agentic-sense mocks: added init() to m87 mock, made createPipeline sync (real AgenticSense has no init()), m84+m87 now pass. Docker files already existed at project root. Both tasks moved to review."}
+```
+[2026-04-07T17:16:31.970Z] developer agent completed
+[2026-04-07 17:16:31] [agent_complete] developer completed successfully
+[2026-04-07 17:16:31] [workflow] developer [SIGNAL] completed: Fixed agentic-sense mocks: added init() to m87 mock, made createPipeline sync (real AgenticSense has

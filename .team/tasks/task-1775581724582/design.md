@@ -1,23 +1,20 @@
-# Design: Add README.md to Project Root
+# Design: Add README.md to project root
 
-## File to Create
+## File to create
 - `README.md` (project root)
 
-## Sections Required
-1. **Quickstart** — `npx agentic-service`
-2. **Docker** — `docker run -p 3000:3000 momomo/agentic-service`
-3. **API Endpoints** — from ARCHITECTURE.md:
-   - `POST /api/chat` — `{ message, history }` → stream
-   - `POST /api/transcribe` — `{ audio }` → `{ text }`
-   - `POST /api/synthesize` — `{ text }` → audio
-   - `GET /api/status` — hardware, profile, devices
-   - `GET /api/config` / `PUT /api/config`
+## Content structure
+1. Title + one-line description
+2. Quickstart: `npx agentic-service`
+3. Docker: `docker run -p 3000:3000 momomo/agentic-service`
+4. API endpoints table: POST /api/chat, POST /api/transcribe, POST /api/synthesize, GET /api/status, GET/PUT /api/config
 
-## Edge Cases
-- Keep it minimal — no badges, no lengthy prose
+## Edge cases
+- Keep it concise — no installation deep-dives
+- API table must match ARCHITECTURE.md endpoints exactly
 
-## Test Cases to Verify
-- `README.md` exists at project root
-- Contains string `npx agentic-service`
-- Contains string `docker run`
-- Contains `/api/chat`
+## Test cases to verify
+- `ls README.md` — exists
+- `grep 'npx agentic-service' README.md` — found
+- `grep 'docker run' README.md` — found
+- `grep '/api/chat' README.md` — found

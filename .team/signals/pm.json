@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T17:09:20.708Z",
+  "timestamp": "2026-04-07T17:12:24.206Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Planned M92 with 4 tasks targeting PRD missing gaps (Docker, README) and 86 failing tests from stale agentic-sense mocks. M91 remains active awaiting tester verification."
+  "summary": "M91 active with 2 todo tasks assigned to tester-2 (agentic-sense verification + test pass rate). M92 planned with 4 tasks covering stale mocks, Docker, README, and test verification. No new tasks needed — waiting on tester completion."
 }

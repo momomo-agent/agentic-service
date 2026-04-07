@@ -1,21 +1,14 @@
-# Design: Verify Test Pass Rate >=90%
+# Design: Verify test pass rate >=90% after mock fixes
 
 ## Steps
 1. Run `npm test` from project root
 2. Parse output for pass/fail counts
-3. Confirm: passing >= 599 out of 665 total (>=90%)
-
-## Files
-- No source changes — verification only
-
-## Command
-```bash
-npm test 2>&1 | tail -20
-```
-
-## Pass Criteria
-- Total passing >= 599/665
-- No new failures introduced by mock fixes
+3. Compute: pass_rate = passing / total
+4. Pass criteria: pass_rate >= 0.90 AND passing >= 599
 
 ## Reporting
-Report exact counts: `X passed, Y failed, Z total`.
+Report exact numbers: "X/Y tests passing (Z%)"
+
+## Edge cases
+- If pass rate < 90%, identify failing test files and escalate
+- Do not fix tests in this task — only verify and report

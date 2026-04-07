@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 vi.mock('agentic-sense', () => ({
   AgenticSense: vi.fn().mockImplementation(() => ({
+    init: vi.fn().mockResolvedValue(undefined),
     detect: vi.fn().mockReturnValue({
       faces: [{ boundingBox: { x: 0, y: 0, w: 10, h: 10 } }],
       gestures: [{ gesture: 'wave' }],
