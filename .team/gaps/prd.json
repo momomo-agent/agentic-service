@@ -1,24 +1,24 @@
 {
-  "match": 82,
-  "timestamp": "2026-04-07T01:41:33.252Z",
+  "match": 78,
+  "timestamp": "2026-04-07T10:40:35.876Z",
   "gaps": [
     { "description": "M1: Hardware detector — GPU/CPU/OS/memory (src/detector/hardware.js)", "status": "implemented" },
     { "description": "M1: Remote profiles from CDN with local cache (src/detector/profiles.js)", "status": "implemented" },
     { "description": "M1: Ollama auto-install and model pull (src/detector/ollama.js, src/cli/setup.js)", "status": "implemented" },
-    { "description": "M1: Basic HTTP REST API with SSE streaming (src/server/api.js)", "status": "implemented" },
+    { "description": "M1: Basic HTTP REST API (src/server/api.js)", "status": "implemented" },
     { "description": "M1: Web UI minimal chat dialog (src/ui/client/)", "status": "implemented" },
-    { "description": "M1: One-click install script — bin/ and install/ exist but npx entrypoint completeness unverified", "status": "partial" },
-    { "description": "M2: STT integration — SenseVoice/Whisper/cloud fallback adapter (src/runtime/stt.js); depends on agentic-voice package not in node_modules", "status": "partial" },
-    { "description": "M2: TTS integration — Kokoro/Piper/cloud fallback adapter (src/runtime/tts.js); depends on agentic-voice package not in node_modules", "status": "partial" },
+    { "description": "M1: One-click install script — cli/setup.js exists but npx entrypoint completeness unverified", "status": "partial" },
+    { "description": "M2: STT integration — SenseVoice/Whisper/cloud fallback (src/runtime/stt.js); agentic-voice dependency not confirmed installed", "status": "partial" },
+    { "description": "M2: TTS integration — Kokoro/Piper/cloud fallback (src/runtime/tts.js); agentic-voice dependency not confirmed installed", "status": "partial" },
     { "description": "M2: Push-to-talk UI (PushToTalk.vue) and VAD composable (useVAD.js)", "status": "implemented" },
-    { "description": "M2: Wake word — WakeWord.vue + useWakeWord.js in UI; server-side pipeline is a stub with no real mic capture", "status": "partial" },
+    { "description": "M2: Wake word — WakeWord.vue + useWakeWord.js present; server-side mic capture pipeline unverified", "status": "partial" },
     { "description": "M3: WebSocket device registration and heartbeat (src/server/hub.js)", "status": "implemented" },
-    { "description": "M3: Visual perception — face/gesture/object via agentic-sense (src/runtime/sense.js); depends on agentic-sense package", "status": "partial" },
-    { "description": "M3: Device tools speak/display/capture via sendCommand (src/server/hub.js)", "status": "implemented" },
+    { "description": "M3: Visual perception via agentic-sense (src/runtime/sense.js); external package dependency unverified", "status": "partial" },
+    { "description": "M3: Device tools speak/display/capture (src/server/hub.js)", "status": "implemented" },
     { "description": "M3: Admin panel with device list, logs, hardware, config (src/ui/admin/)", "status": "implemented" },
-    { "description": "M4: Cloud fallback auto-switch to OpenAI/Anthropic when Ollama fails (src/runtime/llm.js)", "status": "implemented" },
-    { "description": "M4: Config hot-reload when remote profiles update — watchProfiles() wired in llm.js", "status": "implemented" },
-    { "description": "M4: Docker deployment — docker-compose.yml in install/ (previously confirmed)", "status": "implemented" },
-    { "description": "M4: Complete user documentation/README — README.md exists but completeness unverified", "status": "partial" }
+    { "description": "M4: Cloud fallback to OpenAI/Anthropic (src/runtime/llm.js, src/server/brain.js)", "status": "partial" },
+    { "description": "M4: Config hot-update from remote profiles (src/detector/profiles.js)", "status": "partial" },
+    { "description": "M4: Docker / docker-compose deployment — no docker files found in project root", "status": "missing" },
+    { "description": "M4: Complete user documentation/README — no README.md found in project root", "status": "missing" }
   ]
 }

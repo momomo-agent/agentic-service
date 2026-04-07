@@ -44,6 +44,7 @@
     "#agentic-sense": "./src/runtime/adapters/sense.js"
   },
   "dependencies": {
+    "agentic-store": "*",
     "agentic-embed": "*",
     "agentic-voice": "*",
     "chalk": "^5.6.2",

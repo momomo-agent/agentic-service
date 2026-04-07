@@ -1,0 +1,7 @@
+{
+  "agent": "tester",
+  "timestamp": "2026-04-07T10:33:19.658Z",
+  "exitCode": 1,
+  "status": "blocked",
+  "summary": "No tasks available to claim - all review tasks assigned to other agents (tester-2, developer) and cannot be claimed"
+}

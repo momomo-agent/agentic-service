@@ -1,14 +1,14 @@
 {
-  "match": 78,
-  "timestamp": "2026-04-07T01:41:14.600Z",
+  "match": 88,
+  "timestamp": "2026-04-07T10:37:00.591Z",
   "gaps": [
-    { "description": "src/store/index.js is a local module but architecture specifies agentic-store as an external package dependency", "status": "partial" },
-    { "description": "src/runtime/embed.js is a local module but architecture specifies agentic-embed as an external package dependency", "status": "partial" },
-    { "description": "src/detector/matcher.js not specified in architecture — only hardware.js, profiles.js, optimizer.js are listed", "status": "partial" },
-    { "description": "src/detector/ollama.js not specified in architecture", "status": "partial" },
-    { "description": "src/server/cert.js, httpsServer.js, middleware.js not specified in architecture — only hub.js, brain.js, api.js are listed", "status": "partial" },
-    { "description": "src/cli/ directory not specified in architecture — bin/agentic-service.js is the specified CLI entry point", "status": "partial" },
-    { "description": "agentic-sense (MediaPipe) not confirmed as external package — runtime/sense.js may be a local stub rather than wrapping the package", "status": "partial" },
-    { "description": "agentic-voice not confirmed as external package — runtime/stt.js and tts.js may be local stubs rather than wrapping the package", "status": "partial" }
+    { "description": "src/store/index.js exists but agentic-store abstraction is not documented in ARCHITECTURE.md", "status": "partial" },
+    { "description": "src/tunnel.js exists but tunnel capability is not mentioned in ARCHITECTURE.md", "status": "missing" },
+    { "description": "src/cli/ (setup.js, browser.js) exists but CLI module is not defined in ARCHITECTURE.md", "status": "missing" },
+    { "description": "src/server/cert.js, httpsServer.js, middleware.js exist but HTTPS/middleware layer is not in ARCHITECTURE.md", "status": "partial" },
+    { "description": "src/runtime/vad.js exists but VAD is not mentioned in ARCHITECTURE.md", "status": "missing" },
+    { "description": "src/runtime/embed.js and adapters/ exist but agentic-embed runtime integration is not described in ARCHITECTURE.md", "status": "partial" },
+    { "description": "src/detector/matcher.js and ollama.js exist but are not listed in detector module section of ARCHITECTURE.md", "status": "partial" },
+    { "description": "All core modules (detector, runtime, server, ui, bin, profiles, install) defined in ARCHITECTURE.md are present", "status": "implemented" }
   ]
 }

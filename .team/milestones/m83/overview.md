@@ -3,9 +3,10 @@
 ## Goal
 Repair the failing test suite to reach >=98% coverage threshold required by DBB compliance.
 
-## Current State (2026-04-07T05:34)
-- 3 tasks done, 2 todo (blocked by task-1775538907092), 1 blocked
-- task-1775538907092 reassigned to tech_lead-1 (P0, unblocked — pick up immediately)
+## Current State (2026-04-07T10:26)
+- 3 tasks done, 1 todo unblocked (task-1775538907092), 1 todo blocked, 1 blocked
+- task-1775538907092 assigned to tech_lead-1 (P0, unblocked — critical path)
+- task-1775535887205 blocked by task-1775538907092 (TTS import paths must land first)
 
 ## Tasks
 
