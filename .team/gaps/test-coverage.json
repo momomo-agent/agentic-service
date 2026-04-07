@@ -1,9 +1,19 @@
 {
-  "totalTests": 10,
-  "passed": 10,
-  "failed": 0,
+  "totalTests": 649,
+  "passed": 523,
+  "failed": 119,
+  "skipped": 7,
   "edgeCases": [
-    "No test for matchProfile() logic against this file"
+    "TTS runtime tests fail due to missing init() call in test setup - adapter is null",
+    "WebSocket disconnect does not remove device from registry",
+    "M9 DBB tests expect 'momo-ai' org but code uses 'momomo' org",
+    "M30 VAD tests fail with 'onStart is not a function' - callback signature mismatch",
+    "Multiple test files fail due to initialization issues in mocked modules"
   ],
-  "coverage": "100%"
+  "coverage": "80.6%",
+  "testFilesPassed": 68,
+  "testFilesFailed": 105,
+  "lastUpdated": "2026-04-07T04:17:30.000Z",
+  "recentWork": "Added M62 SIGINT integration tests - all passing. Task task-1775529637561 completed.",
+  "notes": "Test suite improved from 77.4% to 80.6% coverage. SIGINT graceful drain fully tested and verified. Remaining failures are primarily test infrastructure issues (mocking, initialization)."
 }

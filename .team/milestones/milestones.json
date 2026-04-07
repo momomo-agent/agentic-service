@@ -82,6 +82,19 @@
       ],
       "created": "2026-04-07T03:15:11.789Z",
       "completed": "2026-04-07T03:45:00.000Z"
+    },
+    {
+      "id": "m82",
+      "name": "M82: DBB Compliance — Optimizer, VAD, Coverage, Setup, CDN Cache",
+      "status": "active",
+      "tasks": [
+        "task-1775535489083",
+        "task-1775535494677",
+        "task-1775535500603",
+        "task-1775535500644",
+        "task-1775535500715"
+      ],
+      "created": "2026-04-07T04:18:31.639Z"
     }
   ]
 }
