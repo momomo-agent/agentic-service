@@ -2,13 +2,13 @@
   "id": "task-1775528544100",
   "title": "agentic-sense and agentic-voice external package wiring",
   "description": "Confirm runtime/sense.js imports from agentic-sense and runtime/stt.js+tts.js import from agentic-voice packages",
-  "status": "review",
+  "status": "testing",
   "priority": "P0",
-  "assignee": "developer",
+  "assignee": "tester-2",
   "blockedBy": [],
   "groupId": "m72",
   "hasDesign": true,
   "created": "2026-04-07T02:22:24.101Z",
-  "updated": "2026-04-07T02:51:15.805Z",
+  "updated": "2026-04-07T02:54:12.155Z",
   "milestoneId": "m72"
 }

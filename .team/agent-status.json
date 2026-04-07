@@ -1,31 +1,31 @@
 {
   "pm": {
-    "status": "running",
-    "lastRun": "2026-04-07T02:52:18.508Z",
-    "currentTask": "管理任务和里程碑",
+    "status": "idle",
+    "lastRun": "2026-04-07T02:53:23.867Z",
+    "currentTask": null,
     "retryCount": 1
   },
   "tech_lead-1": {
-    "status": "idle",
-    "lastRun": "2026-04-07T02:46:17.570Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T02:53:23.928Z",
+    "currentTask": "出技术方案",
     "retryCount": 0
   },
   "tech_lead-2": {
-    "status": "idle",
-    "lastRun": "2026-04-07T02:46:16.866Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T02:53:23.929Z",
+    "currentTask": "出技术方案",
     "retryCount": 0
   },
   "tech_lead-3": {
-    "status": "idle",
-    "lastRun": "2026-04-07T02:46:05.771Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T02:53:23.930Z",
+    "currentTask": "出技术方案",
     "retryCount": 0
   },
   "developer": {
     "status": "idle",
-    "lastRun": "2026-04-07T02:51:56.681Z",
+    "lastRun": "2026-04-07T02:54:27.245Z",
     "currentTask": null,
     "retryCount": 1
   },
@@ -36,15 +36,15 @@
     "retryCount": 0
   },
   "tester-1": {
-    "status": "idle",
-    "lastRun": "2026-04-07T02:52:18.196Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T02:53:23.931Z",
+    "currentTask": "验证功能",
     "retryCount": 1
   },
   "tester-2": {
-    "status": "idle",
-    "lastRun": "2026-04-07T02:52:20.307Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T02:53:23.931Z",
+    "currentTask": "验证功能",
     "retryCount": 1
   },
   "qa_lead": {
