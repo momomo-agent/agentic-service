@@ -1,14 +1,19 @@
 {
   "workflowId": "default",
   "nodeId": "work_loop",
-  "stepIndex": 0,
+  "stepIndex": 2,
   "visitedNodes": [
+    "milestone_qg",
+    "work_loop",
+    "milestone_qg",
+    "work_loop",
+    "milestone_qg",
     "work_loop"
   ],
   "loopIterations": {
-    "work_loop": 55
+    "work_loop": 100
   },
-  "transitionDepth": 1,
+  "transitionDepth": 6,
   "contextOverrides": {},
-  "timestamp": "2026-04-07T03:30:33.604Z"
+  "timestamp": "2026-04-07T03:32:00.082Z"
 }
