@@ -29959,3 +29959,11 @@ Task complete. Here's a summary of what was implemented:
 [2026-04-07T11:36:32.696Z] developer agent completed
 [2026-04-07 11:36:32] [agent_complete] developer completed successfully
 [2026-04-07 11:36:32] [workflow] developer [SIGNAL] completed: Implemented profiler.js, instrumented stt/tts/brain with _lastMs timing, updated benchmark to use re
+All done.
+
+```signal
+{"status": "completed", "summary": "Tested task-1775536622791: agentic-voice external package wiring. All 6 tests passed — package.json has agentic-voice dep, stt.js and tts.js use agentic-voice/* imports, no local stubs remain. Task marked done."}
+```
+[2026-04-07T11:36:46.218Z] tester agent completed
+[2026-04-07 11:36:46] [agent_complete] tester completed successfully
+[2026-04-07 11:36:46] [workflow] tester [SIGNAL] completed: Tested task-1775536622791: agentic-voice external package wiring. All 6 tests passed — package.json 

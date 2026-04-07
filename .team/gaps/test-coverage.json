@@ -1,7 +1,9 @@
 {
-  "totalTests": 2,
-  "passed": 2,
+  "totalTests": 6,
+  "passed": 6,
   "failed": 0,
-  "edgeCases": [],
+  "edgeCases": [
+    "Runtime adapter load failure (falls back to default — verified in source but not integration-tested)"
+  ],
   "coverage": "100%"
 }
