@@ -9059,3 +9059,23 @@
 {"ts":"2026-04-07T02:13:02.009Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
 {"ts":"2026-04-07T02:13:02.010Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":17.809607,"cpuSystem":47.523196}}}
 {"ts":"2026-04-07T02:13:04.703Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":13,"cpuUser":0.892931,"cpuSystem":1.782199}}}
+{"ts":"2026-04-07T02:13:07.697Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":9,"cpuUser":17.820478,"cpuSystem":47.535929}}}
+{"ts":"2026-04-07T02:13:07.753Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:13:07.843Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 11"}}
+{"ts":"2026-04-07T02:13:07.843Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:13:07.843Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":8,"memoryTotalMB":15,"cpuUser":17.849714,"cpuSystem":47.652665}}}
+{"ts":"2026-04-07T02:13:14.166Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775527925547","from":"todo","to":"cancelled","title":"Docker end-to-end build and run verification"}}
+{"ts":"2026-04-07T02:13:14.200Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775527930444","from":"todo","to":"cancelled","title":"Test coverage >=98% threshold enforcement"}}
+{"ts":"2026-04-07T02:13:14.235Z","type":"task_status","agent":null,"data":{"taskId":"task-1775527932841","from":"todo","to":"cancelled","title":"setup.sh Node.js detection and idempotency"}}
+{"ts":"2026-04-07T02:13:14.270Z","type":"task_status","agent":"tech_lead-1","data":{"taskId":"task-1775527933467","from":"todo","to":"cancelled","title":"SIGINT graceful drain during in-flight requests"}}
+{"ts":"2026-04-07T02:13:14.303Z","type":"task_status","agent":"tech_lead-2","data":{"taskId":"task-1775527933502","from":"todo","to":"cancelled","title":"Test coverage >=98% threshold enforcement"}}
+{"ts":"2026-04-07T02:13:14.336Z","type":"task_status","agent":null,"data":{"taskId":"task-1775527936164","from":"todo","to":"cancelled","title":"Docker end-to-end build verification"}}
+{"ts":"2026-04-07T02:13:14.369Z","type":"task_status","agent":null,"data":{"taskId":"task-1775527936198","from":"todo","to":"cancelled","title":"Unspecified architecture files — document or remove src/cli/ and server cert/middleware files"}}
+{"ts":"2026-04-07T02:13:28.407Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"40MB\",\"heapUsed\":\"8MB\",\"heapTotal\":\"15MB\",\"uptime\":\"36902s\"}"}}
+{"ts":"2026-04-07T02:13:32.988Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775523564901","from":"todo","to":"review","title":"VAD auto-detection"}}
+{"ts":"2026-04-07T02:13:37.229Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":17.856687,"cpuSystem":47.663338}}}
+{"ts":"2026-04-07T02:13:37.278Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T02:13:37.358Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 79"}}
+{"ts":"2026-04-07T02:13:37.358Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T02:13:37.358Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":12,"memoryTotalMB":19,"cpuUser":17.884234,"cpuSystem":47.765614}}}
+{"ts":"2026-04-07T02:13:38.940Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":18,"cpuUser":0.900031,"cpuSystem":1.794698}}}

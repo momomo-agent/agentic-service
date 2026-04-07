@@ -1,64 +1,36 @@
-export function useVAD(onStart, onStop, options = {}) {
-  const { threshold = 0.01, silenceMs = 1500 } = options;
-  let ctx, processor, stream;
-  let recording = false;
-  let silenceTimer = null;
-  let startTime = 0;
-  const MIN_DURATION = 300;
+export function useVAD({ onStart, onStop, threshold = 0.01, silenceMs = 1200 }) {
+  let audioCtx, processor, stream, speaking = false, silenceTimer = null;
 
   async function start() {
+    if (audioCtx) return;
     stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    ctx = new AudioContext();
-    const source = ctx.createMediaStreamSource(stream);
-    processor = ctx.createScriptProcessor(4096, 1, 1);
-
+    audioCtx = new AudioContext();
+    if (audioCtx.state === 'suspended') await audioCtx.resume();
+    const source = audioCtx.createMediaStreamSource(stream);
+    processor = audioCtx.createScriptProcessor(2048, 1, 1);
     processor.onaudioprocess = (e) => {
       const samples = e.inputBuffer.getChannelData(0);
       let sum = 0;
       for (let i = 0; i < samples.length; i++) sum += samples[i] * samples[i];
       const rms = Math.sqrt(sum / samples.length);
-
       if (rms > threshold) {
-        clearTimeout(silenceTimer);
-        silenceTimer = null;
-        if (!recording) {
-          recording = true;
-          startTime = Date.now();
-          onStart();
-        }
-      } else if (recording && !silenceTimer) {
-        silenceTimer = setTimeout(() => {
-          if (Date.now() - startTime >= MIN_DURATION) {
-            recording = false;
-            onStop();
-          }
-          silenceTimer = null;
-        }, silenceMs);
+        clearTimeout(silenceTimer); silenceTimer = null;
+        if (!speaking) { speaking = true; onStart(); }
+      } else if (speaking && !silenceTimer) {
+        silenceTimer = setTimeout(() => { speaking = false; silenceTimer = null; onStop(); }, silenceMs);
       }
     };
-
     source.connect(processor);
-    processor.connect(ctx.destination);
-    document.addEventListener('visibilitychange', onVisibility);
-  }
-
-  function onVisibility() {
-    if (document.hidden && recording) {
-      clearTimeout(silenceTimer);
-      silenceTimer = null;
-      recording = false;
-      onStop();
-    }
+    processor.connect(audioCtx.destination);
   }
 
   function stop() {
-    document.removeEventListener('visibilitychange', onVisibility);
-    clearTimeout(silenceTimer);
+    clearTimeout(silenceTimer); silenceTimer = null;
     processor?.disconnect();
     stream?.getTracks().forEach(t => t.stop());
-    ctx?.close();
-    recording = false;
+    audioCtx?.close(); audioCtx = null;
+    speaking = false;
   }
 
-  return { start, stop, get isActive() { return recording; } };
+  return { start, stop };
 }

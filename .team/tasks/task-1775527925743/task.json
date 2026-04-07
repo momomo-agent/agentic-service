@@ -4,10 +4,10 @@
   "description": "Confirm SIGINT handler drains active SSE/WebSocket connections before exit; add test for graceful shutdown",
   "status": "todo",
   "priority": "P1",
-  "assignee": "developer-2",
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m68",
   "hasDesign": false,
   "created": "2026-04-07T02:12:05.743Z",
-  "updated": "2026-04-07T02:12:52.988Z"
+  "updated": "2026-04-07T02:13:23.610Z"
 }

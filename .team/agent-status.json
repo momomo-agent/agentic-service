@@ -1,7 +1,7 @@
 {
   "pm": {
     "status": "running",
-    "lastRun": "2026-04-07T02:13:02.010Z",
+    "lastRun": "2026-04-07T02:13:37.359Z",
     "currentTask": "pm",
     "retryCount": 1
   },
@@ -24,9 +24,9 @@
     "retryCount": 0
   },
   "developer": {
-    "status": "running",
-    "lastRun": "2026-04-07T02:09:15.788Z",
-    "currentTask": "实现功能",
+    "status": "idle",
+    "lastRun": "2026-04-07T02:13:38.940Z",
+    "currentTask": null,
     "retryCount": 1
   },
   "tester": {

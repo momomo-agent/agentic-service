@@ -3,11 +3,11 @@
   "title": "Unspecified detector files — matcher.js + ollama.js documentation or removal",
   "description": "src/detector/matcher.js and src/detector/ollama.js are not in the architecture spec. Either remove them or add inline comments documenting why they exist as intentional extensions.",
   "status": "todo",
-  "priority": "P2",
-  "assignee": "tech_lead-2",
+  "priority": "P1",
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m64",
   "hasDesign": true,
   "created": "2026-04-07T02:01:59.694Z",
-  "updated": "2026-04-07T02:11:42.415Z"
+  "updated": "2026-04-07T02:13:31.253Z"
 }
