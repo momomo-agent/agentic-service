@@ -39,6 +39,7 @@
     "node": ">=18.0.0"
   },
   "imports": {
+    "agentic-sense": "./src/runtime/adapters/sense.js",
     "agentic-voice/openai-whisper": "./src/runtime/adapters/voice/openai-whisper.js",
     "agentic-voice/openai-tts":     "./src/runtime/adapters/voice/openai-tts.js",
     "agentic-voice/sensevoice":     "./src/runtime/adapters/voice/sensevoice.js",
