@@ -878,7 +878,7 @@
     {
       "id": "m75",
       "name": "M75: CDN Staleness + LAN Tunnel",
-      "status": "active",
+      "status": "cancelled",
       "tasks": [
         "task-1775530134599",
         "task-1775530233859"
