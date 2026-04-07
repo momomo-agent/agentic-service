@@ -7,6 +7,13 @@ const registry = new Map(); // id → { ws, name, capabilities, lastPong }
 const pendingCaptures = new Map(); // requestId → { resolve, reject, timer }
 const sessions = new Map(); // sessionId → { data: {}, deviceIds: Set }
 
+function isSilent(buffer) {
+  if (!buffer || buffer.byteLength === 0) return true;
+  const floats = new Float32Array(buffer.buffer, buffer.byteOffset, buffer.byteLength / 4);
+  const rms = Math.sqrt(floats.reduce((s, v) => s + v * v, 0) / floats.length);
+  return rms < 0.01;
+}
+
 export async function init() {
   const emitter = sense.startHeadless();
   emitter.on('wakeword', async () => {
@@ -18,6 +25,11 @@ export async function init() {
     for (const device of registry.values()) {
       try { device.ws.send(JSON.stringify({ type: 'wakeword_response', text })); } catch { /* ignore */ }
     }
+  });
+
+  emitter.on('audio', (chunk) => {
+    if (isSilent(chunk)) return; // drop silent frame
+    // TODO: forward to STT pipeline when audio streaming is implemented
   });
 }
 

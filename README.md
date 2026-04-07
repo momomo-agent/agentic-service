@@ -1,6 +1,17 @@
 # agentic-service
 
-Local-first AI service with hardware detection and automatic model optimization.
+One-command AI agent service with automatic hardware detection and optimization.
+
+## Features
+
+- One-command install: `npx agentic-service`
+- Automatic hardware detection (GPU, CPU, memory)
+- Optimized model selection based on your hardware
+- Voice capabilities (STT + TTS)
+- Vision sensing (face, gesture, object detection)
+- LLM-powered conversation with tool use
+- Docker support for easy deployment
+- Modular architecture with external packages
 
 ## Install
 
@@ -205,3 +216,52 @@ Config file: `~/.agentic-service/config.json`
 | Ollama not found | Install from https://ollama.ai or run `brew install ollama` |
 | Port in use | Set `PORT=3001` env var or update `~/.agentic-service/config.json` |
 | No microphone | Check browser permissions or use text-only mode via `/api/chat` |
+
+## Hardware Requirements
+
+| Hardware | Model | Performance |
+|----------|-------|-------------|
+| Apple Silicon (32GB+) | gemma2:27b | Excellent |
+| Apple Silicon (16GB+) | gemma2:9b | Good |
+| NVIDIA (8GB+ VRAM) | gemma2:9b | Good |
+| CPU-only | gemma2:2b | Basic |
+
+Minimum: 4-core CPU, 8GB RAM, 10GB disk. Recommended: 8+ cores, 16GB+ RAM, GPU.
+
+## Architecture
+
+```
+agentic-service
+├── agentic-core      # LLM calling engine (streaming, tool use, retry)
+├── agentic-sense     # MediaPipe sensing (face/gesture/object)
+├── agentic-voice     # TTS + STT unified interface
+├── agentic-store     # KV storage abstraction
+└── agentic-embed     # Vector embedding (bge-m3)
+```
+
+```
+agentic-service/
+├── bin/agentic-service.js    # CLI entry point
+├── src/
+│   ├── detector/             # Hardware detection
+│   ├── runtime/              # Service runtimes (llm, stt, tts, sense, memory)
+│   ├── server/               # HTTP server (hub, brain, api)
+│   └── ui/                   # Web UI (client, admin)
+├── profiles/default.json     # Hardware profiles
+└── install/                  # Dockerfile, docker-compose, setup.sh
+```
+
+## Development
+
+```bash
+git clone https://github.com/momomo/agentic-service.git
+cd agentic-service
+npm install
+npm test
+npm start
+```
+
+## License
+
+MIT
+
