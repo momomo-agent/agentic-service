@@ -20510,3 +20510,19 @@
 {"ts":"2026-04-07T17:06:26.727Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 12min (active:2, done:210)\"}"}}
 {"ts":"2026-04-07T17:06:28.749Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.230054,"cpuSystem":5.504449}}}
 {"ts":"2026-04-07T17:06:28.749Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Reviewed all tasks - no available todo tasks with hasDesign=true and unassigned assignee found. All "}}
+{"ts":"2026-04-07T17:06:29.073Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 11"}}
+{"ts":"2026-04-07T17:06:29.087Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T17:06:29.087Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":10,"memoryTotalMB":18,"cpuUser":2.268493,"cpuSystem":5.631028}}}
+{"ts":"2026-04-07T17:07:08.611Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.290297,"cpuSystem":5.666956}}}
+{"ts":"2026-04-07T17:07:08.612Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] blocked: M91 active with 2 tester tasks pending (sense wiring verification + test pass rate). Cannot proceed "}}
+{"ts":"2026-04-07T17:07:08.612Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] pm → blocked: M91 active with 2 tester tasks pending (sense wiring verification + test pass ra"}}
+{"ts":"2026-04-07T17:07:08.677Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T17:07:08.677Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T17:07:08.677Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-07T17:07:08.677Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement"}}
+{"ts":"2026-04-07T17:07:08.677Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T17:07:08.678Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.304475,"cpuSystem":5.719381}}}
+{"ts":"2026-04-07T17:07:26.733Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 13min (active:2, done:210)"}}
+{"ts":"2026-04-07T17:07:26.734Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 13min (active:2, done:210)\"}"}}
+{"ts":"2026-04-07T17:07:29.667Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.326073,"cpuSystem":5.75443}}}
+{"ts":"2026-04-07T17:07:29.667Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No claimable tasks found. All todo tasks with hasDesign=true are assigned to other agents or blocked"}}

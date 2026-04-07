@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T17:06:12.771Z",
+  "timestamp": "2026-04-07T17:07:08.607Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Reviewed m91 status: 2 tasks remain in todo for tester-2 (agentic-sense verification + test pass rate). Developer work is done. No new tasks or milestones needed — waiting for tester to complete m91."
+  "status": "blocked",
+  "summary": "M91 active with 2 tester tasks pending (sense wiring verification + test pass rate). Cannot proceed until tester-2 completes task-1775579897222 and task-1775579897264."
 }
