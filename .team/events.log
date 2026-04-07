@@ -19027,3 +19027,46 @@
 {"ts":"2026-04-07T12:28:41.821Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 34min (active:4, done:186)\"}"}}
 {"ts":"2026-04-07T12:29:01.988Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":5.772471,"cpuSystem":12.722967}}}
 {"ts":"2026-04-07T12:29:01.991Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: The background test task has completed (as expected, with failures due to the implementation bugs I "}}
+{"ts":"2026-04-07T12:29:04.182Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 18"}}
+{"ts":"2026-04-07T12:29:04.249Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T12:29:04.250Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":5.885786,"cpuSystem":13.189303}}}
+{"ts":"2026-04-07T12:29:41.383Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 35min (active:4, done:186)"}}
+{"ts":"2026-04-07T12:29:41.386Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 35min (active:4, done:186)\"}"}}
+{"ts":"2026-04-07T12:30:41.184Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 36min (active:4, done:186)"}}
+{"ts":"2026-04-07T12:30:41.184Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 36min (active:4, done:186)\"}"}}
+{"ts":"2026-04-07T12:30:41.670Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775529630008","from":"blocked","to":"todo","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T12:30:41.712Z","type":"task_created","agent":null,"data":{"taskId":"task-1775565041711","title":"Wire agentic-sense as external package dependency","priority":"P1","group":"m85"}}
+{"ts":"2026-04-07T12:31:06.869Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"31MB\",\"heapUsed\":\"5MB\",\"uptime\":\"7200s\"}"}}
+{"ts":"2026-04-07T12:31:07.267Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (120min), skipping","performance":{"memoryMB":5,"memoryTotalMB":9,"cpuUser":5.974822,"cpuSystem":13.371949}}}
+{"ts":"2026-04-07T12:31:11.201Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 36min (active:6, done:186)"}}
+{"ts":"2026-04-07T12:31:11.201Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 36min (active:6, done:186)\"}"}}
+{"ts":"2026-04-07T12:31:39.519Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775565041711","from":"todo","to":"cancelled","title":"Wire agentic-sense as external package dependency"}}
+{"ts":"2026-04-07T12:31:41.202Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 37min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:31:41.203Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 37min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:32:26.462Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.039006,"cpuSystem":13.481529}}}
+{"ts":"2026-04-07T12:32:26.462Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: PM status check: 4 active milestones, 3 tasks in review waiting for tester approval, M83 blocking M8"}}
+{"ts":"2026-04-07T12:32:26.520Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T12:32:26.521Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T12:32:26.521Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T12:32:26.521Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T12:32:26.521Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.05261,"cpuSystem":13.527156}}}
+{"ts":"2026-04-07T12:32:26.522Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T12:32:26.522Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.05282,"cpuSystem":13.527635}}}
+{"ts":"2026-04-07T12:32:26.522Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":6.052923,"cpuSystem":13.527895}}}
+{"ts":"2026-04-07T12:32:41.197Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 38min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:32:41.197Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 38min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:33:13.244Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775529630008","from":"todo","to":"testing","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T12:33:43.550Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 39min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:33:43.557Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 39min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:34:41.320Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 40min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:34:41.321Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 40min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:35:24.522Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775561930545","from":"review","to":"testing","title":"Document tunnel, CLI, VAD, HTTPS modules in ARCHITECTURE.md"}}
+{"ts":"2026-04-07T12:35:41.524Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 41min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:35:41.526Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 41min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:36:06.875Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"12MB\",\"heapUsed\":\"8MB\",\"uptime\":\"7500s\"}"}}
+{"ts":"2026-04-07T12:36:41.351Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 42min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:36:41.352Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 42min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:36:52.803Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775529630008","from":"testing","to":"blocked","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T12:37:00.428Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775561930545","from":"testing","to":"done","title":"Document tunnel, CLI, VAD, HTTPS modules in ARCHITECTURE.md"}}
+{"ts":"2026-04-07T12:37:01.214Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":6.238834,"cpuSystem":13.934063}}}
+{"ts":"2026-04-07T12:37:01.215Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Tested Docker build — blocked due to agentic-store/embed/voice missing from npm registry; task marke"}}

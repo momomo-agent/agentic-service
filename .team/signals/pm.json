@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T12:22:02.682Z",
+  "timestamp": "2026-04-07T12:32:26.458Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Analyzed project state: 4 milestones active, 4 tasks in review awaiting tester approval, M85 blocked by M83 completion"
+  "summary": "PM status check: 4 active milestones, 3 tasks in review waiting for tester approval, M83 blocking M85 progress, M74 nearly complete (6/7 done)"
 }
