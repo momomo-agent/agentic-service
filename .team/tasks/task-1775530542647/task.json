@@ -4,11 +4,11 @@
   "description": "Add a cpu-only hardware profile entry to profiles/default.json alongside existing apple-silicon and nvidia profiles. Should include appropriate model recommendations for CPU-only inference.",
   "status": "testing",
   "priority": "P1",
-  "assignee": "tester-1",
+  "assignee": "tester-2",
   "blockedBy": [],
   "groupId": "m76",
   "hasDesign": true,
   "created": "2026-04-07T02:55:42.647Z",
-  "updated": "2026-04-07T03:25:32.307Z",
+  "updated": "2026-04-07T03:28:49.425Z",
   "milestoneId": "m76"
 }
