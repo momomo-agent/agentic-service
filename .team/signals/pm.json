@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T17:17:17.763Z",
+  "timestamp": "2026-04-07T17:22:24.443Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Assigned 4 unassigned tasks across M91/M92; M91 has 2 active dev tasks, M92 blocked on tester review of 2 tasks"
+  "status": "blocked",
+  "summary": "2 tasks in review awaiting tester approval (task-1775579897222, task-1775581724582); todo tasks blocked until reviews complete"
 }

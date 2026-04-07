@@ -20634,3 +20634,27 @@
 {"ts":"2026-04-07T17:21:21.909Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Tested and marked done: task-1775581712916 (10/10 sense mock tests pass) and task-1775581717200 (Doc"}}
 {"ts":"2026-04-07T17:21:59.489Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":3.028481,"cpuSystem":7.25036}}}
 {"ts":"2026-04-07T17:21:59.489Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Tested and closed 2 review tasks: fixed m77 test bug (wrong file checked for agentic-sense import), "}}
+{"ts":"2026-04-07T17:21:59.811Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 15"}}
+{"ts":"2026-04-07T17:21:59.825Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T17:21:59.825Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":7,"memoryTotalMB":14,"cpuUser":3.064559,"cpuSystem":7.375578}}}
+{"ts":"2026-04-07T17:22:24.447Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":14,"cpuUser":3.064985,"cpuSystem":7.37609}}}
+{"ts":"2026-04-07T17:22:24.447Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] blocked: 2 tasks in review awaiting tester approval (task-1775579897222, task-1775581724582); todo tasks bloc"}}
+{"ts":"2026-04-07T17:22:24.448Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] pm → blocked: 2 tasks in review awaiting tester approval (task-1775579897222, task-17755817245"}}
+{"ts":"2026-04-07T17:22:24.510Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T17:22:24.510Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T17:22:24.511Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T17:22:24.511Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T17:22:24.511Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":3.080041,"cpuSystem":7.426323}}}
+{"ts":"2026-04-07T17:22:24.511Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T17:22:24.512Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":3.080229,"cpuSystem":7.426773}}}
+{"ts":"2026-04-07T17:22:24.512Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":3.080329,"cpuSystem":7.427034}}}
+{"ts":"2026-04-07T17:22:56.290Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (50min), skipping","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":3.107158,"cpuSystem":7.465309}}}
+{"ts":"2026-04-07T17:22:56.356Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"66MB\",\"heapUsed\":\"8MB\",\"uptime\":\"3000s\"}"}}
+{"ts":"2026-04-07T17:22:56.995Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775579897222","from":"review","to":"testing","title":"Verify agentic-sense wiring complete and sense.js loads without errors"}}
+{"ts":"2026-04-07T17:23:23.246Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775579897222","from":"testing","to":"done","title":"Verify agentic-sense wiring complete and sense.js loads without errors"}}
+{"ts":"2026-04-07T17:23:23.284Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775581724582","from":"review","to":"done","title":"Add README.md to project root"}}
+{"ts":"2026-04-07T17:23:26.782Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T17:23:26.782Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T17:23:38.207Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775579897264","from":"todo","to":"inProgress","title":"Re-run full test suite and confirm >=90% pass rate"}}
+{"ts":"2026-04-07T17:24:17.558Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":18,"memoryTotalMB":24,"cpuUser":3.154008,"cpuSystem":7.534366}}}
+{"ts":"2026-04-07T17:24:17.559Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: "}}
