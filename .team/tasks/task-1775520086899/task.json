@@ -1,0 +1,14 @@
+{
+  "id": "task-1775520086899",
+  "title": "src/runtime/memory.js — memory runtime实现",
+  "description": "实现memory.js运行时，符合架构规定接口",
+  "status": "in-progress",
+  "priority": "P0",
+  "assignee": "developer",
+  "blockedBy": [],
+  "groupId": "m41",
+  "hasDesign": true,
+  "created": "2026-04-07T00:01:26.900Z",
+  "updated": "2026-04-07T00:40:12.078Z",
+  "milestoneId": "m41"
+}

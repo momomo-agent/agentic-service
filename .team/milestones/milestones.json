@@ -476,6 +476,36 @@
       "status": "cancelled",
       "tasks": [],
       "created": "2026-04-06T23:58:00.000Z"
+    },
+    {
+      "id": "m41",
+      "name": "M41: Runtime层完整实现 + Server层核心 (llm/stt/tts/sense/memory/hub/brain/api)",
+      "status": "active",
+      "tasks": [
+        "task-1775519613741",
+        "task-1775519617446",
+        "task-1775519617481",
+        "task-1775520048129",
+        "task-1775520086865",
+        "task-1775520086899",
+        "task-1775520092615",
+        "task-1775520092648",
+        "task-1775520092677",
+        "task-1775520092708"
+      ],
+      "created": "2026-04-07T00:00:58.254Z"
+    },
+    {
+      "id": "m42",
+      "name": "M42: Admin UI + Detector清理 + VAD + README",
+      "status": "planned",
+      "tasks": [
+        "task-1775522596218",
+        "task-1775522602124",
+        "task-1775522602184",
+        "task-1775522602232"
+      ],
+      "created": "2026-04-07T00:43:27.297Z"
     }
   ]
 }

@@ -1,7 +1,9 @@
 {
-  "totalTests": 6,
-  "passed": 6,
+  "totalTests": 25,
+  "passed": 25,
   "failed": 0,
-  "edgeCases": ["Multiple rapid start/stop debounce not explicitly timed", "WSS/WebSocket VAD integration not tested (browser-only)"],
+  "edgeCases": [
+    "Ollama non-200 should throw directly per design, but implementation falls through to cloud — documented as known bug"
+  ],
   "coverage": "100%"
 }
