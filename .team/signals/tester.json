@@ -1,7 +1,7 @@
 {
   "agent": "tester",
-  "timestamp": "2026-04-07T14:06:04.339Z",
+  "timestamp": "2026-04-07T14:29:12.556Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Tested task-1775569629612: vitest alias removed and package wired correctly, but adapter calls createPipeline which is not exported by agentic-sense — task marked blocked, bug documented in test-result.md"
+  "summary": "No claimable tasks in review status. Task task-1775569652492 exists in review but cannot be claimed (can-claim returned false)."
 }
