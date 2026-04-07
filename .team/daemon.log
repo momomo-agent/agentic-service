@@ -30202,3 +30202,20 @@ Both marked `done`.
 [2026-04-07T11:47:49.715Z] tester-2 agent completed
 [2026-04-07 11:47:49] [agent_complete] tester-2 completed successfully
 [2026-04-07 11:47:49] [workflow] tester-2 [SIGNAL] completed: Tested and passed 2 tasks: cpu-only profile (6/6) and voice latency benchmark (3/3). Both marked don
+Task completed! I successfully wired agentic-sense as an external package dependency.
+
+**What I did:**
+1. Added `"#agentic-sense": "./src/runtime/adapters/sense.js"` to the imports section in package.json
+2. Updated src/runtime/sense.js to import `createPipeline` from `'#agentic-sense'` instead of directly from `'agentic-sense'`
+3. Removed the local createPipeline function since it's now provided by the adapter
+4. Verified the import map resolves correctly
+5. Committed the changes
+
+The task is now in review status.
+
+```signal
+{"status": "completed", "summary": "Wired agentic-sense as external package dependency via import map"}
+```
+[2026-04-07T11:48:18.639Z] developer agent completed
+[2026-04-07 11:48:18] [agent_complete] developer completed successfully
+[2026-04-07 11:48:18] [workflow] developer [SIGNAL] completed: Wired agentic-sense as external package dependency via import map
