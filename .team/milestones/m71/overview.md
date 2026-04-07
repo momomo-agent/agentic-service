@@ -1,17 +1,11 @@
-# M71: Server-Side VAD + Optimizer Hardware-Adaptive Config
+# M71: Server-Side VAD Silence Suppression
 
-## Goals
-- Implement server-side VAD silence suppression so silence audio never reaches STT/LLM pipeline
-- Fix optimizer.js to output hardware-adaptive config instead of ollama setup code
-- Add cpu-only profile to profiles/default.json
+## Goal
+Implement server-side voice activity detection to prevent silence audio from reaching the STT/LLM pipeline.
+
+## Tasks
+- task-1775528326243: Server-side VAD silence suppression (P0 — missing gap)
 
 ## Acceptance Criteria
-- Server-side VAD filters silence before STT processing
-- optimizer.js returns hardware-adaptive config object (threads, model size, quantization)
-- profiles/default.json includes cpu-only profile entry
-
-## Priority
-P0 (missing gaps from DBB + vision analysis)
-
-## Blocked By
-M70 tasks completion
+- Server filters silent audio frames before forwarding to STT
+- No silent audio reaches the LLM pipeline

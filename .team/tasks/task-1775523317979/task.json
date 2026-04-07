@@ -2,7 +2,7 @@
   "id": "task-1775523317979",
   "title": "Voice latency <2s benchmark",
   "description": "Measure and enforce STT+LLM+TTS end-to-end latency under 2s — add timing instrumentation and a test/benchmark script",
-  "status": "in-progress",
+  "status": "cancelled",
   "priority": "P0",
   "assignee": "tech_lead-3",
   "blockedBy": [
@@ -11,6 +11,6 @@
   "groupId": "m42",
   "hasDesign": true,
   "created": "2026-04-07T00:55:17.980Z",
-  "updated": "2026-04-07T01:46:52.342Z",
+  "updated": "2026-04-07T02:23:20.801Z",
   "milestoneId": "m42"
 }
