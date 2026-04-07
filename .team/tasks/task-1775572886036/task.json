@@ -2,12 +2,12 @@
   "id": "task-1775572886036",
   "title": "Add voice latency benchmark test (STT+LLM+TTS <2s)",
   "description": "Write a benchmark test that measures end-to-end voice pipeline latency (STT+LLM+TTS) and asserts it completes under 2000ms on reference hardware.",
-  "status": "inProgress",
+  "status": "review",
   "priority": "P1",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m88",
   "hasDesign": true,
   "created": "2026-04-07T14:41:26.036Z",
-  "updated": "2026-04-07T14:50:53.170Z"
+  "updated": "2026-04-07T14:52:31.600Z"
 }

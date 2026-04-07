@@ -6,9 +6,9 @@
     "retryCount": 0
   },
   "tech_lead-1": {
-    "status": "running",
-    "lastRun": "2026-04-07T14:50:20.461Z",
-    "currentTask": "出技术方案",
+    "status": "idle",
+    "lastRun": "2026-04-07T14:52:12.249Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-2": {
@@ -24,9 +24,9 @@
     "retryCount": 0
   },
   "developer": {
-    "status": "running",
-    "lastRun": "2026-04-07T14:50:20.462Z",
-    "currentTask": "实现功能",
+    "status": "idle",
+    "lastRun": "2026-04-07T14:52:48.968Z",
+    "currentTask": null,
     "retryCount": 2
   },
   "tester": {

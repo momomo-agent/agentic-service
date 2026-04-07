@@ -19796,3 +19796,14 @@
 {"ts":"2026-04-07T14:51:07.476Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":11,"memoryTotalMB":27,"cpuUser":12.473867,"cpuSystem":27.536607}}}
 {"ts":"2026-04-07T14:51:07.679Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":27,"cpuUser":12.474162,"cpuSystem":27.537152}}}
 {"ts":"2026-04-07T14:51:07.679Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Checked all tasks in review status. Both tasks (task-1775572892189 and task-1775572898050) cannot be"}}
+{"ts":"2026-04-07T14:51:43.206Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:5, done:198)"}}
+{"ts":"2026-04-07T14:51:43.207Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:5, done:198)\"}"}}
+{"ts":"2026-04-07T14:51:43.526Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775572892189","from":"review","to":"testing","title":"Implement CPU profiling instrumentation in runtime pipeline"}}
+{"ts":"2026-04-07T14:51:43.560Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775572898050","from":"review","to":"testing","title":"Expose performance metrics via /api/perf endpoint"}}
+{"ts":"2026-04-07T14:52:12.249Z","type":"agent_complete","agent":"tech_lead-1","data":{"details":"completed successfully","performance":{"memoryMB":23,"memoryTotalMB":34,"cpuUser":12.501509,"cpuSystem":27.60238}}}
+{"ts":"2026-04-07T14:52:12.253Z","type":"workflow","agent":"tech_lead-1","data":{"details":"[SIGNAL] completed: Created m89/dbb.md, m89/design.md, task-1775573229039/design.md, task-1775573249297/design.md; marke"}}
+{"ts":"2026-04-07T14:52:31.601Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775572886036","from":"inProgress","to":"review","title":"Add voice latency benchmark test (STT+LLM+TTS <2s)"}}
+{"ts":"2026-04-07T14:52:43.178Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:5, done:198)"}}
+{"ts":"2026-04-07T14:52:43.179Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:5, done:198)\"}"}}
+{"ts":"2026-04-07T14:52:48.968Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":12.539433,"cpuSystem":27.659082}}}
+{"ts":"2026-04-07T14:52:48.968Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Created test/m88-voice-latency-benchmark.test.js with 2 vitest tests for voice pipeline latency benc"}}
