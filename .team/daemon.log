@@ -29626,3 +29626,11 @@ All 4 review tasks are not claimable (likely already claimed by another tester).
 [2026-04-07T11:11:22.081Z] tester-1 agent completed
 [2026-04-07 11:11:22] [agent_complete] tester-1 completed successfully
 [2026-04-07 11:11:22] [workflow] tester-1 [SIGNAL] completed: Checked all 4 tasks in review status - none are claimable (already claimed by other agents). No task
+Both tasks assigned to me are blocked by tasks still in "review". No claimable work is available right now.
+
+```signal
+{"status": "blocked", "summary": "All assigned tasks (task-1775535887205, task-1775536619023) are blocked by tasks in 'review' status (task-1775538907092, task-1775538907396). No other claimable todo tasks with designs available."}
+```
+[2026-04-07T11:11:31.227Z] developer agent completed
+[2026-04-07 11:11:31] [agent_complete] developer completed successfully
+[2026-04-07 11:11:31] [workflow] developer [SIGNAL] blocked: All assigned tasks (task-1775535887205, task-1775536619023) are blocked by tasks in 'review' status 

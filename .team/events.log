@@ -18628,3 +18628,5 @@
 {"ts":"2026-04-07T11:11:07.225Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (40min), skipping","performance":{"memoryMB":13,"memoryTotalMB":19,"cpuUser":2.032092,"cpuSystem":4.530217}}}
 {"ts":"2026-04-07T11:11:22.083Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.054734,"cpuSystem":4.560294}}}
 {"ts":"2026-04-07T11:11:22.083Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Checked all 4 tasks in review status - none are claimable (already claimed by other agents). No task"}}
+{"ts":"2026-04-07T11:11:31.229Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.05535,"cpuSystem":4.560941}}}
+{"ts":"2026-04-07T11:11:31.230Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] blocked: All assigned tasks (task-1775535887205, task-1775536619023) are blocked by tasks in 'review' status "}}
