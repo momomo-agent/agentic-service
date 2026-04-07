@@ -19760,3 +19760,13 @@
 {"ts":"2026-04-07T14:48:43.180Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:6, done:198)\"}"}}
 {"ts":"2026-04-07T14:48:59.345Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":22,"cpuUser":12.326114,"cpuSystem":27.150707}}}
 {"ts":"2026-04-07T14:48:59.346Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Implemented CPU profiling instrumentation: added metrics accumulation and getMetrics() to profiler.j"}}
+{"ts":"2026-04-07T14:48:59.679Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 12"}}
+{"ts":"2026-04-07T14:48:59.692Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T14:48:59.692Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":18,"memoryTotalMB":30,"cpuUser":12.360154,"cpuSystem":27.270865}}}
+{"ts":"2026-04-07T14:48:59.709Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775572898050","from":"todo","to":"inProgress","title":"Expose performance metrics via /api/perf endpoint"}}
+{"ts":"2026-04-07T14:49:43.180Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:6, done:198)"}}
+{"ts":"2026-04-07T14:49:43.181Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:6, done:198)\"}"}}
+{"ts":"2026-04-07T14:49:46.464Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775529630008","from":"todo","to":"cancelled","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T14:49:48.346Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775572898050","from":"inProgress","to":"review","title":"Expose performance metrics via /api/perf endpoint"}}
+{"ts":"2026-04-07T14:49:54.112Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":12.399765,"cpuSystem":27.320767}}}
+{"ts":"2026-04-07T14:49:54.113Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Added GET /api/perf endpoint to api.js that returns profiler.getMetrics() as JSON"}}

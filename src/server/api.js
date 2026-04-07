@@ -6,6 +6,7 @@ import path from 'path';
 import os from 'os';
 import http from 'http';
 import { chat } from './brain.js';
+import { getMetrics } from '../runtime/profiler.js';
 import { detectVoiceActivity } from '../runtime/vad.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
@@ -175,6 +176,8 @@ function addRoutes(r) {
       res.status(500).json({ error: e.message });
     }
   });
+
+  r.get('/api/perf', (_req, res) => res.json(getMetrics()));
 
   r.get('/api/logs', (req, res) => res.json(logBuffer.slice(-50)));
 
