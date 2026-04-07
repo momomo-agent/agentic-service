@@ -31567,3 +31567,11 @@ Done. Here's the summary:
 [2026-04-07T13:57:19.039Z] tester-1 agent completed
 [2026-04-07 13:57:19] [agent_complete] tester-1 completed successfully
 [2026-04-07 13:57:19] [workflow] tester-1 [SIGNAL] completed: Tested 2 M86 tasks: task-1775569230828 done (7/7 pass), task-1775569348331 blocked (missing #agentic
+Task complete.
+
+```signal
+{"status": "completed", "summary": "Removed #agentic-sense alias from vitest.config.js and package.json imports map. src/runtime/sense.js already imports from 'agentic-sense' directly. All 5 m84-sense-external-package tests pass."}
+```
+[2026-04-07T13:57:29.759Z] developer agent completed
+[2026-04-07 13:57:29] [agent_complete] developer completed successfully
+[2026-04-07 13:57:29] [workflow] developer [SIGNAL] completed: Removed #agentic-sense alias from vitest.config.js and package.json imports map. src/runtime/sense.j

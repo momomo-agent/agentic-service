@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T13:49:54.537Z",
+  "timestamp": "2026-04-07T13:57:29.759Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Added #agentic-sense to imports map in package.json pointing to src/runtime/adapters/sense.js"
+  "summary": "Removed #agentic-sense alias from vitest.config.js and package.json imports map. src/runtime/sense.js already imports from 'agentic-sense' directly. All 5 m84-sense-external-package tests pass."
 }
