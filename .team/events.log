@@ -19009,3 +19009,21 @@
 {"ts":"2026-04-07T12:22:40.888Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 28min (active:5, done:186)\"}"}}
 {"ts":"2026-04-07T12:23:24.872Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":5.478961,"cpuSystem":11.989259}}}
 {"ts":"2026-04-07T12:23:24.872Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] blocked: No claimable tasks available. task-1775561925076 blocked by task-1775535895960 which is in review. N"}}
+{"ts":"2026-04-07T12:23:25.014Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] developer → blocked: No claimable tasks available. task-1775561925076 blocked by task-1775535895960 w"}}
+{"ts":"2026-04-07T12:23:40.899Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 29min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:23:40.900Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 29min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:24:28.608Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775529630008","from":"review","to":"testing","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T12:24:40.907Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 30min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:24:40.907Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 30min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:25:43.814Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 31min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:25:43.864Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 31min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:26:07.082Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"13MB\",\"heapUsed\":\"16MB\",\"uptime\":\"6900s\"}"}}
+{"ts":"2026-04-07T12:26:41.122Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 32min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:26:41.122Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 32min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:27:43.730Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 33min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:27:43.734Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 33min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:28:35.261Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775529630008","from":"testing","to":"blocked","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T12:28:41.819Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 34min (active:4, done:186)"}}
+{"ts":"2026-04-07T12:28:41.821Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 34min (active:4, done:186)\"}"}}
+{"ts":"2026-04-07T12:29:01.988Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":5.772471,"cpuSystem":12.722967}}}
+{"ts":"2026-04-07T12:29:01.991Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: The background test task has completed (as expected, with failures due to the implementation bugs I "}}
