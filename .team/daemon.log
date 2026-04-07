@@ -30645,3 +30645,26 @@ No other `todo` tasks with `hasDesign=true` and no assignee exist.
 [2026-04-07T12:17:42.380Z] developer agent completed
 [2026-04-07 12:17:42] [agent_complete] developer completed successfully
 [2026-04-07 12:17:42] [workflow] developer [SIGNAL] completed: No actionable tasks available. task-1775561930545 is in review. task-1775561925076 is blocked by tas
+[2026-04-07 12:18:40] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 24min (active:5, done:186)
+[2026-04-07 12:19:40] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 25min (active:5, done:186)
+I can see the situation clearly now. The system is stuck because:
+
+1. There are 4 tasks in "review" status that are assigned to "developer"
+2. Testers (including me) cannot claim tasks in "review" status - we can only claim tasks in "todo" or "inProgress" status
+3. The system has been stuck with no progress for 25+ minutes
+4. Both tester-1 and tester-2 have already reported that no tasks are claimable
+
+The workflow seems to expect that tasks in "review" status should be moved to a testable status by someone (likely the PM or a lead), but that's not happening automatically.
+
+Based on my instructions, I should report this situation. Let me check if there's a specific workflow I should follow or if I should escalate this.
+
+Looking at the events, it seems the PM has already been notified but hasn't changed the task statuses. The issue is that tasks are in "review" status but the workflow expects them to be in a status that testers can claim.
+
+Since I cannot claim any tasks and the system is blocked, I should report this status.
+
+```signal
+{"status": "blocked", "summary": "No claimable tasks available. All 4 review tasks (task-1775529630008, task-1775531492452, task-1775535895960, task-1775561930545) are assigned to developer and cannot be claimed by testers. The 1 todo task (task-1775561925076) is blocked by task-1775535895960. System needs PM or lead to move review tasks to testable status or reassign them."}
+```
+[2026-04-07T12:19:56.788Z] tester-1 agent completed
+[2026-04-07 12:19:56] [agent_complete] tester-1 completed successfully
+[2026-04-07 12:19:56] [workflow] tester-1 [SIGNAL] blocked: No claimable tasks available. All 4 review tasks (task-1775529630008, task-1775531492452, task-17755

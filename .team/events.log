@@ -18978,3 +18978,9 @@
 {"ts":"2026-04-07T12:17:40.875Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 23min (active:5, done:186)\"}"}}
 {"ts":"2026-04-07T12:17:42.382Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":9,"cpuUser":5.231166,"cpuSystem":11.503177}}}
 {"ts":"2026-04-07T12:17:42.382Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No actionable tasks available. task-1775561930545 is in review. task-1775561925076 is blocked by tas"}}
+{"ts":"2026-04-07T12:18:40.880Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 24min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:18:40.880Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 24min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:19:40.885Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 25min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:19:40.885Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 25min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:19:56.791Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":5.30636,"cpuSystem":11.633632}}}
+{"ts":"2026-04-07T12:19:56.792Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: No claimable tasks available. All 4 review tasks (task-1775529630008, task-1775531492452, task-17755"}}
