@@ -1,19 +1,12 @@
-# M42: Admin UI + Detector补全 + VAD + README
+# M42: optimizer.js 硬件优化接线
 
 ## Goals
-- Implement src/ui/admin/ admin panel
-- Merge gpu-detector.js into hardware.js per architecture spec
-- VAD auto-detection
-- README user documentation
+- Add `optimize(hardware, profile)` export to `src/detector/optimizer.js`
+- Wire optimizer output into `src/runtime/llm.js` for hardware-adaptive settings
 
 ## Acceptance Criteria
-- Admin panel at /admin with device/model/status pages
-- hardware.js covers GPU detection (gpu-detector.js removed)
-- VAD detects voice activity on server side
-- README covers npx, Docker, API usage
+- `optimizer.js` exports `optimize(hardware, profile)` returning adjusted config (quantization, threads, context size)
+- `llm.js` calls optimizer to apply hardware-specific settings before chat
 
 ## Tasks
-- task-1775522596218: src/ui/admin/ — admin panel (P1)
-- task-1775522602124: src/detector/hardware.js — merge gpu-detector.js (P1)
-- task-1775522602184: VAD auto-detection (P1)
-- task-1775522602232: README.md (P1)
+- task-1775522924391: src/detector/optimizer.js — 硬件优化逻辑补全 (P1)

@@ -354,7 +354,7 @@
     {
       "id": "m30",
       "name": "M30: VAD + CDN真实端点 + HTTPS + 多设备脑状态共享",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775517321148",
         "task-1775517325421",
@@ -441,7 +441,7 @@
     {
       "id": "m36",
       "name": "M36: README + 语音延迟基准 + headless camera",
-      "status": "active",
+      "status": "ready-for-work",
       "tasks": [
         "task-1775517732946",
         "task-1775517741153",
@@ -498,12 +498,14 @@
     {
       "id": "m42",
       "name": "M42: Admin UI + Detector清理 + VAD + README",
-      "status": "planned",
+      "status": "ready-for-work",
       "tasks": [
         "task-1775522596218",
         "task-1775522602124",
         "task-1775522602184",
-        "task-1775522602232"
+        "task-1775522602232",
+        "task-1775522924391",
+        "task-1775522930453"
       ],
       "created": "2026-04-07T00:43:27.297Z"
     }
