@@ -41,16 +41,11 @@
   },
   "imports": {
     "#agentic-embed": "./src/runtime/adapters/embed.js",
-    "#agentic-sense": "./src/runtime/adapters/sense.js",
-    "#agentic-voice/openai-whisper": "./src/runtime/adapters/voice/openai-whisper.js",
-    "#agentic-voice/openai-tts":     "./src/runtime/adapters/voice/openai-tts.js",
-    "#agentic-voice/sensevoice":     "./src/runtime/adapters/voice/sensevoice.js",
-    "#agentic-voice/kokoro":         "./src/runtime/adapters/voice/kokoro.js",
-    "#agentic-voice/whisper":        "./src/runtime/adapters/voice/openai-whisper.js",
-    "#agentic-voice/piper":          "./src/runtime/adapters/voice/piper.js"
+    "#agentic-sense": "./src/runtime/adapters/sense.js"
   },
   "dependencies": {
     "agentic-embed": "*",
+    "agentic-voice": "*",
     "chalk": "^5.6.2",
     "commander": "^12.1.0",
     "cors": "^2.8.6",

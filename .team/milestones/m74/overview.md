@@ -3,13 +3,14 @@
 ## Goal
 Close remaining partial DBB gaps: Docker end-to-end, SIGINT graceful drain, test coverage threshold, setup.sh idempotency.
 
-## Current State (2026-04-07T05:24)
+## Current State (2026-04-07T05:33)
 - task-1775529630008: Docker verification — in-progress
 - task-1775529637561: SIGINT graceful drain — done
 - task-1775529637595: Test coverage threshold — done
 - task-1775529637624: setup.sh idempotency — done
+- task-1775539931917: Fix optimizer.js hardware-adaptive config — todo (P1)
 
-## Status: Waiting on Docker task (task-1775529630008) to complete
+## Status: Waiting on Docker task and optimizer fix to complete
 
 ## Acceptance Criteria
 - docker build succeeds and docker-compose up starts service on port 3000

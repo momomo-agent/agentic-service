@@ -4,11 +4,11 @@
   "description": "Verify package.json has agentic-sense dependency; update src/runtime/sense.js to import from 'agentic-sense' not local stub",
   "status": "todo",
   "priority": "P0",
-  "assignee": "developer",
+  "assignee": "tech_lead",
   "blockedBy": [],
   "groupId": "m84",
   "hasDesign": true,
   "created": "2026-04-07T04:37:07.469Z",
-  "updated": "2026-04-07T05:24:25.062Z",
+  "updated": "2026-04-07T05:28:14.685Z",
   "milestoneId": "m84"
 }

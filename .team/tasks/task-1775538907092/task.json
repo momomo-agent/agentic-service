@@ -4,11 +4,11 @@
   "description": "Fix src/runtime/tts.js lines 5-7: Change import('agentic-voice/kokoro') to import('#agentic-voice/kokoro'), same for piper and openai-tts. This unblocks task-1775535887205 test verification.",
   "status": "todo",
   "priority": "P0",
-  "assignee": "developer",
+  "assignee": "tech_lead-3",
   "blockedBy": [],
   "groupId": "m83",
-  "hasDesign": false,
+  "hasDesign": true,
   "created": "2026-04-07T05:15:07.092Z",
-  "updated": "2026-04-07T05:24:28.779Z",
+  "updated": "2026-04-07T05:28:14.563Z",
   "milestoneId": "m83"
 }
