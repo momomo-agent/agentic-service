@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T12:08:22.089Z",
+  "timestamp": "2026-04-07T12:11:48.067Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Implemented real mic-based wake word pipeline in sense.js replacing stub; added mic dependency; updated hub.js to await async startHeadless"
+  "summary": "Documented tunnel, CLI, VAD, HTTPS modules in ARCHITECTURE.md with 4 new sections"
 }
