@@ -2603,3 +2603,8 @@
 {"time":"2026-04-07T17:19:26.772Z","type":"no_progress","message":"No progress for 25min (active:6, done:210)"}
 {"time":"2026-04-07T17:20:26.780Z","type":"no_progress","message":"No progress for 26min (active:6, done:210)"}
 {"time":"2026-04-07T17:23:26.781Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T17:28:35.415Z","type":"no_progress","message":"No progress for 5min (active:2, done:214)"}
+{"time":"2026-04-07T17:28:35.421Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T17:29:05.410Z","type":"no_progress","message":"No progress for 6min (active:2, done:214)"}
+{"time":"2026-04-07T17:30:05.414Z","type":"no_progress","message":"No progress for 7min (active:2, done:214)"}
+{"time":"2026-04-07T17:31:05.442Z","type":"no_progress","message":"No progress for 8min (active:2, done:214)"}

@@ -20662,3 +20662,16 @@
 {"ts":"2026-04-07T17:25:00.388Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775581724582","from":"testing","to":"done","title":"Add README.md to project root"}}
 {"ts":"2026-04-07T17:25:07.091Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":27,"memoryTotalMB":32,"cpuUser":3.189231,"cpuSystem":7.596343}}}
 {"ts":"2026-04-07T17:25:07.092Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Tested and marked done: task-1775579897222 (agentic-sense wiring verified, 4/4 checks passed) and ta"}}
+{"ts":"2026-04-07T17:27:57.045Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"16MB\",\"heapUsed\":\"5MB\",\"uptime\":\"3301s\"}"}}
+{"ts":"2026-04-07T17:28:35.415Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:28:35.416Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:28:35.421Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T17:28:35.421Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T17:29:05.410Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:29:05.411Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:30:05.414Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:30:05.415Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:31:05.442Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:2, done:214)"}}
+{"ts":"2026-04-07T17:31:05.442Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:2, done:214)\"}"}}
+{"ts":"2026-04-07T17:31:10.389Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":3.463867,"cpuSystem":8.163035}}}
+{"ts":"2026-04-07T17:31:10.390Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: "}}
