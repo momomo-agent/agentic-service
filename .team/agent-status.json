@@ -1,48 +1,48 @@
 {
   "pm": {
     "status": "idle",
-    "lastRun": "2026-04-07T14:53:48.857Z",
+    "lastRun": "2026-04-07T15:00:50.724Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-1": {
-    "status": "running",
-    "lastRun": "2026-04-07T14:53:48.917Z",
-    "currentTask": "出技术方案",
+    "status": "idle",
+    "lastRun": "2026-04-07T14:58:50.192Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-2": {
-    "status": "running",
-    "lastRun": "2026-04-07T14:53:48.917Z",
-    "currentTask": "出技术方案",
+    "status": "idle",
+    "lastRun": "2026-04-07T14:57:03.530Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-3": {
-    "status": "running",
-    "lastRun": "2026-04-07T14:53:48.918Z",
-    "currentTask": "出技术方案",
+    "status": "idle",
+    "lastRun": "2026-04-07T14:58:55.229Z",
+    "currentTask": null,
     "retryCount": 0
   },
   "developer": {
-    "status": "running",
-    "lastRun": "2026-04-07T14:53:48.918Z",
-    "currentTask": "实现功能",
-    "retryCount": 2
+    "status": "idle",
+    "lastRun": "2026-04-07T15:04:07.532Z",
+    "currentTask": null,
+    "retryCount": 0
   },
   "tester": {
-    "status": "idle",
-    "lastRun": "2026-04-07T14:43:29.718Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T15:00:50.790Z",
+    "currentTask": "验证功能",
     "retryCount": 0
   },
   "tester-1": {
     "status": "idle",
     "lastRun": "2026-04-07T14:54:25.452Z",
     "currentTask": null,
-    "retryCount": 1
+    "retryCount": 0
   },
   "tester-2": {
-    "status": "running",
+    "status": "idle",
     "lastRun": "2026-04-07T14:53:48.919Z",
     "currentTask": "验证功能",
     "retryCount": 0
@@ -57,25 +57,25 @@
     "status": "idle",
     "lastRun": "2026-04-07T10:46:06.981Z",
     "currentTask": null,
-    "retryCount": 2
+    "retryCount": 0
   },
   "prd_monitor": {
     "status": "idle",
     "lastRun": "2026-04-07T10:41:19.488Z",
     "currentTask": null,
-    "retryCount": 1
+    "retryCount": 0
   },
   "dbb_monitor": {
     "status": "idle",
     "lastRun": "2026-04-07T10:45:10.824Z",
     "currentTask": null,
-    "retryCount": 1
+    "retryCount": 0
   },
   "arch_monitor": {
     "status": "idle",
     "lastRun": "2026-04-07T10:37:59.831Z",
     "currentTask": null,
-    "retryCount": 2
+    "retryCount": 0
   },
   "architect": {
     "status": "idle",

@@ -182,7 +182,8 @@
     {
       "id": "m88",
       "name": "M88: Voice Latency Benchmarking + CPU Profiling",
-      "status": "active",
+      "status": "completed",
+      "completed": "2026-04-07T14:59:28.911Z",
       "tasks": [
         "task-1775572886036",
         "task-1775572892189",
@@ -193,7 +194,7 @@
     {
       "id": "m89",
       "name": "M89: agentic-sense Wiring + Test Pass Rate >=90%",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775573229039",
         "task-1775573249297"

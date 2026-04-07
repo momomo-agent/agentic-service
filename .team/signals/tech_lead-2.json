@@ -1,7 +1,7 @@
 {
   "agent": "tech_lead-2",
-  "timestamp": "2026-04-07T14:53:02.840Z",
-  "exitCode": 0,
+  "timestamp": "2026-04-07T15:00:14.686Z",
+  "exitCode": 1,
   "status": "completed",
-  "summary": "All tasks in active milestone m88 and planned milestone m89 already have designs. No new designs needed."
+  "summary": "Updated hasDesign=true for 4 m90 tasks (wake word, cloud fallback, LAN tunnel, npx startup). M89 and M90 milestone dbb.md and design.md already existed with complete content."
 }
