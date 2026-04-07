@@ -1,9 +1,10 @@
 {
-  "totalTests": 10,
-  "passed": 10,
+  "totalTests": 14,
+  "passed": 14,
   "failed": 0,
   "edgeCases": [
-    "Concurrent calls to same profiler label (last one wins — acceptable for sequential pipeline)"
+    "LLM generator throws before yielding — latency still recorded in finally block (not tested)",
+    "getProfile with hardware object using gpu.type='cpu-only' vs gpu='cpu-only' string matching"
   ],
   "coverage": "100%"
 }

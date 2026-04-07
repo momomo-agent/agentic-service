@@ -30084,3 +30084,121 @@ All done. Here's a summary:
 [2026-04-07T11:41:56.655Z] tester agent completed
 [2026-04-07 11:41:56] [agent_complete] tester completed successfully
 [2026-04-07 11:41:56] [workflow] tester [SIGNAL] completed: 10/10 tests passed for CPU profiling and voice latency instrumentation task
+Perfect! All work is complete. Let me provide a summary.
+
+## Summary
+
+I've completed the Tech Lead responsibilities for milestone M85:
+
+### ✓ Milestone M85 Files Created
+- **DBB (Definition of Done):** `.team/milestones/m85/dbb.md` — verification criteria for all 3 tasks
+- **Technical Design:** `.team/milestones/m85/design.md` — milestone-level architecture approach
+
+### ✓ Task-Level Technical Designs Created
+All 3 tasks in M85 now have complete technical designs:
+
+1. **task-1775561920576** — Wire agentic-sense as external package
+   - Add `#agentic-sense` to import map in package.json
+   - Update src/runtime/sense.js to use adapter pattern
+   
+2. **task-1775561925076** — Push test pass rate to ≥90%
+   - Blocked by M83 fix, then iterative test fixing
+   - Target: ≥591/657 tests passing
+   
+3. **task-1775561930545** — Document missing modules in ARCHITECTURE.md
+   - Add 5 sections: tunnel.js, CLI modules, VAD, HTTPS/middleware
+   - Follow existing documentation format
+
+### ✓ All Tasks Marked
+Updated all 3 task.json files with `hasDesign: true`
+
+### Verification
+- 0 tasks remaining without designs
+- All M85 milestone documentation complete
+- Ready for developer implementation
+
+```signal
+{"status": "completed", "summary": "Created M85 milestone DBB and design files, completed technical designs for all 3 tasks (agentic-sense wiring, test pass rate, architecture docs), marked all tasks as hasDesign=true"}
+```
+[2026-04-07T11:43:20.113Z] tech_lead-3 agent completed
+[2026-04-07 11:43:20] [agent_complete] tech_lead-3 completed successfully
+[2026-04-07 11:43:20] [workflow] tech_lead-3 [SIGNAL] completed: Created M85 milestone DBB and design files, completed technical designs for all 3 tasks (agentic-sen
+[2026-04-07 11:43:20] [workflow] work_loop [LOOP] Iteration 11
+[2026-04-07 11:43:20] [workflow] work_loop [EXEC] pm
+[2026-04-07 11:43:20] [agent_start] pm 管理任务和里程碑
+[2026-04-07T11:43:20.319Z] Running pm agent...
+
+
+I've reviewed the project state and assigned all unassigned tasks. Here's the current status:
+
+## Active Milestones Status
+
+**M74: DBB Compliance** (6/7 tasks done)
+- 4 done, 3 cancelled, 1 todo
+- Remaining: Docker verification (assigned to developer)
+
+**M76: DBB Gaps** (6/9 active tasks done)
+- 6 done, 5 cancelled, 1 in review
+- Waiting: CPU profile task in review (needs tester approval)
+
+**M80: Vision Gaps** (2/4 active tasks done)
+- 2 done, 5 cancelled, 1 todo, 1 in review
+- Todo: Wake word pipeline (assigned to developer)
+- Waiting: Voice latency benchmark in review (needs tester approval)
+
+**M83: Test Suite Repair** (5/6 tasks done)
+- 5 done, 1 todo
+- Remaining: Mocked module init fix (assigned to tester-1)
+
+**M85: Final Compliance** (0/3 tasks done)
+- All 3 tasks assigned to developer
+- 1 task blocked by M83 completion
+
+## Actions Taken
+
+Assigned unassigned tasks:
+- task-1775561930545: ARCHITECTURE.md documentation → developer
+- task-1775529630008: Docker verification → developer  
+- task-1775531492452: Wake word pipeline → developer
+- task-1775561920576: agentic-sense wiring → developer
+
+## Blockers
+
+Two tasks in review status require tester approval before their milestones can be completed:
+- M76: CPU profile (task-1775530542647)
+- M80: Voice latency benchmark (task-1775534863944)
+
+All agents are idle and ready to pick up their assigned work.
+
+```signal
+{"status": "completed", "summary": "Assigned 4 unassigned tasks, reviewed milestone status, 2 tasks awaiting tester approval"}
+```
+[2026-04-07T11:45:30.916Z] pm agent completed
+[2026-04-07 11:45:30] [agent_complete] pm completed successfully
+[2026-04-07 11:45:30] [workflow] pm [SIGNAL] completed: Assigned 4 unassigned tasks, reviewed milestone status, 2 tasks awaiting tester approval
+[2026-04-07 11:45:30] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 11:45:30] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-07 11:45:30] [workflow] work_loop [PARALLEL] implement, run-tests
+[2026-04-07 11:45:30] [workflow] work_loop [EXEC] developer
+[2026-04-07 11:45:30] [agent_start] developer 实现功能
+[2026-04-07 11:45:30] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-07 11:45:30] [agent_start] tester-1 验证功能
+[2026-04-07 11:45:30] [agent_start] tester-2 验证功能
+[2026-04-07T11:45:31.009Z] Running tester-1 agent...
+[2026-04-07T11:45:31.009Z] Running developer agent...
+[2026-04-07T11:45:31.013Z] Running tester-2 agent...
+[2026-04-07 11:46:06] [perf] daemon {"rss":"43MB","heapUsed":"8MB","uptime":"4500s"}
+[2026-04-07 11:47:09] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:8, done:183)
+Both tasks are complete.
+
+- **task-1775530542647** (cpu-only profile): 6 tests passed — profile exists, correct model/quantization, correct ordering, existing profiles unaffected.
+- **task-1775534863944** (voice latency benchmark): 3 tests passed — latency-log functions work correctly, p95 pipeline ~271ms (well under 2000ms limit).
+
+Both marked `done`.
+
+```signal
+{"status": "completed", "summary": "Tested and passed 2 tasks: cpu-only profile (6/6) and voice latency benchmark (3/3). Both marked done."}
+```
+[2026-04-07T11:47:49.715Z] tester-2 agent completed
+[2026-04-07 11:47:49] [agent_complete] tester-2 completed successfully
+[2026-04-07 11:47:49] [workflow] tester-2 [SIGNAL] completed: Tested and passed 2 tasks: cpu-only profile (6/6) and voice latency benchmark (3/3). Both marked don

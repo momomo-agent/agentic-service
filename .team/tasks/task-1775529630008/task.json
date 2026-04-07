@@ -4,11 +4,11 @@
   "description": "Verify docker build completes and docker-compose up starts the service correctly on port 3000",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m74",
   "hasDesign": true,
   "created": "2026-04-07T02:40:30.008Z",
-  "updated": "2026-04-07T11:33:31.496Z",
+  "updated": "2026-04-07T11:44:40.952Z",
   "milestoneId": "m74"
 }
