@@ -10551,3 +10551,41 @@
 {"ts":"2026-04-07T03:39:28.914Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":16,"memoryTotalMB":20,"cpuUser":25.02333,"cpuSystem":69.62025}}}
 {"ts":"2026-04-07T03:39:35.217Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775531890250","from":"inProgress","to":"review","title":"Verify and complete README.md documentation"}}
 {"ts":"2026-04-07T03:39:42.673Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":25.04399,"cpuSystem":69.653295}}}
+{"ts":"2026-04-07T03:39:42.818Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775532350028: inProgress → review"}}
+{"ts":"2026-04-07T03:39:42.905Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 15"}}
+{"ts":"2026-04-07T03:39:42.905Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:39:42.906Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":9,"memoryTotalMB":15,"cpuUser":25.067409,"cpuSystem":69.729952}}}
+{"ts":"2026-04-07T03:39:43.587Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":15,"cpuUser":25.067638,"cpuSystem":69.730463}}}
+{"ts":"2026-04-07T03:39:43.644Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:39:43.729Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 51"}}
+{"ts":"2026-04-07T03:39:43.729Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:39:43.730Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":15,"cpuUser":25.097806,"cpuSystem":69.842986}}}
+{"ts":"2026-04-07T03:39:44.862Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (120min), skipping","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":3.371593,"cpuSystem":6.328091}}}
+{"ts":"2026-04-07T03:39:44.863Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"54MB\",\"heapUsed\":\"8MB\",\"uptime\":\"7200s\"}"}}
+{"ts":"2026-04-07T03:39:52.607Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":15,"cpuUser":25.098109,"cpuSystem":69.843599}}}
+{"ts":"2026-04-07T03:39:52.665Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:39:52.750Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 2"}}
+{"ts":"2026-04-07T03:39:52.750Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:39:52.751Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":15,"cpuUser":25.128396,"cpuSystem":69.956722}}}
+{"ts":"2026-04-07T03:40:03.503Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":15,"cpuUser":25.128724,"cpuSystem":69.957311}}}
+{"ts":"2026-04-07T03:40:03.564Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:40:03.650Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 18"}}
+{"ts":"2026-04-07T03:40:03.650Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:40:03.651Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":10,"memoryTotalMB":15,"cpuUser":25.160008,"cpuSystem":70.073721}}}
+{"ts":"2026-04-07T03:40:48.307Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":15,"memoryTotalMB":17,"cpuUser":25.187012,"cpuSystem":70.120518}}}
+{"ts":"2026-04-07T03:40:48.366Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:40:48.367Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T03:40:48.367Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T03:40:48.367Z","type":"agent_start","agent":"tester-1","data":{"details":"tester","performance":{"memoryMB":14,"memoryTotalMB":18,"cpuUser":25.199924,"cpuSystem":70.167352}}}
+{"ts":"2026-04-07T03:40:48.368Z","type":"agent_start","agent":"tester-2","data":{"details":"tester","performance":{"memoryMB":14,"memoryTotalMB":18,"cpuUser":25.200081,"cpuSystem":70.167755}}}
+{"ts":"2026-04-07T03:40:51.044Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":15,"memoryTotalMB":18,"cpuUser":25.200291,"cpuSystem":70.168189}}}
+{"ts":"2026-04-07T03:40:51.098Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:40:51.184Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 52"}}
+{"ts":"2026-04-07T03:40:51.185Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:40:51.185Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":15,"memoryTotalMB":20,"cpuUser":25.230068,"cpuSystem":70.27922}}}
+{"ts":"2026-04-07T03:40:51.974Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":15,"memoryTotalMB":20,"cpuUser":25.230317,"cpuSystem":70.279768}}}
+{"ts":"2026-04-07T03:40:52.032Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T03:40:52.120Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 62"}}
+{"ts":"2026-04-07T03:40:52.121Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T03:40:52.121Z","type":"agent_start","agent":"pm","data":{"details":"pm","performance":{"memoryMB":16,"memoryTotalMB":20,"cpuUser":25.261216,"cpuSystem":70.395891}}}
+{"ts":"2026-04-07T03:41:25.464Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":15,"cpuUser":25.28275,"cpuSystem":70.421052}}}

@@ -1,7 +1,7 @@
 {
   "pm": {
     "status": "running",
-    "lastRun": "2026-04-07T03:39:28.914Z",
+    "lastRun": "2026-04-07T03:40:52.121Z",
     "currentTask": "pm",
     "retryCount": 1
   },
@@ -37,14 +37,14 @@
   },
   "tester-1": {
     "status": "idle",
-    "lastRun": "2026-04-07T03:37:59.397Z",
+    "lastRun": "2026-04-07T03:41:25.464Z",
     "currentTask": null,
     "retryCount": 2
   },
   "tester-2": {
-    "status": "idle",
-    "lastRun": "2026-04-07T03:32:15.683Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T03:40:48.368Z",
+    "currentTask": "tester",
     "retryCount": 1
   },
   "qa_lead": {

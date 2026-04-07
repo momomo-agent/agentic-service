@@ -2,13 +2,13 @@
   "id": "task-1775532350028",
   "title": "Implement CDN profiles.json 7-day cache staleness refresh",
   "description": "profiles.js fetches remote profiles.json but does not check cache age. Implement 7-day staleness check: if cached file is older than 7 days, re-fetch from CDN. Fall back to cached version on network failure.",
-  "status": "inProgress",
+  "status": "review",
   "priority": "P1",
-  "assignee": "developer",
+  "assignee": null,
   "blockedBy": [],
   "groupId": "m76",
   "hasDesign": true,
   "created": "2026-04-07T03:25:50.029Z",
-  "updated": "2026-04-07T03:39:16.050Z",
+  "updated": "2026-04-07T03:39:59.727Z",
   "milestoneId": "m76"
 }
