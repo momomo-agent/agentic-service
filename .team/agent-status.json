@@ -1,31 +1,31 @@
 {
   "pm": {
     "status": "idle",
-    "lastRun": "2026-04-07T17:07:08.611Z",
+    "lastRun": "2026-04-07T17:09:20.711Z",
     "currentTask": null,
     "retryCount": 0
   },
   "tech_lead-1": {
-    "status": "idle",
-    "lastRun": "2026-04-07T16:41:06.774Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T17:09:20.774Z",
+    "currentTask": "出技术方案",
     "retryCount": 0
   },
   "tech_lead-2": {
-    "status": "idle",
-    "lastRun": "2026-04-07T16:40:41.775Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-07T17:09:20.775Z",
+    "currentTask": "出技术方案",
     "retryCount": 0
   },
   "tech_lead-3": {
     "status": "idle",
-    "lastRun": "2026-04-07T16:40:37.590Z",
+    "lastRun": "2026-04-07T17:11:21.424Z",
     "currentTask": null,
     "retryCount": 0
   },
   "developer": {
     "status": "idle",
-    "lastRun": "2026-04-07T17:07:29.666Z",
+    "lastRun": "2026-04-07T17:11:38.433Z",
     "currentTask": null,
     "retryCount": 0
   },

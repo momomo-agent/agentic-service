@@ -20526,3 +20526,38 @@
 {"ts":"2026-04-07T17:07:26.734Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 13min (active:2, done:210)\"}"}}
 {"ts":"2026-04-07T17:07:29.667Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.326073,"cpuSystem":5.75443}}}
 {"ts":"2026-04-07T17:07:29.667Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No claimable tasks found. All todo tasks with hasDesign=true are assigned to other agents or blocked"}}
+{"ts":"2026-04-07T17:07:29.991Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 12"}}
+{"ts":"2026-04-07T17:07:30.004Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T17:07:30.004Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":10,"memoryTotalMB":18,"cpuUser":2.362248,"cpuSystem":5.884401}}}
+{"ts":"2026-04-07T17:07:56.346Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"54MB\",\"heapUsed\":\"10MB\",\"uptime\":\"2100s\"}"}}
+{"ts":"2026-04-07T17:08:26.727Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 14min (active:2, done:210)"}}
+{"ts":"2026-04-07T17:08:26.728Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 14min (active:2, done:210)\"}"}}
+{"ts":"2026-04-07T17:08:26.729Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-07T17:08:26.729Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-07T17:08:32.917Z","type":"task_created","agent":null,"data":{"taskId":"task-1775581712916","title":"Fix stale agentic-sense mocks and test bugs","priority":"P1","group":"m92"}}
+{"ts":"2026-04-07T17:08:37.201Z","type":"task_created","agent":null,"data":{"taskId":"task-1775581717200","title":"Add Dockerfile and docker-compose.yml to project root","priority":"P1","group":"m92"}}
+{"ts":"2026-04-07T17:08:44.588Z","type":"task_created","agent":null,"data":{"taskId":"task-1775581724582","title":"Add README.md to project root","priority":"P1","group":"m92"}}
+{"ts":"2026-04-07T17:08:51.173Z","type":"task_created","agent":null,"data":{"taskId":"task-1775581731172","title":"Verify test pass rate >=90% after mock fixes","priority":"P1","group":"m92"}}
+{"ts":"2026-04-07T17:08:56.730Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 14min (active:6, done:210)"}}
+{"ts":"2026-04-07T17:08:56.730Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 14min (active:6, done:210)\"}"}}
+{"ts":"2026-04-07T17:09:20.711Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":2.419153,"cpuSystem":5.96977}}}
+{"ts":"2026-04-07T17:09:20.711Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Planned M92 with 4 tasks targeting PRD missing gaps (Docker, README) and 86 failing tests from stale"}}
+{"ts":"2026-04-07T17:09:20.773Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T17:09:20.774Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-07T17:09:20.774Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] write-design, implement"}}
+{"ts":"2026-04-07T17:09:20.774Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3"}}
+{"ts":"2026-04-07T17:09:20.774Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"出技术方案","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":2.43305,"cpuSystem":6.019515}}}
+{"ts":"2026-04-07T17:09:20.775Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"出技术方案","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":2.433204,"cpuSystem":6.019867}}}
+{"ts":"2026-04-07T17:09:20.775Z","type":"agent_start","agent":"tech_lead-3","data":{"details":"出技术方案","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":2.433313,"cpuSystem":6.020153}}}
+{"ts":"2026-04-07T17:09:20.775Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T17:09:20.776Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":9,"memoryTotalMB":11,"cpuUser":2.43345,"cpuSystem":6.020483}}}
+{"ts":"2026-04-07T17:09:26.717Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 15min (active:6, done:210)"}}
+{"ts":"2026-04-07T17:09:26.717Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 15min (active:6, done:210)\"}"}}
+{"ts":"2026-04-07T17:10:26.733Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 16min (active:6, done:210)"}}
+{"ts":"2026-04-07T17:10:26.734Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 16min (active:6, done:210)\"}"}}
+{"ts":"2026-04-07T17:11:21.424Z","type":"agent_complete","agent":"tech_lead-3","data":{"details":"completed successfully","performance":{"memoryMB":27,"memoryTotalMB":32,"cpuUser":2.490411,"cpuSystem":6.105733}}}
+{"ts":"2026-04-07T17:11:21.425Z","type":"workflow","agent":"tech_lead-3","data":{"details":"[SIGNAL] completed: Created m92 dbb.md, design.md, and 4 task designs; updated hasDesign=true for all m92 tasks"}}
+{"ts":"2026-04-07T17:11:26.744Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 17min (active:6, done:210)"}}
+{"ts":"2026-04-07T17:11:26.744Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 17min (active:6, done:210)\"}"}}
+{"ts":"2026-04-07T17:11:38.434Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":29,"memoryTotalMB":38,"cpuUser":2.506933,"cpuSystem":6.141629}}}
+{"ts":"2026-04-07T17:11:38.434Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No eligible tasks available — all todo tasks with hasDesign=true are assigned to tester-2; remaining"}}

@@ -1,0 +1,13 @@
+{
+  "id": "task-1775581724582",
+  "title": "Add README.md to project root",
+  "description": "Create README.md in project root with npx/Docker/API docs. PRD gap: 'Complete user documentation/README — no README.md found in project root'. Include: npx agentic-service quickstart, Docker run command, API endpoints overview.",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m92",
+  "hasDesign": true,
+  "created": "2026-04-07T17:08:44.584Z",
+  "updated": "2026-04-07T17:11:13.515Z"
+}

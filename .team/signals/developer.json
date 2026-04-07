@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T17:07:29.663Z",
+  "timestamp": "2026-04-07T17:11:38.430Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "No claimable tasks found. All todo tasks with hasDesign=true are assigned to other agents or blocked."
+  "summary": "No eligible tasks available — all todo tasks with hasDesign=true are assigned to tester-2; remaining todo tasks have hasDesign=false and cannot be claimed by developer"
 }

@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T17:07:08.607Z",
+  "timestamp": "2026-04-07T17:09:20.708Z",
   "exitCode": 0,
-  "status": "blocked",
-  "summary": "M91 active with 2 tester tasks pending (sense wiring verification + test pass rate). Cannot proceed until tester-2 completes task-1775579897222 and task-1775579897264."
+  "status": "completed",
+  "summary": "Planned M92 with 4 tasks targeting PRD missing gaps (Docker, README) and 86 failing tests from stale agentic-sense mocks. M91 remains active awaiting tester verification."
 }

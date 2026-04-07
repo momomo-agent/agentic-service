@@ -226,6 +226,18 @@
         "task-1775579897264"
       ],
       "created": "2026-04-07T16:38:01.839Z"
+    },
+    {
+      "id": "m92",
+      "name": "M92: Test Fix + PRD Closure — Stale Mocks, Docker, README",
+      "status": "planned",
+      "tasks": [
+        "task-1775581712916",
+        "task-1775581717200",
+        "task-1775581724582",
+        "task-1775581731172"
+      ],
+      "created": "2026-04-07T17:08:57.600Z"
     }
   ]
 }

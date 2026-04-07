@@ -1,0 +1,13 @@
+{
+  "id": "task-1775581731172",
+  "title": "Verify test pass rate >=90% after mock fixes",
+  "description": "Run full test suite after stale mock fixes. Confirm pass rate >=90% (>=599/665). Report final count.",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m92",
+  "hasDesign": true,
+  "created": "2026-04-07T17:08:51.172Z",
+  "updated": "2026-04-07T17:11:13.545Z"
+}
