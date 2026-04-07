@@ -1,7 +1,10 @@
 {
-  "totalTests": 11,
-  "passed": 11,
+  "totalTests": 16,
+  "passed": 16,
   "failed": 0,
-  "edgeCases": [],
+  "edgeCases": [
+    "Silent audio skipped by VAD — latency not measured for skipped requests",
+    "Network/model load included in wall-clock measurement"
+  ],
   "coverage": "100%"
 }
