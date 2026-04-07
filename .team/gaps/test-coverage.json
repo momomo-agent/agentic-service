@@ -1,6 +1,6 @@
 {
-  "totalTests": 61,
-  "passed": 60,
+  "totalTests": 73,
+  "passed": 72,
   "failed": 1,
   "edgeCases": [
     "SSE streaming responses counted as in-flight until stream ends",
@@ -11,7 +11,8 @@
     "Hardware with no gpu field falls through to catch-all profile",
     "agentic-store version pinning once package is published",
     "api.js POST /api/chat integration with real HTTP server not tested (unit-level only)",
-    "concurrent broadcasts to many devices not stress-tested"
+    "concurrent broadcasts to many devices not stress-tested",
+    "agentic-sense missing from package.json imports map — runtime import will fail"
   ],
   "coverage": "98%"
 }
