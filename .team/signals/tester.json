@@ -1,7 +1,7 @@
 {
   "agent": "tester",
-  "timestamp": "2026-04-07T12:08:05.858Z",
+  "timestamp": "2026-04-07T13:33:13.601Z",
   "exitCode": 0,
-  "status": "blocked",
-  "summary": "No tasks available in review status for testing. One task (task-1775535895960) is in review but cannot be claimed yet."
+  "status": "completed",
+  "summary": "Tested task-1775561925076, found 2 DBB failures (89.98% pass rate, missing #agentic-sense import), marked as blocked"
 }
