@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T13:45:55.699Z",
+  "timestamp": "2026-04-07T13:49:54.537Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Fixed Docker build: updated package.json agentic-* deps to file:./vendor/*.tgz, added COPY vendor/ to install/Dockerfile, created install/docker-build.sh to pack sibling packages and run docker build."
+  "summary": "Added #agentic-sense to imports map in package.json pointing to src/runtime/adapters/sense.js"
 }
