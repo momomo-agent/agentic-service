@@ -18927,3 +18927,21 @@
 {"ts":"2026-04-07T12:11:48.072Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Documented tunnel, CLI, VAD, HTTPS modules in ARCHITECTURE.md with 4 new sections"}}
 {"ts":"2026-04-07T12:12:07.668Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.909465,"cpuSystem":10.81669}}}
 {"ts":"2026-04-07T12:12:07.668Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] blocked: Cannot claim any review tasks - canClaimTask() only allows 'todo'/'inProgress' status, but all 3 rev"}}
+{"ts":"2026-04-07T12:12:07.969Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 15"}}
+{"ts":"2026-04-07T12:12:07.982Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T12:12:07.982Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":4.944141,"cpuSystem":10.932799}}}
+{"ts":"2026-04-07T12:12:40.430Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":4.962134,"cpuSystem":10.963568}}}
+{"ts":"2026-04-07T12:12:40.430Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] blocked: 4 tasks in review awaiting tester approval; M85 test pass rate task blocked on M83 review task clear"}}
+{"ts":"2026-04-07T12:12:40.431Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] pm → blocked: 4 tasks in review awaiting tester approval; M85 test pass rate task blocked on M"}}
+{"ts":"2026-04-07T12:12:40.495Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T12:12:40.496Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T12:12:40.497Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T12:12:40.497Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T12:12:40.498Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":4.976354,"cpuSystem":11.01714}}}
+{"ts":"2026-04-07T12:12:40.498Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T12:12:40.499Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":4.976842,"cpuSystem":11.017747}}}
+{"ts":"2026-04-07T12:12:40.499Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":4.976978,"cpuSystem":11.018109}}}
+{"ts":"2026-04-07T12:12:40.875Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 18min (active:5, done:186)"}}
+{"ts":"2026-04-07T12:12:40.875Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 18min (active:5, done:186)\"}"}}
+{"ts":"2026-04-07T12:13:14.494Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":5.013742,"cpuSystem":11.082724}}}
+{"ts":"2026-04-07T12:13:14.495Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Checked all 4 review tasks - none claimable (already assigned to other agents)"}}
