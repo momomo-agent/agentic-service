@@ -32167,3 +32167,126 @@ Done. Here's the summary:
 [2026-04-07T14:43:29.714Z] tester agent completed
 [2026-04-07 14:43:29] [agent_complete] tester completed successfully
 [2026-04-07 14:43:29] [workflow] tester [SIGNAL] completed: Tested 2 review tasks: docker e2e blocked (Dockerfile COPY order bug), ARCHITECTURE.md CR task marke
+[2026-04-07 14:43:30] [workflow] work_loop [LOOP] Iteration 11
+[2026-04-07 14:43:30] [workflow] work_loop [EXEC] pm
+[2026-04-07 14:43:30] [agent_start] pm 管理任务和里程碑
+[2026-04-07T14:43:30.079Z] Running pm agent...
+All done. Here's what was created:
+
+**M88 milestone files:**
+- `.team/milestones/m88/dbb.md` — 3 verification criteria (benchmark test, profiler instrumentation, /api/perf endpoint)
+- `.team/milestones/m88/design.md` — technical approach covering all file changes
+
+**Task designs (hasDesign=true):**
+- `task-1775572886036` — benchmark test using jest mocks, asserts pipeline < 2000ms
+- `task-1775572892189` — `profiler.js` singleton with `startTimer/endTimer/getMetrics`, wrapped into stt/llm/tts via `finally`
+- `task-1775572898050` — `GET /api/perf` route in `api.js` returning `getMetrics()`
+
+```signal
+{"status": "completed", "summary": "Created m88 dbb.md and design.md; wrote task designs for all 3 m88 tasks and marked hasDesign=true"}
+```
+[2026-04-07T14:44:05.846Z] tech_lead-1 agent completed
+[2026-04-07 14:44:05] [agent_complete] tech_lead-1 completed successfully
+[2026-04-07 14:44:05] [workflow] tech_lead-1 [SIGNAL] completed: Created m88 dbb.md and design.md; wrote task designs for all 3 m88 tasks and marked hasDesign=true
+M87 marked completed, M88 activated.
+
+**Current state:**
+- M87: completed (all 6 tasks done)
+- M88: active — Voice Latency Benchmarking + CPU Profiling (3 tasks, all P1, unassigned)
+
+**M88 tasks ready for assignment:**
+- `task-1775572886036` — Add voice latency benchmark test (STT+LLM+TTS <2s)
+- `task-1775572892189` — Implement CPU profiling instrumentation in runtime pipeline
+- `task-1775572898050` — Expose performance metrics via /api/perf endpoint
+
+These address the two remaining vision gaps: voice latency <2s enforcement and CPU profiling instrumentation.
+
+```signal
+{"status": "completed", "summary": "Marked M87 completed, activated M88 (Voice Latency Benchmarking + CPU Profiling) with 3 unassigned P1 tasks ready for developer pickup"}
+```
+[2026-04-07T14:44:25.424Z] pm agent completed
+[2026-04-07 14:44:25] [agent_complete] pm completed successfully
+[2026-04-07 14:44:25] [workflow] pm [SIGNAL] completed: Marked M87 completed, activated M88 (Voice Latency Benchmarking + CPU Profiling) with 3 unassigned P
+[2026-04-07 14:44:25] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 14:44:25] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-07 14:44:25] [workflow] work_loop [PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-07 14:44:25] [workflow] work_loop [PARALLEL] implement
+[2026-04-07 14:44:25] [workflow] work_loop [EXEC] developer
+[2026-04-07 14:44:25] [agent_start] developer 实现功能
+[2026-04-07T14:44:25.570Z] Running developer agent...
+All work for milestone m88 is already complete:
+
+- `dbb.md` exists
+- `design.md` exists  
+- All 3 tasks have `hasDesign: true`
+- Task design files exist
+
+Nothing to do.
+
+```signal
+{"status": "completed", "summary": "M88 milestone already has dbb.md and design.md. All 3 tasks (task-1775572886036, task-1775572892189, task-1775572898050) already have hasDesign=true and design.md files. No work needed."}
+```
+[2026-04-07T14:44:37.088Z] tech_lead-2 agent completed
+[2026-04-07 14:44:37] [agent_complete] tech_lead-2 completed successfully
+[2026-04-07 14:44:37] [workflow] tech_lead-2 [SIGNAL] completed: M88 milestone already has dbb.md and design.md. All 3 tasks (task-1775572886036, task-1775572892189,
+All done. Here's what was completed:
+
+**M88 milestone** — dbb.md and design.md already existed and were correct.
+
+**Task designs updated:**
+
+- `task-1775572886036` — corrected to use vitest (not jest) and a new file `test/m88-voice-latency-benchmark.test.js` using existing `measurePipeline()` from profiler.js
+- `task-1775572892189` — corrected to reflect that profiler.js already exists; design adds `getMetrics()` + metrics accumulation to `endMark()`, and wires profiler into `llm.js`
+- `task-1775572898050` — adds `GET /api/perf` route to `api.js` using `getMetrics()`, blocked on task-1775572892189
+
+All three tasks marked `hasDesign: true`.
+
+```signal
+{"status": "completed", "summary": "Wrote/updated task designs for 3 M88 todo tasks: voice latency benchmark test, CPU profiling instrumentation, and /api/perf endpoint"}
+```
+[2026-04-07T14:45:58.467Z] tech_lead-3 agent completed
+[2026-04-07 14:45:58] [agent_complete] tech_lead-3 completed successfully
+[2026-04-07 14:45:58] [workflow] tech_lead-3 [SIGNAL] completed: Wrote/updated task designs for 3 M88 todo tasks: voice latency benchmark test, CPU profiling instrum
+[2026-04-07 14:45:58] [workflow] work_loop [LOOP] Iteration 26
+[2026-04-07 14:45:58] [workflow] work_loop [EXEC] pm
+[2026-04-07 14:45:58] [agent_start] pm 管理任务和里程碑
+[2026-04-07T14:45:58.683Z] Running pm agent...
+[2026-04-07 14:46:06] [perf] daemon {"rss":"38MB","heapUsed":"6MB","uptime":"15300s"}
+[2026-04-07 14:48:13] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:6, done:198)
+M89 is created and tasks are assigned. Here's the current state:
+
+**Active:**
+- m74: 1 task remaining (Docker verification — needs Docker daemon)
+- m88: 3 tasks (CPU profiling inProgress, latency benchmark + /api/perf todo)
+
+**Planned:**
+- m89: 2 tasks (agentic-sense wiring P0, test pass rate >=90% P0)
+
+**m74 note:** The Docker task (`task-1775529630008`) is environment-blocked — requires Docker daemon. It can proceed when Docker is available; m74 cannot close until it's done or explicitly cancelled.
+
+```signal
+{"status": "completed", "summary": "Created m89 milestone targeting remaining DBB gaps: agentic-sense external package wiring and test pass rate >=90%. Two P0 tasks created and assigned to m89. m88 active with CPU profiling in progress. m74 stalled on Docker environment dependency."}
+```
+[2026-04-07T14:48:29.274Z] pm agent completed
+[2026-04-07 14:48:29] [agent_complete] pm completed successfully
+[2026-04-07 14:48:29] [workflow] pm [SIGNAL] completed: Created m89 milestone targeting remaining DBB gaps: agentic-sense external package wiring and test p
+[2026-04-07 14:48:29] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 14:48:29] [workflow] work_loop [PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-07 14:48:29] [workflow] work_loop [PARALLEL] write-design, implement
+[2026-04-07 14:48:29] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2
+[2026-04-07 14:48:29] [agent_start] tech_lead-1 出技术方案
+[2026-04-07 14:48:29] [agent_start] tech_lead-2 出技术方案
+[2026-04-07 14:48:29] [workflow] work_loop [EXEC] developer
+[2026-04-07 14:48:29] [agent_start] developer 实现功能
+[2026-04-07T14:48:29.371Z] Running tech_lead-2 agent...
+[2026-04-07T14:48:29.371Z] Running tech_lead-1 agent...
+[2026-04-07T14:48:29.373Z] Running developer agent...
+[2026-04-07 14:48:43] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:6, done:198)
+Task complete.
+
+```signal
+{"status": "completed", "summary": "Implemented CPU profiling instrumentation: added metrics accumulation and getMetrics() to profiler.js, wired startMark/endMark into llm.js chat() function"}
+```
+[2026-04-07T14:48:59.339Z] developer agent completed
+[2026-04-07 14:48:59] [agent_complete] developer completed successfully
+[2026-04-07 14:48:59] [workflow] developer [SIGNAL] completed: Implemented CPU profiling instrumentation: added metrics accumulation and getMetrics() to profiler.j

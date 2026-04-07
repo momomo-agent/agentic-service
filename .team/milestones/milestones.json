@@ -166,7 +166,8 @@
     {
       "id": "m87",
       "name": "M87: Test Edge Cases — sense.js, optimizer, CDN fallback, SIGINT",
-      "status": "active",
+      "status": "completed",
+      "completed": "2026-04-07T14:44:06.553Z",
       "tasks": [
         "task-1775569629612",
         "task-1775569652492",
@@ -180,13 +181,23 @@
     {
       "id": "m88",
       "name": "M88: Voice Latency Benchmarking + CPU Profiling",
-      "status": "planned",
+      "status": "active",
       "tasks": [
         "task-1775572886036",
         "task-1775572892189",
         "task-1775572898050"
       ],
       "created": "2026-04-07T14:41:44.301Z"
+    },
+    {
+      "id": "m89",
+      "name": "M89: agentic-sense Wiring + Test Pass Rate >=90%",
+      "status": "planned",
+      "tasks": [
+        "task-1775573229039",
+        "task-1775573249297"
+      ],
+      "created": "2026-04-07T14:47:38.619Z"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import { detect as detectHardware } from '../detector/hardware.js'
 import { getProfile, watchProfiles } from '../detector/profiles.js'
 import { record } from './latency-log.js'
+import { startMark, endMark } from './profiler.js'
 
 let _config = null
 async function loadConfig() {
@@ -115,6 +116,7 @@ export async function* chat(messageOrText, options = {}) {
     : messageOrText;
   const t0 = Date.now();
   let first = true;
+  startMark('llm');
   try {
     try {
       for await (const chunk of chatWithOllama(messages)) {
@@ -140,6 +142,7 @@ export async function* chat(messageOrText, options = {}) {
       yield chunk;
     }
   } finally {
+    endMark('llm');
     record('llm_total', Date.now() - t0);
   }
 }
