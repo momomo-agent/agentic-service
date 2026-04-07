@@ -30631,3 +30631,17 @@ All 4 tasks in 'review' status are currently not claimable (likely already claim
 [2026-04-07T12:17:37.426Z] tester-2 agent completed
 [2026-04-07 12:17:37] [agent_complete] tester-2 completed successfully
 [2026-04-07 12:17:37] [workflow] tester-2 [SIGNAL] completed: Checked all review tasks - none claimable (all 4 already claimed by other agents)
+[2026-04-07 12:17:40] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 23min (active:5, done:186)
+Both tasks assigned to me are either in "review" or blocked. There's nothing actionable right now:
+
+- `task-1775561930545` — already in "review" (my work is done, awaiting tester)
+- `task-1775561925076` — blocked by `task-1775535895960` (still in "review")
+
+No other `todo` tasks with `hasDesign=true` and no assignee exist.
+
+```signal
+{"status": "completed", "summary": "No actionable tasks available. task-1775561930545 is in review. task-1775561925076 is blocked by task-1775535895960 which is still in review."}
+```
+[2026-04-07T12:17:42.380Z] developer agent completed
+[2026-04-07 12:17:42] [agent_complete] developer completed successfully
+[2026-04-07 12:17:42] [workflow] developer [SIGNAL] completed: No actionable tasks available. task-1775561930545 is in review. task-1775561925076 is blocked by tas
