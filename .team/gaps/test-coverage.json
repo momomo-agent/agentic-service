@@ -1,10 +1,14 @@
 {
-  "totalTests": 6,
-  "passed": 5,
-  "failed": 1,
+  "totalTests": 747,
+  "passed": 672,
+  "failed": 75,
   "edgeCases": [
-    "≤60s reload timing in real network conditions",
-    "In-flight request safety during config reload"
+    "optimizer.js returns extra fields not expected by tests (9 test failures)",
+    "agentic-sense mock exports not matching vi.mock expectations (10+ test failures)",
+    "agentic-voice/openai-tts module resolution failures (6 test failures)",
+    "process.exit() in 70+ test files kills vitest when run together",
+    "test/m74-docker-e2e.test.js hangs when Docker is unavailable",
+    "sense-wakeword-m80.test.js crashes vitest via undefined agentic-sense export"
   ],
-  "coverage": "83%"
+  "coverage": "89.9%"
 }

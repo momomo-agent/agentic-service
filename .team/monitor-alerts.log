@@ -2648,3 +2648,44 @@
 {"time":"2026-04-07T18:05:30.726Z","type":"no_progress","message":"No progress for 20min (active:5, done:214)"}
 {"time":"2026-04-07T18:06:20.986Z","type":"no_progress","message":"No progress for 21min (active:5, done:214)"}
 {"time":"2026-04-07T18:06:54.936Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T18:07:59.075Z","type":"no_progress","message":"No progress for 22min (active:5, done:214)"}
+{"time":"2026-04-07T18:08:22.372Z","type":"no_progress","message":"No progress for 23min (active:5, done:214)"}
+{"time":"2026-04-07T18:09:18.784Z","type":"no_progress","message":"No progress for 24min (active:5, done:214)"}
+{"time":"2026-04-07T18:10:45.051Z","type":"no_progress","message":"No progress for 25min (active:5, done:214)"}
+{"time":"2026-04-07T18:11:17.092Z","type":"no_progress","message":"No progress for 26min (active:5, done:214)"}
+{"time":"2026-04-07T18:12:14.550Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T18:12:48.802Z","type":"no_progress","message":"No progress for 27min (active:5, done:214)"}
+{"time":"2026-04-07T18:13:26.063Z","type":"no_progress","message":"No progress for 28min (active:5, done:214)"}
+{"time":"2026-04-07T18:14:48.657Z","type":"no_progress","message":"No progress for 29min (active:5, done:214)"}
+{"time":"2026-04-07T18:15:21.090Z","type":"no_progress","message":"No progress for 30min (active:5, done:214)"}
+{"time":"2026-04-07T18:16:18.653Z","type":"no_progress","message":"No progress for 31min (active:5, done:214)"}
+{"time":"2026-04-07T18:17:20.170Z","type":"no_progress","message":"No progress for 32min (active:5, done:214)"}
+{"time":"2026-04-07T18:17:23.468Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T18:18:21.978Z","type":"no_progress","message":"No progress for 33min (active:5, done:214)"}
+{"time":"2026-04-07T18:19:19.070Z","type":"no_progress","message":"No progress for 34min (active:5, done:214)"}
+{"time":"2026-04-07T18:20:18.710Z","type":"no_progress","message":"No progress for 35min (active:5, done:214)"}
+{"time":"2026-04-07T18:21:21.662Z","type":"no_progress","message":"No progress for 36min (active:5, done:214)"}
+{"time":"2026-04-07T18:22:17.800Z","type":"no_progress","message":"No progress for 37min (active:5, done:214)"}
+{"time":"2026-04-07T18:22:46.533Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T18:23:17.956Z","type":"no_progress","message":"No progress for 38min (active:5, done:214)"}
+{"time":"2026-04-07T18:24:53.025Z","type":"no_progress","message":"No progress for 39min (active:5, done:214)"}
+{"time":"2026-04-07T18:25:19.079Z","type":"no_progress","message":"No progress for 40min (active:5, done:214)"}
+{"time":"2026-04-07T18:26:18.460Z","type":"no_progress","message":"No progress for 41min (active:5, done:214)"}
+{"time":"2026-04-07T18:27:17.442Z","type":"no_progress","message":"No progress for 42min (active:5, done:214)"}
+{"time":"2026-04-07T18:28:17.815Z","type":"no_progress","message":"No progress for 43min (active:5, done:214)"}
+{"time":"2026-04-07T18:28:17.935Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T18:29:19.375Z","type":"no_progress","message":"No progress for 44min (active:5, done:214)"}
+{"time":"2026-04-07T18:30:18.545Z","type":"no_progress","message":"No progress for 45min (active:5, done:214)"}
+{"time":"2026-04-07T18:31:19.653Z","type":"no_progress","message":"No progress for 46min (active:5, done:214)"}
+{"time":"2026-04-07T18:32:26.585Z","type":"no_progress","message":"No progress for 47min (active:5, done:214)"}
+{"time":"2026-04-07T18:33:54.612Z","type":"no_progress","message":"No progress for 48min (active:5, done:214)"}
+{"time":"2026-04-07T18:33:54.855Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T18:34:18.495Z","type":"no_progress","message":"No progress for 49min (active:5, done:214)"}
+{"time":"2026-04-07T18:35:18.220Z","type":"no_progress","message":"No progress for 50min (active:5, done:214)"}
+{"time":"2026-04-07T18:36:20.553Z","type":"no_progress","message":"No progress for 51min (active:5, done:214)"}
+{"time":"2026-04-07T18:37:18.479Z","type":"no_progress","message":"No progress for 52min (active:5, done:214)"}
+{"time":"2026-04-07T18:38:21.688Z","type":"no_progress","message":"No progress for 53min (active:5, done:214)"}
+{"time":"2026-04-07T18:39:25.800Z","type":"no_progress","message":"No progress for 54min (active:5, done:214)"}
+{"time":"2026-04-07T18:39:28.492Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T18:40:20.411Z","type":"no_progress","message":"No progress for 55min (active:5, done:214)"}
+{"time":"2026-04-07T18:41:18.943Z","type":"no_progress","message":"No progress for 56min (active:4, done:214)"}
