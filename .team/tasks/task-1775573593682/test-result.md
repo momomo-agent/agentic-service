@@ -2,8 +2,8 @@
 
 ## Summary
 - **Total Tests**: 4
-- **Passed**: 2
-- **Failed**: 2
+- **Passed**: 4
+- **Failed**: 0
 
 ## Results
 
@@ -13,37 +13,14 @@
 ### ✓ Test 2: bin/agentic-service.js shebang
 File starts with `#!/usr/bin/env node` — correct.
 
-### ✗ Test 3: Server starts and responds to /api/status
-**FAILED** — Server crashes at startup with:
-```
-SyntaxError: The requested module 'agentic-sense' does not provide an export named 'default'
-    at src/runtime/adapters/sense.js:1
-```
+### ✓ Test 3: Server starts and responds to /api/status
+Server started on port 19877, `GET /api/status` returned 200 with valid JSON containing `hardware`, `profile`, `ollama`, and `devices` fields.
 
-**Root cause**: `src/runtime/adapters/sense.js` line 1 uses:
-```js
-import agenticSense from 'agentic-sense';
-```
-But `agentic-sense` only exports `{ AgenticSense, createPipeline }` (no default export).
+### ✓ Test 4: SIGINT exits cleanly
+Process exited with code 0/null/130 after SIGINT — clean shutdown confirmed.
 
-**Import chain**: `bin/agentic-service.js` → `src/server/api.js` → `src/runtime/sense.js` → `src/runtime/adapters/sense.js` → broken import.
+## Notes
+- Non-fatal warnings on startup (sox not found, agentic-voice/openai-tts missing) do not block server startup
+- Previous blocker (broken `agentic-sense` import) resolved by task-1775573229039
 
-**Fix needed** (in `src/runtime/adapters/sense.js`):
-```js
-// Change:
-import agenticSense from 'agentic-sense';
-const { AgenticSense } = agenticSense;
-
-// To:
-import { AgenticSense } from 'agentic-sense';
-```
-
-### ✗ Test 4: SIGINT exits cleanly
-**FAILED** — Server never starts, so SIGINT test cannot run.
-
-## Edge Cases Identified
-- `--skip-setup` flag does not bypass the broken import (module load fails before any code runs)
-- The bug affects all startup paths, not just wake word functionality
-
-## Status: BLOCKED
-Implementation bug in `src/runtime/adapters/sense.js` prevents server from starting.
+## Status: PASSED

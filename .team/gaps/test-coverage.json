@@ -1,12 +1,13 @@
 {
-  "totalTests": 661,
-  "passed": 575,
+  "totalTests": 665,
+  "passed": 579,
   "failed": 86,
   "edgeCases": [
     "Stale mocks for agentic-sense don't export AgenticSense — affects sense-pipeline, sense-m8, sense-detect-m10, sense-dbb001, sense.test.js",
     "m87 test calls async createPipeline() synchronously — test bug",
     "m77 test expects #agentic-sense import map entry to exist after correct removal — inverted assertion",
-    "m84 mock missing init() method on AgenticSense instance"
+    "m84 mock missing init() method on AgenticSense instance",
+    "npx startup: sox not found warning (non-fatal) — mic capture unavailable on systems without sox"
   ],
   "coverage": "87%"
 }

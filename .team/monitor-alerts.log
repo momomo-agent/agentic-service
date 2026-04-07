@@ -2573,3 +2573,8 @@
 {"time":"2026-04-07T16:47:27.099Z","type":"no_progress","message":"No progress for 5min (active:4, done:208)"}
 {"time":"2026-04-07T16:47:58.737Z","type":"no_progress","message":"No progress for 6min (active:4, done:208)"}
 {"time":"2026-04-07T16:48:58.022Z","type":"no_progress","message":"No progress for 7min (active:4, done:208)"}
+{"time":"2026-04-07T16:52:27.130Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T16:57:56.715Z","type":"cr_explosion","message":"23 pending CRs"}
+{"time":"2026-04-07T16:59:56.720Z","type":"no_progress","message":"No progress for 5min (active:2, done:210)"}
+{"time":"2026-04-07T17:00:26.712Z","type":"no_progress","message":"No progress for 6min (active:2, done:210)"}
+{"time":"2026-04-07T17:01:26.721Z","type":"no_progress","message":"No progress for 7min (active:2, done:210)"}
