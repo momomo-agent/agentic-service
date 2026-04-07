@@ -20203,3 +20203,7 @@
 {"ts":"2026-04-07T16:18:51.547Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775573593682","from":"testing","to":"blocked","title":"Verify npx agentic-service one-command startup"}}
 {"ts":"2026-04-07T16:18:59.529Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":2.678131,"cpuSystem":4.487825}}}
 {"ts":"2026-04-07T16:18:59.529Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: task-1775573593682 blocked — adapters/sense.js uses broken default import from agentic-sense, server"}}
+{"ts":"2026-04-07T16:19:08.505Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 25min (active:3, done:204)"}}
+{"ts":"2026-04-07T16:19:08.505Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 25min (active:3, done:204)\"}"}}
+{"ts":"2026-04-07T16:19:40.831Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":8,"cpuUser":2.715147,"cpuSystem":4.539155}}}
+{"ts":"2026-04-07T16:19:40.832Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Claimed task-1775573593682, confirmed server startup blocked by agentic-sense default import bug in "}}
