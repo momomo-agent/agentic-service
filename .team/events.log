@@ -20493,3 +20493,20 @@
 {"ts":"2026-04-07T17:05:24.735Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.122175,"cpuSystem":5.246151}}}
 {"ts":"2026-04-07T17:05:40.523Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.135553,"cpuSystem":5.261932}}}
 {"ts":"2026-04-07T17:05:40.523Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Reviewed all tasks. No available todo tasks with hasDesign=true and null assignee found. All tasks a"}}
+{"ts":"2026-04-07T17:05:40.851Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 10"}}
+{"ts":"2026-04-07T17:05:40.865Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T17:05:40.865Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":10,"memoryTotalMB":14,"cpuUser":2.173298,"cpuSystem":5.394472}}}
+{"ts":"2026-04-07T17:05:56.724Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:2, done:210)"}}
+{"ts":"2026-04-07T17:05:56.724Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:2, done:210)\"}"}}
+{"ts":"2026-04-07T17:06:12.773Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.194715,"cpuSystem":5.422796}}}
+{"ts":"2026-04-07T17:06:12.774Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Reviewed m91 status: 2 tasks remain in todo for tester-2 (agentic-sense verification + test pass rat"}}
+{"ts":"2026-04-07T17:06:12.837Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T17:06:12.838Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T17:06:12.838Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0"}}
+{"ts":"2026-04-07T17:06:12.838Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement"}}
+{"ts":"2026-04-07T17:06:12.838Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T17:06:12.838Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.208539,"cpuSystem":5.474395}}}
+{"ts":"2026-04-07T17:06:26.727Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 12min (active:2, done:210)"}}
+{"ts":"2026-04-07T17:06:26.727Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 12min (active:2, done:210)\"}"}}
+{"ts":"2026-04-07T17:06:28.749Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.230054,"cpuSystem":5.504449}}}
+{"ts":"2026-04-07T17:06:28.749Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Reviewed all tasks - no available todo tasks with hasDesign=true and unassigned assignee found. All "}}
