@@ -21,8 +21,9 @@ function emit(type, data) {
 }
 
 export function start() {
-  if (intervalId != null) { clearInterval(intervalId); intervalId = null; }
-  intervalId = setInterval(() => {
+  if (intervalId != null) { cancelAnimationFrame(intervalId); intervalId = null; }
+  function loop() {
+    if (intervalId == null) return;
     const video = pipeline?._video;
     if (video && video.readyState >= 2) {
       const result = pipeline.detect(video);
@@ -38,7 +39,9 @@ export function start() {
           .forEach(o => emit('object_detected', { label: o.label, confidence: o.confidence }));
       }
     }
-  }, 100);
+    intervalId = requestAnimationFrame(loop);
+  }
+  intervalId = requestAnimationFrame(loop);
 }
 
 export function detect(frame) {
@@ -53,7 +56,7 @@ export function detect(frame) {
 }
 
 export function stop() {
-  if (intervalId != null) { clearInterval(intervalId); intervalId = null; }
+  if (intervalId != null) { cancelAnimationFrame(intervalId); intervalId = null; }
   pipeline = null;
 }
 

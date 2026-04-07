@@ -8,9 +8,8 @@ describe('M84 DBB: agentic-sense wired as external package', () => {
     expect(pkg.dependencies).toHaveProperty('agentic-sense');
   });
 
-  it('src/runtime/sense.js imports from agentic-sense (not import map)', () => {
-    const source = readFileSync(resolve('src/runtime/sense.js'), 'utf8');
-    // Should import from 'agentic-sense', not '#agentic-sense'
+  it('src/runtime/adapters/sense.js imports from agentic-sense (not import map)', () => {
+    const source = readFileSync(resolve('src/runtime/adapters/sense.js'), 'utf8');
     expect(source).toMatch(/from\s+['"]agentic-sense['"]/);
     expect(source).not.toMatch(/from\s+['"]#agentic-sense['"]/);
   });

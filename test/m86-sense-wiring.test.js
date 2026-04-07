@@ -10,11 +10,12 @@ describe('M86: agentic-sense external package wiring', () => {
     expect(pkg.dependencies?.['agentic-sense']).toMatch(/^file:/);
   });
 
-  it('imports map has #agentic-sense alias', () => {
-    expect(pkg.imports?.['#agentic-sense']).toBeDefined();
+  it('imports map has no #agentic-sense alias (removed)', () => {
+    expect(pkg.imports?.['#agentic-sense']).toBeUndefined();
   });
 
-  it('#agentic-sense resolves to sense adapter', () => {
-    expect(pkg.imports?.['#agentic-sense']).toMatch(/sense/i);
+  it('adapters/sense.js imports from agentic-sense directly', () => {
+    const src = readFileSync(resolve(ROOT, 'src/runtime/adapters/sense.js'), 'utf8');
+    expect(src).toMatch(/from\s+['"]agentic-sense['"]/);
   });
 });
