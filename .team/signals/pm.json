@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T15:55:09.154Z",
+  "timestamp": "2026-04-07T16:11:10.993Z",
   "exitCode": 0,
   "status": "blocked",
-  "summary": "m89 has 1 task in review (agentic-sense wiring), m90 has 3 tasks in review (wake word pipeline, npx startup, tunnel fix). Cannot advance until testers approve or reject reviewed tasks."
+  "summary": "M89 has 1 task in review (task-1775573229039: Wire agentic-sense). Waiting for tester to approve before milestone can be completed or next milestone planned."
 }

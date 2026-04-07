@@ -1,12 +1,14 @@
 {
-  "totalTests": 805,
-  "passed": 725,
-  "failed": 73,
+  "totalTests": 809,
+  "passed": 727,
+  "failed": 75,
   "edgeCases": [
     "agentic-sense mock not set up in m87-sense-pipeline.test.js — createPipeline fails at runtime",
     "48 other test files missing vi.mock for agentic-sense or related modules",
     "tunnel.js startTunnel(port) not exported — SIGINT subprocess kill untestable",
-    "generateCert runtime validation blocked by missing selfsigned dependency"
+    "generateCert runtime validation blocked by missing selfsigned dependency",
+    "agentic-sense default import broken in adapters/sense.js — server cannot start at all",
+    "SIGINT clean exit untestable until server startup is fixed"
   ],
-  "coverage": "90%"
+  "coverage": "50%"
 }
