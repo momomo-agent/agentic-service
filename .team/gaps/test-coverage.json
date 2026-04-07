@@ -4,6 +4,7 @@
   "failed": 69,
   "edgeCases": [
     "sense.js start() uses setInterval instead of requestAnimationFrame — breaks RAF-based test stubs (DBB-003, DBB-004)",
+    "createPipeline not exported by agentic-sense package — adapter uses wrong API (actual exports: AgenticSense, AgenticAudio, IDX, extractFrame)",
     "optimizer.js hardware-adaptive config output shape mismatch",
     "CDN profiles fallback when fetch fails and no cache exists",
     "SIGINT graceful drain during in-flight requests not fully tested"

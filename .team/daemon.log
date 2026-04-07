@@ -31674,3 +31674,26 @@ Both moved to `review`.
 [2026-04-07T14:05:21.824Z] developer agent completed
 [2026-04-07 14:05:21] [agent_complete] developer completed successfully
 [2026-04-07 14:05:21] [workflow] developer [SIGNAL] completed: Fixed CDN profiles fallback (try/catch in loadBuiltinProfiles) and SIGINT graceful drain (startDrain
+[2026-04-07 14:05:42] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:7, done:192)
+Done. Here's the summary:
+
+**task-1775569629612** — marked `blocked`
+
+**What passed (4/6):**
+- `vitest.config.js` has no `#agentic-sense` alias ✅
+- `package.json` has `agentic-sense` dependency ✅
+- `src/runtime/adapters/sense.js` imports from `'agentic-sense'` directly ✅
+- No source files reference `#agentic-sense` ✅
+
+**What failed (2/6):**
+- `createPipeline` is not exported by the `agentic-sense` package — actual exports are `AgenticSense`, `AgenticAudio`, `IDX`, `extractFrame`. The adapter calls a non-existent function.
+- `src/runtime/sense.js` path mismatch in test (test looks for `src/runtime/sense.js`, file is at `src/runtime/adapters/sense.js`)
+
+Developer needs to fix `src/runtime/adapters/sense.js` to use the correct API from the `agentic-sense` package.
+
+```signal
+{"status": "completed", "summary": "Tested task-1775569629612: vitest alias removed and package wired correctly, but adapter calls createPipeline which is not exported by agentic-sense — task marked blocked, bug documented in test-result.md"}
+```
+[2026-04-07T14:06:04.339Z] tester agent completed
+[2026-04-07 14:06:04] [agent_complete] tester completed successfully
+[2026-04-07 14:06:04] [workflow] tester [SIGNAL] completed: Tested task-1775569629612: vitest alias removed and package wired correctly, but adapter calls creat

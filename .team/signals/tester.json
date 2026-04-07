@@ -1,7 +1,7 @@
 {
   "agent": "tester",
-  "timestamp": "2026-04-07T13:49:41.325Z",
+  "timestamp": "2026-04-07T14:06:04.339Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "No unclaimed review tasks available. task-1775569230828 is the only review task but cannot be claimed (already assigned to another tester instance). New m87 tasks are in todo status, not review."
+  "summary": "Tested task-1775569629612: vitest alias removed and package wired correctly, but adapter calls createPipeline which is not exported by agentic-sense — task marked blocked, bug documented in test-result.md"
 }

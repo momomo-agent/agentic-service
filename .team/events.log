@@ -19462,3 +19462,8 @@
 {"ts":"2026-04-07T14:05:20.710Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Tested task-1775569820076: 8/11 passed, 3 failed due to setInterval vs requestAnimationFrame mismatc"}}
 {"ts":"2026-04-07T14:05:21.830Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":10.209189,"cpuSystem":22.74873}}}
 {"ts":"2026-04-07T14:05:21.830Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Fixed CDN profiles fallback (try/catch in loadBuiltinProfiles) and SIGINT graceful drain (startDrain"}}
+{"ts":"2026-04-07T14:05:42.798Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:7, done:192)"}}
+{"ts":"2026-04-07T14:05:42.798Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:7, done:192)\"}"}}
+{"ts":"2026-04-07T14:05:49.177Z","type":"task_status","agent":"tester","data":{"taskId":"task-1775569629612","from":"testing","to":"blocked","title":"Wire agentic-sense as external package"}}
+{"ts":"2026-04-07T14:06:04.342Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":10.230446,"cpuSystem":22.793097}}}
+{"ts":"2026-04-07T14:06:04.342Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: Tested task-1775569629612: vitest alias removed and package wired correctly, but adapter calls creat"}}
