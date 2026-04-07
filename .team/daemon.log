@@ -33653,3 +33653,39 @@ All tasks in the list are either `done` or assigned to `tester-2`. There are no 
 [2026-04-07T17:04:58.134Z] developer agent completed
 [2026-04-07 17:04:58] [agent_complete] developer completed successfully
 [2026-04-07 17:04:58] [workflow] developer [SIGNAL] completed: Reviewed all tasks. No available todo tasks with hasDesign=true and null assignee found. All tasks a
+[2026-04-07 17:04:58] [workflow] work_loop [LOOP] Iteration 9
+[2026-04-07 17:04:58] [workflow] work_loop [EXEC] pm
+[2026-04-07 17:04:58] [agent_start] pm 管理任务和里程碑
+[2026-04-07T17:04:58.503Z] Running pm agent...
+M91 has 2 tasks still in `todo` status assigned to tester-2. The CR task is done. M91 is waiting on tester-2 to verify agentic-sense wiring and re-run the test suite.
+
+Current state:
+- `task-1775579897222` — todo: Verify agentic-sense wiring
+- `task-1775579897264` — todo: Re-run full test suite (blocked by above)
+
+No new milestone needed yet — M91 is still active and not complete. The remaining gaps (voice latency, CPU profiling, vision partial items) are already tracked from prior milestones or covered by the CR submitted.
+
+Nothing to do until tester-2 completes their tasks.
+
+```signal
+{"status": "blocked", "summary": "M91 active, 2 todo tasks assigned to tester-2 — waiting on agentic-sense verification and test suite re-run before milestone can close"}
+```
+[2026-04-07T17:05:24.671Z] pm agent completed
+[2026-04-07 17:05:24] [agent_complete] pm completed successfully
+[2026-04-07 17:05:24] [workflow] pm [SIGNAL] blocked: M91 active, 2 todo tasks assigned to tester-2 — waiting on agentic-sense verification and test suite
+[2026-04-07 17:05:24] [workflow] work_loop [AGENT-SIGNAL] pm → blocked: M91 active, 2 todo tasks assigned to tester-2 — waiting on agentic-sense verific
+[2026-04-07 17:05:24] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 17:05:24] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-07 17:05:24] [workflow] work_loop [PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-07 17:05:24] [workflow] work_loop [PARALLEL] implement
+[2026-04-07 17:05:24] [workflow] work_loop [EXEC] developer
+[2026-04-07 17:05:24] [agent_start] developer 实现功能
+[2026-04-07T17:05:24.764Z] Running developer agent...
+All tasks in the list are either `done` or assigned to `tester-2`. There are no `todo` tasks with `hasDesign=true`, `assignee=null`, and unblocked dependencies available for me to claim.
+
+```signal
+{"status": "completed", "summary": "Reviewed all tasks. No available todo tasks with hasDesign=true and null assignee found. All tasks are either done or assigned to other agents."}
+```
+[2026-04-07T17:05:40.520Z] developer agent completed
+[2026-04-07 17:05:40] [agent_complete] developer completed successfully
+[2026-04-07 17:05:40] [workflow] developer [SIGNAL] completed: Reviewed all tasks. No available todo tasks with hasDesign=true and null assignee found. All tasks a
