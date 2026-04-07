@@ -17,7 +17,8 @@
     {
       "id": "m74",
       "name": "M74: DBB Compliance — Docker, SIGINT, Coverage, Setup",
-      "status": "active",
+      "status": "completed",
+      "completed": "2026-04-07T14:49:54.961Z",
       "tasks": [
         "task-1775529630008",
         "task-1775529637561",

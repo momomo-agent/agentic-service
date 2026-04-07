@@ -19770,3 +19770,29 @@
 {"ts":"2026-04-07T14:49:48.346Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775572898050","from":"inProgress","to":"review","title":"Expose performance metrics via /api/perf endpoint"}}
 {"ts":"2026-04-07T14:49:54.112Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":12.399765,"cpuSystem":27.320767}}}
 {"ts":"2026-04-07T14:49:54.113Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Added GET /api/perf endpoint to api.js that returns profiler.getMetrics() as JSON"}}
+{"ts":"2026-04-07T14:50:13.220Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:198)"}}
+{"ts":"2026-04-07T14:50:13.220Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:5, done:198)\"}"}}
+{"ts":"2026-04-07T14:50:20.399Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":13,"memoryTotalMB":22,"cpuUser":12.42014,"cpuSystem":27.382696}}}
+{"ts":"2026-04-07T14:50:20.400Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Closed orphaned Docker task in m74, marked m74 completed. m88 active with 3 tasks in progress/review"}}
+{"ts":"2026-04-07T14:50:20.460Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T14:50:20.461Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] write-design, implement, run-tests"}}
+{"ts":"2026-04-07T14:50:20.461Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tech_lead-1, tech_lead-2"}}
+{"ts":"2026-04-07T14:50:20.461Z","type":"agent_start","agent":"tech_lead-1","data":{"details":"出技术方案","performance":{"memoryMB":18,"memoryTotalMB":30,"cpuUser":12.432906,"cpuSystem":27.429071}}}
+{"ts":"2026-04-07T14:50:20.461Z","type":"agent_start","agent":"tech_lead-2","data":{"details":"出技术方案","performance":{"memoryMB":18,"memoryTotalMB":30,"cpuUser":12.433054,"cpuSystem":27.429445}}}
+{"ts":"2026-04-07T14:50:20.462Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T14:50:20.462Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":18,"memoryTotalMB":30,"cpuUser":12.433198,"cpuSystem":27.429807}}}
+{"ts":"2026-04-07T14:50:20.462Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T14:50:20.462Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":18,"memoryTotalMB":30,"cpuUser":12.433363,"cpuSystem":27.430163}}}
+{"ts":"2026-04-07T14:50:20.463Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":18,"memoryTotalMB":30,"cpuUser":12.433446,"cpuSystem":27.430397}}}
+{"ts":"2026-04-07T14:50:43.169Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:198)"}}
+{"ts":"2026-04-07T14:50:43.170Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:5, done:198)\"}"}}
+{"ts":"2026-04-07T14:50:53.171Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775572886036","from":"todo","to":"inProgress","title":"Add voice latency benchmark test (STT+LLM+TTS <2s)"}}
+{"ts":"2026-04-07T14:51:06.971Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"51MB\",\"heapUsed\":\"9MB\",\"uptime\":\"15600s\"}"}}
+{"ts":"2026-04-07T14:51:07.328Z","type":"error","agent":"daemon","data":{"details":"Watchdog: busy for 130min, force reset"}}
+{"ts":"2026-04-07T14:51:07.350Z","type":"workflow","agent":null,"data":{"details":"[RESUME] Resuming from checkpoint: node=work_loop, step=2"}}
+{"ts":"2026-04-07T14:51:07.351Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度中心 — PM 评估后并行派发所有角色，全部完成后回 PM","performance":{"memoryMB":10,"memoryTotalMB":12,"cpuUser":12.450157,"cpuSystem":27.446462}}}
+{"ts":"2026-04-07T14:51:07.462Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-07T14:51:07.476Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T14:51:07.476Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":11,"memoryTotalMB":27,"cpuUser":12.473867,"cpuSystem":27.536607}}}
+{"ts":"2026-04-07T14:51:07.679Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":27,"cpuUser":12.474162,"cpuSystem":27.537152}}}
+{"ts":"2026-04-07T14:51:07.679Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Checked all tasks in review status. Both tasks (task-1775572892189 and task-1775572898050) cannot be"}}
