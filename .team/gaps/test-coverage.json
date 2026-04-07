@@ -1,6 +1,6 @@
 {
-  "totalTests": 14,
-  "passed": 14,
+  "totalTests": 25,
+  "passed": 25,
   "failed": 0,
   "edgeCases": [
     "LLM generator throws before yielding — latency still recorded in finally block (not tested)",
