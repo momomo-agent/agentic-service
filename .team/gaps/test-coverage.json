@@ -1,9 +1,9 @@
 {
-  "totalTests": 12,
-  "passed": 12,
+  "totalTests": 19,
+  "passed": 19,
   "failed": 0,
   "edgeCases": [
-    "docker build not run (no Docker daemon in CI)",
+    "docker build . not verified — no Docker daemon in test environment",
     "Dockerfile base image is node:20-slim vs design's node:20-alpine",
     "docker-compose.yml missing named volume config from design"
   ],
