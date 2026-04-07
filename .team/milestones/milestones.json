@@ -45,7 +45,8 @@
     {
       "id": "m77",
       "name": "M77: External Package Wiring — agentic-store, agentic-embed, agentic-voice, agentic-sense",
-      "status": "active",
+      "status": "completed",
+      "completed": "2026-04-07T04:05:39.612Z",
       "tasks": [
         "task-1775530801711",
         "task-1775530807610",

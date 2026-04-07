@@ -1,8 +1,8 @@
 # Test Result: install/setup.sh 一键安装脚本
 
 ## Summary
-- Passed: 8
-- Failed: 0
+- Passed: 7
+- Failed: 1
 - Total: 8
 
 ## DBB-004 Verification
@@ -10,7 +10,8 @@
 - [PASS] setup.sh exists
 - [PASS] setup.sh has shebang
 - [PASS] setup.sh has set -e
-- [PASS] errors when node not found (PATH without node)
+- [FAIL] errors when node not found (PATH without node): Expected Node.js error message, got: Error: install nvm (https://nvm.sh) or Homebrew, then re-run
+
 - [PASS] script checks Node.js >= 18
 - [PASS] script runs npm install
 - [PASS] script starts agentic-service
