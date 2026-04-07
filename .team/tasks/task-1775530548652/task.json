@@ -4,11 +4,11 @@
   "description": "Add server-side voice activity detection to filter silence before audio reaches STT/LLM pipeline. Silence frames should be dropped server-side, not just client-side via useVAD.js.",
   "status": "todo",
   "priority": "P0",
-  "assignee": "developer-2",
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m76",
   "hasDesign": true,
   "created": "2026-04-07T02:55:48.652Z",
-  "updated": "2026-04-07T03:08:45.423Z",
+  "updated": "2026-04-07T03:25:26.628Z",
   "milestoneId": "m76"
 }

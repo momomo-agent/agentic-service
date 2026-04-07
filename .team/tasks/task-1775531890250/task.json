@@ -4,11 +4,11 @@
   "description": "Audit README.md for completeness: ensure it covers npx install, Docker, configuration, API endpoints, and hardware requirements as specified in architecture. Fill any missing sections.",
   "status": "todo",
   "priority": "P1",
-  "assignee": null,
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m81",
   "hasDesign": true,
   "created": "2026-04-07T03:18:10.250Z",
-  "updated": "2026-04-07T03:22:33.384Z",
+  "updated": "2026-04-07T03:26:49.222Z",
   "milestoneId": "m81"
 }

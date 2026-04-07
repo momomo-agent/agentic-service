@@ -8,6 +8,7 @@ Close remaining DBB partial gaps: cpu-only profile, server-side VAD, optimizer.j
 - task-1775530548652: Implement server-side VAD silence suppression (P1)
 - task-1775530556380: Fix optimizer.js hardware optimization logic (P1)
 - task-1775530233859: LAN tunnel via ngrok or cloudflare (P2)
+- task-1775532350028: Implement CDN profiles.json 7-day cache staleness refresh (P1)
 
 ## Acceptance Criteria
 - profiles/default.json has cpu-only profile with model recommendations
