@@ -20207,3 +20207,29 @@
 {"ts":"2026-04-07T16:19:08.505Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 25min (active:3, done:204)\"}"}}
 {"ts":"2026-04-07T16:19:40.831Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":8,"cpuUser":2.715147,"cpuSystem":4.539155}}}
 {"ts":"2026-04-07T16:19:40.832Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Claimed task-1775573593682, confirmed server startup blocked by agentic-sense default import bug in "}}
+{"ts":"2026-04-07T16:19:41.237Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 7"}}
+{"ts":"2026-04-07T16:19:41.266Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T16:19:41.266Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":6,"memoryTotalMB":14,"cpuUser":2.771572,"cpuSystem":4.728103}}}
+{"ts":"2026-04-07T16:20:08.510Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 26min (active:3, done:204)"}}
+{"ts":"2026-04-07T16:20:08.511Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 26min (active:3, done:204)\"}"}}
+{"ts":"2026-04-07T16:20:38.242Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"72MB\",\"heapUsed\":\"4MB\",\"uptime\":\"4200s\"}"}}
+{"ts":"2026-04-07T16:20:38.516Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (70min), skipping","performance":{"memoryMB":13,"memoryTotalMB":16,"cpuUser":2.803994,"cpuSystem":4.77718}}}
+{"ts":"2026-04-07T16:21:08.513Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 27min (active:3, done:204)"}}
+{"ts":"2026-04-07T16:21:08.513Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 27min (active:3, done:204)\"}"}}
+{"ts":"2026-04-07T16:21:29.052Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775573593682","from":"blocked","to":"todo","title":"Verify npx agentic-service one-command startup"}}
+{"ts":"2026-04-07T16:21:36.519Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":8,"cpuUser":2.826175,"cpuSystem":4.802892}}}
+{"ts":"2026-04-07T16:21:36.519Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Reviewed m89/m90 task states. Unblocked npx startup task (task-1775573593682) which had no blockedBy"}}
+{"ts":"2026-04-07T16:21:36.580Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T16:21:36.580Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-07T16:21:36.580Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-07T16:21:36.581Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-07T16:21:36.581Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":2.840028,"cpuSystem":4.851506}}}
+{"ts":"2026-04-07T16:21:36.581Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-07T16:21:36.582Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":2.840517,"cpuSystem":4.851977}}}
+{"ts":"2026-04-07T16:21:36.582Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":2.840629,"cpuSystem":4.852276}}}
+{"ts":"2026-04-07T16:21:38.514Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 27min (active:4, done:204)"}}
+{"ts":"2026-04-07T16:21:38.514Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 27min (active:4, done:204)\"}"}}
+{"ts":"2026-04-07T16:22:08.516Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 28min (active:4, done:204)"}}
+{"ts":"2026-04-07T16:22:08.517Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 28min (active:4, done:204)\"}"}}
+{"ts":"2026-04-07T16:22:10.017Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":13,"cpuUser":2.877664,"cpuSystem":4.902451}}}
+{"ts":"2026-04-07T16:22:10.018Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No claimable tasks available. All todo tasks with hasDesign=true are either assigned or completed. t"}}

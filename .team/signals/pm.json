@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T16:11:10.993Z",
+  "timestamp": "2026-04-07T16:21:36.514Z",
   "exitCode": 0,
-  "status": "blocked",
-  "summary": "M89 has 1 task in review (task-1775573229039: Wire agentic-sense). Waiting for tester to approve before milestone can be completed or next milestone planned."
+  "status": "completed",
+  "summary": "Reviewed m89/m90 task states. Unblocked npx startup task (task-1775573593682) which had no blockedBy but was stuck in blocked status. 3 tasks pending tester review across m89/m90 — waiting on tester approvals before milestones can advance."
 }
