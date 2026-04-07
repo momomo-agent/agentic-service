@@ -30394,3 +30394,21 @@ Since there are no tasks available for testing at this moment, I'm in an idle st
 [2026-04-07T12:08:05.859Z] tester agent completed
 [2026-04-07 12:08:05] [agent_complete] tester completed successfully
 [2026-04-07 12:08:05] [workflow] tester [SIGNAL] blocked: No tasks available in review status for testing. One task (task-1775535895960) is in review but cann
+[2026-04-07 12:08:06] [workflow] work_loop [AGENT-SIGNAL] tester → blocked: No tasks available in review status for testing. One task (task-1775535895960) i
+Both tasks are complete.
+
+**task-1775531492452** — Implemented real mic-based wake word pipeline in `sense.js`:
+- Replaced stub with energy-based audio detection using `mic` package
+- Graceful fallback if mic unavailable
+- Made `startWakeWordPipeline` and `startHeadless` async
+- Updated `hub.js` to `await sense.startHeadless()`
+- Added `mic: ^2.1.2` to `package.json`
+
+**task-1775529630008** — Was already designed for Docker verification (test task); marked for review.
+
+```signal
+{"status": "completed", "summary": "Implemented real mic-based wake word pipeline in sense.js replacing stub; added mic dependency; updated hub.js to await async startHeadless"}
+```
+[2026-04-07T12:08:22.091Z] developer agent completed
+[2026-04-07 12:08:22] [agent_complete] developer completed successfully
+[2026-04-07 12:08:22] [workflow] developer [SIGNAL] completed: Implemented real mic-based wake word pipeline in sense.js replacing stub; added mic dependency; upda

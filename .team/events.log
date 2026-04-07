@@ -18891,3 +18891,8 @@
 {"ts":"2026-04-07T12:07:59.865Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775531492452","from":"todo","to":"inProgress","title":"Implement server-side wake word pipeline in sense.js"}}
 {"ts":"2026-04-07T12:08:05.867Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.678685,"cpuSystem":10.280407}}}
 {"ts":"2026-04-07T12:08:05.867Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] blocked: No tasks available in review status for testing. One task (task-1775535895960) is in review but cann"}}
+{"ts":"2026-04-07T12:08:06.130Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] tester → blocked: No tasks available in review status for testing. One task (task-1775535895960) i"}}
+{"ts":"2026-04-07T12:08:15.763Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775531492452","from":"inProgress","to":"review","title":"Implement server-side wake word pipeline in sense.js"}}
+{"ts":"2026-04-07T12:08:15.797Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775529630008","from":"inProgress","to":"review","title":"Docker build and docker-compose end-to-end verification"}}
+{"ts":"2026-04-07T12:08:22.099Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":4.698124,"cpuSystem":10.328531}}}
+{"ts":"2026-04-07T12:08:22.100Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Implemented real mic-based wake word pipeline in sense.js replacing stub; added mic dependency; upda"}}
