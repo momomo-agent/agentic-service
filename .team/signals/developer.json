@@ -1,7 +1,7 @@
 {
   "agent": "developer",
-  "timestamp": "2026-04-07T11:03:36.073Z",
+  "timestamp": "2026-04-07T11:05:40.256Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Fixed npx bin entrypoint - resolved JSON syntax error and import issues"
+  "status": "blocked",
+  "summary": "No claimable tasks available. task-1775536619023 is blocked by task-1775538907396 (in review). task-1775536622791 is blocked by task-1775538907092 (in review). Waiting for review tasks to complete."
 }
