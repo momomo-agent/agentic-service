@@ -1,10 +1,10 @@
 {
-  "totalTests": 8,
-  "passed": 6,
-  "failed": 2,
+  "totalTests": 5,
+  "passed": 4,
+  "failed": 1,
   "edgeCases": [
-    "adapters/sense.js uses default import but agentic-sense has no default export",
-    "sense.js load blocked by adapter import error"
+    "agentic-sense has no default export — adapters/sense.js uses default import which fails at runtime",
+    "src/runtime/sense.js cannot load due to adapter import error"
   ],
-  "coverage": "75%"
+  "coverage": "80%"
 }

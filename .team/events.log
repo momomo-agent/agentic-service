@@ -20308,3 +20308,10 @@
 {"ts":"2026-04-07T16:34:00.788Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] developer → blocked: task-1775573593682 is blocked by task-1775573229039 (still in testing). No other"}}
 {"ts":"2026-04-07T16:34:31.549Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":22,"memoryTotalMB":28,"cpuUser":0.178176,"cpuSystem":0.327553}}}
 {"ts":"2026-04-07T16:34:31.549Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] blocked: No claimable tasks — both review tasks (task-1775573586694, task-1775575363327) returned canClaim: f"}}
+{"ts":"2026-04-07T16:34:33.839Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775573229039","from":"testing","to":"blocked","title":"Wire agentic-sense as external npm package"}}
+{"ts":"2026-04-07T16:34:38.873Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775573586694","from":"review","to":"testing","title":"Implement wake word server-side audio pipeline"}}
+{"ts":"2026-04-07T16:34:38.909Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775575363327","from":"review","to":"testing","title":"Fix tunnel.js export and re-verify LAN tunnel + HTTPS cert"}}
+{"ts":"2026-04-07T16:36:32.189Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775573586694","from":"testing","to":"done","title":"Implement wake word server-side audio pipeline"}}
+{"ts":"2026-04-07T16:36:32.221Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775575363327","from":"testing","to":"done","title":"Fix tunnel.js export and re-verify LAN tunnel + HTTPS cert"}}
+{"ts":"2026-04-07T16:36:33.908Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":0.242777,"cpuSystem":0.46421}}}
+{"ts":"2026-04-07T16:36:33.908Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] blocked: task-1775573229039 blocked: adapters/sense.js uses default import from agentic-sense but package has"}}
