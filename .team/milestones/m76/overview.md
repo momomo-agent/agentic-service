@@ -1,14 +1,16 @@
-# M76: Architecture Compliance — agentic-store + agentic-embed External Packages
+# M76: cpu-only Profile + Server-Side VAD + optimizer.js Fix
 
-## Goal
-Wire `agentic-store` and `agentic-embed` as external package dependencies per architecture spec.
-
-## Scope
-- Replace local `src/store/index.js` with `agentic-store` package import
-- Replace local `src/runtime/embed.js` with `agentic-embed` package import
-- Verify package.json lists both as dependencies
+## Goals
+- Add cpu-only hardware profile to profiles/default.json
+- Implement server-side VAD silence suppression
+- Fix optimizer.js to contain hardware optimization logic
 
 ## Acceptance Criteria
-- `import ... from 'agentic-store'` resolves at runtime
-- `import ... from 'agentic-embed'` resolves at runtime
-- No local stub fallback for these modules
+- profiles/default.json has cpu-only profile with model recommendations
+- Server-side VAD drops silence frames before STT/LLM pipeline
+- optimizer.js returns hardware-based model config (not ollama setup code)
+
+## Gaps Addressed
+- DBB partial: profiles/default.json missing cpu-only profile
+- DBB missing: server-side VAD silence suppression
+- DBB missing: optimizer.js hardware optimization logic

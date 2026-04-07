@@ -1,7 +1,7 @@
 {
-  "totalTests": 9,
-  "passed": 9,
+  "totalTests": 12,
+  "passed": 12,
   "failed": 0,
-  "edgeCases": ["nvidia vram=0 edge case not tested"],
+  "edgeCases": ["nvidia vram=0 edge case not tested", "m16-coverage.test.js checks package.json for thresholds but config lives in vitest.config.js"],
   "coverage": "100%"
 }

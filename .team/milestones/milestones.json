@@ -888,11 +888,12 @@
     },
     {
       "id": "m76",
-      "name": "M76: Architecture Compliance — agentic-store + agentic-embed External Packages",
+      "name": "M76: cpu-only Profile + Server-Side VAD + optimizer.js Fix",
       "status": "active",
       "tasks": [
-        "task-1775530445802",
-        "task-1775530472792"
+        "task-1775530542647",
+        "task-1775530548652",
+        "task-1775530556380"
       ],
       "created": "2026-04-07T02:53:53.171Z"
     }

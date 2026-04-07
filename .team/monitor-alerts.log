@@ -1518,3 +1518,5 @@
 {"time":"2026-04-07T02:46:45.101Z","type":"no_progress","message":"No progress for 6min (active:16, done:142)"}
 {"time":"2026-04-07T02:47:06.472Z","type":"no_progress","message":"No progress for 7min (active:17, done:142)"}
 {"time":"2026-04-07T02:47:15.082Z","type":"no_progress","message":"No progress for 7min (active:17, done:142)"}
+{"time":"2026-04-07T02:57:36.763Z","type":"no_progress","message":"No progress for 5min (active:10, done:147)"}
+{"time":"2026-04-07T02:57:45.166Z","type":"no_progress","message":"No progress for 5min (active:10, done:147)"}

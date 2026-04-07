@@ -20763,3 +20763,117 @@ No new milestones needed at this time. All identified gaps are covered by active
 No more `todo` tasks with `hasDesign=true` are available. All eligible tasks have been completed or are in progress by other agents. I'm done for this session.
 [2026-04-07T02:55:31.465Z] developer agent completed
 [2026-04-07 02:55:31] [agent_complete] developer completed successfully
+Done. Here's what was completed:
+
+**M75 milestone files created:**
+- `.team/milestones/m75/dbb.md` — verification criteria for both tasks
+- `.team/milestones/m75/design.md` — technical approach overview
+
+**Task designs created:**
+- `task-1775530134599` (CDN staleness) — existing `profiles.js` already implements 7-day check correctly; design specifies 3 unit tests to verify the behavior
+- `task-1775530233859` (LAN tunnel) — new `src/tunnel.js` using `ngrok` or `cloudflared` system binaries, plus `"tunnel"` script in `package.json`
+
+Both tasks marked `hasDesign: true`.
+[2026-04-07T02:56:25.225Z] tech_lead-3 agent completed
+[2026-04-07 02:56:25] [agent_complete] tech_lead-3 completed successfully
+M76 is now set up. Here's the current state:
+
+**M76: cpu-only Profile + Server-Side VAD + optimizer.js Fix**
+- `task-1775530542647` [todo] P1 — Add cpu-only profile to profiles/default.json
+- `task-1775530548652` [todo] P0 — Implement server-side VAD silence suppression
+- `task-1775530556380` [todo] P0 — Fix optimizer.js hardware optimization logic
+
+**Active milestones summary:**
+- **m72**: 2 tasks in `review` — waiting on tester
+- **m74**: 3 in-progress/inProgress + 1 todo — active development
+- **m75**: 2 todo (CDN staleness, LAN tunnel)
+- **m76**: 3 todo (new, targeting DBB missing/partial gaps)
+
+No action needed on m72 review tasks — those are the tester's call.
+[2026-04-07T02:56:33.372Z] pm agent completed
+[2026-04-07 02:56:33] [agent_complete] pm completed successfully
+[2026-04-07 02:56:33] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:56:33] [workflow] work_loop [LOOP] Iteration 33
+[2026-04-07 02:56:33] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:56:33] [agent_start] pm pm
+[2026-04-07T02:56:33.780Z] Running pm agent...
+PM status summary:
+
+**Active milestones:**
+
+| Milestone | Tasks | Status |
+|-----------|-------|--------|
+| m72 | 2 done, 1 review, 1 testing, 1 todo→assigned | Waiting on testers |
+| m74 | 2 in-progress, 1 testing, 1 review | Waiting on testers/devs |
+| m75 | 2 todo→assigned (CDN staleness, LAN tunnel) | Developer assigned |
+| m76 | 3 todo→assigned (cpu-only profile, server VAD P0, optimizer P0) | Developer assigned |
+
+**Gap coverage after this session:**
+- dbb 62% → targeting: server VAD (missing→P0), optimizer (missing→P0), cpu-only profile, Docker, SIGINT, coverage, setup.sh
+- vision 75% → targeting: LAN tunnel, npx entrypoint (in m72)
+- architecture 78% → targeting: agentic-sense/voice wiring (m72 testing), package.json imports map (m72 todo)
+
+**Waiting (cannot act):** m72 and m74 have tasks in `review`/`testing` — testers must approve before milestones can be marked complete.
+[2026-04-07T02:56:35.673Z] pm agent completed
+[2026-04-07 02:56:35] [agent_complete] pm completed successfully
+[2026-04-07 02:56:35] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:56:35] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2, tech_lead-3
+[2026-04-07 02:56:35] [agent_start] tech_lead-1 tech_lead
+[2026-04-07 02:56:35] [agent_start] tech_lead-2 tech_lead
+[2026-04-07 02:56:35] [agent_start] tech_lead-3 tech_lead
+[2026-04-07T02:56:35.830Z] Running tech_lead-2 agent...
+[2026-04-07T02:56:35.830Z] Running tech_lead-1 agent...
+[2026-04-07T02:56:35.830Z] Running tech_lead-3 agent...
+All done. Here's a summary of what was completed:
+
+**Designs written (3 new):**
+- `task-1775530235262` — agentic-sense imports map verification (already correct in package.json)
+- `task-1775530445802` — agentic-store package dependency verification
+- `task-1775530472792` — agentic-embed package dependency verification
+
+**M76 milestone files created:**
+- `.team/milestones/m76/dbb.md` — 5 verification criteria
+- `.team/milestones/m76/design.md` — technical approach
+
+**hasDesign updated:** all 3 tasks set to `true`
+
+**Note:** The existing designs for `task-1775530134599` (CDN staleness) and `task-1775530233859` (LAN tunnel) were already complete — no changes needed.
+[2026-04-07T02:56:48.403Z] tech_lead-1 agent completed
+[2026-04-07 02:56:48] [agent_complete] tech_lead-1 completed successfully
+M77 is created and ready. Here's the summary:
+
+**M77: Server-side VAD + Hardware Optimizer + CPU-only Profile**
+
+| Task | Priority | Status |
+|------|----------|--------|
+| Server-side VAD silence suppression | P0 | todo |
+| Fix optimizer.js hardware-adaptive config output | P0 | todo |
+| Add cpu-only profile to profiles/default.json | P1 | todo |
+
+**Active milestones status:**
+- **m72** — waiting on 1 review + 1 testing + 1 todo
+- **m74** — 2 in-progress, 1 testing, 1 review
+- **m75** — 2 todo (CDN staleness, LAN tunnel)
+- **m77** — 3 todo (new, targeting missing gaps)
+
+No milestones can be marked complete yet — m72/m74 still have tasks in review/testing. Waiting for testers to clear those before advancing.
+[2026-04-07T02:57:36.375Z] pm agent completed
+[2026-04-07 02:57:36] [agent_complete] pm completed successfully
+[2026-04-07 02:57:36] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 02:57:36] [workflow] work_loop [LOOP] Iteration 88
+[2026-04-07 02:57:36] [workflow] work_loop [EXEC] pm
+[2026-04-07 02:57:36] [agent_start] pm pm
+[2026-04-07 02:57:36] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:10, done:147)
+[2026-04-07T02:57:36.780Z] Running pm agent...
+[2026-04-07 02:57:45] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:10, done:147)
+Task complete. Here's a summary:
+
+**task-1775529637595: Test coverage >=98% threshold enforcement**
+
+- Verified `vitest.config.js` has all four thresholds (lines/functions/branches/statements) set to 98%
+- Wrote 3 tests in `test/m74-coverage-threshold.test.js` — all passed
+- Task marked **done**
+
+The other review task (`task-1775528544066` — README completeness) could not be claimed, likely already assigned to another tester.
+[2026-04-07T02:58:02.956Z] tester-1 agent completed
+[2026-04-07 02:58:02] [agent_complete] tester-1 completed successfully
