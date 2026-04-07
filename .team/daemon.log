@@ -26500,3 +26500,35 @@ No tasks are currently in 'review' status. There's nothing for me to test right 
 I'll wait for the developer to submit tasks for review before proceeding.
 [2026-04-07T04:17:27.470Z] tester agent completed
 [2026-04-07 04:17:27] [agent_complete] tester completed successfully
+[2026-04-07 04:17:27] [workflow] milestone_qg [EXEC] pm
+[2026-04-07 04:17:27] [agent_start] pm 管理任务和里程碑
+[2026-04-07T04:17:27.685Z] Running pm agent...
+All 5 previously-todo tasks are now `in-progress` with active assignees:
+
+- `task-1775529630008` — Docker verification → `developer` (P1)
+- `task-1775529637561` — SIGINT graceful drain → `tech_lead-3` (P0) ← reassigned
+- `task-1775530542647` — cpu-only profile → `tech_lead-2` (P1)
+- `task-1775531492452` — wake word pipeline → `tech_lead-3` (P1)
+- `task-1775534863944` — voice latency benchmark → `tech_lead-2` (P1)
+
+**Active milestones status:**
+
+| Milestone | Done | In-Progress | Remaining |
+|-----------|------|-------------|-----------|
+| m74 | 2 | 2 | 0 |
+| m76 | 3 | 1 | 0 |
+| m80 | 1 | 2 | 0 |
+
+All tasks are covered. No new tasks needed — the gaps are fully mapped to in-progress work. Waiting for agents to complete and move tasks to review/done before milestone completion can be assessed.
+[2026-04-07T04:17:31.336Z] pm agent completed
+[2026-04-07 04:17:31] [agent_complete] pm completed successfully
+[2026-04-07 04:17:31] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-07 04:17:31] [workflow] work_loop [BRANCH] doneCount > 0 → true → milestone_qg
+[2026-04-07 04:17:31] [workflow] work_loop [EXIT] todoCount == 0 && designedTasks == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 && blockedCount == 0 → milestone_qg
+[2026-04-07 04:17:31] [agent_start] milestone_qg [NODE] milestone_qg - 里程碑 QG — 对照 DBB 验收
+[2026-04-07 04:17:31] [workflow] milestone_qg [EXEC] tester
+[2026-04-07 04:17:31] [agent_start] tester tester
+[2026-04-07T04:17:31.527Z] Running tester agent...
+No tasks are in `review` status and all `in-progress` tasks are claimed by other agents. I'll wait for a task to become available for testing.
+[2026-04-07T04:18:09.102Z] tester agent completed
+[2026-04-07 04:18:09] [agent_complete] tester completed successfully

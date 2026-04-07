@@ -1,18 +1,18 @@
-# M82: DBB Compliance — Optimizer, CPU Profile, Docker, SIGINT, Coverage
+# M82: DBB Compliance — Optimizer, VAD, Coverage, Setup, CDN Cache
 
 ## Goals
-Close remaining DBB gaps to raise match from 62% toward 80%+.
+Close remaining DBB gaps cancelled in prior milestones.
 
 ## Scope
-1. Fix optimizer.js to output hardware-adaptive config (not ollama setup code)
-2. Add cpu-only profile to profiles/default.json
-3. Verify Docker end-to-end build and run
-4. Implement SIGINT graceful drain for in-flight requests
-5. Confirm vitest coverage threshold ≥98%
+- Fix optimizer.js hardware-adaptive config (DBB: missing, P0)
+- Server-side VAD silence suppression (DBB: missing, P0)
+- vitest coverage threshold >=98% (DBB: partial, P0)
+- setup.sh Node.js detection + idempotency (DBB: partial, P1)
+- CDN profiles.json 7-day cache staleness check (DBB: partial, P1)
 
 ## Acceptance Criteria
-- optimizer.js returns hardware-adaptive config object based on detected hardware
-- profiles/default.json includes cpu-only entry alongside apple-silicon and nvidia
-- `docker-compose up` builds and serves /api/status without error
-- SIGINT during active request drains response before exit
-- vitest.config.js coverage threshold set to 98 and passes
+- optimizer.js returns adaptive config based on GPU/CPU/memory
+- VAD filters silence before STT pipeline
+- vitest --coverage fails below 98%
+- setup.sh is idempotent and skips existing Node.js
+- profiles.js refreshes CDN cache after 7 days

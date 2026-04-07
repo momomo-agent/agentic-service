@@ -11141,3 +11141,14 @@
 {"ts":"2026-04-07T04:17:03.635Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":13,"memoryTotalMB":17,"cpuUser":4.900471,"cpuSystem":9.651147}}}
 {"ts":"2026-04-07T04:17:25.372Z","type":"task_status","agent":"tech_lead-3","data":{"taskId":"task-1775529637561","from":"in-progress","to":"done","title":"SIGINT graceful drain during in-flight requests"}}
 {"ts":"2026-04-07T04:17:27.473Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":4.917947,"cpuSystem":9.681251}}}
+{"ts":"2026-04-07T04:17:27.661Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-07T04:17:27.661Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":4.930089,"cpuSystem":9.725282}}}
+{"ts":"2026-04-07T04:17:31.340Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":11,"cpuUser":28.781513,"cpuSystem":81.777594}}}
+{"ts":"2026-04-07T04:17:31.401Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-07T04:17:31.448Z","type":"workflow","agent":"work_loop","data":{"details":"[BRANCH] doneCount > 0 → true → milestone_qg"}}
+{"ts":"2026-04-07T04:17:31.449Z","type":"workflow","agent":"work_loop","data":{"details":"[EXIT] todoCount == 0 && designedTasks == 0 && reviewCount == 0 && inProgressCount == 0 && testingCount == 0 && blockedCount == 0 → milestone_qg"}}
+{"ts":"2026-04-07T04:17:31.449Z","type":"agent_start","agent":"milestone_qg","data":{"details":"[NODE] milestone_qg - 里程碑 QG — 对照 DBB 验收","performance":{"memoryMB":9,"memoryTotalMB":18,"cpuUser":28.803966,"cpuSystem":81.864222}}}
+{"ts":"2026-04-07T04:17:31.502Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-07T04:17:31.502Z","type":"agent_start","agent":"tester","data":{"details":"tester","performance":{"memoryMB":8,"memoryTotalMB":18,"cpuUser":28.814362,"cpuSystem":81.906807}}}
+{"ts":"2026-04-07T04:18:09.105Z","type":"task_created","agent":null,"data":{"taskId":"task-1775535489083","title":"Refactor optimizer.js: hardware-adaptive config output","priority":"P1","group":"m82"}}
+{"ts":"2026-04-07T04:18:09.169Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":16,"memoryTotalMB":24,"cpuUser":28.828295,"cpuSystem":81.948402}}}
