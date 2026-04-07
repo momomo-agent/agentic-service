@@ -30479,3 +30479,27 @@ All sections follow the existing format and the verification check passed (4 key
 [2026-04-07T12:11:48.068Z] developer agent completed
 [2026-04-07 12:11:48] [agent_complete] developer completed successfully
 [2026-04-07 12:11:48] [workflow] developer [SIGNAL] completed: Documented tunnel, CLI, VAD, HTTPS modules in ARCHITECTURE.md with 4 new sections
+Now I understand the issue! The `canClaimTask` function only allows claiming tasks with status `'todo'` or `'inProgress'`, but NOT `'review'`. This is a workflow design issue - tasks in review status cannot be claimed by testers according to the current logic.
+
+This appears to be a fundamental workflow problem. Tasks should either:
+1. Have their assignee cleared when moving to review status, OR
+2. The canClaimTask logic should allow claiming review tasks
+
+However, according to my instructions, I should NOT submit a CR for workflow/tooling issues. Let me check if there's a workaround or if I should report this as blocked.
+
+Looking at my instructions again, I see that the workflow expects tasks in 'review' status to be available for testers. But the can-claim logic prevents this. This is a tooling/infrastructure issue, not a requirements issue.
+
+According to my problem-solving hierarchy:
+1. Report bugs - this is a workflow bug
+2. Work around - I cannot work around this
+3. Skip and pick another task - there are no other tasks
+4. Submit CR - only for requirements issues, not tooling
+
+Since this is a workflow/tooling bug and I cannot proceed, I should report as blocked.
+
+```signal
+{"status": "blocked", "summary": "Cannot claim any review tasks - canClaimTask() only allows 'todo'/'inProgress' status, but all 3 review tasks (task-1775529630008, task-1775531492452, task-1775535895960) have status='review'. Workflow bug: tasks keep developer assignee when moved to review, and can-claim logic doesn't allow claiming review-status tasks."}
+```
+[2026-04-07T12:12:07.665Z] tester-2 agent completed
+[2026-04-07 12:12:07] [agent_complete] tester-2 completed successfully
+[2026-04-07 12:12:07] [workflow] tester-2 [SIGNAL] blocked: Cannot claim any review tasks - canClaimTask() only allows 'todo'/'inProgress' status, but all 3 rev
