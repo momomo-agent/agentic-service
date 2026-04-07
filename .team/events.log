@@ -20235,3 +20235,20 @@
 {"ts":"2026-04-07T16:22:10.018Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No claimable tasks available. All todo tasks with hasDesign=true are either assigned or completed. t"}}
 {"ts":"2026-04-07T16:22:26.683Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":13,"cpuUser":2.883486,"cpuSystem":4.912005}}}
 {"ts":"2026-04-07T16:22:26.684Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: No claimable tasks available — all review tasks already claimed, no new tasks assigned to tester-1"}}
+{"ts":"2026-04-07T16:22:38.615Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775573593682","from":"todo","to":"testing","title":"Verify npx agentic-service one-command startup"}}
+{"ts":"2026-04-07T16:23:08.523Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 29min (active:4, done:204)"}}
+{"ts":"2026-04-07T16:23:08.523Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 29min (active:4, done:204)\"}"}}
+{"ts":"2026-04-07T16:24:08.522Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 30min (active:4, done:204)"}}
+{"ts":"2026-04-07T16:24:08.522Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 30min (active:4, done:204)\"}"}}
+{"ts":"2026-04-07T16:25:08.612Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 31min (active:4, done:204)"}}
+{"ts":"2026-04-07T16:25:08.612Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 31min (active:4, done:204)\"}"}}
+{"ts":"2026-04-07T16:25:38.244Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"61MB\",\"heapUsed\":\"4MB\",\"uptime\":\"4500s\"}"}}
+{"ts":"2026-04-07T16:26:08.523Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 32min (active:4, done:204)"}}
+{"ts":"2026-04-07T16:26:08.523Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 32min (active:4, done:204)\"}"}}
+{"ts":"2026-04-07T16:27:08.535Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 33min (active:4, done:204)"}}
+{"ts":"2026-04-07T16:27:08.535Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 33min (active:4, done:204)\"}"}}
+{"ts":"2026-04-07T16:28:08.905Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 34min (active:4, done:204)"}}
+{"ts":"2026-04-07T16:28:08.906Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 34min (active:4, done:204)\"}"}}
+{"ts":"2026-04-07T16:28:11.310Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775573593682","from":"testing","to":"blocked","title":"Verify npx agentic-service one-command startup"}}
+{"ts":"2026-04-07T16:28:17.834Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":9,"cpuUser":3.108464,"cpuSystem":5.256121}}}
+{"ts":"2026-04-07T16:28:17.834Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Tested npx startup — 2/4 tests pass, blocked by sense.js default import bug in src/runtime/adapters/"}}
