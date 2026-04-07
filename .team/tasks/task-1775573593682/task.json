@@ -1,14 +1,16 @@
 {
   "id": "task-1775573593682",
   "title": "Verify npx agentic-service one-command startup",
-  "description": "Run npx agentic-service end-to-end and confirm server starts without errors. Fix any bin entrypoint issues.",
-  "status": "blocked",
+  "description": "Fix bin entrypoint so npx agentic-service starts without errors. Depends on agentic-sense wiring being complete. After fix, tester-2 will verify end-to-end startup.",
+  "status": "todo",
   "priority": "P1",
-  "assignee": "tester-2",
-  "blockedBy": [],
+  "assignee": "developer",
+  "blockedBy": [
+    "task-1775573229039"
+  ],
   "groupId": "m90",
   "hasDesign": true,
   "created": "2026-04-07T14:53:13.682Z",
-  "updated": "2026-04-07T16:28:11.309Z",
+  "updated": "2026-04-07T16:28:56.194Z",
   "milestoneId": "m90"
 }
