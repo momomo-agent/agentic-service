@@ -1,10 +1,13 @@
 {
-  "totalTests": 14,
-  "passed": 14,
-  "failed": 0,
+  "totalTests": 20,
+  "passed": 19,
+  "failed": 1,
   "edgeCases": [
-    "Architecture score (12%) depends on 2 blocking tasks still in_progress",
-    "DBB score (81%) affected by test pass rate and agentic-sense wiring issues"
+    "Architecture score (12%) is stale — ARCHITECTURE.md has sections 5-8 (Tunnel, CLI, VAD, HTTPS) but architecture.json not updated",
+    "ARCHITECTURE.md lines 191-252 contain stale CR content not cleaned by task-1775612739625",
+    "ARCHITECTURE.md directory tree missing ~8 source files (profiler.js, latency-log.js, adapters/, cert.js, httpsServer.js, middleware.js, store/index.js, tunnel.js, cli/)",
+    "DBB score (81%) affected by test pass rate (81.7%) and agentic-sense wiring issues",
+    "m90-cloud-fallback.test.js uses process.exit incompatible with vitest runner"
   ],
-  "coverage": "100%"
+  "coverage": "95%"
 }
