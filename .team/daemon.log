@@ -36694,3 +36694,14 @@ All tasks are either `done` or `cancelled` — there are no tasks in `review`, `
 [2026-04-08T03:26:18.284Z] tester agent completed
 [2026-04-08 03:26:18] [agent_complete] tester completed successfully
 [2026-04-08 03:26:18] [workflow] tester [SIGNAL] completed: No tasks in review/testing status found — all tasks are already done or cancelled. Nothing to test.
+[2026-04-08 03:26:18] [workflow] milestone_qg [EXEC] pm
+[2026-04-08 03:26:18] [agent_start] pm 管理任务和里程碑
+[2026-04-08T03:26:18.555Z] Running pm agent...
+No tasks available for testing — all 572 tasks are either `done` (231) or `cancelled` (341). There are no tasks in `review` or `testing` status.
+
+```signal
+{"status": "completed", "summary": "No tasks in 'review' status. All 231 active tasks are 'done' and 341 are 'cancelled'. Nothing to test."}
+```
+[2026-04-08T03:26:27.374Z] tester agent completed
+[2026-04-08 03:26:27] [agent_complete] tester completed successfully
+[2026-04-08 03:26:27] [workflow] tester [SIGNAL] completed: No tasks in 'review' status. All 231 active tasks are 'done' and 341 are 'cancelled'. Nothing to tes

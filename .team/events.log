@@ -22122,3 +22122,7 @@
 {"ts":"2026-04-08T03:25:55.469Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":12,"memoryTotalMB":19,"cpuUser":6.870217,"cpuSystem":16.959996}}}
 {"ts":"2026-04-08T03:26:18.287Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":12,"memoryTotalMB":19,"cpuUser":6.870679,"cpuSystem":16.960614}}}
 {"ts":"2026-04-08T03:26:18.288Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: No tasks in review/testing status found — all tasks are already done or cancelled. Nothing to test."}}
+{"ts":"2026-04-08T03:26:18.529Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-08T03:26:18.530Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":10,"memoryTotalMB":15,"cpuUser":6.884223,"cpuSystem":17.009959}}}
+{"ts":"2026-04-08T03:26:27.376Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":13,"cpuUser":6.901419,"cpuSystem":17.033279}}}
+{"ts":"2026-04-08T03:26:27.379Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: No tasks in 'review' status. All 231 active tasks are 'done' and 341 are 'cancelled'. Nothing to tes"}}
