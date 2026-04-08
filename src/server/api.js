@@ -130,6 +130,86 @@ function addRoutes(r) {
   });
   // ─── End OpenAI-compatible API ───────────────────────────
 
+  // ─── Anthropic-compatible API ──────────────────────────────
+  r.post('/v1/messages', async (req, res) => {
+    const { model, messages = [], system, stream = false, max_tokens = 4096 } = req.body;
+    if (!messages.length) return res.status(400).json({ type: 'error', error: { type: 'invalid_request_error', message: 'messages is required' } });
+
+    // Convert Anthropic format to OpenAI-style messages for internal chat()
+    const chatMessages = [];
+    if (system) {
+      const sysText = typeof system === 'string' ? system : system.map(b => b.text).join('\n');
+      chatMessages.push({ role: 'system', content: sysText });
+    }
+    for (const msg of messages) {
+      const content = typeof msg.content === 'string'
+        ? msg.content
+        : msg.content.filter(b => b.type === 'text').map(b => b.text).join('');
+      chatMessages.push({ role: msg.role, content });
+    }
+
+    const msgId = `msg_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`;
+    const modelName = model || 'agentic-service';
+
+    if (stream) {
+      res.setHeader('Content-Type', 'text/event-stream');
+      res.setHeader('Cache-Control', 'no-cache');
+      res.setHeader('Connection', 'keep-alive');
+      try {
+        // message_start
+        res.write(`event: message_start\ndata: ${JSON.stringify({
+          type: 'message_start',
+          message: { id: msgId, type: 'message', role: 'assistant', content: [], model: modelName, stop_reason: null, stop_sequence: null, usage: { input_tokens: 0, output_tokens: 0 } }
+        })}\n\n`);
+
+        // content_block_start
+        res.write(`event: content_block_start\ndata: ${JSON.stringify({ type: 'content_block_start', index: 0, content_block: { type: 'text', text: '' } })}\n\n`);
+
+        let outputTokens = 0;
+        for await (const chunk of chat(chatMessages)) {
+          if (chunk.type === 'content') {
+            const text = chunk.content ?? chunk.text ?? '';
+            outputTokens += Math.ceil(text.length / 4); // rough estimate
+            res.write(`event: content_block_delta\ndata: ${JSON.stringify({ type: 'content_block_delta', index: 0, delta: { type: 'text_delta', text } })}\n\n`);
+          }
+        }
+
+        // content_block_stop
+        res.write(`event: content_block_stop\ndata: ${JSON.stringify({ type: 'content_block_stop', index: 0 })}\n\n`);
+
+        // message_delta
+        res.write(`event: message_delta\ndata: ${JSON.stringify({ type: 'message_delta', delta: { stop_reason: 'end_turn', stop_sequence: null }, usage: { output_tokens: outputTokens } })}\n\n`);
+
+        // message_stop
+        res.write(`event: message_stop\ndata: ${JSON.stringify({ type: 'message_stop' })}\n\n`);
+      } catch (error) {
+        res.write(`event: error\ndata: ${JSON.stringify({ type: 'error', error: { type: 'server_error', message: error.message } })}\n\n`);
+      }
+      res.end();
+    } else {
+      try {
+        const chunks = [];
+        for await (const chunk of chat(chatMessages)) {
+          if (chunk.type === 'content') chunks.push(chunk.content ?? chunk.text ?? '');
+        }
+        const text = chunks.join('');
+        res.json({
+          id: msgId,
+          type: 'message',
+          role: 'assistant',
+          content: [{ type: 'text', text }],
+          model: modelName,
+          stop_reason: 'end_turn',
+          stop_sequence: null,
+          usage: { input_tokens: 0, output_tokens: Math.ceil(text.length / 4) },
+        });
+      } catch (error) {
+        res.status(500).json({ type: 'error', error: { type: 'server_error', message: error.message } });
+      }
+    }
+  });
+  // ─── End Anthropic-compatible API ──────────────────────────
+
   r.post('/api/chat', async (req, res) => {
     const { message, history = [], tools, sessionId } = req.body;
     if (!message || typeof message !== 'string') {
