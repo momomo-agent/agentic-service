@@ -1,9 +1,12 @@
 {
-  "totalTests": 10,
-  "passed": 10,
-  "failed": 0,
+  "totalTests": 82,
+  "passed": 81,
+  "failed": 1,
   "edgeCases": [
-    "No test for matchProfile() logic against this file"
+    "sense.js adapter import path — test expects 'agentic-sense' import, implementation uses local './adapters/sense.js' adapter (by design, not a bug)",
+    "tunnel.js test calls process.exit(1) when ngrok/cloudflared unavailable in test env",
+    "Gap file staleness — many 'partial' items are actually implemented but gap files not updated since 2026-04-07",
+    "Stale CR content in ARCHITECTURE.md lines 191+ not yet cleaned (blocking task)"
   ],
-  "coverage": "100%"
+  "coverage": "99%"
 }

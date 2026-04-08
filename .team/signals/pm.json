@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-08T01:54:15.518Z",
+  "timestamp": "2026-04-08T01:59:45.485Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Dispatched M97 milestone: 4 tasks assigned to tech_lead-1, tech_lead-2, developer, tester-1. Architecture docs cleanup + gap status updates + final evaluation pipeline ready. Gap files are stale — several 'missing' items (Docker, README, npx, CPU profiler) are already implemented, so scores should rise significantly once updated."
+  "status": "blocked",
+  "summary": "All tasks progressing. M95 gap eval in review (tester approval needed). M97: 3 tasks in_progress (architecture docs + gap updates), 1 blocked. No new tasks created — current pipeline covers all gaps. Waiting for in-progress work to complete before final re-evaluation."
 }

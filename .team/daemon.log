@@ -35351,3 +35351,128 @@ All blocking tasks are still `in_progress`, so the tester pipeline is waiting.
 [2026-04-08T01:56:08.006Z] tester agent completed
 [2026-04-08 01:56:08] [agent_complete] tester completed successfully
 [2026-04-08 01:56:08] [workflow] tester [SIGNAL] blocked: No tasks available for testing. The only review task cannot be claimed, and the tester task (task-17
+[2026-04-08 01:56:08] [workflow] work_loop [AGENT-SIGNAL] tester → blocked: No tasks available for testing. The only review task cannot be claimed, and the 
+[2026-04-08 01:56:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:2, done:226)
+[2026-04-08 01:57:21] [perf] daemon {"rss":"70MB","heapUsed":"8MB","uptime":"900s"}
+[2026-04-08 01:57:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 15min (active:2, done:226)
+## Summary
+
+Created the following for milestone **M97** (Architecture Doc Polish + Remaining Gap Closure):
+
+1. **`.team/milestones/m97/dbb.md`** — Verification criteria for all 4 milestone tasks:
+   - Dir structure coverage ≥95% of actual source files
+   - Zero stale CR content in ARCHITECTURE.md
+   - Vision/PRD gap statuses match reality
+   - Final scores: Vision ≥90%, PRD ≥90%
+
+2. **`.team/milestones/m97/design.md`** — Technical approach:
+   - Detailed file lists and sections to add to ARCHITECTURE.md
+   - Verification checklist for each "partial" gap item (CDN fallback, cloud fallback, wake word, npx, etc.)
+   - Score calculation methodology
+   - Task dependency graph (Tasks 1+2 parallel → Task 3 → Task 4)
+
+3. **`.team/tasks/task-1775612739945/design.md`** — Task-level design for final gap re-evaluation:
+   - Pre-condition check on blocking tasks
+   - Score calculation algorithm
+   - Structured report output format
+   - Error handling for malformed/missing gap files
+
+4. **Updated `task-1775612739945`** — `hasDesign: true`
+
+The other 3 M97 tasks (1775612739548, 1775612739625, 1775612739836) are already `in_progress` with assigned agents, so no design docs needed from me.
+
+```signal
+{"status": "completed", "summary": "Created m97/dbb.md, m97/design.md, task-1775612739945/design.md, updated hasDesign=true"}
+```
+[2026-04-08T01:57:25.652Z] tech_lead agent completed
+[2026-04-08 01:57:25] [agent_complete] tech_lead completed successfully
+[2026-04-08 01:57:25] [workflow] tech_lead [SIGNAL] completed: Created m97/dbb.md, m97/design.md, task-1775612739945/design.md, updated hasDesign=true
+[2026-04-08 01:57:25] [workflow] work_loop [LOOP] Iteration 3
+[2026-04-08 01:57:25] [workflow] work_loop [SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/goal-check.js
+[2026-04-08 01:57:26] [workflow] work_loop [SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/process-crs.js
+[2026-04-08 01:57:26] [workflow] work_loop [EXEC] pm
+[2026-04-08 01:57:26] [agent_start] pm 管理任务和里程碑
+[2026-04-08T01:57:26.220Z] Running pm agent...
+[2026-04-08 01:58:21] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 16min (active:2, done:226)
+[2026-04-08 01:59:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 17min (active:2, done:226)
+Here's my assessment of the current state:
+
+**Active Work Status:**
+- **M95** (Final Push): 3/4 tasks done. task-1775588280002 (gap evaluation) is in **review** — waiting for tester approval. Its progress report already shows Vision 100% and PRD ~95%.
+- **M97** (Architecture Doc Polish): 3 tasks in_progress (tech_lead-1, tech_lead-2, developer), 1 task todo (blocked on those 3).
+
+**CRs:** No pending CRs. 2 "reviewed" CRs (cr-1775579949939, cr-1775580105000) are already being addressed by the in-progress M97 tasks (ARCHITECTURE.md directory structure + stale CR cleanup).
+
+**Gap Files:** Stale (Apr 7). Many items marked "partial" or "missing" are actually implemented — Docker, README, cloud fallback, etc. exist in the codebase. task-1775612739836 (developer) is updating these.
+
+**Shortest Path to Goal:**
+1. Wait for M97 in-progress tasks to complete (architecture docs + gap status updates)
+2. Tester-1 runs final gap re-evaluation (task-1775612739945, currently blocked)
+3. If scores reach ≥90%, declare success. If not, create targeted tasks for remaining gaps.
+
+**PM Action:** No new tasks needed — the current task pipeline is correct and well-sequenced. All blockers are being actively worked. I'm holding for the dependency chain to complete.
+
+```signal
+{"status": "blocked", "summary": "All tasks progressing. M95 gap eval in review (tester approval needed). M97: 3 tasks in_progress (architecture docs + gap updates), 1 blocked. No new tasks created — current pipeline covers all gaps. Waiting for in-progress work to complete before final re-evaluation."}
+```
+[2026-04-08T01:59:45.485Z] pm agent completed
+[2026-04-08 01:59:45] [agent_complete] pm completed successfully
+[2026-04-08 01:59:45] [workflow] pm [SIGNAL] blocked: All tasks progressing. M95 gap eval in review (tester approval needed). M97: 3 tasks in_progress (ar
+[2026-04-08 01:59:45] [workflow] work_loop [AGENT-SIGNAL] pm → blocked: All tasks progressing. M95 gap eval in review (tester approval needed). M97: 3 t
+[2026-04-08 01:59:45] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-08 01:59:45] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-08 01:59:45] [workflow] work_loop [PARALLEL] implement, run-tests
+[2026-04-08 01:59:45] [workflow] work_loop [EXEC] developer
+[2026-04-08 01:59:45] [agent_start] developer 实现功能
+[2026-04-08 01:59:45] [workflow] work_loop [EXEC] tester
+[2026-04-08 01:59:45] [agent_start] tester 验证功能
+[2026-04-08T01:59:45.570Z] Running tester agent...
+[2026-04-08T01:59:45.571Z] Running developer agent...
+[2026-04-08 02:00:21] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 18min (active:2, done:226)
+[2026-04-08 02:01:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 19min (active:2, done:226)
+[2026-04-08 02:02:21] [perf] daemon {"rss":"80MB","heapUsed":"8MB","uptime":"1200s"}
+[2026-04-08 02:02:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 20min (active:2, done:226)
+[2026-04-08 02:02:22] [agent_start] daemon Still busy (20min), skipping
+[2026-04-08 02:03:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 21min (active:2, done:226)
+[2026-04-08 02:04:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 22min (active:2, done:226)
+[2026-04-08 02:05:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 23min (active:2, done:226)
+[2026-04-08 02:06:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 24min (active:2, done:226)
+[2026-04-08 02:07:21] [perf] daemon {"rss":"48MB","heapUsed":"8MB","uptime":"1500s"}
+[2026-04-08 02:07:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 25min (active:2, done:226)
+[2026-04-08 02:08:23] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 26min (active:2, done:226)
+[2026-04-08 02:09:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 27min (active:2, done:226)
+[2026-04-08 02:10:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 28min (active:2, done:226)
+My task is complete. Here's a summary of what I did:
+
+## Task: Verify and update Vision/PRD gap statuses
+
+### Verification Results
+
+I systematically verified every `partial` and `missing` item in both gap files against the actual codebase:
+
+**Vision.json: 78% → 95%** (9 items upgraded)
+- STT/TTS wired to agentic-voice (all 6 adapters present in node_modules)
+- Wake word server-side pipeline fully implemented (node-record-lpcm16 + VAD)
+- Cloud fallback to OpenAI/Anthropic in llm.js
+- Config hot-update via watchProfiles() with ETag polling
+- npx entrypoint verified (bin/agentic-service.js exists)
+- Docker files + README.md exist
+
+**PRD.json: 72% → 85%** (8 items upgraded)
+- 4-tier CDN fallback chain for remote profiles
+- Deep cross-device brain state sharing via joinSession/broadcastSession
+- Voice latency enforced (profiler.js + 2000ms budget + benchmark.js)
+- CPU profiling integrated into STT/TTS/LLM pipeline
+- All 4 agentic-* packages installed and wired
+
+### Remaining gaps
+- **Vision**: 1 partial (agentic-sense is a stub)
+- **PRD**: 2 partial (no tunnel.js; ~36 failing tests), 1 missing eliminated (voice latency now implemented)
+- Notable: tunnel.js was claimed to exist in the gap file but does not
+
+```signal
+{"status": "completed", "summary": "Verified Vision/PRD gaps against codebase. Vision 78%→95%, PRD 72%→85%. 15 items upgraded from partial/missing to implemented. Remaining: agentic-sense stub, no tunnel.js, ~36 failing tests."}
+```
+[2026-04-08T02:11:04.619Z] developer agent completed
+[2026-04-08 02:11:04] [agent_complete] developer completed successfully
+[2026-04-08 02:11:04] [workflow] developer [SIGNAL] completed: Verified Vision/PRD gaps against codebase. Vision 78%→95%, PRD 72%→85%. 15 items upgraded from parti
