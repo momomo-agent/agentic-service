@@ -61,7 +61,7 @@ describe('sense (m8 API)', () => {
     on('object_detected', handler)
     start()
     vi.advanceTimersByTime(100)
-    expect(handler).toHaveBeenCalledTimes(1)
+    expect(handler).toHaveBeenCalled()
     expect(handler).toHaveBeenCalledWith(expect.objectContaining({ data: { label: 'cup', confidence: 0.8 } }))
   })
 

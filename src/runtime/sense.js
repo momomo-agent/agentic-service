@@ -6,13 +6,6 @@ let pipeline = null;
 let intervalId = null;
 const handlers = {};
 
-const raf = typeof requestAnimationFrame === 'function'
-  ? requestAnimationFrame
-  : (cb) => setInterval(cb, 16);
-const caf = typeof cancelAnimationFrame === 'function'
-  ? cancelAnimationFrame
-  : (id) => clearInterval(id);
-
 export async function init(videoElement) {
   pipeline = await createPipeline({ face: true, gesture: true, object: true });
   pipeline._video = videoElement;
@@ -29,7 +22,7 @@ function emit(type, data) {
 }
 
 export function start() {
-  if (intervalId != null) { cancelAnimationFrame(intervalId); intervalId = null; }
+  if (intervalId != null) { clearInterval(intervalId); intervalId = null; }
   function loop() {
     if (intervalId == null) return;
     const video = pipeline?._video;
@@ -47,9 +40,8 @@ export function start() {
           .forEach(o => emit('object_detected', { label: o.label, confidence: o.confidence }));
       }
     }
-    intervalId = requestAnimationFrame(loop);
   }
-  intervalId = requestAnimationFrame(loop);
+  intervalId = setInterval(loop, 16);
 }
 
 export function detect(frame) {
@@ -64,7 +56,7 @@ export function detect(frame) {
 }
 
 export function stop() {
-  if (intervalId != null) { cancelAnimationFrame(intervalId); intervalId = null; }
+  if (intervalId != null) { clearInterval(intervalId); intervalId = null; }
   pipeline = null;
 }
 

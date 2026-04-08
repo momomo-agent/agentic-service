@@ -21144,3 +21144,21 @@
 {"ts":"2026-04-08T00:22:11.210Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775583813385","from":"testing","to":"done","title":"Verify cloud fallback and npx entrypoint"}}
 {"ts":"2026-04-08T00:22:24.577Z","type":"agent_complete","agent":"tester-2","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":11,"cpuUser":0.774282,"cpuSystem":1.534932}}}
 {"ts":"2026-04-08T00:22:24.600Z","type":"workflow","agent":"tester-2","data":{"details":"[SIGNAL] completed: Tested all 3 M93 verification tasks. 28 new tests written, all passing. STT/TTS resolution (13/13), "}}
+{"ts":"2026-04-08T00:26:13.785Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"45MB\",\"heapUsed\":\"4MB\",\"uptime\":\"900s\"}"}}
+{"ts":"2026-04-08T00:27:17.216Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:27:17.228Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:27:17.390Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-08T00:27:17.397Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-08T00:27:48.403Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:27:48.410Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:28:47.957Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:28:47.981Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:29:51.099Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:29:55.352Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:30:47.595Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:30:47.598Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:31:02.010Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775588279635","from":"inProgress","to":"review","title":"Run full test suite and fix remaining failures to >=90%"}}
+{"ts":"2026-04-08T00:31:13.727Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"45MB\",\"heapUsed\":\"4MB\",\"uptime\":\"1200s\"}"}}
+{"ts":"2026-04-08T00:31:16.919Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (20min), skipping","performance":{"memoryMB":4,"memoryTotalMB":7,"cpuUser":1.377373,"cpuSystem":2.954156}}}
+{"ts":"2026-04-08T00:31:39.744Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":7,"cpuUser":1.378487,"cpuSystem":2.9581}}}
+{"ts":"2026-04-08T00:31:39.819Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: The background task was the earlier full test run that timed out (exit code 144 = killed). I already"}}

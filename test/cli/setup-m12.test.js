@@ -1,8 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { spawn } from 'child_process'
+import { spawn, execSync } from 'child_process'
 
 vi.mock('child_process', () => ({
   spawn: vi.fn(),
+  execSync: vi.fn(() => '/usr/bin/ollama'),
 }))
 
 vi.mock('ora', () => ({
@@ -41,44 +42,52 @@ function makeSpawn(exitCode) {
 }
 
 describe('setup.js Ollama auto-install (task-1775500429396)', () => {
-  beforeEach(() => { vi.resetModules(); vi.mocked(spawn).mockClear() })
+  beforeEach(() => { vi.resetModules(); vi.mocked(spawn).mockClear(); vi.mocked(execSync).mockClear() })
 
   it('DBB-001: needsInstall=true calls installOllama and pullModel', async () => {
+    const { execSync: mockExec } = await import('child_process')
+    // First call (isOllamaInstalled): throw = not installed
+    vi.mocked(mockExec).mockImplementationOnce(() => { throw new Error('not found') })
     vi.mocked(spawn).mockImplementation(makeSpawn(0))
-    const { setupOllama } = await import('../../src/detector/optimizer.js').catch(() => null) ?? {}
-
-    // Mock optimizer
-    vi.doMock('../../src/detector/optimizer.js', () => ({
-      setupOllama: vi.fn(async () => ({ needsInstall: true, installCommand: 'curl -fsSL https://ollama.ai/install.sh | sh', ready: false, model: 'llama3.2:1b' })),
-    }))
 
     const { runSetup } = await import('../../src/cli/setup.js')
     await runSetup()
 
-    // spawn called twice: once for install, once for pull
-    expect(spawn).toHaveBeenCalledTimes(2)
+    // spawn called 3 times: install, list (check model), pull
+    expect(spawn).toHaveBeenCalledTimes(3)
     expect(spawn).toHaveBeenNthCalledWith(1, 'sh', ['-c', expect.stringContaining('ollama')], { stdio: 'inherit' })
-    expect(spawn).toHaveBeenNthCalledWith(2, 'ollama', ['pull', 'llama3.2:1b'], { stdio: 'inherit' })
+    expect(spawn).toHaveBeenNthCalledWith(2, 'ollama', ['list'], { stdio: ['ignore', 'pipe', 'ignore'] })
+    expect(spawn).toHaveBeenNthCalledWith(3, 'ollama', ['pull', 'llama3.2:1b'], { stdio: 'inherit' })
   })
 
   it('DBB-001: installOllama non-zero exit rejects', async () => {
+    const { execSync: mockExec } = await import('child_process')
+    vi.mocked(mockExec).mockImplementationOnce(() => { throw new Error('not found') })
     vi.mocked(spawn).mockImplementation(makeSpawn(1))
-    vi.doMock('../../src/detector/optimizer.js', () => ({
-      setupOllama: vi.fn(async () => ({ needsInstall: true, installCommand: 'fail-cmd', ready: false, model: 'llama3.2:1b' })),
-    }))
 
     const { runSetup } = await import('../../src/cli/setup.js')
     await expect(runSetup()).rejects.toThrow('install failed: 1')
   })
 
-  it('DBB-001: needsInstall=false skips install', async () => {
+  it('DBB-001: needsInstall=false skips install when model present', async () => {
     vi.mocked(spawn).mockImplementation(makeSpawn(0))
-    vi.doMock('../../src/detector/optimizer.js', () => ({
-      setupOllama: vi.fn(async () => ({ needsInstall: false, ready: true, model: 'llama3.2:1b' })),
-    }))
+    // Make ollama list return the model name so isModelPulled returns true
+    vi.mocked(spawn).mockImplementation(() => {
+      const emitter = { on: vi.fn(), stdout: { on: vi.fn() } }
+      emitter.stdout.on.mockImplementation((event, cb) => {
+        if (event === 'data') cb('llama3.2:1b    abc123  4.0 GB\n')
+      })
+      emitter.on.mockImplementation((event, cb) => {
+        if (event === 'close') setTimeout(() => cb(0), 0)
+        return emitter
+      })
+      return emitter
+    })
 
     const { runSetup } = await import('../../src/cli/setup.js')
     await runSetup()
-    expect(spawn).not.toHaveBeenCalled()
+    // Only ollama list called, no install or pull
+    expect(spawn).toHaveBeenCalledTimes(1)
+    expect(spawn).toHaveBeenCalledWith('ollama', ['list'], { stdio: ['ignore', 'pipe', 'ignore'] })
   })
 })

@@ -4,8 +4,10 @@ import path from 'path';
 import os from 'os';
 
 // Mock chat before importing api
-vi.mock('../../src/runtime/llm.js', () => ({
-  chat: vi.fn()
+vi.mock('../../src/server/brain.js', () => ({
+  chat: vi.fn(),
+  registerTool: vi.fn(),
+  chatSession: vi.fn()
 }));
 
 vi.mock('../../src/detector/hardware.js', () => ({
@@ -16,7 +18,7 @@ vi.mock('../../src/detector/hardware.js', () => ({
   })
 }));
 
-import { chat } from '../../src/runtime/llm.js';
+import { chat } from '../../src/server/brain.js';
 import { startServer } from '../../src/server/api.js';
 
 const CONFIG_PATH = path.join(os.homedir(), '.agentic-service', 'config.json');
