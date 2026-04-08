@@ -1,22 +1,70 @@
 {
-  "match": 75,
-  "timestamp": "2026-04-07T10:36:41Z",
+  "match": 81,
+  "timestamp": "2026-04-08T09:00:00.000Z",
   "gaps": [
-    { "description": "Test pass rate is 81.7% (537/657), below 90% threshold - 120 tests failing", "status": "partial" },
-    { "description": "agentic-sense not wired as external package - still using import map '#agentic-sense'", "status": "missing" },
-    { "description": "agentic-sense missing from package.json dependencies", "status": "missing" },
-    { "description": "TTS/STT/VAD core functionality implemented and passing tests", "status": "implemented" },
-    { "description": "agentic-store and agentic-voice successfully wired as external packages", "status": "implemented" },
-    { "description": "npx bin entrypoint fully functional with help command", "status": "implemented" },
-    { "description": "CDN profiles.json fallback working with timeout handling", "status": "implemented" },
-    { "description": "README.md present with npx/Docker/API docs", "status": "implemented" },
-    { "description": "/admin UI panel implemented with device list, hardware panel, config, logs", "status": "implemented" },
-    { "description": "GPU detection via hardware.js; /api/status returns hardware.gpu fields", "status": "implemented" },
-    { "description": "store.del() alias confirmed present in store/index.js", "status": "implemented" },
-    { "description": "hub.js heartbeat timeout correctly set to 60000ms", "status": "implemented" },
-    { "description": "brain.js tool_use yields text field in response", "status": "implemented" },
-    { "description": "hub.js broadcastWakeword() implemented and triggered on wakeword message", "status": "implemented" },
-    { "description": "hub.js session management (joinSession, broadcastSession, getSessionData)", "status": "implemented" },
-    { "description": "memory.js uses mutex lock for concurrent write safety", "status": "implemented" }
+    {
+      "description": "Test pass rate is 81.7% (537/657), below 90% threshold - 120 tests failing",
+      "status": "partial"
+    },
+    {
+      "description": "agentic-sense not wired as external package - still using import map '#agentic-sense'",
+      "status": "missing"
+    },
+    {
+      "description": "agentic-sense missing from package.json dependencies",
+      "status": "missing"
+    },
+    {
+      "description": "TTS/STT/VAD core functionality implemented and passing tests",
+      "status": "implemented"
+    },
+    {
+      "description": "agentic-store and agentic-voice successfully wired as external packages",
+      "status": "implemented"
+    },
+    {
+      "description": "npx bin entrypoint fully functional with help command",
+      "status": "implemented"
+    },
+    {
+      "description": "CDN profiles.json fallback working with timeout handling",
+      "status": "implemented"
+    },
+    {
+      "description": "README.md present with npx/Docker/API docs",
+      "status": "implemented"
+    },
+    {
+      "description": "/admin UI panel implemented with device list, hardware panel, config, logs",
+      "status": "implemented"
+    },
+    {
+      "description": "GPU detection via hardware.js; /api/status returns hardware.gpu fields",
+      "status": "implemented"
+    },
+    {
+      "description": "store.del() alias confirmed present in store/index.js",
+      "status": "implemented"
+    },
+    {
+      "description": "hub.js heartbeat timeout correctly set to 60000ms",
+      "status": "implemented"
+    },
+    {
+      "description": "brain.js tool_use yields text field in response",
+      "status": "implemented"
+    },
+    {
+      "description": "hub.js broadcastWakeword() implemented and triggered on wakeword message",
+      "status": "implemented"
+    },
+    {
+      "description": "hub.js session management (joinSession, broadcastSession, getSessionData)",
+      "status": "implemented"
+    },
+    {
+      "description": "memory.js uses mutex lock for concurrent write safety",
+      "status": "implemented"
+    }
   ]
 }

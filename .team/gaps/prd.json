@@ -1,25 +1,82 @@
 {
-  "match": 94,
-  "timestamp": "2026-04-08T08:00:00.000Z",
+  "match": 95,
+  "timestamp": "2026-04-08T09:00:00.000Z",
   "gaps": [
-    { "description": "Docker deployment (Dockerfile, docker-compose.yml, setup.sh) present in install/", "status": "implemented" },
-    { "description": "Hardware detection (GPU/memory/arch) for Apple Silicon / NVIDIA / CPU-only", "status": "implemented" },
-    { "description": "Hardware-adaptive model selection wired through optimizer.js into llm.js loadConfig()", "status": "implemented" },
-    { "description": "LLM runtime with local Ollama + cloud fallback (OpenAI/Anthropic) — llm.js fully implemented", "status": "implemented" },
-    { "description": "STT/TTS adaptive runtime with hardware-based provider selection — wired to agentic-voice, all adapters present in node_modules", "status": "implemented" },
-    { "description": "Memory module with vector embedding (agentic-store + embed.js)", "status": "implemented" },
-    { "description": "REST API with chat/transcribe/synthesize/status/config endpoints", "status": "implemented" },
-    { "description": "Admin UI and client voice UI (Vue 3 + Vite)", "status": "implemented" },
-    { "description": "Hot-reload config via watchProfiles — profiles.js polls every 30s with ETag-based conditional fetching", "status": "implemented" },
-    { "description": "Remote profiles.json fetch — 4-tier fallback: fresh cache → remote fetch → expired cache → built-in default.json", "status": "implemented" },
-    { "description": "Multi-device session coordination — joinSession/broadcastSession with brainState (context, systemPrompt, temperature) shared across devices", "status": "implemented" },
-    { "description": "Wake word server-side pipeline — startWakeWordPipeline() fully implemented with node-record-lpcm16 + energy-based VAD", "status": "implemented" },
-    { "description": "HTTPS via httpsServer.js + cert.js exists and functional; LAN tunnel (src/tunnel.js) implemented with ngrok/cloudflared support", "status": "implemented" },
-    { "description": "Server-side VAD — energy-based VAD in vad.js + hub.js isSilent(); no model-based (Silero) VAD", "status": "implemented" },
-    { "description": "npx agentic-service — bin entry in package.json points to bin/agentic-service.js (exists, executable); src/cli/setup.js complete", "status": "implemented" },
-    { "description": "External packages — agentic-store, agentic-voice, agentic-sense, agentic-embed all in package.json and installed in node_modules", "status": "implemented" },
-    { "description": "Test suite — ~36 tests failing across detector/server/CLI groups; runtime tests hang; 257+ tests passing", "status": "partial" },
-    { "description": "Voice latency <2s — profiler.js measurePipeline() enforces 2000ms budget; /api/voice logs latency and warns on exceed; m94 tests pass", "status": "implemented" },
-    { "description": "CPU profiling / performance instrumentation — profiler.js with startMark/endMark/getMetrics; integrated into stt.js, tts.js, llm.js; benchmark.js exists", "status": "implemented" }
+    {
+      "description": "Docker deployment (Dockerfile, docker-compose.yml, setup.sh) present in install/",
+      "status": "implemented"
+    },
+    {
+      "description": "Hardware detection (GPU/memory/arch) for Apple Silicon / NVIDIA / CPU-only",
+      "status": "implemented"
+    },
+    {
+      "description": "Hardware-adaptive model selection wired through optimizer.js into llm.js loadConfig()",
+      "status": "implemented"
+    },
+    {
+      "description": "LLM runtime with local Ollama + cloud fallback (OpenAI/Anthropic) — llm.js fully implemented",
+      "status": "implemented"
+    },
+    {
+      "description": "STT/TTS adaptive runtime with hardware-based provider selection — wired to agentic-voice, all adapters present in node_modules",
+      "status": "implemented"
+    },
+    {
+      "description": "Memory module with vector embedding (agentic-store + embed.js)",
+      "status": "implemented"
+    },
+    {
+      "description": "REST API with chat/transcribe/synthesize/status/config endpoints",
+      "status": "implemented"
+    },
+    {
+      "description": "Admin UI and client voice UI (Vue 3 + Vite)",
+      "status": "implemented"
+    },
+    {
+      "description": "Hot-reload config via watchProfiles — profiles.js polls every 30s with ETag-based conditional fetching",
+      "status": "implemented"
+    },
+    {
+      "description": "Remote profiles.json fetch — 4-tier fallback: fresh cache → remote fetch → expired cache → built-in default.json",
+      "status": "implemented"
+    },
+    {
+      "description": "Multi-device session coordination — joinSession/broadcastSession with brainState (context, systemPrompt, temperature) shared across devices",
+      "status": "implemented"
+    },
+    {
+      "description": "Wake word server-side pipeline — startWakeWordPipeline() fully implemented with node-record-lpcm16 + energy-based VAD",
+      "status": "implemented"
+    },
+    {
+      "description": "HTTPS via httpsServer.js + cert.js exists and functional; LAN tunnel (src/tunnel.js) implemented with ngrok/cloudflared support",
+      "status": "implemented"
+    },
+    {
+      "description": "Server-side VAD — energy-based VAD in vad.js + hub.js isSilent(); no model-based (Silero) VAD",
+      "status": "implemented"
+    },
+    {
+      "description": "npx agentic-service — bin entry in package.json points to bin/agentic-service.js (exists, executable); src/cli/setup.js complete",
+      "status": "implemented"
+    },
+    {
+      "description": "External packages — agentic-store, agentic-voice, agentic-sense, agentic-embed all in package.json and installed in node_modules",
+      "status": "implemented"
+    },
+    {
+      "description": "Test suite — ~36 tests failing across detector/server/CLI groups; runtime tests hang; 257+ tests passing",
+      "status": "partial"
+    },
+    {
+      "description": "Voice latency <2s — profiler.js measurePipeline() enforces 2000ms budget; /api/voice logs latency and warns on exceed; m94 tests pass",
+      "status": "implemented"
+    },
+    {
+      "description": "CPU profiling / performance instrumentation — profiler.js with startMark/endMark/getMetrics; integrated into stt.js, tts.js, llm.js; benchmark.js exists",
+      "status": "implemented"
+    }
   ]
 }

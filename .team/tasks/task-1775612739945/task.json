@@ -2,17 +2,13 @@
   "id": "task-1775612739945",
   "title": "Final gap re-evaluation for Vision/PRD/DBB",
   "description": "After all architecture doc fixes and gap status updates, run fresh evaluation of all gap files. Report: (1) Vision match score, (2) PRD match score, (3) DBB match score, (4) Architecture match score. Target: Vision >=90%, PRD >=90%. If any score is below target, list specific remaining gaps.",
-  "status": "blocked",
+  "status": "review",
   "priority": "P0",
-  "assignee": "tester-1",
-  "blockedBy": [
-    "task-1775612739548",
-    "task-1775612739625",
-    "task-1775612739836"
-  ],
+  "assignee": "developer",
+  "blockedBy": [],
   "groupId": "m97",
   "hasDesign": true,
   "created": "2026-04-08T01:45:39.945Z",
-  "updated": "2026-04-08T02:10:37.849Z",
+  "updated": "2026-04-08T03:10:58.974Z",
   "milestoneId": "m97"
 }
