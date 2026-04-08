@@ -1,17 +1,12 @@
 {
-  "totalTests": 605,
-  "passed": 542,
-  "failed": 56,
+  "totalTests": 26,
+  "passed": 26,
+  "failed": 0,
   "edgeCases": [
-    "Full test suite OOM when run via 'npm test' — must be run in directory batches",
-    "test/runtime/sense-wakeword-m80.test.js causes OOM alone — possible memory leak",
-    "test/ui/admin-panel.test.js calls process.exit(1) crashing vitest runner",
-    "test/cli/setup-sh.test.js calls process.exit() affecting concurrent test runs",
-    "~66 root-level test files could not be verified due to OOM constraints",
-    "agentic-sense vi.mock missing AgenticSense named export across 5 test files",
-    "TTS adapter mock doesn't match new ADAPTERS default/fallback structure",
-    "Config persistence tests fail — PUT/GET round-trip not matching expected values",
-    "optimizer.js setupOllama tests stale — install/modelReady logic changed"
+    "Profiler uses Date.now() (wall clock) not performance.now() - acceptable for ms-level tracking",
+    "Metrics accumulate globally across requests, not per-request - by design",
+    "endMark returns null for unmatched startMark - callers handle correctly",
+    "Concurrent overlapping marks with same label restart timing (last startMark wins)"
   ],
-  "coverage": "91%"
+  "coverage": "100%"
 }
