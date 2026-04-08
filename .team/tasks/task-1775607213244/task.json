@@ -2,13 +2,13 @@
   "id": "task-1775607213244",
   "title": "Review and merge Architecture CRs + document agentic-embed",
   "description": "Two pending CRs (cr-1775579949939, cr-1775580105000) request documenting tunnel, CLI, HTTPS, VAD in ARCHITECTURE.md — sections 5-8 are already present. The only missing piece is agentic-embed runtime integration (embed.js + adapters/). Add a section documenting agentic-embed's role in the architecture, its vector embedding capability (bge-m3), and how memory.js uses it for semantic search. Mark both CRs as reviewed/merged.",
-  "status": "todo",
+  "status": "review",
   "priority": "P1",
   "assignee": "developer",
   "blockedBy": [],
-  "groupId": "m96",
+  "groupId": "m95",
   "hasDesign": true,
   "created": "2026-04-08T00:13:33.244Z",
-  "updated": "2026-04-08T00:16:03.814Z",
-  "milestoneId": "m96"
+  "updated": "2026-04-08T00:53:25.472Z",
+  "milestoneId": "m95"
 }

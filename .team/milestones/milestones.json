@@ -231,44 +231,49 @@
     {
       "id": "m92",
       "name": "M92: Test Fix + PRD Closure — Stale Mocks, Docker, README",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775581712916",
         "task-1775581717200",
         "task-1775581724582",
         "task-1775581731172"
       ],
-      "created": "2026-04-07T17:08:57.600Z"
+      "created": "2026-04-07T17:08:57.600Z",
+      "completed": "2026-04-08T04:00:00.000Z"
     },
     {
       "id": "m93",
       "name": "M93: PRD Partial Gap Closure — STT/TTS, Wake Word, Cloud Fallback",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775583805854",
         "task-1775583813340",
         "task-1775583813385"
       ],
-      "created": "2026-04-07T17:43:43.231Z"
+      "created": "2026-04-07T17:43:43.231Z",
+      "completed": "2026-04-08T04:00:00.000Z"
     },
     {
       "id": "m94",
       "name": "M94: Architecture Doc Merge + Voice Latency Verification + Remaining PRD Gaps",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775587524244",
         "task-1775587524323",
         "task-1775587524443"
       ],
-      "created": "2026-04-08T02:44:00.000Z"
+      "created": "2026-04-08T02:44:00.000Z",
+      "completed": "2026-04-08T04:00:00.000Z",
+      "note": "task-1775587524244 moved to m95 for consolidated final push"
     },
     {
       "id": "m95",
-      "name": "M95: Final Push — Test Pass Rate + Gap Re-evaluation",
+      "name": "M95: Final Push — Architecture Docs + CPU Profiling + Gap Re-evaluation",
       "status": "active",
       "tasks": [
-        "task-1775588279635",
-        "task-1775588279869",
+        "task-1775587524244",
+        "task-1775607213244",
+        "task-1775607213287",
         "task-1775588280002"
       ],
       "created": "2026-04-08T03:10:00.000Z"
@@ -276,12 +281,14 @@
     {
       "id": "m96",
       "name": "M96: Final Vision Push — Architecture Docs + CPU Profiling",
-      "status": "active",
+      "status": "cancelled",
       "tasks": [
         "task-1775607213244",
         "task-1775607213287"
       ],
-      "created": "2026-04-08T00:13:38.614Z"
+      "created": "2026-04-08T00:13:38.614Z",
+      "cancelled": "2026-04-08T04:00:00.000Z",
+      "reason": "Consolidated into M95 final push milestone"
     }
   ]
 }

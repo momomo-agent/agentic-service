@@ -33,6 +33,20 @@ getProfile(hardware) → {
   tts: { provider: 'kokoro', voice: 'default' },
   fallback: { provider: 'openai', model: 'gpt-4o-mini' }
 }
+
+// detector/matcher.js
+matchProfile(profiles, hardware) → ProfileConfig
+// 按权重匹配硬件配置：platform=30, gpu=30, arch=20, minMemory=20
+// platform 或 gpu 不匹配 → 得分 0（排除该 profile）
+// 空 match 条件 → 得分 1（兜底默认 profile）
+// 返回得分最高的 profile
+
+// detector/ollama.js
+ensureOllama(model, onProgress?) → Promise<void>
+// 检测 Ollama 是否安装（which ollama），未安装则自动安装：
+//   Unix: curl 安装脚本
+//   Windows: winget install
+// 然后执行 ollama pull <model>，通过 onProgress 回调报告进度
 ```
 
 ### 2. Runtime（服务运行时）
@@ -49,6 +63,12 @@ transcribe(audioBuffer) → text
 
 // runtime/tts.js — 封装 agentic-voice
 synthesize(text) → audioBuffer
+
+// runtime/memory.js — KV 向量记忆（基于 agentic-embed）
+add(text) → Promise<void>          // 嵌入文本，存储向量，生成 key "mem:<ts>:<random>"
+remove(key) → Promise<void>        // 别名 delete()
+search(query, topK?=5) → Promise<Array<{ text: string, score: number }>>
+// 使用 promise 锁（_lock）保证写操作串行
 ```
 
 ### 3. Server（HTTP/WebSocket）
@@ -109,6 +129,8 @@ agentic-service/
 │   ├── detector/
 │   │   ├── hardware.js
 │   │   ├── profiles.js
+│   │   ├── matcher.js
+│   │   ├── ollama.js
 │   │   └── optimizer.js
 │   ├── runtime/
 │   │   ├── llm.js

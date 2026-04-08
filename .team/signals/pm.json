@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-08T00:14:33.013Z",
+  "timestamp": "2026-04-08T00:50:22.018Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "M91 marked completed. M96 created with 2 tasks (CPU profiling + architecture docs). Pipeline has 6 active tasks across M92-M96. Critical path: agentic-sense → test fix → gap re-evaluation → Vision/PRD ≥90%."
+  "summary": "Consolidated 5 active milestones into M95 as single final push. Marked m92/m93/m94 completed, cancelled m96. 4 remaining tasks: 3 dev (arch CR merge, agentic-embed docs, CPU profiling) + 1 tester (gap evaluation, blocked by dev tasks). Critical path enforced via blockedBy dependencies."
 }

@@ -6,7 +6,7 @@ import path from 'path';
 import os from 'os';
 import http from 'http';
 import { chat } from './brain.js';
-import { getMetrics } from '../runtime/profiler.js';
+import { getMetrics, startMark, endMark } from '../runtime/profiler.js';
 import { detectVoiceActivity } from '../runtime/vad.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
@@ -153,6 +153,7 @@ function addRoutes(r) {
 
     const t0 = Date.now();
     try {
+      startMark('voice-pipeline');
       // STT
       const text = await stt.transcribe(req.file.buffer);
 
@@ -166,6 +167,7 @@ function addRoutes(r) {
 
       // TTS
       const audio = await tts.synthesize(reply);
+      endMark('voice-pipeline');
 
       const ms = Date.now() - t0;
       console.log(`[voice] latency: ${ms}ms`);

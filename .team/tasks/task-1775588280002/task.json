@@ -1,13 +1,14 @@
 {
   "id": "task-1775588280002",
   "title": "Run fresh DBB/PRD/Vision gap evaluation",
-  "description": "Gap files are stale (last updated Apr 7). After test pass rate reaches >=90% and agentic-sense is wired, run fresh gap evaluation. Target: Vision >=90%, PRD >=90%, DBB >=90%. Report final scores.",
+  "description": "Gap files are stale (last updated Apr 7). All architecture docs (CR merge + agentic-embed) and CPU profiling instrumentation must be completed first (see blockedBy). Run fresh gap evaluation after all dev tasks are done. Target: Vision >=90%, PRD >=90%, DBB >=90%. Report final scores.",
   "status": "todo",
   "priority": "P0",
   "assignee": "tester",
   "blockedBy": [
-    "task-1775588279635",
-    "task-1775588279869"
+    "task-1775587524244",
+    "task-1775607213244",
+    "task-1775607213287"
   ],
   "groupId": "m95",
   "hasDesign": true,

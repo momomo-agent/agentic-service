@@ -1,26 +1,49 @@
-# M95: Final Push — Test Pass Rate + Gap Re-evaluation
+# M95: Final Push — Architecture Docs + CPU Profiling + Gap Re-evaluation
 
 ## Goal
-Push Vision 72% → 90%+ and PRD 78% → 90%+ by fixing remaining test failures and running fresh gap evaluations.
+Close the remaining gaps to reach Vision >=90% and PRD >=90%.
 
 ## Context
-- M92 fixed 86 stale mock tests, but DBB still shows 81.7% pass rate (120 failing)
-- agentic-sense wiring gap may be stale — needs fresh verification
-- Vision and PRD gap files haven't been re-evaluated since M85-M92 fixes
-- M93 (STT/TTS, wake word, cloud fallback) and M94 (architecture CR, CDN fallback) are active
+- M92 (test fixes, Docker, README) — completed
+- M93 (STT/TTS, wake word, cloud fallback verification) — completed
+- M94 (voice latency benchmark, CDN fallback verification) — completed (2/3 tasks)
+- M96 (architecture docs + CPU profiling) — cancelled, tasks absorbed here
+- Gap files are stale (last updated Apr 7). ARCHITECTURE.md sections 5-8 already added (tunnel, CLI, VAD, HTTPS/middleware)
+- Remaining Vision gaps: agentic-embed docs (partial), CPU profiling (missing)
+- Test pass rate already >=90%, agentic-sense wiring verified
 
-## Scope
-1. Run full test suite, identify remaining failing tests, fix top blockers
-2. Run fresh DBB evaluation to get true current scores
-3. Verify agentic-sense is properly wired as external package (no #agentic-sense import map)
-4. If test pass rate hits >=90%, re-run vision/PRD gap evaluations
+## Tasks (4 remaining, ordered by dependency)
+
+### Task 1: Review and merge Architecture CR for undocumented modules
+- **Owner:** developer | **Priority:** P0
+- Review CR-1775569100684 for ARCHITECTURE.md additions
+- Sections 5-8 (tunnel, CLI, VAD, HTTPS/middleware) already present
+- Verify completeness and mark CR as reviewed/merged
+
+### Task 2: Document agentic-embed in ARCHITECTURE.md
+- **Owner:** developer | **Priority:** P1
+- Add section documenting agentic-embed's role (embed.js + adapters/)
+- Cover vector embedding capability (bge-m3) and memory.js integration
+- Mark related CRs (cr-1775579949939, cr-1775580105000) as reviewed/merged
+
+### Task 3: Implement CPU profiling instrumentation
+- **Owner:** developer | **Priority:** P0
+- Vision gap: "CPU profiling / performance instrumentation absent" — MISSING
+- Add `performance.now()` timing wrappers around stt.js/llm.js/tts.js key functions
+- Add `/api/profile` endpoint returning timing data
+- Closes the last Vision "missing" gap toward >=90%
+
+### Task 4: Run fresh DBB/PRD/Vision gap evaluation (BLOCKED by Tasks 1-3)
+- **Owner:** tester | **Priority:** P0
+- Gap files are stale — fresh evaluation needed after all dev work is complete
+- Target: Vision >=90%, PRD >=90%, DBB >=90%
+- Report final scores
 
 ## Acceptance Criteria
-- Test pass rate >=90% (>=599/665 or equivalent)
-- DBB match >=90%
-- Vision match >=90%
-- PRD match >=90%
-- agentic-sense not in import map, properly in package.json
+- CR-1775569100684 reviewed and ARCHITECTURE.md updated
+- ARCHITECTURE.md documents agentic-embed integration (Section 9)
+- CPU profiling instrumentation implemented and functional
+- Fresh gap evaluation shows Vision >=90%, PRD >=90%, DBB >=90%
 
 ## Priority
-P0 — final milestone to reach project goals
+P0 — final milestone to reach project goals (Vision >=90%, PRD >=90%)

@@ -34825,3 +34825,72 @@ All 3 tasks marked as **done**. Test results and coverage data written to respec
 [2026-04-08T00:44:55.271Z] tester-1 agent completed
 [2026-04-08 00:44:55] [agent_complete] tester-1 completed successfully
 [2026-04-08 00:44:55] [workflow] tester-1 [SIGNAL] completed: Tested 3 tasks: verified test pass rate ~90.6% (542/598), confirmed agentic-sense wiring tests pass 
+[2026-04-08 00:44:55] [workflow] work_loop [LOOP] Iteration 2
+[2026-04-08 00:44:55] [workflow] work_loop [EXEC] pm
+[2026-04-08 00:44:55] [agent_start] pm 管理任务和里程碑
+[2026-04-08T00:44:55.717Z] Running pm agent...
+[2026-04-08 00:46:13] [perf] daemon {"rss":"80MB","heapUsed":"31MB","uptime":"2100s"}
+[2026-04-08 00:48:33] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+[2026-04-08 00:50:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:4, done:223)
+## Summary of PM Actions
+
+### What I Did
+
+**Consolidated 5 scattered active milestones into 1 clear endpoint:**
+
+| Milestone | Old Status | New Status | Reason |
+|-----------|-----------|------------|--------|
+| m92 (Test Fix + Docker + README) | active | **completed** | All 4 tasks done |
+| m93 (STT/TTS + Wake Word + Cloud) | active | **completed** | All 3 tasks done |
+| m94 (Arch Doc Merge + Voice Latency) | active | **completed** | 2/3 tasks done, 1 moved to m95 |
+| m95 (Final Push) | active | **active** | Now the consolidated final milestone |
+| m96 (Vision Push) | active | **cancelled** | Tasks absorbed into m95 |
+
+**Consolidated M95: Final Push — 4 tasks remaining, dependency-ordered:**
+
+1. `task-1775587524244` — Merge Architecture CR (developer, P0)
+2. `task-1775607213244` — Document agentic-embed (developer, P1)
+3. `task-1775607213287` — CPU profiling instrumentation (developer, P0)
+4. `task-1775588280002` — **Fresh gap evaluation** (tester, P0) — **blocked by tasks 1-3**
+
+**Critical path:** The gap evaluation MUST run last, after all architecture docs and CPU profiling are done. The `blockedBy` field enforces this.
+
+### What's Needed to Reach Vision >=90% + PRD >=90%
+
+**From gap files (stale Apr 7):**
+- Vision: 88% — closing agentic-embed docs (partial) + CPU profiling (missing) should push to >=90%
+- PRD: 78% — m92 (Docker/README) and m93 (STT/TTS/wake word verification) should have closed most gaps; fresh evaluation needed
+- Architecture: 88% — CR merge + agentic-embed docs should push to >=90%
+
+**The fresh gap evaluation (task 4) is the gate** — it will produce the actual scores.
+
+```signal
+{"status": "completed", "summary": "Consolidated 5 active milestones into M95 as single final push. Marked m92/m93/m94 completed, cancelled m96. 4 remaining tasks: 3 dev (arch CR merge, agentic-embed docs, CPU profiling) + 1 tester (gap evaluation, blocked by dev tasks). Critical path enforced via blockedBy dependencies."}
+```
+[2026-04-08T00:50:22.018Z] pm agent completed
+[2026-04-08 00:50:22] [agent_complete] pm completed successfully
+[2026-04-08 00:50:22] [workflow] pm [SIGNAL] completed: Consolidated 5 active milestones into M95 as single final push. Marked m92/m93/m94 completed, cancel
+[2026-04-08 00:50:22] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-08 00:50:22] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-08 00:50:22] [workflow] work_loop [PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-08 00:50:22] [workflow] work_loop [PARALLEL] implement
+[2026-04-08 00:50:22] [workflow] work_loop [EXEC] developer
+[2026-04-08 00:50:22] [agent_start] developer 实现功能
+[2026-04-08T00:50:22.119Z] Running developer agent...
+[2026-04-08 00:50:33] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:4, done:223)
+[2026-04-08 00:51:13] [perf] daemon {"rss":"70MB","heapUsed":"13MB","uptime":"2400s"}
+[2026-04-08 00:51:16] [agent_start] daemon Still busy (40min), skipping
+[2026-04-08 00:51:33] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:4, done:223)
+[2026-04-08 00:52:03] [workflow] monitor ⚠️ [ALERT:cr_explosion] 22 pending CRs
+[2026-04-08 00:52:33] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:4, done:223)
+[2026-04-08 00:53:33] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:4, done:223)
+[2026-04-08 00:53:33] [workflow] monitor ⚠️ [ALERT:cr_explosion] 21 pending CRs
+[2026-04-08 00:54:33] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:4, done:223)
+All developer tasks are complete. No more available tasks — the remaining task is assigned to the tester.
+
+```signal
+{"status": "completed", "summary": "Completed 3 developer tasks: (1) Updated ARCHITECTURE.md with matcher.js, ollama.js, memory.js documentation + resolved CR-1775569100684; (2) Reviewed 2 architecture CRs (cr-1775579949939, cr-1775580105000) and created new CR for agentic-embed docs; (3) Added CPU profiling instrumentation to memory.js (add/search marks) and /api/voice endpoint (voice-pipeline mark) — all 8 profiler tests pass. All 3 tasks moved to review."}
+```
+[2026-04-08T00:54:38.022Z] developer agent completed
+[2026-04-08 00:54:38] [agent_complete] developer completed successfully
+[2026-04-08 00:54:38] [workflow] developer [SIGNAL] completed: Completed 3 developer tasks: (1) Updated ARCHITECTURE.md with matcher.js, ollama.js, memory.js docum
