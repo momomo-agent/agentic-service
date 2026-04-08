@@ -6,6 +6,7 @@ import os from 'os';
 import { spawn, execSync } from 'child_process';
 import { detect } from '../detector/hardware.js';
 import { getProfile } from '../detector/profiles.js';
+import { ensureSox } from '../detector/sox.js';
 
 async function isOllamaInstalled() {
   try { execSync('which ollama', { stdio: 'ignore' }); return true; } catch { return false; }
@@ -57,6 +58,13 @@ export async function ensureModel() {
   const hardware = await detect();
   const profile = await getProfile(hardware);
 
+  // Ensure sox is installed (for wake word detection)
+  try {
+    await ensureSox();
+  } catch (err) {
+    console.warn(chalk.yellow(`⚠ sox install skipped: ${err.message}`));
+  }
+
   if (profile.llm.provider !== 'ollama') return;
 
   if (!await isOllamaInstalled()) {
@@ -103,6 +111,15 @@ export async function runSetup() {
     } else {
       console.log(chalk.green(`✓ Model ${profile.llm.model} already present`));
     }
+  }
+
+  // Ensure sox is installed (for wake word detection)
+  const soxSpinner = ora('Checking sox...').start();
+  try {
+    await ensureSox();
+    soxSpinner.succeed('sox ready');
+  } catch (err) {
+    soxSpinner.warn(`sox install skipped: ${err.message}`);
   }
 
   const configSpinner = ora('Saving configuration...').start();
