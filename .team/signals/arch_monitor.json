@@ -1,7 +1,7 @@
 {
   "agent": "arch_monitor",
-  "timestamp": "2026-04-08T04:28:30.853Z",
+  "timestamp": "2026-04-08T09:01:06.201Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "{\"status\": \"completed\", \"summary\": \"Architecture gap analysis complete. Match 80→85%. ARCHITECTURE.md now covers tunnel, CLI, HTTPS/middleware, VAD sections. Remaining gaps: store/index.js undocumente"
+  "summary": "Architecture match 83%. Core modules 100% implemented. 6 documentation/integration gaps: store, adapters, optimizer-disconnect, sense.js underdoc, profiler/latency-log, new sox.js. Updated .team/gaps/architecture.json."
 }

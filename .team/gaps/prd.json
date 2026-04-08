@@ -1,24 +1,24 @@
 {
-  "match": 55,
-  "timestamp": "2026-04-08T12:00:00.000Z",
+  "match": 65,
+  "timestamp": "2026-04-08T14:00:00.000Z",
   "gaps": [
     {
-      "description": "Hardware detector — detect GPU/memory/arch/OS (hardware.js)",
+      "description": "Hardware detector — detect GPU/memory/arch/OS (detector/hardware.js)",
       "status": "implemented",
       "severity": "critical"
     },
     {
-      "description": "Remote profiles — GitHub raw URL with 4-tier fallback: fresh cache → remote fetch → expired cache → built-in default.json (profiles.js)",
+      "description": "Remote profiles — GitHub raw URL with 4-tier fallback: fresh cache → remote fetch → expired cache → built-in default.json (detector/profiles.js)",
       "status": "implemented",
       "severity": "critical"
     },
     {
-      "description": "Ollama integration — auto-install + model pull (ollama.js)",
+      "description": "Ollama integration — auto-install + model pull (detector/ollama.js)",
       "status": "implemented",
       "severity": "critical"
     },
     {
-      "description": "Basic HTTP service — REST API with chat/transcribe/synthesize/status/config endpoints (api.js)",
+      "description": "Basic HTTP service — REST API with chat/transcribe/synthesize/status/config endpoints (server/api.js)",
       "status": "implemented",
       "severity": "critical"
     },
@@ -33,12 +33,12 @@
       "severity": "critical"
     },
     {
-      "description": "STT integration — adaptive provider selection: sensevoice for apple-silicon, whisper for nvidia, cloud fallback for cpu-only (stt.js)",
+      "description": "STT integration — adaptive provider selection: sensevoice for apple-silicon, whisper for nvidia, cloud fallback for cpu-only (runtime/stt.js)",
       "status": "implemented",
       "severity": "critical"
     },
     {
-      "description": "TTS integration — adaptive provider selection: kokoro/piper local, cloud fallback (tts.js)",
+      "description": "TTS integration — adaptive provider selection: kokoro/piper local, cloud fallback (runtime/tts.js)",
       "status": "implemented",
       "severity": "critical"
     },
@@ -48,12 +48,12 @@
       "severity": "major"
     },
     {
-      "description": "Wake word detection — startWakeWordPipeline() with node-record-lpcm16 + energy-based VAD (sense.js)",
+      "description": "Wake word detection — startWakeWordPipeline() with node-record-lpcm16 + energy-based VAD (runtime/sense.js)",
       "status": "implemented",
       "severity": "major"
     },
     {
-      "description": "Multi-device WebSocket — device registration, heartbeat, joinSession/broadcastSession with brainState (hub.js)",
+      "description": "Multi-device WebSocket — device registration, heartbeat, joinSession/broadcastSession with brainState (server/hub.js)",
       "status": "implemented",
       "severity": "critical"
     },
@@ -63,7 +63,7 @@
       "severity": "major"
     },
     {
-      "description": "Device tools — sendCommand() supports capture/speak/display with capture timeout handling (hub.js)",
+      "description": "Device tools — sendCommand() supports capture/speak/display with capture timeout handling (server/hub.js)",
       "status": "implemented",
       "severity": "major"
     },
@@ -79,7 +79,7 @@
       "detail": "Fallback triggers on Ollama error only, not on timeout >5s or 3 consecutive errors as PRD specifies; no auto-restore after 60s probe"
     },
     {
-      "description": "Config hot-reload — watchProfiles() polls every 30s with ETag-based conditional fetching (profiles.js)",
+      "description": "Config hot-reload — watchProfiles() polls every 30s with ETag-based conditional fetching (detector/profiles.js)",
       "status": "implemented",
       "severity": "major"
     },
@@ -124,6 +124,11 @@
       "severity": "minor"
     },
     {
+      "description": "Documentation + README — complete user docs with install, API reference, architecture, troubleshooting",
+      "status": "implemented",
+      "severity": "major"
+    },
+    {
       "description": "mDNS/Bonjour for .local hostname discovery — not implemented; only raw LAN IP display available",
       "status": "partial",
       "severity": "minor"
@@ -139,12 +144,7 @@
       "severity": "major"
     },
     {
-      "description": "Documentation + README — complete user docs not yet written",
-      "status": "missing",
-      "severity": "major"
-    },
-    {
-      "description": "Test suite — ~36 tests failing across detector/server/CLI groups; runtime tests hang",
+      "description": "Test suite — 59 of 206 test files failing (106 of 905 tests); failures in STT/TTS due to missing OPENAI_API_KEY",
       "status": "partial",
       "severity": "major"
     }

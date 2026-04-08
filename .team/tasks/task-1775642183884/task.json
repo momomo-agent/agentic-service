@@ -1,0 +1,13 @@
+{
+  "id": "task-1775642183884",
+  "title": "清理 ARCHITECTURE.md 陈旧内容",
+  "description": "ARCHITECTURE.md 存在两个问题：(1) 191-252 行包含大量陈旧的 CR 添加指令内容需要清理 (2) 目录树 (123-155 行) 仅列出 14 个文件，缺少 21 个源文件 (embed.js, vad.js, profiler.js, latency-log.js, store/index.js, adapters/*, cli/*, tunnel.js, cert.js, httpsServer.js, middleware.js, sox.js)。清理陈旧内容并更新完整目录树",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": "tech_lead",
+  "blockedBy": [],
+  "groupId": "m23",
+  "hasDesign": false,
+  "created": "2026-04-08T09:56:23.884Z",
+  "updated": "2026-04-08T09:56:30.471Z"
+}

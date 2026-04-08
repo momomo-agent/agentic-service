@@ -1,0 +1,13 @@
+{
+  "id": "task-1775642166761",
+  "title": "修复测试套件失败",
+  "description": "59/206 测试文件失败 (106/905 测试)，主要是 STT/TTS 测试因缺少 OPENAI_API_KEY。修复方案：(1) 为云服务测试添加环境变量检查和跳过逻辑 (2) 修复其他非环境相关的测试失败",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": "tester",
+  "blockedBy": [],
+  "groupId": "m23",
+  "hasDesign": false,
+  "created": "2026-04-08T09:56:06.761Z",
+  "updated": "2026-04-08T09:56:23.845Z"
+}

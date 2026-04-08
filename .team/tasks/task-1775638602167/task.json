@@ -1,0 +1,13 @@
+{
+  "id": "task-1775638602167",
+  "title": "--group",
+  "description": "m23",
+  "status": "cancelled",
+  "priority": "P1",
+  "assignee": null,
+  "blockedBy": [],
+  "groupId": "m23",
+  "hasDesign": false,
+  "created": "2026-04-08T08:56:42.167Z",
+  "updated": "2026-04-08T09:48:14.536Z"
+}

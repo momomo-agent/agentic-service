@@ -1,16 +1,16 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
-import SystemStatus from './components/SystemStatus.vue'
-import DeviceList from './components/DeviceList.vue'
-import ConfigPanel from './components/ConfigPanel.vue'
+import './style.css'
 
 const router = createRouter({
-  history: createWebHistory('/admin'),
+  history: createWebHashHistory(),
   routes: [
-    { path: '/', component: SystemStatus },
-    { path: '/devices', component: DeviceList },
-    { path: '/config', component: ConfigPanel },
+    { path: '/', redirect: '/status' },
+    { path: '/status', component: () => import('./views/StatusView.vue') },
+    { path: '/models', component: () => import('./views/ModelsView.vue') },
+    { path: '/config', component: () => import('./views/ConfigView.vue') },
+    { path: '/test', component: () => import('./views/TestView.vue') },
   ]
 })
 

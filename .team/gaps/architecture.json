@@ -1,6 +1,6 @@
 {
-  "match": 85,
-  "timestamp": "2026-04-08T12:00:00.000Z",
+  "match": 83,
+  "timestamp": "2026-04-08T16:00:00.000Z",
   "gaps": [
     {
       "description": "src/store/index.js (KV storage wrapper using agentic-store with get/set/del/delete exports) is not documented in ARCHITECTURE.md — agentic-store is listed as a dependency but local store abstraction is undocumented",
@@ -13,7 +13,7 @@
       "severity": "minor"
     },
     {
-      "description": "src/runtime/embed.js and src/runtime/adapters/ (embed.js, sense.js, voice/openai-tts.js, voice/openai-whisper.js) are not documented as formal module sections in ARCHITECTURE.md — only referenced in notes",
+      "description": "src/runtime/adapters/ (embed.js, sense.js, voice/openai-tts.js, voice/openai-whisper.js) are not documented as formal module sections in ARCHITECTURE.md",
       "status": "partial",
       "severity": "major"
     },
@@ -23,7 +23,17 @@
       "severity": "minor"
     },
     {
-      "description": "All core modules (detector/hardware.js, detector/profiles.js, detector/matcher.js, detector/ollama.js, detector/optimizer.js, runtime/llm.js, runtime/stt.js, runtime/tts.js, runtime/vad.js, runtime/memory.js, server/hub.js, server/brain.js, server/api.js, server/cert.js, server/httpsServer.js, server/middleware.js, bin/agentic-service.js, cli/setup.js, cli/browser.js, tunnel.js) are implemented and documented in ARCHITECTURE.md",
+      "description": "src/detector/optimizer.js exists but llm.js loadConfig() does NOT call it — ARCHITECTURE.md notes require optimizer.js integration for model selection but loadConfig() calls detectHardware() and getProfile() directly without optimizer",
+      "status": "partial",
+      "severity": "major"
+    },
+    {
+      "description": "src/detector/sox.js (sox auto-installer for wake word detection via node-record-lpcm16) is not documented in ARCHITECTURE.md",
+      "status": "missing",
+      "severity": "minor"
+    },
+    {
+      "description": "All core modules (detector/hardware.js, detector/profiles.js, detector/matcher.js, detector/ollama.js, runtime/llm.js, runtime/stt.js, runtime/tts.js, runtime/vad.js, runtime/memory.js, runtime/embed.js, server/hub.js, server/brain.js, server/api.js, server/cert.js, server/httpsServer.js, server/middleware.js, tunnel.js, bin/agentic-service.js, cli/setup.js, cli/browser.js) are implemented and match ARCHITECTURE.md interfaces",
       "status": "implemented",
       "severity": "minor"
     }

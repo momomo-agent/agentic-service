@@ -1,19 +1,28 @@
-# M23: App.vue修复 + VAD + 测试覆盖率 + README
+# Milestone m23: Critical Gap Resolution
 
 ## Goals
-- Fix App.vue missing component imports, polling, and prop bindings
-- Implement VAD auto-STT in web UI
-- Improve test coverage from 71% to ≥98%
-- Write README.md with npx/global/Docker install + API docs
 
-## Acceptance Criteria
-- App.vue correctly imports DeviceList, LogViewer, HardwarePanel
-- App.vue polls /api/status with setInterval and binds :devices/:hardware props
-- VAD auto-detection starts recording when voice activity detected
-- Test coverage threshold ≥98% configured and passing
-- README.md present at project root with all install methods documented
+Close 2 CRITICAL gaps + major PRD/DBB gaps to reach goal (Vision ≥90% + PRD ≥90%):
+1. Fix port mismatch (docs say 3000, code uses 1234) - CRITICAL
+2. Create missing src/index.js entry point - CRITICAL
+3. Fix cloud fallback compliance (timeout, retry, auto-restore)
+4. Fix Docker config gaps (OLLAMA_HOST, data volume)
+5. Fix test suite failures (59/206 files failing)
+6. Clean up ARCHITECTURE.md stale content
 
-## Gaps Addressed
-- test-coverage: 71% → ≥98%
-- prd: App.vue component wiring, VAD, README
-- vision: Voice latency pipeline completeness
+## Scope
+
+- Unify default port to 1234 across all docs and Docker configs
+- Create src/index.js exporting core API
+- Implement complete cloud fallback logic per PRD spec
+- Add missing Docker environment variables and volume mounts
+- Fix test failures, especially STT/TTS env-dependent tests
+- Clean ARCHITECTURE.md stale CR content and update directory tree
+
+## Success Criteria
+
+- [ ] DBB match ≥90% (currently 65%)
+- [ ] PRD match ≥90% (currently 65%)
+- [ ] All m23 tasks in "done" status
+- [ ] No CRITICAL gaps remaining
+- [ ] Test pass rate ≥90%

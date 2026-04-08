@@ -1,0 +1,13 @@
+{
+  "id": "task-1775642155227",
+  "title": "修复 Docker 配置缺失",
+  "description": "根目录 docker-compose.yml 缺少：(1) OLLAMA_HOST 环境变量 (2) ./data 卷挂载。参考 install/docker-compose.yml 补全配置",
+  "status": "todo",
+  "priority": "P1",
+  "assignee": "developer",
+  "blockedBy": [],
+  "groupId": "m23",
+  "hasDesign": false,
+  "created": "2026-04-08T09:55:55.227Z",
+  "updated": "2026-04-08T09:56:06.722Z"
+}

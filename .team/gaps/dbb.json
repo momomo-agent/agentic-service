@@ -1,6 +1,6 @@
 {
-  "match": 75,
-  "timestamp": "2026-04-08T14:00:00.000Z",
+  "match": 65,
+  "timestamp": "2026-04-08T17:02:00.000Z",
   "gaps": [
     {
       "description": "src/index.js missing — package.json 'main' points to src/index.js which does not exist on disk",
@@ -8,7 +8,7 @@
       "severity": "critical"
     },
     {
-      "description": "README documents default port as 3000 but bin/agentic-service.js defaults to 1234",
+      "description": "README and Docker document default port as 3000 but bin/agentic-service.js defaults to 1234; Docker healthcheck hits :3000 but containerized service listens on 1234 unless PORT env is set (which it isn't in docker-compose.yml)",
       "status": "partial",
       "severity": "critical"
     },
@@ -18,27 +18,22 @@
       "severity": "major"
     },
     {
-      "description": "ARCHITECTURE.md directory tree lists only 14 src/ files; 20 additional source files exist (embed.js, vad.js, profiler.js, latency-log.js, store/index.js, adapters/*, cli/*, tunnel.js, cert.js, httpsServer.js, middleware.js)",
+      "description": "ARCHITECTURE.md directory tree (lines 123-155) lists only 14 src/ files; 21 additional source files exist on disk (embed.js, vad.js, profiler.js, latency-log.js, store/index.js, adapters/*, cli/*, tunnel.js, cert.js, httpsServer.js, middleware.js, sox.js)",
       "status": "partial",
       "severity": "major"
     },
     {
-      "description": "Dead import maps #agentic-embed and #agentic-voice in package.json — no source file references them",
+      "description": "Dead import maps #agentic-embed and #agentic-voice in package.json — source files now use agentic-embed/agentic-voice packages directly, but import maps remain",
       "status": "partial",
       "severity": "major"
     },
     {
-      "description": "Test pass rate ~94% (775/824) with ~49 failures across detector (16), server (18), CLI (2), milestones (6+7) — mostly stale mocks after refactoring",
+      "description": "Test pass rate reported ~94% (775/824) with ~49 failures across detector, server, CLI, and milestone tests — mostly stale mocks after refactoring",
       "status": "partial",
       "severity": "major"
     },
     {
       "description": "src/runtime/adapters/embed.js is a stub that throws 'not implemented' — actual embed uses vendor agentic-embed via src/runtime/embed.js, breaking the adapter pattern",
-      "status": "partial",
-      "severity": "minor"
-    },
-    {
-      "description": "M3: Visual perception — agentic-sense installed but sense adapter returns empty arrays (stub)",
       "status": "partial",
       "severity": "minor"
     },
@@ -53,7 +48,7 @@
       "severity": "minor"
     },
     {
-      "description": "Docker deployment missing ./data volume mount in root docker-compose.yml",
+      "description": "Docker deployment missing ./data volume mount in docker-compose.yml for persistent storage",
       "status": "missing",
       "severity": "minor"
     },
