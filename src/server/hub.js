@@ -2,6 +2,11 @@ import { WebSocketServer } from 'ws';
 import { randomUUID } from 'node:crypto';
 import * as sense from '../runtime/sense.js';
 import { chat as brainChat } from './brain.js';
+import * as stt from '../runtime/stt.js';
+import * as tts from '../runtime/tts.js';
+import { detectVoiceActivity } from '../runtime/vad.js';
+
+const SENTENCE_END_RE = /[.!?]+\s+/;
 
 const registry = new Map(); // id → { ws, name, capabilities, lastPong }
 const pendingCaptures = new Map(); // requestId → { resolve, reject, timer }
@@ -183,6 +188,68 @@ export function broadcastWakeword(deviceId) {
   }
 }
 
+async function handleVoiceStream(ws, msg) {
+  const { audio, history = [] } = msg;
+  
+  // Decode base64 audio
+  const audioBuffer = Buffer.from(audio, 'base64');
+  
+  // Check voice activity
+  if (!detectVoiceActivity(audioBuffer)) {
+    ws.send(JSON.stringify({ type: 'voice_stream_end', skipped: true }));
+    return;
+  }
+
+  // STT
+  const text = await stt.transcribe(audioBuffer);
+  ws.send(JSON.stringify({ type: 'transcription', text }));
+
+  // LLM streaming with sentence-level TTS
+  const messages = [...history, { role: 'user', content: text }];
+  let buffer = '';
+  let sentenceIndex = 0;
+
+  ws.send(JSON.stringify({ type: 'voice_stream_start' }));
+
+  for await (const chunk of brainChat(messages)) {
+    if (chunk.type === 'content') {
+      const text = chunk.content ?? chunk.text ?? '';
+      buffer += text;
+
+      // Check for sentence boundaries
+      const match = SENTENCE_END_RE.exec(buffer);
+      if (match) {
+        const sentence = buffer.slice(0, match.index + match[0].length).trim();
+        buffer = buffer.slice(match.index + match[0].length);
+
+        if (sentence) {
+          // Generate TTS for this sentence
+          const audioData = await tts.synthesize(sentence);
+          ws.send(JSON.stringify({
+            type: 'audio_chunk',
+            audio: audioData.toString('base64'),
+            index: sentenceIndex++,
+            text: sentence,
+          }));
+        }
+      }
+    }
+  }
+
+  // Handle remaining buffer (last sentence without punctuation)
+  if (buffer.trim()) {
+    const audioData = await tts.synthesize(buffer.trim());
+    ws.send(JSON.stringify({
+      type: 'audio_chunk',
+      audio: audioData.toString('base64'),
+      index: sentenceIndex++,
+      text: buffer.trim(),
+    }));
+  }
+
+  ws.send(JSON.stringify({ type: 'voice_stream_end', sentenceCount: sentenceIndex }));
+}
+
 export function startWakeWordDetection(keyword = process.env.WAKE_WORD || 'hey agent') {
   if (!process.stdin.isTTY) return;
   process.stdin.setEncoding('utf8');
@@ -227,6 +294,10 @@ export function initWebSocket(httpServer) {
           pending.resolve(msg.data);
           pendingCaptures.delete(msg.requestId);
         }
+      } else if (msg.type === 'voice_stream') {
+        handleVoiceStream(ws, msg).catch(err => {
+          ws.send(JSON.stringify({ type: 'error', error: err.message }));
+        });
       }
     });
 
