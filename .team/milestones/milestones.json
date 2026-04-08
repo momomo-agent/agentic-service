@@ -269,7 +269,8 @@
     {
       "id": "m95",
       "name": "M95: Final Push — Architecture Docs + CPU Profiling + Gap Re-evaluation",
-      "status": "active",
+      "status": "completed",
+      "completed": "2026-04-08T10:00:00.000Z",
       "tasks": [
         "task-1775587524244",
         "task-1775607213244",
