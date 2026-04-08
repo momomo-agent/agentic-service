@@ -36248,3 +36248,20 @@ All tasks with `status=todo` and `hasDesign=true` require modifying `ARCHITECTUR
 [2026-04-08T03:11:57.613Z] developer agent completed
 [2026-04-08 03:11:57] [agent_complete] developer completed successfully
 [2026-04-08 03:11:57] [workflow] developer [SIGNAL] blocked: The only available tasks (task-1775612739548 'Complete ARCHITECTURE.md directory structure' and task
+[2026-04-08 03:11:57] [workflow] work_loop [AGENT-SIGNAL] developer → blocked: The only available tasks (task-1775612739548 'Complete ARCHITECTURE.md directory
+There are currently no tasks available for testing:
+
+| Task | Status | Assignee | Why can't I test |
+|------|--------|----------|-----------------|
+| task-1775612739548 | todo | tech_lead | Not yet implemented |
+| task-1775612739625 | todo | tech_lead | Not yet implemented |
+| task-1775612739945 | review | developer | Can't claim (assigned to developer) |
+
+All other tasks are either `done` or `cancelled`. The pipeline is waiting on tech_lead to complete the two todo tasks before the review task can proceed.
+
+```signal
+{"status": "completed", "summary": "No testable tasks available. Remaining tasks are in 'todo' (assigned to tech_lead) or 'review' (assigned to developer, can't claim). Waiting for upstream work."}
+```
+[2026-04-08T03:11:59.557Z] tester agent completed
+[2026-04-08 03:11:59] [agent_complete] tester completed successfully
+[2026-04-08 03:11:59] [workflow] tester [SIGNAL] completed: No testable tasks available. Remaining tasks are in 'todo' (assigned to tech_lead) or 'review' (assi

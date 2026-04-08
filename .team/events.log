@@ -21956,3 +21956,6 @@
 {"ts":"2026-04-08T03:11:10.007Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":5,"memoryTotalMB":11,"cpuUser":5.584272,"cpuSystem":13.535007}}}
 {"ts":"2026-04-08T03:11:57.617Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":13,"cpuUser":5.627002,"cpuSystem":13.600009}}}
 {"ts":"2026-04-08T03:11:57.617Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] blocked: The only available tasks (task-1775612739548 'Complete ARCHITECTURE.md directory structure' and task"}}
+{"ts":"2026-04-08T03:11:57.775Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] developer → blocked: The only available tasks (task-1775612739548 'Complete ARCHITECTURE.md directory"}}
+{"ts":"2026-04-08T03:11:59.560Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":5.629679,"cpuSystem":13.610928}}}
+{"ts":"2026-04-08T03:11:59.561Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: No testable tasks available. Remaining tasks are in 'todo' (assigned to tech_lead) or 'review' (assi"}}
