@@ -2,12 +2,12 @@
   "id": "task-1775588279869",
   "title": "Verify and fix agentic-sense external package wiring",
   "description": "DBB shows agentic-sense still uses '#agentic-sense' import map and is missing from package.json. Verify: 1) grep -r '#agentic-sense' src/ should return nothing, 2) package.json should list agentic-sense as dependency. Fix any remaining issues. After developer wires it, tester verifies.",
-  "status": "inProgress",
+  "status": "done",
   "priority": "P0",
-  "assignee": "developer",
+  "assignee": "tester-1",
   "blockedBy": [],
   "groupId": "m95",
   "hasDesign": true,
   "created": "2026-04-07T18:57:59.869Z",
-  "updated": "2026-04-07T19:02:09.432Z"
+  "updated": "2026-04-08T00:44:42.346Z"
 }

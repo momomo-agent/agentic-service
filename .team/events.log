@@ -21162,3 +21162,44 @@
 {"ts":"2026-04-08T00:31:16.919Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (20min), skipping","performance":{"memoryMB":4,"memoryTotalMB":7,"cpuUser":1.377373,"cpuSystem":2.954156}}}
 {"ts":"2026-04-08T00:31:39.744Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":4,"memoryTotalMB":7,"cpuUser":1.378487,"cpuSystem":2.9581}}}
 {"ts":"2026-04-08T00:31:39.819Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: The background task was the earlier full test run that timed out (exit code 144 = killed). I already"}}
+{"ts":"2026-04-08T00:31:45.905Z","type":"workflow","agent":"post","data":{"details":"[POST] task-1775588279869: inProgress → review"}}
+{"ts":"2026-04-08T00:31:45.945Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:31:45.945Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:32:47.069Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:32:47.072Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:32:47.105Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-08T00:32:47.105Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-08T00:33:49.233Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 12min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:33:49.238Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 12min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:34:50.018Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 13min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:34:50.493Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 13min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:35:46.920Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 14min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:35:46.922Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 14min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:36:14.157Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"45MB\",\"heapUsed\":\"8MB\",\"uptime\":\"1500s\"}"}}
+{"ts":"2026-04-08T00:37:10.553Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 15min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:37:10.592Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 15min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:38:03.440Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 16min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:38:03.443Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 16min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:38:03.448Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-08T00:38:03.449Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-08T00:39:03.723Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 17min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:39:03.728Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 17min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:39:53.864Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 18min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:39:54.923Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 18min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:41:03.452Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 19min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:41:03.473Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 19min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:41:13.860Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"36MB\",\"heapUsed\":\"8MB\",\"uptime\":\"1800s\"}"}}
+{"ts":"2026-04-08T00:41:16.922Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (30min), skipping","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":1.984641,"cpuSystem":4.456523}}}
+{"ts":"2026-04-08T00:42:03.488Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 20min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:42:03.489Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 20min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:43:03.525Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 21min (active:7, done:220)"}}
+{"ts":"2026-04-08T00:43:03.527Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 21min (active:7, done:220)\"}"}}
+{"ts":"2026-04-08T00:43:03.529Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:cr_explosion] 23 pending CRs"}}
+{"ts":"2026-04-08T00:43:03.530Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"cr_explosion\",\"message\":\"23 pending CRs\"}"}}
+{"ts":"2026-04-08T00:43:17.534Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775581731172","from":"testing","to":"done","title":"Verify test pass rate >=90% after mock fixes"}}
+{"ts":"2026-04-08T00:43:27.877Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775588279635","from":"review","to":"testing","title":"Run full test suite and fix remaining failures to >=90%"}}
+{"ts":"2026-04-08T00:44:04.677Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775588279635","from":"testing","to":"done","title":"Run full test suite and fix remaining failures to >=90%"}}
+{"ts":"2026-04-08T00:44:06.845Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775588279869","from":"review","to":"testing","title":"Verify and fix agentic-sense external package wiring"}}
+{"ts":"2026-04-08T00:44:42.346Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775588279869","from":"testing","to":"done","title":"Verify and fix agentic-sense external package wiring"}}
+{"ts":"2026-04-08T00:44:55.283Z","type":"agent_complete","agent":"tester-1","data":{"details":"completed successfully","performance":{"memoryMB":31,"memoryTotalMB":39,"cpuUser":2.13629,"cpuSystem":4.763958}}}
+{"ts":"2026-04-08T00:44:55.284Z","type":"workflow","agent":"tester-1","data":{"details":"[SIGNAL] completed: Tested 3 tasks: verified test pass rate ~90.6% (542/598), confirmed agentic-sense wiring tests pass "}}

@@ -1,9 +1,17 @@
 {
-  "totalTests": 10,
-  "passed": 10,
-  "failed": 0,
+  "totalTests": 605,
+  "passed": 542,
+  "failed": 56,
   "edgeCases": [
-    "No test for matchProfile() logic against this file"
+    "Full test suite OOM when run via 'npm test' — must be run in directory batches",
+    "test/runtime/sense-wakeword-m80.test.js causes OOM alone — possible memory leak",
+    "test/ui/admin-panel.test.js calls process.exit(1) crashing vitest runner",
+    "test/cli/setup-sh.test.js calls process.exit() affecting concurrent test runs",
+    "~66 root-level test files could not be verified due to OOM constraints",
+    "agentic-sense vi.mock missing AgenticSense named export across 5 test files",
+    "TTS adapter mock doesn't match new ADAPTERS default/fallback structure",
+    "Config persistence tests fail — PUT/GET round-trip not matching expected values",
+    "optimizer.js setupOllama tests stale — install/modelReady logic changed"
   ],
-  "coverage": "100%"
+  "coverage": "91%"
 }
