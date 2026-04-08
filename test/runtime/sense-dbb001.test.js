@@ -1,25 +1,33 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-// Mock agentic-sense to return a pipeline with a detect method
-vi.mock('agentic-sense', () => ({
-  AgenticSense: class { detect = vi.fn(() => ({ faces: [], gestures: [], objects: [] })) },
-  createPipeline: vi.fn(async () => ({
-    detect: vi.fn(() => ({
+// Mock the local adapter (what sense.js actually imports)
+const mockPipeline = {
+  detect: vi.fn(() => ({
+    faces: [{ boundingBox: { x: 0, y: 0, w: 100, h: 100 } }],
+    gestures: [{ gesture: 'wave' }],
+    objects: [
+      { label: 'cup', confidence: 0.8 },
+      { label: 'low', confidence: 0.3 }
+    ]
+  })),
+  _video: null
+}
+
+vi.mock('../../src/runtime/adapters/sense.js', () => ({
+  createPipeline: vi.fn(async () => mockPipeline)
+}))
+
+describe('DBB-001: sense.js detect(frame) API', () => {
+  beforeEach(async () => {
+    vi.resetModules()
+    mockPipeline.detect.mockReturnValue({
       faces: [{ boundingBox: { x: 0, y: 0, w: 100, h: 100 } }],
       gestures: [{ gesture: 'wave' }],
       objects: [
         { label: 'cup', confidence: 0.8 },
         { label: 'low', confidence: 0.3 }
       ]
-    })),
-    _video: null
-  }))
-}))
-
-describe('DBB-001: sense.js detect(frame) API', () => {
-  beforeEach(async () => {
-    // Reset module state between tests
-    vi.resetModules()
+    })
   })
 
   it('returns empty arrays before init() — no throw', async () => {
@@ -46,8 +54,8 @@ describe('DBB-001: sense.js detect(frame) API', () => {
   })
 
   it('handles undefined faces/gestures/objects gracefully', async () => {
-    const { createPipeline } = await import('agentic-sense')
-    createPipeline.mockResolvedValueOnce({
+    const adapter = await import('../../src/runtime/adapters/sense.js')
+    adapter.createPipeline.mockResolvedValueOnce({
       detect: vi.fn(() => ({})),
       _video: null
     })

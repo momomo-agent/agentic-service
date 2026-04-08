@@ -6,8 +6,11 @@ import { join, dirname } from 'path'
 const __dir = dirname(fileURLToPath(import.meta.url))
 const src = (f) => join(__dir, '../../src', f)
 
+vi.stubGlobal('requestAnimationFrame', (cb) => setTimeout(cb, 16))
+vi.stubGlobal('cancelAnimationFrame', (id) => clearTimeout(id))
+
 vi.mock('agentic-sense', () => ({
-  default: { AgenticSense: class { detect = vi.fn(() => ({ faces: [], gestures: [], objects: [] })) } },
+  AgenticSense: class { detect = vi.fn(() => ({ faces: [], gestures: [], objects: [] })) },
   createPipeline: vi.fn(async () => ({ detect: vi.fn(() => ({ faces: [], gestures: [], objects: [] })) }))
 }))
 

@@ -6,6 +6,13 @@ let pipeline = null;
 let intervalId = null;
 const handlers = {};
 
+const raf = typeof requestAnimationFrame === 'function'
+  ? requestAnimationFrame
+  : (cb) => setInterval(cb, 16);
+const caf = typeof cancelAnimationFrame === 'function'
+  ? cancelAnimationFrame
+  : (id) => clearInterval(id);
+
 export async function init(videoElement) {
   pipeline = await createPipeline({ face: true, gesture: true, object: true });
   pipeline._video = videoElement;

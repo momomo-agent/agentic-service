@@ -34586,3 +34586,179 @@ All available testing tasks are either completed or blocked by developer work. I
 [2026-04-07T19:02:39.963Z] tester-2 agent completed
 [2026-04-07 19:02:40] [agent_complete] tester-2 completed successfully
 [2026-04-07 19:02:40] [workflow] tester-2 [SIGNAL] completed: Verified CDN fallback 4-tier chain and agentic-store integration. Ran 46 tests across 12 files: 43 p
+All milestone and task technical designs for M95 are complete. Summary:
+
+**M95 (active milestone):**
+- `dbb.md` — 9 verification criteria across 3 tasks targeting Vision ≥90% + PRD ≥90%
+- `design.md` — Root cause analysis (stale import maps, old test mocks), task breakdown with dependencies
+
+**3 tasks — all have `hasDesign: true`:**
+
+| Task | Design | Key Insight |
+|------|--------|-------------|
+| test-1775588279635 (test suite fix) | 3 root causes: stale `#agentic-sense` in package.json, old mock paths, unknown failures post-fix | Fix import map + mocks first, then triage remaining |
+| test-1775588279869 (sense wiring) | 4-step cleanup: remove all `#`-prefixed import map entries, fix vitest aliases, update test mocks, verify vendor tgz | Source code already correct; only config/test cleanup needed |
+| test-1775588280002 (gap eval) | 5-step verification: run tests, evaluate DBB/Vision/PRD, report scores | Pure verification — blocked on Tasks 1+2 |
+
+**Note:** Task-1775588279869 is already `inProgress` (developer working on it). No changes were needed — all designs were previously written.
+
+```signal
+{"status": "completed", "summary": "M95 dbb.md, design.md, and all 3 task designs verified complete. All hasDesign flags set to true."}
+```
+[2026-04-07T19:03:02.988Z] tech_lead-1 agent completed
+[2026-04-07 19:03:06] [agent_complete] tech_lead-1 completed successfully
+[2026-04-07 19:03:06] [workflow] tech_lead-1 [SIGNAL] completed: M95 dbb.md, design.md, and all 3 task designs verified complete. All hasDesign flags set to true.
+[2026-04-07 19:05:44] [perf] daemon {"rss":"40MB","heapUsed":"13MB","uptime":"4808s"}
+[2026-04-07 19:06:10] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+[2026-04-07 19:06:10] [error] daemon Watchdog: busy for 81min, force reset
+[2026-04-07 19:06:10] [workflow]  [RESUME] Resuming from checkpoint: node=work_loop, step=2
+[2026-04-07 19:06:10] [agent_start] work_loop [NODE] work_loop - PM 调度中心 — PM 评估后并行派发所有角色，全部完成后回 PM
+[2026-04-07 19:06:17] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-07 19:06:19] [workflow] work_loop [EXEC] pm
+[2026-04-07 19:06:19] [agent_start] pm 管理任务和里程碑
+[2026-04-07T19:06:19.538Z] Running pm agent...
+[2026-04-07 19:07:09] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:8, done:216)
+[2026-04-07 19:07:50] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:9, done:216)
+[2026-04-07 19:09:02] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:9, done:216)
+[2026-04-07 19:09:28] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:9, done:216)
+[2026-04-07 19:10:31] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:9, done:216)
+[2026-04-07 19:10:45] [perf] daemon {"rss":"21MB","heapUsed":"4MB","uptime":"5108s"}
+[2026-04-07 19:11:49] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:9, done:216)
+[2026-04-07 19:11:52] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+[2026-04-07 19:12:50] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:9, done:216)
+[2026-04-07 19:14:10] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 12min (active:9, done:216)
+[2026-04-07 19:16:16] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:9, done:216)
+[2026-04-07 19:17:50] [perf] daemon {"rss":"9MB","heapUsed":"12MB","uptime":"5533s"}
+[2026-04-07 19:19:03] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 17min (active:9, done:216)
+[2026-04-07 19:19:06] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+[2026-04-08 00:11:13] [workflow] validator [WARNING] config.dashboard: no dashboard configuration — run "team web" will show empty UI
+[2026-04-08 00:11:13] [agent_start] daemon DevTeam daemon started (safety=600s, timeout=3900s)
+[2026-04-08 00:11:13] [workflow] monitor [HEALTH] Monitor started
+[2026-04-08 00:11:13] [workflow]  [RESUME] Resuming from checkpoint: node=work_loop, step=0
+[2026-04-08 00:11:13] [agent_start] work_loop [NODE] work_loop - PM 调度中心 — PM 评估后并行派发所有角色，全部完成后回 PM
+[2026-04-08 00:11:13] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-08 00:11:13] [workflow] work_loop [EXEC] pm
+[2026-04-08 00:11:13] [agent_start] pm 管理任务和里程碑
+[2026-04-08T00:11:13.969Z] Running pm agent...
+[2026-04-08 00:11:23] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+## PM Status Report
+
+### Actions Taken
+
+1. **M91 marked completed** — all 3 tasks done (architecture CR, agentic-sense verification, test suite)
+2. **M96 created: "Final Vision Push — Architecture Docs + CPU Profiling"** with 2 new tasks:
+   - Architecture CR merge + agentic-embed documentation (P1)
+   - CPU profiling instrumentation for voice latency measurement (P0)
+3. **Redundant task** (task-1775579897264: re-run test suite) marked done — same work covered by M95
+
+### Current Pipeline: 6 Active Tasks
+
+| Status | Assignee | Milestone | Task |
+|--------|----------|-----------|------|
+| **inProgress** | developer | M95 | Verify agentic-sense external package wiring |
+| **todo** | developer | M95 | Run full test suite and fix failures to ≥90% |
+| **todo** | developer | M94 | Review and merge Architecture CR |
+| **todo** | developer | M96 | CPU profiling instrumentation |
+| **todo** | developer | M96 | Architecture CRs + agentic-embed docs |
+| **review** | tester-1 | M92 | Verify test pass rate ≥90% |
+
+Plus 3 tasks in M93 (review status) and 1 blocked (M95 gap evaluation).
+
+### Gap Projection
+
+After all current milestones complete:
+- **Vision:** ~17/19 = 89.5% (CPU profiling is the only "missing" item) → M96 Task 2 adds it → **≥90%**
+- **PRD:** Docker ✓, README ✓, npx ✓ → **~94%**
+- **Architecture:** Sections 5-8 added, only agentic-embed missing → **~100%**
+
+### Critical Path
+```
+M95 agentic-sense (inProgress) → M95 test fix (todo) → M95 gap eval (blocked)
+                                                                  ↓
+                                                        Vision/PRD ≥90%
+```
+
+```signal
+{"status": "completed", "summary": "M91 marked completed. M96 created with 2 tasks (CPU profiling + architecture docs). Pipeline has 6 active tasks across M92-M96. Critical path: agentic-sense → test fix → gap re-evaluation → Vision/PRD ≥90%."}
+```
+[2026-04-08T00:14:33.014Z] pm agent completed
+[2026-04-08 00:14:33] [agent_complete] pm completed successfully
+[2026-04-08 00:14:33] [workflow] pm [SIGNAL] completed: M91 marked completed. M96 created with 2 tasks (CPU profiling + architecture docs). Pipeline has 6 a
+[2026-04-08 00:14:33] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-08 00:14:33] [workflow] work_loop [PARALLEL] write-design, implement, run-tests
+[2026-04-08 00:14:33] [workflow] work_loop [PARALLEL] tech_lead-1, tech_lead-2
+[2026-04-08 00:14:33] [agent_start] tech_lead-1 出技术方案
+[2026-04-08 00:14:33] [agent_start] tech_lead-2 出技术方案
+[2026-04-08 00:14:33] [workflow] work_loop [EXEC] developer
+[2026-04-08 00:14:33] [agent_start] developer 实现功能
+[2026-04-08 00:14:33] [workflow] work_loop [PARALLEL] tester-1, tester-2
+[2026-04-08 00:14:33] [agent_start] tester-1 验证功能
+[2026-04-08 00:14:33] [agent_start] tester-2 验证功能
+[2026-04-08T00:14:33.133Z] Running tech_lead-1 agent...
+[2026-04-08T00:14:33.134Z] Running tech_lead-2 agent...
+[2026-04-08T00:14:33.134Z] Running tester-1 agent...
+[2026-04-08T00:14:33.134Z] Running tester-2 agent...
+[2026-04-08T00:14:33.138Z] Running developer agent...
+```signal
+{"status": "completed", "summary": "Created M96 milestone DBB + design docs, and task-level designs for both tasks. Key finding: CPU profiling infrastructure (profiler.js, startMark/endMark in stt/tts/llm, /api/perf endpoint) already exists — Task 2 is verification + enhancement, not greenfield. Task 1 is marking stale CRs as reviewed + submitting new CR for agentic-embed docs. Both tasks updated with hasDesign=true."}
+```
+
+**Deliverables created:**
+
+| File | Purpose |
+|------|---------|
+| `.team/milestones/m96/dbb.md` | 5-section verification checklist (agentic-embed docs, CR review, profiler, Vision ≥90%, PRD ≥90%) |
+| `.team/milestones/m96/design.md` | Technical approach for both tasks, noting existing profiler infrastructure |
+| `.team/tasks/task-1775607213244/design.md` | Steps: mark 2 CRs as reviewed, submit new CR for agentic-embed section |
+| `.team/tasks/task-1775607213287/design.md` | Steps: verify existing profiler, check memory.js for gaps, add `voice-pipeline` mark if needed |
+[2026-04-08T00:16:13.554Z] tech_lead-2 agent completed
+[2026-04-08 00:16:13] [agent_complete] tech_lead-2 completed successfully
+[2026-04-08 00:16:13] [workflow] tech_lead-2 [SIGNAL] completed: Created M96 milestone DBB + design docs, and task-level designs for both tasks. Key finding: CPU pro
+[2026-04-08 00:16:13] [perf] daemon {"rss":"74MB","heapUsed":"8MB","uptime":"300s"}
+[2026-04-08 00:16:43] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+```signal
+{"status": "completed", "summary": "M96 milestone fully designed: dbb.md and design.md created. Both tasks (task-1775607213244: arch docs + CR merge, task-1775607213287: CPU profiling) have design.md files and hasDesign=true. All 5 active milestones (m92-m96) verified complete with dbb.md and design.md. No todo tasks without designs found."}
+```
+[2026-04-08T00:16:55.278Z] tech_lead-1 agent completed
+[2026-04-08 00:16:55] [agent_complete] tech_lead-1 completed successfully
+[2026-04-08 00:16:55] [workflow] tech_lead-1 [SIGNAL] completed: M96 milestone fully designed: dbb.md and design.md created. Both tasks (task-1775607213244: arch doc
+[2026-04-08 00:17:13] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:10, done:217)
+[2026-04-08 00:17:43] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:10, done:217)
+[2026-04-08 00:18:46] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:10, done:217)
+[2026-04-08 00:19:49] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:10, done:217)
+[2026-04-08 00:20:45] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:10, done:217)
+[2026-04-08 00:21:13] [perf] daemon {"rss":"44MB","heapUsed":"4MB","uptime":"600s"}
+[2026-04-08 00:21:16] [agent_start] daemon Still busy (10min), skipping
+[2026-04-08 00:21:48] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:10, done:217)
+[2026-04-08 00:21:48] [workflow] monitor ⚠️ [ALERT:cr_explosion] 23 pending CRs
+All three M93 verification tasks are complete. Here's the summary:
+
+## Results
+
+### Task 1: Verify agentic-voice STT/TTS resolves (task-1775583805854)
+- **New tests:** 13/13 passed (`test/m93-voice-resolve.test.js`)
+- **Combined:** 17 passed, 3 failed (pre-existing optional adapter stub issues)
+- STT/TTS core path works correctly with default adapters (openai-whisper, openai-tts)
+- Graceful fallback when configured provider import fails
+
+### Task 2: Verify wake word pipeline is not a stub (task-1775583813340)
+- **New tests:** 7/7 passed (`test/m93-wakeword-verify.test.js`)
+- **Combined:** 10/10 passed
+- Source code confirmed: real mic capture via `node-record-lpcm16`, VAD integration, graceful degradation
+- Stream error handling verified
+
+### Task 3: Verify cloud fallback and npx entrypoint (task-1775583813385)
+- **New tests:** 8/8 passed (`test/m93-cloud-npx-verify.test.js`)
+- **Combined:** 16/16 passed
+- `--help` exits 0, OpenAI + Anthropic fallback paths verified, meta chunk emitted, error handling confirmed
+
+### Coverage
+- **46 total tests, 43 passed, 3 failed** (93% pass rate)
+- 3 failures are pre-existing optional adapter stub gaps (not blocking M93 DBB criteria)
+
+```signal
+{"status": "completed", "summary": "Tested all 3 M93 verification tasks. 28 new tests written, all passing. STT/TTS resolution (13/13), wake word pipeline (7/7), cloud fallback+npx (8/8). All tasks marked done."}
+```
+[2026-04-08T00:22:24.429Z] tester-2 agent completed
+[2026-04-08 00:22:24] [agent_complete] tester-2 completed successfully
+[2026-04-08 00:22:24] [workflow] tester-2 [SIGNAL] completed: Tested all 3 M93 verification tasks. 28 new tests written, all passing. STT/TTS resolution (13/13), 

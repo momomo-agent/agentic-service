@@ -219,13 +219,14 @@
     {
       "id": "m91",
       "name": "M91: Architecture Doc Sync + agentic-sense Completion",
-      "status": "active",
+      "status": "completed",
       "tasks": [
         "task-1775579891016",
         "task-1775579897222",
         "task-1775579897264"
       ],
-      "created": "2026-04-07T16:38:01.839Z"
+      "created": "2026-04-07T16:38:01.839Z",
+      "completed": "2026-04-08T00:13:08.665Z"
     },
     {
       "id": "m92",
@@ -271,6 +272,16 @@
         "task-1775588280002"
       ],
       "created": "2026-04-08T03:10:00.000Z"
+    },
+    {
+      "id": "m96",
+      "name": "M96: Final Vision Push — Architecture Docs + CPU Profiling",
+      "status": "active",
+      "tasks": [
+        "task-1775607213244",
+        "task-1775607213287"
+      ],
+      "created": "2026-04-08T00:13:38.614Z"
     }
   ]
 }

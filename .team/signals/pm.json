@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-07T18:58:44.424Z",
+  "timestamp": "2026-04-08T00:14:33.013Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Created M95 final push milestone, assigned all unassigned tasks across M91-M95, activated M93/M94. Critical path: test pass rate must reach >=90% before gap re-evaluation can confirm Vision/PRD targets met."
+  "summary": "M91 marked completed. M96 created with 2 tasks (CPU profiling + architecture docs). Pipeline has 6 active tasks across M92-M96. Critical path: agentic-sense → test fix → gap re-evaluation → Vision/PRD ≥90%."
 }

@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 
 let detectFn
 vi.mock('agentic-sense', () => ({
-  default: { AgenticSense: class { detect(...args) { return detectFn(...args) } } },
+  AgenticSense: class { detect(...args) { return detectFn(...args) } },
   createPipeline: vi.fn(async () => ({
     detect: (...args) => detectFn(...args),
     _video: null,

@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 
 const mockDetect = vi.fn()
 vi.mock('agentic-sense', () => ({
-  default: { AgenticSense: class { detect = mockDetect } },
+  AgenticSense: class { detect = mockDetect },
   createPipeline: vi.fn(async () => ({ detect: mockDetect }))
 }))
 

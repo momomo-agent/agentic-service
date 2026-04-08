@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-vi.mock('#agentic-sense', () => ({
+vi.mock('agentic-sense', () => ({
   createPipeline: vi.fn(() => ({ detect: vi.fn(() => ({ faces: [], gestures: [], objects: [] })) }))
 }));
 

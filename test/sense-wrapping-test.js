@@ -15,18 +15,17 @@ try { pkg = require('agentic-sense'); } catch { pkg = null; }
 assert.ok(pkg !== null, 'agentic-sense package must be resolvable');
 console.log('PASS: agentic-sense package is resolvable');
 
-// Test 3: sense.js imports from #agentic-sense alias
+// Test 3: sense.js imports from local adapter (not #agentic-sense alias)
 const senseSrc = require('node:fs').readFileSync(
   new URL('../src/runtime/sense.js', import.meta.url).pathname, 'utf8'
 );
-assert.ok(senseSrc.includes("from '#agentic-sense'"), 'sense.js must import from #agentic-sense');
-console.log('PASS: sense.js imports from #agentic-sense alias');
+assert.ok(senseSrc.includes("from './adapters/sense.js'"), 'sense.js must import from ./adapters/sense.js');
+console.log('PASS: sense.js imports from ./adapters/sense.js adapter');
 
-// Test 4: package.json imports map wires #agentic-sense to adapter
+// Test 4: package.json imports map does NOT have #agentic-sense (using npm package directly)
 const imports = require('../package.json').imports;
-assert.ok(imports['#agentic-sense'], '#agentic-sense must be in imports map');
-assert.ok(imports['#agentic-sense'].includes('adapters/sense'), 'must point to adapters/sense');
-console.log('PASS: package.json imports map wires #agentic-sense to adapter');
+assert.ok(!imports['#agentic-sense'], '#agentic-sense should NOT be in imports map (using npm package directly)');
+console.log('PASS: package.json imports map has no #agentic-sense (npm package used directly)');
 
 // Test 5: createPipeline returns object with detect function
 const { createPipeline } = await import('../src/runtime/adapters/sense.js');

@@ -13,18 +13,20 @@
     "work_loop",
     "work_loop",
     "work_loop",
+    "work_loop",
+    "work_loop",
     "work_loop"
   ],
   "loopIterations": {
-    "work_loop": 3
+    "work_loop": 1
   },
-  "transitionDepth": 11,
+  "transitionDepth": 13,
   "nodeVisitCounts": {
     "startup": 1,
     "monitor": 2,
     "pm_decide": 1,
-    "work_loop": 7
+    "work_loop": 9
   },
   "contextOverrides": {},
-  "timestamp": "2026-04-07T18:58:45.435Z"
+  "timestamp": "2026-04-08T00:14:33.089Z"
 }
