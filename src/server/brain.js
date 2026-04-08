@@ -20,7 +20,7 @@ function normalizeMessages(messages) {
 async function* chatWithTools(messages, tools) {
   const normalized = normalizeMessages(messages);
   // Try Ollama with tools via native API
-  const config = { llm: { provider: 'ollama', model: 'gemma4:26b' } };
+  const config = { llm: { provider: 'ollama', model: 'gemma4:e4b' } };
   try {
     const body = { model: config.llm.model, messages: normalized, stream: true };
     if (tools?.length) body.tools = tools;

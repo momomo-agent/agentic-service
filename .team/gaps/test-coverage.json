@@ -1,11 +1,9 @@
 {
-  "totalTests": 8,
-  "passed": 7,
-  "failed": 1,
+  "totalTests": 10,
+  "passed": 10,
+  "failed": 0,
   "edgeCases": [
-    "Node.js version < 18 rejection (requires mock node binary)",
-    "npm install failure handling",
-    "Full e2e install in isolated environment"
+    "No test for matchProfile() logic against this file"
   ],
-  "coverage": "88%"
+  "coverage": "100%"
 }

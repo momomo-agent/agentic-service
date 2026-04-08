@@ -1,82 +1,152 @@
 {
-  "match": 95,
-  "timestamp": "2026-04-08T09:00:00.000Z",
+  "match": 55,
+  "timestamp": "2026-04-08T12:00:00.000Z",
   "gaps": [
     {
-      "description": "Docker deployment (Dockerfile, docker-compose.yml, setup.sh) present in install/",
-      "status": "implemented"
+      "description": "Hardware detector — detect GPU/memory/arch/OS (hardware.js)",
+      "status": "implemented",
+      "severity": "critical"
     },
     {
-      "description": "Hardware detection (GPU/memory/arch) for Apple Silicon / NVIDIA / CPU-only",
-      "status": "implemented"
+      "description": "Remote profiles — GitHub raw URL with 4-tier fallback: fresh cache → remote fetch → expired cache → built-in default.json (profiles.js)",
+      "status": "implemented",
+      "severity": "critical"
     },
     {
-      "description": "Hardware-adaptive model selection wired through optimizer.js into llm.js loadConfig()",
-      "status": "implemented"
+      "description": "Ollama integration — auto-install + model pull (ollama.js)",
+      "status": "implemented",
+      "severity": "critical"
     },
     {
-      "description": "LLM runtime with local Ollama + cloud fallback (OpenAI/Anthropic) — llm.js fully implemented",
-      "status": "implemented"
+      "description": "Basic HTTP service — REST API with chat/transcribe/synthesize/status/config endpoints (api.js)",
+      "status": "implemented",
+      "severity": "critical"
     },
     {
-      "description": "STT/TTS adaptive runtime with hardware-based provider selection — wired to agentic-voice, all adapters present in node_modules",
-      "status": "implemented"
+      "description": "Web UI (minimal) — Vue 3 + Vite client with text chat (src/ui/client/)",
+      "status": "implemented",
+      "severity": "critical"
     },
     {
-      "description": "Memory module with vector embedding (agentic-store + embed.js)",
-      "status": "implemented"
+      "description": "One-click install — npx agentic-service via bin/agentic-service.js + src/cli/setup.js",
+      "status": "implemented",
+      "severity": "critical"
     },
     {
-      "description": "REST API with chat/transcribe/synthesize/status/config endpoints",
-      "status": "implemented"
+      "description": "STT integration — adaptive provider selection: sensevoice for apple-silicon, whisper for nvidia, cloud fallback for cpu-only (stt.js)",
+      "status": "implemented",
+      "severity": "critical"
     },
     {
-      "description": "Admin UI and client voice UI (Vue 3 + Vite)",
-      "status": "implemented"
+      "description": "TTS integration — adaptive provider selection: kokoro/piper local, cloud fallback (tts.js)",
+      "status": "implemented",
+      "severity": "critical"
     },
     {
-      "description": "Hot-reload config via watchProfiles — profiles.js polls every 30s with ETag-based conditional fetching",
-      "status": "implemented"
+      "description": "Web UI voice — useVAD.js + useWakeWord.js composables for hold-to-talk and wake word",
+      "status": "implemented",
+      "severity": "major"
     },
     {
-      "description": "Remote profiles.json fetch — 4-tier fallback: fresh cache → remote fetch → expired cache → built-in default.json",
-      "status": "implemented"
+      "description": "Wake word detection — startWakeWordPipeline() with node-record-lpcm16 + energy-based VAD (sense.js)",
+      "status": "implemented",
+      "severity": "major"
     },
     {
-      "description": "Multi-device session coordination — joinSession/broadcastSession with brainState (context, systemPrompt, temperature) shared across devices",
-      "status": "implemented"
+      "description": "Multi-device WebSocket — device registration, heartbeat, joinSession/broadcastSession with brainState (hub.js)",
+      "status": "implemented",
+      "severity": "critical"
     },
     {
-      "description": "Wake word server-side pipeline — startWakeWordPipeline() fully implemented with node-record-lpcm16 + energy-based VAD",
-      "status": "implemented"
+      "description": "Visual perception — sense.js exports both detect(frame) returning {faces, gestures, objects} and event-based start()/stop() loop",
+      "status": "implemented",
+      "severity": "major"
     },
     {
-      "description": "HTTPS via httpsServer.js + cert.js exists and functional; LAN tunnel (src/tunnel.js) implemented with ngrok/cloudflared support",
-      "status": "implemented"
+      "description": "Device tools — sendCommand() supports capture/speak/display with capture timeout handling (hub.js)",
+      "status": "implemented",
+      "severity": "major"
     },
     {
-      "description": "Server-side VAD — energy-based VAD in vad.js + hub.js isSilent(); no model-based (Silero) VAD",
-      "status": "implemented"
+      "description": "Admin panel — static files served from dist/admin at /admin; sources device list from GET /api/status and config from GET /api/config",
+      "status": "implemented",
+      "severity": "major"
     },
     {
-      "description": "npx agentic-service — bin entry in package.json points to bin/agentic-service.js (exists, executable); src/cli/setup.js complete",
-      "status": "implemented"
+      "description": "Cloud fallback — llm.js tries Ollama first, falls back to cloud on error; uses profile.fallback.provider config",
+      "status": "partial",
+      "severity": "major",
+      "detail": "Fallback triggers on Ollama error only, not on timeout >5s or 3 consecutive errors as PRD specifies; no auto-restore after 60s probe"
     },
     {
-      "description": "External packages — agentic-store, agentic-voice, agentic-sense, agentic-embed all in package.json and installed in node_modules",
-      "status": "implemented"
+      "description": "Config hot-reload — watchProfiles() polls every 30s with ETag-based conditional fetching (profiles.js)",
+      "status": "implemented",
+      "severity": "major"
     },
     {
-      "description": "Test suite — ~36 tests failing across detector/server/CLI groups; runtime tests hang; 257+ tests passing",
-      "status": "partial"
+      "description": "Docker deployment — Dockerfile + docker-compose.yml + setup.sh in install/ directory",
+      "status": "implemented",
+      "severity": "major"
     },
     {
-      "description": "Voice latency <2s — profiler.js measurePipeline() enforces 2000ms budget; /api/voice logs latency and warns on exceed; m94 tests pass",
-      "status": "implemented"
+      "description": "HTTPS — httpsServer.js + cert.js functional; LAN tunnel (tunnel.js) with ngrok/cloudflared support",
+      "status": "implemented",
+      "severity": "major"
     },
     {
-      "description": "CPU profiling / performance instrumentation — profiler.js with startMark/endMark/getMetrics; integrated into stt.js, tts.js, llm.js; benchmark.js exists",
-      "status": "implemented"
+      "description": "Server-side VAD — energy-based VAD in vad.js + hub.js isSilent()",
+      "status": "implemented",
+      "severity": "minor"
+    },
+    {
+      "description": "Voice latency <2s — profiler.js measurePipeline() enforces 2000ms budget; /api/voice logs latency and warns on exceed",
+      "status": "implemented",
+      "severity": "major"
+    },
+    {
+      "description": "CPU profiling — profiler.js with startMark/endMark/getMetrics; integrated into stt.js, tts.js, llm.js",
+      "status": "implemented",
+      "severity": "minor"
+    },
+    {
+      "description": "Memory module — memory.js with search(query, topK) and add() using agentic-store + agentic-embed vector embedding",
+      "status": "implemented",
+      "severity": "major"
+    },
+    {
+      "description": "store.js API — exports both del() and delete() alias; resolves naming discrepancy",
+      "status": "implemented",
+      "severity": "minor"
+    },
+    {
+      "description": "hub.js heartbeat timeout — 60s (60000ms) matching canonical value",
+      "status": "implemented",
+      "severity": "minor"
+    },
+    {
+      "description": "mDNS/Bonjour for .local hostname discovery — not implemented; only raw LAN IP display available",
+      "status": "partial",
+      "severity": "minor"
+    },
+    {
+      "description": "Root docker-compose.yml missing OLLAMA_HOST env var — required for containerized Ollama connectivity",
+      "status": "missing",
+      "severity": "major"
+    },
+    {
+      "description": "Root docker-compose.yml missing ./data volume mount — install/docker-compose.yml mounts config volume but root does not",
+      "status": "missing",
+      "severity": "major"
+    },
+    {
+      "description": "Documentation + README — complete user docs not yet written",
+      "status": "missing",
+      "severity": "major"
+    },
+    {
+      "description": "Test suite — ~36 tests failing across detector/server/CLI groups; runtime tests hang",
+      "status": "partial",
+      "severity": "major"
     }
   ]
 }

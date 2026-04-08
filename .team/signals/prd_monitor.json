@@ -1,7 +1,7 @@
 {
   "agent": "prd_monitor",
-  "timestamp": "2026-04-07T10:41:18.774Z",
+  "timestamp": "2026-04-08T04:25:14.381Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Evaluated PRD vs implementation. Match: 78%. M1-M3 mostly implemented; M4 has gaps — Docker and README missing, cloud fallback and hot-update partial. Wrote .team/gaps/prd.json."
+  "summary": "PRD gap analysis: match 55% (down from 95%). 22 implemented, 3 partial, 3 missing. New gaps: OLLAMA_HOST env var, data volume mount, docs missing. Resolved: sense.js detect(), CDN URL, heartbeat timeout. Written to .team/gaps/prd.json."
 }

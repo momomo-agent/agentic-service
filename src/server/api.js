@@ -79,6 +79,57 @@ async function getOllamaStatus() {
 function addRoutes(r) {
   r.get('/health', (req, res) => res.json({ status: 'ok' }));
 
+  // ─── OpenAI-compatible API ───────────────────────────────
+  r.get('/v1/models', (req, res) => {
+    res.json({
+      object: 'list',
+      data: [{ id: 'agentic-service', object: 'model', created: Date.now(), owned_by: 'local' }],
+    });
+  });
+
+  r.post('/v1/chat/completions', async (req, res) => {
+    const { messages = [], model, stream = false, temperature, max_tokens, tools } = req.body;
+    if (!messages.length) return res.status(400).json({ error: { message: 'No messages provided', type: 'invalid_request_error' } });
+
+    const id = `chatcmpl-${Date.now()}`;
+    const created = Math.floor(Date.now() / 1000);
+
+    if (stream) {
+      res.setHeader('Content-Type', 'text/event-stream');
+      res.setHeader('Cache-Control', 'no-cache');
+      res.setHeader('Connection', 'keep-alive');
+      try {
+        for await (const chunk of chat(messages, { tools })) {
+          if (chunk.type === 'content') {
+            const delta = { role: 'assistant', content: chunk.content ?? chunk.text ?? '' };
+            res.write(`data: ${JSON.stringify({ id, object: 'chat.completion.chunk', created, model: model || 'agentic-service', choices: [{ index: 0, delta, finish_reason: null }] })}\n\n`);
+          }
+        }
+        res.write(`data: ${JSON.stringify({ id, object: 'chat.completion.chunk', created, model: model || 'agentic-service', choices: [{ index: 0, delta: {}, finish_reason: 'stop' }] })}\n\n`);
+        res.write('data: [DONE]\n\n');
+      } catch (error) {
+        res.write(`data: ${JSON.stringify({ error: { message: error.message } })}\n\n`);
+      }
+      res.end();
+    } else {
+      try {
+        const chunks = [];
+        for await (const chunk of chat(messages, { tools })) {
+          if (chunk.type === 'content') chunks.push(chunk.content ?? chunk.text ?? '');
+        }
+        const content = chunks.join('');
+        res.json({
+          id, object: 'chat.completion', created, model: model || 'agentic-service',
+          choices: [{ index: 0, message: { role: 'assistant', content }, finish_reason: 'stop' }],
+          usage: { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 },
+        });
+      } catch (error) {
+        res.status(500).json({ error: { message: error.message, type: 'server_error' } });
+      }
+    }
+  });
+  // ─── End OpenAI-compatible API ───────────────────────────
+
   r.post('/api/chat', async (req, res) => {
     const { message, history = [], tools, sessionId } = req.body;
     if (!message || typeof message !== 'string') {

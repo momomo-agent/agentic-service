@@ -1,38 +1,31 @@
 {
-  "match": 12,
-  "timestamp": "2026-04-08T09:00:00.000Z",
+  "match": 85,
+  "timestamp": "2026-04-08T12:00:00.000Z",
   "gaps": [
     {
-      "description": "src/store/index.js exists but agentic-store abstraction is not documented in ARCHITECTURE.md",
-      "status": "partial"
+      "description": "src/store/index.js (KV storage wrapper using agentic-store with get/set/del/delete exports) is not documented in ARCHITECTURE.md — agentic-store is listed as a dependency but local store abstraction is undocumented",
+      "status": "missing",
+      "severity": "major"
     },
     {
-      "description": "src/tunnel.js exists but tunnel capability is not mentioned in ARCHITECTURE.md",
-      "status": "missing"
+      "description": "src/runtime/sense.js has full implementation (init/on/start/stop/detect/startWakeWordPipeline/stopWakeWordPipeline/initHeadless/startHeadless/detectFrame) beyond the brief directory structure mention in ARCHITECTURE.md",
+      "status": "partial",
+      "severity": "minor"
     },
     {
-      "description": "src/cli/ (setup.js, browser.js) exists but CLI module is not defined in ARCHITECTURE.md",
-      "status": "missing"
+      "description": "src/runtime/embed.js and src/runtime/adapters/ (embed.js, sense.js, voice/openai-tts.js, voice/openai-whisper.js) are not documented as formal module sections in ARCHITECTURE.md — only referenced in notes",
+      "status": "partial",
+      "severity": "major"
     },
     {
-      "description": "src/server/cert.js, httpsServer.js, middleware.js exist but HTTPS/middleware layer is not in ARCHITECTURE.md",
-      "status": "partial"
+      "description": "src/runtime/profiler.js (startMark/endMark/getMetrics/measurePipeline) and src/runtime/latency-log.js (record/p95/reset) are internal runtime utilities not mentioned in ARCHITECTURE.md",
+      "status": "missing",
+      "severity": "minor"
     },
     {
-      "description": "src/runtime/vad.js exists but VAD is not mentioned in ARCHITECTURE.md",
-      "status": "missing"
-    },
-    {
-      "description": "src/runtime/embed.js and adapters/ exist but agentic-embed runtime integration is not described in ARCHITECTURE.md",
-      "status": "partial"
-    },
-    {
-      "description": "src/detector/matcher.js and ollama.js exist but are not listed in detector module section of ARCHITECTURE.md",
-      "status": "partial"
-    },
-    {
-      "description": "All core modules (detector, runtime, server, ui, bin, profiles, install) defined in ARCHITECTURE.md are present",
-      "status": "implemented"
+      "description": "All core modules (detector/hardware.js, detector/profiles.js, detector/matcher.js, detector/ollama.js, detector/optimizer.js, runtime/llm.js, runtime/stt.js, runtime/tts.js, runtime/vad.js, runtime/memory.js, server/hub.js, server/brain.js, server/api.js, server/cert.js, server/httpsServer.js, server/middleware.js, bin/agentic-service.js, cli/setup.js, cli/browser.js, tunnel.js) are implemented and documented in ARCHITECTURE.md",
+      "status": "implemented",
+      "severity": "minor"
     }
   ]
 }

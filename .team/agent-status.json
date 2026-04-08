@@ -1,8 +1,8 @@
 {
   "pm": {
-    "status": "running",
-    "lastRun": "2026-04-08T03:28:27.067Z",
-    "currentTask": "管理任务和里程碑",
+    "status": "idle",
+    "lastRun": "2026-04-08T03:31:28.516Z",
+    "currentTask": null,
     "retryCount": 2
   },
   "tech_lead-1": {
@@ -57,25 +57,25 @@
   },
   "vision_monitor": {
     "status": "idle",
-    "lastRun": "2026-04-07T10:46:06.981Z",
+    "lastRun": "2026-04-08T04:25:05.979Z",
     "currentTask": null,
     "retryCount": 0
   },
   "prd_monitor": {
     "status": "idle",
-    "lastRun": "2026-04-07T10:41:19.488Z",
+    "lastRun": "2026-04-08T04:25:14.385Z",
     "currentTask": null,
     "retryCount": 0
   },
   "dbb_monitor": {
     "status": "idle",
-    "lastRun": "2026-04-07T10:45:10.824Z",
+    "lastRun": "2026-04-08T04:27:01.930Z",
     "currentTask": null,
     "retryCount": 0
   },
   "arch_monitor": {
     "status": "idle",
-    "lastRun": "2026-04-07T10:37:59.831Z",
+    "lastRun": "2026-04-08T04:28:30.855Z",
     "currentTask": null,
     "retryCount": 0
   },
