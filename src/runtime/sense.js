@@ -65,6 +65,15 @@ let _recorder = null;
 export async function startWakeWordPipeline(onWakeWord) {
   if (_recorder) stopWakeWordPipeline();
 
+  // Check if sox is available before attempting to use node-record-lpcm16
+  const { execSync } = await import('node:child_process');
+  try {
+    execSync('which sox', { stdio: 'ignore' });
+  } catch {
+    console.warn('[sense] sox not found — wake word pipeline disabled (install sox to enable)');
+    return;
+  }
+
   let record;
   try {
     record = (await import('node-record-lpcm16')).default;

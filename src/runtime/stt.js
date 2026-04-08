@@ -4,9 +4,9 @@ import { startMark, endMark } from './profiler.js';
 import { record } from './latency-log.js';
 
 const ADAPTERS = {
-  sensevoice: () => import('agentic-voice/sensevoice'),
-  whisper:    () => import('agentic-voice/whisper'),
-  default:    () => import('agentic-voice/openai-whisper'),
+  sensevoice: () => import('./adapters/voice/sensevoice.js'),
+  whisper:    () => import('./adapters/voice/whisper.js'),
+  default:    () => import('./adapters/voice/openai-whisper.js'),
 };
 
 let adapter = null;
