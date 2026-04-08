@@ -11,7 +11,8 @@ Close remaining gaps to reach Vision >=90% and PRD >=90%.
   - Stale CR content appended at end (lines 191+) needs removal
   - No section 9 for agentic-embed (embed.js + adapters/)
   - No section for profiler/latency-log modules
-- Vision score (72%) and PRD score (78%) are both below 90% target
+- Vision score (94%) and PRD score (95%) — both meet ≥90% goal ✅
+- Architecture docs still incomplete (12%) — remaining M97 tasks address this
 
 ## Tasks (3-4)
 

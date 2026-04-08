@@ -1,10 +1,11 @@
 {
-  "totalTests": 6,
-  "passed": 6,
-  "failed": 0,
+  "totalTests": 8,
+  "passed": 7,
+  "failed": 1,
   "edgeCases": [
-    "≤60s reload timing in real network conditions",
-    "In-flight request safety during config reload"
+    "Node.js version < 18 rejection (requires mock node binary)",
+    "npm install failure handling",
+    "Full e2e install in isolated environment"
   ],
-  "coverage": "100%"
+  "coverage": "88%"
 }

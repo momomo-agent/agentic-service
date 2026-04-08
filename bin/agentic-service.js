@@ -28,7 +28,7 @@ program
   .name('agentic-service')
   .description('AI agent service with hardware detection and auto-setup')
   .version(version)
-  .option('-p, --port <port>', 'server port', '3000')
+  .option('-p, --port <port>', 'server port', '1234')
   .option('--no-browser', 'do not open browser automatically')
   .option('--skip-setup', 'skip first-time setup')
   .option('--https', 'enable HTTPS with self-signed certificate')
