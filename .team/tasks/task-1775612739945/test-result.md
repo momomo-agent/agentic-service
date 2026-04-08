@@ -75,6 +75,36 @@ The initial test run (tester-1, 2026-04-08T10:09:00Z) found gap files stale (Vis
 - **Primary targets met**: Yes (Vision 94%, PRD 95%)
 - **Edge cases**: None — gap files well-formed, scores accurate
 
+### 6. Additional Verification (tester, 2026-04-08T11:15Z)
+
+**Architecture.json is stale vs ARCHITECTURE.md reality:**
+- ARCHITECTURE.md has sections 5-8 (Tunnel, CLI, VAD, HTTPS/Middleware) properly documented
+- architecture.json still marks these as "missing" or "partial"
+- If statuses were updated, architecture score would be ~50-60%, not 12%
+
+**ARCHITECTURE.md stale CR content (lines 191-252):**
+- Lines 191+ contain old Change Request text blocks
+- Sections 5-8 are properly added, but CR instructions remain appended after Section 8
+- This should have been cleaned by task-1775612739625
+
+**ARCHITECTURE.md directory tree gaps:**
+- 28 source files exist (excl. node_modules), ~20 listed in directory tree (~71% coverage)
+- Missing: profiler.js, latency-log.js, adapters/, embed.js, cert.js, httpsServer.js, middleware.js, store/index.js, tunnel.js, cli/
+
+**Test health (via vitest):**
+- m95-architecture-docs.test.js: 41/41 passed
+- m95-profiler-instrumentation.test.js: 18/18 passed
+- m72-npx-entrypoint.test.js: 1/1 passed
+- m90-tunnel-cert.test.js: passed
+- m90-wakeword-pipeline.test.js: passed
+- m90-cloud-fallback.test.js: FAIL (process.exit in test — infra issue)
+
+**Overall: 5/6 test files passed, 82+ individual tests passed**
+
+---
+
 ## Conclusion
 
 The gap re-evaluation is correct. Vision (94%) and PRD (95%) both exceed the ≥90% target. Architecture and DBB scores remain below target but are not primary blocking targets — Architecture gaps are documentation-only and DBB gaps are known test/dependency issues being addressed by ongoing tasks.
+
+The architecture.json score (12%) is artificially low because it hasn't been updated to reflect sections already added to ARCHITECTURE.md. Tasks 1775612739548 and 1775612739625 should resolve the stale CR content and directory tree gaps when they complete.
