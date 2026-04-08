@@ -23,9 +23,42 @@
             <span class="status-detail">端口 11434</span>
           </div>
           <div v-if="ollama.models.length > 0" style="margin-top: 16px">
-            <div class="info-label">已安装模型 ({{ ollama.models.length }})</div>
+            <div class="info-label">已安装 ({{ ollama.models.length }})</div>
             <div class="model-tags">
               <span v-for="m in ollama.models" :key="m" class="tag">{{ m }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模型管理 -->
+    <section class="section">
+      <h2 class="section-title">模型管理</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-title">已安装模型</div>
+          <div v-if="!ollama.running" class="empty">Ollama 未运行</div>
+          <div v-else-if="ollama.models.length === 0" class="empty">暂无模型</div>
+          <div v-else class="model-list">
+            <div v-for="m in ollama.models" :key="m" class="model-item">
+              <span class="model-name">{{ m }}</span>
+              <button class="btn-danger" @click="deleteModel(m)">删除</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">推荐模型</div>
+          <div class="model-list">
+            <div v-for="m in recommended" :key="m.name" class="model-item">
+              <div>
+                <div class="model-name">{{ m.name }}</div>
+                <div class="model-desc">{{ m.desc }}</div>
+              </div>
+              <div class="model-actions">
+                <div v-if="downloadProgress[m.name]" class="progress-text">{{ downloadProgress[m.name] }}</div>
+                <button v-else @click="downloadModel(m.name)" :disabled="!ollama.running">下载</button>
+              </div>
             </div>
           </div>
         </div>
@@ -37,7 +70,6 @@
       <h2 class="section-title">配置</h2>
       <div class="card">
         <form @submit.prevent="saveConfig" class="config-form">
-          <!-- LLM -->
           <div class="config-group">
             <div class="group-title">LLM Provider</div>
             <div class="field-row">
@@ -62,12 +94,11 @@
               </div>
               <div class="field">
                 <label>Model</label>
-                <input v-model="config.llm.model" placeholder="gpt-4" />
+                <input v-model="config.llm.model" placeholder="gpt-4o" />
               </div>
             </div>
           </div>
 
-          <!-- STT -->
           <div class="config-group">
             <div class="group-title">STT Provider</div>
             <div class="field-row">
@@ -76,12 +107,13 @@
                 <select v-model="config.stt.provider">
                   <option value="whisper">Whisper (本地)</option>
                   <option value="deepgram">Deepgram</option>
+                  <option value="openai">OpenAI Whisper API</option>
                   <option value="custom">自定义</option>
                 </select>
               </div>
               <div class="field" v-if="config.stt.provider !== 'whisper'">
                 <label>Base URL</label>
-                <input v-model="config.stt.baseUrl" placeholder="https://api.deepgram.com" />
+                <input v-model="config.stt.baseUrl" placeholder="https://api.deepgram.com/v1" />
               </div>
             </div>
             <div class="field-row" v-if="config.stt.provider !== 'whisper'">
@@ -96,7 +128,6 @@
             </div>
           </div>
 
-          <!-- TTS -->
           <div class="config-group">
             <div class="group-title">TTS Provider</div>
             <div class="field-row">
@@ -105,12 +136,13 @@
                 <select v-model="config.tts.provider">
                   <option value="coqui">Coqui (本地)</option>
                   <option value="elevenlabs">ElevenLabs</option>
+                  <option value="openai">OpenAI TTS</option>
                   <option value="custom">自定义</option>
                 </select>
               </div>
               <div class="field" v-if="config.tts.provider !== 'coqui'">
                 <label>Base URL</label>
-                <input v-model="config.tts.baseUrl" placeholder="https://api.elevenlabs.io" />
+                <input v-model="config.tts.baseUrl" placeholder="https://api.elevenlabs.io/v1" />
               </div>
             </div>
             <div class="field-row" v-if="config.tts.provider !== 'coqui'">
@@ -119,8 +151,8 @@
                 <input v-model="config.tts.apiKey" type="password" />
               </div>
               <div class="field">
-                <label>Voice ID</label>
-                <input v-model="config.tts.voiceId" placeholder="21m00Tcm4TlvDq8ikWAM" />
+                <label>Voice / Model</label>
+                <input v-model="config.tts.voiceId" placeholder="alloy / 21m00Tcm4TlvDq8ikWAM" />
               </div>
             </div>
           </div>
@@ -133,14 +165,13 @@
       </div>
     </section>
 
-    <!-- 测试 -->
+    <!-- 功能测试 -->
     <section class="section">
       <h2 class="section-title">功能测试</h2>
       <div class="grid grid-2">
-        <!-- Chat -->
         <div class="card">
           <div class="card-title">💬 Chat</div>
-          <div class="chat-box">
+          <div class="chat-box" ref="chatBox">
             <div v-for="(msg, i) in chatHistory" :key="i" class="chat-msg" :class="msg.role">
               <div class="msg-text">{{ msg.content }}</div>
             </div>
@@ -151,9 +182,8 @@
           </form>
         </div>
 
-        <!-- STT -->
         <div class="card">
-          <div class="card-title">🎤 语音转文字</div>
+          <div class="card-title">🎤 语音转文字 (STT)</div>
           <div class="test-panel">
             <input type="file" accept="audio/*" @change="handleAudioFile" />
             <button @click="transcribe" :disabled="!audioFile || sttLoading">
@@ -163,9 +193,8 @@
           <div v-if="sttResult" class="result-box">{{ sttResult }}</div>
         </div>
 
-        <!-- TTS -->
         <div class="card">
-          <div class="card-title">🔊 文字转语音</div>
+          <div class="card-title">🔊 文字转语音 (TTS)</div>
           <div class="test-panel">
             <input v-model="ttsText" placeholder="输入文字..." />
             <button @click="synthesize" :disabled="!ttsText || ttsLoading">
@@ -175,7 +204,6 @@
           <audio v-if="ttsAudio" :src="ttsAudio" controls style="margin-top: 12px; width: 100%"></audio>
         </div>
 
-        <!-- Voice -->
         <div class="card">
           <div class="card-title">🎙️ Voice 全链路</div>
           <div class="test-panel">
@@ -209,11 +237,20 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 
 const hardware = ref({})
 const ollama = ref({ running: false, models: [] })
 const logs = ref([])
+
+const recommended = [
+  { name: 'gemma2:2b', desc: '轻量级，快速响应，适合低内存' },
+  { name: 'qwen2.5:3b', desc: '中文优化，平衡性能与速度' },
+  { name: 'llama3.2:3b', desc: 'Meta 开源，通用能力强' },
+  { name: 'phi3.5:3.8b', desc: 'Microsoft，代码和推理优化' },
+  { name: 'mistral:7b', desc: '高质量，需要 8GB+ 内存' },
+]
+const downloadProgress = ref({})
 
 const config = ref({
   llm: { provider: 'ollama', baseUrl: '', apiKey: '', model: '' },
@@ -226,6 +263,7 @@ const saved = ref(false)
 const chatHistory = ref([])
 const chatInput = ref('')
 const chatLoading = ref(false)
+const chatBox = ref(null)
 
 const audioFile = ref(null)
 const sttResult = ref('')
@@ -285,11 +323,74 @@ async function saveConfig() {
   }
 }
 
+async function downloadModel(name) {
+  downloadProgress.value[name] = '连接中...'
+  try {
+    const res = await fetch('/api/models/pull', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: name })
+    })
+    
+    const reader = res.body.getReader()
+    const decoder = new TextDecoder()
+    
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+      
+      const chunk = decoder.decode(value)
+      const lines = chunk.split('\n').filter(l => l.startsWith('data:'))
+      
+      for (const line of lines) {
+        try {
+          const data = JSON.parse(line.slice(5))
+          if (data.error) {
+            downloadProgress.value[name] = '错误: ' + data.error
+            setTimeout(() => delete downloadProgress.value[name], 3000)
+            return
+          }
+          if (data.status === 'success') {
+            downloadProgress.value[name] = '✓ 完成'
+            setTimeout(() => {
+              delete downloadProgress.value[name]
+              fetchData()
+            }, 2000)
+            return
+          }
+          if (data.status) {
+            const pct = data.completed && data.total ? 
+              Math.round((data.completed / data.total) * 100) + '%' : 
+              data.status
+            downloadProgress.value[name] = pct
+          }
+        } catch {}
+      }
+    }
+  } catch (e) {
+    downloadProgress.value[name] = '错误: ' + e.message
+    setTimeout(() => delete downloadProgress.value[name], 3000)
+  }
+}
+
+async function deleteModel(name) {
+  if (!confirm(`确定删除模型 ${name}？`)) return
+  try {
+    await fetch(`/api/models/${encodeURIComponent(name)}`, { method: 'DELETE' })
+    fetchData()
+  } catch (e) {
+    alert('删除失败: ' + e.message)
+  }
+}
+
 async function sendChat() {
   if (!chatInput.value.trim()) return
   const userMsg = chatInput.value
   chatHistory.value.push({ role: 'user', content: userMsg })
   chatInput.value = ''
+  await nextTick()
+  if (chatBox.value) chatBox.value.scrollTop = chatBox.value.scrollHeight
+  
   chatLoading.value = true
   try {
     const res = await fetch('/api/chat', {
@@ -299,6 +400,8 @@ async function sendChat() {
     })
     const data = await res.json()
     chatHistory.value.push({ role: 'assistant', content: data.response || '无回复' })
+    await nextTick()
+    if (chatBox.value) chatBox.value.scrollTop = chatBox.value.scrollHeight
   } catch (e) {
     chatHistory.value.push({ role: 'assistant', content: '错误: ' + e.message })
   } finally {
@@ -401,6 +504,17 @@ onUnmounted(() => clearInterval(timer))
 .info-label { font-size: 13px; color: var(--text-dim); margin-bottom: 8px; }
 .model-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag { background: var(--surface-2); padding: 4px 10px; border-radius: 4px; font-size: 13px; }
+.empty { color: var(--text-dim); font-size: 14px; text-align: center; padding: 32px; }
+.model-list { display: flex; flex-direction: column; gap: 12px; }
+.model-item {
+  padding: 12px; background: var(--surface-2); border-radius: 6px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+.model-name { font-weight: 500; font-size: 14px; }
+.model-desc { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+.model-actions { display: flex; align-items: center; gap: 8px; }
+.progress-text { font-size: 13px; color: var(--primary); }
+.btn-danger { background: var(--error); }
 .config-form { display: flex; flex-direction: column; gap: 32px; }
 .config-group { display: flex; flex-direction: column; gap: 16px; }
 .group-title { font-weight: 600; font-size: 15px; }
