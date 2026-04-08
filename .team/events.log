@@ -22178,3 +22178,5 @@
 {"ts":"2026-04-08T03:28:02.739Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":10,"memoryTotalMB":15,"cpuUser":7.164584,"cpuSystem":17.974968}}}
 {"ts":"2026-04-08T03:28:26.810Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":11,"memoryTotalMB":15,"cpuUser":7.164962,"cpuSystem":17.976182}}}
 {"ts":"2026-04-08T03:28:26.811Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] completed: No tasks in review/testing status. All tasks are done or cancelled. Nothing to test."}}
+{"ts":"2026-04-08T03:28:27.066Z","type":"workflow","agent":"milestone_qg","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-08T03:28:27.066Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":11,"memoryTotalMB":15,"cpuUser":7.179707,"cpuSystem":18.032974}}}

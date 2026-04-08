@@ -36815,3 +36815,6 @@ All tasks are completed. No items are in `review` or `testing` status — there'
 [2026-04-08T03:28:26.807Z] tester agent completed
 [2026-04-08 03:28:26] [agent_complete] tester completed successfully
 [2026-04-08 03:28:26] [workflow] tester [SIGNAL] completed: No tasks in review/testing status. All tasks are done or cancelled. Nothing to test.
+[2026-04-08 03:28:27] [workflow] milestone_qg [EXEC] pm
+[2026-04-08 03:28:27] [agent_start] pm 管理任务和里程碑
+[2026-04-08T03:28:27.095Z] Running pm agent...
