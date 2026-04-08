@@ -317,6 +317,10 @@ function addRoutes(r) {
   const adminDist = new URL('../../dist/admin', import.meta.url).pathname;
   r.use('/admin', express.static(adminDist));
   r.get('/admin', (req, res) => res.sendFile(path.join(adminDist, 'index.html')));
+  
+  // Serve admin UI at root (exact match first, then static assets)
+  r.get('/', (req, res) => res.sendFile(path.join(adminDist, 'index.html')));
+  r.use(express.static(adminDist));
 }
 
 export function createRouter() {
