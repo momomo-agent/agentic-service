@@ -36554,3 +36554,14 @@ Test suite health: detector tests show 6 failed/8 passed files; runtime tests ha
 [2026-04-08T03:23:36.988Z] tester agent completed
 [2026-04-08 03:23:36] [agent_complete] tester completed successfully
 [2026-04-08 03:23:36] [workflow] tester [SIGNAL] completed: No tasks in review status. Vision 94% and PRD 95% both exceed 90% goal. Remaining 2 tasks (ARCHITECT
+No tasks are currently in `review` status — all tasks are either `done`, `cancelled`, or `in_progress` (assigned to tech_lead). There is nothing for the tester to pick up right now.
+
+```signal
+{"status": "completed", "summary": "No tasks in 'review' status available for testing. All 572 tasks are done (229), cancelled (341), or in_progress (2, assigned to tech_lead). Pipeline is clear."}
+```
+[2026-04-08T03:23:37.132Z] tester agent completed
+[2026-04-08 03:23:37] [workflow] milestone_qg [EXEC] pm
+[2026-04-08 03:23:37] [agent_start] pm 管理任务和里程碑
+[2026-04-08 03:23:37] [agent_complete] tester completed successfully
+[2026-04-08 03:23:37] [workflow] tester [SIGNAL] completed: No tasks in 'review' status available for testing. All 572 tasks are done (229), cancelled (341), or
+[2026-04-08T03:23:37.251Z] Running pm agent...
