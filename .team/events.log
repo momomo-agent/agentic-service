@@ -21243,3 +21243,23 @@
 {"ts":"2026-04-08T00:54:33.521Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:4, done:223)\"}"}}
 {"ts":"2026-04-08T00:54:38.026Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.628138,"cpuSystem":5.666918}}}
 {"ts":"2026-04-08T00:54:38.026Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Completed 3 developer tasks: (1) Updated ARCHITECTURE.md with matcher.js, ollama.js, memory.js docum"}}
+{"ts":"2026-04-08T00:54:38.418Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 3"}}
+{"ts":"2026-04-08T00:54:38.430Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-08T00:54:38.431Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":9,"memoryTotalMB":14,"cpuUser":2.667104,"cpuSystem":5.795517}}}
+{"ts":"2026-04-08T00:55:14.140Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.690675,"cpuSystem":5.830184}}}
+{"ts":"2026-04-08T00:55:14.141Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] blocked: M95 has 3 tasks in review awaiting tester approval. Final gap evaluation (task-1775588280002) is blo"}}
+{"ts":"2026-04-08T00:55:14.141Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] pm → blocked: M95 has 3 tasks in review awaiting tester approval. Final gap evaluation (task-1"}}
+{"ts":"2026-04-08T00:55:14.202Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-08T00:55:14.203Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-08T00:55:14.203Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] implement, run-tests"}}
+{"ts":"2026-04-08T00:55:14.203Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-08T00:55:14.203Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.704781,"cpuSystem":5.879703}}}
+{"ts":"2026-04-08T00:55:14.204Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] tester-1, tester-2"}}
+{"ts":"2026-04-08T00:55:14.204Z","type":"agent_start","agent":"tester-1","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.704997,"cpuSystem":5.880135}}}
+{"ts":"2026-04-08T00:55:14.204Z","type":"agent_start","agent":"tester-2","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":2.705104,"cpuSystem":5.880384}}}
+{"ts":"2026-04-08T00:55:33.522Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:4, done:223)"}}
+{"ts":"2026-04-08T00:55:33.523Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:4, done:223)\"}"}}
+{"ts":"2026-04-08T00:55:44.430Z","type":"task_status","agent":"tester-1","data":{"taskId":"task-1775607213287","from":"review","to":"testing","title":"Implement CPU profiling instrumentation for voice latency measurement"}}
+{"ts":"2026-04-08T00:55:48.611Z","type":"task_status","agent":"tester-2","data":{"taskId":"task-1775587524244","from":"review","to":"testing","title":"Review and merge Architecture CR for undocumented modules"}}
+{"ts":"2026-04-08T00:56:12.613Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":2.753201,"cpuSystem":5.94848}}}
+{"ts":"2026-04-08T00:56:12.614Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: No claimable tasks available. My task (task-1775607213244) is in review. Remaining 3 tasks are in te"}}

@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-08T00:50:22.018Z",
+  "timestamp": "2026-04-08T00:55:14.136Z",
   "exitCode": 0,
-  "status": "completed",
-  "summary": "Consolidated 5 active milestones into M95 as single final push. Marked m92/m93/m94 completed, cancelled m96. 4 remaining tasks: 3 dev (arch CR merge, agentic-embed docs, CPU profiling) + 1 tester (gap evaluation, blocked by dev tasks). Critical path enforced via blockedBy dependencies."
+  "status": "blocked",
+  "summary": "M95 has 3 tasks in review awaiting tester approval. Final gap evaluation (task-1775588280002) is blocked until developers' work is approved by testers. No new tasks needed — bottleneck is test review throughput."
 }

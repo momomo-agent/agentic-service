@@ -2,13 +2,13 @@
   "id": "task-1775587524244",
   "title": "Review and merge Architecture CR for undocumented modules",
   "description": "Review pending CR-1775569100684 for ARCHITECTURE.md: add tunnel.js, src/cli/, HTTPS/middleware, VAD, agentic-embed, agentic-store, matcher.js/ollama.js documentation. After review, update ARCHITECTURE.md with all modules. Target: architecture match 88% → 90%+.",
-  "status": "review",
+  "status": "testing",
   "priority": "P0",
-  "assignee": "developer",
+  "assignee": "tester-2",
   "blockedBy": [],
   "groupId": "m95",
   "hasDesign": true,
   "created": "2026-04-07T18:45:24.244Z",
-  "updated": "2026-04-08T00:52:17.192Z",
+  "updated": "2026-04-08T00:55:48.610Z",
   "milestoneId": "m95"
 }

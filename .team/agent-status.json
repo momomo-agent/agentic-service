@@ -1,7 +1,7 @@
 {
   "pm": {
     "status": "idle",
-    "lastRun": "2026-04-08T00:50:22.022Z",
+    "lastRun": "2026-04-08T00:55:14.140Z",
     "currentTask": null,
     "retryCount": 0
   },
@@ -25,7 +25,7 @@
   },
   "developer": {
     "status": "idle",
-    "lastRun": "2026-04-08T00:54:38.025Z",
+    "lastRun": "2026-04-08T00:56:12.613Z",
     "currentTask": null,
     "retryCount": 0
   },
@@ -36,15 +36,15 @@
     "retryCount": 0
   },
   "tester-1": {
-    "status": "idle",
-    "lastRun": "2026-04-08T00:44:55.282Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-08T00:55:14.204Z",
+    "currentTask": "验证功能",
     "retryCount": 0
   },
   "tester-2": {
-    "status": "idle",
-    "lastRun": "2026-04-08T00:22:24.575Z",
-    "currentTask": null,
+    "status": "running",
+    "lastRun": "2026-04-08T00:55:14.204Z",
+    "currentTask": "验证功能",
     "retryCount": 0
   },
   "qa_lead": {
