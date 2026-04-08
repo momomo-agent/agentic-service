@@ -4,11 +4,12 @@
   "description": "The directory structure section (lines 121-155) is missing many files that exist in the codebase. Add: runtime/embed.js, runtime/vad.js, runtime/profiler.js, runtime/latency-log.js, runtime/adapters/, store/, tunnel.js, cli/setup.js, cli/browser.js, server/cert.js, server/httpsServer.js, server/middleware.js. This closes architecture gaps for undocumented modules.",
   "status": "todo",
   "priority": "P0",
-  "assignee": null,
+  "assignee": "tech_lead-1",
+  "status": "in_progress",
   "blockedBy": [],
   "groupId": "m97",
   "hasDesign": false,
   "created": "2026-04-08T01:45:39.548Z",
-  "updated": "2026-04-08T01:45:49.595Z",
+  "updated": "2026-04-08T05:00:00.000Z",
   "milestoneId": "m97"
 }

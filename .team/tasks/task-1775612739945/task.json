@@ -4,7 +4,7 @@
   "description": "After all architecture doc fixes and gap status updates, run fresh evaluation of all gap files. Report: (1) Vision match score, (2) PRD match score, (3) DBB match score, (4) Architecture match score. Target: Vision >=90%, PRD >=90%. If any score is below target, list specific remaining gaps.",
   "status": "todo",
   "priority": "P0",
-  "assignee": null,
+  "assignee": "tester-1",
   "blockedBy": [
     "task-1775612739548",
     "task-1775612739625",
