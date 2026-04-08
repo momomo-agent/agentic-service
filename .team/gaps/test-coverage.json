@@ -1,12 +1,9 @@
 {
-  "totalTests": 26,
-  "passed": 26,
+  "totalTests": 10,
+  "passed": 10,
   "failed": 0,
   "edgeCases": [
-    "Profiler uses Date.now() (wall clock) not performance.now() - acceptable for ms-level tracking",
-    "Metrics accumulate globally across requests, not per-request - by design",
-    "endMark returns null for unmatched startMark - callers handle correctly",
-    "Concurrent overlapping marks with same label restart timing (last startMark wins)"
+    "No test for matchProfile() logic against this file"
   ],
   "coverage": "100%"
 }

@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-08T01:37:37.419Z",
-  "exitCode": 1,
-  "status": "failed",
-  "summary": "API Error: 429 {\"error\":{\"code\":\"429\",\"message\":\"monthly quota exhausted\",\"type\":\"limitation\"}}"
+  "timestamp": "2026-04-08T01:46:37.437Z",
+  "exitCode": 0,
+  "status": "completed",
+  "summary": "M95 status updated (3/4 done, gap eval ready). Created M97 with 4 tasks targeting architecture doc gaps and Vision/PRD gap closure. Gap evaluation is the critical path — stale gap files likely undercount actual completion."
 }

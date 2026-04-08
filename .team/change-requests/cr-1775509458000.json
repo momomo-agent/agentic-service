@@ -6,8 +6,9 @@
   "targetFile": "ARCHITECTURE.md",
   "reason": "Implementation has src/store/, src/cli/, and src/runtime/embed.js which conflict with architecture's dependency model (agentic-store, agentic-embed). Architecture match is stuck at 78% due to these structural deviations.",
   "proposedChange": "Either: (a) document src/store/, src/cli/, src/runtime/embed.js as acceptable local implementations when dependencies are unavailable, or (b) clarify migration path to use agentic-store/agentic-embed packages",
-  "status": "pending",
+  "status": "resolved",
   "createdAt": "2026-04-06T21:03:58.000Z",
-  "reviewedAt": null,
-  "reviewedBy": null
+  "reviewedAt": "2026-04-08T01:41:31.414Z",
+  "reviewedBy": "process-crs",
+  "resolution": "auto-merged by process-crs"
 }

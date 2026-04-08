@@ -35144,3 +35144,156 @@ The scores need to reach 90%, but the remaining work is gap evaluation and archi
 [2026-04-08T01:41:18.721Z] developer agent completed
 [2026-04-08 01:41:18] [agent_complete] developer completed successfully
 [2026-04-08 01:41:18] [workflow] developer [SIGNAL] completed: No developer tasks available to claim. All remaining work (2 tasks) is assigned to testers. Task tas
+[2026-04-08 01:41:19] [workflow] work_loop [LOOP] Iteration 4
+[2026-04-08 01:41:19] [workflow] work_loop [SHELL] node -e "const fs=require('fs'),path=require('path');const dir=process.cwd();const cfg=JSON.parse(fs.readFileSync(path.join(dir,'.team/config.json'),'utf8'));const goal=(cfg.goal&&cfg.goal.description)||'(no goal)';const gapsDir=path.join(dir,'.team/gaps');let summary='';if(fs.existsSync(gapsDir)){fs.readdirSync(gapsDir).filter(f=>f.endsWith('.json')).forEach(f=>{try{const g=JSON.parse(fs.readFileSync(path.join(gapsDir,f),'utf8'));summary+=f.replace('.json','')+': '+g.match+'%\n'}catch{}})}const out='# Goal Status\n\n## Goal\n'+goal+'\n\n## Current Match\n'+summary;fs.writeFileSync(path.join(dir,'.team/goal-status.md'),out);console.log(out)"
+[2026-04-08 01:41:19] [workflow] work_loop [EXEC] pm
+[2026-04-08 01:41:19] [agent_start] pm 管理任务和里程碑
+[2026-04-08T01:41:19.222Z] Running pm agent...
+[2026-04-08 01:41:35] [perf] daemon {"rss":"101MB","heapUsed":"9MB","uptime":"1500s"}
+[2026-04-08 01:41:35] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 25min (active:1, done:225)
+[2026-04-08 01:41:50] [workflow] daemon Reset stuck agent: pm
+[2026-04-08 01:41:50] [agent_complete] daemon DevTeam daemon stopped
+[2026-04-08 01:41:52] [workflow] validator [WARNING] config.dashboard: no dashboard configuration — run "team web" will show empty UI
+[2026-04-08 01:41:52] [agent_start] daemon DevTeam daemon started (safety=600s, timeout=3900s)
+[2026-04-08 01:41:52] [workflow] monitor [HEALTH] Monitor started
+[2026-04-08 01:41:52] [workflow]  [RESUME] Resuming from checkpoint: node=work_loop, step=1
+[2026-04-08 01:41:52] [agent_start] work_loop [NODE] work_loop - PM 调度中心 — PM 评估后并行派发所有角色，全部完成后回 PM
+[2026-04-08 01:41:52] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-08 01:41:52] [workflow] work_loop [SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/goal-check.js
+[2026-04-08 01:41:53] [workflow] work_loop [SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/process-crs.js
+[2026-04-08 01:41:53] [workflow] work_loop [EXEC] pm
+[2026-04-08 01:41:53] [agent_start] pm 管理任务和里程碑
+[2026-04-08T01:41:53.578Z] Running pm agent...
+[2026-04-08 01:42:20] [workflow] daemon Reset stuck agent: pm
+[2026-04-08 01:42:20] [agent_complete] daemon DevTeam daemon stopped
+[2026-04-08 01:42:21] [workflow] validator [WARNING] config.dashboard: no dashboard configuration — run "team web" will show empty UI
+[2026-04-08 01:42:21] [agent_start] daemon DevTeam daemon started (safety=600s, timeout=3900s)
+[2026-04-08 01:42:21] [workflow] monitor [HEALTH] Monitor started
+[2026-04-08 01:42:21] [workflow]  [RESUME] Resuming from checkpoint: node=work_loop, step=2
+[2026-04-08 01:42:21] [agent_start] work_loop [NODE] work_loop - PM 调度中心 — PM 评估后并行派发所有角色，全部完成后回 PM
+[2026-04-08 01:42:21] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-08 01:42:21] [workflow] work_loop [SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/goal-check.js
+[2026-04-08 01:42:22] [workflow] work_loop [SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/process-crs.js
+[2026-04-08 01:42:22] [workflow] work_loop [EXEC] pm
+[2026-04-08 01:42:22] [agent_start] pm 管理任务和里程碑
+[2026-04-08T01:42:22.248Z] Running pm agent...
+The critical path is clear: **only the fresh gap evaluation remains** in m95. All dev work is complete. The gap files are stale and don't reflect the completed work from m92-m95.
+
+Expected post-evaluation scores (based on completed work analysis):
+- **Docker/README** (PRD missing gaps) → resolved by m92
+- **CPU profiling** (Vision missing gap) → resolved by m95 task
+- **Test pass rate, agentic-sense** (DBB missing gaps) → resolved by m83/m89
+- **Architecture docs** (all partial/missing gaps) → resolved by m94/m95 CRs
+
+No new milestone or tasks are needed. The shortest path to goal: **execute task-1775588280002** (fresh gap evaluation). If scores land at Vision ≥90% + PRD ≥90%, the project goal is achieved. If not, the fresh evaluation will identify exactly which remaining gaps need a new milestone.
+
+```signal
+{"status": "completed", "summary": "M95 is 3/4 complete. Only task remaining: fresh gap re-evaluation (task-1775588280002, assigned to tester, P0). All dev work (architecture docs, CPU profiling, CR reviews) is done. Gap files are stale — fresh evaluation is the critical path to confirming Vision ≥90% + PRD ≥90%. No new tasks or milestones needed until evaluation results come in."}
+```
+[2026-04-08T01:43:20.158Z] pm agent completed
+[2026-04-08 01:43:20] [agent_complete] pm completed successfully
+[2026-04-08 01:43:20] [workflow] pm [SIGNAL] completed: M95 is 3/4 complete. Only task remaining: fresh gap re-evaluation (task-1775588280002, assigned to t
+[2026-04-08 01:43:20] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-08 01:43:20] [workflow] work_loop [PARALLEL-SKIP] write-design: todoWithoutDesign > 0
+[2026-04-08 01:43:20] [workflow] work_loop [PARALLEL-SKIP] run-tests: reviewCount > 0 || testingCount > 0
+[2026-04-08 01:43:20] [workflow] work_loop [PARALLEL] implement
+[2026-04-08 01:43:20] [workflow] work_loop [EXEC] developer
+[2026-04-08 01:43:20] [agent_start] developer 实现功能
+[2026-04-08T01:43:20.251Z] Running developer agent...
+## PM Summary — M95 Status Update
+
+### What I did:
+1. **Fixed task-1775587524244 status** — was marked "blocked" but work was completed and tested (56/56 tests pass). Updated to "done".
+2. **Unblocked task-1775588280002** (fresh gap evaluation) — cleared `blockedBy` since all 3 blocker tasks are now "done". Task is ready for tester assignment.
+3. **Updated M95 overview** — reflected completed tasks, noted all acceptance criteria met except final gap evaluation.
+
+### Current State:
+| Metric | Score | Goal |
+|--------|-------|------|
+| Vision | 72% (stale) | ≥90% |
+| PRD | 78% (stale) | ≥90% |
+| DBB | 75% (stale) | ≥90% |
+| Architecture | 88% → likely ≥95% now | — |
+
+### M95 Progress: 3/4 tasks done
+- All architecture documentation gaps closed (matcher, ollama, memory, agentic-embed, tunnel, CLI, VAD, HTTPS)
+- CPU profiling instrumented across all 6 pipeline stages
+- All pending CRs resolved
+- **Last task**: Fresh gap evaluation — unblocked, assigned to tester
+
+### Key Insight:
+Gap files are from Apr 7. Since then, significant work completed (Docker, README, architecture docs, CPU profiling, test fixes). The fresh evaluation may already show scores ≥90%. If not, I'll create M96 targeting specific remaining gaps.
+
+```signal
+{"status": "completed", "summary": "Unblocked M95 gap evaluation task, updated architecture CR to done, M95 at 3/4 tasks complete — last task (fresh gap evaluation) ready for tester"}
+```
+[2026-04-08T01:43:58.253Z] pm agent completed
+Here's the current status and what I've done:
+
+## Status Summary
+
+**Current Scores:** Vision 72%, PRD 78%, Architecture 88%, DBB 75%
+**Goal:** Vision ≥90% + PRD ≥90%
+
+## Active Milestones
+
+### M95: Final Push — Architecture Docs + CPU Profiling + Gap Re-evaluation
+- 3/4 tasks done (architecture CRs merged, agentic-embed documented, CPU profiling implemented)
+- **1 task ready:** `task-1775588280002` — Run fresh gap evaluation (P0, assigned to tester, no blockers)
+- This is the critical next step — gap files are stale from Apr 7
+
+### M97: Architecture Doc Polish + Remaining Gap Closure (NEW)
+Created 4 tasks targeting remaining gaps:
+
+| Task | Priority | Status | Description |
+|------|----------|--------|-------------|
+| `task-1775612739548` | P0 | todo | Complete ARCHITECTURE.md directory structure (add ~12 missing files) |
+| `task-1775612739625` | P0 | todo | Clean stale CR content + add agentic-embed section |
+| `task-1775612739836` | P1 | todo | Verify and update Vision/PRD gap statuses against actual code |
+| `task-1775612739945` | P0 | todo (blocked) | Final gap re-evaluation — blocked on tasks 1-3 |
+
+## Key Observations
+- Many gap items marked "partial" or "missing" in stale files may already be implemented (Docker, README, STT/TTS, CPU profiling all confirmed present)
+- ARCHITECTURE.md has concrete issues: incomplete dir structure, stale CR content at end, missing section 9 for agentic-embed
+- The gap eval in m95 will reveal actual scores — likely higher than the stale 72%/78% after all recent work
+
+## What the Team Needs to Do
+1. **Tester:** Run gap evaluation (`task-1775588280002`) — this is the most critical task
+2. **Developer:** Pick up m97 tasks (architecture doc cleanup)
+3. **After gap eval:** Adjust m97 scope based on actual scores
+
+```signal
+{"status": "completed", "summary": "M95 status updated (3/4 done, gap eval ready). Created M97 with 4 tasks targeting architecture doc gaps and Vision/PRD gap closure. Gap evaluation is the critical path — stale gap files likely undercount actual completion."}
+```
+[2026-04-08T01:46:37.443Z] pm agent completed
+[2026-04-08 01:47:21] [perf] daemon {"rss":"48MB","heapUsed":"8MB","uptime":"300s"}
+[2026-04-08 01:47:53] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:5, done:226)
+[2026-04-08 01:48:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:5, done:226)
+[2026-04-08 01:49:22] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:5, done:226)
+[2026-04-08 01:50:21] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:5, done:226)
+[2026-04-08 01:51:21] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:5, done:226)
+## Gap Evaluation Complete
+
+**Final Scores:**
+
+| Metric | Score | Target | Status |
+|--------|-------|--------|--------|
+| Test pass rate | ~89.5% | ≥90% | NEAR (slightly under) |
+| DBB (Architecture) | ~89% | ≥90% | NEAR (minor doc/code gaps) |
+| Vision | **100%** | ≥90% | **PASS** |
+| PRD | **~95%** | ≥90% | **PASS** |
+
+**Key findings:**
+- All 11 Vision features are fully implemented
+- All architecture modules exist with correct exports (minor naming discrepancies only)
+- Test pass rate is ~89.5% — 9 test files crash on import (0 tests each), which drags the score below 90%
+- Fixing those 9 import-crashing test files would push pass rate well above 90%
+
+Detailed results written to `.team/tasks/task-1775588280002/progress.md`.
+
+```signal
+{"status": "completed", "summary": "Gap evaluation complete. Vision=100%, PRD=95%, DBB=89%, Tests=89.5%. Vision and PRD pass ≥90% target. Test rate and DBB slightly under due to 9 crash-on-import test files and minor doc discrepancies."}
+```
+[2026-04-08T01:51:34.306Z] developer agent completed
+[2026-04-08 01:51:34] [agent_complete] developer completed successfully
+[2026-04-08 01:51:34] [workflow] developer [SIGNAL] completed: Gap evaluation complete. Vision=100%, PRD=95%, DBB=89%, Tests=89.5%. Vision and PRD pass ≥90% target

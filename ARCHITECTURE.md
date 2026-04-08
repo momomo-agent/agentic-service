@@ -186,3 +186,67 @@ detectVoiceActivity(buffer: Buffer) → boolean
 // src/server/httpsServer.js — createServer(app) → https.Server
 // src/server/middleware.js — errorHandler(err, req, res, next) → void
 ```
+
+
+Add sections to ARCHITECTURE.md documenting: (1) LAN Tunnel module (tunnel.js), (2) CLI module (src/cli/setup.js, browser.js), (3) HTTPS/Middleware layer (cert.js, httpsServer.js, middleware.js), (4) VAD runtime module (vad.js), (5) agentic-embed runtime integration (embed.js, adapters/), (6) Detector submodules (matcher.js, ollama.js).
+
+Add the following clarifications to ARCHITECTURE.md: (1) llm.js loadConfig() MUST call optimizer.js and use its output model selection, not hardcode gemma4:26b; (2) sense.js MUST export detect(frame) in addition to event API for server-side use; (3) store.js MUST export delete() alias alongside del(); (4) brain.js tool_use response MUST include text field; (5) hub.js heartbeat timeout MUST be 60s per DBB-005; (6) hub.js MUST broadcast wakeword events to connected clients; (7) profiles.js remote URL MUST use cdn.example.com (not jsdelivr proxy); (8) server entry MUST register process.on('SIGINT') for graceful shutdown.
+
+Either: (a) document src/store/, src/cli/, src/runtime/embed.js as acceptable local implementations when dependencies are unavailable, or (b) clarify migration path to use agentic-store/agentic-embed packages
+
+Add the following sections to ARCHITECTURE.md: (1) sense.js dual-path: browser MediaPipe + server-side headless (canvas/node-canvas) for Node.js compatibility; (2) always-on wake word pipeline: server-side VAD + wake word detection feeding STT, not just UI composable; (3) latency budget: STT≤500ms + LLM first-token≤1000ms + TTS≤500ms = <2s total, enforced via perf logging; (4) network security: HTTPS via self-signed cert + optional ngrok/cloudflared tunnel for LAN multi-device; (5) profiles CDN: 7-day TTL cache with ETag/Last-Modified staleness check; (6) VAD: WebRTC VAD or silero-vad for auto speech segmentation; (7) profiles/default.json: add cpu-only profile with smaller models; (8) SIGINT: drain in-flight requests with 5s timeout before exit; (9) brain state sync: hub.js broadcastSession to share memory/context across devices.
+
+Re-run architecture gap analysis against current codebase to update match score and gap statuses. Expected match should be ~75-85% after m18-m22 implementations.
+
+Re-run architecture gap analysis against actual source files to produce an accurate match score. Update architecture.json to reflect implemented status for modules confirmed present by PRD/DBB analysis.
+
+Re-run the architecture gap scan against the current codebase to produce an accurate match score and gap list. The scan should verify file existence before marking gaps as 'missing'.
+
+Update ARCHITECTURE.md to either (a) formally include these modules with their roles and interfaces, or (b) explicitly mark them as out-of-scope so they can be removed. This will resolve the 22% architecture gap and unblock accurate compliance tracking.
+
+Add to ARCHITECTURE.md under Server section: src/server/cert.js (generateCert), src/server/httpsServer.js (createServer), src/server/middleware.js (errorHandler). Add new CLI section: src/cli/setup.js (runSetup), src/cli/browser.js (openBrowser).
+
+Add the following to ARCHITECTURE.md under the relevant sections: (1) detector/matcher.js and detector/ollama.js under the Detector module; (2) server/cert.js, server/httpsServer.js, server/middleware.js under the Server module; (3) src/cli/ directory under the directory structure. Alternatively, if these files are intentional extras not part of the core architecture, document them as 'implementation details' outside the spec boundary.
+
+Either: (A) Update ARCHITECTURE.md dependency diagram to show these as local modules instead of external packages, OR (B) Create milestone to extract these modules into separate publishable packages with proper versioning and dependency management.
+
+Add sections for: Tunnel module (src/tunnel.js), CLI module (src/cli/), HTTPS/Middleware layer, VAD runtime (src/runtime/vad.js), and agentic-embed runtime integration (src/runtime/embed.js + adapters/).
+
+Add sections for: tunnel.js (LAN tunnel via ngrok/cloudflared), src/cli/setup.js + browser.js, runtime/vad.js (RMS energy VAD), HTTPS/middleware layer (cert.js, httpsServer.js, middleware.js).
+
+Add sections for: tunnel (src/tunnel.js - LAN tunnel), CLI (src/cli/ - setup.js, browser.js), HTTPS/middleware (src/server/cert.js, httpsServer.js, middleware.js), VAD (src/runtime/vad.js), embed runtime (src/runtime/embed.js and adapters/).
+
+Add sections:
+
+## 5. Tunnel (src/tunnel.js)
+startTunnel(port: number) → void — spawns ngrok or cloudflared; prefers ngrok; exits if neither installed; kills subprocess on SIGINT
+
+## 6. CLI (src/cli/)
+runSetup() → Promise<void> — first-run wizard
+openBrowser(port: number) → void — opens browser after server starts
+
+## 7. HTTPS/Middleware (src/server/cert.js, httpsServer.js, middleware.js)
+generateCert() → { key, cert }
+createHttpsServer(app, options) → https.Server
+applyMiddleware(app) → void
+
+## 8. VAD (src/runtime/vad.js)
+detectVoiceActivity(buffer: Buffer) → boolean — RMS energy threshold on Int16 PCM
+
+## 9. Embed (src/runtime/embed.js)
+embed(text: string) → Promise<number[]> — delegates to agentic-embed
+
+Add module sections to ARCHITECTURE.md for: (1) tunnel.js — LAN tunnel capability, (2) src/cli/ — CLI module with setup.js and browser.js, (3) HTTPS/middleware layer — cert.js, httpsServer.js, middleware.js, (4) VAD — src/runtime/vad.js voice activity detection, (5) agentic-embed runtime — src/runtime/embed.js and adapters/
+
+Add sections for: Tunnel module (tunnel.js — LAN tunnel via localtunnel/ngrok), CLI module (cli/setup.js, cli/browser.js — setup wizard and browser launch), HTTPS/Middleware layer (server/cert.js, server/httpsServer.js, server/middleware.js), VAD module (runtime/vad.js — voice activity detection), and agentic-embed integration (runtime/embed.js, runtime/adapters/ — vector embedding via bge-m3).
+
+Add section to ARCHITECTURE.md:
+
+## 9. agentic-embed (Vector Embedding)
+```javascript
+// src/runtime/embed.js — wraps agentic-embed package
+embed(text: string) → number[]  // bge-m3 vector embedding
+// Throws TypeError if text is not a string
+// Returns empty array for empty string
+// Used by memory.js for semantic search / retrieval
+```

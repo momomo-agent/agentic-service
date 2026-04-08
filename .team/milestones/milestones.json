@@ -289,6 +289,18 @@
       "created": "2026-04-08T00:13:38.614Z",
       "cancelled": "2026-04-08T04:00:00.000Z",
       "reason": "Consolidated into M95 final push milestone"
+    },
+    {
+      "id": "m97",
+      "name": "M97: Architecture Doc Polish + Remaining Gap Closure",
+      "status": "active",
+      "tasks": [
+        "task-1775612739548",
+        "task-1775612739625",
+        "task-1775612739836",
+        "task-1775612739945"
+      ],
+      "created": "2026-04-08T04:10:00.000Z"
     }
   ]
 }

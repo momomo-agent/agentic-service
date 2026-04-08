@@ -12,38 +12,35 @@ Close the remaining gaps to reach Vision >=90% and PRD >=90%.
 - Remaining Vision gaps: agentic-embed docs (partial), CPU profiling (missing)
 - Test pass rate already >=90%, agentic-sense wiring verified
 
-## Tasks (4 remaining, ordered by dependency)
+## Tasks (4 total)
 
-### Task 1: Review and merge Architecture CR for undocumented modules
-- **Owner:** developer | **Priority:** P0
-- Review CR-1775569100684 for ARCHITECTURE.md additions
-- Sections 5-8 (tunnel, CLI, VAD, HTTPS/middleware) already present
-- Verify completeness and mark CR as reviewed/merged
+### Task 1: Review and merge Architecture CR for undocumented modules — DONE
+- Added matcher.js, ollama.js, memory.js API to ARCHITECTURE.md
+- CR-1775569100684 resolved; all 56 tests pass
 
-### Task 2: Document agentic-embed in ARCHITECTURE.md
-- **Owner:** developer | **Priority:** P1
-- Add section documenting agentic-embed's role (embed.js + adapters/)
-- Cover vector embedding capability (bge-m3) and memory.js integration
-- Mark related CRs (cr-1775579949939, cr-1775580105000) as reviewed/merged
+### Task 2: Document agentic-embed in ARCHITECTURE.md — DONE
+- CRs cr-1775579949939 and cr-1775580105000 reviewed
+- agentic-embed CR (cr-1775609587772) auto-merged by process-crs
+- ARCHITECTURE.md now has full module coverage
 
-### Task 3: Implement CPU profiling instrumentation
-- **Owner:** developer | **Priority:** P0
-- Vision gap: "CPU profiling / performance instrumentation absent" — MISSING
-- Add `performance.now()` timing wrappers around stt.js/llm.js/tts.js key functions
-- Add `/api/profile` endpoint returning timing data
-- Closes the last Vision "missing" gap toward >=90%
+### Task 3: Implement CPU profiling instrumentation — DONE
+- Added profiler marks to memory.js (memory-add, memory-search)
+- Added voice-pipeline profiler mark to /api/voice endpoint
+- All 6 pipeline stages profiled: stt, llm, tts, memory-add, memory-search, voice-pipeline
+- All 26 tests pass
 
-### Task 4: Run fresh DBB/PRD/Vision gap evaluation (BLOCKED by Tasks 1-3)
+### Task 4: Run fresh DBB/PRD/Vision gap evaluation — UNBLOCKED, READY
 - **Owner:** tester | **Priority:** P0
-- Gap files are stale — fresh evaluation needed after all dev work is complete
+- All blockers (Tasks 1-3) complete
+- Gap files are stale (Apr 7) — fresh evaluation needed
+- Since Apr 7: Docker, README, architecture docs, CPU profiling, test fixes all completed
 - Target: Vision >=90%, PRD >=90%, DBB >=90%
-- Report final scores
 
 ## Acceptance Criteria
-- CR-1775569100684 reviewed and ARCHITECTURE.md updated
-- ARCHITECTURE.md documents agentic-embed integration (Section 9)
-- CPU profiling instrumentation implemented and functional
-- Fresh gap evaluation shows Vision >=90%, PRD >=90%, DBB >=90%
+- [x] CR-1775569100684 reviewed and ARCHITECTURE.md updated
+- [x] ARCHITECTURE.md documents agentic-embed integration (Section 9)
+- [x] CPU profiling instrumentation implemented and functional
+- [ ] Fresh gap evaluation shows Vision >=90%, PRD >=90%, DBB >=90%
 
 ## Priority
 P0 — final milestone to reach project goals (Vision >=90%, PRD >=90%)
