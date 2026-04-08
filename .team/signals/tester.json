@@ -1,7 +1,7 @@
 {
   "agent": "tester",
-  "timestamp": "2026-04-08T03:23:37.132Z",
+  "timestamp": "2026-04-08T03:26:18.283Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "No tasks in 'review' status available for testing. All 572 tasks are done (229), cancelled (341), or in_progress (2, assigned to tech_lead). Pipeline is clear."
+  "summary": "No tasks in review/testing status found — all tasks are already done or cancelled. Nothing to test."
 }

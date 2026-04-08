@@ -49,6 +49,27 @@ async function pullModel(model) {
 
 const CONFIG_PATH = path.join(os.homedir(), '.agentic-service', 'config.json');
 
+/**
+ * Ensure Ollama is installed and recommended model is pulled.
+ * Called on every startup (not just first run).
+ */
+export async function ensureModel() {
+  const hardware = await detect();
+  const profile = await getProfile(hardware);
+
+  if (profile.llm.provider !== 'ollama') return;
+
+  if (!await isOllamaInstalled()) {
+    const spinner = ora('Installing Ollama...').start();
+    await installOllama(getInstallCommand(hardware.platform));
+    spinner.succeed('Ollama installed');
+  }
+
+  if (!await isModelPulled(profile.llm.model)) {
+    await pullModel(profile.llm.model);
+  }
+}
+
 export async function runSetup() {
   console.log(chalk.bold('Setup Wizard\n'));
 

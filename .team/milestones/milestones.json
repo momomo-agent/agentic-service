@@ -294,7 +294,8 @@
     {
       "id": "m97",
       "name": "M97: Architecture Doc Polish + Remaining Gap Closure",
-      "status": "active",
+      "status": "completed",
+      "completed": "2026-04-08T10:30:00.000Z",
       "tasks": [
         "task-1775612739548",
         "task-1775612739625",

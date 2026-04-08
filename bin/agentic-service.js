@@ -6,7 +6,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import os from 'os';
 import chalk from 'chalk';
-import { runSetup } from '../src/cli/setup.js';
+import { runSetup, ensureModel } from '../src/cli/setup.js';
 import { startServer, startDrain, waitDrain } from '../src/server/api.js';
 import { openBrowser } from '../src/cli/browser.js';
 
@@ -42,6 +42,9 @@ program
         if (isFirstRun) {
           console.log(chalk.yellow('First run detected. Running setup...\n'));
           await runSetup();
+        } else {
+          // Not first run, but still ensure model is available
+          await ensureModel();
         }
       }
 
