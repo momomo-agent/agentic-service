@@ -2,13 +2,13 @@
   "id": "task-1775612739625",
   "title": "Clean stale CR content + add agentic-embed section",
   "description": "ARCHITECTURE.md has stale CR text appended at lines 191+ that needs removal. Also add section 9 documenting agentic-embed runtime integration (embed.js wrapping agentic-embed package, bge-m3 vector embedding, memory.js integration). Optionally add a section for profiler.js and latency-log.js modules. Target: architecture match 88% to 90%+.",
-  "status": "todo",
+  "status": "in_progress",
   "priority": "P0",
   "assignee": "tech_lead",
   "blockedBy": [],
   "groupId": "m97",
   "hasDesign": true,
   "created": "2026-04-08T01:45:39.626Z",
-  "updated": "2026-04-08T03:10:23.159Z",
+  "updated": "2026-04-08T03:12:47.210Z",
   "milestoneId": "m97"
 }

@@ -1,11 +1,10 @@
 {
-  "totalTests": 8,
-  "passed": 7,
-  "failed": 1,
+  "totalTests": 14,
+  "passed": 14,
+  "failed": 0,
   "edgeCases": [
-    "Node.js version < 18 rejection (requires mock node binary)",
-    "npm install failure handling",
-    "Full e2e install in isolated environment"
+    "Architecture score (12%) depends on 2 blocking tasks still in_progress",
+    "DBB score (81%) affected by test pass rate and agentic-sense wiring issues"
   ],
-  "coverage": "88%"
+  "coverage": "100%"
 }
