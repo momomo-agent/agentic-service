@@ -1,7 +1,7 @@
 {
   "agent": "pm",
-  "timestamp": "2026-04-08T03:25:54.929Z",
+  "timestamp": "2026-04-08T03:28:02.410Z",
   "exitCode": 0,
   "status": "completed",
-  "summary": "Goal achieved: Vision 94% + PRD 95% (both ≥90%). M97 marked completed. No new tasks needed."
+  "summary": "Goal achieved: Vision 94% + PRD 95%, both ≥90%. No pending CRs, no active tasks. All milestones complete."
 }
