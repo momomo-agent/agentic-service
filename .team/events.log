@@ -21598,3 +21598,28 @@
 {"ts":"2026-04-08T02:12:22.109Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (30min), skipping","performance":{"memoryMB":18,"memoryTotalMB":27,"cpuUser":1.678738,"cpuSystem":3.564512}}}
 {"ts":"2026-04-08T02:12:41.927Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":18,"memoryTotalMB":27,"cpuUser":1.679315,"cpuSystem":3.565041}}}
 {"ts":"2026-04-08T02:12:41.928Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] blocked: Task blocked by 3 in_progress prerequisites (tech_lead-1, tech_lead-2, developer). Ran gap-related t"}}
+{"ts":"2026-04-08T02:12:42.075Z","type":"workflow","agent":"work_loop","data":{"details":"[AGENT-SIGNAL] tester → blocked: Task blocked by 3 in_progress prerequisites (tech_lead-1, tech_lead-2, developer"}}
+{"ts":"2026-04-08T02:12:42.253Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 4"}}
+{"ts":"2026-04-08T02:12:42.266Z","type":"workflow","agent":"work_loop","data":{"details":"[SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/goal-check.js"}}
+{"ts":"2026-04-08T02:12:42.764Z","type":"workflow","agent":"work_loop","data":{"details":"[SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/process-crs.js"}}
+{"ts":"2026-04-08T02:12:42.845Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-08T02:12:42.846Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":23,"memoryTotalMB":50,"cpuUser":1.744486,"cpuSystem":3.777719}}}
+{"ts":"2026-04-08T02:15:52.340Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:1, done:227)"}}
+{"ts":"2026-04-08T02:15:52.342Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:1, done:227)\"}"}}
+{"ts":"2026-04-08T02:16:19.701Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":12,"cpuUser":1.880767,"cpuSystem":4.053678}}}
+{"ts":"2026-04-08T02:16:19.723Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: PRD gap corrected: tunnel.js exists but was marked 'not found'. Updated status to implemented, PRD s"}}
+{"ts":"2026-04-08T02:16:20.993Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-08T02:16:20.996Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] write-design: todoWithoutDesign > 0"}}
+{"ts":"2026-04-08T02:16:20.996Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL-SKIP] implement: designedTasks > 0"}}
+{"ts":"2026-04-08T02:16:20.998Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] run-tests"}}
+{"ts":"2026-04-08T02:16:21.002Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tester"}}
+{"ts":"2026-04-08T02:16:21.003Z","type":"agent_start","agent":"tester","data":{"details":"验证功能","performance":{"memoryMB":9,"memoryTotalMB":12,"cpuUser":1.911817,"cpuSystem":4.174022}}}
+{"ts":"2026-04-08T02:16:22.220Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:1, done:227)"}}
+{"ts":"2026-04-08T02:16:22.220Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:1, done:227)\"}"}}
+{"ts":"2026-04-08T02:17:21.893Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"47MB\",\"heapUsed\":\"8MB\",\"uptime\":\"2100s\"}"}}
+{"ts":"2026-04-08T02:17:22.751Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:1, done:227)"}}
+{"ts":"2026-04-08T02:17:22.753Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:1, done:227)\"}"}}
+{"ts":"2026-04-08T02:18:23.067Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:1, done:227)"}}
+{"ts":"2026-04-08T02:18:23.072Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:1, done:227)\"}"}}
+{"ts":"2026-04-08T02:18:55.608Z","type":"agent_complete","agent":"tester","data":{"details":"completed successfully","performance":{"memoryMB":8,"memoryTotalMB":15,"cpuUser":2.086926,"cpuSystem":4.636306}}}
+{"ts":"2026-04-08T02:18:55.628Z","type":"workflow","agent":"tester","data":{"details":"[SIGNAL] blocked: No testable tasks available. The only review task (task-1775588280002) is claimed by developer and c"}}

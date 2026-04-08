@@ -1,6 +1,6 @@
 {
-  "match": 85,
-  "timestamp": "2026-04-08T06:00:00.000Z",
+  "match": 94,
+  "timestamp": "2026-04-08T08:00:00.000Z",
   "gaps": [
     { "description": "Docker deployment (Dockerfile, docker-compose.yml, setup.sh) present in install/", "status": "implemented" },
     { "description": "Hardware detection (GPU/memory/arch) for Apple Silicon / NVIDIA / CPU-only", "status": "implemented" },
@@ -14,7 +14,7 @@
     { "description": "Remote profiles.json fetch — 4-tier fallback: fresh cache → remote fetch → expired cache → built-in default.json", "status": "implemented" },
     { "description": "Multi-device session coordination — joinSession/broadcastSession with brainState (context, systemPrompt, temperature) shared across devices", "status": "implemented" },
     { "description": "Wake word server-side pipeline — startWakeWordPipeline() fully implemented with node-record-lpcm16 + energy-based VAD", "status": "implemented" },
-    { "description": "HTTPS via httpsServer.js + cert.js exists and functional; LAN tunnel (tunnel.js) not found in codebase", "status": "partial" },
+    { "description": "HTTPS via httpsServer.js + cert.js exists and functional; LAN tunnel (src/tunnel.js) implemented with ngrok/cloudflared support", "status": "implemented" },
     { "description": "Server-side VAD — energy-based VAD in vad.js + hub.js isSilent(); no model-based (Silero) VAD", "status": "implemented" },
     { "description": "npx agentic-service — bin entry in package.json points to bin/agentic-service.js (exists, executable); src/cli/setup.js complete", "status": "implemented" },
     { "description": "External packages — agentic-store, agentic-voice, agentic-sense, agentic-embed all in package.json and installed in node_modules", "status": "implemented" },
