@@ -151,8 +151,8 @@
                 <input v-model="config.tts.apiKey" type="password" />
               </div>
               <div class="field">
-                <label>Voice / Model</label>
-                <input v-model="config.tts.voiceId" placeholder="alloy / 21m00Tcm4TlvDq8ikWAM" />
+                <label>Model</label>
+                <input v-model="config.tts.model" placeholder="tts-1 / eleven_monolingual_v1" />
               </div>
             </div>
           </div>
@@ -255,7 +255,7 @@ const downloadProgress = ref({})
 const config = ref({
   llm: { provider: 'ollama', baseUrl: '', apiKey: '', model: '' },
   stt: { provider: 'whisper', baseUrl: '', apiKey: '', model: '' },
-  tts: { provider: 'coqui', baseUrl: '', apiKey: '', voiceId: '' }
+  tts: { provider: 'coqui', baseUrl: '', apiKey: '', model: '' }
 })
 const saving = ref(false)
 const saved = ref(false)
@@ -299,7 +299,7 @@ async function loadConfig() {
     config.value = {
       llm: { provider: 'ollama', baseUrl: '', apiKey: '', model: '', ...data.llm },
       stt: { provider: 'whisper', baseUrl: '', apiKey: '', model: '', ...data.stt },
-      tts: { provider: 'coqui', baseUrl: '', apiKey: '', voiceId: '', ...data.tts }
+      tts: { provider: 'coqui', baseUrl: '', apiKey: '', model: '', ...data.tts }
     }
   } catch (e) {
     console.error('load config failed:', e)
@@ -391,6 +391,9 @@ async function sendChat() {
   await nextTick()
   if (chatBox.value) chatBox.value.scrollTop = chatBox.value.scrollHeight
   
+  const assistantMsg = { role: 'assistant', content: '' }
+  chatHistory.value.push(assistantMsg)
+  
   chatLoading.value = true
   try {
     const res = await fetch('/api/chat', {
@@ -398,12 +401,39 @@ async function sendChat() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: userMsg })
     })
-    const data = await res.json()
-    chatHistory.value.push({ role: 'assistant', content: data.response || '无回复' })
+    
+    const reader = res.body.getReader()
+    const decoder = new TextDecoder()
+    
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+      
+      const chunk = decoder.decode(value)
+      const lines = chunk.split('\n').filter(l => l.startsWith('data:'))
+      
+      for (const line of lines) {
+        if (line === 'data: [DONE]') continue
+        try {
+          const data = JSON.parse(line.slice(5))
+          if (data.type === 'content') {
+            assistantMsg.content += data.content || data.text || ''
+            await nextTick()
+            if (chatBox.value) chatBox.value.scrollTop = chatBox.value.scrollHeight
+          } else if (data.error) {
+            assistantMsg.content = '错误: ' + data.error
+          }
+        } catch {}
+      }
+    }
+    
+    if (!assistantMsg.content) {
+      assistantMsg.content = '无回复'
+    }
     await nextTick()
     if (chatBox.value) chatBox.value.scrollTop = chatBox.value.scrollHeight
   } catch (e) {
-    chatHistory.value.push({ role: 'assistant', content: '错误: ' + e.message })
+    assistantMsg.content = '错误: ' + e.message
   } finally {
     chatLoading.value = false
   }

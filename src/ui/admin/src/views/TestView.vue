@@ -84,16 +84,45 @@ async function sendChat() {
   chatHistory.value.push({ role: 'user', content: userMsg })
   chatInput.value = ''
   chatLoading.value = true
+  
+  const assistantMsg = { role: 'assistant', content: '' }
+  chatHistory.value.push(assistantMsg)
+  
   try {
     const res = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: userMsg })
     })
-    const data = await res.json()
-    chatHistory.value.push({ role: 'assistant', content: data.response || '无回复' })
+    
+    const reader = res.body.getReader()
+    const decoder = new TextDecoder()
+    
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+      
+      const chunk = decoder.decode(value)
+      const lines = chunk.split('\n').filter(l => l.startsWith('data:'))
+      
+      for (const line of lines) {
+        if (line === 'data: [DONE]') continue
+        try {
+          const data = JSON.parse(line.slice(5))
+          if (data.type === 'content') {
+            assistantMsg.content += data.content || data.text || ''
+          } else if (data.error) {
+            assistantMsg.content = '错误: ' + data.error
+          }
+        } catch {}
+      }
+    }
+    
+    if (!assistantMsg.content) {
+      assistantMsg.content = '无回复'
+    }
   } catch (e) {
-    chatHistory.value.push({ role: 'assistant', content: '错误: ' + e.message })
+    assistantMsg.content = '错误: ' + e.message
   } finally {
     chatLoading.value = false
   }
