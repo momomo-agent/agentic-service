@@ -151,8 +151,8 @@
                 <input v-model="config.tts.apiKey" type="password" />
               </div>
               <div class="field">
-                <label>Model</label>
-                <input v-model="config.tts.model" placeholder="tts-1 / eleven_monolingual_v1" />
+                <label>Voice / Model</label>
+                <input v-model="config.tts.voiceId" placeholder="alloy / 21m00Tcm4TlvDq8ikWAM" />
               </div>
             </div>
           </div>
@@ -221,6 +221,33 @@
       </div>
     </section>
 
+    <!-- API 端点测试 -->
+    <section class="section">
+      <h2 class="section-title">
+        API 端点测试
+        <button class="btn-run-all" @click="runAllTests" :disabled="testsRunning">
+          {{ testsRunning ? '测试中...' : '▶ Run All Tests' }}
+        </button>
+        <span v-if="testSummary" class="test-summary">{{ testSummary }}</span>
+      </h2>
+      <div class="grid grid-2">
+        <div v-for="t in apiTests" :key="t.name" class="card test-card" :class="t.status">
+          <div class="test-header">
+            <span class="test-badge" :class="t.status">
+              {{ t.status === 'pass' ? '✓' : t.status === 'fail' ? '✗' : t.status === 'running' ? '⟳' : '○' }}
+            </span>
+            <span class="test-method">{{ t.method }}</span>
+            <span class="test-path">{{ t.path }}</span>
+          </div>
+          <div class="test-name">{{ t.name }}</div>
+          <div v-if="t.result" class="test-result">{{ t.result }}</div>
+          <button class="btn-test-single" @click="runTest(t)" :disabled="t.status === 'running'">
+            {{ t.status === 'running' ? '...' : '测试' }}
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- 日志 -->
     <section class="section">
       <h2 class="section-title">日志</h2>
@@ -237,7 +264,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 
 const hardware = ref({})
 const ollama = ref({ running: false, models: [] })
@@ -255,7 +282,7 @@ const downloadProgress = ref({})
 const config = ref({
   llm: { provider: 'ollama', baseUrl: '', apiKey: '', model: '' },
   stt: { provider: 'whisper', baseUrl: '', apiKey: '', model: '' },
-  tts: { provider: 'coqui', baseUrl: '', apiKey: '', model: '' }
+  tts: { provider: 'coqui', baseUrl: '', apiKey: '', voiceId: '' }
 })
 const saving = ref(false)
 const saved = ref(false)
@@ -276,6 +303,76 @@ const ttsLoading = ref(false)
 const voiceFile = ref(null)
 const voiceResult = ref(null)
 const voiceLoading = ref(false)
+
+// API endpoint tests
+const apiTests = ref([
+  { name: 'Health Check', method: 'GET', path: '/health', status: 'idle', result: '' },
+  { name: 'OpenAI Models', method: 'GET', path: '/v1/models', status: 'idle', result: '' },
+  { name: 'OpenAI Chat', method: 'POST', path: '/v1/chat/completions', status: 'idle', result: '' },
+  { name: 'Anthropic Messages', method: 'POST', path: '/v1/messages', status: 'idle', result: '' },
+  { name: 'System Status', method: 'GET', path: '/api/status', status: 'idle', result: '' },
+  { name: 'Devices', method: 'GET', path: '/api/devices', status: 'idle', result: '' },
+  { name: 'Get Config', method: 'GET', path: '/api/config', status: 'idle', result: '' },
+  { name: 'Put Config', method: 'PUT', path: '/api/config', status: 'idle', result: '' },
+  { name: 'Performance', method: 'GET', path: '/api/perf', status: 'idle', result: '' },
+  { name: 'Logs', method: 'GET', path: '/api/logs', status: 'idle', result: '' },
+])
+const testsRunning = ref(false)
+const testSummary = computed(() => {
+  const pass = apiTests.value.filter(t => t.status === 'pass').length
+  const fail = apiTests.value.filter(t => t.status === 'fail').length
+  const total = apiTests.value.length
+  if (pass + fail === 0) return ''
+  return `${pass}/${total} passed` + (fail ? `, ${fail} failed` : '')
+})
+
+function getTestBody(t) {
+  if (t.path === '/v1/chat/completions') {
+    return JSON.stringify({ messages: [{ role: 'user', content: 'Say hi' }], model: 'agentic-service', stream: false, max_tokens: 20 })
+  }
+  if (t.path === '/v1/messages') {
+    return JSON.stringify({ messages: [{ role: 'user', content: 'Say hi' }], model: 'agentic-service', max_tokens: 20 })
+  }
+  if (t.path === '/api/config' && t.method === 'PUT') {
+    return JSON.stringify({ llm: { provider: 'ollama' }, stt: { provider: 'whisper' }, tts: { provider: 'coqui' } })
+  }
+  return null
+}
+
+async function runTest(t) {
+  t.status = 'running'
+  t.result = ''
+  try {
+    const opts = { method: t.method, headers: {} }
+    const body = getTestBody(t)
+    if (body) { opts.body = body; opts.headers['Content-Type'] = 'application/json' }
+    const res = await fetch(t.path, opts)
+    const text = await res.text()
+    let preview
+    try {
+      const j = JSON.parse(text)
+      preview = JSON.stringify(j).slice(0, 120)
+    } catch { preview = text.slice(0, 120) }
+    if (res.ok) {
+      t.status = 'pass'
+      t.result = preview
+    } else {
+      t.status = 'fail'
+      t.result = `${res.status}: ${preview}`
+    }
+  } catch (e) {
+    t.status = 'fail'
+    t.result = e.message
+  }
+}
+
+async function runAllTests() {
+  testsRunning.value = true
+  for (const t of apiTests.value) {
+    await runTest(t)
+  }
+  testsRunning.value = false
+}
 
 let timer = null
 
@@ -299,7 +396,7 @@ async function loadConfig() {
     config.value = {
       llm: { provider: 'ollama', baseUrl: '', apiKey: '', model: '', ...data.llm },
       stt: { provider: 'whisper', baseUrl: '', apiKey: '', model: '', ...data.stt },
-      tts: { provider: 'coqui', baseUrl: '', apiKey: '', model: '', ...data.tts }
+      tts: { provider: 'coqui', baseUrl: '', apiKey: '', voiceId: '', ...data.tts }
     }
   } catch (e) {
     console.error('load config failed:', e)
@@ -578,4 +675,40 @@ onUnmounted(() => clearInterval(timer))
 .log-line { display: flex; gap: 12px; padding: 2px 0; }
 .log-time { color: var(--text-dim); flex-shrink: 0; }
 .log-msg { color: var(--text); }
+.btn-run-all {
+  margin-left: 16px; padding: 6px 16px; border-radius: 6px; font-size: 13px;
+  background: var(--primary, #0075de); color: #fff; border: none; cursor: pointer;
+  font-weight: 600;
+}
+.btn-run-all:disabled { opacity: 0.5; cursor: not-allowed; }
+.test-summary { margin-left: 12px; font-size: 14px; color: var(--text-dim); font-weight: 400; }
+.test-card { position: relative; }
+.test-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.test-badge {
+  width: 22px; height: 22px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; font-size: 12px; font-weight: 700;
+  background: var(--surface-3); color: var(--text-dim);
+}
+.test-badge.pass { background: rgba(16,185,129,0.15); color: var(--success, #10b981); }
+.test-badge.fail { background: rgba(239,68,68,0.15); color: var(--error, #ef4444); }
+.test-badge.running { background: rgba(59,130,246,0.15); color: var(--primary, #3b82f6); }
+.test-method {
+  font-family: 'SF Mono', Monaco, monospace; font-size: 11px; font-weight: 700;
+  padding: 2px 6px; border-radius: 3px; background: var(--surface-3);
+}
+.test-path { font-family: 'SF Mono', Monaco, monospace; font-size: 13px; color: var(--text); }
+.test-name { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
+.test-result {
+  font-family: 'SF Mono', Monaco, monospace; font-size: 12px; color: var(--text-dim);
+  margin-top: 4px; max-height: 60px; overflow: hidden; text-overflow: ellipsis;
+  word-break: break-all;
+}
+.btn-test-single {
+  margin-top: 8px; padding: 4px 12px; border-radius: 4px; font-size: 12px;
+  background: var(--surface-3); border: 1px solid var(--border); cursor: pointer;
+}
+.btn-test-single:disabled { opacity: 0.5; cursor: not-allowed; }
+.test-card.pass { border-left: 3px solid var(--success, #10b981); }
+.test-card.fail { border-left: 3px solid var(--error, #ef4444); }
+.test-card.running { border-left: 3px solid var(--primary, #3b82f6); }
 </style>
