@@ -1,216 +1,161 @@
 <template>
   <div class="test-view">
-    <h1 class="page-title">功能测试</h1>
+    <h1 class="page-title">🧪 Tests</h1>
+    <div class="test-header">
+      <p class="page-desc">API 端点自动测试</p>
+      <button class="btn-run-all" @click="runAllTests" :disabled="testsRunning">
+        {{ testsRunning ? '测试中...' : '▶ Run All Tests' }}
+      </button>
+      <span v-if="testSummary" class="test-summary">{{ testSummary }}</span>
+    </div>
 
-    <!-- Chat 测试 -->
-    <div class="card">
-      <div class="card-title">💬 Chat 测试</div>
-      <div class="chat-box">
-        <div v-for="(msg, i) in chatHistory" :key="i" class="chat-msg" :class="msg.role">
-          <div class="msg-role">{{ msg.role === 'user' ? '你' : 'AI' }}</div>
-          <div class="msg-text">{{ msg.content }}</div>
+    <div class="grid grid-2">
+      <div v-for="t in tests" :key="t.name" class="test-card" :class="t.status">
+        <div class="test-card-header">
+          <span class="test-badge" :class="t.status">
+            {{ t.status === 'pass' ? '✓' : t.status === 'fail' ? '✗' : t.status === 'running' ? '⟳' : '○' }}
+          </span>
+          <span class="test-method">{{ t.method }}</span>
+          <span class="test-path">{{ t.path }}</span>
         </div>
-      </div>
-      <form @submit.prevent="sendChat" class="chat-input">
-        <input v-model="chatInput" placeholder="输入消息..." :disabled="chatLoading" />
-        <button type="submit" :disabled="chatLoading">{{ chatLoading ? '发送中...' : '发送' }}</button>
-      </form>
-    </div>
-
-    <!-- STT 测试 -->
-    <div class="card" style="margin-top: 24px">
-      <div class="card-title">🎤 语音转文字 (STT)</div>
-      <div class="test-panel">
-        <input type="file" accept="audio/*" @change="handleAudioFile" />
-        <button @click="transcribe" :disabled="!audioFile || sttLoading">
-          {{ sttLoading ? '转写中...' : '转写' }}
+        <div class="test-name">{{ t.name }}</div>
+        <div v-if="t.result" class="test-result">{{ t.result }}</div>
+        <button class="btn-test" @click="runTest(t)" :disabled="t.status === 'running'">
+          {{ t.status === 'running' ? '...' : '测试' }}
         </button>
-      </div>
-      <div v-if="sttResult" class="result-box">{{ sttResult }}</div>
-    </div>
-
-    <!-- TTS 测试 -->
-    <div class="card" style="margin-top: 24px">
-      <div class="card-title">🔊 文字转语音 (TTS)</div>
-      <div class="test-panel">
-        <input v-model="ttsText" placeholder="输入要合成的文字..." />
-        <button @click="synthesize" :disabled="!ttsText || ttsLoading">
-          {{ ttsLoading ? '合成中...' : '合成' }}
-        </button>
-      </div>
-      <audio v-if="ttsAudio" :src="ttsAudio" controls style="margin-top: 16px; width: 100%"></audio>
-    </div>
-
-    <!-- Voice 全链路测试 -->
-    <div class="card" style="margin-top: 24px">
-      <div class="card-title">🎙️ Voice 全链路 (STT → LLM → TTS)</div>
-      <div class="test-panel">
-        <input type="file" accept="audio/*" @change="handleVoiceFile" />
-        <button @click="voiceTest" :disabled="!voiceFile || voiceLoading">
-          {{ voiceLoading ? '处理中...' : '测试' }}
-        </button>
-      </div>
-      <div v-if="voiceResult" class="result-box">
-        <div><strong>识别:</strong> {{ voiceResult.transcript }}</div>
-        <div><strong>回复:</strong> {{ voiceResult.response }}</div>
-        <audio v-if="voiceResult.audio" :src="voiceResult.audio" controls style="margin-top: 12px; width: 100%"></audio>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
-const chatHistory = ref([])
-const chatInput = ref('')
-const chatLoading = ref(false)
+const tests = ref([
+  { name: 'Health Check', method: 'GET', path: '/health', status: 'idle', result: '' },
+  { name: 'OpenAI Models', method: 'GET', path: '/v1/models', status: 'idle', result: '' },
+  { name: 'OpenAI Chat', method: 'POST', path: '/v1/chat/completions', status: 'idle', result: '' },
+  { name: 'Anthropic Messages', method: 'POST', path: '/v1/messages', status: 'idle', result: '' },
+  { name: 'Chat API (SSE)', method: 'POST', path: '/api/chat', status: 'idle', result: '' },
+  { name: 'System Status', method: 'GET', path: '/api/status', status: 'idle', result: '' },
+  { name: 'Devices', method: 'GET', path: '/api/devices', status: 'idle', result: '' },
+  { name: 'Get Config', method: 'GET', path: '/api/config', status: 'idle', result: '' },
+  { name: 'Put Config', method: 'PUT', path: '/api/config', status: 'idle', result: '' },
+  { name: 'Performance', method: 'GET', path: '/api/perf', status: 'idle', result: '' },
+  { name: 'Logs', method: 'GET', path: '/api/logs', status: 'idle', result: '' },
+  { name: 'Synthesize (TTS)', method: 'POST', path: '/api/synthesize', status: 'idle', result: '' },
+])
 
-const audioFile = ref(null)
-const sttResult = ref('')
-const sttLoading = ref(false)
+const testsRunning = ref(false)
+const testSummary = computed(() => {
+  const pass = tests.value.filter(t => t.status === 'pass').length
+  const fail = tests.value.filter(t => t.status === 'fail').length
+  const total = tests.value.length
+  if (pass + fail === 0) return ''
+  return `${pass}/${total} passed` + (fail ? `, ${fail} failed` : '')
+})
 
-const ttsText = ref('')
-const ttsAudio = ref(null)
-const ttsLoading = ref(false)
+function getTestBody(t) {
+  if (t.path === '/v1/chat/completions') {
+    return JSON.stringify({ messages: [{ role: 'user', content: 'Say hi in 5 words' }], model: 'agentic-service', stream: false, max_tokens: 50 })
+  }
+  if (t.path === '/v1/messages') {
+    return JSON.stringify({ messages: [{ role: 'user', content: 'Say hi in 5 words' }], model: 'agentic-service', max_tokens: 50 })
+  }
+  if (t.path === '/api/config' && t.method === 'PUT') {
+    return JSON.stringify({ llm: { provider: 'ollama' }, stt: { provider: 'whisper' }, tts: { provider: 'coqui' } })
+  }
+  if (t.path === '/api/synthesize') {
+    return JSON.stringify({ text: 'hello' })
+  }
+  if (t.path === '/api/chat') {
+    return JSON.stringify({ message: 'hello' })
+  }
+  return null
+}
 
-const voiceFile = ref(null)
-const voiceResult = ref(null)
-const voiceLoading = ref(false)
-
-async function sendChat() {
-  if (!chatInput.value.trim()) return
-  const userMsg = chatInput.value
-  chatHistory.value.push({ role: 'user', content: userMsg })
-  chatInput.value = ''
-  chatLoading.value = true
-  
-  const assistantMsg = { role: 'assistant', content: '' }
-  chatHistory.value.push(assistantMsg)
-  
+async function runTest(t) {
+  t.status = 'running'
+  t.result = ''
   try {
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: userMsg })
-    })
-    
-    const reader = res.body.getReader()
-    const decoder = new TextDecoder()
-    
-    while (true) {
-      const { done, value } = await reader.read()
-      if (done) break
-      
-      const chunk = decoder.decode(value)
-      const lines = chunk.split('\n').filter(l => l.startsWith('data:'))
-      
-      for (const line of lines) {
-        if (line === 'data: [DONE]') continue
-        try {
-          const data = JSON.parse(line.slice(5))
-          if (data.type === 'content') {
-            assistantMsg.content += data.content || data.text || ''
-          } else if (data.error) {
-            assistantMsg.content = '错误: ' + data.error
-          }
-        } catch {}
-      }
+    const opts = { method: t.method, headers: {} }
+    const body = getTestBody(t)
+    if (body) { opts.body = body; opts.headers['Content-Type'] = 'application/json' }
+    const res = await fetch(t.path, opts)
+    if (t.path === '/api/synthesize') {
+      if (res.ok) { t.status = 'pass'; t.result = `audio (${res.headers.get('content-type')})` }
+      else { const d = await res.json(); t.status = 'fail'; t.result = `${res.status}: ${d.error || 'unknown'}` }
+      return
     }
-    
-    if (!assistantMsg.content) {
-      assistantMsg.content = '无回复'
+    if (t.path === '/api/chat') {
+      if (res.ok) { t.status = 'pass'; t.result = 'SSE stream ok' }
+      else { t.status = 'fail'; t.result = `HTTP ${res.status}` }
+      return
     }
+    const text = await res.text()
+    let preview
+    try { preview = JSON.stringify(JSON.parse(text)).slice(0, 120) }
+    catch { preview = text.slice(0, 120) }
+    if (res.ok) { t.status = 'pass'; t.result = preview }
+    else { t.status = 'fail'; t.result = `${res.status}: ${preview}` }
   } catch (e) {
-    assistantMsg.content = '错误: ' + e.message
-  } finally {
-    chatLoading.value = false
+    t.status = 'fail'
+    t.result = e.message
   }
 }
 
-function handleAudioFile(e) {
-  audioFile.value = e.target.files[0]
-}
-
-async function transcribe() {
-  if (!audioFile.value) return
-  sttLoading.value = true
-  try {
-    const form = new FormData()
-    form.append('audio', audioFile.value)
-    const res = await fetch('/api/transcribe', { method: 'POST', body: form })
-    const data = await res.json()
-    sttResult.value = data.text || '无结果'
-  } catch (e) {
-    sttResult.value = '错误: ' + e.message
-  } finally {
-    sttLoading.value = false
+async function runAllTests() {
+  testsRunning.value = true
+  for (const t of tests.value) {
+    await runTest(t)
   }
-}
-
-async function synthesize() {
-  if (!ttsText.value.trim()) return
-  ttsLoading.value = true
-  try {
-    const res = await fetch('/api/synthesize', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: ttsText.value })
-    })
-    const blob = await res.blob()
-    ttsAudio.value = URL.createObjectURL(blob)
-  } catch (e) {
-    alert('合成失败: ' + e.message)
-  } finally {
-    ttsLoading.value = false
-  }
-}
-
-function handleVoiceFile(e) {
-  voiceFile.value = e.target.files[0]
-}
-
-async function voiceTest() {
-  if (!voiceFile.value) return
-  voiceLoading.value = true
-  try {
-    const form = new FormData()
-    form.append('audio', voiceFile.value)
-    const res = await fetch('/api/voice', { method: 'POST', body: form })
-    const data = await res.json()
-    voiceResult.value = {
-      transcript: data.transcript || '',
-      response: data.response || '',
-      audio: data.audioUrl ? data.audioUrl : null
-    }
-  } catch (e) {
-    alert('测试失败: ' + e.message)
-  } finally {
-    voiceLoading.value = false
-  }
+  testsRunning.value = false
 }
 </script>
 
 <style scoped>
-.page-title { font-size: 28px; font-weight: 700; margin-bottom: 24px; }
-.chat-box {
-  max-height: 400px; overflow-y: auto; padding: 16px;
-  background: var(--surface-2); border-radius: 6px; margin-bottom: 16px;
-  display: flex; flex-direction: column; gap: 12px;
+.page-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.page-desc { font-size: 14px; color: var(--text-dim); }
+.test-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.test-header p { margin: 0; }
+.btn-run-all {
+  padding: 8px 20px; border-radius: 6px; font-size: 14px;
+  background: var(--primary, #0075de); color: #fff; border: none; cursor: pointer;
+  font-weight: 600;
 }
-.chat-msg { display: flex; gap: 12px; }
-.chat-msg.user { flex-direction: row-reverse; }
-.msg-role {
-  font-size: 12px; color: var(--text-dim); flex-shrink: 0; width: 40px;
+.btn-run-all:disabled { opacity: 0.5; cursor: not-allowed; }
+.test-summary { font-size: 14px; color: var(--text-dim); font-weight: 400; }
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.test-card {
+  padding: 16px; border-radius: 8px; background: var(--surface-2);
+  border: 1px solid var(--border); transition: border-color 0.15s;
 }
-.chat-msg.user .msg-role { text-align: right; }
-.msg-text {
-  background: var(--surface-3); padding: 8px 12px; border-radius: 6px; max-width: 70%;
+.test-card.pass { border-left: 3px solid var(--success, #10b981); }
+.test-card.fail { border-left: 3px solid var(--error, #ef4444); }
+.test-card.running { border-left: 3px solid var(--primary, #3b82f6); }
+.test-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.test-badge {
+  width: 22px; height: 22px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; font-size: 12px; font-weight: 700;
+  background: var(--surface-3); color: var(--text-dim);
 }
-.chat-input { display: flex; gap: 12px; }
-.test-panel { display: flex; gap: 12px; align-items: center; }
-.result-box {
-  margin-top: 16px; padding: 16px; background: var(--surface-2);
-  border-radius: 6px; font-size: 14px; line-height: 1.6;
+.test-badge.pass { background: rgba(16,185,129,0.15); color: var(--success, #10b981); }
+.test-badge.fail { background: rgba(239,68,68,0.15); color: var(--error, #ef4444); }
+.test-badge.running { background: rgba(59,130,246,0.15); color: var(--primary, #3b82f6); }
+.test-method {
+  font-family: 'SF Mono', Monaco, monospace; font-size: 11px; font-weight: 700;
+  padding: 2px 6px; border-radius: 3px; background: var(--surface-3);
 }
+.test-path { font-family: 'SF Mono', Monaco, monospace; font-size: 13px; }
+.test-name { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
+.test-result {
+  font-family: 'SF Mono', Monaco, monospace; font-size: 12px; color: var(--text-dim);
+  margin: 4px 0; max-height: 60px; overflow: hidden; text-overflow: ellipsis; word-break: break-all;
+}
+.btn-test {
+  margin-top: 8px; padding: 4px 12px; border-radius: 4px; font-size: 12px;
+  background: var(--surface-3); border: 1px solid var(--border); cursor: pointer;
+}
+.btn-test:disabled { opacity: 0.5; cursor: not-allowed; }
 </style>
