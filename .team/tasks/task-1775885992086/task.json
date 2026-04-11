@@ -1,0 +1,13 @@
+{
+  "id": "task-1775885992086",
+  "title": "E2E验证: Examples页面全部example可用",
+  "description": "用 agent-control 打开 http://localhost:1234 的 Examples 页面，逐个测试 6 个 example（Chat Playground, Agent Sandbox, TTS Lab, Transcription Studio, Live Talk, Voice One-Shot）。Chat Playground 和 Agent Sandbox 需要完整交互测试（发消息→验证回复），其余验证 UI 渲染正确。运行 node test/e2e/examples.test.mjs 并确认 8/8 通过。",
+  "status": "review",
+  "priority": "P1",
+  "assignee": "tester",
+  "blockedBy": [],
+  "groupId": "m23",
+  "hasDesign": false,
+  "created": "2026-04-11T05:39:52.087Z",
+  "updated": "2026-04-11T05:48:14.930Z"
+}

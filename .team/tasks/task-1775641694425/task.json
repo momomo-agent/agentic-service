@@ -2,12 +2,12 @@
   "id": "task-1775641694425",
   "title": "创建 src/index.js 入口文件",
   "description": "package.json 'main' 字段指向 src/index.js 但该文件不存在。创建 src/index.js 导出核心 API (startServer, detector, runtime 等)，确保 require('agentic-service') 可用",
-  "status": "todo",
+  "status": "review",
   "priority": "P0",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m23",
   "hasDesign": true,
   "created": "2026-04-08T09:48:14.425Z",
-  "updated": "2026-04-08T09:55:29.310Z"
+  "updated": "2026-04-11T05:52:39.392Z"
 }

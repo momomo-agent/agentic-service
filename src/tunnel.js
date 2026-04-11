@@ -5,7 +5,7 @@ function isInstalled(cmd) {
   catch { return false; }
 }
 
-export function startTunnel(port = process.env.PORT || 3000) {
+export function startTunnel(port = process.env.PORT || 1234) {
   let proc;
   if (isInstalled('ngrok')) {
     proc = spawn('ngrok', ['http', port], { stdio: 'inherit' });

@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     port: 5174,
-    proxy: { '/api': 'http://localhost:3000' }
+    proxy: { '/api': 'http://localhost:1234' }
   },
   build: { outDir: '../../../dist/admin' }
 })

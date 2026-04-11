@@ -415,7 +415,7 @@ function listenAsync(server, port) {
   });
 }
 
-export async function startServer(port = 3000, { https: useHttps = false } = {}) {
+export async function startServer(port = 1234, { https: useHttps = false } = {}) {
   const app = createApp();
 
   if (useHttps) {

@@ -2,12 +2,12 @@
   "id": "task-1775641694470",
   "title": "统一默认端口为 1234",
   "description": "README/Docker 文档说端口 3000，但 bin/agentic-service.js 默认 1234。修复：(1) docker-compose.yml 添加 PORT=1234 环境变量 (2) Docker healthcheck 改为 :1234 (3) 更新 README 文档端口为 1234",
-  "status": "todo",
+  "status": "review",
   "priority": "P0",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m23",
   "hasDesign": true,
   "created": "2026-04-08T09:48:14.470Z",
-  "updated": "2026-04-08T09:55:29.350Z"
+  "updated": "2026-04-11T05:52:39.431Z"
 }

@@ -1,0 +1,12 @@
+{
+  "id": "cr-1775886600000",
+  "from": "tech_lead",
+  "fromLevel": "L3",
+  "toLevel": "L2",
+  "targetFile": "ARCHITECTURE.md",
+  "section": "Directory Structure + Stale CR Instructions",
+  "reason": "ARCHITECTURE.md contains two issues: (1) Lines 191-252 contain stale meta-instructions (queued CR addition directives) that were never cleaned up — these are not architecture content and confuse readers. (2) The directory tree (lines 123-155) is missing 21 source files that now exist in the codebase: src/index.js, src/tunnel.js, src/cli/setup.js, src/cli/browser.js, src/detector/matcher.js, src/detector/ollama.js, src/runtime/vad.js, src/runtime/embed.js, src/runtime/profiler.js, src/runtime/latency-log.js, src/runtime/adapters/, src/server/cert.js, src/server/httpsServer.js, src/server/middleware.js, src/store/index.js.",
+  "proposedChange": "1. Delete lines 191-252 (the block of 'Add sections to ARCHITECTURE.md...' instructions). 2. Replace the directory tree section with the complete tree including all 35 source files listed in the design.md for task-1775642183884.",
+  "status": "pending",
+  "createdAt": "2026-04-11T06:00:00.000Z"
+}
