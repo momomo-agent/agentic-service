@@ -1,57 +1,54 @@
-# M23: Admin UI Redesign — DBB Check
+# DBB Check — M23: Admin UI Redesign
 
-**Date:** 2026-04-08T17:02:00Z
+**Date:** 2026-04-11
 **Milestone:** m23 — Admin UI Redesign
-**Status:** active (no completion criteria defined)
+**Match:** 45%
 
-## Issue: m23 dbb.md is empty
+## Summary
 
-The milestone-specific DBB file (`.team/milestones/m23/dbb.md`) contains only a header — no acceptance criteria are defined. This makes it impossible to perform a proper criterion-by-criterion verification.
+M23 dbb.md now defines concrete acceptance criteria across 4 areas: src/index.js entry, port unification to 1234, documentation consistency, and regression tests ≥90%. Of 19 criteria evaluated, 9 pass, 1 partial, 9 fail.
 
-## What Exists in the Codebase
+## Critical Failures
 
-The Admin UI is **fully implemented** as a Vue 3 + Vite SPA:
+### 1. src/index.js Missing (CRITICAL)
+- `src/index.js` does not exist on disk
+- `package.json` "main" field points to `src/index.js`
+- `require('agentic-service')` will throw MODULE_NOT_FOUND
+- No exports for `startServer`, `detector`, `runtime`, `server`
+- No unit test for index.js exports
 
-| Component | Path | Status |
-|-----------|------|--------|
-| App.vue | `src/ui/admin/src/App.vue` | Implemented — polls /api/status every 5s, nav links, renders 3 inline components + router-view |
-| SystemStatus | `src/ui/admin/src/components/SystemStatus.vue` | Implemented — fetches /api/status, displays hardware + profile |
-| DeviceList | `src/ui/admin/src/components/DeviceList.vue` | Implemented — fetches /api/devices, empty state, table rendering |
-| ConfigPanel | `src/ui/admin/src/components/ConfigPanel.vue` | Implemented — GET/PUT /api/config, llm/stt/tts fields |
-| HardwarePanel | `src/ui/admin/src/components/HardwarePanel.vue` | Implemented — renders hardware prop as key-value pairs |
-| LogViewer | `src/ui/admin/src/components/LogViewer.vue` | Implemented — scrollable log display with auto-scroll |
-| Router | `src/ui/admin/src/main.js` | Implemented — 3 routes with /admin base |
-| Serving | `src/server/api.js:317-323` | Implemented — /admin + / root paths |
-| Build | `dist/admin/` | Built — index.html + 94KB JS bundle |
-| Tests | `test/m23-app-vue.test.js` | Exists — covers imports, polling, props, lifecycle |
+### 2. Port Not Unified to 1234 (CRITICAL)
+- `docker-compose.yml` still maps `3000:3000` (should be `1234:1234`)
+- `docker-compose.yml` has no `PORT=1234` env var
+- Docker healthcheck hits `http://localhost:3000/health` (should be `:1234`)
+- `README.md` has 8+ references to port 3000 (lines 26, 34, 42, 116, 143, 155, 189, 204)
+- `bin/agentic-service.js` correctly defaults to 1234 ✓
 
-## Global DBB Match: 65%
+### 3. Admin UI Not Built (MAJOR)
+- `src/ui/admin/dist/` does not exist
+- `src/server/api.js` references `../../dist/admin` for static serving
+- Admin UI will 404 at runtime until `npm run build` is executed
+- Build script exists in package.json but has not been run
 
-**11 gaps remaining** (3 missing, 8 partial):
+## Passing Criteria
 
-### Critical (2)
-1. **src/index.js missing** — package.json "main" points to non-existent file
-2. **Port mismatch** — README/Docker use port 3000, CLI defaults to 1234; Docker healthcheck hits :3000 but container listens on 1234
+- `bin/agentic-service.js` defaults to port 1234 ✓
+- Admin UI Vue 3 source exists (App.vue, main.js, index.html, 5 components) ✓
+- App.vue polls /api/status every 5s with proper cleanup ✓
+- ConfigPanel uses GET/PUT /api/config ✓
+- api.js serves admin at /admin and / ✓
+- npm run build script is correctly configured ✓
+- Test files exist (m23-app-vue.test.js, admin-panel.test.js, m20-admin-ui.test.js) ✓
+- vue-router dependency present ✓
 
-### Major (4)
-3. **ARCHITECTURE.md stale CR** — Lines 191-252 contain repeated add-section instructions
-4. **ARCHITECTURE.md incomplete directory tree** — Lists 14 files, 35 exist (excl. node_modules)
-5. **Dead import maps** — #agentic-embed and #agentic-voice still in package.json imports
-6. **Test pass rate ~94%** — ~49 failures from stale mocks
+## Partial
 
-### Minor (5)
-7. **embed.js adapter stub** — Throws "not implemented"
-8. **mDNS/Bonjour** — Not implemented
-9. **Docker OLLAMA_HOST** — Missing env var
-10. **Docker data volume** — Missing ./data mount
-11. **Middleware** — 4-line error handler, no security middleware
+- Test pass rate: test files exist but dist/admin missing may cause runtime test failures; overall pass rate unverified
 
-## Resolved Since Last Check
+## Required Actions to Reach ≥90%
 
-- ~~sense.js adapter stub~~ — Actually implemented (imports agentic-sense, exports createPipeline)
-
-## Recommendation
-
-The m23 milestone should either:
-- Be marked **completed** (admin UI is fully implemented and functional), or
-- Have its `dbb.md` populated with specific acceptance criteria for verification
+1. Create `src/index.js` with exports: `startServer`, `detector`, `runtime`, `server`
+2. Update `docker-compose.yml`: port `1234:1234`, add `PORT=1234`, fix healthcheck URL to `:1234`
+3. Update `README.md`: replace all `3000` references with `1234`
+4. Run `npm run build` to generate `dist/admin/`
+5. Add unit test for `src/index.js` exports

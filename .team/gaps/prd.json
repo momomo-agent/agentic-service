@@ -1,6 +1,6 @@
 {
   "match": 65,
-  "timestamp": "2026-04-08T14:00:00.000Z",
+  "timestamp": "2026-04-11T00:00:00.000Z",
   "gaps": [
     {
       "description": "Hardware detector — detect GPU/memory/arch/OS (detector/hardware.js)",
@@ -76,7 +76,7 @@
       "description": "Cloud fallback — llm.js tries Ollama first, falls back to cloud on error; uses profile.fallback.provider config",
       "status": "partial",
       "severity": "major",
-      "detail": "Fallback triggers on Ollama error only, not on timeout >5s or 3 consecutive errors as PRD specifies; no auto-restore after 60s probe"
+      "detail": "Fallback triggers on Ollama error only (AbortSignal.timeout 30s), not on timeout >5s or 3 consecutive errors as PRD specifies; no auto-restore after 60s probe"
     },
     {
       "description": "Config hot-reload — watchProfiles() polls every 30s with ETag-based conditional fetching (detector/profiles.js)",

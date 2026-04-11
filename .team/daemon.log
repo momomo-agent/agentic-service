@@ -37519,3 +37519,287 @@ Perfect! Now let me provide a summary of the current state and what's been set u
 
 The two P0 tasks directly address the CRITICAL gaps blocking goal achievement. The P1 tasks target major severity gaps that will push PRD and DBB scores toward 90%.
 [2026-04-08T09:57:12.608Z] pm agent completed
+[2026-04-11 05:40:24] [workflow] validator [WARNING] nodes/complete: unreachable from entry node
+[2026-04-11 05:40:24] [workflow] validator [WARNING] config.dashboard: no dashboard configuration — run "team web" will show empty UI
+[2026-04-11 05:40:24] [workflow] validator [WARNING] nodes/milestone_qg.next.if: references undefined variable "milestoneComplete" — will default to 0 at runtime
+[2026-04-11 05:40:24] [workflow] validator [WARNING] nodes/milestone_qg.steps[2].when: references undefined variable "milestoneComplete" — will default to 0 at runtime
+[2026-04-11 05:40:24] [workflow] validator [WARNING] nodes/milestone_qg.steps[3].when: references undefined variable "milestoneComplete" — will default to 0 at runtime
+[2026-04-11 05:40:24] [workflow] validator [WARNING] nodes/milestone_qg.steps[4].when: references undefined variable "milestoneComplete" — will default to 0 at runtime
+[2026-04-11 05:40:24] [workflow] validator [WARNING] nodes/milestone_qg.steps[5].when: references undefined variable "milestoneComplete" — will default to 0 at runtime
+[2026-04-11 05:40:24] [agent_start] daemon Team daemon started (safety=600s, timeout=900s)
+[2026-04-11 05:40:24] [workflow] monitor [HEALTH] Monitor started
+[2026-04-11 05:40:24] [agent_start] startup [NODE] startup - 项目启动
+[2026-04-11 05:40:24] [workflow] startup [SKIP] init-architecture: !hasArchitecture
+[2026-04-11 05:40:24] [agent_start] monitor [NODE] monitor - 全局 Monitor 五维检查（含层间一致性）
+[2026-04-11 05:40:24] [workflow] monitor [PARALLEL] vision_monitor, prd_monitor, dbb_monitor, arch_monitor, alignment_monitor
+[2026-04-11 05:40:24] [agent_start] vision_monitor 评估愿景匹配度
+[2026-04-11 05:40:24] [agent_start] prd_monitor 评估PRD匹配度
+[2026-04-11 05:40:24] [agent_start] dbb_monitor 评估DBB匹配度
+[2026-04-11 05:40:24] [agent_start] arch_monitor 评估架构匹配度
+[2026-04-11 05:40:24] [agent_start] alignment_monitor 检查层间一致性（Vision→PRD→Architecture→Tasks）
+[2026-04-11T05:40:24.590Z] Running prd_monitor agent...
+[2026-04-11T05:40:24.590Z] Running dbb_monitor agent...
+[2026-04-11T05:40:24.591Z] Running vision_monitor agent...
+[2026-04-11T05:40:24.591Z] Running alignment_monitor agent...
+[2026-04-11T05:40:24.593Z] Running arch_monitor agent...
+[2026-04-11 05:40:26] [error] vision_monitor [STDERR] [2026-04-11T05:40:26.221Z] vision_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < "/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-vision_monitor-1775886024592.md"
+[2026-04-11 05:40:26] [error] vision_monitor failed (code=1) after 2 retries, giving up
+[2026-04-11 05:40:26] [error] dbb_monitor [STDERR] [2026-04-11T05:40:26.226Z] dbb_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < "/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-dbb_monitor-1775886024591.md"
+[2026-04-11 05:40:26] [error] dbb_monitor failed (code=1) after 2 retries, giving up
+[2026-04-11 05:40:26] [error] prd_monitor [STDERR] [2026-04-11T05:40:26.580Z] prd_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < "/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-prd_monitor-1775886024591.md"
+[2026-04-11 05:40:26] [error] prd_monitor failed (code=1), retry 1/2 in 1s
+[2026-04-11 05:40:26] [workflow] prd_monitor [SIGNAL] failed: API Error: 400 {"type":"error","error":{"type":"invalid_request_error","message":"模型配置不存在: claude-so
+[2026-04-11 05:40:26] [error] arch_monitor [STDERR] [2026-04-11T05:40:26.934Z] arch_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < "/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-arch_monitor-1775886024594.md"
+[2026-04-11 05:40:26] [error] arch_monitor failed (code=1), retry 1/2 in 1s
+[2026-04-11 05:40:26] [workflow] arch_monitor [SIGNAL] failed: API Error: 400 {"type":"error","error":{"type":"invalid_request_error","message":"模型配置不存在: claude-so
+[2026-04-11 05:40:27] [agent_start] prd_monitor 评估PRD匹配度
+[2026-04-11T05:40:27.639Z] Running prd_monitor agent...
+[2026-04-11 05:40:27] [agent_start] arch_monitor 评估架构匹配度
+[2026-04-11T05:40:27.969Z] Running arch_monitor agent...
+[2026-04-11 05:40:28] [error] prd_monitor [STDERR] [2026-04-11T05:40:28.636Z] prd_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < "/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-prd_monitor-1775886027640.md"
+[2026-04-11 05:40:28] [error] prd_monitor failed (code=1), retry 2/2 in 2s
+[2026-04-11 05:40:28] [workflow] prd_monitor [SIGNAL] failed: API Error: 400 {"type":"error","error":{"type":"invalid_request_error","message":"模型配置不存在: claude-so
+[2026-04-11 05:40:29] [error] arch_monitor [STDERR] [2026-04-11T05:40:29.308Z] arch_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < "/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-arch_monitor-1775886027971.md"
+[2026-04-11 05:40:29] [error] arch_monitor failed (code=1), retry 2/2 in 2s
+[2026-04-11 05:40:29] [workflow] arch_monitor [SIGNAL] failed: API Error: 400 {"type":"error","error":{"type":"invalid_request_error","message":"模型配置不存在: claude-so
+[2026-04-11 05:40:30] [agent_start] prd_monitor 评估PRD匹配度
+[2026-04-11T05:40:30.693Z] Running prd_monitor agent...
+[2026-04-11 05:40:31] [agent_start] arch_monitor 评估架构匹配度
+[2026-04-11T05:40:31.352Z] Running arch_monitor agent...
+[2026-04-11 05:40:31] [error] prd_monitor [STDERR] [2026-04-11T05:40:31.653Z] prd_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < "/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-prd_monitor-1775886030694.md"
+[2026-04-11 05:40:31] [error] prd_monitor failed (code=1) after 2 retries, giving up
+[2026-04-11 05:40:32] [error] arch_monitor [STDERR] [2026-04-11T05:40:32.307Z] arch_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < "/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-arch_monitor-1775886031353.md"
+[2026-04-11 05:40:32] [error] arch_monitor failed (code=1) after 2 retries, giving up
+[2026-04-11 05:41:07] [workflow] daemon Reset stuck agent: alignment_monitor
+[2026-04-11 05:41:07] [agent_complete] daemon Team daemon stopped
+[2026-04-11 05:41:30] [workflow] validator [WARNING] nodes/complete: unreachable from entry node
+[2026-04-11 05:41:30] [workflow] validator [WARNING] config.dashboard: no dashboard configuration — run "team web" will show empty UI
+[2026-04-11 05:41:30] [workflow] validator [WARNING] nodes/milestone_qg.next.if: references undefined variable "milestoneComplete" — will default to 0 at runtime
+[2026-04-11 05:41:30] [workflow] validator [WARNING] nodes/milestone_qg.steps[2].when: references undefined variable "milestoneComplete" — will default to 0 at runtime
+[2026-04-11 05:41:30] [workflow] validator [WARNING] nodes/milestone_qg.steps[3].when: references undefined variable "milestoneComplete" — will default to 0 at runtime
+[2026-04-11 05:41:30] [workflow] validator [WARNING] nodes/milestone_qg.steps[4].when: references undefined variable "milestoneComplete" — will default to 0 at runtime
+[2026-04-11 05:41:30] [workflow] validator [WARNING] nodes/milestone_qg.steps[5].when: references undefined variable "milestoneComplete" — will default to 0 at runtime
+[2026-04-11 05:41:30] [agent_start] daemon Team daemon started (safety=600s, timeout=900s)
+[2026-04-11 05:41:30] [workflow] monitor [HEALTH] Monitor started
+[2026-04-11 05:41:30] [workflow]  [RESUME] Resuming from checkpoint: node=monitor, step=0
+[2026-04-11 05:41:30] [agent_start] monitor [NODE] monitor - 全局 Monitor 五维检查（含层间一致性）
+[2026-04-11 05:41:30] [workflow] monitor [PARALLEL] vision_monitor, prd_monitor, dbb_monitor, arch_monitor, alignment_monitor
+[2026-04-11 05:41:30] [agent_start] vision_monitor 评估愿景匹配度
+[2026-04-11 05:41:30] [agent_start] prd_monitor 评估PRD匹配度
+[2026-04-11 05:41:30] [agent_start] dbb_monitor 评估DBB匹配度
+[2026-04-11 05:41:30] [agent_start] arch_monitor 评估架构匹配度
+[2026-04-11 05:41:30] [agent_start] alignment_monitor 检查层间一致性（Vision→PRD→Architecture→Tasks）
+[2026-04-11T05:41:30.394Z] Running dbb_monitor agent...
+[2026-04-11T05:41:30.395Z] Running prd_monitor agent...
+[2026-04-11T05:41:30.395Z] Running arch_monitor agent...
+[2026-04-11T05:41:30.397Z] Running vision_monitor agent...
+[2026-04-11T05:41:30.397Z] Running alignment_monitor agent...
+Architecture gap analysis complete. No changes since last run — same 6 gaps (3 missing, 3 partial), match stays at **83%**. Recent commits only touched `src/server/api.js` (bug fix) and admin UI files, no new source modules added.
+
+```signal
+{"status": "completed", "summary": "Architecture gap analysis complete — 83% match, same 6 gaps as previous run (no changes detected in recent commits)"}
+```
+[2026-04-11T05:42:19.854Z] arch_monitor agent completed
+[2026-04-11 05:42:19] [agent_complete] arch_monitor completed successfully
+[2026-04-11 05:42:19] [workflow] arch_monitor [SIGNAL] completed: Architecture gap analysis complete — 83% match, same 6 gaps as previous run (no changes detected in 
+Vision evaluation complete. Match stays at **91%** — the three partial gaps (sense stub, embed not implemented, minimal middleware) are unchanged. M23 Admin UI Redesign aligns with the vision's admin panel goals and adds developer tooling.
+
+```signal
+{"status": "completed", "summary": "Vision evaluation complete. Match 91% (stable — same 3 partial gaps as last run). Wrote .team/gaps/vision.json and .team/milestones/m23/review/vision-check.md."}
+```
+[2026-04-11T05:42:37.776Z] vision_monitor agent completed
+[2026-04-11 05:42:37] [agent_complete] vision_monitor completed successfully
+[2026-04-11 05:42:37] [workflow] vision_monitor [SIGNAL] completed: Vision evaluation complete. Match 91% (stable — same 3 partial gaps as last run). Wrote .team/gaps/v
+PRD evaluation complete. Gap list unchanged from previous run — match score held at 65.
+
+Active gaps:
+- 2 `missing` (major): root docker-compose.yml lacks `OLLAMA_HOST` and `./data` volume
+- 3 `partial` (1 major, 2 minor): cloud fallback missing timeout/consecutive-error/probe logic; mDNS not implemented; test suite ~29% failing
+- All other PRD features confirmed implemented
+
+```signal
+{"status": "completed", "summary": "PRD evaluation complete — 65% match, gaps unchanged from prior run (2 missing, 3 partial, 24 implemented)"}
+```
+[2026-04-11T05:42:39.108Z] prd_monitor agent completed
+[2026-04-11 05:42:39] [agent_complete] prd_monitor completed successfully
+[2026-04-11 05:42:39] [workflow] prd_monitor [SIGNAL] completed: PRD evaluation complete — 65% match, gaps unchanged from prior run (2 missing, 3 partial, 24 impleme
+Alignment analysis complete.
+
+- Vision → PRD: 95% coverage, aligned. Two minor issues: install time drift (5min vs 10min) and implicit 3-hardware-config coverage.
+- PRD → Architecture: 95% coverage, aligned. One major issue: ARCHITECTURE.md has ~110 lines of unprocessed amendment notes creating spec fragmentation. Minor scope creep from supporting modules (sox.js, profiler.js, adapters/).
+- Architecture → Tasks: 92% coverage, aligned. One major issue: external package dependencies (agentic-core/sense/voice/store/embed) implemented as local adapters instead. Minor gaps in latency budget and profiles CDN fallback chain validation.
+- 0 critical issues. Overall aligned.
+
+```signal
+{"status": "completed", "summary": "Alignment analysis: Vision→PRD 95%, PRD→Architecture 95%, Architecture→Tasks 92%. Overall aligned, 0 critical issues, 2 major (unprocessed ARCHITECTURE.md amendments, local adapters vs external packages)."}
+```
+[2026-04-11T05:43:34.651Z] alignment_monitor agent completed
+[2026-04-11 05:43:34] [agent_complete] alignment_monitor completed successfully
+[2026-04-11 05:43:34] [workflow] alignment_monitor [SIGNAL] completed: Alignment analysis: Vision→PRD 95%, PRD→Architecture 95%, Architecture→Tasks 92%. Overall aligned, 0
+DBB check complete. Here's what I found:
+
+**Global DBB match: 62%** (down from 65% — added new gap: dist/admin not built)
+
+**M23 match: 45%** — 9 pass, 1 partial, 9 fail against the actual m23 dbb.md criteria:
+
+Critical blockers:
+- `src/index.js` still missing — package.json "main" points to non-existent file
+- Port not unified: docker-compose.yml still uses 3000:3000, README has 8+ references to port 3000
+- `dist/admin/` not built — admin UI will 404 at runtime
+
+Passing: bin defaults to 1234, Vue 3 source complete (5 components, App.vue polling, ConfigPanel API calls), build script configured, test files exist.
+
+```signal
+{"status": "completed", "summary": "DBB check for m23 (Admin UI Redesign): match=45%, 9 fail/1 partial/9 pass. Critical gaps: src/index.js missing, port not unified to 1234 in docker-compose+README, dist/admin not built. Updated .team/gaps/dbb.json (global match=62%), .team/gaps/milestones/m23.json, and .team/milestones/m23/review/dbb-check.md."}
+```
+[2026-04-11T05:44:04.906Z] dbb_monitor agent completed
+[2026-04-11 05:44:04] [agent_complete] dbb_monitor completed successfully
+[2026-04-11 05:44:04] [workflow] dbb_monitor [SIGNAL] completed: DBB check for m23 (Admin UI Redesign): match=45%, 9 fail/1 partial/9 pass. Critical gaps: src/index.
+[2026-04-11 05:44:05] [agent_start] pm_decide [NODE] pm_decide - PM 决策下一步
+[2026-04-11 05:44:05] [workflow] pm_decide [SKIP] fix-arch: archNeedsUpdate > 0
+[2026-04-11 05:44:05] [workflow] pm_decide [EXEC] pm
+[2026-04-11 05:44:05] [agent_start] pm 管理任务和里程碑
+[2026-04-11T05:44:05.133Z] Running pm agent...
+Alignment analysis complete. Updated `.team/gaps/alignment.json` with fresh scores:
+
+- Vision → PRD: 95% (stable — 2 minor issues: lenient install time, implicit 3-config support)
+- PRD → Architecture: 90% (down from 95 — found 5 major issues: port 1234 vs 3000 mismatch, missing fallback thresholds, missing watchProfiles(), missing profiler.js, missing sense.js interface, plus stale TODO lines polluting the spec)
+- Architecture → Tasks: 88% (down from 92 — external-vs-local dependency model drift, missing latency/CDN fallback validation tasks, UI coverage unclear with 344 cancelled tasks)
+
+No critical issues. Overall aligned. The biggest risks are the PRD→Architecture gaps where specific technical requirements (fallback thresholds, latency enforcement, config hot-reload) aren't reflected in the architecture spec.
+
+```signal
+{"status": "completed", "summary": "Updated alignment.json — Vision→PRD 95%, PRD→Architecture 90% (down from 95, found port mismatch + 4 missing specs), Architecture→Tasks 88% (down from 92, dependency model drift + missing validation tasks). No critical issues."}
+```
+[2026-04-11T05:44:28.011Z] alignment_monitor agent completed
+The milestone overview is well-defined and covers all the gaps. Everything is in order.
+
+**Summary:**
+- No pending CRs to process
+- PRD updated: clarified cloud fallback trigger spec (line 82 now matches feature description at line 72)
+- m23 milestone is active with 6 todo tasks covering all critical gaps:
+  - P0: `src/index.js` creation (developer)
+  - P0: Port unification to 1234 (developer)
+  - P1: Cloud fallback full spec (developer)
+  - P1: Docker config fixes (developer)
+  - P1: Test suite failures (tester)
+  - P1: ARCHITECTURE.md cleanup (tech_lead)
+- 1 task in review (E2E test) — waiting for tester approval
+- Vision is already at 91% ✅, PRD needs to go from 65% → 90% via executing these tasks
+
+```signal
+{"status": "completed", "summary": "No pending CRs. Updated PRD cloud fallback spec to match feature description. m23 milestone active with 6 todo tasks covering all critical PRD/DBB gaps. No new tasks needed — existing tasks cover the path to PRD ≥90%."}
+```
+[2026-04-11T05:45:45.185Z] pm agent completed
+[2026-04-11 05:45:45] [agent_complete] pm completed successfully
+[2026-04-11 05:45:45] [workflow] pm [SIGNAL] completed: No pending CRs. Updated PRD cloud fallback spec to match feature description. m23 milestone active w
+[2026-04-11 05:45:45] [agent_start] work_loop [NODE] work_loop - PM 调度中心 — PM 评估后派发 sub-teams，全部完成后回 PM
+[2026-04-11 05:45:45] [workflow] work_loop [LOOP] Iteration 1
+[2026-04-11 05:45:45] [workflow] work_loop [SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/goal-check.js
+[2026-04-11 05:45:45] [workflow] work_loop [EXEC] pm
+[2026-04-11 05:45:45] [agent_start] pm 管理任务和里程碑
+[2026-04-11T05:45:46.008Z] Running pm agent...
+[2026-04-11 05:46:30] [perf] daemon {"rss":"111MB","heapUsed":"25MB","uptime":"300s"}
+[2026-04-11 05:47:00] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 5min (active:8, done:231)
+[2026-04-11 05:47:30] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:9, done:231)
+[2026-04-11 05:48:00] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 6min (active:10, done:231)
+[2026-04-11 05:48:30] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 7min (active:9, done:231)
+M23 is well-structured. Here's the summary:
+
+**M23: PRD Gap Closure — 9 tasks**
+
+| Priority | Task | Assignee | Status |
+|----------|------|----------|--------|
+| P0 | 创建 src/index.js 入口文件 | developer | todo |
+| P0 | 统一默认端口为 1234 | developer | todo |
+| P0 | 构建 Admin UI dist | developer | todo |
+| P1 | 修复 Cloud Fallback 完整规范 | developer | todo |
+| P1 | 修复 Docker 配置缺失 | developer | todo |
+| P1 | 清理 package.json 死亡 import maps | developer | todo |
+| P1 | 修复测试套件失败 | tester | todo |
+| P1 | 清理 ARCHITECTURE.md 陈旧内容 | tech_lead | todo |
+| P1 | E2E验证: Examples页面 | tester | review |
+
+**Path to PRD ≥90%:** Completing the P0 tasks (src/index.js, port unification, Admin UI build) plus the Docker and cloud fallback fixes should push PRD from 65% → 90%+. Vision is already at 91% ✅.
+
+```signal
+{"status": "completed", "summary": "Reviewed m23 milestone — added 2 new tasks (Admin UI dist build, dead import maps cleanup), cleaned up 6 ghost task IDs from milestones.json, assigned E2E review task to tester, updated milestone name and overview. M23 now has 9 active tasks targeting PRD 65%→90% gap closure."}
+```
+[2026-04-11T05:48:46.887Z] pm agent completed
+[2026-04-11 05:48:46] [agent_complete] pm completed successfully
+[2026-04-11 05:48:46] [workflow] pm [SIGNAL] completed: Reviewed m23 milestone — added 2 new tasks (Admin UI dist build, dead import maps cleanup), cleaned 
+[2026-04-11 05:48:46] [workflow] work_loop [SKIP] write-dbb: milestoneNeedsDBB > 0
+[2026-04-11 05:48:46] [workflow] work_loop [PARALLEL] architecture, write-design, implement, test
+[2026-04-11 05:48:46] [workflow] work_loop [TEAM] → architect (depth 1)
+[2026-04-11 05:48:46] [agent_start] read-deps [NODE] read-deps - 读取项目依赖的真实 API 签名
+[2026-04-11 05:48:46] [workflow] read-deps [SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/scan-deps.js
+[2026-04-11 05:48:47] [workflow] work_loop [EXEC] tech_lead
+[2026-04-11 05:48:47] [agent_start] tech_lead 出技术方案
+[2026-04-11 05:48:47] [workflow] work_loop [TEAM] → developer (depth 1)
+[2026-04-11 05:48:47] [agent_start] read-spec [NODE] read-spec - 读取任务 spec、设计文档、历史错误日志
+[2026-04-11 05:48:47] [workflow] read-spec [SHELL] cat .team/verify-errors/latest-build.log 2>/dev/null || echo 'No previous build errors'
+[2026-04-11 05:48:47] [agent_start] design [NODE] design - Architect agent 设计/更新 ARCHITECTURE.md
+[2026-04-11 05:48:47] [workflow] design [EXEC] architect
+[2026-04-11 05:48:47] [agent_start] architect 设计系统架构
+[2026-04-11 05:48:47] [agent_start] implement [NODE] implement - Developer 实现代码
+[2026-04-11 05:48:47] [workflow] implement [EXEC] developer
+[2026-04-11 05:48:47] [agent_start] developer 实现功能
+[2026-04-11T05:48:47.029Z] Running tech_lead agent...
+[2026-04-11T05:48:47.049Z] Running developer agent...
+[2026-04-11T05:48:47.055Z] Running architect agent...
+[2026-04-11 05:49:30] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 8min (active:9, done:231)
+[2026-04-11 05:50:30] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 9min (active:9, done:231)
+[2026-04-11 05:51:30] [perf] daemon {"rss":"93MB","heapUsed":"9MB","uptime":"600s"}
+[2026-04-11 05:51:30] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 10min (active:9, done:231)
+[2026-04-11 05:51:30] [agent_start] daemon Still busy (10min), skipping
+Wrote designs for all 6 undesigned tasks in M23 and marked them `hasDesign: true`:
+
+- **task-1775642155184** — Cloud fallback: timeout tracking (5s), consecutive error counter (3 strikes), 60s recovery probe
+- **task-1775642155227** — Docker: add `OLLAMA_HOST` env var + `./data` bind mount to root `docker-compose.yml`
+- **task-1775642166761** — Test failures: `skipIf(!OPENAI_API_KEY)` guards for cloud tests, fix TTS init sequence, hub.js close handler, CDN org name, VAD callback signature
+- **task-1775642183884** — ARCHITECTURE.md cleanup: submitted CR `cr-1775886600000` (tech_lead can't write ARCHITECTURE.md directly) to remove stale CR instructions and update directory tree
+- **task-1775886440720** — Admin UI dist: verify/rebuild via `cd src/ui/admin && npm install && npm run build` → `dist/admin/`
+- **task-1775886450335** — Dead import maps: verify no `#agentic-embed`/`#agentic-voice` usages, then remove `imports` field from `package.json`
+
+```signal
+{"status": "completed", "summary": "Wrote task designs for all 6 hasDesign=false tasks in M23 (cloud fallback, docker config, test failures, architecture cleanup CR, admin UI build, dead import maps). All tasks updated to hasDesign=true."}
+```
+[2026-04-11T05:52:30.261Z] tech_lead agent completed
+[2026-04-11 05:52:30] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 11min (active:9, done:231)
+[2026-04-11 05:52:30] [agent_complete] tech_lead completed successfully
+[2026-04-11 05:52:30] [workflow] tech_lead [SIGNAL] completed: Wrote task designs for all 6 hasDesign=false tasks in M23 (cloud fallback, docker config, test failu
+No stale CR content remains. The work is complete.
+
+```signal
+{"status": "completed", "summary": "Rewrote ARCHITECTURE.md (389 lines, clean): removed all stale CR content from lines 191-252, added all 35 source files to directory tree, documented all missing modules (embed.js, vad.js, profiler.js, latency-log.js, store/index.js, adapters/, cli/, tunnel.js, cert.js, httpsServer.js, middleware.js), fixed default port to 1234, added voice latency budget section, added known issues section. Created .team/codebase-map.md with full file tree, module dependencies, key interfaces, and known issues table."}
+```
+[2026-04-11T05:52:31.380Z] architect agent completed
+[2026-04-11 05:52:31] [agent_complete] architect completed successfully
+[2026-04-11 05:52:31] [workflow] architect [SIGNAL] completed: Rewrote ARCHITECTURE.md (389 lines, clean): removed all stale CR content from lines 191-252, added a
+[2026-04-11 05:52:31] [agent_start] validate-refs [NODE] validate-refs - 验证 ARCHITECTURE.md 引用的 API 是否真实存在
+[2026-04-11 05:52:31] [workflow] validate-refs [SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/validate-arch-refs.js
+[2026-04-11 05:52:31] [agent_start] complete [NODE] complete - 架构设计完成
+[2026-04-11 05:52:31] [workflow] work_loop [TEAM] ← architect done
+Both tasks complete and moved to review.
+
+```signal
+{"status": "completed", "summary": "Implemented task-1775641694425: created src/index.js, src/runtime/index.js, src/server/index.js, src/detector/index.js as module aggregators. Implemented task-1775641694470: unified default port to 1234 across src/server/api.js, src/tunnel.js, vite configs, Dockerfiles, docker-compose files, and README.md."}
+```
+[2026-04-11T05:52:47.635Z] developer agent completed
+[2026-04-11 05:52:47] [agent_complete] developer completed successfully
+[2026-04-11 05:52:47] [workflow] developer [SIGNAL] completed: Implemented task-1775641694425: created src/index.js, src/runtime/index.js, src/server/index.js, src
+[2026-04-11 05:52:47] [agent_start] self-verify-build [NODE] self-verify-build - 编译验证 — 失败则回到 implement 重试（最多 3 次）
+[2026-04-11 05:52:47] [workflow] self-verify-build [SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/verify.js build
+[2026-04-11 05:54:47] [error] self-verify-build [SHELL] exit null: spawnSync /bin/sh ETIMEDOUT
+[2026-04-11 05:54:47] [workflow] self-verify-build [BRANCH] buildPassed == 1 → false → implement
+[2026-04-11 05:54:47] [agent_start] implement [NODE] implement - Developer 实现代码
+[2026-04-11 05:54:47] [workflow] implement [EXEC] developer
+[2026-04-11 05:54:47] [agent_start] developer 实现功能
+[2026-04-11T05:54:48.021Z] Running developer agent...
+[2026-04-11 05:54:48] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 13min (active:9, done:231)
+[2026-04-11 05:55:18] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 14min (active:9, done:231)
+[2026-04-11 05:56:18] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 15min (active:9, done:231)
+[2026-04-11 05:56:30] [perf] daemon {"rss":"78MB","heapUsed":"9MB","uptime":"900s"}
+[2026-04-11 05:57:18] [workflow] monitor ⚠️ [ALERT:no_progress] No progress for 16min (active:9, done:231)
+[2026-04-11 05:57:20] [workflow] daemon Reset stuck agent: developer
+[2026-04-11 05:57:20] [agent_complete] daemon Team daemon stopped

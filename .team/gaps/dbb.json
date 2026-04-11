@@ -1,6 +1,6 @@
 {
-  "match": 65,
-  "timestamp": "2026-04-08T17:02:00.000Z",
+  "match": 62,
+  "timestamp": "2026-04-11T00:00:00.000Z",
   "gaps": [
     {
       "description": "src/index.js missing — package.json 'main' points to src/index.js which does not exist on disk",
@@ -30,6 +30,11 @@
     {
       "description": "Test pass rate reported ~94% (775/824) with ~49 failures across detector, server, CLI, and milestone tests — mostly stale mocks after refactoring",
       "status": "partial",
+      "severity": "major"
+    },
+    {
+      "description": "Admin UI dist/admin/ not built — src/ui/admin/dist/ does not exist; server api.js references dist/admin but no built assets are present",
+      "status": "missing",
       "severity": "major"
     },
     {

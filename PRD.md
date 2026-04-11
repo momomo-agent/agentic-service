@@ -79,4 +79,4 @@
 
 - **默认端口** — 1234 (bin/agentic-service.js)
 - **package.json main** — src/index.js 导出核心 API (startServer, detector, runtime)
-- **云端 fallback 触发器** — profile.fallback.provider 配置；llm.js 先尝试 Ollama，错误时 fallback
+- **云端 fallback 触发器** — profile.fallback.provider 配置；llm.js 先尝试 Ollama；触发条件：响应超时 >5s 或连续 3 次错误；60s 后自动探测 Ollama 恢复并切回本地

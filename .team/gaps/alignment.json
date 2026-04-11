@@ -1,0 +1,129 @@
+{
+  "timestamp": "2026-04-11T12:00:00Z",
+  "checks": [
+    {
+      "from": "vision",
+      "to": "prd",
+      "aligned": true,
+      "coverage": 95,
+      "issues": [
+        {
+          "type": "drift",
+          "description": "Vision says 5-minute first install on M4 Mac; PRD M1 acceptance criteria says <10 minutes. PRD is more lenient than Vision's success criteria.",
+          "severity": "minor",
+          "from_item": "Vision 成功标准: npx agentic-service 在 M4 Mac 上 5 分钟内完成首次安装 + 启动",
+          "to_item": "PRD M1 验收标准: 首次安装（含模型下载）< 10 分钟"
+        },
+        {
+          "type": "missing",
+          "description": "Vision mentions 3 hardware configs (Apple Silicon / NVIDIA / CPU-only) as success criteria. PRD M2 implicitly covers this via STT provider mapping but never explicitly states 3-config support as a requirement.",
+          "severity": "minor",
+          "from_item": "Vision 成功标准: 支持至少 3 种硬件配置（Apple Silicon / NVIDIA / CPU-only）",
+          "to_item": "PRD M2 F1 implicitly maps providers to hardware but does not state explicit 3-config acceptance criterion"
+        }
+      ]
+    },
+    {
+      "from": "prd",
+      "to": "architecture",
+      "aligned": true,
+      "coverage": 90,
+      "issues": [
+        {
+          "type": "drift",
+          "description": "PRD M4 specifies default port 1234. Architecture install flow says 'http://localhost:3000' and Docker example uses '-p 3000:3000', contradicting the PRD.",
+          "severity": "major",
+          "from_item": "PRD M4 技术规格: 默认端口 — 1234 (bin/agentic-service.js)",
+          "to_item": "Architecture: 'docker run -p 3000:3000' and '打开浏览器 → http://localhost:3000'"
+        },
+        {
+          "type": "drift",
+          "description": "PRD M4 specifies cloud fallback triggers: timeout >5s OR 3 consecutive errors, with 60s recovery probe. Architecture llm.js only says '超时/失败 → 云端 fallback' without specifying thresholds.",
+          "severity": "major",
+          "from_item": "PRD M4: 本地 LLM 超时 >5s 或连续 3 次错误 → 自动切换；60s 探测成功后恢复本地",
+          "to_item": "Architecture runtime/llm.js: '自动选择：本地 Ollama 优先，超时/失败 → 云端 fallback' (no thresholds)"
+        },
+        {
+          "type": "missing",
+          "description": "PRD M4 specifies watchProfiles() with 30s polling and ETag conditional fetch for config hot-reload. Architecture profiles.js only documents getProfile() — no watchProfiles() or polling mechanism.",
+          "severity": "major",
+          "from_item": "PRD M4: 配置热更新 — watchProfiles() 每 30s 轮询，ETag 条件获取 (detector/profiles.js)",
+          "to_item": "Architecture detector/profiles.js: only getProfile(hardware) documented"
+        },
+        {
+          "type": "missing",
+          "description": "PRD M2 specifies profiler.js enforcing 2000ms latency budget. Architecture has no profiler module or latency enforcement mechanism documented.",
+          "severity": "major",
+          "from_item": "PRD M2 技术规格: profiler.js 强制 2000ms 预算",
+          "to_item": "Architecture: no profiler.js or latency budget enforcement documented"
+        },
+        {
+          "type": "missing",
+          "description": "PRD M2 specifies wake word feature with configurable keyword (default 'hey') via audio-level detection in runtime/sense.js. Architecture does not document sense.js in the Runtime module interfaces.",
+          "severity": "major",
+          "from_item": "PRD M2: 唤醒词 — 可配置唤醒词（默认 'hey'），audio-level 检测 (runtime/sense.js)",
+          "to_item": "Architecture Runtime section: sense.js not documented with interface"
+        },
+        {
+          "type": "missing",
+          "description": "PRD M4 specifies src/index.js as package.json main exporting startServer, detector, runtime. Architecture does not document this entry point module.",
+          "severity": "minor",
+          "from_item": "PRD M4 技术规格: package.json main — src/index.js 导出核心 API (startServer, detector, runtime)",
+          "to_item": "Architecture: no src/index.js entry point documented"
+        },
+        {
+          "type": "drift",
+          "description": "PRD M4 specifies profiles CDN should use 'real accessible GitHub raw URL'. Architecture references cdn.example.com placeholder.",
+          "severity": "minor",
+          "from_item": "PRD M4 F5: profiles CDN — 真实可访问的 GitHub raw URL",
+          "to_item": "Architecture profiles.js references cdn.example.com (placeholder)"
+        },
+        {
+          "type": "scope_creep",
+          "description": "Architecture lines 191-252 contain raw task instructions/TODOs appended as plain text, not proper architecture documentation. These are stale change requests polluting the spec.",
+          "severity": "major",
+          "from_item": "N/A — not in PRD",
+          "to_item": "Architecture lines 191-252: ~60 lines of unprocessed amendment requests creating ambiguity about authoritative spec"
+        }
+      ]
+    },
+    {
+      "from": "architecture",
+      "to": "tasks",
+      "aligned": true,
+      "coverage": 88,
+      "issues": [
+        {
+          "type": "drift",
+          "description": "Architecture documents agentic-core, agentic-sense, agentic-voice, agentic-store, agentic-embed as external package dependencies. Implementation uses local adapter modules (src/runtime/adapters/, src/store/) as stand-ins. Tasks completed wiring but the dependency model differs from architecture's external package assumption.",
+          "severity": "major",
+          "from_item": "Architecture dependency diagram: agentic-core, agentic-sense, agentic-voice, agentic-store, agentic-embed as external packages",
+          "to_item": "Tasks implemented local adapters (src/runtime/adapters/, src/store/index.js) instead of external packages"
+        },
+        {
+          "type": "missing",
+          "description": "Architecture specifies profiles CDN with 4-layer fallback (fresh cache → remote fetch → stale cache → built-in default.json). No dedicated task validates this full 4-layer fallback chain end-to-end.",
+          "severity": "minor",
+          "from_item": "Architecture: profiles.js 4-layer fallback with ETag conditional fetch",
+          "to_item": "No task specifically validates the 4-layer fallback chain"
+        },
+        {
+          "type": "missing",
+          "description": "Architecture specifies latency budget enforcement (STT≤500ms + LLM≤1000ms + TTS≤500ms = <2s). No task explicitly validates latency budget enforcement.",
+          "severity": "minor",
+          "from_item": "Architecture: latency budget enforcement via profiler.js",
+          "to_item": "No dedicated task for latency budget validation"
+        },
+        {
+          "type": "missing",
+          "description": "Architecture UI section specifies Vue 3 + Vite with / (chat) and /admin (management panel). 344 tasks are cancelled and active tasks focus on backend, leaving UI implementation coverage unclear.",
+          "severity": "minor",
+          "from_item": "Architecture Section 4: UI — Vue 3 + Vite, / and /admin pages",
+          "to_item": "344 cancelled tasks; remaining active tasks focus on backend (index.js, port, fallback, Docker, tests)"
+        }
+      ]
+    }
+  ],
+  "overall_aligned": true,
+  "critical_issues": 0
+}

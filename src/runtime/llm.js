@@ -12,6 +12,23 @@ async function loadConfig() {
   return _config
 }
 
+let _ollamaErrors = 0
+let _ollamaDisabled = false
+let _recoveryTimer = null
+
+function scheduleRecovery() {
+  if (_recoveryTimer) return
+  _recoveryTimer = setTimeout(async () => {
+    _recoveryTimer = null
+    try {
+      const r = await fetch('http://localhost:11434/api/tags', { signal: AbortSignal.timeout(2000) })
+      if (r.ok) { _ollamaErrors = 0; _ollamaDisabled = false }
+      else scheduleRecovery()
+    } catch { scheduleRecovery() }
+  }, 60_000)
+  _recoveryTimer.unref?.()
+}
+
 loadConfig().then(cfg => {
   watchProfiles(cfg._hardware, (newProfile) => {
     _config = { ...newProfile, _hardware: cfg._hardware }
@@ -25,7 +42,7 @@ async function* chatWithOllama(messages) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: config.llm.model, messages, stream: true }),
-    signal: AbortSignal.timeout(30000)
+    signal: AbortSignal.timeout(5000)
   });
 
   if (!response.ok) throw new Error(`Ollama API error: ${response.status}`);
@@ -118,15 +135,20 @@ export async function* chat(messageOrText, options = {}) {
   let first = true;
   startMark('llm');
   try {
-    try {
-      for await (const chunk of chatWithOllama(messages)) {
-        if (first) { record('llm_ttft', Date.now() - t0); first = false; }
-        yield chunk;
+    if (!_ollamaDisabled) {
+      try {
+        for await (const chunk of chatWithOllama(messages)) {
+          if (first) { record('llm_ttft', Date.now() - t0); first = false; }
+          yield chunk;
+        }
+        _ollamaErrors = 0;
+        record('llm_total', Date.now() - t0);
+        return;
+      } catch (error) {
+        _ollamaErrors++;
+        if (_ollamaErrors >= 3) { _ollamaDisabled = true; scheduleRecovery(); }
+        console.warn('Ollama failed, falling back to cloud:', error.message);
       }
-      record('llm_total', Date.now() - t0);
-      return;
-    } catch (error) {
-      console.warn('Ollama failed, falling back to cloud:', error.message);
     }
 
     const config = await loadConfig();

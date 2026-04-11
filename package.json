@@ -39,10 +39,6 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "imports": {
-    "#agentic-embed": "./src/runtime/adapters/embed.js",
-    "#agentic-voice": "./src/runtime/adapters/voice/openai-tts.js"
-  },
   "dependencies": {
     "agentic-embed": "file:./vendor/agentic-embed.tgz",
     "agentic-sense": "file:./vendor/agentic-sense.tgz",

@@ -2,12 +2,12 @@
   "id": "task-1775886440720",
   "title": "构建 Admin UI dist — 运行 npm run build 生成 dist/admin/",
   "description": "src/server/api.js 引用 dist/admin 提供静态文件，但 src/ui/admin/dist/ 不存在。需要：(1) 在 src/ui/admin/ 目录运行 npm run build 生成 dist/admin/ (2) 确认 api.js 的静态文件路径正确指向构建产物 (3) 验证 /admin 路由返回 200 而非 404。这是 DBB 关键缺口，Admin UI 在运行时会 404 直到构建完成。",
-  "status": "todo",
+  "status": "review",
   "priority": "P0",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m23",
   "hasDesign": true,
   "created": "2026-04-11T05:47:20.720Z",
-  "updated": "2026-04-11T05:52:15.457Z"
+  "updated": "2026-04-11T05:58:22.931Z"
 }

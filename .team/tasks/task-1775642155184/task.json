@@ -2,12 +2,12 @@
   "id": "task-1775642155184",
   "title": "修复 Cloud Fallback 完整规范",
   "description": "llm.js 的 cloud fallback 仅在 Ollama 错误时触发，但 PRD 要求：(1) 超时 >5s 触发 (2) 连续 3 次错误触发 (3) 60s 后自动探测恢复。实现完整的 fallback 逻辑符合 PRD 规范",
-  "status": "todo",
+  "status": "review",
   "priority": "P1",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m23",
   "hasDesign": true,
   "created": "2026-04-08T09:55:55.184Z",
-  "updated": "2026-04-11T05:52:15.335Z"
+  "updated": "2026-04-11T05:58:22.870Z"
 }

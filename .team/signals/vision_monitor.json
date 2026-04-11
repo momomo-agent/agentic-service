@@ -1,7 +1,7 @@
 {
   "agent": "vision_monitor",
-  "timestamp": "2026-04-08T09:12:29.208Z",
-  "exitCode": 1,
-  "status": "failed",
-  "summary": "API Error: 429 {\"error\":{\"code\":\"429\",\"message\":\"monthly quota exhausted\",\"type\":\"limitation\"}}"
+  "timestamp": "2026-04-11T05:42:37.776Z",
+  "exitCode": 0,
+  "status": "completed",
+  "summary": "Vision evaluation complete. Match 91% (stable — same 3 partial gaps as last run). Wrote .team/gaps/vision.json and .team/milestones/m23/review/vision-check.md."
 }

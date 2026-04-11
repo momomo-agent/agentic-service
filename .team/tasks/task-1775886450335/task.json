@@ -2,12 +2,12 @@
   "id": "task-1775886450335",
   "title": "清理 package.json 死亡 import maps",
   "description": "package.json 中 #agentic-embed 和 #agentic-voice 的 import maps 已失效 — 源文件现在直接使用 agentic-embed/agentic-voice 包，但 import maps 仍然存在。删除这些死亡的 import map 条目以避免混淆和潜在的解析错误。",
-  "status": "todo",
+  "status": "review",
   "priority": "P1",
   "assignee": "developer",
   "blockedBy": [],
   "groupId": "m23",
   "hasDesign": true,
   "created": "2026-04-11T05:47:30.336Z",
-  "updated": "2026-04-11T05:52:15.487Z"
+  "updated": "2026-04-11T05:58:22.963Z"
 }

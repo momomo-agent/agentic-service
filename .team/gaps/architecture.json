@@ -1,6 +1,6 @@
 {
   "match": 83,
-  "timestamp": "2026-04-08T16:00:00.000Z",
+  "timestamp": "2026-04-11T00:00:00.000Z",
   "gaps": [
     {
       "description": "src/store/index.js (KV storage wrapper using agentic-store with get/set/del/delete exports) is not documented in ARCHITECTURE.md — agentic-store is listed as a dependency but local store abstraction is undocumented",

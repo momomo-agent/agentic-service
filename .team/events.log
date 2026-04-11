@@ -22533,3 +22533,167 @@
 {"ts":"2026-04-08T09:55:55.228Z","type":"task_created","agent":null,"data":{"taskId":"task-1775642155227","title":"修复 Docker 配置缺失","priority":"P1","group":"m23"}}
 {"ts":"2026-04-08T09:56:06.762Z","type":"task_created","agent":null,"data":{"taskId":"task-1775642166761","title":"修复测试套件失败","priority":"P1","group":"m23"}}
 {"ts":"2026-04-08T09:56:23.884Z","type":"task_created","agent":null,"data":{"taskId":"task-1775642183884","title":"清理 ARCHITECTURE.md 陈旧内容","priority":"P1","group":"m23"}}
+{"ts":"2026-04-11T05:39:52.088Z","type":"task_created","agent":null,"data":{"taskId":"task-1775885992086","title":"E2E验证: Examples页面全部example可用","priority":"P1","group":"m23"}}
+{"ts":"2026-04-11T05:39:57.004Z","type":"task_status","agent":null,"data":{"taskId":"task-1775885992086","from":"todo","to":"review","title":"E2E验证: Examples页面全部example可用"}}
+{"ts":"2026-04-11T05:40:24.140Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/complete: unreachable from entry node"}}
+{"ts":"2026-04-11T05:40:24.141Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] config.dashboard: no dashboard configuration — run \"team web\" will show empty UI"}}
+{"ts":"2026-04-11T05:40:24.141Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/milestone_qg.next.if: references undefined variable \"milestoneComplete\" — will default to 0 at runtime"}}
+{"ts":"2026-04-11T05:40:24.141Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/milestone_qg.steps[2].when: references undefined variable \"milestoneComplete\" — will default to 0 at runtime"}}
+{"ts":"2026-04-11T05:40:24.141Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/milestone_qg.steps[3].when: references undefined variable \"milestoneComplete\" — will default to 0 at runtime"}}
+{"ts":"2026-04-11T05:40:24.142Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/milestone_qg.steps[4].when: references undefined variable \"milestoneComplete\" — will default to 0 at runtime"}}
+{"ts":"2026-04-11T05:40:24.142Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/milestone_qg.steps[5].when: references undefined variable \"milestoneComplete\" — will default to 0 at runtime"}}
+{"ts":"2026-04-11T05:40:24.164Z","type":"agent_start","agent":"daemon","data":{"details":"Team daemon started (safety=600s, timeout=900s)","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":0.024306,"cpuSystem":0.007235}}}
+{"ts":"2026-04-11T05:40:24.258Z","type":"workflow","agent":"monitor","data":{"details":"[HEALTH] Monitor started"}}
+{"ts":"2026-04-11T05:40:24.261Z","type":"agent_start","agent":"startup","data":{"details":"[NODE] startup - 项目启动","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.027092,"cpuSystem":0.00829}}}
+{"ts":"2026-04-11T05:40:24.420Z","type":"workflow","agent":"startup","data":{"details":"[SKIP] init-architecture: !hasArchitecture"}}
+{"ts":"2026-04-11T05:40:24.484Z","type":"agent_start","agent":"monitor","data":{"details":"[NODE] monitor - 全局 Monitor 五维检查（含层间一致性）","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":0.067669,"cpuSystem":0.117503}}}
+{"ts":"2026-04-11T05:40:24.547Z","type":"workflow","agent":"monitor","data":{"details":"[PARALLEL] vision_monitor, prd_monitor, dbb_monitor, arch_monitor, alignment_monitor"}}
+{"ts":"2026-04-11T05:40:24.548Z","type":"agent_start","agent":"vision_monitor","data":{"details":"评估愿景匹配度","performance":{"memoryMB":6,"memoryTotalMB":10,"cpuUser":0.083048,"cpuSystem":0.16759}}}
+{"ts":"2026-04-11T05:40:24.549Z","type":"agent_start","agent":"prd_monitor","data":{"details":"评估PRD匹配度","performance":{"memoryMB":6,"memoryTotalMB":10,"cpuUser":0.083771,"cpuSystem":0.16804}}}
+{"ts":"2026-04-11T05:40:24.550Z","type":"agent_start","agent":"dbb_monitor","data":{"details":"评估DBB匹配度","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":0.083939,"cpuSystem":0.168342}}}
+{"ts":"2026-04-11T05:40:24.550Z","type":"agent_start","agent":"arch_monitor","data":{"details":"评估架构匹配度","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":0.084128,"cpuSystem":0.168597}}}
+{"ts":"2026-04-11T05:40:24.550Z","type":"agent_start","agent":"alignment_monitor","data":{"details":"检查层间一致性（Vision→PRD→Architecture→Tasks）","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":0.084376,"cpuSystem":0.168841}}}
+{"ts":"2026-04-11T05:40:26.225Z","type":"error","agent":"vision_monitor","data":{"details":"[STDERR] [2026-04-11T05:40:26.221Z] vision_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < \"/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-vision_monitor-1775886024592.md\""}}
+{"ts":"2026-04-11T05:40:26.226Z","type":"error","agent":"vision_monitor","data":{"details":"failed (code=1) after 2 retries, giving up"}}
+{"ts":"2026-04-11T05:40:26.296Z","type":"error","agent":"dbb_monitor","data":{"details":"[STDERR] [2026-04-11T05:40:26.226Z] dbb_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < \"/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-dbb_monitor-1775886024591.md\""}}
+{"ts":"2026-04-11T05:40:26.296Z","type":"error","agent":"dbb_monitor","data":{"details":"failed (code=1) after 2 retries, giving up"}}
+{"ts":"2026-04-11T05:40:26.584Z","type":"error","agent":"prd_monitor","data":{"details":"[STDERR] [2026-04-11T05:40:26.580Z] prd_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < \"/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-prd_monitor-1775886024591.md\""}}
+{"ts":"2026-04-11T05:40:26.584Z","type":"error","agent":"prd_monitor","data":{"details":"failed (code=1), retry 1/2 in 1s"}}
+{"ts":"2026-04-11T05:40:26.585Z","type":"workflow","agent":"prd_monitor","data":{"details":"[SIGNAL] failed: API Error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"模型配置不存在: claude-so"}}
+{"ts":"2026-04-11T05:40:26.938Z","type":"error","agent":"arch_monitor","data":{"details":"[STDERR] [2026-04-11T05:40:26.934Z] arch_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < \"/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-arch_monitor-1775886024594.md\""}}
+{"ts":"2026-04-11T05:40:26.939Z","type":"error","agent":"arch_monitor","data":{"details":"failed (code=1), retry 1/2 in 1s"}}
+{"ts":"2026-04-11T05:40:26.939Z","type":"workflow","agent":"arch_monitor","data":{"details":"[SIGNAL] failed: API Error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"模型配置不存在: claude-so"}}
+{"ts":"2026-04-11T05:40:27.588Z","type":"agent_start","agent":"prd_monitor","data":{"details":"评估PRD匹配度","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.089981,"cpuSystem":0.173066}}}
+{"ts":"2026-04-11T05:40:27.941Z","type":"agent_start","agent":"arch_monitor","data":{"details":"评估架构匹配度","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.091378,"cpuSystem":0.175695}}}
+{"ts":"2026-04-11T05:40:28.638Z","type":"error","agent":"prd_monitor","data":{"details":"[STDERR] [2026-04-11T05:40:28.636Z] prd_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < \"/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-prd_monitor-1775886027640.md\""}}
+{"ts":"2026-04-11T05:40:28.638Z","type":"error","agent":"prd_monitor","data":{"details":"failed (code=1), retry 2/2 in 2s"}}
+{"ts":"2026-04-11T05:40:28.638Z","type":"workflow","agent":"prd_monitor","data":{"details":"[SIGNAL] failed: API Error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"模型配置不存在: claude-so"}}
+{"ts":"2026-04-11T05:40:29.312Z","type":"error","agent":"arch_monitor","data":{"details":"[STDERR] [2026-04-11T05:40:29.308Z] arch_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < \"/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-arch_monitor-1775886027971.md\""}}
+{"ts":"2026-04-11T05:40:29.312Z","type":"error","agent":"arch_monitor","data":{"details":"failed (code=1), retry 2/2 in 2s"}}
+{"ts":"2026-04-11T05:40:29.313Z","type":"workflow","agent":"arch_monitor","data":{"details":"[SIGNAL] failed: API Error: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"模型配置不存在: claude-so"}}
+{"ts":"2026-04-11T05:40:30.641Z","type":"agent_start","agent":"prd_monitor","data":{"details":"评估PRD匹配度","performance":{"memoryMB":6,"memoryTotalMB":8,"cpuUser":0.093624,"cpuSystem":0.177971}}}
+{"ts":"2026-04-11T05:40:31.315Z","type":"agent_start","agent":"arch_monitor","data":{"details":"评估架构匹配度","performance":{"memoryMB":7,"memoryTotalMB":8,"cpuUser":0.095174,"cpuSystem":0.180103}}}
+{"ts":"2026-04-11T05:40:31.655Z","type":"error","agent":"prd_monitor","data":{"details":"[STDERR] [2026-04-11T05:40:31.653Z] prd_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < \"/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-prd_monitor-1775886030694.md\""}}
+{"ts":"2026-04-11T05:40:31.656Z","type":"error","agent":"prd_monitor","data":{"details":"failed (code=1) after 2 retries, giving up"}}
+{"ts":"2026-04-11T05:40:32.310Z","type":"error","agent":"arch_monitor","data":{"details":"[STDERR] [2026-04-11T05:40:32.307Z] arch_monitor agent failed: Command failed: claude --print --dangerously-skip-permissions --model claude-sonnet-4 < \"/Users/kenefe/LOCAL/momo-agent/projects/_archived/agentic-service/.team/.prompt-arch_monitor-1775886031353.md\""}}
+{"ts":"2026-04-11T05:40:32.311Z","type":"error","agent":"arch_monitor","data":{"details":"failed (code=1) after 2 retries, giving up"}}
+{"ts":"2026-04-11T05:41:07.366Z","type":"workflow","agent":"daemon","data":{"details":"Reset stuck agent: alignment_monitor"}}
+{"ts":"2026-04-11T05:41:07.366Z","type":"agent_complete","agent":"daemon","data":{"details":"Team daemon stopped","performance":{"memoryMB":10,"memoryTotalMB":13,"cpuUser":0.150487,"cpuSystem":0.263102}}}
+{"ts":"2026-04-11T05:41:30.117Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/complete: unreachable from entry node"}}
+{"ts":"2026-04-11T05:41:30.118Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] config.dashboard: no dashboard configuration — run \"team web\" will show empty UI"}}
+{"ts":"2026-04-11T05:41:30.118Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/milestone_qg.next.if: references undefined variable \"milestoneComplete\" — will default to 0 at runtime"}}
+{"ts":"2026-04-11T05:41:30.119Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/milestone_qg.steps[2].when: references undefined variable \"milestoneComplete\" — will default to 0 at runtime"}}
+{"ts":"2026-04-11T05:41:30.119Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/milestone_qg.steps[3].when: references undefined variable \"milestoneComplete\" — will default to 0 at runtime"}}
+{"ts":"2026-04-11T05:41:30.119Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/milestone_qg.steps[4].when: references undefined variable \"milestoneComplete\" — will default to 0 at runtime"}}
+{"ts":"2026-04-11T05:41:30.119Z","type":"workflow","agent":"validator","data":{"details":"[WARNING] nodes/milestone_qg.steps[5].when: references undefined variable \"milestoneComplete\" — will default to 0 at runtime"}}
+{"ts":"2026-04-11T05:41:30.139Z","type":"agent_start","agent":"daemon","data":{"details":"Team daemon started (safety=600s, timeout=900s)","performance":{"memoryMB":5,"memoryTotalMB":8,"cpuUser":0.024565,"cpuSystem":0.006749}}}
+{"ts":"2026-04-11T05:41:30.206Z","type":"workflow","agent":"monitor","data":{"details":"[HEALTH] Monitor started"}}
+{"ts":"2026-04-11T05:41:30.208Z","type":"workflow","agent":null,"data":{"details":"[RESUME] Resuming from checkpoint: node=monitor, step=0"}}
+{"ts":"2026-04-11T05:41:30.290Z","type":"agent_start","agent":"monitor","data":{"details":"[NODE] monitor - 全局 Monitor 五维检查（含层间一致性）","performance":{"memoryMB":7,"memoryTotalMB":10,"cpuUser":0.050193,"cpuSystem":0.059944}}}
+{"ts":"2026-04-11T05:41:30.354Z","type":"workflow","agent":"monitor","data":{"details":"[PARALLEL] vision_monitor, prd_monitor, dbb_monitor, arch_monitor, alignment_monitor"}}
+{"ts":"2026-04-11T05:41:30.355Z","type":"agent_start","agent":"vision_monitor","data":{"details":"评估愿景匹配度","performance":{"memoryMB":6,"memoryTotalMB":11,"cpuUser":0.067309,"cpuSystem":0.110251}}}
+{"ts":"2026-04-11T05:41:30.356Z","type":"agent_start","agent":"prd_monitor","data":{"details":"评估PRD匹配度","performance":{"memoryMB":6,"memoryTotalMB":11,"cpuUser":0.067964,"cpuSystem":0.110673}}}
+{"ts":"2026-04-11T05:41:30.356Z","type":"agent_start","agent":"dbb_monitor","data":{"details":"评估DBB匹配度","performance":{"memoryMB":6,"memoryTotalMB":11,"cpuUser":0.068147,"cpuSystem":0.110991}}}
+{"ts":"2026-04-11T05:41:30.357Z","type":"agent_start","agent":"arch_monitor","data":{"details":"评估架构匹配度","performance":{"memoryMB":6,"memoryTotalMB":11,"cpuUser":0.068448,"cpuSystem":0.111263}}}
+{"ts":"2026-04-11T05:41:30.357Z","type":"agent_start","agent":"alignment_monitor","data":{"details":"检查层间一致性（Vision→PRD→Architecture→Tasks）","performance":{"memoryMB":6,"memoryTotalMB":11,"cpuUser":0.068633,"cpuSystem":0.111507}}}
+{"ts":"2026-04-11T05:42:19.860Z","type":"agent_complete","agent":"arch_monitor","data":{"details":"completed successfully","performance":{"memoryMB":17,"memoryTotalMB":24,"cpuUser":0.118039,"cpuSystem":0.190134}}}
+{"ts":"2026-04-11T05:42:19.860Z","type":"workflow","agent":"arch_monitor","data":{"details":"[SIGNAL] completed: Architecture gap analysis complete — 83% match, same 6 gaps as previous run (no changes detected in "}}
+{"ts":"2026-04-11T05:42:37.778Z","type":"agent_complete","agent":"vision_monitor","data":{"details":"completed successfully","performance":{"memoryMB":21,"memoryTotalMB":32,"cpuUser":0.141198,"cpuSystem":0.230461}}}
+{"ts":"2026-04-11T05:42:37.779Z","type":"workflow","agent":"vision_monitor","data":{"details":"[SIGNAL] completed: Vision evaluation complete. Match 91% (stable — same 3 partial gaps as last run). Wrote .team/gaps/v"}}
+{"ts":"2026-04-11T05:42:39.112Z","type":"agent_complete","agent":"prd_monitor","data":{"details":"completed successfully","performance":{"memoryMB":21,"memoryTotalMB":32,"cpuUser":0.142089,"cpuSystem":0.231016}}}
+{"ts":"2026-04-11T05:42:39.113Z","type":"workflow","agent":"prd_monitor","data":{"details":"[SIGNAL] completed: PRD evaluation complete — 65% match, gaps unchanged from prior run (2 missing, 3 partial, 24 impleme"}}
+{"ts":"2026-04-11T05:43:34.657Z","type":"agent_complete","agent":"alignment_monitor","data":{"details":"completed successfully","performance":{"memoryMB":25,"memoryTotalMB":33,"cpuUser":0.177616,"cpuSystem":0.288506}}}
+{"ts":"2026-04-11T05:43:34.658Z","type":"workflow","agent":"alignment_monitor","data":{"details":"[SIGNAL] completed: Alignment analysis: Vision→PRD 95%, PRD→Architecture 95%, Architecture→Tasks 92%. Overall aligned, 0"}}
+{"ts":"2026-04-11T05:44:04.910Z","type":"agent_complete","agent":"dbb_monitor","data":{"details":"completed successfully","performance":{"memoryMB":20,"memoryTotalMB":38,"cpuUser":0.198834,"cpuSystem":0.327448}}}
+{"ts":"2026-04-11T05:44:04.910Z","type":"workflow","agent":"dbb_monitor","data":{"details":"[SIGNAL] completed: DBB check for m23 (Admin UI Redesign): match=45%, 9 fail/1 partial/9 pass. Critical gaps: src/index."}}
+{"ts":"2026-04-11T05:44:05.046Z","type":"agent_start","agent":"pm_decide","data":{"details":"[NODE] pm_decide - PM 决策下一步","performance":{"memoryMB":21,"memoryTotalMB":52,"cpuUser":0.227511,"cpuSystem":0.434494}}}
+{"ts":"2026-04-11T05:44:05.107Z","type":"workflow","agent":"pm_decide","data":{"details":"[SKIP] fix-arch: archNeedsUpdate > 0"}}
+{"ts":"2026-04-11T05:44:05.108Z","type":"workflow","agent":"pm_decide","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-11T05:44:05.108Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":22,"memoryTotalMB":52,"cpuUser":0.240769,"cpuSystem":0.483156}}}
+{"ts":"2026-04-11T05:45:45.189Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":35,"memoryTotalMB":61,"cpuUser":0.298523,"cpuSystem":0.600877}}}
+{"ts":"2026-04-11T05:45:45.190Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: No pending CRs. Updated PRD cloud fallback spec to match feature description. m23 milestone active w"}}
+{"ts":"2026-04-11T05:45:45.325Z","type":"agent_start","agent":"work_loop","data":{"details":"[NODE] work_loop - PM 调度中心 — PM 评估后派发 sub-teams，全部完成后回 PM","performance":{"memoryMB":27,"memoryTotalMB":51,"cpuUser":0.333083,"cpuSystem":0.706314}}}
+{"ts":"2026-04-11T05:45:45.445Z","type":"workflow","agent":"work_loop","data":{"details":"[LOOP] Iteration 1"}}
+{"ts":"2026-04-11T05:45:45.460Z","type":"workflow","agent":"work_loop","data":{"details":"[SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/goal-check.js"}}
+{"ts":"2026-04-11T05:45:45.981Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] pm"}}
+{"ts":"2026-04-11T05:45:45.981Z","type":"agent_start","agent":"pm","data":{"details":"管理任务和里程碑","performance":{"memoryMB":29,"memoryTotalMB":51,"cpuUser":0.372892,"cpuSystem":0.849362}}}
+{"ts":"2026-04-11T05:46:30.210Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"111MB\",\"heapUsed\":\"25MB\",\"uptime\":\"300s\"}"}}
+{"ts":"2026-04-11T05:47:00.263Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 5min (active:8, done:231)"}}
+{"ts":"2026-04-11T05:47:00.263Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 5min (active:8, done:231)\"}"}}
+{"ts":"2026-04-11T05:47:20.721Z","type":"task_created","agent":null,"data":{"taskId":"task-1775886440720","title":"构建 Admin UI dist — 运行 npm run build 生成 dist/admin/","priority":"P1","group":"m23"}}
+{"ts":"2026-04-11T05:47:30.267Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:9, done:231)"}}
+{"ts":"2026-04-11T05:47:30.267Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:9, done:231)\"}"}}
+{"ts":"2026-04-11T05:47:30.336Z","type":"task_created","agent":null,"data":{"taskId":"task-1775886450335","title":"清理 package.json 死亡 import maps","priority":"P1","group":"m23"}}
+{"ts":"2026-04-11T05:48:00.265Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 6min (active:10, done:231)"}}
+{"ts":"2026-04-11T05:48:00.266Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 6min (active:10, done:231)\"}"}}
+{"ts":"2026-04-11T05:48:06.194Z","type":"task_status","agent":null,"data":{"taskId":"task-1775638552027","from":"todo","to":"cancelled","title":"--help"}}
+{"ts":"2026-04-11T05:48:30.274Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 7min (active:9, done:231)"}}
+{"ts":"2026-04-11T05:48:30.274Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 7min (active:9, done:231)\"}"}}
+{"ts":"2026-04-11T05:48:46.891Z","type":"agent_complete","agent":"pm","data":{"details":"completed successfully","performance":{"memoryMB":19,"memoryTotalMB":29,"cpuUser":0.507756,"cpuSystem":1.035523}}}
+{"ts":"2026-04-11T05:48:46.891Z","type":"workflow","agent":"pm","data":{"details":"[SIGNAL] completed: Reviewed m23 milestone — added 2 new tasks (Admin UI dist build, dead import maps cleanup), cleaned "}}
+{"ts":"2026-04-11T05:48:46.968Z","type":"workflow","agent":"work_loop","data":{"details":"[SKIP] write-dbb: milestoneNeedsDBB > 0"}}
+{"ts":"2026-04-11T05:48:46.968Z","type":"workflow","agent":"work_loop","data":{"details":"[PARALLEL] architecture, write-design, implement, test"}}
+{"ts":"2026-04-11T05:48:46.969Z","type":"workflow","agent":"work_loop","data":{"details":"[TEAM] → architect (depth 1)"}}
+{"ts":"2026-04-11T05:48:46.970Z","type":"agent_start","agent":"read-deps","data":{"details":"[NODE] read-deps - 读取项目依赖的真实 API 签名","performance":{"memoryMB":20,"memoryTotalMB":35,"cpuUser":0.525104,"cpuSystem":1.09564}}}
+{"ts":"2026-04-11T05:48:46.970Z","type":"workflow","agent":"read-deps","data":{"details":"[SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/scan-deps.js"}}
+{"ts":"2026-04-11T05:48:47.001Z","type":"workflow","agent":"work_loop","data":{"details":"[EXEC] tech_lead"}}
+{"ts":"2026-04-11T05:48:47.001Z","type":"agent_start","agent":"tech_lead","data":{"details":"出技术方案","performance":{"memoryMB":20,"memoryTotalMB":35,"cpuUser":0.525571,"cpuSystem":1.096286}}}
+{"ts":"2026-04-11T05:48:47.002Z","type":"workflow","agent":"work_loop","data":{"details":"[TEAM] → developer (depth 1)"}}
+{"ts":"2026-04-11T05:48:47.002Z","type":"agent_start","agent":"read-spec","data":{"details":"[NODE] read-spec - 读取任务 spec、设计文档、历史错误日志","performance":{"memoryMB":20,"memoryTotalMB":35,"cpuUser":0.525973,"cpuSystem":1.096892}}}
+{"ts":"2026-04-11T05:48:47.003Z","type":"workflow","agent":"read-spec","data":{"details":"[SHELL] cat .team/verify-errors/latest-build.log 2>/dev/null || echo 'No previous build errors'"}}
+{"ts":"2026-04-11T05:48:47.012Z","type":"agent_start","agent":"design","data":{"details":"[NODE] design - Architect agent 设计/更新 ARCHITECTURE.md","performance":{"memoryMB":20,"memoryTotalMB":35,"cpuUser":0.526255,"cpuSystem":1.097332}}}
+{"ts":"2026-04-11T05:48:47.013Z","type":"workflow","agent":"design","data":{"details":"[EXEC] architect"}}
+{"ts":"2026-04-11T05:48:47.013Z","type":"agent_start","agent":"architect","data":{"details":"设计系统架构","performance":{"memoryMB":21,"memoryTotalMB":35,"cpuUser":0.526473,"cpuSystem":1.097614}}}
+{"ts":"2026-04-11T05:48:47.013Z","type":"agent_start","agent":"implement","data":{"details":"[NODE] implement - Developer 实现代码","performance":{"memoryMB":21,"memoryTotalMB":35,"cpuUser":0.526929,"cpuSystem":1.097966}}}
+{"ts":"2026-04-11T05:48:47.014Z","type":"workflow","agent":"implement","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-11T05:48:47.014Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":21,"memoryTotalMB":35,"cpuUser":0.527113,"cpuSystem":1.098225}}}
+{"ts":"2026-04-11T05:49:30.273Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 8min (active:9, done:231)"}}
+{"ts":"2026-04-11T05:49:30.273Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 8min (active:9, done:231)\"}"}}
+{"ts":"2026-04-11T05:49:39.675Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775641694425","from":"todo","to":"inProgress","title":"创建 src/index.js 入口文件"}}
+{"ts":"2026-04-11T05:49:39.708Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775641694470","from":"todo","to":"inProgress","title":"统一默认端口为 1234"}}
+{"ts":"2026-04-11T05:50:30.276Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 9min (active:9, done:231)"}}
+{"ts":"2026-04-11T05:50:30.276Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 9min (active:9, done:231)\"}"}}
+{"ts":"2026-04-11T05:51:30.215Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"93MB\",\"heapUsed\":\"9MB\",\"uptime\":\"600s\"}"}}
+{"ts":"2026-04-11T05:51:30.287Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 10min (active:9, done:231)"}}
+{"ts":"2026-04-11T05:51:30.287Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 10min (active:9, done:231)\"}"}}
+{"ts":"2026-04-11T05:51:30.364Z","type":"agent_start","agent":"daemon","data":{"details":"Still busy (10min), skipping","performance":{"memoryMB":19,"memoryTotalMB":29,"cpuUser":0.676075,"cpuSystem":1.316208}}}
+{"ts":"2026-04-11T05:52:30.266Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 11min (active:9, done:231)"}}
+{"ts":"2026-04-11T05:52:30.266Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 11min (active:9, done:231)\"}"}}
+{"ts":"2026-04-11T05:52:30.276Z","type":"agent_complete","agent":"tech_lead","data":{"details":"completed successfully","performance":{"memoryMB":27,"memoryTotalMB":32,"cpuUser":0.712746,"cpuSystem":1.359126}}}
+{"ts":"2026-04-11T05:52:30.276Z","type":"workflow","agent":"tech_lead","data":{"details":"[SIGNAL] completed: Wrote task designs for all 6 hasDesign=false tasks in M23 (cloud fallback, docker config, test failu"}}
+{"ts":"2026-04-11T05:52:31.384Z","type":"agent_complete","agent":"architect","data":{"details":"completed successfully","performance":{"memoryMB":9,"memoryTotalMB":16,"cpuUser":0.714484,"cpuSystem":1.359942}}}
+{"ts":"2026-04-11T05:52:31.384Z","type":"workflow","agent":"architect","data":{"details":"[SIGNAL] completed: Rewrote ARCHITECTURE.md (389 lines, clean): removed all stale CR content from lines 191-252, added a"}}
+{"ts":"2026-04-11T05:52:31.385Z","type":"agent_start","agent":"validate-refs","data":{"details":"[NODE] validate-refs - 验证 ARCHITECTURE.md 引用的 API 是否真实存在","performance":{"memoryMB":9,"memoryTotalMB":16,"cpuUser":0.714961,"cpuSystem":1.36048}}}
+{"ts":"2026-04-11T05:52:31.385Z","type":"workflow","agent":"validate-refs","data":{"details":"[SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/validate-arch-refs.js"}}
+{"ts":"2026-04-11T05:52:31.420Z","type":"agent_start","agent":"complete","data":{"details":"[NODE] complete - 架构设计完成","performance":{"memoryMB":9,"memoryTotalMB":16,"cpuUser":0.715543,"cpuSystem":1.361511}}}
+{"ts":"2026-04-11T05:52:31.421Z","type":"workflow","agent":"work_loop","data":{"details":"[TEAM] ← architect done"}}
+{"ts":"2026-04-11T05:52:39.393Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775641694425","from":"inProgress","to":"review","title":"创建 src/index.js 入口文件"}}
+{"ts":"2026-04-11T05:52:39.432Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775641694470","from":"inProgress","to":"review","title":"统一默认端口为 1234"}}
+{"ts":"2026-04-11T05:52:47.637Z","type":"agent_complete","agent":"developer","data":{"details":"completed successfully","performance":{"memoryMB":10,"memoryTotalMB":16,"cpuUser":0.716741,"cpuSystem":1.363388}}}
+{"ts":"2026-04-11T05:52:47.638Z","type":"workflow","agent":"developer","data":{"details":"[SIGNAL] completed: Implemented task-1775641694425: created src/index.js, src/runtime/index.js, src/server/index.js, src"}}
+{"ts":"2026-04-11T05:52:47.940Z","type":"agent_start","agent":"self-verify-build","data":{"details":"[NODE] self-verify-build - 编译验证 — 失败则回到 implement 重试（最多 3 次）","performance":{"memoryMB":12,"memoryTotalMB":19,"cpuUser":0.719781,"cpuSystem":1.378243}}}
+{"ts":"2026-04-11T05:52:47.941Z","type":"workflow","agent":"self-verify-build","data":{"details":"[SHELL] node /Users/kenefe/LOCAL/momo-agent/tools/team/scripts/verify.js build"}}
+{"ts":"2026-04-11T05:54:47.947Z","type":"error","agent":"self-verify-build","data":{"details":"[SHELL] exit null: spawnSync /bin/sh ETIMEDOUT"}}
+{"ts":"2026-04-11T05:54:47.948Z","type":"workflow","agent":"self-verify-build","data":{"details":"[BRANCH] buildPassed == 1 → false → implement"}}
+{"ts":"2026-04-11T05:54:47.970Z","type":"agent_start","agent":"implement","data":{"details":"[NODE] implement - Developer 实现代码","performance":{"memoryMB":13,"memoryTotalMB":20,"cpuUser":0.722076,"cpuSystem":1.381407}}}
+{"ts":"2026-04-11T05:54:47.971Z","type":"workflow","agent":"implement","data":{"details":"[EXEC] developer"}}
+{"ts":"2026-04-11T05:54:47.972Z","type":"agent_start","agent":"developer","data":{"details":"实现功能","performance":{"memoryMB":13,"memoryTotalMB":20,"cpuUser":0.722587,"cpuSystem":1.382002}}}
+{"ts":"2026-04-11T05:54:48.098Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 13min (active:9, done:231)"}}
+{"ts":"2026-04-11T05:54:48.099Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 13min (active:9, done:231)\"}"}}
+{"ts":"2026-04-11T05:55:18.014Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 14min (active:9, done:231)"}}
+{"ts":"2026-04-11T05:55:18.015Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 14min (active:9, done:231)\"}"}}
+{"ts":"2026-04-11T05:55:35.663Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775642155184","from":"todo","to":"inProgress","title":"修复 Cloud Fallback 完整规范"}}
+{"ts":"2026-04-11T05:55:35.696Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775642155227","from":"todo","to":"inProgress","title":"修复 Docker 配置缺失"}}
+{"ts":"2026-04-11T05:55:35.727Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775886440720","from":"todo","to":"inProgress","title":"构建 Admin UI dist — 运行 npm run build 生成 dist/admin/"}}
+{"ts":"2026-04-11T05:55:35.757Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775886450335","from":"todo","to":"inProgress","title":"清理 package.json 死亡 import maps"}}
+{"ts":"2026-04-11T05:56:18.027Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 15min (active:9, done:231)"}}
+{"ts":"2026-04-11T05:56:18.027Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 15min (active:9, done:231)\"}"}}
+{"ts":"2026-04-11T05:56:30.217Z","type":"perf","agent":"daemon","data":{"details":"{\"rss\":\"78MB\",\"heapUsed\":\"9MB\",\"uptime\":\"900s\"}"}}
+{"ts":"2026-04-11T05:57:18.096Z","type":"workflow","agent":"monitor","data":{"details":"⚠️ [ALERT:no_progress] No progress for 16min (active:9, done:231)"}}
+{"ts":"2026-04-11T05:57:18.097Z","type":"monitor_alert","agent":"monitor","data":{"details":"{\"type\":\"no_progress\",\"message\":\"No progress for 16min (active:9, done:231)\"}"}}
+{"ts":"2026-04-11T05:57:20.898Z","type":"workflow","agent":"daemon","data":{"details":"Reset stuck agent: developer"}}
+{"ts":"2026-04-11T05:57:20.898Z","type":"agent_complete","agent":"daemon","data":{"details":"Team daemon stopped","performance":{"memoryMB":9,"memoryTotalMB":13,"cpuUser":0.847937,"cpuSystem":1.574784}}}
+{"ts":"2026-04-11T05:58:22.870Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775642155184","from":"inProgress","to":"review","title":"修复 Cloud Fallback 完整规范"}}
+{"ts":"2026-04-11T05:58:22.902Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775642155227","from":"inProgress","to":"review","title":"修复 Docker 配置缺失"}}
+{"ts":"2026-04-11T05:58:22.932Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775886440720","from":"inProgress","to":"review","title":"构建 Admin UI dist — 运行 npm run build 生成 dist/admin/"}}
+{"ts":"2026-04-11T05:58:22.964Z","type":"task_status","agent":"developer","data":{"taskId":"task-1775886450335","from":"inProgress","to":"review","title":"清理 package.json 死亡 import maps"}}

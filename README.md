@@ -23,7 +23,7 @@ npx agentic-service
 npm i -g agentic-service && agentic-service
 
 # Docker
-docker run -p 3000:3000 momomo/agentic-service
+docker run -p 1234:1234 momomo/agentic-service
 ```
 
 ## Quick Start
@@ -31,7 +31,7 @@ docker run -p 3000:3000 momomo/agentic-service
 On first run, agentic-service will:
 1. Detect your hardware (GPU, VRAM, CPU, OS)
 2. Pull the recommended Ollama model for your hardware
-3. Open the chat UI in your browser at `http://localhost:3000`
+3. Open the chat UI in your browser at `http://localhost:1234`
 
 ## Environment Variables
 
@@ -39,7 +39,7 @@ On first run, agentic-service will:
 |---|---|
 | `OPENAI_API_KEY` | Cloud fallback via OpenAI |
 | `ANTHROPIC_API_KEY` | Cloud fallback via Anthropic |
-| `PORT` | HTTP port (default: `3000`) |
+| `PORT` | HTTP port (default: `1234`) |
 | `PROFILES_URL` | Override CDN URL for hardware profiles JSON |
 | `WAKE_WORD` | Wake word for voice activation (default: `"hey agent"`) |
 
@@ -113,7 +113,7 @@ Returns current configuration.
 
 ```json
 {
-  "port": 3000,
+  "port": 1234,
   "model": "llama3.2",
   "cloudFallback": { "enabled": false }
 }
@@ -140,7 +140,7 @@ Response: updated config JSON.
 
 ```bash
 # Single container
-docker run -p 3000:3000 \
+docker run -p 1234:1234 \
   -e OPENAI_API_KEY=sk-... \
   -v ~/.agentic-service:/root/.agentic-service \
   momomo/agentic-service
@@ -152,7 +152,7 @@ services:
   agentic-service:
     image: momomo/agentic-service
     ports:
-      - "3000:3000"
+      - "1234:1234"
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
@@ -186,7 +186,7 @@ Config file: `~/.agentic-service/config.json`
 
 ```json
 {
-  "port": 3000,
+  "port": 1234,
   "model": "auto",
   "cloudFallback": {
     "enabled": false,
@@ -201,7 +201,7 @@ Config file: `~/.agentic-service/config.json`
 
 | Field | Default | Description |
 |---|---|---|
-| `port` | `3000` | HTTP listen port |
+| `port` | `1234` | HTTP listen port |
 | `model` | `"auto"` | Ollama model name, or `"auto"` to use hardware profile |
 | `cloudFallback.enabled` | `false` | Fall back to cloud LLM on local failure |
 | `cloudFallback.provider` | `"openai"` | `"openai"` or `"anthropic"` |

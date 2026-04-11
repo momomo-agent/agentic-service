@@ -1,14 +1,54 @@
 {
   "milestoneId": "m23",
-  "match": 100,
-  "timestamp": "2026-04-08T17:02:00.000Z",
+  "match": 45,
+  "timestamp": "2026-04-11T00:00:00.000Z",
   "criteria": [
     {
-      "criterion": "m23 dbb.md defines Admin UI Redesign acceptance criteria",
+      "criterion": "src/index.js exists at project root src/ directory",
       "status": "fail"
     },
     {
-      "criterion": "Admin UI Vue 3 SPA exists at src/ui/admin/ with App.vue, main.js, index.html",
+      "criterion": "require('agentic-service') or import 'agentic-service' resolves without error",
+      "status": "fail"
+    },
+    {
+      "criterion": "src/index.js exports startServer, detector, runtime, server",
+      "status": "fail"
+    },
+    {
+      "criterion": "Unit test covers src/index.js export validation",
+      "status": "fail"
+    },
+    {
+      "criterion": "docker-compose.yml port mapping is 1234:1234",
+      "status": "fail"
+    },
+    {
+      "criterion": "docker-compose.yml environment includes PORT=1234",
+      "status": "fail"
+    },
+    {
+      "criterion": "Docker healthcheck URL uses :1234",
+      "status": "fail"
+    },
+    {
+      "criterion": "README.md all port references are 1234 (no localhost:3000)",
+      "status": "fail"
+    },
+    {
+      "criterion": "npm start defaults to port 1234 (bin/agentic-service.js --port default is 1234)",
+      "status": "pass"
+    },
+    {
+      "criterion": "npx agentic-service defaults to port 1234",
+      "status": "pass"
+    },
+    {
+      "criterion": "Existing test suite pass rate >= 90%",
+      "status": "partial"
+    },
+    {
+      "criterion": "Admin UI Vue 3 SPA source exists at src/ui/admin/ with App.vue, main.js, index.html",
       "status": "pass"
     },
     {
@@ -16,43 +56,27 @@
       "status": "pass"
     },
     {
-      "criterion": "Vue Router configured with /admin base path and 3 routes (/, /devices, /config)",
+      "criterion": "App.vue polls /api/status every 5 seconds with onUnmounted clearInterval cleanup",
       "status": "pass"
     },
     {
-      "criterion": "App.vue polls /api/status every 5 seconds with proper cleanup (onUnmounted clearInterval)",
+      "criterion": "ConfigPanel fetches GET /api/config and saves via PUT /api/config",
       "status": "pass"
     },
     {
-      "criterion": "SystemStatus fetches /api/status and displays hardware info + current profile",
-      "status": "pass"
-    },
-    {
-      "criterion": "DeviceList fetches /api/devices, handles empty state, renders table",
-      "status": "pass"
-    },
-    {
-      "criterion": "ConfigPanel fetches GET /api/config, renders llm/stt/tts fields, saves via PUT /api/config",
-      "status": "pass"
-    },
-    {
-      "criterion": "Admin UI served at /admin path via express.static in api.js",
-      "status": "pass"
-    },
-    {
-      "criterion": "Admin UI served at root / path (commit d36d58e)",
+      "criterion": "Admin UI served at /admin and / via express.static in api.js",
       "status": "pass"
     },
     {
       "criterion": "Built dist/admin/index.html exists with bundled JS assets",
-      "status": "pass"
+      "status": "fail"
     },
     {
       "criterion": "npm run build script builds admin UI (cd src/ui/admin && npm install && npm run build)",
       "status": "pass"
     },
     {
-      "criterion": "Test coverage for admin UI exists (m23-app-vue.test.js, admin-panel.test.js, m20-admin-ui.test.js)",
+      "criterion": "Test files for admin UI exist (m23-app-vue.test.js, admin-panel.test.js, m20-admin-ui.test.js)",
       "status": "pass"
     }
   ]

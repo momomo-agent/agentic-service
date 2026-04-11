@@ -2,3 +2,4 @@
 
 ## Progress
 
+Ran `npm run build`. Previous dist was stale (missing ExamplesView). Fresh build succeeded with 23 assets + index.html in dist/admin/.

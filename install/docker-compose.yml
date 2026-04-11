@@ -2,7 +2,7 @@ services:
   agentic-service:
     build: ..
     ports:
-      - "3000:3000"
+      - "1234:1234"
     volumes:
       - config:/root/.agentic-service
     restart: unless-stopped

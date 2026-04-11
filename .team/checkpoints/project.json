@@ -1,0 +1,24 @@
+{
+  "workflowId": "project",
+  "nodeId": "work_loop",
+  "stepIndex": 3,
+  "visitedNodes": [
+    "startup",
+    "monitor",
+    "monitor",
+    "pm_decide",
+    "work_loop"
+  ],
+  "loopIterations": {
+    "work_loop": 1
+  },
+  "transitionDepth": 5,
+  "nodeVisitCounts": {
+    "startup": 1,
+    "monitor": 2,
+    "pm_decide": 1,
+    "work_loop": 1
+  },
+  "contextOverrides": {},
+  "timestamp": "2026-04-11T05:48:46.968Z"
+}
