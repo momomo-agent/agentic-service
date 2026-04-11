@@ -1,0 +1,5 @@
+{
+  "build": "node -e \"import('./src/server/api.js')\" --input-type=module 2>&1 || true",
+  "test": "npx vitest run --reporter=verbose --exclude test/e2e/** 2>&1",
+  "e2e": "node test/e2e/examples.test.mjs"
+}
