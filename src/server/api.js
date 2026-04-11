@@ -220,13 +220,13 @@ function addRoutes(r) {
     res.setHeader('Connection', 'keep-alive');
     const assistantChunks = [];
     try {
-      for await (const chunk of chat(message, { history, tools })) {
+      const messages = [...history, { role: 'user', content: message }];
+      for await (const chunk of chat(messages, { tools })) {
         res.write(`data: ${JSON.stringify(chunk)}\n\n`);
         if (chunk.type === 'content') assistantChunks.push(chunk.content ?? chunk.text);
       }
       res.write('data: [DONE]\n\n');
       if (sessionId) {
-        const messages = [...history, { role: 'user', content: message }];
         const updatedHistory = [...messages, { role: 'assistant', content: assistantChunks.join('') }];
         setSessionData(sessionId, 'history', updatedHistory);
         broadcastSession(sessionId);
