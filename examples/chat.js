@@ -2,63 +2,53 @@
  * Example: LLM 流式对话
  *
  * 演示：
- * - 单轮对话
+ * - 单轮对话（流式输出）
  * - 多轮对话（带 history）
- * - 流式输出（SSE）
+ * - 直接用 Agentic，不需要启动 service
  */
 
-const BASE = process.env.BASE_URL || 'http://localhost:1234';
+import agentic from 'agentic'
+const { Agentic } = agentic
 
-async function chat(message, history = []) {
-  const res = await fetch(`${BASE}/api/chat`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message, history }),
-  });
-
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let fullResponse = '';
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-
-    const text = decoder.decode(value);
-    for (const line of text.split('\n')) {
-      if (!line.startsWith('data: ')) continue;
-      const data = line.slice(6);
-      if (data === '[DONE]') break;
-
-      try {
-        const chunk = JSON.parse(data);
-        if (chunk.type === 'content') {
-          process.stdout.write(chunk.content || chunk.text || '');
-          fullResponse += chunk.content || chunk.text || '';
-        }
-      } catch {}
-    }
-  }
-
-  return fullResponse;
-}
+const ai = new Agentic({
+  provider: 'ollama',
+  model: 'qwen3:0.6b',
+  baseUrl: 'http://localhost:11434',
+  apiKey: 'ollama',
+})
 
 async function main() {
-  console.log('=== 单轮对话 ===\n');
-  console.log('Q: 用一句话解释什么是向量数据库\n');
-  console.log('A: ');
-  const answer1 = await chat('用一句话解释什么是向量数据库');
-  console.log('\n');
+  console.log('=== 单轮对话 ===\n')
+  console.log('Q: 用一句话解释什么是向量数据库\n')
+  console.log('A: ')
 
-  console.log('=== 多轮对话 ===\n');
-  const history = [
-    { role: 'user', content: '用一句话解释什么是向量数据库' },
-    { role: 'assistant', content: answer1 },
-  ];
-  console.log('Q: 给个实际应用场景\n');
-  console.log('A: ');
-  await chat('给个实际应用场景', history);
-  console.log('\n');
+  const answer1 = await ai.think('用一句话解释什么是向量数据库', {
+    stream: true,
+    tools: [],
+    emit: (type, data) => {
+      if (type === 'token') process.stdout.write(data.text)
+    },
+  })
+  console.log('\n')
+
+  console.log('=== 多轮对话 ===\n')
+  console.log('Q: 给个实际应用场景\n')
+  console.log('A: ')
+
+  await ai.think('给个实际应用场景', {
+    stream: true,
+    tools: [],
+    history: [
+      { role: 'user', content: '用一句话解释什么是向量数据库' },
+      { role: 'assistant', content: answer1 },
+    ],
+    emit: (type, data) => {
+      if (type === 'token') process.stdout.write(data.text)
+    },
+  })
+  console.log('\n')
+
+  ai.destroy()
 }
 
-main().catch(console.error);
+main().catch(console.error)
