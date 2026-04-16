@@ -79,8 +79,11 @@ describe('POST /api/transcribe', () => {
 
   it('returns { text } for valid audio (DBB-002)', async () => {
     stt.transcribe.mockResolvedValue('hello world');
+    // Use non-silent audio (high RMS int16 values) to pass VAD check
+    const audioBuf = Buffer.alloc(100);
+    for (let i = 0; i < 100; i += 2) audioBuf.writeInt16LE(20000, i);
     const form = new FormData();
-    form.append('audio', new Blob([Buffer.alloc(100)], { type: 'audio/wav' }), 'audio.wav');
+    form.append('audio', new Blob([audioBuf], { type: 'audio/wav' }), 'audio.wav');
     const res = await fetch(`${baseUrl}/api/transcribe`, { method: 'POST', body: form });
     expect(res.status).toBe(200);
     const body = await res.json();

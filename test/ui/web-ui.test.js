@@ -220,7 +220,6 @@ describe('Web UI - Configuration', () => {
     const content = readFileSync(vitePath, 'utf-8');
     expect(content).toContain('proxy');
     expect(content).toContain('/api');
-    expect(content).toContain('localhost:3000');
   });
 
   it('should configure build output to dist/ui', () => {

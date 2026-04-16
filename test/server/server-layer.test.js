@@ -79,7 +79,7 @@ describe('brain.js', () => {
       body: makeStream([JSON.stringify({ message: { content: 'Hi!' }, done: true })])
     });
     const chunks = await collect(chat([{ role: 'user', content: 'hello' }]));
-    expect(chunks.find(c => c.type === 'content')?.content).toBe('Hi!');
+    expect(chunks.find(c => c.type === 'content')?.text).toBe('Hi!');
   });
 
   it('yields error chunk on fetch failure', async () => {

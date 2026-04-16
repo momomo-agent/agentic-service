@@ -4,9 +4,9 @@ import { startMark, endMark } from './profiler.js';
 import { record } from './latency-log.js';
 
 const ADAPTERS = {
-  kokoro:  () => import('./adapters/voice/kokoro.js'),
-  piper:   () => import('./adapters/voice/piper.js'),
-  default: () => import('./adapters/voice/openai-tts.js'),
+  kokoro:  () => import('agentic-voice/kokoro'),
+  piper:   () => import('agentic-voice/piper'),
+  default: () => import('agentic-voice/openai-tts'),
 };
 
 let adapter = null;

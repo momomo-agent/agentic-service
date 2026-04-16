@@ -4,7 +4,7 @@ import os from 'os';
 import { matchProfile } from './matcher.js';
 
 const PROFILES_URL = process.env.PROFILES_URL || 'https://raw.githubusercontent.com/momomo-agent/agentic-service/main/profiles/default.json';
-const CACHE_DIR = path.join(os.homedir(), '.agentic-service');
+const CACHE_DIR = process.env.PROFILES_CACHE_DIR || path.join(os.homedir(), '.agentic-service');
 const CACHE_FILE = path.join(CACHE_DIR, 'profiles.json');
 const CACHE_MAX_AGE = 7 * 24 * 60 * 60 * 1000; // 7 天
 

@@ -8,6 +8,8 @@ export default defineConfig({
     }
   },
   test: {
+    exclude: ['**/node_modules/**', '**/dist/**', 'test/e2e/**'],
+    fileParallelism: false,
     coverage: {
       thresholds: { lines: 98, functions: 98, branches: 98, statements: 98 }
     }

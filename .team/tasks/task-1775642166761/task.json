@@ -1,13 +1,13 @@
 {
   "id": "task-1775642166761",
   "title": "修复测试套件失败",
-  "description": "59/206 测试文件失败 (106/905 测试)，主要是 STT/TTS 测试因缺少 OPENAI_API_KEY。修复方案：(1) 为云服务测试添加环境变量检查和跳过逻辑 (2) 修复其他非环境相关的测试失败",
-  "status": "todo",
+  "description": "74/905 tests still failing (down from 106). Key failure categories:\n\n1. PORT MISMATCH (port 3000 vs 1234): test/server/docker-m13.test.js, test/m74-docker-e2e.test.js, test/ui/web-ui.test.js — these expect port 3000 but code uses 1234. Should be resolved once port unification task lands.\n\n2. IMPORT/MODULE ERRORS: test/server/server-layer.test.js (register is not a function), test/m77-sense-imports.test.js, test/m76-embed-wiring.test.js (dead import maps) — should be resolved once import map cleanup lands.\n\n3. STALE TEST EXPECTATIONS: test/detector/optimizer.test.js (9 failures — tests expect setupOllama export from optimizer.js but it exports optimize/getOptimalConfig), test/cli/setup-m12.test.js (stale mock structure).\n\n4. SENSE MODULE: test/runtime/sense.test.js, sense-pipeline.test.js, sense-wakeword-m80.test.js — adapter/import path issues.\n\n5. TIMING: test/m95-profiler-instrumentation.test.js (1 flaky timing test).\n\nFocus on categories 3-5 since 1-2 will be fixed by other review tasks.",
+  "status": "inProgress",
   "priority": "P1",
-  "assignee": "tester",
+  "assignee": "developer",
   "blockedBy": [],
   "groupId": "m23",
   "hasDesign": true,
   "created": "2026-04-08T09:56:06.761Z",
-  "updated": "2026-04-11T05:52:15.396Z"
+  "updated": "2026-04-11T06:20:46.531Z"
 }

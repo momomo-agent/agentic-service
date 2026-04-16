@@ -4,6 +4,7 @@ import { spawn, execSync } from 'child_process'
 vi.mock('child_process', () => ({
   spawn: vi.fn(),
   execSync: vi.fn(() => '/usr/bin/ollama'),
+  exec: vi.fn((cmd, cb) => cb(null, { stdout: '' })),
 }))
 
 vi.mock('ora', () => ({
@@ -24,6 +25,10 @@ vi.mock('../../src/detector/profiles.js', () => ({
     stt: { provider: 'default', model: 'whisper' },
     tts: { provider: 'default', voice: 'alloy' },
   })),
+}))
+
+vi.mock('../../src/detector/sox.js', () => ({
+  ensureSox: vi.fn(async () => {}),
 }))
 
 vi.mock('fs', () => ({

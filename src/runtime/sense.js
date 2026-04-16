@@ -60,48 +60,39 @@ export function stop() {
   pipeline = null;
 }
 
-let _recorder = null;
+let _micInstance = null;
 
 export async function startWakeWordPipeline(onWakeWord) {
-  if (_recorder) stopWakeWordPipeline();
+  if (_micInstance) {
+    // Already active — return a no-op stop function
+    return () => {};
+  }
 
-  // Check if sox is available before attempting to use node-record-lpcm16
-  const { execSync } = await import('node:child_process');
+  let micModule;
   try {
-    execSync('which sox', { stdio: 'ignore' });
+    micModule = (await import('mic')).default;
   } catch {
-    console.warn('[sense] sox not found — wake word pipeline disabled (install sox to enable)');
-    return;
+    console.warn('[sense] mic unavailable — wake word pipeline disabled');
+    return () => {};
   }
 
-  let record;
-  try {
-    record = (await import('node-record-lpcm16')).default;
-  } catch {
-    console.warn('[sense] node-record-lpcm16 unavailable — wake word pipeline disabled');
-    return;
-  }
+  _micInstance = micModule({ rate: '16000', channels: '1', encoding: 'signed-integer', device: 'default' });
+  const audioStream = _micInstance.getAudioStream();
+  audioStream.on('data', (buf) => {
+    if (detectVoiceActivity(buf)) { onWakeWord(); emit('wake_word', {}); }
+  });
+  audioStream.on('error', (err) => { console.warn('[sense] mic error:', err.message); });
+  _micInstance.start();
 
-  try {
-    _recorder = record.record({ sampleRate: 16000, channels: 1 });
-    // Handle spawn errors (e.g. sox not installed) on the child process
-    _recorder.process?.on('error', (err) => {
-      console.warn('[sense] mic spawn error:', err.message);
-      _recorder = null;
-    });
-    _recorder.stream()
-      .on('error', (err) => { console.warn('[sense] mic error:', err.message); _recorder = null; })
-      .on('data', (buf) => { if (detectVoiceActivity(buf)) { onWakeWord(); emit('wake_word', {}); } });
-    console.log('[sense] Wake word pipeline started');
-  } catch (err) {
-    console.warn('[sense] mic start failed:', err.message);
-    _recorder = null;
-  }
+  return () => {
+    try { _micInstance?.stop(); } catch { /* ignore */ }
+    _micInstance = null;
+  };
 }
 
 export function stopWakeWordPipeline() {
-  try { _recorder?.stop(); } catch { /* ignore */ }
-  _recorder = null;
+  try { _micInstance?.stop(); } catch { /* ignore */ }
+  _micInstance = null;
 }
 
 export async function initHeadless(options = { face: true, gesture: true, object: true }) {

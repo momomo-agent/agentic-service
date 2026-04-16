@@ -1,7 +1,7 @@
 import { WebSocketServer } from 'ws';
 import { randomUUID } from 'node:crypto';
 import * as sense from '../runtime/sense.js';
-import { chat as brainChat } from './brain.js';
+import { chat as brainChat, chatRaw as brainChatRaw } from './brain.js';
 import * as stt from '../runtime/stt.js';
 import * as tts from '../runtime/tts.js';
 import { detectVoiceActivity } from '../runtime/vad.js';
@@ -108,6 +108,27 @@ setInterval(() => {
   }
 }, 10000)
 
+// Simple WebSocket device registration (ws-level)
+const wsRegistry = new Map(); // id → { ws, ...meta }
+
+export function register(ws, meta) {
+  const id = meta.id;
+  wsRegistry.set(id, { ws, ...meta });
+  const now = new Date().toISOString();
+  devices.set(id, { id, name: meta.name, meta, registeredAt: now, lastSeen: Date.now(), status: 'online' });
+  ws.on('close', () => {
+    wsRegistry.delete(id);
+    devices.delete(id);
+  });
+}
+
+export function broadcast(event, data) {
+  const payload = JSON.stringify({ event, data });
+  for (const device of wsRegistry.values()) {
+    try { device.ws.send(payload); } catch { /* ignore closed ws */ }
+  }
+}
+
 export function registerDevice(idOrDevice, meta) {
   if (typeof idOrDevice === 'object') {
     const device = idOrDevice
@@ -154,6 +175,7 @@ export function leaveSession(deviceId) {
 export function unregisterDevice(id) {
   leaveSession(id);
   registry.delete(id);
+  wsRegistry.delete(id);
   devices.delete(id);
   for (const [reqId, pending] of pendingCaptures) {
     if (pending.deviceId === id) {
@@ -263,6 +285,39 @@ export function startWakeWordDetection(keyword = process.env.WAKE_WORD || 'hey a
   });
 }
 
+async function handleThink(ws, msg) {
+  const { messages = [], tools: clientTools, _reqId } = msg;
+  const send = (payload) => {
+    if (ws.readyState === ws.OPEN) ws.send(JSON.stringify({ ...payload, _reqId }));
+  };
+
+  send({ type: 'chat_start' });
+
+  // Convert client tool definitions to brain.js format
+  const toolDefs = clientTools?.map(t => {
+    const fn = t.function || t;
+    return { name: fn.name, description: fn.description, parameters: fn.parameters };
+  });
+
+  let fullText = '';
+  for await (const chunk of brainChatRaw(messages, toolDefs)) {
+    if (chunk.type === 'content') {
+      fullText += chunk.text;
+      send({ type: 'chat_delta', text: chunk.text });
+    } else if (chunk.type === 'tool_use') {
+      // Forward tool_use to client for client-side execution
+      send({
+        type: 'tool_use',
+        id: chunk.id,
+        name: chunk.name,
+        arguments: typeof chunk.input === 'string' ? chunk.input : JSON.stringify(chunk.input)
+      });
+    }
+  }
+
+  send({ type: 'chat_end', text: fullText });
+}
+
 export function initWebSocket(httpServer) {
   const wss = new WebSocketServer({ server: httpServer });
 
@@ -297,6 +352,10 @@ export function initWebSocket(httpServer) {
       } else if (msg.type === 'voice_stream') {
         handleVoiceStream(ws, msg).catch(err => {
           ws.send(JSON.stringify({ type: 'error', error: err.message }));
+        });
+      } else if (msg.type === 'think') {
+        handleThink(ws, msg).catch(err => {
+          ws.send(JSON.stringify({ type: 'chat_error', _reqId: msg._reqId, error: err.message }));
         });
       }
     });

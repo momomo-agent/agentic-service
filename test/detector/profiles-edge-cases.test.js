@@ -47,8 +47,8 @@ describe('profiles edge cases', () => {
     };
 
     const profile = await getProfile(hardware);
-    // Should fallback to default OpenAI profile
-    expect(profile.llm.provider).toBe('openai');
+    // Should fallback to default ollama profile
+    expect(profile.llm.provider).toBe('ollama');
   });
 
   it.fails('should prioritize more specific matches', async () => {
@@ -235,8 +235,8 @@ describe('profiles edge cases', () => {
     };
 
     const profile = await getProfile(hardware);
-    // Should fallback to OpenAI (cloud-based)
-    expect(profile.llm.provider).toBe('openai');
+    // Should fallback to default ollama profile
+    expect(profile.llm.provider).toBe('ollama');
   });
 
   it('should return complete profile structure', async () => {
@@ -300,6 +300,9 @@ describe('cache functionality', () => {
   });
 
   it('should use expired cache when network fails', async () => {
+    // Mock fetch to fail so expired cache is used
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('Network error')));
+
     // Create an expired cache
     const expiredCache = {
       data: {
@@ -333,5 +336,6 @@ describe('cache functionality', () => {
     const profile = await getProfile(hardware);
     // Should use expired cache since network fails
     expect(profile.llm.provider).toBe('cached-provider');
+    vi.unstubAllGlobals();
   });
 });

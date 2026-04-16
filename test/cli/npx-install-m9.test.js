@@ -1,7 +1,8 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 describe('bin - DBB-005/006/007: npx one-click install flow', () => {
   beforeEach(() => vi.resetModules());
+  afterEach(() => { vi.restoreAllMocks(); delete global.fetch; });
 
   it('DBB-007: openBrowser called with localhost:3000', async () => {
     const openMock = vi.fn();
@@ -26,7 +27,7 @@ describe('bin - DBB-005/006/007: npx one-click install flow', () => {
   it('DBB-003: profiles.js falls back to local on CDN 404', async () => {
     global.fetch = vi.fn().mockResolvedValue({ ok: false, status: 404 });
     const { getProfile } = await import('../../src/detector/profiles.js');
-    const hw = { platform: 'darwin', arch: 'arm64', gpu: { type: 'apple' }, memory: 16 };
+    const hw = { platform: 'darwin', arch: 'arm64', gpu: { type: 'apple-silicon' }, memory: 16 };
     // Should not throw — falls back to builtin
     await expect(getProfile(hw)).resolves.toBeDefined();
   });

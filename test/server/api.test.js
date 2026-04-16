@@ -80,7 +80,10 @@ describe('HTTP Server', () => {
       chat.mockImplementation(async function* () {});
       const history = [{ role: 'user', content: 'prev' }];
       await req('POST', '/api/chat', { message: 'Hi', history });
-      expect(chat).toHaveBeenCalledWith('Hi', { history });
+      expect(chat).toHaveBeenCalledWith(
+        [...history, { role: 'user', content: 'Hi' }],
+        expect.objectContaining({})
+      );
     });
 
     it('writes error chunk on chat failure', async () => {

@@ -1,10 +1,20 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { watchProfiles } from '../../src/detector/profiles.js';
+import fs from 'fs/promises';
 
 const HARDWARE = { platform: 'linux', arch: 'x64', gpu: { type: 'none' }, memory: 8 };
 const GOOD_DATA = { profiles: [{ match: { platform: 'linux' }, config: { llm: { model: 'new-model' } } }] };
 
 describe('profiles.js watchProfiles M13 DBB-008/009', () => {
+  beforeEach(() => {
+    // Prevent watchProfiles from writing to the real cache file
+    vi.spyOn(fs, 'writeFile').mockResolvedValue(undefined);
+    vi.spyOn(fs, 'mkdir').mockResolvedValue(undefined);
+  });
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   it('DBB-008: remote profiles change → onReload fires', async () => {
     const orig = globalThis.fetch;
     globalThis.fetch = async () => ({

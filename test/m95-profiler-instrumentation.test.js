@@ -1,5 +1,10 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { startMark, endMark, getMetrics, measurePipeline } from '../src/runtime/profiler.js';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const projectRoot = join(__dirname, '..');
 
 describe('m95 CPU profiling instrumentation verification', () => {
 
@@ -127,7 +132,7 @@ describe('m95 CPU profiling instrumentation verification', () => {
   describe('profiler integration with runtime modules', () => {
     it('source: stt.js imports startMark/endMark from profiler.js', async () => {
       const sttSource = await import('fs/promises').then(fs =>
-        fs.readFile('/Users/kenefe/LOCAL/momo-agent/projects/agentic-service/src/runtime/stt.js', 'utf8')
+        fs.readFile(join(projectRoot, 'src/runtime/stt.js'), 'utf8')
       );
       expect(sttSource).toContain("from './profiler.js'");
       expect(sttSource).toContain("startMark('stt')");
@@ -136,7 +141,7 @@ describe('m95 CPU profiling instrumentation verification', () => {
 
     it('source: llm.js imports startMark/endMark from profiler.js', async () => {
       const llmSource = await import('fs/promises').then(fs =>
-        fs.readFile('/Users/kenefe/LOCAL/momo-agent/projects/agentic-service/src/runtime/llm.js', 'utf8')
+        fs.readFile(join(projectRoot, 'src/runtime/llm.js'), 'utf8')
       );
       expect(llmSource).toContain("from './profiler.js'");
       expect(llmSource).toContain("startMark('llm')");
@@ -145,7 +150,7 @@ describe('m95 CPU profiling instrumentation verification', () => {
 
     it('source: tts.js imports startMark/endMark from profiler.js', async () => {
       const ttsSource = await import('fs/promises').then(fs =>
-        fs.readFile('/Users/kenefe/LOCAL/momo-agent/projects/agentic-service/src/runtime/tts.js', 'utf8')
+        fs.readFile(join(projectRoot, 'src/runtime/tts.js'), 'utf8')
       );
       expect(ttsSource).toContain("from './profiler.js'");
       expect(ttsSource).toContain("startMark('tts')");
@@ -154,7 +159,7 @@ describe('m95 CPU profiling instrumentation verification', () => {
 
     it('source: memory.js uses profiler for memory-add and memory-search', async () => {
       const memSource = await import('fs/promises').then(fs =>
-        fs.readFile('/Users/kenefe/LOCAL/momo-agent/projects/agentic-service/src/runtime/memory.js', 'utf8')
+        fs.readFile(join(projectRoot, 'src/runtime/memory.js'), 'utf8')
       );
       expect(memSource).toContain("from './profiler.js'");
       expect(memSource).toContain("startMark('memory-add')");
@@ -165,7 +170,7 @@ describe('m95 CPU profiling instrumentation verification', () => {
 
     it('source: api.js imports getMetrics and exposes /api/perf endpoint', async () => {
       const apiSource = await import('fs/promises').then(fs =>
-        fs.readFile('/Users/kenefe/LOCAL/momo-agent/projects/agentic-service/src/server/api.js', 'utf8')
+        fs.readFile(join(projectRoot, 'src/server/api.js'), 'utf8')
       );
       expect(apiSource).toContain('getMetrics');
       expect(apiSource).toContain('/api/perf');
@@ -177,7 +182,7 @@ describe('m95 CPU profiling instrumentation verification', () => {
   describe('profiler labels coverage', () => {
     it('all expected pipeline stages are profiled in source code', async () => {
       const fs = await import('fs/promises');
-      const srcDir = '/Users/kenefe/LOCAL/momo-agent/projects/agentic-service/src';
+      const srcDir = join(projectRoot, 'src');
 
       const stt = await fs.readFile(`${srcDir}/runtime/stt.js`, 'utf8');
       const llm = await fs.readFile(`${srcDir}/runtime/llm.js`, 'utf8');

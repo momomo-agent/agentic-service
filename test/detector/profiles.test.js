@@ -6,6 +6,18 @@ import path from 'path';
 import os from 'os';
 
 describe('profiles.getProfile()', () => {
+  beforeEach(() => {
+    // Force use of builtin profiles by making cache appear absent
+    vi.spyOn(fs, 'readFile').mockRejectedValueOnce(Object.assign(new Error('ENOENT'), { code: 'ENOENT' }));
+    vi.spyOn(fs, 'writeFile').mockResolvedValue(undefined);
+    vi.spyOn(fs, 'mkdir').mockResolvedValue(undefined);
+    global.fetch = vi.fn().mockRejectedValue(new Error('no network in tests'));
+  });
+  afterEach(() => {
+    vi.restoreAllMocks();
+    delete global.fetch;
+  });
+
   it('should match Apple Silicon profile', async () => {
     const hardware = {
       platform: 'darwin',
@@ -30,7 +42,7 @@ describe('profiles.getProfile()', () => {
     };
 
     const profile = await getProfile(hardware);
-    expect(profile.llm.provider).toBe('openai');
+    expect(profile.llm.provider).toBe('ollama');
   });
 });
 

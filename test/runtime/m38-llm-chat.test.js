@@ -23,6 +23,8 @@ const CATCH_ALL_PROFILE = {
   },
   timestamp: Date.now()
 };
+let savedCache = null;
+try { savedCache = fs.readFileSync(CACHE_FILE, 'utf-8'); } catch {}
 fs.writeFileSync(CACHE_FILE, JSON.stringify(CATCH_ALL_PROFILE));
 
 async function collect(gen) {
@@ -58,7 +60,15 @@ describe('m38: llm.js chat() stream', () => {
     ({ chat } = await import('../../src/runtime/llm.js'));
   });
 
-  after(() => { global.fetch = originalFetch; });
+  after(() => {
+    global.fetch = originalFetch;
+    // Restore cache file
+    if (savedCache) {
+      fs.writeFileSync(CACHE_FILE, savedCache);
+    } else {
+      try { fs.unlinkSync(CACHE_FILE); } catch {}
+    }
+  });
 
   beforeEach(() => {
     delete process.env.OPENAI_API_KEY;
@@ -172,4 +182,10 @@ describe('m38: llm.js chat() stream', () => {
     );
   });
 });
+// Restore cache file after all node:test tests complete
+if (savedCache) {
+  fs.writeFileSync(CACHE_FILE, savedCache);
+} else {
+  try { fs.unlinkSync(CACHE_FILE); } catch {}
+}
 });

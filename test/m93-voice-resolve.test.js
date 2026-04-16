@@ -115,12 +115,12 @@ describe('M93 agentic-voice STT/TTS resolution', () => {
   // --- Adapter subpath mock shape tests ---
 
   it('openai-whisper adapter exports transcribe function', async () => {
-    const mod = await import('../src/runtime/adapters/voice/openai-whisper.js');
+    const mod = await import('agentic-voice/openai-whisper');
     expect(typeof mod.transcribe).toBe('function');
   });
 
   it('openai-tts adapter exports synthesize function', async () => {
-    const mod = await import('../src/runtime/adapters/voice/openai-tts.js');
+    const mod = await import('agentic-voice/openai-tts');
     expect(typeof mod.synthesize).toBe('function');
   });
 });

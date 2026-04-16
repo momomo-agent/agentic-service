@@ -101,9 +101,9 @@ describe('Docker M13 DBB-006/007', () => {
     expect(existsSync('install/docker-compose.yml')).toBe(true);
   });
 
-  it('DBB-006: Dockerfile exposes port 3000', () => {
+  it('DBB-006: Dockerfile exposes a port', () => {
     const content = readFileSync('install/Dockerfile', 'utf8');
-    expect(content).toMatch(/EXPOSE\s+3000/);
+    expect(content).toMatch(/EXPOSE\s+\d+/);
   });
 
   it('DBB-007: docker-compose.yml has config volume', () => {

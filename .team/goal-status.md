@@ -18,6 +18,9 @@ Vision ≥90% + PRD ≥90%
 
 ## 📦 Recent Deliverables
 ### Commits
+0bb8530 fix: remove hardcoded model from agent configs, add tester tools
+494f7e3 feat: cloud fallback spec, docker config, admin dist rebuild, clean import maps
+e75f196 feat: developer completed
 9675f15 test: add e2e tests for Examples page using agent-control
 1e9579a fix: /api/chat messages.map error — pass messages array to brain.chat() instead of raw string
 8cbb34d feat: sidebar navigation with Examples and Tests pages
@@ -25,15 +28,12 @@ adf0fd0 feat: add 10 API endpoint tests with Run All button
 9bf2b9a fix: unify cloud provider config fields to baseUrl+model+apiKey
 771789c feat: complete dashboard with model management and full config
 df7b230 refactor: single-page dashboard with full config fields
-dcdcf5a feat: redesign admin UI with 4 views (status/models/config/test)
-d36d58e feat: serve admin UI at root path /
-bc59edc feat: auto-install sox on startup for wake word detection
 
 ### Completed Tasks
 (none)
 
 ## 🏗️ Project Artifacts
-- Source files: 866 | Test files: 284 | Source LOC: 1033853
+- Source files: 870 | Test files: 284 | Source LOC: 1034024
 - README: ✅
 - Exports: src/index.js
 

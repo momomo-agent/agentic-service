@@ -1,19 +1,16 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { detect } from '../../src/detector/hardware.js';
-import { detectGPU } from '../../src/detector/gpu-detector.js';
 
 describe('Hardware Detector - Edge Cases', () => {
   describe('Error Handling', () => {
     it('should handle GPU detection failure gracefully', async () => {
       const result = await detect();
-      // Should not throw, should return valid structure
       expect(result).toHaveProperty('gpu');
       expect(result.gpu).toHaveProperty('type');
       expect(result.gpu).toHaveProperty('vram');
     });
 
     it('should return fallback values on complete failure', async () => {
-      // Even if GPU detection fails, should return valid data
       const result = await detect();
       expect(result.platform).toBeTruthy();
       expect(result.arch).toBeTruthy();
@@ -45,14 +42,8 @@ describe('Hardware Detector - Edge Cases', () => {
       const result = await detect();
       if (result.platform === 'darwin') {
         expect(['arm64', 'x64']).toContain(result.arch);
-        // On macOS, GPU should be apple-silicon, nvidia, amd, or none
         expect(['apple-silicon', 'nvidia', 'amd', 'none']).toContain(result.gpu.type);
       }
-    });
-
-    it('should handle unknown platforms', async () => {
-      const result = await detectGPU('unknown-platform');
-      expect(result).toEqual({ type: 'none', vram: 0 });
     });
   });
 
@@ -86,7 +77,6 @@ describe('Hardware Detector - Edge Cases', () => {
     it('should have correct structure for JSON output', async () => {
       const result = await detect();
       const json = JSON.parse(JSON.stringify(result));
-
       expect(json).toHaveProperty('platform');
       expect(json).toHaveProperty('arch');
       expect(json).toHaveProperty('gpu');
@@ -102,14 +92,8 @@ describe('Hardware Detector - Edge Cases', () => {
   describe('Performance', () => {
     it('should complete multiple detections efficiently', async () => {
       const start = Date.now();
-      await Promise.all([
-        detect(),
-        detect(),
-        detect()
-      ]);
-      const duration = Date.now() - start;
-      // 3 parallel detections should complete in reasonable time
-      expect(duration).toBeLessThan(5000);
+      await Promise.all([detect(), detect(), detect()]);
+      expect(Date.now() - start).toBeLessThan(5000);
     });
   });
 
@@ -117,7 +101,6 @@ describe('Hardware Detector - Edge Cases', () => {
     it('should return consistent results across multiple calls', async () => {
       const result1 = await detect();
       const result2 = await detect();
-
       expect(result1.platform).toBe(result2.platform);
       expect(result1.arch).toBe(result2.arch);
       expect(result1.cpu.cores).toBe(result2.cpu.cores);

@@ -11,12 +11,14 @@ describe('M24 DBB-1: startServer(port, {https:true}) starts both HTTP and HTTPS'
     expect(apiSrc).toMatch(/useHttps|https:/);
   });
 
-  it('HTTPS port = port + 443', () => {
-    expect(apiSrc).toContain('port + 443');
+  it('HTTPS port = configured port', () => {
+    // The server uses the configured port directly for HTTPS
+    expect(apiSrc).toMatch(/listenAsync\(httpsServer,\s*port\)/);
   });
 
   it('returns {http, https} object when https enabled', () => {
-    expect(apiSrc).toMatch(/\{\s*http:\s*httpServer,\s*https:\s*httpsServer\s*\}/);
+    expect(apiSrc).toMatch(/http:\s*redirectServer/);
+    expect(apiSrc).toMatch(/https:\s*httpsServer/);
   });
 
   it('returns single server when https disabled', () => {

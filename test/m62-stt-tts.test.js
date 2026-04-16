@@ -59,14 +59,18 @@ describe('agentic-voice package integration — stt.js + tts.js', () => {
   });
 
   it('openai-whisper throws NO_API_KEY when OPENAI_API_KEY missing', async () => {
+    vi.resetModules();
+    vi.doUnmock('agentic-voice/openai-whisper');
     delete process.env.OPENAI_API_KEY;
-    const { transcribe } = await import('../src/runtime/adapters/voice/openai-whisper.js');
+    const { transcribe } = await import('agentic-voice/openai-whisper');
     await expect(transcribe(Buffer.from('x'))).rejects.toMatchObject({ code: 'NO_API_KEY' });
   });
 
   it('openai-tts throws NO_API_KEY when OPENAI_API_KEY missing', async () => {
+    vi.resetModules();
+    vi.doUnmock('agentic-voice/openai-tts');
     delete process.env.OPENAI_API_KEY;
-    const { synthesize } = await import('../src/runtime/adapters/voice/openai-tts.js');
+    const { synthesize } = await import('agentic-voice/openai-tts');
     await expect(synthesize('hello')).rejects.toMatchObject({ code: 'NO_API_KEY' });
   });
 });

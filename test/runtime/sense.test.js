@@ -8,7 +8,7 @@ const mockPipeline = vi.hoisted(() => ({
   }))
 }))
 
-vi.mock('agentic-sense', () => ({
+vi.mock('../../src/runtime/adapters/sense.js', () => ({
   createPipeline: vi.fn().mockResolvedValue(mockPipeline)
 }))
 

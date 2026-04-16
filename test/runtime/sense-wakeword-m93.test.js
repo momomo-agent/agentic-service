@@ -1,22 +1,22 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-vi.mock('agentic-sense', () => ({
+vi.mock('../../src/runtime/adapters/sense.js', () => ({
   createPipeline: vi.fn(() => ({ detect: vi.fn(() => ({ faces: [], gestures: [], objects: [] })) }))
 }));
 
 describe('startWakeWordPipeline', () => {
   beforeEach(() => { vi.resetModules(); });
 
-  it('resolves without throwing when node-record-lpcm16 is unavailable', async () => {
-    vi.doMock('node-record-lpcm16', () => { throw new Error('not found'); });
+  it('resolves without throwing when mic is unavailable', async () => {
+    vi.doMock('mic', () => { throw new Error('not found'); });
     const { startWakeWordPipeline } = await import('../../src/runtime/sense.js');
     await expect(startWakeWordPipeline(vi.fn())).resolves.not.toThrow();
   });
 
   it('calls onWakeWord when audio RMS exceeds threshold', async () => {
-    const mockStream = { on: vi.fn().mockReturnThis(), pipe: vi.fn() };
-    const mockRecorder = { record: vi.fn(() => ({ stream: () => mockStream, process: null })) };
-    vi.doMock('node-record-lpcm16', () => ({ default: mockRecorder }));
+    const mockStream = { on: vi.fn().mockReturnThis() };
+    const mockMicInstance = { getAudioStream: vi.fn(() => mockStream), start: vi.fn(), stop: vi.fn() };
+    vi.doMock('mic', () => ({ default: vi.fn(() => mockMicInstance) }));
 
     const { startWakeWordPipeline } = await import('../../src/runtime/sense.js');
     const onWakeWord = vi.fn();
