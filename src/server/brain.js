@@ -10,10 +10,22 @@ export function registerTool(name, fn) {
 
 function normalizeMessages(messages) {
   return messages.map(msg => {
-    if (msg.role === 'tool' && msg.tool_use_id) {
-      return { role: 'user', content: [{ type: 'tool_result', tool_use_id: msg.tool_use_id, content: String(msg.content) }] };
+    const m = { ...msg };
+    if (m.role === 'tool' && m.tool_use_id) {
+      return { role: 'user', content: [{ type: 'tool_result', tool_use_id: m.tool_use_id, content: String(m.content) }] };
     }
-    return msg;
+    // Ollama expects tool_calls arguments as objects, not strings
+    if (m.tool_calls) {
+      m.tool_calls = m.tool_calls.map(tc => {
+        const fn = tc.function || tc;
+        let args = fn.arguments;
+        if (typeof args === 'string') try { args = JSON.parse(args); } catch {}
+        return { function: { name: fn.name, arguments: args } };
+      });
+    }
+    // Remove tool_call_id (Ollama native API doesn't use it)
+    delete m.tool_call_id;
+    return m;
   });
 }
 
